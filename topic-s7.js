@@ -27,7 +27,7 @@ T7.levels.push({
           'Stage 2 built the epistemic ladder — <em>must · will · should · may · might · could · can\'t</em>. Academic writing uses the whole of it, constantly, and not for the reason students usually assume. A hedge is not politeness, and it is not a way of avoiding commitment. It is a <strong>report on the evidence</strong>: the modal tells the reader how far the writer is prepared to go, and therefore how much weight the claim can carry.',
           'Consider the same finding stated twice. <em>This proves that smaller classes raise attainment.</em> <em>This suggests that smaller classes may raise attainment.</em> The finding has not changed. What has changed is the size of the promise. The first sentence guarantees that the relationship holds everywhere, for every class and every subject; one well-designed study that finds nothing destroys it. The second survives that study intact, because it only ever claimed the relationship might hold.',
           'The mechanism is the quantification from Stage 2. An unhedged claim is <strong>universal</strong> — in every situation, this is so. A hedged claim is <strong>existential</strong> — in at least some situations, this is so. Universals are cheap to write and expensive to defend, because a single counterexample is enough, and readers hunt for it automatically. Every hedge narrows the set of cases you are answerable for, which is precisely why hedging is not weakness. You are choosing what you can defend.',
-          'The Band 7 descriptor contains the phrase <strong>a tendency to over-generalise</strong>, and that is the ceiling this stage exists to break; Band 8 asks instead for <strong>precise meanings</strong>. Notice that precision cuts both ways. Writing <em>may</em> where the evidence supports <em>is</em> is as inaccurate as writing <em>proves</em> where it supports <em>suggests</em>. The target is not caution. It is a match.'
+          'The Task Response descriptor caps a script at Band 7 for <strong>a tendency to over-generalise</strong>, and that is the ceiling this stage exists to break; Band 8 asks instead for ideas that are <strong>relevant, extended and supported</strong>. Notice that precision cuts both ways. Writing <em>may</em> where the evidence supports <em>is</em> is as inaccurate as writing <em>proves</em> where it supports <em>suggests</em>. The target is not caution. It is a match.'
         ],
         simple: [
           'A hedge — <em>may</em>, <em>tends to</em>, <em>it appears that</em> — tells the reader how sure you are. It is not politeness and it is not weakness.',
@@ -72,7 +72,7 @@ T7.levels.push({
 
         { id: 't7l1s1-4', type: 'equiv', tag: 'hedge-why', level: 'C1',
           given: 'It is certain that automation will eliminate most clerical work within a decade.',
-          stem: 'Which sentence makes the same point at a strength the evidence for it could actually support?',
+          stem: 'No forecast ten years ahead can be tested until the decade has passed. Which sentence makes the same point at the strongest pitch such a forecast can honestly take?',
           options: [
             'Automation is likely to displace a substantial share of clerical work over the next decade.',
             'Automation might conceivably have some slight effect on a little clerical work.',
@@ -80,13 +80,13 @@ T7.levels.push({
             'It may possibly be arguable that automation could perhaps affect clerical work.'
           ],
           answer: 0,
-          why: 'A forecast a decade ahead is a prediction, and <em>is likely to</em> is the strongest honest form such a prediction takes, while <em>a substantial share</em> keeps the scale without promising <em>most</em>. Option 1 retreats so far that the claim is no longer worth making. Option 2 is the original overclaim in new clothes, since <em>definitely</em> and <em>nearly all</em> do the work of <em>certain</em> and <em>most</em>. Option 3 stacks four hedges on one proposition and asserts nothing.' },
+          why: 'A forecast a decade ahead is a prediction, and <em>is likely to</em> is the strongest honest form such a prediction takes, while <em>a substantial share</em> keeps the scale without promising <em>most</em>. Option 2 retreats so far that the claim is no longer worth making. Option 3 is the original overclaim in new clothes, since <em>definitely</em> and <em>nearly all</em> do the work of <em>certain</em> and <em>most</em>. Option 4 stacks four hedges on one proposition and asserts nothing.' },
 
         { id: 't7l1s1-5', type: 'sort', tag: 'hedge-why', level: 'C1',
-          stem: 'One study of a single hospital found that patients discharged with a follow-up phone call were readmitted less often. Which claims does that finding support?',
+          stem: 'One study of a single hospital found that patients discharged with a follow-up phone call were readmitted less often. Sort the claims by whether that one finding will carry them.',
           bins: [
-            { key: 'ok', label: 'Supported by the finding', hint: 'one study, one hospital, a direction' },
-            { key: 'no', label: 'Beyond the finding', hint: 'claims more than one study can carry' }
+            { key: 'ok', label: 'Within the finding', hint: 'claims no more than one study of one hospital allows' },
+            { key: 'no', label: 'Beyond the finding', hint: 'claims more than one study of one hospital allows' }
           ],
           items: [
             { text: 'Follow-up calls <em>appear to</em> reduce readmission in this hospital.', bin: 'ok' },
@@ -96,7 +96,7 @@ T7.levels.push({
             { text: 'Every hospital <em>will</em> cut readmissions by introducing follow-up calls.', bin: 'no' },
             { text: 'Readmission <em>is always</em> the result of poor contact after discharge.', bin: 'no' }
           ],
-          why: 'The three supported claims all keep the finding tied to its source — one hospital, one direction, one possibility worth testing. The three that fail do so for different reasons: <em>prove</em> converts a correlation into a cause, <em>every hospital will</em> generalises from a single site to all of them, and <em>always</em> makes poor contact the only cause of readmission when the study observed one contributing factor among many.' }
+          why: 'The three claims that stay within the finding all keep it tied to its source — one hospital, one direction, one possibility worth testing. The three that fail do so for different reasons: <em>prove</em> converts a correlation into a cause, <em>every hospital will</em> generalises from a single site to all of them, and <em>always</em> makes poor contact the only cause of readmission when the study observed one contributing factor among many.' }
       ]
     },
 
@@ -127,13 +127,13 @@ T7.levels.push({
         { id: 't7l1s2-1', type: 'choose', tag: 'hedge-over', level: 'C1',
           stem: 'A study of 1,200 secondary students found that those who used a phone in the hour before bed slept on average twenty-seven minutes less than those who did not. Which sentence reports this correctly?',
           options: [
-            'The study proves that phone use before bed causes sleep loss in teenagers.',
+            'The study proves that phone use in the hour before bed causes teenagers to lose sleep.',
             'The study found that phone use in the hour before bed was associated with an average of twenty-seven minutes less sleep.',
-            'Teenagers who use phones at night will always sleep badly.',
-            'The study shows that all teenagers should be banned from using phones after dark.'
+            'The study shows that teenagers who use a phone at night always sleep badly.',
+            'The study shows that all teenagers should be banned from using a phone after dark.'
           ],
           answer: 1,
-          why: 'The study measured an association between two things, and only option 1 says so. Option 0 converts that association into a cause, which the design cannot support — a tired student may reach for a phone as readily as the reverse. Option 2 replaces an average with a universal (<em>always</em>) and a measured difference with a value judgement (<em>badly</em>). Option 3 slides from a finding to a policy, and no measurement of sleep length can by itself establish what ought to be banned.' },
+          why: 'The study measured an association between two things, and only option 2 says so. Option 1 converts that association into a cause, which the design cannot support — a tired student may reach for a phone as readily as the reverse. Option 3 replaces an average with a universal (<em>always</em>) and a measured difference with a value judgement (<em>badly</em>). Option 4 slides from a finding to a policy, and no measurement of sleep length can by itself establish what ought to be banned.' },
 
         { id: 't7l1s2-2', type: 'spot', tag: 'hedge-over', level: 'C1',
           stem: 'One of the four parts overclaims. Find it.',
@@ -145,13 +145,13 @@ T7.levels.push({
         { id: 't7l1s2-3', type: 'choose', tag: 'hedge-over', level: 'C1',
           stem: 'One city introduced a tram line and recorded a nine per cent fall in car journeys into the centre over the following year. Which conclusion does that support?',
           options: [
-            'Trams will reduce car use in any city that builds them.',
+            'Trams will reduce car use in any city that builds them, whatever the local conditions.',
             'This suggests that a new tram line can contribute to a fall in central car use, although other changes over the same year may also have played a part.',
-            'It is certain that the tram line caused the fall in car journeys.',
-            'Cars are no longer necessary in cities with trams.'
+            'It is certain that the tram line caused the fall, since the two happened in the same year.',
+            'Cars are no longer necessary in cities with trams, as this fall in journeys shows.'
           ],
           answer: 1,
-          why: 'One city over one year cannot separate the tram from everything else that changed — fuel prices, parking charges, the weather — and only option 1 says so while still crediting the tram. Option 0 generalises from a single city to all cities. Option 2 asserts a cause where only a sequence was observed. Option 3 is not a conclusion from the figure at all: a nine per cent fall means that ninety-one per cent of those journeys were still made by car.' },
+          why: 'One city over one year cannot separate the tram from everything else that changed — fuel prices, parking charges, the weather — and only option 2 says so while still crediting the tram. Option 1 generalises from a single city to all cities. Option 3 asserts a cause from nothing more than the order in which two things happened. Option 4 is not a conclusion from the figure at all: a nine per cent fall means that ninety-one per cent of those journeys were still made by car.' },
 
         { id: 't7l1s2-4', type: 'equiv', tag: 'hedge-over', level: 'C1',
           given: 'Studies have proved that everyone who learns a second language will develop stronger memory.',
@@ -163,18 +163,18 @@ T7.levels.push({
             'Nobody knows whether learning a second language affects memory.'
           ],
           answer: 0,
-          why: 'Three separate overclaims have to come down at once: <em>proved → indicate</em>, <em>everyone → many learners</em>, and <em>will develop stronger memory → may strengthen certain kinds of memory</em>. Option 1 changes only the verb and leaves <em>definitely</em> and <em>all</em> standing, so the universal survives. Option 2 over-corrects into a pile-up that reports no finding. Option 3 is a different claim altogether — it denies that evidence exists, when the premise is that studies do.' },
+          why: 'Three separate overclaims have to come down at once: <em>proved → indicate</em>, <em>everyone → many learners</em>, and <em>will develop stronger memory → may strengthen certain kinds of memory</em>. Option 2 changes only the verb and leaves <em>definitely</em> and <em>all</em> standing, so the universal survives. Option 3 over-corrects into a pile-up that reports no finding. Option 4 is a different claim altogether — it denies that evidence exists, when the premise is that studies do.' },
 
         { id: 't7l1s2-5', type: 'choose', tag: 'hedge-over', level: 'C1',
           stem: 'Which of these sentences does <strong>not</strong> need hedging?',
           options: [
-            'Air pollution in the capital causes thousands of premature deaths each year.',
+            'Air pollution in the capital causes 4,200 premature deaths a year.',
             'A carbon tax will solve the problem within five years.',
             'Everyone agrees that public transport should be subsidised.',
             'Inflation, in the sense used here, refers to a sustained rise in the general price level.'
           ],
           answer: 3,
-          why: 'Option 3 is a definition: the writer is stipulating how a term will be used in this essay, and a stipulation cannot be pitched too strongly. The other three all overclaim, each in a different way. Option 0 asserts a causal figure that epidemiological modelling can only estimate, so it needs <em>is estimated to</em>. Option 1 promises both an outcome and a timetable that no policy forecast can guarantee. Option 2 claims universal consensus about a proposal that is actively disputed.' }
+          why: 'Option 4 is a definition: the writer is stipulating how a term will be used in this essay, and a stipulation cannot be pitched too strongly. The other three all overclaim, each in a different way. Option 1 states a modelled figure as though it had been counted, when attributing deaths to pollution is done by modelling, so it needs <em>is estimated to cause</em>. Option 2 promises both an outcome and a timetable that no policy forecast can guarantee. Option 3 claims universal consensus about a proposal that is actively disputed.' }
       ]
     },
 
@@ -203,15 +203,15 @@ T7.levels.push({
       },
       items: [
         { id: 't7l1s3-1', type: 'choose', tag: 'hedge-under', level: 'C1',
-          stem: 'Which sentence hedges once and still says something?',
+          stem: 'Which sentence hedges once and still makes a claim a reader could argue with?',
           options: [
             'It might possibly be arguable that rural bus services could perhaps be somewhat underfunded.',
             'Rural bus services appear to be underfunded relative to urban routes.',
             'Rural bus services are without question the most underfunded part of the entire transport system.',
-            'It may be that there is possibly some sense in which rural bus services may not be fully funded.'
+            'It may be that rural bus services receive some public funding.'
           ],
           answer: 1,
-          why: '<em>Appear to</em> is a single evidential hedge — the visible evidence points this way — and the comparison with urban routes gives the reader something to check. Options 0 and 3 are pile-ups four and five devices deep, and neither ends up claiming anything a reader could agree or disagree with. Option 2 runs the fault the other way: <em>without question</em> and <em>the entire transport system</em> make a superlative claim that no essay could support.' },
+          why: '<em>Appear to</em> is a single evidential hedge — the visible evidence points this way — and the comparison with urban routes gives the reader a claim they can check and contest. Option 1 is a pile-up four devices deep and ends up claiming nothing anyone could agree or disagree with. Option 3 runs the fault the other way: <em>without question</em> and <em>the entire transport system</em> make a superlative claim that no essay could support. Option 4 does hedge only once, but what it hedges is something nobody disputes, and a hedge on the undisputed reads as evasion rather than care.' },
 
         { id: 't7l1s3-2', type: 'spot', tag: 'hedge-under', level: 'C1',
           stem: 'One of the four parts contains a redundant hedge. Find it.',
@@ -230,7 +230,7 @@ T7.levels.push({
             'Nobody can say anything about the effect of a shorter working week on productivity.'
           ],
           answer: 0,
-          why: 'Strip the repetition and one hedge remains over one proposition, which is all the original ever meant; <em>raise</em> also replaces the empty <em>have some effect</em>, since an effect with no direction is not a claim. Option 1 deletes the hedging altogether and promises the outcome. Option 2 keeps three of the six devices, so the pile-up is shorter but not cured. Option 3 mistakes a weak claim for no claim, when the writer plainly did want to say something.' },
+          why: 'Strip the repetition and one hedge remains over one proposition, which is all the original ever meant; <em>raise</em> also replaces the empty <em>have some effect</em>, since an effect with no direction is not a claim. Option 2 deletes the hedging altogether and promises the outcome. Option 3 keeps three of the six devices, so the pile-up is shorter but not cured. Option 4 mistakes a weak claim for no claim, when the writer plainly did want to say something.' },
 
         { id: 't7l1s3-4', type: 'choose', tag: 'hedge-under', level: 'C1',
           stem: 'Why is <em>may well</em> acceptable when <em>may possibly</em> is not?',
@@ -241,7 +241,7 @@ T7.levels.push({
             'Because <em>may well</em> is more formal, and academic writing prefers formal phrases.'
           ],
           answer: 1,
-          why: 'Two hedges combine only when the second changes what the first did, and <em>well</em> is an upgrader — <em>may well</em> sits noticeably higher on the scale than bare <em>may</em>. <em>Possibly</em> means what <em>may</em> means, so the pair moves nothing. Length is irrelevant: <em>might conceivably</em> is longer still and works, because <em>conceivably</em> lowers the modal. Option 2 is false, since <em>may possibly</em> breaks no rule of grammar — it is a stylistic failure, not an error. And formality is not the issue either; <em>may possibly</em> is no less formal, merely empty.' },
+          why: 'Two hedges combine only when the second changes what the first did, and <em>well</em> is an upgrader — <em>may well</em> sits noticeably higher on the scale than bare <em>may</em>. <em>Possibly</em> means what <em>may</em> means, so the pair moves nothing. Length is irrelevant: <em>would almost certainly</em> is longer still and works, because <em>almost certainly</em> moves the modal instead of repeating it. Option 3 is false, since <em>may possibly</em> breaks no rule of grammar — it is a stylistic failure, not an error. And formality is not the issue either; <em>may possibly</em> is no less formal, merely empty.' },
 
         { id: 't7l1s3-5', type: 'build', tag: 'hedge-under', level: 'C1',
           stem: 'Put the words in order to make one calibrated claim from a single study.',
@@ -259,19 +259,19 @@ T7.levels.push({
         passage: 'A recent review of trials of the four-day working week found that, in the small number of firms that have tried the arrangement, output per worker held steady or rose slightly. The authors are careful with their language. Their report ___(1)___ that shorter weeks can be introduced without a loss of output, and notes that the firms which volunteered for the trials ___(2)___ be unusually well managed to begin with.\n\nThat qualification matters. A firm confident enough to run the experiment is not a typical firm, and until the arrangement has been tested somewhere less willing, the finding remains a promising one rather than a settled one.',
         blank: '(1)',
         stem: 'Choose the best option for blank (1).',
-        options: ['proves', 'suggests', 'will show', 'demonstrates conclusively'],
-        answer: 1,
+        options: ['proves', 'demonstrates conclusively', 'will show', 'suggests'],
+        answer: 3,
         why: 'The paragraph says the authors are careful with their language and then hands us a self-selected sample of volunteer firms, which is the situation a reporting verb like <em>suggests</em> exists for. <em>Proves</em> and <em>demonstrates conclusively</em> both declare the question closed, and the second paragraph immediately contradicts them. <em>Will show</em> is a prediction about the report rather than a report of it, which makes no sense of a review that has already been completed.' },
 
       { id: 't7l1ck-2', type: 'choose', tag: 'hedge-over', level: 'C1',
         stem: 'An essay states: <em>Since more people now work from home, city centres will inevitably empty and public transport will collapse.</em> What is the main problem?',
         options: [
           'The sentence is too short for an academic paragraph.',
-          'Two strong predictions are made from a single trend, with no hedge and no evidence to pay for them.',
+          'The sentence is too informal for an essay.',
           'The sentence uses the present tense where the past is required.',
-          'The sentence is too informal for an essay.'
+          'Two strong predictions are made from a single trend, with no hedge and no evidence to pay for them.'
         ],
-        answer: 1,
+        answer: 3,
         why: '<em>Will inevitably empty</em> and <em>will collapse</em> both sit at the top of the scale, and the only support offered is that more people work from home — a trend consistent with many outcomes far short of collapse. Length is not the issue, since a short sentence can be perfectly calibrated. The tense is fine: predictions take <em>will</em> and the premise is genuinely present. And the register is unremarkable, so the fault is force rather than formality.' },
 
       { id: 't7l1ck-3', type: 'spot', tag: 'hedge-under', level: 'C1',
@@ -291,13 +291,13 @@ T7.levels.push({
           'Homework must be abolished in all primary schools immediately.'
         ],
         answer: 0,
-        why: '<em>There is some evidence</em> names a source, <em>little measurable benefit</em> reports a size rather than delivering a verdict, and <em>at primary level</em> keeps the claim where the evidence is. Option 1 simply swaps one universal (<em>everybody</em>) for another (<em>nobody ever, any, at all</em>). Option 2 collapses into a pile-up. Option 3 is a policy demand at maximum force, and <em>must</em> plus <em>all</em> plus <em>immediately</em> stands even further from the evidence than the original did.' },
+        why: '<em>There is some evidence</em> names a source, <em>little measurable benefit</em> reports a size rather than delivering a verdict, and <em>at primary level</em> keeps the claim where the evidence is. Option 2 simply swaps one universal (<em>everybody</em>) for another (<em>nobody ever, any, at all</em>). Option 3 collapses into a pile-up. Option 4 is a policy demand at maximum force, and <em>must</em> plus <em>all</em> plus <em>immediately</em> stands even further from the evidence than the original did.' },
 
       { id: 't7l1ck-5', type: 'judge', tag: 'hedge-why', level: 'C1',
         given: 'The trial data would suggest that the new treatment is no more effective than the existing one.',
         stem: 'The writer accepts that the two treatments are equally effective.',
         answer: 2,
-        why: '<em>Would suggest</em> reports what the data point to while holding the writer slightly back from the conclusion, so the sentence tells us about the evidence and not about the writer\'s own position, which may well be stated elsewhere. <em>True</em> would require an endorsement, and the distancing <em>would</em> is precisely what stops short of one. <em>False</em> would require some sign of disagreement, and the sentence gives none.' },
+        why: '<em>Would suggest</em> reports what the data point to while holding the writer slightly back from the conclusion, so the sentence tells us about the evidence and not about the writer\'s own position, which may well be stated elsewhere. <em>True</em> would require an endorsement, and the distancing <em>would</em> is precisely what stops short of one. <em>False</em> would require some sign of disagreement, and the sentence gives none. Note also that <em>no more effective than</em> leaves open that the new treatment is worse, so even the data as reported stop short of saying the two are equal.' },
 
       { id: 't7l1ck-6', type: 'choose', tag: 'hedge-why', level: 'C1',
         stem: 'Why does a well-calibrated claim give an examiner a better impression than a bold one?',
@@ -308,7 +308,7 @@ T7.levels.push({
           'Because examiners prefer writers who avoid taking a position.'
         ],
         answer: 2,
-        why: 'The descriptors cap Band 7 partly on <em>a tendency to over-generalise</em>, so matching force to evidence is scored directly rather than treated as a matter of taste. Vocabulary is a separate criterion and most hedges are very ordinary words. Length is not rewarded in itself, and a pile-up is long. Option 3 inverts the aim: the task demands a clear position, and calibration is how a position is made defensible, not how it is avoided.' }
+        why: 'The descriptors cap Band 7 partly on <em>a tendency to over-generalise</em>, so matching force to evidence is scored directly rather than treated as a matter of taste. Vocabulary is a separate criterion and most hedges are very ordinary words. Length is not rewarded in itself, and a pile-up is long. Option 4 inverts the aim: the task demands a clear position, and calibration is how a position is made defensible, not how it is avoided.' }
     ]
   }
 });
@@ -348,28 +348,28 @@ T7.levels.push({
           options: [
             'The policy may possibly reduce emissions.',
             'The policy may well reduce emissions.',
-            'The policy might conceivably reduce emissions.',
+            'The policy might reduce emissions.',
             'The policy will certainly reduce emissions.'
           ],
           answer: 1,
-          why: 'Three converging studies justify a claim above bare possibility but short of certainty, and <em>may well</em> is exactly that rung. <em>May possibly</em> is bare <em>may</em> with a wasted word, so it under-reports what the evidence gives. <em>Might conceivably</em> lowers the modal further still and would suit a single suggestive finding rather than three. <em>Will certainly</em> treats a converging body of evidence as a closed question, which is the overclaim from Level 1.' },
+          why: 'Three converging studies justify a claim above bare possibility but short of certainty, and <em>may well</em> is exactly that rung. <em>May possibly</em> is bare <em>may</em> with a wasted word, so it under-reports what the evidence gives. Bare <em>might</em> reports a possibility and nothing more, which is what a single suggestive finding would deserve rather than three converging ones. <em>Will certainly</em> treats a converging body of evidence as a closed question, which is the overclaim from Level 1.' },
 
         { id: 't7l2s1-2', type: 'sort', tag: 'hedge-adverb', level: 'C1',
           stem: 'What is the adverb doing to the modal in each phrase?',
           bins: [
-            { key: 'up', label: 'Raises the modal', hint: 'more likely than the modal alone' },
-            { key: 'down', label: 'Lowers the modal', hint: 'less likely than the modal alone' },
-            { key: 'flat', label: 'Repeats the modal', hint: 'adds no information at all' }
+            { key: 'up', label: 'Raises the modal', hint: 'the claim comes out likelier than the modal alone would make it' },
+            { key: 'arg', label: 'Marks the claim as contested', hint: 'says nothing about likelihood; flags the point as defensible but disputed' },
+            { key: 'flat', label: 'Repeats the modal', hint: 'sets a value the modal has already set' }
           ],
           items: [
             { text: 'may <em>well</em> succeed', bin: 'up' },
             { text: 'would <em>almost certainly</em> fail', bin: 'up' },
-            { text: 'might <em>conceivably</em> apply', bin: 'down' },
-            { text: 'could <em>just possibly</em> work', bin: 'down' },
+            { text: 'could <em>arguably</em> be extended', bin: 'arg' },
+            { text: 'may <em>reasonably</em> be said to work', bin: 'arg' },
             { text: 'may <em>possibly</em> help', bin: 'flat' },
             { text: 'might <em>perhaps</em> follow', bin: 'flat' }
           ],
-          why: 'The pairs in the third bin fail because <em>possibly</em> and <em>perhaps</em> name the value that <em>may</em> and <em>might</em> have already set; they are the Level 1 pile-up in miniature. The first two lift the modal towards probability and the middle two push it down towards bare conceivability. Only an adverb that moves the modal is worth the space it takes.' },
+          why: 'Only an adverb that changes what the modal has done is worth its space. <em>Well</em> and <em>almost certainly</em> lift the modal towards probability. <em>Arguably</em> and <em>reasonably</em> report no probability at all — they mark the claim as one a reader could contest, which is why they belong in the sentence just before a counter-argument. <em>Possibly</em> and <em>perhaps</em> name the value <em>may</em> and <em>might</em> have already set, so they are the Level 1 pile-up in miniature.' },
 
         { id: 't7l2s1-3', type: 'choose', tag: 'hedge-adverb', level: 'C1',
           stem: 'The writer wants to say that a rise in fees will probably <strong>not</strong> reduce applications. Which sentence does that?',
@@ -377,7 +377,7 @@ T7.levels.push({
             'Higher fees may not reduce applications.',
             'Higher fees are unlikely to reduce applications.',
             'Higher fees cannot reduce applications.',
-            'Higher fees might not possibly reduce applications.'
+            'Higher fees may possibly not reduce applications.'
           ],
           answer: 1,
           why: '<em>Is unlikely to</em> puts the whole claim low on the probability scale, which is what <em>probably not</em> means. <em>May not</em> is the possibility of a negative and leaves a reduction perfectly open, so it is both weaker and differently shaped. <em>Cannot</em> sits at the bottom of the scale and denies that a reduction is even possible. The last option combines a negative with two hedges and states nothing at all.' },
@@ -436,30 +436,30 @@ T7.levels.push({
             'It is certain that fees improve the quality of teaching.'
           ],
           answer: 1,
-          why: 'The frame attributes the claim to the debate rather than to the writer, so the writer can turn on it in the next sentence without contradicting themselves. Option 0 asserts the opposing view as the writer\'s own, which makes the counter that follows look like a change of mind. Option 2 is the writer\'s own weak claim rather than a report of anyone else\'s, and its adverb merely repeats the modal. Option 3 endorses the view at full strength and leaves nothing to answer.' },
+          why: 'The frame attributes the claim to the debate rather than to the writer, so the writer can turn on it in the next sentence without contradicting themselves. Option 1 asserts the opposing view as the writer\'s own, which makes the counter that follows look like a change of mind. Option 3 is the writer\'s own weak claim rather than a report of anyone else\'s, and its adverb merely repeats the modal. Option 4 endorses the view at full strength and leaves nothing to answer.' },
 
         { id: 't7l2s2-2', type: 'equiv', tag: 'hedge-imperson', level: 'C1',
           given: 'It would appear that the relocation of the market has reduced footfall on the old high street.',
           stem: 'Which sentence says the same thing?',
           options: [
-            'The evidence points to a fall in footfall since the market moved, though the writer stops short of asserting it.',
-            'The writer is certain that footfall has fallen since the market moved.',
+            'The evidence indicates that footfall on the old high street has fallen since the market moved.',
+            'Footfall on the old high street has certainly fallen since the market moved.',
             'Footfall on the old high street would fall if the market were relocated.',
-            'Nobody knows what has happened to footfall on the old high street.'
+            'There is no way of telling whether footfall on the old high street has fallen.'
           ],
           answer: 0,
-          why: '<em>It would appear that</em> reports an inference and the <em>would</em> holds the writer half a pace back from it, which is exactly what option 0 spells out. Option 1 removes that distance and turns a careful inference into a conviction. Option 2 misreads <em>would</em> as a conditional about a relocation that has not happened, when the perfect <em>has reduced</em> shows that it already has. Option 3 denies that there is any evidence, when the sentence is reporting some.' },
+          why: '<em>It would appear that</em> reports an inference and the <em>would</em> holds the writer half a pace back from it, which is exactly the distance <em>the evidence indicates that</em> keeps. Option 2 removes that distance and states the fall as settled. Option 3 misreads <em>would</em> as a conditional about a relocation that has not happened, when the perfect <em>has reduced</em> shows that it already has. Option 4 denies that there is any evidence, when the original is reporting some.' },
 
         { id: 't7l2s2-3', type: 'choose', tag: 'hedge-imperson', level: 'C1',
-          stem: 'Which is the weakest use of the device?',
+          stem: 'All four sentences use an impersonal frame. In which one does the frame enclose a proposition that no reader would dispute and no evidence could test?',
           options: [
-            'It has been argued, most recently by the city\'s own transport board, that the fare rise deterred off-peak travel.',
-            'It is widely held that something must be done.',
+            'It has been argued by the city\'s own transport board that the fare rise deterred off-peak travel.',
+            'It is widely held that something ought to be done about the fare structure.',
             'This would suggest that the effect is concentrated in the evening period.',
-            'It may be argued that the cost falls disproportionately on outer suburbs.'
+            'It may be argued that the cost falls disproportionately on the outer suburbs.'
           ],
           answer: 1,
-          why: 'A frame is only worth its words if there is a claim inside it, and <em>something must be done</em> is not one — nobody could disagree with it and no evidence could bear on it. Option 0 is the strongest use, because it names who has argued the point. Option 2 draws a specific inference from data the paragraph has presented. Option 3 states a contestable proposition that the essay can then examine.' },
+          why: 'A frame is only worth its words if there is a claim inside it, and <em>something ought to be done</em> is not one — nobody would disagree with it and no figure could confirm or refute it. Option 1 names who made the argument, which is the strongest form the device takes. Option 3 draws a specific inference from data the paragraph has presented. Option 4 states a contestable proposition that the essay can then examine.' },
 
         { id: 't7l2s2-4', type: 'spot', tag: 'hedge-imperson', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
@@ -521,7 +521,7 @@ T7.levels.push({
           why: '<em>On the whole</em> and <em>in most cases</em> are the same device used twice, and the scope of a claim only needs setting once. The remaining parts are sound: the subject is limited to the people actually surveyed, the verb reports what they did rather than guessing at it, and the comparison names both of the alternatives on offer.' },
 
         { id: 't7l2s3-3', type: 'choose', tag: 'hedge-approx', level: 'C1',
-          stem: 'A writer has just reported that emergency admissions fell by nine per cent. Which sentence should follow?',
+          stem: 'A writer has just reported that emergency admissions fell by nine per cent. Which sentence takes the next step — explaining the fall — at the strength a single figure will bear?',
           options: [
             'This suggests that the triage system may be diverting some cases to primary care.',
             'This proves that the triage system works.',
@@ -529,7 +529,7 @@ T7.levels.push({
             'It may possibly be that admissions might have altered to some degree.'
           ],
           answer: 0,
-          why: 'The figure is already precise, so what the next sentence has to calibrate is the <em>explanation</em> — hence <em>suggests</em> for the inference and <em>may … some cases</em> for the mechanism. Option 1 turns one figure into proof of a causal claim. Option 2 uses an approximator to blur a number the paragraph has just stated exactly, throwing away information the writer had already earned. Option 3 does the same and adds a pile-up on top.' },
+          why: 'The figure is already precise, so what the next sentence has to calibrate is the <em>explanation</em> — hence <em>suggests</em> for the inference and <em>may … some cases</em> for the mechanism. Option 2 turns one figure into proof of a causal claim. Option 3 uses an approximator to blur a number the paragraph has just stated exactly, throwing away information the writer had already earned. Option 4 does the same and adds a pile-up on top.' },
 
         { id: 't7l2s3-4', type: 'sort', tag: 'hedge-approx', level: 'C1',
           stem: 'Is each phrase adjusting how sure the writer is, or how wide the claim is?',
@@ -556,7 +556,7 @@ T7.levels.push({
             'In most cases the reforms appear to tend to work.'
           ],
           answer: 0,
-          why: '<em>Appear to</em> is evidential: it reports what the available evidence looks like, and <em>little effect on waiting times</em> is exactly the kind of observable outcome evidence can look like. Option 1 puts a universal (<em>always … every</em>) inside an evidential hedge, so the sentence claims the evidence shows something no evidence could show. Option 2 stacks a modal and an adverb onto the same evidential and says nothing. Option 3 pairs two approximators from the same branch, since <em>appear to tend to</em> sets the scope twice over.' }
+          why: '<em>Appear to</em> is evidential: it reports what the available evidence looks like, and <em>little effect on waiting times</em> is exactly the kind of observable outcome evidence can look like. Option 2 puts a universal (<em>always … every</em>) inside an evidential hedge, so the sentence claims the evidence shows something no evidence could show. Option 3 stacks a modal and an adverb onto the same evidential and says nothing. Option 4 pairs two approximators from the same branch, since <em>appear to tend to</em> sets the scope twice over.' }
       ]
     }
   ],
@@ -565,15 +565,15 @@ T7.levels.push({
     id: 't7l2ck', name: 'Stage Check · The toolkit',
     items: [
       { id: 't7l2ck-1', type: 'choose', tag: 'hedge-adverb', level: 'C1',
-        stem: 'A single pilot study, not yet repeated anywhere else, found a small effect. Which sentence reports it best?',
+        stem: 'A single pilot study, not yet repeated anywhere else, found a small effect. Which sentence pitches the claim at the strength one unrepeated pilot will bear?',
         options: [
-          'The effect would almost certainly hold at scale.',
-          'The effect might conceivably hold at scale, although a single pilot cannot show that it does.',
-          'The effect will hold at scale.',
-          'The effect may possibly hold at scale.'
+          'The effect would almost certainly hold at scale, as the pilot indicates.',
+          'The effect may hold at scale, though a single pilot cannot establish that it does.',
+          'The effect will hold at scale, as the pilot has demonstrated.',
+          'The effect may possibly hold at scale, as the pilot perhaps suggests.'
         ],
         answer: 1,
-        why: 'One unrepeated pilot supports conceivability and very little more, and the second clause tells the reader exactly why the claim is pitched so low. <em>Would almost certainly</em> is near the top of the scale and entirely unearned. <em>Will</em> abandons hedging altogether. <em>May possibly</em> is at roughly the right height but wastes a word, since <em>possibly</em> only repeats <em>may</em>.' },
+        why: 'One unrepeated pilot supports a possibility together with a statement of what it cannot show, which is exactly what bare <em>may</em> plus the second clause delivers. Option 1 puts the claim near the top of the scale on the strength of a single study. Option 3 abandons hedging altogether and calls a pilot a demonstration. Option 4 sets the same value twice over, once in each half of the sentence, so it reports less than the pilot actually found.' },
 
       { id: 't7l2ck-2', type: 'gap', tag: 'hedge-imperson', level: 'C1',
         blank: '(1)',
@@ -599,12 +599,12 @@ T7.levels.push({
         why: '<em>As a rule</em> is the same move as <em>tend to</em>: the pattern is asserted and only its reach is limited. <em>All</em> converts the tendency into a universal that one early applicant would falsify. <em>May apply</em> hedges the writer\'s confidence rather than the scope, so it concedes that the pattern might not exist at all. The last option states a low probability for individual applicants, which is a different and stronger claim than a general tendency.' },
 
       { id: 't7l2ck-4', type: 'cloze', tag: 'hedge-adverb', level: 'C1',
-        passage: 'Cities that have introduced low-emission zones report cleaner air within the boundary. What is less clear is what happens outside it. Some traffic is simply displaced onto the ring roads, and the modelling ___(1)___ suggests that a proportion of the gain inside the zone is paid for by households on its edge.\n\nUntil the monitoring stations outside the boundary are as dense as those within it, the honest position is that the zones work where they are measured, and that the question of their wider effect ___(2)___ remains open.',
+        passage: 'Cities that have introduced low-emission zones report cleaner air within the boundary. What is less clear is what happens outside it. Some traffic is simply displaced onto the ring roads, and the modelling ___(1)___ suggests that a proportion of the gain inside the zone is paid for by households on its edge.\n\nUntil the monitoring stations outside the boundary are as dense as those within it, the honest position is that the zones work where they are measured, and that the gains claimed for the city as a whole ___(2)___ be overstated.',
         blank: '(2)',
         stem: 'Choose the best option for blank (2).',
-        options: ['certainly', 'arguably', 'will definitely', 'may possibly perhaps'],
-        answer: 1,
-        why: '<em>Arguably</em> marks the position as defensible and contested, which is exactly what the passage has established by pointing at the missing monitoring stations. <em>Certainly</em> and <em>will definitely</em> both close a question the paragraph has just described as open. The last option sets one value three times over, and a pile-up in the final sentence of a paragraph leaves the reader with nothing to carry away.' },
+        options: ['may well', 'may possibly', 'will certainly', 'must undoubtedly'],
+        answer: 0,
+        why: 'The modelling described in the first paragraph points firmly towards displacement without settling it, and <em>may well</em> is the rung for evidence of exactly that weight. Option 2 sets the same value twice, since <em>possibly</em> is what <em>may</em> already means, and so under-reports what the modelling gives. Option 3 closes a question the passage has just described as open. Option 4 does the same and stacks two boosters while doing it.' },
 
       { id: 't7l2ck-5', type: 'choose', tag: 'hedge-approx', level: 'C1',
         stem: 'Which sentence over-generalises?',
@@ -665,7 +665,7 @@ T7.levels.push({
             'Automation will not displace any roles at all.'
           ],
           answer: 1,
-          why: 'The concession is generous but hedged (<em>may well</em>), narrowed in scope (<em>routine roles</em>) and in time (<em>in the short term</em>), and the counter is pitched no lower than the concession (<em>is unlikely to</em>). Option 0 reverses that balance, conceding at full strength and countering at bare possibility, so the reader leaves agreeing with the other side. Option 2 hedges both halves into silence. Option 3 refuses to concede anything, which in the face of the obvious evidence reads as a writer who has not looked.' },
+          why: 'The concession is generous but hedged (<em>may well</em>), narrowed in scope (<em>routine roles</em>) and in time (<em>in the short term</em>), and the counter is pitched no lower than the concession (<em>is unlikely to</em>). Option 1 reverses that balance, conceding at full strength and countering at bare possibility, so the reader leaves agreeing with the other side. Option 3 hedges both halves into silence. Option 4 refuses to concede anything, which in the face of the obvious evidence reads as a writer who has not looked.' },
 
         { id: 't7l3s1-2', type: 'order', tag: 'hedge-concede', level: 'C1+',
           stem: 'Put the four sentences in the order that makes a coherent concessive paragraph.',
@@ -686,7 +686,7 @@ T7.levels.push({
             'The sentence is too long for an essay.'
           ],
           answer: 1,
-          why: '<em>Will certainly</em> is near the top of the scale and <em>might conceivably</em> near the bottom, so the writer grants the objection as a near-certainty and offers their own point as a bare possibility. Option 0 is simply false: <em>while</em> takes any finite clause. Option 2 states the wrong rule — the halves need not match, but the counter must be at least as strong, and matching is only the minimum case of that. Length is not the problem, since a concessive sentence is long by nature.' },
+          why: '<em>Will certainly</em> is near the top of the scale and <em>might conceivably</em> near the bottom, so the writer grants the objection as a near-certainty and offers their own point as a bare possibility. Option 1 is simply false: <em>while</em> takes any finite clause. Option 3 states the wrong rule — the halves need not match, but the counter must be at least as strong, and matching is only the minimum case of that. Length is not the problem, since a concessive sentence is long by nature.' },
 
         { id: 't7l3s1-4', type: 'build', tag: 'hedge-concede', level: 'C1+',
           stem: 'Put the words in order to make the concessive half of this sentence: <em>______, it is unlikely to serve those at the start of a career equally well.</em>',
@@ -704,7 +704,7 @@ T7.levels.push({
             'It may possibly be arguable that online courses could perhaps widen access to some degree.'
           ],
           answer: 0,
-          why: 'The concession, its calibration (<em>could arguably</em>) and the unhedged counter all survive intact; only the connectives change. Option 1 strengthens the concession into a flat assertion and weakens the counter to a possibility, which reverses the balance. Option 2 denies the concession instead of granting it, and offers a reason that does not follow, since low completion is perfectly compatible with wide access. Option 3 keeps only the concession, hedges it four times over, and never reaches the counter at all.' }
+          why: 'The concession, its calibration (<em>could arguably</em>) and the unhedged counter all survive intact; only the connectives change. Option 2 strengthens the concession into a flat assertion and weakens the counter to a possibility, which reverses the balance. Option 3 denies the concession instead of granting it, and offers a reason that does not follow, since low completion is perfectly compatible with wide access. Option 4 keeps only the concession, hedges it four times over, and never reaches the counter at all.' }
       ]
     },
 
@@ -733,15 +733,15 @@ T7.levels.push({
       },
       items: [
         { id: 't7l3s2-1', type: 'choose', tag: 'hedge-boost', level: 'C1+',
-          stem: 'A paragraph has just shown that the fall in emissions was nine per cent against a target of twenty. Which sentence is entitled to a booster?',
+          stem: 'A paragraph has just reported that the fall in emissions was nine per cent against a target of twenty. Which sentence states what follows at the force those two figures earn?',
           options: [
-            'The scheme is undoubtedly the best available policy.',
+            'The scheme may possibly have fallen a little short of its target.',
             'The scheme has clearly fallen short of its own target.',
-            'The scheme will certainly be abandoned.',
-            'The scheme is obviously popular with residents.'
+            'The scheme is undoubtedly the best available policy.',
+            'It could be argued that the scheme did not quite meet its target.'
           ],
           answer: 1,
-          why: 'Nine against twenty is arithmetic the reader has just been handed, so <em>clearly</em> points at something real, and what it boosts is the step rather than a verdict on the world. Option 0 boosts a comparative judgement about every available policy, none of which the paragraph has examined. Option 2 boosts a prediction, and no figure can make a political decision certain. Option 3 boosts a claim about public opinion, on which emissions data are silent.' },
+          why: 'Nine against twenty is arithmetic the reader has just been handed, so the shortfall is not a matter of how confident anyone feels, and <em>clearly</em> points straight at the subtraction. Option 1 hedges a figure the paragraph has already given, which throws away the one thing the writer had earned. Option 3 boosts a comparison with every other available policy, none of which the paragraph has examined. Option 4 hands a settled subtraction back to the debate, as though a reader might reasonably read the same two numbers differently.' },
 
         { id: 't7l3s2-2', type: 'judge', tag: 'hedge-boost', level: 'C1+',
           given: 'The sample was drawn entirely from private schools; the findings must therefore be treated with caution.',
@@ -758,7 +758,7 @@ T7.levels.push({
             'Everybody must agree that air quality matters.'
           ],
           answer: 2,
-          why: 'Option 2 is epistemic <em>must</em> boosting an inference: given the figures, the conclusion follows, and the conditional names the ground it stands on. Option 0 is deontic — an obligation rather than a boost, and a different move altogether. Option 1 is an epistemic claim with no evidence behind it, so it overclaims. Option 3 tries to boost the reader into agreement, which is pressure rather than argument, and <em>everybody</em> is the Level 1 universal.' },
+          why: 'Option 3 is epistemic <em>must</em> boosting an inference: given the figures, the conclusion follows, and the conditional names the ground it stands on. Option 1 is deontic — an obligation rather than a boost, and a different move altogether. Option 2 is an epistemic claim with no evidence behind it, so it overclaims. Option 4 tries to boost the reader into agreement, which is pressure rather than argument, and <em>everybody</em> is the Level 1 universal.' },
 
         { id: 't7l3s2-4', type: 'spot', tag: 'hedge-boost', level: 'C1+',
           stem: 'One of the four parts boosts a claim that has not been earned. Find it.',
@@ -812,7 +812,7 @@ T7.levels.push({
             'That the schemes are easier to legislate, because the claim is placed last.'
           ],
           answer: 0,
-          why: 'The arithmetic claim is the only one in the passage carrying no hedge whatever, and the sentence hands the reader its own ground: the conditional <em>if people live longer and stop working at the same age</em> makes it an entailment rather than a prediction. Option 1 names a claim the writer explicitly hedges with <em>appear to</em> and <em>most of</em>. Option 2 names a claim carried by <em>would</em>, which is a calibrated prediction rather than an assertion, and a writer\'s own view is not by itself a warrant for force. Option 3 mistakes position for strength, since <em>considerably easier</em> is tied to a limited sample by the phrase that introduces it.' },
+          why: 'The arithmetic claim is the only one in the passage carrying no hedge whatever, and the sentence hands the reader its own ground: the conditional <em>if people live longer and stop working at the same age</em> makes it an entailment rather than a prediction. Option 2 names a claim the writer explicitly hedges with <em>appear to</em> and <em>most of</em>. Option 3 names a claim carried by <em>would</em>, which is a calibrated prediction rather than an assertion, and a writer\'s own view is not by itself a warrant for force. Option 4 mistakes position for strength, since <em>considerably easier</em> is tied to a limited sample by the phrase that introduces it.' },
 
         { id: 't7l3s3-2', type: 'choose', tag: 'hedge-revise', level: 'C1+',
           stem: 'A student writes: <em>The data show a nine per cent fall, which may possibly suggest that the policy might have had some effect.</em> What is the repair?',
@@ -823,7 +823,7 @@ T7.levels.push({
             'Move the hedge to the front: <em>It may be that the data show a nine per cent fall.</em>'
           ],
           answer: 1,
-          why: 'Three devices — <em>may</em>, <em>possibly</em> and <em>might</em> — all set the same value on a single inference, so two of them go and <em>suggests</em> is left to do the work it was already doing. Option 0 would hedge a measured figure and discard information the writer had earned. Option 2 swings across to the overclaim and converts a correlation into proof. Option 3 hedges the data instead of the inference, telling the reader that the writer is unsure what the figure was.' },
+          why: 'Three devices — <em>may</em>, <em>possibly</em> and <em>might</em> — all set the same value on a single inference, so two of them go and <em>suggests</em> is left to do the work it was already doing. Option 1 would hedge a measured figure and discard information the writer had earned. Option 3 swings across to the overclaim and converts a correlation into proof. Option 4 hedges the data instead of the inference, telling the reader that the writer is unsure what the figure was.' },
 
         { id: 't7l3s3-3', type: 'equiv', tag: 'hedge-revise', level: 'C1+',
           given: 'Everyone accepts that traffic in the capital is getting worse, and the new ring road will definitely solve it.',
@@ -835,7 +835,7 @@ T7.levels.push({
             'It could be argued that traffic might be worsening, and that the ring road could conceivably have some effect.'
           ],
           answer: 0,
-          why: 'The first claim is strengthened rather than hedged, because <em>on every published measure</em> is firmer ground than <em>everyone accepts</em> and a writer should take the firmer ground; the second is brought down from a guarantee to <em>is unlikely to … on its own</em>. Option 1 keeps a claim about opinion where a claim about measurement was available, then piles three hedges onto the second half. Option 2 has the calibration exactly the wrong way round, hedging the well-evidenced claim and asserting the speculative one. Option 3 hedges both halves into silence.' },
+          why: 'The first claim is strengthened rather than hedged, because <em>on every published measure</em> is firmer ground than <em>everyone accepts</em> and a writer should take the firmer ground; the second is brought down from a guarantee to <em>is unlikely to … on its own</em>. Option 2 keeps a claim about opinion where a claim about measurement was available, then piles three hedges onto the second half. Option 3 has the calibration exactly the wrong way round, hedging the well-evidenced claim and asserting the speculative one. Option 4 hedges both halves into silence.' },
 
         { id: 't7l3s3-4', type: 'spot', tag: 'hedge-revise', level: 'C1+',
           stem: 'One of the four parts is calibrated wrongly. Find it.',
@@ -845,7 +845,7 @@ T7.levels.push({
           why: '<em>May possibly indicate</em> sets one value three times over on a single inference, and the trial is in fact stronger evidence than that: twelve schools and a measured average will support <em>suggests</em>. The other parts are correctly pitched — the sample is named, the result is given as the figure it was, and <em>is worth extending</em> frames the recommendation modestly enough for a twelve-school trial.' },
 
         { id: 't7l3s3-5', type: 'choose', tag: 'hedge-revise', level: 'C1+',
-          stem: 'Which paragraph shape is likely to read best to an examiner?',
+          stem: 'Which paragraph shape lets a reader see which of its claims the writer is standing behind most firmly?',
           options: [
             'Every sentence hedged with <em>may</em>, so that nothing is overstated.',
             'Every sentence asserted flatly, so that the position is unmistakable.',
@@ -853,7 +853,7 @@ T7.levels.push({
             'Alternating strong and weak sentences, so that the paragraph sounds balanced.'
           ],
           answer: 2,
-          why: 'Force should track evidence, and in a well-built paragraph the evidence accumulates, so the closing inference is the sentence with the most behind it. Option 0 flattens the paragraph: if everything sits at <em>may</em>, nothing stands out and the reader cannot tell what is being argued. Option 1 is the over-generalisation the descriptors penalise. Option 3 alternates by pattern rather than by evidence, which produces a rhythm instead of an argument and leaves strong claims resting on nothing.' }
+          why: 'Force should track evidence, and in a well-built paragraph the evidence accumulates, so the closing inference is the sentence with the most behind it. Option 1 flattens the paragraph: if everything sits at <em>may</em>, nothing stands out and the reader cannot tell what is being argued. Option 2 is the over-generalisation the descriptors penalise. Option 4 alternates by pattern rather than by evidence, which produces a rhythm instead of an argument and leaves strong claims resting on nothing. The key is the longest option here because it is the only one describing a paragraph with more than one setting in it.' }
       ]
     }
   ],
@@ -872,7 +872,7 @@ T7.levels.push({
           'The concession and the counter are pitched at the same weak strength throughout.'
         ],
         answer: 0,
-        why: 'The first paragraph grants the criticism in flat assertions — <em>a video call carries none of that</em>, <em>are the ones now reporting</em> — because the writer intends to concede it fully and can afford to. The management happens afterwards: <em>it does not follow</em> limits what the concession entails, and <em>would appear to support</em> pitches the writer\'s own proposal lower than the point just granted. Option 1 misreads the first paragraph, which contains almost no hedging at all. Option 2 is wrong because the concession is never withdrawn. Option 3 is wrong because the two halves sit at visibly different strengths.' },
+        why: 'The first paragraph grants the criticism in flat assertions — <em>a video call carries none of that</em>, <em>are the ones now reporting</em> — because the writer intends to concede it fully and can afford to. The management happens afterwards: <em>it does not follow</em> limits what the concession entails, and <em>would appear to support</em> pitches the writer\'s own proposal lower than the point just granted. Option 2 misreads the first paragraph, which contains almost no hedging at all. Option 3 is wrong because the concession is never withdrawn. Option 4 is wrong because the two halves sit at visibly different strengths.' },
 
       { id: 't7l3ck-2', type: 'choose', tag: 'hedge-boost', level: 'C1+',
         stem: 'Which sentence uses a booster that the sentence itself pays for?',
@@ -883,18 +883,18 @@ T7.levels.push({
           'Clearly, governments should invest more in vocational training.'
         ],
         answer: 1,
-        why: 'The first clause states the single respect in which the groups differed, so the conclusion follows from it and <em>must</em> marks an entailment rather than announcing a conviction. Option 0 boosts a prediction about the future of an entire sector, which nothing could pay for. Option 2 boosts a platitude, and a claim nobody disputes gains nothing from emphasis. Option 3 boosts a policy recommendation, which is an argument to be made rather than a step to be pointed at.' },
+        why: 'The first clause states the single respect in which the groups differed, so the conclusion follows from it and <em>must</em> marks an entailment rather than announcing a conviction. Option 1 boosts a prediction about the future of an entire sector, which nothing could pay for. Option 3 boosts a platitude, and a claim nobody disputes gains nothing from emphasis. Option 4 boosts a policy recommendation, which is an argument to be made rather than a step to be pointed at.' },
 
       { id: 't7l3ck-3', type: 'gap', tag: 'hedge-concede', level: 'C1+',
         blank: '(2)',
         lines: [
           { who: 'Anucha', text: 'My third paragraph admits that free university tuition would cost a great deal. I am worried that admitting it loses me the argument.' },
-          { who: 'Tutor', text: 'It only does if you admit it flatly. Write that it ___(1)___ prove expensive in the first decade, and then answer it: the cost ___(2)___ outweigh the long-run gain in participation.' }
+          { who: 'Tutor', text: 'It only does if you admit it flatly. Write that it may well prove expensive in the first decade, and then answer it: the cost ___(2)___ outweigh the long-run gain in participation.' }
         ],
         stem: 'Choose the best option for gap (2).',
         options: ['is unlikely to', 'might possibly not', 'will not', 'cannot'],
         answer: 0,
-        why: 'The concession in gap (1) is pitched at probability, so the counter has to be at least as strong, and <em>is unlikely to</em> is a firm claim about the balance that still stops short of a guarantee. <em>Might possibly not</em> counters at bare possibility and would leave the concession the heavier half of the sentence. <em>Will not</em> and <em>cannot</em> both overclaim about a comparison running over decades, and a reader who has just been told the cost is real will not accept a flat denial that it matters.' },
+        why: 'The concession the tutor has just dictated is pitched at probability (<em>may well prove expensive</em>), so the counter has to be at least as strong, and <em>is unlikely to</em> is a firm claim about the balance that still stops short of a guarantee. <em>Might possibly not</em> counters at bare possibility and would leave the concession the heavier half of the sentence. <em>Will not</em> and <em>cannot</em> both overclaim about a comparison running over decades, and a reader who has just been told the cost is real will not accept a flat denial that it matters.' },
 
       { id: 't7l3ck-4', type: 'cloze', tag: 'hedge-revise', level: 'C1+',
         passage: 'A city that doubles its cycle lanes and then records more cycling has not yet shown that the lanes caused the increase. Fuel prices, the weather and a new bike-hire scheme all moved in the same year, and the data as published ___(1)___ separate them.\n\nWhat the figures do support is narrower and still useful. Where lanes were built on routes that already carried cyclists, use rose sharply; where they were built on quiet residential streets, it barely moved. The programme ___(2)___ work, in other words, but not everywhere, and the difference between the two kinds of street is where the next round of spending should go.',
@@ -924,7 +924,7 @@ T7.levels.push({
         stem: 'Put the words in order to make the counter half of this sentence: <em>While higher fees may well raise revenue in the short term, ______.</em>',
         tiles: ['they', 'are', 'unlikely', 'to', 'widen', 'access', 'in', 'the', 'long', 'run'],
         solution: 'they are unlikely to widen access in the long run',
-        alt: ['in the long run they are unlikely to widen access'],
+        alt: ['in the long run they are unlikely to widen access', 'they are unlikely in the long run to widen access'],
         why: 'The counter must be at least as strong as the concession, and <em>are unlikely to</em> answers <em>may well</em> at a matching weight; a weaker counter would leave the concession in charge of the sentence. <em>Unlikely</em> is a predicate adjective, so it needs <em>are</em> in front of it and <em>to</em> after it — there is no modal in this half at all, which is why the negative sits inside the adjective rather than in a <em>not</em>. The time phrase answers <em>in the short term</em> in the concession, and may stand at either end of the clause.' }
     ]
   }

@@ -45,6 +45,20 @@ browser: no class list, no teacher console, no record if they switch device.
 
 5. The teacher PIN is `1234` until you set a `TEACHER_PIN` script property.
 
+The URL currently wired into both files is
+
+```
+https://script.google.com/macros/s/AKfycbzMjkf-r9gOMga61DUp0kRrxZ1zAOQmR7k2xhbr7VAMRTkaGO3Rds98rcsNNsvwBG1V/exec
+```
+
+### Clearing out a test account
+
+`Code.gs` has a maintenance function for this. Put the ids in the `TO_PURGE`
+list near the bottom of the file, save, then **Run → purgeListed** from the
+Apps Script editor. It removes the student's row and every row they left on
+Attempts, Tests and Sessions. Nothing about it is reachable over the network,
+and running it from the editor does not need a redeploy.
+
 **Remember:** editing the Apps Script and saving it does *not* update the live endpoint.
 You must do Deploy → Manage deployments → pencil → New version → Deploy. Same URL,
 new code.
@@ -105,6 +119,8 @@ switched off because there are none yet. To turn it on, save them as `slides/s-0
 | `Code.gs` | the Google Apps Script server — paste into a Sheet, not served from here |
 | `verify.js` / `render-test.js` | offline checks; see below |
 | `ANALYSIS.md` | the first-principles treatment of the modal system the course is built on |
+| `REVIEW-LOG.md` | the record of the content review — one line for every item that changed |
+| `rebalance.js` | evens out which option position the keys sit on; see below |
 
 ---
 
@@ -126,6 +142,13 @@ the number of stage checks. It exits non-zero, so it can gate a deploy.
 `render-test.js` needs `npm install jsdom`. It draws every item through the real renderer,
 clicks the declared correct answer, and fails if the engine disagrees — which is how you
 find an item whose key is wrong rather than merely oddly worded.
+
+`rebalance.js` is the third, and you only need it occasionally. If you add a batch of
+questions and `verify.js` starts warning that one option position is holding too many of
+the keys, run `node rebalance.js` to see what it would do and `node rebalance.js --write`
+to do it. It swaps two options and updates `answer` — it never rewords anything, and it
+skips any item whose `why` refers to an option by number or by position, so no explanation
+can be made untrue.
 
 Both were clean at the time of writing: 564 items, 68 tags, no errors, no warnings.
 (They also run from the folder above, if you keep the app in a subfolder.)

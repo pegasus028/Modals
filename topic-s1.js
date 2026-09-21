@@ -44,38 +44,38 @@ T1.levels.push({
       },
       items: [
         { id: 't1l1s1-1', type: 'choose', tag: 'frame-twolayer', level: 'B1',
-          stem: 'Which sentence makes a claim about the weather itself, rather than about the speaker\'s confidence?',
+          stem: 'Which sentence tells you what the weather at the ceremony actually did, rather than how sure the speaker is about it?',
           options: [
-            'It may rain before the ceremony.',
-            'It rained for the whole of the ceremony.',
-            'It might rain before the ceremony.',
-            'It could rain before the ceremony.'
+            'It may rain during the ceremony.',
+            'It rained during the ceremony.',
+            'It might rain during the ceremony.',
+            'It could rain during the ceremony.'
           ],
           answer: 1,
-          why: 'Only option 2 asserts anything about the weather: the speaker is reporting an event. <em>May</em>, <em>might</em> and <em>could</em> all leave the rain completely undecided and tell you instead how far the speaker will commit to it. Three different words doing one job — framing, not describing.' },
+          why: 'Only option 2 asserts anything about the weather: the speaker reports an event, and you could contradict them with evidence. <em>May</em>, <em>might</em> and <em>could</em> in options 1, 3 and 4 leave the rain entirely undecided and tell you instead how far the speaker will commit to it — three different words doing one job. Notice that the asserting option has to change tense: without a modal there is no way to make a bare claim about weather that has not happened yet, which is the first sign that a modal is doing something a tense cannot.' },
 
         { id: 't1l1s1-2', type: 'judge', tag: 'frame-twolayer', level: 'B1',
-          given: 'The 07:40 train <em>may</em> be cancelled again this week.',
-          stem: 'The speaker is telling you that the train has been cancelled.',
+          given: 'The 07:40 train <em>may</em> be cancelled on Friday.',
+          stem: 'The speaker is telling you that the 07:40 train will not run on Friday.',
           answer: 1,
-          why: 'False. <em>May</em> frames the proposition <em>the train is cancelled</em> as one possibility among others, so nothing has been asserted about the train. This is not a case of having too little information either: the sentence tells us something quite definite, but what it tells us is the speaker\'s position, not the timetable.' },
+          why: 'False. <em>May</em> leaves the cancellation open, offering it as one possibility among others, so nothing at all has been asserted about Friday\'s train. This is not a case of having too little information either: the sentence tells us something quite definite, but what it tells us is how far the speaker will commit, not what the timetable will do.' },
 
         { id: 't1l1s1-3', type: 'choose', tag: 'frame-twolayer', level: 'B1',
-          stem: 'The proposition in all four sentences is <em>the committee accepts the proposal</em>. Which one frames it as something required rather than something likely?',
+          stem: 'All four sentences are about the same thing: the committee accepting the proposal. In which one is accepting it something the committee has to do, rather than something the speaker expects to happen?',
           options: [
-            'The committee will accept the proposal.',
-            'The committee might accept the proposal.',
-            'The committee must accept the proposal by Friday.',
-            'The committee should accept the proposal, on the evidence so far.'
+            'The committee will accept the proposal at Friday\'s meeting.',
+            'The committee might accept the proposal at Friday\'s meeting.',
+            'The committee must accept the proposal at Friday\'s meeting.',
+            'The committee could accept the proposal at Friday\'s meeting.'
           ],
           answer: 2,
-          why: 'All four hold the same proposition and differ only in the layer above it. <em>Will</em> and <em>might</em> are predictions, strong and weak; <em>should … on the evidence so far</em> is an expectation, which is still a judgement about what is likely. Only <em>must … by Friday</em>, with its deadline, frames the acceptance as a requirement placed on the committee.' },
+          why: 'Every option holds the same proposition still and changes only the one word in front of it. <em>Will</em>, <em>might</em> and <em>could</em> in options 1, 2 and 4 are all predictions — strong, weak and weak — and none of them places any obligation on the committee. Only option 3 makes accepting the proposal something the committee is required to do, and notice that it says nothing at all about how likely acceptance is. The meeting has not changed; only the speaker\'s relationship to it has.' },
 
         { id: 't1l1s1-4', type: 'sort', tag: 'frame-twolayer', level: 'B1',
-          stem: 'Is the speaker describing the event, or framing it?',
+          stem: 'Does the sentence tell you what happens, or how the speaker sees it?',
           bins: [
-            { key: 'desc', label: 'Describing the event', hint: 'a plain claim about what happens' },
-            { key: 'frame', label: 'Framing the event', hint: 'how sure, how required, how permitted' }
+            { key: 'desc', label: 'What happens', hint: 'a plain claim about the world' },
+            { key: 'frame', label: 'How the speaker sees it', hint: 'how sure, how necessary, how permitted' }
           ],
           items: [
             { text: 'The lift <em>breaks down</em> twice a month.', bin: 'desc' },
@@ -89,7 +89,7 @@ T1.levels.push({
 
         { id: 't1l1s1-5', type: 'equiv', tag: 'frame-twolayer', level: 'B1',
           given: 'I don\'t know whether the clinic opens on Saturday.',
-          stem: 'Which sentence frames the same uncertainty with a modal?',
+          stem: 'Which sentence says the same thing using a modal?',
           options: [
             'The clinic doesn\'t open on Saturday.',
             'The clinic may open on Saturday.',
@@ -142,11 +142,11 @@ T1.levels.push({
           stem: 'Which sentence is grammatical?',
           options: [
             'By next term the new intake will can use the online catalogue.',
-            'By next term the new intake will be able to use the online catalogue.',
+            'By next term the new intake can will use the online catalogue.',
             'By next term the new intake will could use the online catalogue.',
-            'By next term the new intake can will use the online catalogue.'
+            'By next term the new intake will be able to use the online catalogue.'
           ],
-          answer: 1,
+          answer: 3,
           why: 'There is one modal slot, so <em>will can</em>, <em>will could</em> and <em>can will</em> are the same error in three different arrangements: stacked, stacked with a remote form, and reversed. <em>Be able to</em> is not a more elegant way of saying <em>can</em> here — it is the only way, because <em>can</em> has no form at all that can follow another verb.' },
 
         { id: 't1l1s2-4', type: 'build', tag: 'frame-form', level: 'B1',
@@ -199,10 +199,10 @@ T1.levels.push({
             'Do you can help with the stall on Saturday?',
             'Can you help with the stall on Saturday?',
             'Are you can help with the stall on Saturday?',
-            'You can help with the stall on Saturday, can you?'
+            'Will you can help with the stall on Saturday?'
           ],
           answer: 1,
-          why: 'A modal inverts with the subject by itself, so <em>Can you help…?</em> needs nothing added. Option 1 drafts in <em>do</em>, which English supplies only where there is no operator; option 3 tries <em>be</em> in a role it cannot fill; option 4 keeps statement order and adds a tag, and a tag asks for agreement with something already asserted rather than asking for help.' },
+          why: 'A modal moves in front of the subject by itself, so <em>Can you help…?</em> needs nothing added to it. Option 1 drafts in <em>do</em>, which English supplies only where there is no operator; option 3 tries <em>be</em> in a role it cannot fill; option 4 inverts correctly but then stacks a second modal into a slot that holds exactly one, and the question it is reaching for is <em>Will you be able to help…?</em> The key is the shortest option here, and that is the point rather than an accident: everything the other three add is something a modal question has no room for.' },
 
         { id: 't1l1s3-2', type: 'gap', tag: 'frame-nice', level: 'B1',
           blank: '(1)',
@@ -212,15 +212,15 @@ T1.levels.push({
             { who: 'Ploy', text: 'That is fine. Kwan can, so she will open up for us.' }
           ],
           stem: 'Choose the best option for gap (1).',
-          options: ['Do we should', 'Should we', 'Are we should', 'We should'],
-          answer: 1,
-          why: 'The modal moves to the front of the clause on its own: <em>Should we book it…?</em> <em>Do we should</em> and <em>are we should</em> both import a second operator into a slot <em>should</em> already fills. <em>We should book it</em> is well formed but is not a question, and Anan replies to one. Notice too that <em>Kwan can</em> stands with no verb after it at all.' },
+          options: ['Do we should', 'Will we should', 'Are we should', 'Should we'],
+          answer: 3,
+          why: 'The modal moves to the front of the clause on its own: <em>Should we book it…?</em> Each of the other three puts a second operator into a slot that <em>should</em> has already filled — <em>do</em>, <em>are</em> and a stacked <em>will</em> alike. That is why the right answer is the shortest one: a modal question needs nothing added to it. Notice too that <em>Kwan can</em> in the last line stands with no verb after it at all.' },
 
         { id: 't1l1s3-3', type: 'choose', tag: 'frame-nice', level: 'B1',
           stem: '"Will the results be posted online?" — "______"',
-          options: ['Yes, they will.', 'Yes, they do.', 'Yes, they are.', 'Yes, they will be posted them.'],
-          answer: 0,
-          why: 'A short answer repeats the operator from the question, and the operator here is <em>will</em>. <em>Do</em> belongs to questions that had no operator of their own; <em>are</em> would answer a <em>be</em>-question such as "Are the results online?"; and option 4 both repeats the whole verb phrase, which a short answer never does, and hangs an object on a passive that cannot take one.' },
+          options: ['Yes, they are.', 'Yes, they do.', 'Yes, they will.', 'Yes, they can.'],
+          answer: 2,
+          why: 'A short answer repeats the operator from the question, and the operator here is <em>will</em>. <em>Do</em> belongs to questions that had no operator of their own; <em>are</em> would answer a <em>be</em>-question such as "Are the results online?"; and <em>can</em> is a perfectly good short answer to a different question, since it echoes an operator this one never used and replies about what is possible instead of what will happen.' },
 
         { id: 't1l1s3-4', type: 'spot', tag: 'frame-nice', level: 'B1',
           stem: 'One of the four parts is wrong. Find it.',
@@ -235,11 +235,11 @@ T1.levels.push({
           options: [
             'Nan can drive the minibus, and Somchai does too.',
             'Nan can drive the minibus, and Somchai can too.',
-            'Nan can drive the minibus, and so is Somchai.',
-            'Nan can drive the minibus, and Somchai can drive too it.'
+            'Nan can drive the minibus, and Somchai is too.',
+            'Nan can drive the minibus, and Somchai will too.'
           ],
           answer: 1,
-          why: 'When the verb is dropped the modal stays behind to hold the clause together — that is the code property. <em>Somchai does too</em> echoes an operator that is not there, since the first clause contains no <em>do</em>; <em>and so is Somchai</em> echoes a <em>be</em> that is not there either. Option 4 keeps the verb but misplaces its object, which defeats the purpose of a short form.' }
+          why: 'When the verb is dropped the modal stays behind to hold the clause up — that is the code property, and it is why the second half of option 2 needs no verb at all. <em>Somchai does too</em> echoes an operator that is not there, since the first clause contains no <em>do</em>; <em>Somchai is too</em> echoes a <em>be</em> that is not there either. <em>Somchai will too</em> is well formed English, but <em>will</em> is a different operator from <em>can</em>, so it reports willingness rather than the ability the given sentence describes.' }
       ]
     }
   ],
@@ -247,15 +247,15 @@ T1.levels.push({
     id: 't1l1ck', name: 'Stage Check · What a modal actually does',
     items: [
       { id: 't1l1ck-1', type: 'choose', tag: 'frame-twolayer', level: 'B1',
-        stem: 'Which sentence adds a frame to the proposition <em>the ferry runs on Sundays</em> without changing anything about the ferry?',
+        stem: 'All four sentences start from the same idea: <em>the ferry runs on Sundays</em>. Which one tells you nothing new about the ferry and only reports how sure the speaker is?',
         options: [
           'The ferry ran on Sundays last year.',
           'The ferry should run on Sundays.',
-          'The ferry runs on Sundays and on public holidays.',
-          'The ferry service was extended to Sundays.'
+          'The ferry runs on Sundays and Mondays.',
+          'The ferry stopped running on Sundays.'
         ],
         answer: 1,
-        why: '<em>Should</em> leaves the timetable untouched and reports an expectation about it, which is the frame layer doing its work. Option 1 shifts the time reference and asserts a past fact; option 3 adds new information about which days; option 4 describes an event in the world, namely the extension of a service. Only a modal can comment on a proposition without altering it.' },
+        why: 'Option 2 leaves the timetable exactly where it was and reports the speaker\'s expectation about it, which is the frame layer doing its work. Option 1 moves the claim into past time, option 3 adds a day the original never mentioned, and option 4 asserts a change in the service. Each of those three tells you something new about the ferry; only the modal comments on the proposition without altering it.' },
 
       { id: 't1l1ck-2', type: 'choose', tag: 'frame-form', level: 'B1',
         stem: 'Which sentence is correct?',
@@ -283,13 +283,13 @@ T1.levels.push({
           { who: 'Mali', text: 'I will. Thank you.' }
         ],
         stem: 'Choose the best option for gap (4).',
-        options: ['Do I can', 'Can I', 'Can I to', 'Am I allowed can'],
-        answer: 1,
-        why: 'The modal inverts with the subject on its own, so the question is simply <em>Can I…?</em> <em>Do I can</em> supplies an operator where <em>can</em> is already one; <em>can I to</em> inserts an infinitive marker a modal never takes; <em>am I allowed can</em> stacks a modal onto a phrase that is already complete, since <em>am I allowed to hand…</em> would do the job by itself. The reply <em>You can</em> echoes the operator, as a short answer must.' },
+        options: ['Do I can', 'Will I can', 'Can I to', 'Can I'],
+        answer: 3,
+        why: 'The modal inverts with the subject on its own, so the question is simply <em>Can I…?</em> <em>Do I can</em> supplies an operator where <em>can</em> is already one; <em>can I to</em> inserts an infinitive marker a modal never takes; <em>will I can</em> puts two modals in a slot that holds exactly one, and the repair for that would be <em>Will I be able to…?</em> The reply <em>You can</em> echoes the operator, as a short answer must.' },
 
       { id: 't1l1ck-5', type: 'equiv', tag: 'frame-twolayer', level: 'B1',
         given: 'I am certain that the office is closed today.',
-        stem: 'Which sentence frames the same certainty as a deduction?',
+        stem: 'Which sentence shows that the speaker is sure, using a modal?',
         options: [
           'The office is closed today.',
           'The office may be closed today.',
@@ -301,9 +301,9 @@ T1.levels.push({
 
       { id: 't1l1ck-6', type: 'judge', tag: 'frame-nice', level: 'B1',
         given: 'Kanya can\'t come to the rehearsal, but Tim can.',
-        stem: 'The final <em>can</em> stands in place of <em>come to the rehearsal</em>.',
+        stem: 'The words <em>come to the rehearsal</em> have been left out after the final <em>can</em>.',
         answer: 0,
-        why: 'True. This is the code property: when the verb phrase is dropped, the modal remains behind to carry the clause, and the missing material is recovered from the clause before it. An ordinary verb cannot do this — it would need <em>does</em> — and that difference is one of the tests that places <em>can</em> in the operator class.' }
+        why: 'True. This is the code property: when the verb phrase is dropped, the modal remains behind to carry the clause on its own, and the missing words are recovered from the clause before it. An ordinary verb cannot do this — it would need <em>does</em> — and that difference is one of the tests that places <em>can</em> in the operator class.' }
     ]
   }
 });
@@ -340,8 +340,8 @@ T1.levels.push({
       items: [
         { id: 't1l2s1-1', type: 'choose', tag: 'frame-form', level: 'B1+',
           stem: 'Neither of the two proposals ______ the minimum safety standard.',
-          options: ['can meets', 'can meet', 'can to meet', 'cans meet'],
-          answer: 1,
+          options: ['can meets', 'cans meet', 'can to meet', 'can meet'],
+          answer: 3,
           why: 'The subject <em>neither</em> is singular, so a student watching for agreement will want an <em>-s</em> somewhere — but there is nowhere to put one. The modal is the finite word and modals never agree, and the verb beneath a modal is bare for every subject alike, so <em>can meet</em> serves <em>neither</em>, <em>I</em> and <em>they</em> equally. <em>Can to meet</em> adds an infinitive marker the chain has no room for.' },
 
         { id: 't1l2s1-2', type: 'spot', tag: 'frame-form', level: 'B1+',
@@ -355,20 +355,20 @@ T1.levels.push({
           passage: 'Notice to all residents.\n\nThe lift in Block B ___(1)___ out of service from Monday to Wednesday while the cables are replaced. Residents on the upper floors ___(2)___ the stairs during this period, and anyone who needs help with shopping should speak to the caretaker in Flat 2.',
           blank: '(1)',
           stem: 'Choose the best option for blank (1).',
-          options: ['will is', 'will be', 'will to be', 'will being'],
-          answer: 1,
+          options: ['will is', 'will being', 'will to be', 'will be'],
+          answer: 3,
           why: 'The verb under a modal is bare, and the bare form of <em>is</em> is <em>be</em>. <em>Will is</em> keeps the third-person form, which the slot has no room for; <em>will to be</em> inserts an infinitive marker; <em>will being</em> uses the <em>-ing</em> form, which belongs further down the chain and only ever after a <em>be</em> of its own. It is the irregularity of <em>be</em> that makes this link visible, since with most verbs the bare form and the plain present look identical.' },
 
         { id: 't1l2s1-4', type: 'choose', tag: 'frame-form', level: 'B1+',
-          stem: 'Which sentence puts the past where English allows it?',
+          stem: 'All four sentences are trying to say that the speaker is sure the report was finished yesterday. Which one is correct English?',
           options: [
-            'She could finished the report yesterday.',
+            'She must finished the report yesterday.',
             'She must finish the report yesterday.',
-            'She might finished the report yesterday.',
+            'She musted finish the report yesterday.',
             'She must have finished the report yesterday.'
           ],
           answer: 3,
-          why: 'A modal has no past tense and the verb beneath it cannot carry one either, so the past has to travel one link further down, into <em>have</em> plus a participle. Options 1 and 3 put a past ending in the bare-infinitive slot, the one place it cannot go; option 2 keeps the chain intact but asks a present frame to reach a past adverbial, which is why <em>must finish … yesterday</em> reads as nonsense. <em>Must have finished</em> is a deduction made now about something already over.' },
+          why: 'A modal has no past tense and the bare verb beneath it cannot carry one either, so the past has to travel one link further down, into <em>have</em> plus a participle. Option 1 puts a past ending in the bare-infinitive slot, the one place it cannot go; option 2 leaves the whole phrase in the present and asks the adverbial <em>yesterday</em> to drag it backwards, which is why it reads as nonsense; option 3 invents a past form of the modal itself, and no modal in the language has one. Option 4 is longer than the others only because the extra link is the entire repair: <em>must have finished</em> is a deduction made now about something already over.' },
 
         { id: 't1l2s1-5', type: 'equiv', tag: 'frame-form', level: 'B1+',
           given: 'The regulations do not permit staff to park in the visitor bays.',
@@ -409,16 +409,16 @@ T1.levels.push({
       },
       items: [
         { id: 't1l2s2-1', type: 'choose', tag: 'frame-chain', level: 'B1+',
-          stem: 'Don\'t call her now — she ______ her driving test.',
-          options: ['might take', 'might be taking', 'might taking', 'might be take'],
-          answer: 1,
-          why: 'The reason not to call is that the test is under way, and progressive <em>be</em> plus <em>-ing</em> is the link that says so. <em>Might take</em> guesses about the test as a whole event rather than about this minute; <em>might taking</em> has an <em>-ing</em> with no <em>be</em> to license it, and a modal is never followed directly by an <em>-ing</em> form; <em>might be take</em> keeps the <em>be</em> but leaves the verb bare, and progressive <em>be</em> always demands <em>-ing</em>.' },
+          stem: 'Don\'t call her — she ______ her driving test at the moment.',
+          options: ['might take', 'might be take', 'might taking', 'might be taking'],
+          answer: 3,
+          why: 'The reason not to call is that the test is under way, and progressive <em>be</em> plus <em>-ing</em> is the link that says so. <em>Might take</em> guesses about the test as a whole event rather than about what is happening right now, so it clashes with <em>at the moment</em>; <em>might taking</em> has an <em>-ing</em> with no <em>be</em> to license it, and a modal is never followed directly by an <em>-ing</em> form; <em>might be take</em> keeps the <em>be</em> but leaves the verb bare, and progressive <em>be</em> always demands <em>-ing</em>.' },
 
         { id: 't1l2s2-2', type: 'build', tag: 'frame-chain', level: 'B1+',
           stem: 'Put the words in order. The parcels are the things that get checked.',
           tiles: ['the parcels', 'must', 'be', 'checked', 'at the gate'],
           solution: 'the parcels must be checked at the gate',
-          alt: [],
+          alt: ['at the gate the parcels must be checked'],
           why: 'The chain runs modal, then passive <em>be</em>, then the past participle. "Must checked" would leave the participle with nothing holding it up, and "must be check" would ignore the fact that passive <em>be</em> always demands a participle. The parcels do not do the checking, and moving the doer out of the subject position is exactly what the passive link is for.' },
 
         { id: 't1l2s2-3', type: 'choose', tag: 'frame-chain', level: 'B1+',
@@ -443,9 +443,9 @@ T1.levels.push({
           passage: 'Match report.\n\nThe second half was held up for nearly ten minutes while a player ___(1)___ on the pitch. By the time play restarted the light had begun to go, and the referee warned both captains that the match ___(2)___ if it got any darker.',
           blank: '(2)',
           stem: 'Choose the best option for blank (2).',
-          options: ['will abandon', 'will be abandoned', 'will be abandoning', 'will abandoned'],
-          answer: 1,
-          why: 'The match is the thing abandoned, not the thing doing the abandoning, so the chain needs passive <em>be</em> and a past participle. <em>Will abandon</em> makes the match the agent; <em>will be abandoning</em> uses the progressive link, which would have the match busy abandoning something else; <em>will abandoned</em> drops the <em>be</em> altogether and leaves a participle immediately after a modal, which only ever takes a bare form.' }
+          options: ['would abandon', 'would abandoned', 'would be abandoning', 'would be abandoned'],
+          answer: 3,
+          why: 'The match is the thing abandoned, not the thing doing the abandoning, so the chain needs passive <em>be</em> and a past participle. <em>Would abandon</em> makes the match the agent; <em>would be abandoning</em> uses the progressive link, which would have the match busy abandoning something else; <em>would abandoned</em> drops the <em>be</em> altogether and leaves a participle immediately after a modal, which only ever takes a bare form. The modal is <em>would</em> and not <em>will</em> because the warning is being reported afterwards, in past time.' }
       ]
     },
 
@@ -474,11 +474,11 @@ T1.levels.push({
       },
       items: [
         { id: 't1l2s3-1', type: 'sort', tag: 'frame-chain', level: 'B1+',
-          stem: 'What does the chain under the modal tell you about the event?',
+          stem: 'What do the words after the modal tell you about the event?',
           bins: [
-            { key: 'over', label: 'Already over', hint: 'have plus a participle' },
+            { key: 'over', label: 'Already over', hint: 'have plus a past form' },
             { key: 'going', label: 'Going on now', hint: 'be plus an -ing form' },
-            { key: 'done', label: 'Done to the subject', hint: 'be plus a participle' }
+            { key: 'done', label: 'Done to the subject', hint: 'be plus a past form' }
           ],
           items: [
             { text: 'The train <em>must have left</em> without us.', bin: 'over' },
@@ -491,10 +491,10 @@ T1.levels.push({
           why: 'The modal is not the clue here; the link under it is. <em>Have</em> plus a participle puts the event before now, progressive <em>be</em> plus <em>-ing</em> stretches it across the moment being described, and passive <em>be</em> plus a participle moves the doer out of the subject slot. Read the links in order and the meaning falls out of them, whatever modal happens to be on top.' },
 
         { id: 't1l2s3-2', type: 'choose', tag: 'frame-chain', level: 'B1+',
-          stem: 'Your colleague\'s computer is off and her desk has been cleared. Which sentence fits the evidence?',
-          options: ['She must be leaving.', 'She must have left.', 'She must leave.', 'She must be left.'],
-          answer: 1,
-          why: 'A dark screen and a clear desk are the traces of something already finished, and <em>have</em> plus a participle is the link that puts the event before now. <em>Must be leaving</em> would describe her walking out at this moment, which is not what you can see; <em>must leave</em> is an obligation rather than a deduction; <em>must be left</em> is a passive and would mean that somebody has to leave her behind.' },
+          stem: 'It is half past four. You look across the office: your colleague\'s coat has gone from the hook and her computer is switched off. Which sentence fits what you can see?',
+          options: ['She must be leaving.', 'She must be left.', 'She must leave.', 'She must have left.'],
+          answer: 3,
+          why: 'A missing coat and a dark screen are the traces of something already finished, and <em>have</em> plus a participle is the link that puts the event before now. <em>Must be leaving</em> would describe her walking out at this very moment, which is not what you can see; <em>must leave</em> is an obligation rather than a deduction; <em>must be left</em> is a passive and would mean that somebody has to leave her behind.' },
 
         { id: 't1l2s3-3', type: 'equiv', tag: 'frame-chain', level: 'B1+',
           given: 'The university may publish the entry statistics next month.',
@@ -512,11 +512,11 @@ T1.levels.push({
           stem: 'Two colleagues are looking up at a lit office window at ten at night. Which sentence is the natural deduction?',
           options: [
             'Someone must work late tonight.',
-            'Someone must be working late tonight.',
+            'Someone must be worked late tonight.',
             'Someone must have worked late tonight.',
-            'Someone must be worked late tonight.'
+            'Someone must be working late tonight.'
           ],
-          answer: 1,
+          answer: 3,
           why: 'The light is on at this moment, so the event is in progress and the chain needs progressive <em>be</em> plus <em>-ing</em>. <em>Must work</em> reads as an obligation, because with no link underneath it nothing anchors the event to the present moment; <em>must have worked</em> places the work before now, which the lit window contradicts; <em>must be worked</em> is a passive, and it is not the person who is being worked.' },
 
         { id: 't1l2s3-5', type: 'order', tag: 'frame-chain', level: 'B1+',
@@ -536,20 +536,20 @@ T1.levels.push({
     items: [
       { id: 't1l2ck-1', type: 'choose', tag: 'frame-chain', level: 'B1+',
         stem: 'The minutes ______ to all members before the next meeting.',
-        options: ['should circulate', 'should be circulated', 'should being circulated', 'should have circulating'],
-        answer: 1,
-        why: 'The minutes are the thing circulated, so the passive link is needed: <em>be</em> plus a past participle. <em>Should circulate</em> makes the minutes the agent; <em>should being circulated</em> puts an <em>-ing</em> form directly after a modal, which demands a bare one; <em>should have circulating</em> puts <em>-ing</em> after <em>have</em>, which only ever takes a participle.' },
+        options: ['should send', 'should have sending', 'should being sent', 'should be sent'],
+        answer: 3,
+        why: 'The minutes are the thing sent, not the sender, so the passive link is needed: <em>be</em> plus a past participle. <em>Should send</em> makes the minutes do the sending; <em>should being sent</em> puts an <em>-ing</em> form directly after a modal, which demands a bare one; <em>should have sending</em> puts an <em>-ing</em> after <em>have</em>, which only ever takes a participle.' },
 
       { id: 't1l2ck-2', type: 'choose', tag: 'frame-form', level: 'B1+',
-        stem: 'Which sentence puts the past where English allows it?',
+        stem: 'The speaker does not know whether the delivery arrived before opening time. Which sentence is correct English?',
         options: [
           'The delivery might arrived before we opened.',
           'The delivery might have arrived before we opened.',
-          'The delivery might arrive yesterday before we opened.',
+          'The delivery might arrive before we opened.',
           'The delivery mighted arrive before we opened.'
         ],
         answer: 1,
-        why: 'A modal cannot be tensed and neither can the bare verb beneath it, so the past is carried by <em>have</em> plus a participle. Option 1 puts a past ending in the bare-infinitive slot; option 3 leaves the chain in the present and tries to drag it backwards with an adverbial, which is much the commonest way of getting this wrong; option 4 invents a past form of the modal itself, and no modal has one.' },
+        why: 'A modal cannot be tensed and neither can the bare verb beneath it, so the past is carried one link further down by <em>have</em> plus a participle. Option 1 puts a past ending in the bare-infinitive slot; option 3 leaves the verb bare and in present time and then asks the past clause <em>before we opened</em> to drag it backwards, which is much the commonest way of getting this wrong; option 4 invents a past form of the modal itself, and no modal has one.' },
 
       { id: 't1l2ck-3', type: 'spot', tag: 'frame-chain', level: 'B1+',
         stem: 'One of the four parts is wrong. Find it.',
@@ -562,8 +562,8 @@ T1.levels.push({
         passage: 'From a university handbook.\n\nCoursework ___(1)___ through the online portal by four o\'clock on the deadline day. Work that arrives late without an approved extension ___(2)___ a penalty of five marks a day. Students who are unwell should contact the faculty office before the deadline rather than after it.',
         blank: '(1)',
         stem: 'Choose the best option for blank (1).',
-        options: ['must submit', 'must be submitted', 'must be submitting', 'must been submitted'],
-        answer: 1,
+        options: ['must submit', 'must been submitted', 'must be submitting', 'must be submitted'],
+        answer: 3,
         why: 'Coursework does not submit anything; it is submitted, so the passive link is required — <em>be</em> plus a past participle. <em>Must submit</em> would make the coursework the agent; <em>must be submitting</em> uses the progressive link, describing an action in progress rather than a standing requirement; <em>must been submitted</em> uses a participle of <em>be</em> with no <em>have</em> above it to license it.' },
 
       { id: 't1l2ck-5', type: 'order', tag: 'frame-chain', level: 'B1+',
@@ -577,11 +577,11 @@ T1.levels.push({
         why: 'The paragraph opens with the question, gives the general answer, unpacks it, and then draws the consequence. <em>The answer is</em> can only follow a question; the list of three words has to come after the promise that each word is doing a job; and <em>any one of the three</em> depends on the three having just been named.' },
 
       { id: 't1l2ck-6', type: 'sort', tag: 'frame-chain', level: 'B1+',
-        stem: 'Which link is doing the work in each sentence?',
+        stem: 'Look at the words that follow the modal. Which pattern is it?',
         bins: [
-          { key: 'perf', label: 'have plus participle', hint: 'the event is already over' },
-          { key: 'prog', label: 'be plus -ing', hint: 'the event is in progress' },
-          { key: 'pass', label: 'be plus participle', hint: 'the event is done to the subject' }
+          { key: 'perf', label: 'have plus a past form', hint: 'the event is already over' },
+          { key: 'prog', label: 'be plus an -ing form', hint: 'the event is in progress' },
+          { key: 'pass', label: 'be plus a past form', hint: 'the event is done to the subject' }
         ],
         items: [
           { text: 'The keys <em>must have fallen</em> out of my pocket.', bin: 'perf' },
@@ -651,10 +651,10 @@ T1.levels.push({
           why: '<em>Want</em> is followed by a <em>to</em>-infinitive, and <em>can</em> has no infinitive to give, so options 1 and 4 both ask for a form that does not exist — <em>could</em> is a remote form, not an infinitive, so swapping it in changes nothing. Option 3 drops the <em>to</em> that <em>want</em> requires and puts a finite modal in its place. <em>Be able to</em> is an ordinary verb phrase, so it has an infinitive, and that is the entire reason English keeps it.' },
 
         { id: 't1l3s1-4', type: 'sort', tag: 'frame-defect', level: 'B1+',
-          stem: 'Is a modal possible in this position, or is only the periphrastic form available?',
+          stem: 'Can a modal stand in this position, or is the longer form the only thing that fits?',
           bins: [
-            { key: 'modal', label: 'A modal fits here', hint: 'the slot is finite, so must or can can appear' },
-            { key: 'periph', label: 'Only the periphrastic form fits', hint: 'the slot demands a form no modal has' }
+            { key: 'modal', label: 'A modal fits here', hint: 'the slot takes must, can or may just as it is' },
+            { key: 'periph', label: 'Only the longer form fits', hint: 'the slot needs a shape no modal has' }
           ],
           items: [
             { text: 'Every visitor <em>must</em> sign in at reception.', bin: 'modal' },
@@ -776,10 +776,10 @@ T1.levels.push({
             'Need I bring my own laptop?',
             'You needn\'t bring your own laptop.',
             'Do I need to bring my own laptop?',
-            'Need he sign the register as well?'
+            'Nobody need bring their own laptop.'
           ],
           answer: 2,
-          why: 'Only option 3 borrows <em>do</em> and takes a <em>to</em>-infinitive, and those two facts together are the signature of an ordinary verb. The other three invert or negate on their own and are followed by a bare verb, which is modal behaviour — and it is also why they sound formal, since modal <em>need</em> now survives mainly in questions and negatives. All four sentences are correct English.' },
+          why: 'Only option 3 borrows <em>do</em> and takes a <em>to</em>-infinitive, and those two facts together are the signature of an ordinary verb. The other three put <em>need</em> in front of the subject, attach <em>not</em> to it, or leave it with no <em>-s</em> after a singular subject, and all three are followed by a bare verb — which is modal behaviour, and also why they sound formal, since modal <em>need</em> now survives mainly in questions and negatives. All four sentences are correct English; the question is how <em>need</em> is behaving in each, not which one is right.' },
 
         { id: 't1l3s3-2', type: 'judge', tag: 'frame-boundary', level: 'B1+',
           given: 'Do we have to submit two copies?',
@@ -838,7 +838,7 @@ T1.levels.push({
         why: '<em>Without</em> is a preposition and takes an <em>-ing</em> form, and no modal has one, so options 1, 3 and 4 each ask for a shape that does not exist — a bare modal, an impossible <em>to</em>-infinitive, and a bare <em>can</em>. <em>Have to</em> is an ordinary verb, so its <em>-ing</em> form <em>having to</em> is available, and it carries exactly the meaning of requirement the sentence needs.' },
 
       { id: 't1l3ck-2', type: 'choose', tag: 'frame-semi', level: 'B1+',
-        stem: 'Which sentence puts the tense on the right word?',
+        stem: 'You and your team got the job done just before the storm arrived. Which sentence reports that correctly?',
         options: [
           'We was able to finish before the storm.',
           'We were able to finished before the storm.',
@@ -849,15 +849,15 @@ T1.levels.push({
         why: 'In <em>be able to</em> the tense lands on <em>be</em>, and nothing after <em>to</em> ever changes. Option 1 chooses the right word but the wrong agreement for <em>we</em>; option 2 moves the past ending onto the bare infinitive, where it cannot go; option 4 leaves a second <em>be</em> stranded between the tensed verb and <em>able</em>.' },
 
       { id: 't1l3ck-3', type: 'choose', tag: 'frame-boundary', level: 'B1+',
-        stem: 'Which sentence treats <em>have to</em> correctly as an ordinary verb?',
+        stem: 'You want to ask whether bringing your own equipment is required. Which question is correctly formed?',
         options: [
-          'Have we to bring our own equipment?',
+          'Are we have to bring our own equipment?',
           'Do we have to bring our own equipment?',
           'Do we must bring our own equipment?',
           'Have to we bring our own equipment?'
         ],
         answer: 1,
-        why: '<em>Have to</em> has no operator properties of its own, so its question is formed with <em>do</em>, exactly as with <em>work</em> or <em>live</em>. Option 1 inverts <em>have</em> as though it were an auxiliary, a pattern that has all but vanished from modern English; option 3 puts <em>do</em> with a real modal, which already inverts by itself; option 4 moves the whole phrase in front of the subject, which no ordinary verb may do.' },
+        why: '<em>Have to</em> has no operator properties of its own, so its question is formed with <em>do</em>, exactly as with <em>work</em> or <em>live</em>. Option 1 reaches for <em>be</em>, which has no part in <em>have to</em> at all; option 3 puts <em>do</em> with a real modal, which already inverts by itself; option 4 moves the whole phrase in front of the subject, which no ordinary verb may do. The meaning of <em>have to</em> is modal; its behaviour is not, and it is the behaviour that decides the grammar.' },
 
       { id: 't1l3ck-4', type: 'spot', tag: 'frame-defect', level: 'B1+',
         stem: 'One of the four parts is wrong. Find it.',
@@ -867,8 +867,8 @@ T1.levels.push({
         why: '<em>Have</em> requires a past participle and <em>can</em> has none, so no form of the modal will stand there — swapping <em>can</em> for <em>could</em> changes nothing, since a remote form is not a participle. The periphrastic <em>been able to</em> is the only option. The rest of the sentence is sound: <em>report that</em> introduces the finding, and <em>shown to them</em> is a correct reduced relative.' },
 
       { id: 't1l3ck-5', type: 'equiv', tag: 'frame-defect', level: 'B1+',
-        given: 'It is likely that everyone will need to work an extra shift in December.',
-        stem: 'Which sentence expresses the requirement correctly?',
+        given: 'Everyone will need to work an extra shift in December.',
+        stem: 'Which sentence expresses the same requirement?',
         options: [
           'Everyone will must work an extra shift in December.',
           'Everyone must will work an extra shift in December.',
@@ -886,8 +886,8 @@ T1.levels.push({
           { who: 'Adviser', text: 'It is, but you have to tell us the dates first.' }
         ],
         stem: 'Choose the best option for gap (6).',
-        options: ['to can', 'to be able to', 'can to', 'to could'],
-        answer: 1,
+        options: ['to can', 'to could', 'can to', 'to be able to'],
+        answer: 3,
         why: '<em>Would like</em> is followed by a <em>to</em>-infinitive, and <em>can</em> has no infinitive, so <em>to can</em> and <em>to could</em> both ask for a form that does not exist — <em>could</em> is a remote form, not an infinitive. <em>Can to</em> simply reverses the two words without solving anything. <em>Be able to</em> is an ordinary verb phrase, so <em>to be able to use</em> is available, and it is what English actually says.' }
     ]
   }

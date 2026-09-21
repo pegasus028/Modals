@@ -42,6 +42,7 @@ var MOCK_TYPES = ['choose', 'equiv', 'cloze', 'read', 'gap', 'spot', 'table'];
 var ESCAPED_FIELDS_NO_HTML = /<\/?[a-z][^>]*>/i;
 
 var ids = {}, tagsUsed = {}, tagsOnModuleItems = {}, typeCount = {}, levelCount = 0;
+var keyPos = [0, 0, 0, 0];
 var moduleItems = 0, checkItems = 0, mockItems = 0;
 
 function seeId(id, where) {
@@ -113,6 +114,22 @@ function checkItem(it, where, opts) {
   } else {
     if (!Array.isArray(it.options) || it.options.length < 2) err(it.id + ': ' + it.type + ' needs options[]');
     else if (!(it.answer >= 0 && it.answer < it.options.length)) err(it.id + ': answer index out of range');
+    if (it.options && it.options.length === 4) keyPos[it.answer]++;
+  }
+
+  /* The engine numbers options 1..n on screen. A `why` that counts from zero
+     sends the student to the wrong option after a wrong answer — invisible in
+     the data, glaring on the page. */
+  if (it.options && it.why) {
+    var oref = /\boptions?\s+((?:\d+\s*(?:,|and|or|\/|\u2013|-|\s)\s*)*\d+)/gi, mm;
+    while ((mm = oref.exec(it.why))) {
+      (mm[1].match(/\d+/g) || []).forEach(function (d) {
+        var n = +d;
+        if (n < 1 || n > it.options.length) {
+          err(it.id + ': the why points at "option ' + n + '", but the options are numbered 1\u2013' + it.options.length);
+        }
+      });
+    }
   }
 
   /* gap and cloze markers */
@@ -249,6 +266,20 @@ topicIds.forEach(function (id) {
   if (!(ctx.MEDIA || {})[id]) warn('no MEDIA entry for stage ' + id);
 });
 
+/* Keys bunched on one position let a student score by habit rather than by
+   grammar. rebalance.js fixes this; the check stops it drifting back. */
+(function () {
+  var n = keyPos[0] + keyPos[1] + keyPos[2] + keyPos[3];
+  if (n < 40) return;
+  keyPos.forEach(function (c, i) {
+    var share = c / n;
+    if (share > 0.33) warn('option ' + (i + 1) + ' holds ' + Math.round(share * 100) +
+      '% of the four-option keys (' + c + ' of ' + n + ') \u2014 run rebalance.js');
+    if (share < 0.17) warn('option ' + (i + 1) + ' holds only ' + Math.round(share * 100) +
+      '% of the four-option keys (' + c + ' of ' + n + ') \u2014 run rebalance.js');
+  });
+})();
+
 /* ------------------------------------------------------------------ report */
 console.log('');
 console.log('stages ' + C.TOPICS.length + ' · levels ' + levelCount + ' · modules ' + (levelCount * 3) +
@@ -256,6 +287,7 @@ console.log('stages ' + C.TOPICS.length + ' · levels ' + levelCount + ' · modu
 console.log('items: ' + moduleItems + ' module + ' + checkItems + ' check + ' + mockItems + ' test = ' +
   (moduleItems + checkItems + mockItems));
 console.log('tags: ' + Object.keys(C.REMEDIATION).length + ' declared, ' + Object.keys(tagsUsed).length + ' used');
+console.log('keys at option 1/2/3/4: ' + keyPos.join(' / '));
 console.log('types: ' + Object.keys(typeCount).sort().map(function (k) { return k + ' ' + typeCount[k]; }).join(' · '));
 console.log('');
 warns.forEach(function (w) { console.log('WARN  ' + w); });

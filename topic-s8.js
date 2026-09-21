@@ -46,9 +46,9 @@ T8.levels.push({
         { id: 't8l1s1-1', type: 'choose', tag: 'sys-ambig', level: 'C1',
           stem: 'A colleague sends you one line: <em>Anan must be in the server room.</em> What makes this ambiguous?',
           options: [
-            '<em>Must</em> can be either a strong deduction or a requirement, and nothing in the sentence chooses between them.',
+            '<em>Must</em> can be a strong deduction or a requirement, and nothing here chooses.',
             '<em>Must</em> can refer either to the present or to the past.',
-            '<em>Must</em> carries the speaker\'s authority in some registers and an outside authority in others.',
+            '<em>Must</em> can carry the speaker\'s own authority or an authority outside them.',
             '<em>Be</em> could be either the main verb or the passive auxiliary.'
           ],
           answer: 0,
@@ -73,15 +73,15 @@ T8.levels.push({
           why: 'A handbook states rules, the subject is a set of people who can act, and <em>sit the paper</em> is something they do — so this is deontic necessity, which <em>are required to</em> renders exactly. Option 1 keeps the strength but switches domains, turning a regulation into a confident guess about where people happen to be. Option 3 switches domains <strong>and</strong> drops down the ladder to mere likelihood. Option 4 stays deontic but converts necessity into possibility, which would let a candidate sit anywhere else without breaking a rule.' },
 
         { id: 't8l1s1-4', type: 'choose', tag: 'sys-ambig', level: 'C1',
-          stem: 'A safety report reads: <em>The valve should be closed at the end of each cycle.</em> Why might an engineer ask the author what is meant?',
+          stem: 'A safety report reads: <em>The valve should be closed at the end of each cycle.</em> An engineer cannot tell which of two things the sentence means. Which two?',
           options: [
-            'It could mean that closing the valve is the required procedure, or that the valve is probably closed already.',
-            'It could refer either to the present or to the future.',
-            '<em>Should</em> is weaker than <em>must</em>, so the strength of the requirement is unclear.',
-            'The writer has not said who is responsible for closing it.'
+            'That closing the valve is the required procedure, or that the valve is probably closed already.',
+            'That the valve is closed now, or that it will be closed at some later point.',
+            'That one particular valve is meant, or that every valve of that type is.',
+            'That the author is issuing an instruction, or that the author is granting permission.'
           ],
           answer: 0,
-          why: '<em>Should</em> is ambiguous in exactly the way <em>must</em> is: deontic weak obligation (Stage 3) against epistemic expectation (Stage 2, <em>should</em> and <em>ought to</em> as expectation). The engineer cannot tell whether the line is an instruction to follow or a prediction to verify, and those call for different actions. Option 2 is not the issue — both readings look at the same moment. Option 3 is true of <em>should</em> everywhere, but it is a difference of degree inside one reading, not a second reading. Option 4 is a genuine gap in the report, but it is a missing agent, not an ambiguous modal; it would still be missing if the sentence were unambiguously an instruction.' },
+          why: '<em>Should</em> is ambiguous in exactly the way <em>must</em> is: deontic weak obligation (Stage 3) against epistemic expectation (Stage 2, <em>should</em> and <em>ought to</em> as expectation). The engineer cannot tell whether the line is an instruction to carry out or a prediction to verify, and those call for different actions. Option 2 offers two times rather than two readings, and both readings look at the same moment anyway. Option 3 is not available at all: <em>the valve</em> is a definite singular and picks out one valve, and a claim about the type would have to read <em>valves of this type</em>. Option 4 pairs two deontic readings, and <em>should</em> has no permission sense at all — permission would need <em>may</em> or <em>can</em>.' },
 
         { id: 't8l1s1-5', type: 'spot', tag: 'sys-ambig', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
@@ -210,24 +210,24 @@ T8.levels.push({
           ],
           items: [
             { text: 'The alarm panel <em>must</em> have been reset overnight.', bin: 'epi' },
-            { text: 'Contractors <em>must</em> sign out at the gatehouse.', bin: 'deo' },
+            { text: 'Contractors <em>must</em> sign out at the gatehouse before the end of each shift.', bin: 'deo' },
             { text: 'She <em>can\'t</em> be the duty officer — she is on the rota for Thursday.', bin: 'epi' },
             { text: 'Passengers <em>may not</em> board without a printed boarding card.', bin: 'deo' },
             { text: 'The soil <em>must</em> be more acidic here than in the lower field.', bin: 'epi' },
             { text: 'Every dose <em>is to be</em> recorded in the ward book.', bin: 'deo' }
           ],
-          why: 'Each deduction is fixed by something that blocks obligation: a perfect looking back at a finished event, the suppletive negative <em>can\'t</em>, or a subject — soil — that can be told nothing. Each requirement has an agent who can act, a controllable action and a rule-giving register, and two of them use forms that exist in the deontic domain only, <em>may not</em> and <em>is to be</em>. The pairing of <em>can\'t</em> with <em>may not</em> is the clearest evidence that the negatives have already split the domains for you (Stages 2 and 3).' },
+          why: 'Each deduction is fixed by something that blocks obligation: a perfect looking back at a finished event, an evidence clause after <em>can\'t</em>, or a subject — soil — that can be told nothing. Each requirement has an agent who can act, a controllable action and a deadline or a rule-giving form: <em>before the end of each shift</em>, the condition <em>without a printed boarding card</em> that only an entitlement can carry, and <em>is to be</em>, which has no epistemic life at all. Note that <em>can\'t</em> and <em>may not</em> are not themselves single-domain — both also prohibit — so it is the surrounding wording, not the modal, that settles each of those two.' },
 
         { id: 't8l1s3-3', type: 'choose', tag: 'sys-disambig', level: 'C1',
           stem: 'In which of these does an ambiguous <em>must</em> do real damage?',
           options: [
-            'A clinical protocol: <em>The line must be flushed before the second infusion.</em>',
+            'A clinical protocol: <em>The line must be flushed with saline.</em>',
             'A film review: <em>The director must have shot the whole sequence in one take.</em>',
             'A weather column: <em>It must be the driest March in a decade.</em>',
             'A travel piece: <em>You must try the fish at the market by the pier.</em>'
           ],
           answer: 0,
-          why: 'Only the protocol asks a reader to act, and the sentence is exactly the configuration that invites both readings — a passive with an inanimate subject and no named agent. A nurse who reads it as a requirement flushes the line; one who reads it as an inference assumes somebody already has. Options 2 and 3 are fixed as deductions by a perfect and by a state, and nothing turns on them in any case. Option 4 is deontic in form but unenforceable, and no reader has ever mistaken a food recommendation for a report on their eating habits.' },
+          why: 'Only the protocol asks a reader to act, and the sentence is exactly the configuration that invites both readings — a passive with an inanimate subject, no named agent and no deadline to settle it. A nurse who reads it as a requirement flushes the line; one who reads it as an inference assumes somebody already has. Options 2 and 3 are fixed as deductions by a perfect and by a state, and nothing turns on them in any case. Option 4 is deontic in form but unenforceable, and no reader has ever mistaken a food recommendation for a report on their eating habits.' },
 
         { id: 't8l1s3-4', type: 'spot', tag: 'sys-disambig', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
@@ -268,9 +268,9 @@ T8.levels.push({
         passage: 'The council has not published the consultation results, which were promised in March. Officers say the analysis ___(1)___ still be under way, though the contractor was paid in full in February.\n\nUnder the council\'s own publication scheme, findings of this kind ___(2)___ be released within eight weeks of the closing date. That deadline passed in April.',
         blank: '(2)',
         stem: 'Choose the best option for blank (2).',
-        options: ['may well', 'must', 'might', 'could'],
+        options: ['might', 'must', 'may well', 'can'],
         answer: 1,
-        why: 'The clause sits inside a reported rule — <em>under the council\'s own publication scheme</em> — so it states a duty, and <em>must</em> is the necessity modal that reaches into the deontic domain. The other three are weak-middle epistemic forms from Stage 2, and any of them would turn a published obligation into a guess about what the council might get round to. Blank (1) is the opposite case: there the evidence clause makes a weak epistemic form exactly right.' },
+        why: 'The clause sits inside a reported rule — <em>under the council\'s own publication scheme</em> — and a scheme with a deadline imposes a duty, so the slot needs deontic necessity, which <em>must</em> supplies. <em>Might</em> and <em>may well</em> are weak-middle epistemic forms from Stage 2, and either would turn a published obligation into a guess about what the council might get round to. <em>Can</em> stays in the deontic domain but drops from necessity to permission, which would mean the council was merely allowed to publish and could not have missed anything. Blank (1) is the opposite case: there the evidence clause makes a weak epistemic form exactly right.' },
 
       { id: 't8l1ck-3', type: 'spot', tag: 'sys-disambig', level: 'C1',
         stem: 'One of the four parts is wrong. Find it.',
@@ -301,12 +301,12 @@ T8.levels.push({
         stem: 'Which sentence has been rewritten so that <strong>only</strong> the epistemic reading survives?',
         options: [
           'The generator must run on the reserve tank.',
-          'The generator is presumably running on the reserve tank.',
+          'The generator presumably runs on the reserve tank.',
           'The generator is to run on the reserve tank.',
           'The generator is required to run on the reserve tank.'
         ],
         answer: 1,
-        why: '<em>Presumably</em> is an evidential adverb with no life in the deontic domain, so the sentence can now only be an inference. Option 1 is the unrepaired original, open between a maintenance instruction and a deduction. Options 3 and 4 are both single-domain deontic repairs: they remove the ambiguity, but in the other direction, and a reader would now take them as orders.' }
+        why: '<em>Presumably</em> is an evidential adverb with no life in the deontic domain, so the sentence can now only be an inference. Option 1 is the unrepaired original, open between a maintenance instruction and a deduction. Options 3 and 4 are both single-domain deontic repairs: they remove the ambiguity, but in the other direction, and a reader would now take them as orders. All four keep the same subject and the same verb, so the only thing that changes is the operator that frames it.' }
     ]
   }
 });
@@ -326,7 +326,7 @@ T8.levels.push({
           'Stage 1 taught the slot chain. This module takes it to its limit and asks you to read it at speed. Five slots, one order: <em>might · have · been · being · examined</em>. Only the modal slot has to be filled; the rest are optional. What is not optional is the sequence, and the reason it cannot be rearranged is mechanical rather than conventional.',
           '<strong>Each element selects the form of the next.</strong> A modal selects a bare infinitive. <em>Have</em> selects a past participle. Progressive <em>be</em> selects an <em>-ing</em> form. Passive <em>be</em> selects a past participle. The main verb comes last because it is the only element nothing selects. Trace the string and every form in it is predicted: <em>might</em> demands the bare <em>have</em>; <em>have</em> demands the participle of progressive <em>be</em>, which is <em>been</em>; progressive <em>be</em> demands the <em>-ing</em> of passive <em>be</em>, which is <em>being</em>; passive <em>be</em> demands <em>examined</em>. Move any two of them and three forms break at once, which is why a wrong chain looks so badly wrong.',
           'The meanings stack outward from the verb. <em>Examined</em> is the event; passive <em>be</em> says the subject undergoes it rather than performs it; progressive <em>be</em> says it is mid-course; <em>have</em> places the whole thing before a reference point; and the modal frames the lot. Reading a long chain is therefore a matter of starting at the right-hand end and working back, not of recognising a memorised shape.',
-          'Most real phrases use two or three slots, and those are the ones worth producing: <em>must be signed</em> (modal plus passive), <em>should have been reported</em> (modal plus perfect plus passive), <em>may be waiting</em> (modal plus progressive). The five-slot form is rare in speech and frequent enough in formal reporting that a C1 reader must parse it without stopping. One warning carries over from Level 1: the modal passive names a duty without naming who is to perform it, which is convenient for a regulation and is sometimes exactly why the regulation is unclear.'
+          'Almost every real phrase uses two or three slots, and those are the ones worth producing: <em>must be signed</em> (modal plus passive), <em>should have been reported</em> (modal plus perfect plus passive), <em>must have been waiting</em> (modal plus perfect plus progressive), <em>may have to be replaced</em> (modal plus the <em>have to</em> repair plus passive). The five-slot form is the <strong>outer limit of the system, not a model to copy</strong>: you will meet it far more often in a grammar book than in prose, and a writer who produces one has usually written a sentence that should be split. Learn to parse it; do not reach for it. One warning carries over from Level 1: the modal passive names a duty without naming who is to perform it, which is convenient for a regulation and is sometimes exactly why the regulation is unclear.'
         ],
         simple: [
           'The order is always modal, then <em>have</em>, then <em>be</em> for the progressive, then <em>be</em> for the passive, then the verb. You can leave slots out, but you can never swap them.',
@@ -334,7 +334,7 @@ T8.levels.push({
           'To read a long one, start at the last word and work backwards: what happened, who it happened to, whether it was finished, and how sure the writer is.'
         ],
         examples: [
-          { s: 'The samples <b>might have been being examined</b> when the power failed.', g: 'all five slots, in the only order the grammar allows.' },
+          { s: 'The samples <b>might have been being examined</b> when the power failed.', g: 'all five slots in the only order the grammar allows; the outer limit, shown once, not a sentence to imitate.' },
           { s: 'Every amendment <b>must be signed</b> by both parties.', g: 'modal plus passive be: two slots, and the agent is named.' },
           { s: 'The leak <b>should have been reported</b> within an hour.', g: 'modal plus perfect plus passive: three slots, and a criticism.' },
           { s: '<s>The samples might be have been examined.</s>', g: 'have cannot follow be; reordering the chain breaks every form in the string.' }
@@ -342,7 +342,7 @@ T8.levels.push({
       },
       items: [
         { id: 't8l2s1-1', type: 'choose', tag: 'sys-chain', level: 'C1+',
-          stem: 'Which is the correct five-slot form — modal, perfect, progressive, passive, verb?',
+          stem: 'The five-slot chain is the outer limit of the English verb phrase and is rare in real prose, but only one arrangement of it is grammatical. Which is it — modal, perfect, progressive, passive, verb?',
           options: [
             'might have being been examined',
             'might be having been examined',
@@ -356,19 +356,19 @@ T8.levels.push({
           stem: 'Put the words in order to say that the incident was not passed on, and that it should have been.',
           tiles: ['the', 'incident', 'should', 'have', 'been', 'reported', 'immediately'],
           solution: 'the incident should have been reported immediately',
-          alt: [],
+          alt: ['the incident should have been immediately reported', 'the incident should immediately have been reported'],
           why: 'Three slots: <em>should</em> frames the event as what was required, <em>have</em> places it before now, and <em>been reported</em> makes the incident the thing acted on rather than the actor. <em>Should be reported</em> would lose the past and with it the criticism, which is the whole point of the sentence (Stage 6). <em>Should have reported</em> drops the passive and makes the incident the reporter.' },
 
         { id: 't8l2s1-3', type: 'choose', tag: 'sys-chain', level: 'C1+',
-          stem: 'An engineer writes: <em>The valve may have been being tested at the time of the failure.</em> What does the string of auxiliaries actually claim?',
+          stem: 'A maintenance note reads: <em>The seals on the older pumps may have to be replaced before the winter.</em> What does the string of auxiliaries actually claim?',
           options: [
-            'That the testing was finished before the failure.',
-            'That the testing was in progress, and that the engineer is not certain of it.',
-            'That the valve was required to be tested before the failure.',
-            'That the valve tested something at the moment of the failure.'
+            'That the seals have already been replaced, and that the writer is not certain of it.',
+            'That replacement is possibly necessary, and that the seals are what would be replaced.',
+            'That the writer is under an obligation to replace the seals before the winter.',
+            'That the seals may themselves replace something before the winter.'
           ],
           answer: 1,
-          why: 'Work back from the verb: <em>tested</em> is the event, passive <em>be</em> makes the valve the thing tested, <em>being</em> puts it mid-course, <em>have</em> anchors it to the reference point named by the time phrase, and <em>may</em> is the weak epistemic frame from Stage 2. Option 1 reads the perfect as completion of the testing, but the progressive says in as many words that it was unfinished. Option 3 takes <em>may</em> deontically, which Level 1\'s clues rule out: a perfect and a progressive both close off obligation. Option 4 ignores the passive and hands the valve the agent role.' },
+          why: 'Work back from the verb: <em>replaced</em> is the event, passive <em>be</em> makes the seals the thing acted on, <em>have to</em> supplies the necessity — a modal cannot follow a modal, so the repair kit lends its infinitive (Stage 1) — and <em>may</em> frames that necessity as merely possible, which is the weak epistemic rung from Stage 2. Option 1 misreads <em>may have</em> as the perfect <em>may have been replaced</em>; the <em>to</em> in front of <em>be</em> shows that this <em>have</em> is the semi-modal, not the auxiliary. Option 3 puts the obligation on the writer, but the passive leaves the agent unnamed and the necessity sits on the replacement, not on any person. Option 4 ignores the passive and hands the seals the agent role.' },
 
         { id: 't8l2s1-4', type: 'sort', tag: 'sys-chain', level: 'C1+',
           stem: 'Sort each verb phrase by whether the chain is correctly built.',
@@ -387,15 +387,15 @@ T8.levels.push({
           why: 'The three correct phrases each run modal, then <em>have</em> if the perfect is present, then <em>be</em>, then the participle. <em>Must being counted</em> omits the bare <em>be</em> that the modal selects. <em>Should have be archived</em> puts a bare infinitive where <em>have</em> demands a participle. <em>Might been have serviced</em> reverses the modal\'s complement and the perfect, so the modal is followed by a participle and <em>have</em> by another one.' },
 
         { id: 't8l2s1-5', type: 'choose', tag: 'sys-chain', level: 'C1+',
-          stem: 'A customs regulation reads: <em>No consignment shall have been released from bond until duty has been paid.</em> What is the perfect doing after the modal?',
+          stem: 'A construction contract reads: <em>The contractor shall have completed the works by 31 March.</em> What is the perfect doing after the modal?',
           options: [
-            'It anchors the release to a later reference point, so the rule governs the order of two events rather than a single act.',
-            'It shows that the rule applies only to consignments released before the regulation came into force.',
-            'It turns the sentence into a deduction about what has happened rather than a requirement.',
-            'It is forced, because <em>shall</em> has no simple present form in legal English.'
+            'It fixes completion as prior to a named future date, so the duty is to be finished by then.',
+            'It limits the clause to works that were finished before the contract was signed.',
+            'It turns the clause into a deduction that the works are already finished.',
+            'It is forced, because <em>shall</em> has no simple present form in legal drafting.'
           ],
           answer: 0,
-          why: 'A perfect after a modal places one event before a reference point, and here that point is the payment of duty; the rule therefore prohibits any release that would fall before it. Option 2 reads the perfect as plain past time reference, but a regulation speaks prospectively and the <em>until</em>-clause is in the present. Option 3 is the Level 1 confusion: <em>shall</em> in a statutory instrument is deontic only, and adding a perfect changes the time relation, not the domain. Option 4 invents a gap — <em>shall be released</em> appears throughout the same kind of document for rules of a different shape.' }
+          why: 'A perfect after a modal places the event before a reference point, and here that point is 31 March; the duty is therefore to have finished by then rather than to be working then, which is why a contract distinguishes <em>shall have completed</em> from <em>shall be working</em>. Option 2 reads the perfect as plain past time reference, but the date named is in the future and a contract speaks forward. Option 3 is the Level 1 confusion: contractual <em>shall</em> is deontic only, so no deduction is available whatever aspect follows it, and it is the modal rather than the perfect that fixes the domain. Option 4 invents a gap — <em>shall complete the works by 31 March</em> is equally good drafting for a duty of a slightly different shape.' }
       ]
     },
 
@@ -403,15 +403,15 @@ T8.levels.push({
     {
       id: 't8l2s2', name: 'Reported speech and backshift', cefr: 'C1+',
       theory: {
-        key: 'Backshift is Stage 5\'s distance applied to time: a past reporting verb pushes the report one step back, and a modal that already carries the remote morphology has nowhere further to go.',
+        key: 'Backshift is Stage 5\'s distance applied to time: a past reporting verb <em>may</em> push the report one step back, it does so only when the situation has moved on, and a modal that already carries the remote morphology has nowhere further to go.',
         body: [
-          'Four modals take the step: <em>must</em> becomes <em>had to</em>, <em>will</em> becomes <em>would</em>, <em>can</em> becomes <em>could</em>, <em>may</em> becomes <em>might</em>. Three of those are ordinary remote forms. <em>Must</em> is the interesting one: it has no past form at all, because modals have no non-finite or tensed forms (Stage 1), so the repair kit supplies <em>had to</em> from outside the class.',
+          'Four modals have a step available: <em>must</em> can become <em>had to</em>, <em>will</em> can become <em>would</em>, <em>can</em> can become <em>could</em>, <em>may</em> can become <em>might</em>. Three of those are ordinary remote forms. <em>Must</em> is the interesting one: it has no past form at all, because modals have no non-finite or tensed forms (Stage 1), so the repair kit supplies <em>had to</em> from outside the class.',
           'Six do not move: <em>would</em>, <em>could</em>, <em>might</em>, <em>should</em>, <em>ought to</em> and <em>had better</em>. The reason is the mechanism, not a list. English has <strong>one step of remoteness</strong> (Stage 5) and these forms have already taken it, so there is nothing further back for them to move into. <em>"I could help," she said</em> is reported as <em>She said she could help</em>, and the sentence is identical. A student who hunts for a more remote form of <em>could</em> is looking for something the language does not contain.',
           'Epistemic <em>must</em> is the exception that shows the rule is about meaning as well as form. <em>"He must be lying," she said</em> reports as <em>She said he must be lying</em>, not <em>had to be lying</em> — because <em>had to</em> would describe an obligation to lie, which is a different and rather strange claim. Deontic <em>must</em> backshifts; epistemic <em>must</em> stays, and where past reference is wanted the tense drops into the proposition instead: <em>She said he must have been lying</em> (Stage 6).',
           'Finally, backshift is not a reflex. It is optional whenever the reported content is still true at the moment of reporting, which in academic writing is most of the time: <em>The authors argue that class size may matter</em> keeps the present because the argument has not expired. Backshift aligns the report with the reporting; where nothing needs aligning, nothing moves.'
         ],
         simple: [
-          'After a past reporting verb, four modals step back: <em>must</em> → <em>had to</em>, <em>will</em> → <em>would</em>, <em>can</em> → <em>could</em>, <em>may</em> → <em>might</em>.',
+          'After a past reporting verb, four modals have a further-back form to move into: <em>must</em> → <em>had to</em>, <em>will</em> → <em>would</em>, <em>can</em> → <em>could</em>, <em>may</em> → <em>might</em>. They move when the situation has moved on; if it still holds, they can stay exactly as they were.',
           'Six do not change at all — <em>would, could, might, should, ought to, had better</em> — because they are already the stepped-back forms.',
           'If <em>must</em> means <strong>I am sure</strong>, leave it alone: <em>She said he must be lying.</em> Only <em>must</em> meaning <strong>has to</strong> becomes <em>had to</em>.'
         ],
@@ -432,7 +432,7 @@ T8.levels.push({
             'The minister said that every operator must have held a licence by the end of the year.'
           ],
           answer: 1,
-          why: 'A deadline and an agentive subject make this deontic, and deontic <em>must</em> has no past form, so the report borrows <em>had to</em>. Option 1 tries to inflect the bare infinitive that follows a modal. Option 3 stacks two modals, which the class forbids absolutely (Stage 1). Option 4 is well formed but says something else: it reports a deduction that the licence had already been obtained, which is not what the minister announced.' },
+          why: 'A deadline and an agentive subject make this deontic, and deontic <em>must</em> has no past form of its own, so a report that does step back borrows <em>had to</em>. Option 1 tries to inflect the bare infinitive that follows a modal. Option 3 stacks two modals, which the class forbids absolutely (Stage 1). Option 4 is well formed but says something else: it reports a deduction that the licence had already been obtained, which is not what the minister announced. Note that <em>said that every operator must hold a licence</em> is also good English while the deadline still stands — backshift is available, not compulsory — but it is not among the four offered here.' },
 
         { id: 't8l2s2-2', type: 'equiv', tag: 'sys-report', level: 'C1+',
           given: 'The surveyor told the owners: "The wall may have moved since the survey."',
@@ -444,19 +444,19 @@ T8.levels.push({
             'The surveyor told the owners that the wall was allowed to move since the survey.'
           ],
           answer: 1,
-          why: 'Epistemic <em>may</em> steps back to <em>might</em>, and the perfect stays exactly where it was, because the past reference belongs to the proposition and not to the modal (Stage 6). Option 1 drops the perfect and so loses the past event altogether. Option 3 converts a weak possibility into a necessity and moves it into the deontic domain at the same time. Option 4 takes the permission reading of <em>may</em>, and nothing can grant a wall leave to move.' },
+          why: 'Epistemic <em>may</em> steps back to <em>might</em>, and the perfect stays exactly where it was, because the past reference belongs to the proposition and not to the modal (Stage 6). Option 1 drops the perfect and so loses the past event altogether. Option 3 converts a weak possibility into a necessity and moves it into the deontic domain at the same time. Option 4 takes the permission reading of <em>may</em>, and nothing can grant a wall leave to move. Keeping <em>may</em> unchanged would also report the surveyor accurately, since the wall\'s movement is still an open question; <em>might</em> is simply the stepped-back form, and it is the only option here that preserves both the strength and the past event.' },
 
         { id: 't8l2s2-3', type: 'choose', tag: 'sys-report', level: 'C1+',
-          stem: 'Which of these modals <strong>changes</strong> when the report is backshifted?',
+          stem: 'Backshift moves a modal one step further back. Which of these four <strong>has a further-back form to move into</strong>?',
           options: ['<em>ought to</em>', '<em>can</em>', '<em>had better</em>', '<em>might</em>'],
           answer: 1,
-          why: '<em>Can</em> has a remote counterpart, <em>could</em>, so it has somewhere to go. <em>Ought to</em> and <em>might</em> already carry the remote morphology of Stage 5 and English offers only one step of it, so they are reported unchanged. <em>Had better</em> is the trap: the <em>had</em> looks like a past tense but the phrase is frozen, refers to the present, and has no further form — <em>had better</em> in a report is still <em>had better</em>.' },
+          why: '<em>Can</em> has a remote counterpart, <em>could</em>, so a report that steps back has somewhere to put it. <em>Ought to</em> and <em>might</em> already carry the remote morphology of Stage 5 and English offers only one step of it, so a report leaves them exactly as they are. <em>Had better</em> is the trap: the <em>had</em> looks like a past tense but the phrase is frozen, refers to the present, and has no further form — <em>had better</em> in a report is still <em>had better</em>. The question is about what forms exist, not about what a reporter must do: even <em>can</em> may be left alone where the ability still holds.' },
 
         { id: 't8l2s2-4', type: 'sort', tag: 'sys-report', level: 'C1+',
-          stem: 'After a past reporting verb, does the modal in each quotation move or stay?',
+          stem: 'A report can step a modal one form further back, but only where a further-back form exists. Sort each quotation by whether its modal has one.',
           bins: [
-            { key: 'shift', label: 'Backshifts', hint: 'a further-back form exists' },
-            { key: 'stay', label: 'Stays as it is', hint: 'already remote, or nothing to move into' }
+            { key: 'shift', label: 'Can step back', hint: 'a further-back form exists' },
+            { key: 'stay', label: 'Cannot step back', hint: 'already remote, so there is nothing to move into' }
           ],
           items: [
             { text: 'They said: <em>"We will appeal the decision."</em>', bin: 'shift' },
@@ -466,18 +466,18 @@ T8.levels.push({
             { text: 'He said: <em>"I can drive the van myself."</em>', bin: 'shift' },
             { text: 'He said: <em>"You had better keep the receipt."</em>', bin: 'stay' }
           ],
-          why: '<em>Will</em>, <em>may</em> and <em>can</em> each have a remote partner — <em>would</em>, <em>might</em>, <em>could</em> — so each takes the step. The other three are already at the far end of the one step English provides: <em>would</em> and <em>ought to</em> are remote forms, and <em>had better</em> is frozen and present-referring despite the <em>had</em>. Searching for a past of <em>would</em> or a past of <em>ought</em> is searching for a form the language has never had.' },
+          why: '<em>Will</em>, <em>may</em> and <em>can</em> each have a remote partner — <em>would</em>, <em>might</em>, <em>could</em> — so each has somewhere to go if the report steps back. The other three are already at the far end of the one step English provides: <em>would</em> and <em>ought to</em> are remote forms, and <em>had better</em> is frozen and present-referring despite the <em>had</em>. Searching for a past of <em>would</em> or a past of <em>ought</em> is searching for a form the language has never had. Sorting here is about what the form allows: whether a writer actually takes the step depends on whether the situation has moved on.' },
 
         { id: 't8l2s2-5', type: 'choose', tag: 'sys-report', level: 'C1+',
           stem: 'A police officer said: <em>"Whoever moved the barrier must have had a key."</em> Which report is right?',
           options: [
-            'The officer said that whoever moved the barrier had to have a key.',
+            'The officer said that whoever moved the barrier was required to have a key.',
             'The officer said that whoever moved the barrier must have had a key.',
-            'The officer said that whoever moved the barrier had had to have a key.',
+            'The officer said that whoever moved the barrier can\'t have had a key.',
             'The officer said that whoever moved the barrier might have had a key.'
           ],
           answer: 1,
-          why: 'The officer is deducing from the state of the barrier, and epistemic <em>must</em> does not backshift; the past reference is already carried by <em>have had</em> inside the proposition, so nothing needs to move. Options 1 and 3 convert the deduction into a requirement — that the person was obliged to be carrying a key — and option 3 adds a past perfect that pushes the supposed obligation further back still. Option 4 keeps the right domain but drops from near-certainty to bare possibility, which misreports how confident the officer was.' }
+          why: 'The officer is deducing from the state of the barrier, and epistemic <em>must</em> does not step back at all; the past reference is already carried by <em>have had</em> inside the proposition, so nothing needs to move. Option 1 uses a deontic-only form and so converts the deduction into a rule — that whoever moved it was obliged to be carrying a key, which says nothing about whether they were. Option 3 keeps the domain but reverses the conclusion, denying what the officer asserted. Option 4 keeps the domain and the direction but drops from near-certainty to bare possibility, which misreports how confident the officer was.' }
       ]
     },
 
@@ -517,9 +517,9 @@ T8.levels.push({
             'Your application for the research allowance has been received and will be considered at the June meeting.',
             'Should the committee require further documentation, the registry will write to you directly.',
             'Were that to happen, you would have fourteen days in which to respond.',
-            'Had you submitted the application before the April deadline, a decision would already have been issued.'
+            'Finally, had you submitted the application before the April deadline, a decision would already have been issued.'
           ],
-          why: 'The paragraph moves from what has actually happened, to an open future possibility marked by <em>should</em>, to the consequence of that possibility, and finally to a closed past alternative marked by <em>had</em>. The connectives fix the order as tightly as the argument does: <em>that</em> in the third sentence can only refer to the request for documents, so it must follow it, and the unreal past comes last because it is the only one that can no longer change. A student who puts the <em>were</em>-sentence first leaves <em>that</em> with nothing to point at.' },
+          why: 'The paragraph moves from what has actually happened, to an open future possibility marked by <em>should</em>, to the consequence of that possibility, and last of all to a closed past alternative marked by <em>had</em>. Three signals fix the order and leave no second reading: the first sentence is the only one with nothing to refer back to, <em>that</em> in the <em>were</em>-sentence can only point at the request for documents, and <em>Finally</em> can only introduce the closing sentence. A student who puts the <em>were</em>-sentence first leaves <em>that</em> with nothing to point at.' },
 
         { id: 't8l2s3-3', type: 'choose', tag: 'sys-invert', level: 'C1+',
           stem: 'Why does <em>Were the pilot scheme to be extended, the unit cost would fall sharply</em> sound more formal than <em>If the pilot scheme were extended, the unit cost would fall sharply</em>?',
@@ -578,13 +578,13 @@ T8.levels.push({
       { id: 't8l2ck-3', type: 'gap', tag: 'sys-report', level: 'C1+',
         blank: '(1)',
         lines: [
-          { who: 'Editor', text: 'The spokesman told us on Tuesday that every application ___(1)___ be lodged before the end of the month, so the deadline is firm.' },
-          { who: 'Reporter', text: 'He also said the committee ___(2)___ well reject half of them, which is not the same thing at all.' }
+          { who: 'Editor', text: 'The spokesman told us back in January that every application ___(1)___ be lodged before the end of that month, so anyone who waited has missed it.' },
+          { who: 'Reporter', text: 'He also said the committee ___(2)___ well reject half of the ones that did arrive, which is not the same thing at all.' }
         ],
         stem: 'Choose the best option for gap (1).',
-        options: ['had to', 'must have', 'would must', 'musts'],
+        options: ['had to', 'must have been', 'would must', 'musts'],
         answer: 0,
-        why: 'The reporting verb is past and the original was a deontic <em>must</em>, which has no past form of its own, so the report takes <em>had to</em>. <em>Must have</em> would turn a deadline into a deduction that the applications were already lodged. <em>Would must</em> stacks two modals. <em>Musts</em> inflects a modal for the third person, which the class never allows.' },
+        why: 'The original was a deontic <em>must</em>, which has no past form of its own, and here the situation has moved on — the January deadline has passed and the report says so — which is exactly when the step back is called for, so the gap takes <em>had to</em>. Where a deadline still stood, leaving <em>must</em> in place would be just as good; backshift is available, not compulsory. <em>Must have been</em> is well formed but turns a deadline into a deduction that the applications had already been lodged. <em>Would must</em> stacks two modals. <em>Musts</em> inflects a modal for the third person, which the class never allows.' },
 
       { id: 't8l2ck-4', type: 'build', tag: 'sys-report', level: 'C1+',
         stem: 'Put the words in order to make the fully backshifted report of <em>"We may have underestimated the cost," she admitted.</em>',
@@ -666,11 +666,11 @@ T8.levels.push({
             { text: 'That <em>will</em> be the inspector at the gate.', bin: 'now' },
             { text: 'The tender <em>will</em> be advertised in October.', bin: 'fut' },
             { text: 'Copper <em>will</em> conduct heat far better than steel.', bin: 'now' },
-            { text: 'She <em>will</em> answer her email at two in the morning.', bin: 'now' },
+            { text: 'He <em>will</em> reply to messages at two in the morning, night after night.', bin: 'now' },
             { text: 'The tunnel <em>will</em> open to traffic next spring.', bin: 'fut' },
             { text: 'Under load, the older cables <em>will</em> sag by several centimetres.', bin: 'now' }
           ],
-          why: 'Four of the six have no future reference at all: a deduction about who is at the gate, a generic truth about copper, a complaint about somebody\'s habits, and a conditional generalisation about cables, where <em>under load</em> supplies a condition rather than a time. The two future ones both name a date, which is the surest sign that the prediction is about a particular coming event. A useful check: ask <em>when</em>, and if the question has no answer, the reading is not future.' },
+          why: 'Four of the six have no future reference at all: a deduction about who is at the gate, a generic truth about copper, a complaint about somebody\'s habits, where <em>night after night</em> rules a single coming occasion out, and a conditional generalisation about cables, where <em>under load</em> supplies a condition rather than a time. The two future ones both name a date, which is the surest sign that the prediction is about a particular coming event. A useful check: ask <em>when</em>, and if the only answer is <em>whenever</em> or <em>always</em>, the reading is not future.' },
 
         { id: 't8l3s1-3', type: 'choose', tag: 'sys-will', level: 'C1+',
           stem: 'A materials report reads: <em>Under sustained load the polymer will creep by up to three per cent.</em> What is the writer claiming?',
@@ -685,20 +685,20 @@ T8.levels.push({
 
         { id: 't8l3s1-4', type: 'judge', tag: 'sys-will', level: 'C1+',
           given: 'If the committee will not release the minutes, we shall have to apply formally.',
-          stem: 'The <em>if</em>-clause here is about what may happen in the future.',
-          answer: 1,
-          why: 'False. <em>Will</em> is blocked in an <em>if</em>-clause when it would mark plain futurity, because <em>if</em> has already done that work; the fact that it survives here is itself the evidence that it is doing a different job. The job is willingness, so the clause means <em>if the committee refuses</em> (Stage 4), which reports the committee\'s present stance. The answer is not <em>Can\'t tell</em>, because the grammar settles it without any appeal to context.' },
+          stem: 'Here <em>will</em> marks the committee\'s refusal rather than plain future time.',
+          answer: 0,
+          why: 'True. Plain futurity is blocked in an <em>if</em>-clause, because <em>if</em> has already framed the clause as a possibility and a second operator doing the same work has nothing to add; a <em>will</em> that survives there must therefore be doing one of its other jobs. With a negative and a human subject that job is willingness, so the clause means <em>if the committee refuses to release the minutes</em> (Stage 4). The answer is not <em>Can\'t tell</em>, because the grammar settles it without any appeal to context: the futurity reading is not available at all, and the repair for that reading would be <em>if the committee does not release</em>.' },
 
         { id: 't8l3s1-5', type: 'choose', tag: 'sys-will', level: 'C1+',
           stem: 'Which sentence is <strong>not</strong> acceptable English?',
           options: [
             'If the survey will take more than an hour, we should book the room for the afternoon.',
             'If you will sign at the bottom, I will witness it.',
-            'If the scheme will save money, the council is unlikely to object.',
-            'If the results are published in June, the launch can go ahead.'
+            'If it will speed things up, I will send the file by courier.',
+            'If the funding is confirmed in June, the launch can go ahead.'
           ],
           answer: 0,
-          why: 'In option 1, <em>will</em> is marking nothing but futurity inside a clause that <em>if</em> has already modalised, so the operator is redundant and the string is blocked; the repair is <em>If the survey takes more than an hour</em>. Option 2 is willingness — roughly <em>if you would be so good as to sign</em> — and is a standard polite formula. Option 3 predicts a consequence of the supposition rather than the supposition itself: the saving follows from the scheme, so <em>will</em> has real work to do. Option 4 is the ordinary present-tense conditional and is exactly what option 1 should have been.' }
+          why: 'In option 1, <em>will</em> is marking nothing but futurity inside a clause that <em>if</em> has already modalised, so the operator is redundant and the string is blocked; the repair is <em>If the survey takes more than an hour</em>. Option 2 is willingness — roughly <em>if you would be so good as to sign</em> — and is a standard polite formula. In option 3 the speeding up is a <strong>result of the sending</strong> rather than a supposition about the world, and <em>will</em> is predicting that result, which is real work only it can do; compare the fixed <em>if it will help</em>. Option 4 is the ordinary present-tense conditional and is exactly what option 1 should have been.' }
       ]
     },
 
@@ -739,10 +739,10 @@ T8.levels.push({
 
         { id: 't8l3s2-2', type: 'spot', tag: 'sys-periphery', level: 'C1+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The registrar ought to have waited', 'until the board had met,', 'and she needs not have signed', 'the summary sheet either.'],
+          words: ['The registrar ought to have waited', 'until the board had met,', 'and she needs not have signed', 'the summary sheet in the meantime.'],
           answer: 2,
           fix: 'and she need not have signed',
-          why: 'Modal <em>need</em> takes no third-person <em>-s</em>, and the bare infinitive after it confirms that the modal is what was intended; <em>needs</em> is the lexical verb and would require <em>did not need to sign</em>. The meaning matters too: <em>need not have signed</em> says she did sign and it was unnecessary (Stage 6). The other three parts are correct — <em>ought to have waited</em> is the standard form for a past criticism, the past perfect in the time clause is right, and <em>either</em> properly continues a negative.' },
+          why: 'Modal <em>need</em> takes no third-person <em>-s</em>, and the bare infinitive after it confirms that the modal is what was intended; <em>needs</em> is the lexical verb and would require <em>did not need to sign</em>. The meaning matters too: <em>need not have signed</em> says she did sign and it was unnecessary (Stage 6). The other three parts are correct — <em>ought to have waited</em> is the standard form for a past criticism, the past perfect in the time clause is right, and the closing adverbial is properly placed.' },
 
         { id: 't8l3s2-3', type: 'choose', tag: 'sys-periphery', level: 'C1+',
           stem: 'A drafting manual advises replacing <em>shall</em> with <em>must</em> throughout a contract. What is the argument for that?',
@@ -805,17 +805,17 @@ T8.levels.push({
       },
       items: [
         { id: 't8l3s3-1', type: 'read', tag: 'sys-track', level: 'C1+',
-          passage: 'Three years after the low-emission zone was introduced, the city\'s own monitoring stations record a fall of eleven per cent in roadside nitrogen dioxide. The figure is not in dispute. What is in dispute is what produced it.\n\nThe transport authority is confident. Officials say the zone will have removed some nine thousand of the oldest vehicles from the network, and that the improvement must therefore be attributed to the scheme. They point to the timing: the curve bends in the month the charge began.\n\nThe independent review is more careful. It accepts that the zone may well have contributed, and that no other single measure was introduced in the same period. But it notes that fuel prices rose sharply across the same three years, that two arterial roads were closed for resurfacing, and that a national fleet-renewal grant was running throughout. Any of these could account for part of the fall, and the review declines to say how much.\n\nOn one point the review is not tentative at all. The modelling on which the authority based its forecast assumed a traffic volume that the counters never recorded, and the review states flatly that the forecast cannot be reconciled with the observed data. Whatever caused the improvement, the review concludes, it was not the mechanism the authority predicted.',
+          passage: 'Three years after the low-emission zone was introduced, the city\'s own monitoring stations record a fall of eleven per cent in roadside nitrogen dioxide. The figure is not in dispute. What is in dispute is what produced it.\n\nThe transport authority is confident. Officials say the zone will have removed some nine thousand of the oldest vehicles from the network, and that the improvement must therefore be attributed to the scheme. They point to the timing: the curve bends in the month the charge began.\n\nThe independent review is more careful. It accepts that the zone may well have contributed, and that no other single measure was introduced in the same period. But it notes that fuel prices rose sharply across the same three years, that two arterial roads were closed for resurfacing, and that a national fleet-renewal grant was running throughout. Any of these could account for part of the fall, and the review declines to say how much.\n\nOn one point the review is not tentative at all. It finds that the modelling behind the authority\'s forecast assumed a traffic volume the counters never recorded, and it states flatly that the forecast cannot be reconciled with the observed data. Whatever caused the improvement, the review concludes, it was not the mechanism the authority predicted.',
           source: 'Adapted for classroom use.',
           stem: 'Where does the <strong>writer\'s own</strong> commitment reach its highest point?',
           options: [
-            'In the first paragraph, where the eleven per cent figure is stated with no modal and no attribution.',
+            'In the first paragraph, where the writer says without hedge or attribution that the figure is not in dispute.',
             'In the second paragraph, where officials use <em>will have</em> and <em>must</em>.',
             'In the third paragraph, where the review uses <em>may well</em> and <em>could</em>.',
-            'In the fourth paragraph, where the forecast is said to be irreconcilable with the data.'
+            'In the fourth paragraph, where the review calls the forecast irreconcilable with the data.'
           ],
           answer: 0,
-          why: 'The first paragraph is the only place where the writer speaks in their own voice: the figure is asserted flatly, and <em>the figure is not in dispute</em> is about as strong as English gets, because a bare assertion outranks every modal. Options 2 and 4 both point at strong claims, but every one of them is attributed — <em>officials say</em>, <em>the review states flatly</em>, <em>the review concludes</em> — so they report other people\'s confidence, however firm it sounds. Option 3 identifies real hedging but attributes it correctly to the review, and hedged reported modality is the weakest combination in the passage, not the strongest.' },
+          why: '<em>The figure is not in dispute</em> and <em>what is in dispute is what produced it</em> are the only sentences in the passage that carry neither a modal nor a source, and a bare assertion in the writer\'s own voice outranks every modal there is. Options 2 and 4 both point at strong claims, but each one is handed to somebody else — <em>officials say</em>, <em>it states flatly</em>, <em>the review concludes</em> — so they report other people\'s confidence, however firm it sounds. Option 3 identifies real hedging but attributes it correctly to the review, and hedged reported modality is the weakest combination in the passage, not the strongest. Note that the eleven per cent figure itself is sourced to the monitoring stations; it is the sentence about the dispute, not the number, that the writer owns.' },
 
         { id: 't8l3s3-2', type: 'choose', tag: 'sys-track', level: 'C1+',
           stem: 'A literature review contains: <em>Several authors have claimed that the effect must be causal, though none has controlled for selection.</em> What does this tell you about the reviewer\'s own position?',

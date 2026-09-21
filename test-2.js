@@ -26,31 +26,31 @@ MOCKS.push({
           stem: 'If the ferry is cancelled again, passengers ______ wait until Thursday for the next crossing.',
           options: ['will have to', 'will must', 'will need', 'must have to'],
           answer: 0,
-          why: 'A modal has no infinitive, so nothing can follow <em>will</em> except a bare verb; the repair for <em>must</em> in that slot is <em>have to</em>. <em>will must</em> stacks one modal under another, which English never allows. <em>will need</em> is a lexical verb and needs <em>to</em> before the infinitive: <em>will need to wait</em>. <em>must have to</em> piles two necessity expressions on one clause and still says nothing about future time.' },
+          why: 'A modal has no infinitive, so nothing can follow <em>will</em> except a bare verb; the repair for <em>must</em> in that slot is <em>have to</em>. <em>will must</em> stacks one modal under another, which English never allows. <em>will need</em> is a lexical verb and needs <em>to</em> before the infinitive: <em>will need to wait</em>. <em>must have to</em> is a deduction about an obligation — I conclude that they are obliged — rather than a statement of what a cancellation would require, and it leaves the future unmarked.' },
 
         { id: 'm2-2', type: 'choose', tag: 'epi-cant', level: 'B2',
-          stem: 'The chain is still across the door and the curtains have not been opened, so the tenants ______ back from the coast yet.',
+          stem: 'The shutters have not been opened and four days of post are still lying in the hall, so the tenants ______ back from the coast yet.',
           options: ['mustn\'t be', 'can\'t be', 'may not be', 'shouldn\'t be'],
           answer: 1,
-          why: 'The negative of a confident deduction is built with <em>can\'t</em>, not with <em>mustn\'t</em>, so <em>can\'t be back</em> is the only deduction on offer. <em>mustn\'t be</em> can only forbid, which makes no sense about tenants returning to their own flat. <em>may not be</em> leaves the possibility open, and the two pieces of physical evidence have already closed it. <em>shouldn\'t be</em> turns the sentence into an expectation or a rule.' },
+          why: 'The negative of a confident deduction is built with <em>can\'t</em>, not with <em>mustn\'t</em>, so <em>can\'t be back</em> is the only deduction on offer. <em>mustn\'t be</em> can only forbid, which makes no sense about tenants returning to their own flat. <em>may not be</em> leaves the possibility open, and four days of uncollected post behind closed shutters have already closed it. <em>shouldn\'t be</em> turns the sentence into an expectation or a rule instead of a conclusion.' },
 
         { id: 'm2-3', type: 'choose', tag: 'deo-source', level: 'B2',
           stem: 'In her opening paragraph the writer sets herself a rule that nobody has imposed on her: <em>I ______ stop checking email before breakfast.</em>',
-          options: ['must', 'have to', 'am required to', 'had to'],
-          answer: 0,
+          options: ['have to', 'am required to', 'must', 'had to'],
+          answer: 2,
           why: 'Where the necessity comes from the speaker herself, English uses <em>must</em>; that is the whole difference the form carries. <em>have to</em> locates the authority outside the speaker, which the stem explicitly rules out. <em>am required to</em> goes further still and reports an external regulation, and it belongs to formal, institutional prose. <em>had to</em> puts the resolution in past time, but the writer is making it now.' },
 
         { id: 'm2-4', type: 'choose', tag: 'dyn-occasion', level: 'B2+',
           stem: 'Everyone said the deadline was impossible, and yet the translation team ______ the whole report by Friday evening.',
-          options: ['could finish', 'managed to finish', 'could have finished', 'was capable of finishing'],
-          answer: 1,
+          options: ['could finish', 'could have finished', 'was capable of finishing', 'managed to finish'],
+          answer: 3,
           why: 'One completed achievement against difficulty is what <em>managed to</em> is for, and <em>and yet</em> demands a form that asserts the job was actually done. <em>could finish</em> names a standing power rather than a single event, which is the single-occasion restriction. <em>could have finished</em> says the chance was there and was not taken, contradicting the sentence. <em>was capable of finishing</em> reports a capacity without ever claiming the report was delivered.' },
 
         { id: 'm2-5', type: 'choose', tag: 'past-deduce', level: 'B2+',
           stem: 'There were two sets of footprints in the dust and only one key had been signed out, so somebody ______ let the second person in.',
-          options: ['must have', 'had to', 'must', 'should have'],
+          options: ['must have', 'can\'t have', 'must', 'should have'],
           answer: 0,
-          why: 'The deduction is being made now about something that happened earlier, and that is the job of <em>must have</em> plus a past participle. <em>had to</em> reports a past obligation, as though a rule compelled someone to open the door. <em>must</em> with a bare infinitive puts the letting-in in present time, which the past-tense evidence rules out. <em>should have</em> says it did not happen and that this was a failing.' }
+          why: 'The deduction is being made now about something that happened earlier, and that is the job of <em>must have</em> plus a past participle. <em>can\'t have</em> draws the opposite conclusion from the same footprints, which are the reason for thinking somebody did open the door. <em>must</em> with a bare infinitive puts the letting-in in present time, which the past-tense evidence rules out. <em>should have</em> says it did not happen and that this was a failing.' }
       ]
     },
 
@@ -65,10 +65,10 @@ MOCKS.push({
 
         { id: 'm2-6', type: 'spot', tag: 'frame-form', level: 'B1+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The new guidelines state', 'that every supervisor must to record', 'the outcome of each session', 'in the shared log within a day.'],
-          answer: 1,
-          fix: 'that every supervisor must record',
-          why: 'A modal is followed by a bare infinitive, so the <em>to</em> in <em>must to record</em> cannot stand. The error survives in writing because many languages build verb-plus-verb sequences with a linking element, and English modals do not. The other three parts contain no modal and nothing that could take an infinitive.' },
+          words: ['The new guidelines state', 'that at the end of a session', 'every supervisor must to record', 'the outcome in the shared log.'],
+          answer: 2,
+          fix: 'every supervisor must record',
+          why: 'A modal is followed by a bare infinitive, so the <em>to</em> in <em>must to record</em> cannot stand. The error survives in writing because many languages build verb-plus-verb sequences with a linking element, and English modals do not. Parts 0, 1 and 3 contain no modal and nothing that could take an infinitive.' },
 
         { id: 'm2-7', type: 'spot', tag: 'frame-chain', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
@@ -79,24 +79,24 @@ MOCKS.push({
 
         { id: 'm2-8', type: 'spot', tag: 'deo-periph', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Before the funding rules changed,', 'part-time students must pay', 'the full library charge', 'at the start of every term.'],
-          answer: 1,
-          fix: 'part-time students had to pay',
-          why: '<em>must</em> has no past form, so a past obligation is carried by <em>had to</em>; <em>before the funding rules changed</em> fixes the whole sentence in past time. <em>must pay</em> reports a rule that is in force now, which the first part has already said is no longer true. The other parts are ordinary past-time description with nothing modal in them.' },
+          words: ['Part-time students must pay', 'the full library charge', 'at the start of every term,', 'until the funding rules changed.'],
+          answer: 0,
+          fix: 'Part-time students had to pay',
+          why: '<em>must</em> has no past form, so a past obligation is carried by <em>had to</em>; part 3, <em>until the funding rules changed</em>, fixes the whole sentence in past time. <em>must pay</em> reports a rule that is in force now, which part 3 has already said is no longer the case. Parts 1, 2 and 3 are ordinary past-time description with nothing modal in them.' },
 
         { id: 'm2-9', type: 'spot', tag: 'dyn-repair', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Since the second bridge opened,', 'the villagers have could reach', 'the district hospital', 'in under half an hour.'],
-          answer: 1,
-          fix: 'the villagers have been able to reach',
-          why: 'A perfect requires a past participle and <em>can</em> has none, so the slot is filled by the repair form: <em>have been able to reach</em>. <em>have could</em> is the defectiveness showing through — it is the exact point at which the modal runs out. <em>Since the second bridge opened</em> forces a present perfect, so the sentence cannot simply be rewritten with <em>can</em>.' },
+          words: ['Since the second bridge opened,', 'the journey into town has become much shorter,', 'and the villagers', 'have could reach the hospital in minutes.'],
+          answer: 3,
+          fix: 'have been able to reach the hospital in minutes.',
+          why: 'A perfect requires a past participle and <em>can</em> has none, so the slot is filled by the repair form: <em>have been able to reach</em>. <em>have could</em> is the defectiveness showing through — it is the exact point at which the modal runs out. Part 0 forces a present perfect right across the sentence, so it cannot simply be rewritten with <em>can</em>, and part 1 shows the same perfect used correctly.' },
 
         { id: 'm2-10', type: 'spot', tag: 'past-should', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The organisers now admit', 'that they should book a larger hall,', 'because more than two hundred people', 'were turned away at the door.'],
-          answer: 1,
-          fix: 'that they should have booked a larger hall',
-          why: 'They did not book a larger hall, and the sentence is criticising that, so it needs <em>should have booked</em> — the form that says the action never happened. <em>should book</em> gives advice about a booking still to be made, which the past-tense final part contradicts. Parts 2 and 3 report what actually occurred and are correctly in the past.' }
+          words: ['The organisers now admit', 'that more than two hundred people were turned away,', 'and that they should book a larger hall', 'for last month\'s concert.'],
+          answer: 2,
+          fix: 'and that they should have booked a larger hall',
+          why: 'Part 3 dates the booking to one particular past event, so part 2 cannot be advice about a hall still to be hired; it is criticism of something that never happened, which needs <em>should have booked</em>. <em>should book</em> would have to point forward, and <em>for last month\'s concert</em> leaves it nowhere to point. Parts 0, 1 and 3 report what was admitted and what actually occurred, and carry no modal to get wrong.' }
       ]
     },
 
@@ -126,23 +126,23 @@ MOCKS.push({
           stem: 'Which sentence says the same thing?',
           options: [
             'Volunteers mustn\'t attend the Saturday briefing.',
-            'Volunteers needn\'t attend the Saturday briefing.',
             'Volunteers needn\'t have attended the Saturday briefing.',
-            'Volunteers shouldn\'t attend the Saturday briefing.'
+            'Volunteers shouldn\'t attend the Saturday briefing.',
+            'Volunteers needn\'t attend the Saturday briefing.'
           ],
-          answer: 1,
+          answer: 3,
           why: '<em>needn\'t</em> removes an obligation and creates none, which is precisely what <em>no requirement</em> means. <em>mustn\'t attend</em> creates a prohibition, turning an open invitation into a ban. <em>needn\'t have attended</em> looks back at a briefing that has already happened and says people went unnecessarily. <em>shouldn\'t attend</em> advises against going, which the original does not.' },
 
         { id: 'm2-13', type: 'equiv', tag: 'epi-scale', level: 'B2',
           given: 'It is just about possible that the committee will meet before the recess, but I would not count on it.',
           stem: 'Which sentence says the same thing?',
           options: [
-            'The committee might meet before the recess.',
             'The committee must meet before the recess.',
+            'The committee might meet before the recess.',
             'The committee should meet before the recess.',
             'The committee can\'t meet before the recess.'
           ],
-          answer: 0,
+          answer: 1,
           why: '<em>might</em> sits on the weak middle of the scale, which is where <em>just about possible</em> and <em>would not count on it</em> put the speaker. <em>must meet</em> is the top rung and, with a human subject and a schedule, also reads as an obligation. <em>should meet</em> claims a positive expectation the speaker has just declined to make. <em>can\'t meet</em> is the bottom rung and rules out the possibility the original keeps open.' },
 
         { id: 'm2-14', type: 'equiv', tag: 'dist-core', level: 'B2+',
@@ -155,19 +155,19 @@ MOCKS.push({
             'Barges would have turned at the second basin if the canal had not been widened.'
           ],
           answer: 0,
-          why: 'Here the remote form marks distance in <strong>time</strong>, and <em>before they widened</em> is the cue, so the meaning is a past standing capacity. Option 1 reads the same form as distance in likelihood and invents an unreal condition. Option 2 reads it as present tentativeness and moves the turning into today. Option 3 builds an unreal past consequent, which says the barges never turned at all.' },
+          why: 'Here the remote form marks distance in <strong>time</strong>, and <em>before they widened</em> is the cue, so the meaning is a past standing capacity. Option 2 reads the same form as distance in likelihood and invents an unreal condition. Option 3 reads it as present tentativeness and moves the turning into today. Option 4 builds an unreal past consequent, which says the barges never turned at all.' },
 
         { id: 'm2-15', type: 'equiv', tag: 'past-needpair', level: 'B2+',
           given: 'You needn\'t have carried the boxes up; the lift was working after all.',
           stem: 'Which sentence says the same thing?',
           options: [
-            'You carried the boxes up, and it turned out to be unnecessary.',
             'You did not carry the boxes up, because the lift was working.',
-            'You were not allowed to carry the boxes up.',
-            'You ought not to have carried the boxes up, and it was careless of you.'
+            'You ought not to have carried the boxes up, and it was careless of you.',
+            'You carried the boxes up, and it turned out to be unnecessary.',
+            'You were not allowed to carry the boxes up, and you did it anyway.'
           ],
-          answer: 0,
-          why: '<em>needn\'t have done</em> builds the wasted effort into the form: the action happened, and the necessity was not there. Option 1 is the meaning of <em>didn\'t need to</em>, which normally implies the work was never started. Option 2 turns an absent obligation into a prohibition. Option 3 adds blame, and <em>needn\'t have</em> carries none — it reports waste, not fault.' }
+          answer: 2,
+          why: '<em>needn\'t have done</em> builds the wasted effort into the form: the action happened, and the necessity was not there. Option 1 is the meaning of <em>didn\'t need to</em>, which normally implies the work was never started. Option 2 adds blame, and <em>needn\'t have</em> carries none — it reports waste, not fault. Option 4 keeps the carrying but turns an absent obligation into a prohibition that was then broken.' }
       ]
     },
 
@@ -184,24 +184,24 @@ MOCKS.push({
           passage: 'Briefing note for marathon volunteers.\n\nThank you for signing up. Everyone on a water station should collect a numbered tabard from the depot before six, so that we know where you are if a runner needs help. You ___(16)___ bring your own drinks, since the stations are stocked for volunteers as well as runners, although a few people prefer their own bottle.\n\nVolunteers under eighteen ___(17)___ work on the road-crossing points; we will place you at a water station instead, where there is always a supervisor within sight.\n\nThe course closes at two o\'clock. If a runner is still on your section after that, the sweep vehicle ___(18)___ reach you within about ten minutes, though do not rely on it to the minute; stay where you are and wave it down rather than setting off back on your own.',
           blank: '(16)',
           stem: 'Choose the best option for blank (16).',
-          options: ['mustn\'t', 'don\'t have to', 'shouldn\'t', 'can\'t'],
+          options: ['mustn\'t', 'don\'t have to', 'shouldn\'t', 'are not to'],
           answer: 1,
-          why: 'The stations are stocked, so the obligation to bring drinks simply is not there, and <em>don\'t have to</em> is the form that removes an obligation without creating one. <em>mustn\'t</em> forbids, which the following clause contradicts outright — some volunteers do bring a bottle. <em>shouldn\'t</em> advises against it, which is the same contradiction in a weaker form. <em>can\'t</em> claims it is impossible or not permitted.' },
+          why: 'The stations are stocked, so the obligation to bring drinks simply is not there, and <em>don\'t have to</em> is the form that removes an obligation without creating one. <em>mustn\'t</em> forbids, which the following clause contradicts outright — some volunteers do bring a bottle. <em>shouldn\'t</em> advises against it, which is the same contradiction in a weaker form. <em>are not to</em> is a flat prohibition in the register of a written instruction, and a briefing note that has just explained why nobody needs a bottle is not banning one.' },
 
         { id: 'm2-17', type: 'cloze', tag: 'deo-prohibit', level: 'B2',
           passage: 'Briefing note for marathon volunteers.\n\nThank you for signing up. Everyone on a water station should collect a numbered tabard from the depot before six, so that we know where you are if a runner needs help. You ___(16)___ bring your own drinks, since the stations are stocked for volunteers as well as runners, although a few people prefer their own bottle.\n\nVolunteers under eighteen ___(17)___ work on the road-crossing points; we will place you at a water station instead, where there is always a supervisor within sight.\n\nThe course closes at two o\'clock. If a runner is still on your section after that, the sweep vehicle ___(18)___ reach you within about ten minutes, though do not rely on it to the minute; stay where you are and wave it down rather than setting off back on your own.',
           blank: '(17)',
           stem: 'Choose the best option for blank (17).',
-          options: ['are not allowed to', 'don\'t have to', 'shouldn\'t have to', 'mustn\'t to'],
-          answer: 0,
-          why: 'The next clause reassigns these volunteers to a water station, so they are barred from the crossings, and a rule that bars is a prohibition: <em>are not allowed to</em>. <em>don\'t have to</em> merely excuses them, which would leave them free to choose a crossing after all. <em>shouldn\'t have to</em> complains that the arrangement is unfair rather than stating a rule. <em>mustn\'t to</em> adds a <em>to</em> that no modal can take.' },
+          options: ['don\'t have to', 'shouldn\'t have to', 'had better not', 'are not allowed to'],
+          answer: 3,
+          why: 'The next clause reassigns these volunteers to a water station, so they are barred from the crossings, and a rule that bars is a prohibition: <em>are not allowed to</em>. <em>don\'t have to</em> merely excuses them, which would leave them free to choose a crossing after all. <em>shouldn\'t have to</em> complains that the arrangement is unfair rather than stating what the arrangement is. <em>had better not</em> warns them off, and a warning is the organiser\'s opinion, not the rule that the following clause then acts on.' },
 
         { id: 'm2-18', type: 'cloze', tag: 'epi-expect', level: 'B2',
           passage: 'Briefing note for marathon volunteers.\n\nThank you for signing up. Everyone on a water station should collect a numbered tabard from the depot before six, so that we know where you are if a runner needs help. You ___(16)___ bring your own drinks, since the stations are stocked for volunteers as well as runners, although a few people prefer their own bottle.\n\nVolunteers under eighteen ___(17)___ work on the road-crossing points; we will place you at a water station instead, where there is always a supervisor within sight.\n\nThe course closes at two o\'clock. If a runner is still on your section after that, the sweep vehicle ___(18)___ reach you within about ten minutes, though do not rely on it to the minute; stay where you are and wave it down rather than setting off back on your own.',
           blank: '(18)',
           stem: 'Choose the best option for blank (18).',
-          options: ['should', 'must', 'can', 'might not'],
-          answer: 0,
+          options: ['must', 'can', 'might not', 'should'],
+          answer: 3,
           why: '<em>should</em> here is expectation, not advice: it says what the schedule predicts while leaving room for the warning that follows. <em>must</em> claims a confident deduction, which the clause <em>do not rely on it to the minute</em> immediately withdraws. <em>can</em> states a capacity of the vehicle in general rather than a prediction about this afternoon. <em>might not</em> reverses the direction and would leave a volunteer with no reason to wait.' },
 
         { id: 'm2-19', type: 'gap', tag: 'dyn-ability', level: 'B2', blank: '(19)',
@@ -226,9 +226,9 @@ MOCKS.push({
             { who: 'Mali', text: 'That would save me. Tomorrow morning, then, if you are here early.' }
           ],
           stem: 'Choose the best option for gap (20).',
-          options: ['Shall I', 'Will I', 'Do I', 'Should I have'],
-          answer: 0,
-          why: '<em>Shall I …?</em> is the standard way of offering to do something, and Mali\'s reply — <em>that would save me</em> — accepts an offer. <em>Will I …?</em> asks for a prediction about the speaker\'s own future, which nobody else is in a position to give. <em>Do I …?</em> asks about a habit or an existing requirement. <em>Should I have …?</em> looks back at an adapter that was never brought, so it cannot open an arrangement for tomorrow.' }
+          options: ['Will I', 'May I', 'Shall I', 'Do I'],
+          answer: 2,
+          why: '<em>Shall I …?</em> is the standard way of offering to do something, and Mali\'s reply — <em>that would save me</em> — accepts an offer. <em>Will I …?</em> asks for a prediction about the speaker\'s own future, which nobody else is in a position to give. <em>Do I …?</em> asks whether that is the existing arrangement, and no arrangement has been made yet. <em>May I …?</em> asks Mali for permission to bring his own adapter, which is not something she has any say over.' }
       ]
     }
   ]
