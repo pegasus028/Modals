@@ -73,13 +73,13 @@ T5.levels.push({
         { id: 't5l1s1-3', type: 'choose', tag: 'dist-core', level: 'B2+',
           stem: 'In <em>I would say the figure is nearer forty per cent</em>, what is <em>would</em> doing?',
           options: [
+            'Softening the claim: the figure is offered, not asserted.',
             'Reporting what the speaker said on an earlier occasion.',
-            'Making the claim tentative — the speaker steps back from asserting it flatly.',
             'Marking the claim as unreal, that is, something that is not the case.',
             'Making a polite request of the listener.'
           ],
-          answer: 1,
-          why: 'There is no past adverbial, no reporting frame and no <em>if</em>, so the only axis the context leaves open is likelihood, and with a first-person verb of opinion that comes out as tentativeness: the speaker offers the figure instead of asserting it. Option 1 would need a past frame such as <em>at the time</em> or a reporting verb. Option 3 misreads the remoteness as unreality, but the speaker does believe the figure — that is why they are giving it. Option 4 imports the politeness axis, which needs a hearer and something asked of them, and <em>I would say</em> asks nothing of anyone.' },
+          answer: 0,
+          why: 'There is no past adverbial, no reporting frame and no <em>if</em>, so the only axis the context leaves open is likelihood, and with a first-person verb of opinion that comes out as tentativeness: the speaker offers the figure instead of asserting it. Option 2 would need a past frame such as <em>at the time</em> or a reporting verb. Option 3 misreads the remoteness as unreality, but the speaker does believe the figure — that is why they are giving it. Option 4 imports the politeness axis, which needs a hearer and something asked of them, and <em>I would say</em> asks nothing of anyone.' },
 
         { id: 't5l1s1-4', type: 'spot', tag: 'dist-core', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
@@ -92,13 +92,13 @@ T5.levels.push({
           given: 'Ten years ago you could park anywhere along the riverfront.',
           stem: 'Which sentence says the same thing?',
           options: [
-            'Ten years ago you were allowed to park anywhere along the riverfront.',
+            'Ten years ago you were able to park anywhere along the riverfront.',
             'Ten years ago you might have parked anywhere along the riverfront.',
             'You could park anywhere along the riverfront if the council agreed.',
             'You could have parked anywhere along the riverfront ten years ago.'
           ],
           answer: 0,
-          why: 'The past adverbial forces the time reading, so <em>could</em> here is simply the past of permission, and option 1 says that outright: <em>were allowed to</em> states as a fact what the rules used to permit. Option 2 turns the fact into a weak guess about the past — it says the speaker does not know what was allowed. Option 3 drops the adverbial and puts a condition in view, which swings the axis over to unreality, so the parking becomes something that is not the case. Option 4 is the unrealised-possibility form and carries the implication that you did <strong>not</strong> park there, which the original does not say at all.' }
+          why: 'The past adverbial forces the time reading, so <em>could</em> here simply reports what used to be possible, and option 1 says that outright: <em>were able to</em> states it as a fact about that earlier period. Option 2 turns the fact into a weak guess about the past — it says the speaker does not know what was allowed. Option 3 drops the adverbial and puts a condition in view, which swings the axis over to unreality, so the parking becomes something that is not the case. Option 4 is the unrealised-possibility form and carries the implication that you did <strong>not</strong> park there, which the original does not say at all.' }
       ]
     },
 
@@ -127,7 +127,7 @@ T5.levels.push({
       },
       items: [
         { id: 't5l1s2-1', type: 'choose', tag: 'dist-tentative', level: 'B2+',
-          stem: 'A researcher has run one small pilot study. Which sentence is pitched at the strength the evidence will bear?',
+          stem: 'A researcher has run one small pilot study. Which sentence claims no more than the evidence can support?',
           options: [
             'The pilot study proves that shorter shifts reduce error rates.',
             'The pilot study shows that shorter shifts will always reduce error rates.',
@@ -150,7 +150,7 @@ T5.levels.push({
           why: '<em>I would think</em> softens the asserting, not the fortnight, so the plainest paraphrase is <em>my guess is</em> — the estimate stands, offered rather than declared. Option 1 strips the hedge out and turns a guess into a certainty. Option 2 reads <em>would</em> as past time, which would need a reporting frame or a past adverbial that the sentence does not have. Option 4 reads it as an unreal condition, which makes the length of the repairs depend on whether the speaker thinks about them.' },
 
         { id: 't5l1s2-3', type: 'choose', tag: 'dist-tentative', level: 'B2+',
-          stem: 'A writer wants the <strong>weakest</strong> of these four claims about a correlation. Which verb phrase should be chosen: <em>The pattern ______ a change in commuting habits.</em>',
+          stem: 'A writer wants to make the <strong>most cautious</strong> of these four claims about a correlation. Which should she choose? <em>The pattern ______ a change in commuting habits.</em>',
           options: ['must reflect', 'will reflect', 'should reflect', 'might reflect'],
           answer: 3,
           why: '<em>Might reflect</em> is the only one of the four that merely opens the possibility and leaves the writer uncommitted to it. <em>Should reflect</em> states an expectation — the writer is saying the connection probably holds — which is a real claim about the pattern. <em>Will reflect</em> is confident prediction or deduction and asserts the connection outright. <em>Must reflect</em> is the top of the certainty scale and claims the evidence leaves no other explanation standing, which is the last thing a writer discussing a correlation should say.' },
@@ -159,8 +159,8 @@ T5.levels.push({
           passage: 'The city\'s new cycle lanes have been open for eleven weeks and the first counts are in. Traffic on the two monitored corridors is down by nine per cent, and cycle journeys along them are up by roughly a third.\n\nEleven weeks is not a season, however, and the figures ___(1)___ be read with some care. The fall in motor traffic ___(2)___ reflect the lanes themselves, but it may equally reflect the school holidays, which began in the same week. A full year of counts would settle the question; until then the strongest thing a report can honestly say is that the scheme looks promising.',
           blank: '(2)',
           stem: 'Choose the best option for blank (2).',
-          options: ['must', 'can\'t', 'might', 'will'],
-          answer: 2,
+          options: ['must', 'can\'t', 'will', 'might'],
+          answer: 3,
           why: 'The next clause immediately offers a rival explanation with <em>may equally</em>, so the writer is holding two possibilities open side by side, and <em>might</em> does that without preferring either. <em>Must</em> would claim the evidence has already ruled out the holiday explanation that the same sentence goes on to raise. <em>Can\'t</em> denies that the lanes had any effect at all, which contradicts the paragraph. <em>Will</em> is confident prediction or deduction and is far too strong for eleven weeks of counts.' },
 
         { id: 't5l1s2-5', type: 'spot', tag: 'dist-tentative', level: 'B2+',
@@ -222,7 +222,7 @@ T5.levels.push({
             'He kept a master key in his locker for the whole of that year.'
           ],
           answer: 3,
-          why: 'Only the second continuation supplies a past frame — <em>kept</em> and <em>that year</em> — and once that frame is in place the modal can only be reporting what was possible then. The first turns the sentence into a suggestion, so the distance becomes social and the technician has not opened anything yet. The third puts an <em>if</em> in view and makes the whole thing unreal. The fourth states in the present who holds the key, so the capacity is alive now and <em>could</em> reads as a present possibility rather than a past fact.' },
+          why: 'Only the fourth continuation supplies a past frame — <em>kept</em> and <em>that year</em> — and once that frame is in place the modal can only be reporting what was possible then. The first turns the sentence into a suggestion, so the distance becomes social and the technician has not opened anything yet. The second states in the present who holds the key — the near miss, since the master key is exactly what would explain a past ability — but it keeps the capacity alive now, so <em>could</em> reads as a present possibility rather than a past fact. The third puts an <em>if</em> in view and makes the whole thing unreal.' },
 
         { id: 't5l1s3-3', type: 'judge', tag: 'dist-read', level: 'B2+',
           given: 'Could you have a look at the projector before the assembly?',
@@ -276,7 +276,7 @@ T5.levels.push({
         given: 'I\'d have thought the deposit was refundable.',
         stem: 'Which sentence says the same thing?',
         options: [
-          'I expected the deposit to be refundable, and I am surprised to hear otherwise.',
+          'I expected the deposit to be refundable, so this is a surprise.',
           'I am certain the deposit is refundable.',
           'I thought about the deposit and decided that it was refundable.',
           'If I had thought about it, the deposit would have been refundable.'
@@ -288,9 +288,9 @@ T5.levels.push({
         passage: 'When the old school library was still housed in the wooden building, pupils ___(1)___ take books home for a month at a time, and nobody counted them in or out. The new system logs every loan, and the limit is a fortnight.\n\nThe librarian is not sentimental about the change. Losses under the old arrangement, she says, ___(2)___ easily have run to a hundred volumes a year, and nobody will ever know for certain.',
         blank: '(1)',
         stem: 'Choose the best option for blank (1).',
-        options: ['can', 'would be able to', 'might', 'could'],
+        options: ['can', 'may', 'might', 'could'],
         answer: 3,
-        why: 'The clause is anchored in past time by <em>when the old school library was still housed</em>, so the modal steps back with it and <em>could</em> reports what the rules then allowed. <em>Can</em> leaves the permission in the present and clashes with a frame that plainly belongs to an earlier period. <em>Might</em> would turn a remembered fact into a guess about what pupils may have been allowed to do. <em>Would be able to</em> forces a conditional reading — able to if something else happened — and nothing in the paragraph supplies the condition.' },
+        why: 'The clause is anchored in past time by <em>when the old school library was still housed</em>, so the modal steps back with it and <em>could</em> reports what the rules then allowed. <em>Can</em> and <em>may</em> are the near misses: both name exactly the right permission, but both leave it in the present and clash with a frame that plainly belongs to an earlier period. <em>Might</em> would turn a remembered fact into a guess about what pupils may have been allowed to do.' },
 
       { id: 't5l1ck-5', type: 'build', tag: 'dist-tentative', level: 'B2+',
         stem: 'Put the words in order to make a softened claim.',
@@ -300,7 +300,7 @@ T5.levels.push({
         why: '<em>Would</em> is a modal, so it stands first in its verb phrase and takes a bare infinitive: <em>I would say</em>. That frame softens the <strong>act of asserting</strong>, so the claim it introduces follows it whole and unchanged, with its own present-tense verb: <em>the figure is optimistic</em>. Students often reach for <em>I say would</em>, which puts a modal after a lexical verb, or for <em>I would say the figure would be optimistic</em>, which hedges the same claim twice.' },
 
       { id: 't5l1ck-6', type: 'choose', tag: 'dist-read', level: 'B2+',
-        stem: 'A colleague writes, with no other context: <em>We could run the trial in Chiang Mai.</em> What is the reading?',
+        stem: 'A colleague writes, with no other context: <em>We could run the trial in Chiang Mai.</em> What does she mean?',
         options: [
           'A report of what was possible at some time in the past.',
           'A suggestion — one option open to the team.',
@@ -361,8 +361,8 @@ T5.levels.push({
             { who: 'Anan', text: 'I am up on the roof until one. ___(2)___ you mind asking Krit instead? He replaced the lamp last term.' }
           ],
           stem: 'Choose the best option for gap (2).',
-          options: ['Would', 'Could', 'Should', 'Might'],
-          answer: 0,
+          options: ['Could', 'Should', 'Might', 'Would'],
+          answer: 3,
           why: 'The frame is fixed: <em>Would you mind</em> plus an <em>-ing</em> form is the formula, and it is also the right rung here, because Anan is handing back a job he cannot do and that is a larger imposition than the one he was offered. <em>Could you mind asking</em> and <em>Might you mind asking</em> are not English at all, since <em>mind</em> in this sense only takes the <em>would</em> frame. <em>Should you mind asking</em> is a conditional clause, not a request, and would leave Ploy waiting for the rest of the sentence.' },
 
         { id: 't5l2s1-3', type: 'choose', tag: 'dist-request', level: 'B2+',
@@ -382,13 +382,13 @@ T5.levels.push({
           given: 'Would you mind if I took the earlier train?',
           stem: 'Which sentence says the same thing?',
           options: [
-            'Is it all right with you if I take the earlier train?',
+            'Do you mind if I take the earlier train?',
             'Would you like to take the earlier train?',
             'Do you mind that I took the earlier train?',
             'You should take the earlier train.'
           ],
           answer: 0,
-          why: 'This frame asks permission for the <strong>speaker\'s own</strong> act, and the past-form <em>took</em> is a remoteness marker, not a past tense — which is why the journey being discussed is still to come. Option 2 turns it into an offer aimed at the hearer, so the wrong person ends up on the train. Option 3 reads <em>took</em> as a genuine past and so complains about something already done. Option 4 is advice, which imposes on the hearer instead of asking anything of them.' }
+          why: 'This frame asks permission for the <strong>speaker\'s own</strong> act, and the past-form <em>took</em> is a remoteness marker, not a past tense — which is why the journey being discussed is still to come. Option 1 asks the same permission one rung nearer on the dial, with plain present forms, and that is exactly why <em>took</em> becomes <em>take</em>. Option 2 turns it into an offer aimed at the hearer, so the wrong person ends up on the train. Option 3 is the near miss: it keeps <em>took</em> but reads it as a genuine past, and so complains about something already done. Option 4 is advice, which imposes on the hearer instead of asking anything of them.' }
       ]
     },
 
@@ -461,9 +461,9 @@ T5.levels.push({
             { who: 'Wichai', text: 'That would be a great help. And you ___(2)___ want to check the air conditioning while you are in there.' }
           ],
           stem: 'Choose the best option for gap (1).',
-          options: ['Shall', 'Will', 'Might', 'Would'],
-          answer: 0,
-          why: '<em>Shall I…?</em> is the standard English way of putting your own labour on the table, and Wichai\'s reply — <em>that would be a great help</em> — confirms that an offer is what he has just been given. <em>Will I come in early?</em> asks for a prediction about the speaker\'s own future, which nobody but the speaker could supply. <em>Might I…?</em> asks Wichai for permission, and Mali needs nobody\'s permission to come in early; a request for permission is not what <em>that would be a great help</em> answers. <em>Would I…?</em> is not a usable offer frame without a condition attached to it.' },
+          options: ['Must', 'Need', 'Would', 'Shall'],
+          answer: 3,
+          why: '<em>Shall I…?</em> is the standard English way of putting your own labour on the table, and Wichai\'s reply — <em>that would be a great help</em> — confirms that an offer is what he has just been given. <em>Must I…?</em> is the near miss: it is a perfectly good first-person question, but it asks whether Mali is <strong>obliged</strong> to come in, which sounds reluctant, and nobody answers a reluctant question with <em>that would be a great help</em>. <em>Need I…?</em> asks the same thing in a more formal way — whether it is necessary — and fails for the same reason. <em>Would I…?</em> is not a usable offer frame without a condition attached to it.' },
 
         { id: 't5l2s2-5', type: 'judge', tag: 'dist-offer', level: 'B2+',
           given: 'You could always borrow the portable screen from the staff room.',
@@ -512,8 +512,8 @@ T5.levels.push({
           passage: 'Thank you for sending the parking survey; it arrived in good time and we have already started running the model.\n\nTwo of the tables, however, have come through without their headings. We ___(1)___ be grateful if somebody could send the original spreadsheet, since we would rather not guess which column is which.\n\nWe are also short of the evening counts. It ___(2)___ be helpful if those came as a separate file, as our model reads them on a different cycle.',
           blank: '(2)',
           stem: 'Choose the best option for blank (2).',
-          options: ['will', 'must', 'would', 'can'],
-          answer: 2,
+          options: ['will', 'must', 'can', 'would'],
+          answer: 3,
           why: '<em>It would be helpful if…</em> is the standard remote frame for asking somebody to do something you cannot require of them, and the <em>came</em> that follows is the same remoteness carried through the conditional clause. <em>It will be helpful</em> drops the distance and states as settled fact what the reader is going to do for you. <em>It must be helpful</em> is a deduction about how useful a separate file is, which is not the point being made. <em>It can be helpful</em> makes a general claim about separate files rather than a request about these particular ones.' },
 
         { id: 't5l2s3-3', type: 'choose', tag: 'dist-soften', level: 'B2+',
@@ -578,7 +578,7 @@ T5.levels.push({
         options: [
           'All marks must be entered by 5 p.m. on Friday.',
           'Please enter all marks by 5 p.m. on Friday.',
-          'I was wondering whether you might be able to enter your marks at some point on Friday.',
+          'I was wondering whether you might enter all marks by 5 p.m. on Friday.',
           'Marks are to be entered by 5 p.m. on Friday.'
         ],
         answer: 2,
@@ -594,9 +594,9 @@ T5.levels.push({
         passage: 'The sports hall booking system has been down since Monday, and the technicians have not yet given a date for its return.\n\nIn the meantime, staff who need the hall should email the office directly. It ___(1)___ save a great deal of time if requests included the date, the start and finish times and the number of students, since every booking is now being written into the diary by hand.\n\nWe ___(2)___ be grateful for your patience while the system is rebuilt.',
         blank: '(1)',
         stem: 'Choose the best option for blank (1).',
-        options: ['would', 'will', 'should', 'can'],
+        options: ['would', 'will', 'must', 'can'],
         answer: 0,
-        why: 'The <em>if</em>-clause has already stepped back — <em>included</em>, not <em>include</em> — so the main clause has to step back with it, and <em>would</em> is the form that does that. The result is a request dressed as an observation, which is how you ask colleagues for something you cannot require of them. <em>Will</em> makes a flat prediction and leaves the two halves of the sentence in different worlds; <em>should</em> and <em>can</em> do the same, since neither is a remote form and neither can stand over a remote <em>included</em>.' },
+        why: 'The <em>if</em>-clause has already stepped back — <em>included</em>, not <em>include</em> — so the main clause has to step back with it, and <em>would</em> is the form that does that. The result is a request dressed as an observation, which is how you ask colleagues for something you cannot require of them. <em>Will</em> is the near miss: <em>it will save a great deal of time if requests include…</em> is fine English, but with <em>included</em> it leaves the two halves of the sentence in different worlds. <em>Must</em> turns the sentence into a deduction and <em>can</em> into a general claim, and neither is a remote form that can stand over a remote <em>included</em>.' },
 
       { id: 't5l2ck-6', type: 'choose', tag: 'dist-offer', level: 'B2+',
         stem: 'A colleague is struggling with a heavy box of exam papers. You want to help without implying that she cannot manage. Which is best?',
@@ -607,7 +607,7 @@ T5.levels.push({
           'Would you mind if I carried that for you?'
         ],
         answer: 1,
-        why: '<em>Shall I take one end?</em> offers the speaker\'s own labour and frames the job as shared work rather than a rescue, which is what keeps it from sounding like a comment on her strength. Option 1 is a flat statement about her ability and is the one version that actually says she cannot manage. Option 3 is advice, so it hands the work of finding help back to her. Option 4 uses a request frame, and asking permission to do somebody a favour makes the offer heavier than the situation warrants.' }
+        why: '<em>Shall I take one end?</em> offers the speaker\'s own labour and frames the job as shared work rather than a rescue, which is what keeps it from sounding like a comment on her strength. Option 1 is a flat statement about her ability and is the one version that actually says she cannot manage. Option 3 is advice, so it hands the work of finding help back to her. Option 4 is the near miss: it is a courteous offer, but <em>carried that for you</em> takes the whole box off her, which is exactly the suggestion that she cannot manage that the situation rules out.' }
     ]
   }
 });
@@ -655,9 +655,9 @@ T5.levels.push({
           why: 'A wish is counter to fact, so it takes remote forms, and <em>would</em> is the form used when the wish is about somebody <strong>else\'s</strong> behaviour — which is where the impatience in the sentence comes from. Because <em>would</em> is a modal, the verb after it is bare: <em>decide</em>, never <em>to decide</em> and never <em>decided</em>. <em>I wish the committee decides</em> is not English at all, and <em>I wish the committee decided</em> would be a wish about a standing state of affairs rather than about one overdue decision.' },
 
         { id: 't5l3s1-3', type: 'choose', tag: 'dist-unreal', level: 'C1',
-          stem: 'In which sentence is <em>would</em> an unreal consequent with the condition left unstated?',
+          stem: 'In which sentence does <em>would</em> describe an imagined situation, with the <em>if</em> left unsaid?',
           options: [
-            'I would not worry about the second draft until the data are in.',
+            'I would not worry about the draft until the data are in.',
             'I would always start with the appendices when I was marking.',
             'Would you send the corrected version to the registry?',
             'She said the corrected version would be ready on Friday.'
@@ -676,7 +676,7 @@ T5.levels.push({
           given: 'I wish they would tell us what the new timetable looks like.',
           stem: 'Which sentence says the same thing?',
           options: [
-            'They have not told us what the new timetable looks like, and I am becoming impatient.',
+            'They still haven\'t shared the new timetable, and I\'m getting impatient.',
             'They told us what the new timetable looks like, and I am glad they did.',
             'I wish I had asked them what the new timetable looks like.',
             'If they had told us about the new timetable, I would have stopped asking.'
@@ -711,7 +711,7 @@ T5.levels.push({
       },
       items: [
         { id: 't5l3s2-1', type: 'choose', tag: 'dist-unrealposs', level: 'C1',
-          stem: 'A policy paper is arguing from a scheme nobody has tested. Which consequent is pitched at the strength the argument will bear?',
+          stem: 'A policy paper is arguing from a scheme nobody has tested. Which sentence claims no more than the argument can support?',
           options: [
             'If the levy were introduced, congestion will fall by a fifth.',
             'If the levy were introduced, congestion would certainly fall by a fifth.',
@@ -732,13 +732,13 @@ T5.levels.push({
         { id: 't5l3s2-3', type: 'choose', tag: 'dist-unrealposs', level: 'C1',
           stem: 'What is the difference between <em>If the tolls were lifted, the bridge could take twice the traffic</em> and <em>…the bridge would take twice the traffic</em>?',
           options: [
-            'The first is about a past scenario and the second about a future one.',
-            'The first is polite and the second is direct.',
-            'The first says the capacity would exist; the second claims the traffic would actually come.',
-            'The first is a question and the second a statement.'
+            'The first is about a past scenario; the second is about a future one.',
+            'The first is polite; the second is direct.',
+            'The first is about capacity; the second says the traffic would really come.',
+            'The first leaves the tolls in doubt; the second says they will definitely be lifted.'
           ],
           answer: 2,
-          why: 'Both sentences are unreal — the tolls have not been lifted in either — so the difference cannot be one of time, and what separates them is how much is being claimed inside the imagined world. <em>Could</em> opens a possibility and here leans on capacity; <em>would</em> asserts the outcome, which is a much stronger claim and one the writer would have to defend. Option 1 misreads the remote forms as tenses, which is exactly the error this stage exists to remove. Option 2 imports the politeness axis, which needs a hearer and something asked of them. Option 4 describes neither sentence.' },
+          why: 'Both sentences are unreal — the tolls have not been lifted in either — so the difference cannot be one of time, and what separates them is how much is being claimed inside the imagined world. <em>Could</em> opens a possibility and here leans on capacity; <em>would</em> asserts the outcome, which is a much stronger claim and one the writer would have to defend. Option 1 misreads the remote forms as tenses, which is exactly the error this stage exists to remove. Option 2 imports the politeness axis, which needs a hearer and something asked of them. Option 4 is the near miss: it is right that the second sentence is the stronger one, but it puts the certainty on the wrong half — both <em>if</em>-clauses are identical, and neither says the tolls will be lifted.' },
 
         { id: 't5l3s2-4', type: 'sort', tag: 'dist-unrealposs', level: 'C1',
           stem: 'Decide whether each sentence describes an imagined world or guesses about the real one.',
@@ -804,7 +804,7 @@ T5.levels.push({
         { id: 't5l3s3-3', type: 'choose', tag: 'dist-ifwill', level: 'C1',
           stem: 'In which sentence is <em>will</em> inside an <em>if</em>-clause correct?',
           options: [
-            'If the train will be late, we will take a taxi.',
+            'If the train will be late, we will miss the connection.',
             'If you will just sign at the bottom, I can process the refund today.',
             'If it will snow next week, the pass will close.',
             'If the results will arrive on Friday, we will meet on Saturday.'
@@ -847,22 +847,22 @@ T5.levels.push({
     items: [
 
       { id: 't5l3ck-1', type: 'choose', tag: 'dist-unreal', level: 'C1',
-        stem: 'Which sentence is internally consistent?',
+        stem: 'Which sentence is correct?',
         options: [
           'If the archive were digitised, researchers will stop travelling to Bangkok.',
           'If the archive were digitised, researchers would stop travelling to Bangkok.',
           'If the archive would be digitised, researchers would stop travelling to Bangkok.',
-          'If the archive is digitised, researchers would stop travelling to Bangkok.'
+          'If the archive were digitised, researchers stop travelling to Bangkok.'
         ],
         answer: 1,
-        why: 'Both halves have to agree about which world they are describing, and option 2 does that: the remote <em>were</em> in the condition and the remote <em>would</em> in the consequent. Option 1 hangs a plain prediction on an unreal condition. Option 3 puts <em>would</em> inside the <em>if</em>-clause, where the <em>if</em> has already marked the possibility and the remoteness belongs to the past form instead. Option 4 is the mirror image of option 1 — a real condition with an imagined consequent — which makes an ordinary possibility sound hypothetical.' },
+        why: 'Both halves have to agree about which world they are describing, and option 2 does that: the remote <em>were</em> in the condition and the remote <em>would</em> in the consequent. Option 1 hangs a plain prediction on an unreal condition. Option 3 puts <em>would</em> inside the <em>if</em>-clause, where the <em>if</em> has already marked the possibility and the remoteness belongs to the past form instead. Option 4 leaves the consequent in the plain present, so it states as a fact about the real world something that could only follow in the imagined one.' },
 
       { id: 't5l3ck-2', type: 'cloze', tag: 'dist-unrealposs', level: 'C1',
         passage: 'The reservoir has been below forty per cent since the middle of March, and the district has been trucking water to six villages for eleven weeks.\n\nEngineers point out that the pipeline from the eastern catchment was surveyed in 2019 and never built. If the district laid it now, the tankers ___(1)___ be unnecessary by next summer. Whether that happens is another matter: the same objections ___(2)___ still be raised, and nothing has been budgeted.',
         blank: '(1)',
         stem: 'Choose the best option for blank (1).',
-        options: ['will', 'would', 'must', 'can'],
-        answer: 1,
+        options: ['will', 'can', 'must', 'would'],
+        answer: 3,
         why: 'The <em>if</em>-clause has stepped back — <em>laid</em> is the remote form, and the last sentence confirms that nothing has been budgeted — so the consequent has to step back with it, and <em>would</em> is the form that does that. <em>Will be unnecessary</em> is a flat prediction about the real world and clashes with the condition standing in front of it. <em>Must be unnecessary</em> is a deduction that the tankers are already pointless, which is the opposite of what the paragraph says. <em>Can be unnecessary</em> makes a general claim about tankers instead of saying anything about this pipeline.' },
 
       { id: 't5l3ck-3', type: 'choose', tag: 'dist-ifwill', level: 'C1',
@@ -893,8 +893,8 @@ T5.levels.push({
           { who: 'Boon', text: 'They are not going to pay for it, though. And even if they did, I ___(2)___ want to check whether the older machines can take the load.' }
         ],
         stem: 'Choose the best option for gap (1).',
-        options: ['could', 'can', 'will', 'must'],
-        answer: 0,
+        options: ['can', 'will', 'must', 'could'],
+        answer: 3,
         why: 'The <em>if</em>-clause has the remote <em>paid</em> for something that is not happening, so the consequent has to be remote as well, and <em>could</em> also names the capacity the licence would create. <em>Can</em> and <em>will</em> are real-world forms and contradict the condition — Boon\'s reply confirms that the department is not paying. <em>Must</em> would be either an obligation or a deduction, and the sentence is about neither: nobody is requiring the simulation and nobody is inferring that it is being run.' },
 
       { id: 't5l3ck-6', type: 'choose', tag: 'dist-ifwill', level: 'C1',

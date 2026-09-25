@@ -46,11 +46,11 @@ T3.levels.push({
           stem: 'Three of these obligations were imposed on the speaker by somebody else. In which one has she imposed it on herself?',
           options: [
             'I have to hand the coursework in by Friday.',
+            'I must stop leaving my reading until the night before.',
             'I have to renew my library card every September.',
-            'I have to wear a lanyard in the laboratory.',
-            'I must stop leaving my reading until the night before.'
+            'I have to wear a lanyard in the laboratory.'
           ],
-          answer: 3,
+          answer: 1,
           why: '<em>Must</em> sources the requirement in the speaker herself: nobody has ordered her to give up last-minute reading, so the rule is one she has made for herself. The other three use <em>have to</em>, and each names a requirement issued elsewhere — the deadline by the department, the lanyard by a safety regulation, the renewal date by the library. Putting <em>must</em> into any of those would make the speaker sound as though she had written the rule herself.' },
 
         { id: 't3l1s1-2', type: 'sort', tag: 'deo-source', level: 'B2',
@@ -70,30 +70,30 @@ T3.levels.push({
           why: 'Every <em>must</em> here is issued by whoever is speaking or writing — including the exam board, which is the author of the regulation it is printing. Every <em>have to</em> reports a requirement the speaker found rather than made: the audit, French law, the booking policy of the hall. <em>Apparently</em> in the last one is the giveaway, because nobody reports their own decision as hearsay.' },
 
         { id: 't3l1s1-3', type: 'choose', tag: 'deo-source', level: 'B2',
-          stem: 'A head of department is telling her staff about a rule the university has made. She did not make it herself and does not want to sound as though she had. Which sentence suits her position?',
+          stem: 'At a staff meeting, a head of department announces a new university rule: the online security module is now compulsory. The rule is not hers, and she does not want to sound as though it were. Which sentence suits her position?',
           options: [
-            'We all must complete the online security module before the end of term.',
-            'We all had better complete the online security module before the end of term.',
-            'We all have to complete the online security module before the end of term.',
-            'We all should complete the online security module before the end of term.'
+            'Everyone must complete the online security module before the end of term.',
+            'Everyone ought to complete the online security module before the end of term.',
+            'Everyone has to complete the online security module before the end of term.',
+            'Everyone may complete the online security module before the end of term.'
           ],
           answer: 2,
-          why: '<em>Have to</em> marks a requirement the speaker found rather than made, which is exactly her position: the university issued it and she is passing it on. <em>Must</em> is good English in the mouth of whoever made the rule, and that is the trouble here — it would claim the regulation as her own. <em>Had better</em> warns about one occasion with an unpleasant consequence implied, rather than stating a standing requirement. <em>Should</em> drops the force to a recommendation the staff could reasonably decline.' },
+          why: '<em>Have to</em> marks a requirement the speaker found rather than made, which is exactly her position: the university issued it and she is passing it on. <em>Must</em> is the near miss — good English in the mouth of whoever made the rule, and that is the trouble here, because it would claim the regulation as her own. <em>Ought to</em> drops the force to a recommendation the staff could reasonably decline, which a compulsory module is not. <em>May</em> only gives permission, so it would make the module sound optional.' },
 
         { id: 't3l1s1-4', type: 'spot', tag: 'deo-source', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
           words: [
-            'Because the ministry has tightened its rules,',
-            'every private clinic must to send',
-            'monthly figures on antibiotic use',
-            'to the provincial health office.'
+            'Under the ministry\'s new rules,',
+            'which came into force in March,',
+            'every private clinic in the province',
+            'must to send in monthly figures on antibiotic use.'
           ],
-          answer: 1,
-          fix: 'every private clinic has to send',
-          why: 'Learners write <em>must to</em> by blending two constructions: <em>must</em> is a modal and takes a bare infinitive, while <em>have to</em> carries its own <em>to</em>. Either repair is grammatical, and <em>has to send</em> is the better one here, because the opening clause says the ministry made the rule, not the writer. The other three parts are sound — the reason clause, the object and the destination all sit where they belong.' },
+          answer: 3,
+          fix: 'has to send in monthly figures on antibiotic use.',
+          why: 'Learners write <em>must to</em> by blending two constructions: <em>must</em> is a modal and takes a bare infinitive, while <em>have to</em> carries its own <em>to</em>. Either repair is grammatical, and <em>has to send</em> is the better one here, because the opening phrase says the ministry made the rule, not the writer. The other three parts are sound — the phrase naming the rules, the clause giving the date and the subject all sit where they belong.' },
 
         { id: 't3l1s1-5', type: 'equiv', tag: 'deo-source', level: 'B2',
-          given: 'The insurers require every rider to wear a helmet.',
+          given: 'The insurers require every rider to wear a helmet, and in practice they all do.',
           stem: 'Which sentence reports that requirement most accurately?',
           options: [
             'Riders should wear a helmet.',
@@ -102,7 +102,7 @@ T3.levels.push({
             'Riders have to wear a helmet.'
           ],
           answer: 3,
-          why: '<em>Have to</em> is the form for a requirement whose source lies outside the speaker, and an insurance company is exactly such a source. <em>Should</em> demotes a condition of cover to a recommendation riders could ignore. <em>Had better</em> warns about one occasion with a bad outcome implied, rather than stating a standing rule. <em>Be supposed to</em> does report an outside rule, but it also hints that the rule is not being kept — which is more than the given sentence says.' }
+          why: '<em>Have to</em> is the form for a requirement whose source lies outside the speaker, and an insurance company is exactly such a source. <em>Should</em> demotes a condition of cover to a recommendation riders could ignore. <em>Had better</em> warns about one occasion with a bad outcome implied, rather than stating a standing rule. <em>Be supposed to</em> is the near miss: it does report an outside rule, but it also hints that the rule is not being kept — and the given sentence says the riders all keep it.' }
       ]
     },
 
@@ -132,8 +132,8 @@ T3.levels.push({
       items: [
         { id: 't3l1s2-1', type: 'choose', tag: 'deo-periph', level: 'B2',
           stem: 'The storms last winter left the ferry company with no choice at all. Which completion records the obligation it was under? <em>The company ______ forty sailings.</em>',
-          options: ['must cancel', 'must have cancelled', 'had to cancel', 'have to cancel'],
-          answer: 2,
+          options: ['had to cancel', 'must cancel', 'must have cancelled', 'have to cancel'],
+          answer: 0,
           why: '<em>Had to</em> is the only past of obligation English has, and the storms are what imposed it. <em>Must cancel</em> is finite but tenseless and reads as present, which contradicts <em>last winter</em>. <em>Must have cancelled</em> is perfectly good English, but it is a deduction made now about what probably happened, and the stem says the obligation is a fact rather than a guess. <em>Have to cancel</em> is the right verb in the wrong tense.' },
 
         { id: 't3l1s2-2', type: 'cloze', tag: 'deo-periph', level: 'B2',
@@ -147,7 +147,7 @@ T3.levels.push({
         { id: 't3l1s2-3', type: 'choose', tag: 'deo-periph', level: 'B2',
           stem: 'Which sentence is <strong>not</strong> possible in English?',
           options: [
-            'I\'ve got to leave before the traffic builds up.',
+            'We\'ve got to leave before the traffic builds up.',
             'We had to leave before the traffic built up.',
             'We will have got to leave before the traffic builds up.',
             'We will have to leave before the traffic builds up.'
@@ -158,14 +158,14 @@ T3.levels.push({
         { id: 't3l1s2-4', type: 'spot', tag: 'deo-periph', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
           words: [
-            'If the rain continues into next week,',
-            'the organisers will must move',
-            'the sports day to the covered court',
-            'behind the science block.'
+            'The organisers of the sports day',
+            'have warned us that if the rain',
+            'continues into next week, they',
+            'will must move it to the covered court.'
           ],
-          answer: 1,
-          fix: 'the organisers will have to move',
-          why: 'Two modals cannot share one slot, so <em>will must</em> is impossible; only one operator may stand at the head of the verb phrase. <em>Have to</em> is not a modal, so it can follow <em>will</em> quite happily and carries the obligation into future time. The other three parts are correct: the conditional clause uses a present tense for future reference, and the object and place phrase are both well formed.' },
+          answer: 3,
+          fix: 'will have to move it to the covered court.',
+          why: 'Two modals cannot share one slot, so <em>will must</em> is impossible; only one operator may stand at the head of the verb phrase. <em>Have to</em> is not a modal, so it can follow <em>will</em> quite happily and carries the obligation into future time. The other three parts are correct: the reporting verb is well formed, and the <em>if</em> clause rightly uses a present tense for future reference.' },
 
         { id: 't3l1s2-5', type: 'build', tag: 'deo-periph', level: 'B2+',
           stem: 'Put the words in order to say that the obligation has already been faced more than once this term.',
@@ -201,15 +201,15 @@ T3.levels.push({
       },
       items: [
         { id: 't3l1s3-1', type: 'choose', tag: 'deo-advice', level: 'B2',
-          stem: 'Which sentence carries the clearest warning that something bad will follow if the advice is ignored?',
+          stem: 'Your friend\'s laptop has crashed twice this week, and her whole dissertation is on it. You don\'t just want to give advice — you want to warn her. What do you say?',
           options: [
-            'You should back up the dissertation file.',
-            'You are supposed to back up the dissertation file.',
-            'You had better back up the dissertation file.',
-            'You ought to back up the dissertation file.'
+            'You should back up your dissertation tonight.',
+            'You had better back up your dissertation tonight.',
+            'You are supposed to back up your dissertation tonight.',
+            'You ought to back up your dissertation tonight.'
           ],
-          answer: 2,
-          why: '<em>Had better</em> is advice with an unstated consequence built in — the hearer is meant to supply <em>or you will lose it</em>. <em>Should</em> and <em>ought to</em> are near-identical recommendations and threaten nothing at all. <em>Be supposed to</em> reports a rule someone else made and implies that the hearer is already failing to follow it, which is a reproach about the past rather than a warning about what comes next.' },
+          answer: 1,
+          why: '<em>Had better</em> is advice with an unstated consequence built in — she is meant to hear <em>or you will lose it</em>. <em>Should</em> and <em>ought to</em> are the near misses: good advice, and exactly right if you only wanted to recommend, but they threaten nothing. <em>Be supposed to</em> reports a rule someone else made and implies she is failing to follow it, which is a reproach rather than a warning about what comes next.' },
 
         { id: 't3l1s3-2', type: 'equiv', tag: 'deo-advice', level: 'B2',
           given: 'We are supposed to submit the risk assessment a fortnight before the trip.',
@@ -243,13 +243,13 @@ T3.levels.push({
         { id: 't3l1s3-5', type: 'choose', tag: 'deo-advice', level: 'B2',
           stem: 'Which sentence is correctly formed?',
           options: [
+            'You had better check the visa rules before you book.',
             'You had better to check the visa rules before you book.',
             'You ought check the visa rules before you book.',
-            'You had better check the visa rules before you book.',
             'You had better checking the visa rules before you book.'
           ],
-          answer: 2,
-          why: '<em>Had better</em> behaves like a modal and takes a bare infinitive, so option 3 is the only well-formed version. Option 1 inserts a <em>to</em> that belongs with <em>ought</em>, not with <em>had better</em>. Option 2 removes the <em>to</em> from <em>ought</em>, which is the one member of this family that has kept it. Option 4 puts an <em>-ing</em> form where no auxiliary licenses one.' }
+          answer: 0,
+          why: '<em>Had better</em> behaves like a modal and takes a bare infinitive, so option 1 is the only well-formed version. Option 2 is the near miss: it inserts a <em>to</em> that belongs with <em>ought</em>, not with <em>had better</em>. Option 3 removes the <em>to</em> from <em>ought</em>, which is the one member of this family that has kept it. Option 4 puts an <em>-ing</em> form where no auxiliary licenses one.' }
       ]
     }
   ],
@@ -304,10 +304,10 @@ T3.levels.push({
           'I must redraft the literature review.',
           'I have to redraft the literature review.',
           'I had better redraft the literature review.',
-          'I am supposed to redraft the literature review.'
+          'I should redraft the literature review.'
         ],
         answer: 1,
-        why: 'The supervisor is an authority outside the speaker, which is the exact condition for <em>have to</em>. Option 1 is perfectly good English, and that is the point of the contrast: <em>must</em> puts the requirement in the speaker\'s own mouth, so it loses the one thing the stem asks to be shown. Option 3 turns an instruction into self-directed advice with a vague threat attached. Option 4 adds an implication the given sentence does not license — that the redrafting is required and is not happening.' },
+        why: 'The supervisor is an authority outside the speaker, which is the exact condition for <em>have to</em>. Option 1 is the near miss — perfectly good English, and that is the point of the contrast: <em>must</em> puts the requirement in the speaker\'s own mouth, so it loses the one thing the stem asks to be shown. Option 3 turns an instruction into self-directed advice with a vague threat attached. Option 4 turns an insistence into a recommendation the speaker could decide to ignore.' },
 
       { id: 't3l1ck-5', type: 'gap', tag: 'deo-periph', level: 'B2',
         blank: '(1)',
@@ -319,7 +319,7 @@ T3.levels.push({
         stem: 'Choose the best option for gap (1).',
         options: ['will have to', 'will must', 'must to', 'had to'],
         answer: 0,
-        why: 'The problem lies ahead of the speakers, so the obligation needs future reference, and nothing but a bare infinitive can follow <em>will</em> — hence <em>will have to</em>. <em>Will must</em> stacks two modals in one slot, which English does not allow. <em>Must to</em> gives a modal the <em>to</em> that belongs to <em>have to</em>. <em>Had to</em> is past, and the room has not been lost yet as far as rehearsals are concerned.' },
+        why: 'The problem lies ahead of the speakers, so the obligation needs future reference, and nothing but a bare infinitive can follow <em>will</em> — hence <em>will have to</em>. <em>Will must</em> stacks two modals in one slot, which English does not allow. <em>Must to</em> gives a modal the <em>to</em> that belongs to <em>have to</em>. <em>Had to</em> is the near miss: it is exactly the form for gap (2), but here the search for a new room still lies ahead of them.' },
 
       { id: 't3l1ck-6', type: 'choose', tag: 'deo-advice', level: 'B2+',
         stem: 'Which sentence would a careful writer avoid in an academic essay?',
@@ -370,11 +370,11 @@ T3.levels.push({
           options: [
             'Bringing flowers is forbidden.',
             'Bringing flowers is optional.',
-            'Visitors are advised to bring flowers.',
+            'Bringing flowers is not recommended.',
             'There is no rule about flowers either way.'
           ],
           answer: 0,
-          why: 'In <em>must not</em> the negative attaches to the action, so the ward is banning flowers. Option 2 is the negation cliff itself: it reads <em>must not</em> as though it were <em>do not have to</em>, which would make the flowers a matter of choice. Option 3 inverts the sentence completely, turning a prohibition into a recommendation. Option 4 removes the rule that the notice exists to state.' },
+          why: 'In <em>must not</em> the negative attaches to the action, so the ward is banning flowers. Option 2 is the negation cliff itself: it reads <em>must not</em> as though it were <em>do not have to</em>, which would make the flowers a matter of choice. Option 3 is the near miss — it is on the right side of the cliff, and it would be the meaning of <em>should not</em>, but <em>must not</em> is a ban, not advice. Option 4 removes the rule that the notice exists to state.' },
 
         { id: 't3l2s1-2', type: 'equiv', tag: 'deo-negcliff', level: 'B2',
           given: 'It is not necessary for delegates to print the conference programme.',
@@ -390,8 +390,8 @@ T3.levels.push({
 
         { id: 't3l2s1-3', type: 'choose', tag: 'deo-negcliff', level: 'B2',
           stem: 'A colleague has a long journey to the office, and you want him to know that nobody will mind if he watches the recording instead. Which completion says that? <em>The workshop is being recorded, so you ______ come in person.</em>',
-          options: ['mustn\'t', 'shouldn\'t', 'may not', 'don\'t have to'],
-          answer: 3,
+          options: ['mustn\'t', 'shouldn\'t', 'don\'t have to', 'may not'],
+          answer: 2,
           why: 'You are lifting an obligation rather than imposing one, and <em>don\'t have to</em> is the form whose negative sits on the obligation: come if you like, or watch the recording. <em>Mustn\'t</em> forbids him to come at all. <em>May not</em> refuses permission, which is the same ban in a more formal voice. <em>Shouldn\'t</em> advises against coming, so a colleague would read the email as being told to stay away rather than as being offered a choice.' },
 
         { id: 't3l2s1-4', type: 'spot', tag: 'deo-negcliff', level: 'B2+',
@@ -490,10 +490,10 @@ T3.levels.push({
             'We mustn\'t have paid a deposit.',
             'We needn\'t have paid a deposit.',
             'We didn\'t need to pay a deposit.',
-            'We hadn\'t to pay a deposit.'
+            'We weren\'t allowed to pay a deposit.'
           ],
           answer: 2,
-          why: '<em>Didn\'t need to</em> is the plain past statement that no obligation existed, which is what the situation describes. <em>Needn\'t have paid</em> says something different about the facts: that the deposit was handed over and then turned out to be unnecessary. <em>Mustn\'t have</em> does not express past obligation in standard English at all. <em>Hadn\'t to</em> is not current usage; the negative of <em>had to</em> is <em>didn\'t have to</em>.' }
+          why: '<em>Didn\'t need to</em> is the plain past statement that no obligation existed, which is what the situation describes. <em>Needn\'t have paid</em> is the near miss: it would be right if we had paid, because it says the deposit was handed over and then turned out to be unnecessary — but we did not pay one. <em>Mustn\'t have paid</em> could only be a guess about what happened, and the speakers are not guessing. <em>Weren\'t allowed to</em> says somebody refused a deposit, when in fact nobody asked for one.' }
       ]
     },
 
@@ -591,10 +591,10 @@ T3.levels.push({
     id: 't3l2ck', name: 'Stage Check · The negation cliff',
     items: [
       { id: 't3l2ck-1', type: 'choose', tag: 'deo-negcliff', level: 'B2',
-        stem: 'A parent writes to a school: <em>My son is recovering from flu, so he ______ come to Saturday\'s practice.</em> Which completion excuses him from attending without forbidding him to attend?',
-        options: ['mustn\'t', 'won\'t have to', 'doesn\'t have to', 'may not'],
+        stem: 'The football coach emails a parent: <em>As your son is still getting over flu, he ______ come to Saturday\'s practice — though if he feels well enough, he is very welcome to.</em> Which completion fits the email?',
+        options: ['mustn\'t', 'shouldn\'t', 'doesn\'t have to', 'may not'],
         answer: 2,
-        why: '<em>Doesn\'t have to</em> lifts the present obligation and leaves the decision with the family, which is exactly what an excuse does. <em>Won\'t have to</em> places the release in future time and says nothing about this Saturday. <em>Mustn\'t</em> and <em>may not</em> both put the negative on the action and ban attendance outright, which is more than a recovering pupil needs and more authority than the letter claims.' },
+        why: '<em>Doesn\'t have to</em> lifts the obligation and leaves the decision with the family, which is exactly what <em>he is very welcome to</em> goes on to confirm. <em>Mustn\'t</em> is the near miss: it would be right if the coach were keeping an infectious boy away, but it bans attendance, and the second half of the email invites him. <em>May not</em> is the same ban in a more formal voice. <em>Shouldn\'t</em> advises him to stay away, which also clashes with the warm invitation that follows.' },
 
       { id: 't3l2ck-2', type: 'spot', tag: 'deo-negcliff', level: 'B2',
         stem: 'One of the four parts is wrong. Find it.',
@@ -677,13 +677,13 @@ T3.levels.push({
         { id: 't3l3s1-1', type: 'choose', tag: 'deo-permit', level: 'B2+',
           stem: 'Which sentence is the formal written equivalent of <em>You can bring a guest</em>?',
           options: [
-            'Members are able to bring a guest.',
+            'Members must bring a guest.',
             'Members may bring a guest.',
             'Members had better bring a guest.',
             'Members may not bring a guest.'
           ],
           answer: 1,
-          why: '<em>May</em> plus a third-person subject is how a written rule grants permission, and it makes the same claim as <em>can</em> at a higher register. <em>Be able to</em> shifts the meaning from permission to capacity, which is not what a guest list is about. <em>Had better</em> turns an invitation into a warning with a consequence attached. Option 4 is in the right register but reverses the rule, refusing the very permission the original grants.' },
+          why: '<em>May</em> plus a third-person subject is how a written rule grants permission, and it makes the same claim as <em>can</em> at a higher register. Option 1 is the near miss: right register for a written rule, but it turns a permission into a requirement, so a member who came alone would be breaking it. <em>Had better</em> turns an invitation into a warning with a consequence attached. Option 4 is in the right register but reverses the rule, refusing the very permission the original grants.' },
 
         { id: 't3l3s1-2', type: 'cloze', tag: 'deo-permit', level: 'B2+',
           passage: 'The observatory has changed the way it handles visitors. Until last year only registered astronomy clubs ___(1)___ use the main telescope, and anyone else was politely turned away at the gate.\n\nFrom January the general public ___(2)___ book a two-hour slot through the website, although groups of more than six ___(3)___ apply in writing at least a month in advance.',
@@ -721,12 +721,12 @@ T3.levels.push({
           stem: 'Which sentence says the same thing?',
           options: [
             'We weren\'t allowed to film inside the temple.',
-            'We couldn\'t have filmed inside the temple.',
+            'We shouldn\'t have filmed inside the temple.',
             'We didn\'t have to film inside the temple.',
             'We mustn\'t film inside the temple.'
           ],
           answer: 0,
-          why: 'Permission was refused in past time, which calls for the past of the periphrastic permission form. Option 2 is about an unrealised possibility or ability rather than a refusal of permission, and it suggests the filming never happened for some other reason. Option 3 falls off the negation cliff and says only that filming was optional. Option 4 is a present prohibition and puts the rule in the speaker\'s own mouth rather than the committee\'s.' }
+          why: 'Permission was refused in past time, which calls for the past of the periphrastic permission form. Option 2 criticises filming that it takes to have happened; the given sentence reports a refusal, not a regret. Option 3 is the near miss — the right past tense, but it falls off the negation cliff and says only that filming was optional. Option 4 is a present prohibition and puts the rule in the speaker\'s own mouth rather than the committee\'s.' }
       ]
     },
 
@@ -790,13 +790,13 @@ T3.levels.push({
           stem: 'One of the four parts is wrong. Find it.',
           words: [
             'Under clause nine of the agreement,',
-            'the supplier shall to deliver',
-            'all replacement parts',
-            'within ten working days of a written request.'
+            'if the client requests replacement parts in writing,',
+            'the supplier shall to deliver them',
+            'within ten working days.'
           ],
-          answer: 1,
-          fix: 'the supplier shall deliver',
-          why: '<em>Shall</em> is a modal and takes a bare infinitive, so the <em>to</em> has nothing to attach to; the writer has blended <em>shall</em> with <em>be obliged to</em>. It is worth noticing what the repaired clause then means: <em>shall deliver</em> is a duty, not a forecast of what the supplier is likely to do. The other three parts are correct, and the time phrase is the kind of precise condition such a clause needs.' },
+          answer: 2,
+          fix: 'the supplier shall deliver them',
+          why: '<em>Shall</em> is a modal and takes a bare infinitive, so the <em>to</em> has nothing to attach to; the writer has blended <em>shall</em> with <em>be obliged to</em>. It is worth noticing what the repaired clause then means: <em>shall deliver</em> is a duty, not a forecast of what the supplier is likely to do. The other three parts are correct: the <em>if</em> clause sets the condition, and the time phrase is the kind of precise limit such a clause needs.' },
 
         { id: 't3l3s2-5', type: 'sort', tag: 'deo-shall', level: 'B2+',
           stem: 'Each sentence uses <em>shall</em> or <em>be to</em>. Which of its two lives is on show?',

@@ -45,12 +45,12 @@ T2.levels.push({
         { id: 't2l1s1-1', type: 'choose', tag: 'epi-scale', level: 'B1+',
           stem: 'The door of the physics building is locked, the lights are off and every name on the sign-out sheet is crossed through. Which sentence reports the <strong>strongest</strong> conclusion the evidence allows?',
           options: [
+            'The building must be closed for the evening.',
             'The building might be closed for the evening.',
             'The building could be closed for the evening.',
-            'The building may be closed for the evening.',
-            'The building must be closed for the evening.'
+            'The building may be closed for the evening.'
           ],
-          answer: 3,
+          answer: 0,
           why: '<em>Must</em> is the top rung: the speaker can see no explanation other than a closed building, which is what three pieces of matching evidence give you. <em>May</em>, <em>might</em> and <em>could</em> all sit together on the weak middle rung and claim only that a closed building is one possibility among several, so each of them understates the evidence in exactly the same way — and because they are near-synonyms here, none of them could be a single best answer even if the evidence were weaker.' },
 
         { id: 't2l1s1-2', type: 'sort', tag: 'epi-scale', level: 'B1+',
@@ -71,22 +71,22 @@ T2.levels.push({
           why: 'The ladder has three zones, not seven separate words. <em>Must</em> and <em>will</em> both close off every alternative and so belong together at the top, even though <em>will</em> reasons from a habit and <em>must</em> from something the speaker has just seen. <em>May</em> and <em>could</em> are interchangeable on the middle rung. <em>Can\'t</em> is the bottom rung, and it is a confident claim too — a speaker who says <em>can\'t</em> is committing themselves just as far as one who says <em>must</em>.' },
 
         { id: 't2l1s1-3', type: 'choose', tag: 'epi-scale', level: 'B1+',
-          stem: 'A research team has found that two figures rise together, but has not yet tested whether one causes the other. Which sentence pitches the claim at the rung the evidence will bear?',
+          stem: 'A research team has found that teenagers who spend longer on screens also tend to sleep worse, but it has not yet tested whether one causes the other. Which sentence claims only what the findings support?',
           options: [
             'Longer daily screen use must reduce adolescent sleep quality.',
+            'Longer daily screen use could reduce adolescent sleep quality.',
             'Longer daily screen use will reduce adolescent sleep quality.',
-            'Longer daily screen use cannot reduce adolescent sleep quality.',
-            'Longer daily screen use may reduce adolescent sleep quality.'
+            'Longer daily screen use cannot reduce adolescent sleep quality.'
           ],
-          answer: 3,
-          why: 'Two figures rising together leave several explanations open, and the weak middle rung is the one that says so. <em>Must</em> claims the evidence has closed off every rival explanation, which is precisely the work the team has not done; <em>will</em> predicts confidently from a causal pattern that has not been established; and <em>cannot</em> denies the association the team actually reported. This is the single commonest overclaim in exam writing, and it costs marks for reasoning, not for grammar.' },
+          answer: 1,
+          why: 'Two things rising together leave several explanations open, and <em>could</em>, on the middle rung, says exactly that: screen use is one possible cause among several. <em>Must</em> claims the evidence has ruled out every other explanation, which is precisely the work the team has not done; <em>will</em> predicts confidently from a cause-and-effect link that has not been established; and <em>cannot</em> denies the link the team actually found. This is the commonest overclaim in exam writing, and it costs marks for reasoning, not for grammar.' },
 
         { id: 't2l1s1-4', type: 'spot', tag: 'epi-scale', level: 'B1+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Nobody has answered the door,', 'and the curtains have not moved all day,', 'so the family might definitely be away', 'on holiday.'],
-          answer: 2,
-          fix: 'so the family must be away',
-          why: '<em>Might</em> and <em>definitely</em> sit at opposite ends of the ladder, so the phrase says "one possibility among several" and "no other possibility" in the same breath. Evidence this consistent calls for the top rung, <em>must</em>, with no adverb needed. The other three parts are sound: two present-perfect observations supply the evidence, and the closing phrase names the conclusion without touching its strength.' },
+          words: ['Nobody has answered the door,', 'the curtains have not moved all day', 'and the post is piling up,', 'so the family might definitely be away.'],
+          answer: 3,
+          fix: 'so the family must be away.',
+          why: '<em>Might</em> and <em>definitely</em> sit at opposite ends of the ladder, so the phrase says "one possibility among several" and "no other possibility" in the same breath. Evidence this consistent calls for the top rung, <em>must</em>, with no adverb needed. The other three parts are sound: they are three plain observations that supply the evidence, and none of them makes any claim about how sure the speaker is.' },
 
         { id: 't2l1s1-5', type: 'equiv', tag: 'epi-scale', level: 'B2',
           given: 'It is impossible that the ticket office is open at this hour.',
@@ -129,28 +129,28 @@ T2.levels.push({
         { id: 't2l1s2-1', type: 'choose', tag: 'epi-weak', level: 'B1+',
           stem: 'In which pair do the two sentences make the <strong>same</strong> claim?',
           options: [
-            '<em>The fault may be in the router.</em> / <em>The fault can\'t be in the router.</em>',
-            '<em>The fault may be in the router.</em> / <em>The fault must be in the router.</em>',
             '<em>The fault may be in the router.</em> / <em>The fault might be in the router.</em>',
+            '<em>The fault may be in the router.</em> / <em>The fault cannot be in the router.</em>',
+            '<em>The fault may be in the router.</em> / <em>The fault must be in the router.</em>',
             '<em>The fault may be in the router.</em> / <em>The fault will be in the router.</em>'
           ],
-          answer: 2,
-          why: '<em>May</em> and <em>might</em> are near-synonyms in a deduction: both say the router is one of the places the fault could be. <em>Must</em> and <em>will</em> climb to the top of the ladder and claim the router is the only candidate left, which is a different and much riskier sentence; <em>can\'t</em> drops to the bottom and rules the router out entirely. What changes a deduction is the rung, not the choice of word within a rung.' },
+          answer: 0,
+          why: '<em>May</em> and <em>might</em> are near-synonyms in a deduction: both say the router is one of the places the fault could be. <em>Must</em> and <em>will</em> climb to the top of the ladder and claim the router is the only candidate left, which is a different and much riskier sentence; <em>cannot</em> drops to the bottom and rules the router out entirely. What changes a deduction is the rung, not the choice of word within a rung.' },
 
         { id: 't2l1s2-2', type: 'equiv', tag: 'epi-weak', level: 'B1+',
           given: 'Perhaps the drop in visitor numbers is seasonal.',
           stem: 'Which sentence says the same thing?',
           options: [
             'The drop in visitor numbers must be seasonal.',
+            'The drop in visitor numbers could be seasonal.',
             'The drop in visitor numbers should be seasonal.',
-            'The drop in visitor numbers can\'t be seasonal.',
-            'The drop in visitor numbers could be seasonal.'
+            'The drop in visitor numbers can\'t be seasonal.'
           ],
-          answer: 3,
+          answer: 1,
           why: '<em>Perhaps</em> is the adverb of the weak middle rung, and <em>could</em>, <em>may</em> and <em>might</em> are its modal equivalents. <em>Must</em> reports a conclusion that the word <em>perhaps</em> explicitly refuses to draw; <em>can\'t</em> reverses the sentence into a denial; and <em>should</em> claims an expectation grounded in a known pattern, which commits the speaker further than <em>perhaps</em> ever does.' },
 
         { id: 't2l1s2-3', type: 'choose', tag: 'epi-weak', level: 'B2',
-          stem: 'You are writing the discussion section of a report and want the weak middle rung in its most formal wording. Which is best?',
+          stem: 'You are writing up a science experiment for your teacher and want to suggest, carefully, one possible reason for some odd results. Which sentence is best?',
           options: [
             'These results could maybe point to a measurement error.',
             'These results will point to a measurement error.',
@@ -158,14 +158,14 @@ T2.levels.push({
             'These results may point to a measurement error.'
           ],
           answer: 3,
-          why: 'All three weak modals mean the same thing, but <em>may</em> is the one that carries academic prose, and it needs no reinforcement. <em>Could maybe</em> and <em>might possibly</em> each stack a second hedge on a modal that is already hedging, which reads as a writer who cannot commit rather than one who is being careful. <em>Will</em> abandons the middle rung altogether and states the measurement error as a settled prediction.' },
+          why: '<em>May</em>, <em>might</em> and <em>could</em> all offer one possible reason, but <em>may</em> is the one that carries formal written English, and it needs no reinforcement. <em>Could maybe</em> and <em>might possibly</em> each stack a second hedge on a modal that is already hedging, which reads as a writer who cannot commit rather than one who is being careful. <em>Will</em> abandons the middle rung altogether and states the measurement error as a settled prediction.' },
 
         { id: 't2l1s2-4', type: 'cloze', tag: 'epi-weak', level: 'B2',
           passage: 'The city has recorded a sharp fall in bus use since March. Officials have pointed to the new fare structure, but the fall began several weeks before the fares changed, so the fares ___(1)___ be the whole story.\n\nTwo other explanations are open. Heavy rain closed three underpasses for most of April, and the extension of the metro line reached the northern districts in the same month. Either of these ___(2)___ account for part of the fall, and the transport office has commissioned a survey to find out which.',
           blank: '(2)',
           stem: 'Choose the best option for blank (2).',
-          options: ['must', 'will', 'cannot', 'could'],
-          answer: 3,
+          options: ['could', 'must', 'will', 'cannot'],
+          answer: 0,
           why: 'The paragraph names two candidate explanations and then says a survey is still needed, which is the weak middle rung exactly: each explanation is one possibility among several. <em>Must</em> would claim the evidence has already settled the question and make the commissioned survey pointless; <em>cannot</em> would rule out the very explanations the paragraph has just raised; and <em>will</em> predicts the outcome of research that has not been carried out.' },
 
         { id: 't2l1s2-5', type: 'choose', tag: 'epi-weak', level: 'B2',
@@ -208,20 +208,20 @@ T2.levels.push({
         { id: 't2l1s3-1', type: 'choose', tag: 'epi-must', level: 'B2',
           stem: 'In which sentence is <em>must</em> a deduction rather than a requirement?',
           options: [
-            'All candidates must submit the form before Friday.',
-            'Visitors must wear a lanyard inside the research wing.',
-            'The lift must be out of order again.',
-            'You must speak to the supervisor about your hours.'
+            'All candidates must register by Friday.',
+            'The lift must be stuck between floors again.',
+            'Visitors must wear a lanyard in the lab.',
+            'You must speak to the supervisor today.'
           ],
-          answer: 2,
-          why: 'A deduction reports what the speaker has worked out, and only the lift sentence does that: its subject cannot obey anybody, and the complement <em>be out of order</em> is a state rather than an action. The other three all have a human subject who is being required to act, and each names the authority behind the requirement — a deadline, a building rule, an instruction from the speaker.' },
+          answer: 1,
+          why: 'A deduction reports what the speaker has worked out, and only the lift sentence does that: its subject cannot obey anybody, and the complement <em>be stuck</em> is a state rather than an action. The other three all have a human subject who is being required to act, and each names the authority behind the requirement — a deadline, a building rule, an instruction from the speaker.' },
 
         { id: 't2l1s3-2', type: 'spot', tag: 'epi-must', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The office lights have been on since midnight,', 'so somebody must work late', 'on the quarterly accounts', 'again.'],
-          answer: 1,
-          fix: 'so somebody must be working late',
-          why: 'Lights burning at midnight are evidence about this moment, and a deduction about this moment takes <em>must be</em> plus the <em>-ing</em> form. <em>Must work</em> with the bare infinitive pushes the sentence into the other half of the modal system: it reads as an obligation placed on somebody, which is not what the lights tell you. The remaining parts are sound — the present perfect supplies the evidence, and the object phrase and the final adverb do not touch the strength of the claim.' },
+          words: ['Somebody must work late', 'on the quarterly accounts again —', 'the office lights have been on', 'since midnight.'],
+          answer: 0,
+          fix: 'Somebody must be working late',
+          why: 'Lights burning at midnight are evidence about this moment, and a deduction about this moment takes <em>must be</em> plus the <em>-ing</em> form. <em>Must work</em> with the bare infinitive pushes the sentence into the other half of the modal system: it reads as an obligation placed on somebody, which is not what the lights tell you. The remaining parts are sound — the object phrase does not touch the strength of the claim, and the present perfect after the dash supplies the evidence.' },
 
         { id: 't2l1s3-3', type: 'sort', tag: 'epi-must', level: 'B2',
           stem: 'Is each <em>must</em> or <em>will</em> a deduction about what is true, or a statement about what is required or arranged?',
@@ -262,15 +262,15 @@ T2.levels.push({
     id: 't2l1ck', name: 'Stage Check · How sure am I?',
     items: [
       { id: 't2l1ck-1', type: 'choose', tag: 'epi-scale', level: 'B1+',
-        stem: 'Which sentence leaves the speaker <strong>least</strong> exposed to being proved wrong?',
+        stem: 'Which sentence would be <strong>hardest</strong> to prove wrong?',
         options: [
-          'The reservoir can\'t be below forty per cent.',
-          'The reservoir must be below forty per cent.',
+          'The reservoir cannot be below forty per cent.',
           'The reservoir might be below forty per cent.',
+          'The reservoir must be below forty per cent.',
           'The reservoir will be below forty per cent.'
         ],
-        answer: 2,
-        why: '<em>Might</em> is the weak middle rung: it claims only that one possibility is open, so almost no reading could refute it. <em>Must</em> and <em>will</em> sit near the top and would both be refuted by a single measurement above forty per cent, and <em>can\'t</em> sits at the bottom and would be refuted by a single measurement below it. The ladder measures the speaker\'s exposure, not how dramatic the sentence sounds.' },
+        answer: 1,
+        why: '<em>Might</em> is the weak middle rung: it claims only that one possibility is open, so almost no reading could refute it. <em>Must</em> and <em>will</em> sit near the top and would both be refuted by a single measurement above forty per cent, and <em>cannot</em> sits at the bottom and would be refuted by a single measurement below it. The ladder measures the speaker\'s exposure, not how dramatic the sentence sounds.' },
 
       { id: 't2l1ck-2', type: 'gap', tag: 'epi-weak', level: 'B2', blank: '(2)',
         lines: [
@@ -286,20 +286,20 @@ T2.levels.push({
       { id: 't2l1ck-3', type: 'choose', tag: 'epi-must', level: 'B2',
         stem: 'In which sentence is <em>must</em> an obligation?',
         options: [
-          'The printer must be out of toner — everything is coming out grey.',
-          'Judging by the smell, something must be burning in the kitchen.',
-          'The keys must be in your other coat.',
-          'Every visitor must sign in at the reception desk.'
+          'Every visitor must sign in at the reception desk.',
+          'The printer must be out of toner again.',
+          'Judging by the smell, something must be burning.',
+          'The keys must be in your other coat.'
         ],
-        answer: 3,
+        answer: 0,
         why: 'Only the reception sentence has a human subject who is able to comply, and an institution standing behind the requirement. The other three describe situations nobody chooses: a printer cannot be ordered to have toner, something burning is a conclusion drawn from a smell, and a set of keys cannot obey an instruction about which coat to be in. When the subject cannot comply, <em>must</em> is always a deduction.' },
 
       { id: 't2l1ck-4', type: 'spot', tag: 'epi-scale', level: 'B1+',
         stem: 'One of the four parts is wrong. Find it.',
-        words: ['The figures in column four', 'are three times the regional average,', 'so they must to be', 'a data-entry error.'],
-        answer: 2,
-        fix: 'so they must be',
-        why: 'A modal takes a bare infinitive, so it is <em>must be</em>, never <em>must to be</em>. The extra <em>to</em> comes from treating <em>must</em> as an ordinary verb governing a second verb, which is how Thai builds this meaning but not how English does. The deduction itself is pitched correctly — figures three times the average leave little else to conclude — and the other three parts are well formed.' },
+        words: ['This must to be a data-entry error:', 'the figures in column four', 'are three times', 'the regional average.'],
+        answer: 0,
+        fix: 'This must be a data-entry error:',
+        why: 'A modal takes a bare infinitive, so it is <em>must be</em>, never <em>must to be</em>. The extra <em>to</em> comes from treating <em>must</em> as an ordinary verb governing a second verb, which is how Thai builds this meaning but not how English does. The deduction itself is pitched correctly — figures three times the average leave little else to conclude — and the other three parts, which give that evidence, are well formed.' },
 
       { id: 't2l1ck-5', type: 'equiv', tag: 'epi-weak', level: 'B2',
         given: 'There is a chance that the pilot scheme is too small to show any effect.',
@@ -318,10 +318,10 @@ T2.levels.push({
         options: [
           'Piyada: It can\'t be on the shared drive.',
           'Somsak: It must be on the shared drive.',
-          'Naree: It should be on the shared drive by now.',
-          'Tanet: It could be on the shared drive.'
+          'Tanet: It could be on the shared drive.',
+          'Naree: It should be on the shared drive by now.'
         ],
-        answer: 3,
+        answer: 2,
         why: 'Commitment is not the same as saying yes: <em>can\'t</em> is a fully committed claim, just a negative one, so Piyada is as exposed as Somsak. <em>Must</em> and <em>can\'t</em> sit at the two ends of the ladder and close off every alternative, while <em>should</em> reports a firm expectation — <em>by now</em> shows Naree is predicting where the file is, not saying where it ought to have been filed — that she would defend. <em>Could</em> is the only comment that treats the shared drive as one possibility among several.' }
     ]
   }
@@ -376,38 +376,38 @@ T2.levels.push({
           why: 'A confident deduction that something is <strong>not</strong> so is expressed by <em>can\'t</em>, never by <em>mustn\'t</em>. <em>Mustn\'t</em> belongs to the rule half of the modal system, and it would have the writer forbidding an envelope to be the right one, which is not something an envelope can be told. The other three parts are sound: the first two give two dates that cannot both belong to one letter, and the last names the claim being ruled out.' },
 
         { id: 't2l2s1-3', type: 'choose', tag: 'epi-cant', level: 'B2',
-          stem: 'Which sentence is a <strong>deduction</strong> rather than a prohibition?',
+          stem: 'Which sentence gives the speaker\'s <strong>conclusion</strong> rather than a rule?',
           options: [
+            'The bridge cannot be safe with that much traffic on it.',
             'Runners must not start before the horn.',
-            'Passengers cannot board the ferry without a printed ticket.',
-            'The water must not be drunk without boiling.',
-            'The bridge cannot be safe with that much traffic on it.'
+            'Passengers cannot board without a printed ticket.',
+            'The water must not be drunk without boiling.'
           ],
-          answer: 3,
+          answer: 0,
           why: 'Only the last sentence draws a conclusion: nobody is being told anything, and a bridge cannot be instructed to be safe or unsafe. The other three are rules addressed to people who are able to obey them, and the ferry sentence is there to show that the modal alone will not decide it — <em>cannot</em> does prohibition just as readily as <em>must not</em> does. What marks a deduction is that the speaker is reasoning about how things are, not laying down how they must be.' },
 
         { id: 't2l2s1-4', type: 'equiv', tag: 'epi-cant', level: 'B2',
           given: 'There is no way that this figure is the final total.',
           stem: 'Which sentence says the same thing?',
           options: [
-            'This figure might not be the final total.',
+            'This figure may not be the final total.',
+            'This figure cannot be the final total.',
             'This figure may well be the final total.',
-            'This figure mustn\'t be the final total.',
-            'This figure can\'t be the final total.'
+            'This figure mustn\'t be the final total.'
           ],
-          answer: 3,
-          why: '<em>There is no way</em> closes off every possibility, which is precisely the work <em>can\'t</em> does at the bottom of the ladder. <em>Might not</em> is two rungs weaker and leaves open that the figure is final; <em>may well</em> keeps the same rung but loses the negative and so points the sentence the other way; and <em>mustn\'t</em> turns a deduction into an instruction, forbidding the figure from being the total.' },
+          answer: 1,
+          why: '<em>There is no way</em> closes off every possibility, which is precisely the work <em>cannot</em> does at the bottom of the ladder. <em>May not</em> is two rungs weaker and leaves open that the figure is final; <em>may well</em> keeps the same rung but loses the negative and so points the sentence the other way; and <em>mustn\'t</em> turns a deduction into an instruction, forbidding the figure from being the total.' },
 
         { id: 't2l2s1-5', type: 'choose', tag: 'epi-cant', level: 'B2',
-          stem: 'An audit has established that the sensor was calibrated <strong>after</strong> the readings were taken. Which sentence states the consequence at the right strength and in the right register?',
+          stem: 'An audit has found that the sensor was calibrated <strong>after</strong> the readings were taken, so there is no reason at all to trust them. Which sentence belongs in the formal written report?',
           options: [
             'The readings mustn\'t be reliable.',
-            'The readings shouldn\'t be reliable.',
+            'The readings can\'t be reliable.',
             'The readings may not be reliable.',
             'The readings cannot be reliable.'
           ],
           answer: 3,
-          why: 'Calibrating afterwards removes every ground for trusting the figures, so the writer is entitled to the bottom rung, and in formal prose the full form <em>cannot</em> is the one to write. <em>May not</em> understates a case the audit has already closed; <em>mustn\'t</em> reads as a regulation forbidding reliability; and <em>shouldn\'t</em> makes reliability merely unexpected, which would leave the report\'s conclusion open.' }
+          why: 'Calibrating afterwards removes every ground for trusting the figures, so the writer is entitled to the bottom rung, and in a formal report the full form <em>cannot</em> is the one to write. <em>Can\'t</em> is the right strength, and would be fine in speech or an email, but a contraction is out of place in formal written English. <em>May not</em> understates a case the audit has already closed; and <em>mustn\'t</em> reads as a regulation forbidding reliability.' }
       ]
     },
 
@@ -436,51 +436,51 @@ T2.levels.push({
       },
       items: [
         { id: 't2l2s2-1', type: 'choose', tag: 'epi-negscope', level: 'B2',
-          stem: 'Dr Arun has not answered three emails, but he is known to ignore his inbox for days while he is writing. Which sentence reports the speaker\'s actual position?',
+          stem: 'Dr Arun has not answered three emails, but he often ignores his inbox for days while he is writing. Which sentence claims no more than the speaker knows?',
           options: [
             'He can\'t be reading his email this week.',
+            'He may not be reading his email this week.',
             'He is certainly not reading his email this week.',
-            'He mustn\'t be reading his email this week.',
-            'He may not be reading his email this week.'
+            'He mustn\'t be reading his email this week.'
           ],
-          answer: 3,
-          why: 'The speaker has a known habit to go on, not proof, so the sentence must keep the weak middle rung and put the <em>not</em> inside the claim: it is possible he is not reading. <em>Can\'t</em> asserts that it is impossible he is reading, which three unanswered emails do not establish. <em>Mustn\'t</em> is a prohibition and would forbid him to open his inbox, and the fourth drops the modal altogether and asserts the negative as a fact, which goes further than an unanswered inbox allows.' },
+          answer: 1,
+          why: 'The speaker has a known habit to go on, not proof, so the sentence must keep the weak middle rung and put the <em>not</em> inside the claim: it is possible he is not reading. <em>Can\'t</em> asserts that it is impossible he is reading, which three unanswered emails do not establish. <em>Mustn\'t</em> is a prohibition and would forbid him to open his inbox, and the sentence with <em>certainly</em> drops the modal altogether and asserts the negative as a fact, which goes further than an unanswered inbox allows.' },
 
         { id: 't2l2s2-2', type: 'judge', tag: 'epi-negscope', level: 'B2',
           given: 'The samples may not be contaminated.',
-          stem: 'The speaker is confident that the samples are clean.',
-          answer: 1,
-          why: '<em>May not</em> places the negative inside the claim: it is possible that the samples are not contaminated — and, equally, possible that they are. That is an open question, not confidence. Confidence that the samples are clean would require <em>The samples can\'t be contaminated</em>. Because the given sentence positively signals uncertainty rather than simply saying nothing, the statement is false rather than untestable.' },
+          stem: 'The speaker is leaving open the possibility that the samples are contaminated.',
+          answer: 0,
+          why: '<em>May not</em> places the negative inside the claim: it is possible that the samples are not contaminated — and, equally, possible that they are. That is an open question, so the statement is true. A speaker who wanted to close the question and say the samples are clean would need <em>The samples can\'t be contaminated</em>, which is a different claim, not a stronger version of the same one.' },
 
         { id: 't2l2s2-3', type: 'equiv', tag: 'epi-negscope', level: 'B2',
           given: 'It is possible that the minister is not aware of the second report.',
           stem: 'Which sentence says the same thing?',
           options: [
             'The minister can\'t be aware of the second report.',
-            'The minister mustn\'t be aware of the second report.',
+            'The minister must not be aware of the second report.',
             'The minister may not be aware of the second report.',
             'The minister might be aware of the second report.'
           ],
           answer: 2,
-          why: 'The given sentence says <em>possible</em> and puts the <em>not</em> inside it, which is exactly the shape of <em>may not</em>. <em>Can\'t</em> moves the negative outside the modal and claims awareness is impossible, a far stronger sentence. <em>Might be aware</em> keeps the right rung but drops the negative, so it reports the other half of the same possibility. <em>Mustn\'t</em> reads as a prohibition, forbidding the minister to be informed.' },
+          why: 'The given sentence says <em>possible</em> and puts the <em>not</em> inside it, which is exactly the shape of <em>may not</em>. <em>Can\'t</em> moves the negative outside the modal and claims awareness is impossible, a far stronger sentence. <em>Might be aware</em> keeps the right rung but drops the negative, so it reports the other half of the same possibility. <em>Must not</em> reads as a prohibition, forbidding the minister to be informed.' },
 
         { id: 't2l2s2-4', type: 'choose', tag: 'epi-negscope', level: 'B2',
-          stem: 'Which sentence could be continued with <em>… but then again, it might be</em> without the speaker taking back what they have just said?',
+          stem: 'Complaints about late buses have gone up since the new timetable began, but the manager is still waiting for the first month\'s figures. Which sentence goes no further than what she knows?',
           options: [
             'The new timetable can\'t be working.',
             'The new timetable must be working.',
-            'The new timetable mustn\'t be working.',
+            'The new timetable must not be working.',
             'The new timetable may not be working.'
           ],
           answer: 3,
-          why: 'Only <em>may not</em> leaves both answers alive, so the opposite possibility can be added without taking anything back. <em>Can\'t</em> has already shut the door, and the continuation would withdraw the claim in the same breath; <em>must</em> does the same in the other direction; and <em>mustn\'t</em> is not a deduction at all but an instruction addressed to a timetable, which cannot receive one.' },
+          why: 'The complaints point one way but the figures are not in, so the question is still open, and <em>may not</em> keeps it open: it is possible the timetable is not working. <em>Can\'t</em> points the same way but shuts the door, claiming a certainty the manager will only have when the figures arrive; <em>must</em> is just as certain in the other direction and ignores the complaints; and <em>must not</em> is not a deduction at all but an instruction addressed to a timetable, which cannot receive one.' },
 
         { id: 't2l2s2-5', type: 'cloze', tag: 'epi-negscope', level: 'B2',
           passage: 'The city council has published its first report on the low-emission zone. Traffic entering the centre has fallen by eleven per cent, and roadside nitrogen dioxide is down by nine. The council presents the two figures side by side, but the monitoring stations were moved in February, so the second figure ___(1)___ be comparable with last year\'s at all.\n\nThe fall in traffic is better evidence. Even so, three of the four counting points sit on roads that were resurfaced during the same period. Drivers ___(2)___ be avoiding the zone; some of them may simply be avoiding the roadworks.',
           blank: '(2)',
           stem: 'Choose the best option for blank (2).',
-          options: ['must not', 'will not', 'cannot', 'may not'],
-          answer: 3,
+          options: ['may not', 'must not', 'will not', 'cannot'],
+          answer: 0,
           why: 'The clause that follows — <em>some of them may simply be avoiding the roadworks</em> — keeps the question open, so the writer needs the negative inside the claim: it is possible they are not avoiding the zone. <em>Cannot</em> and <em>will not</em> would both shut the possibility down and contradict the very next words. <em>Must not</em> is read as a prohibition and would have the council forbidding drivers to avoid a zone it built to be avoided.' }
       ]
     },
@@ -527,35 +527,35 @@ T2.levels.push({
           why: '<em>Must</em> and <em>will</em> both commit the speaker to the positive, one from evidence in front of the speaker and one from what the speaker knows about how the route runs, and both would be embarrassed by an empty warehouse. <em>Can\'t</em> and <em>couldn\'t</em> commit just as firmly to the negative — <em>couldn\'t</em> is the same rung with a little more distance in it. <em>May not</em> and <em>might not</em> are the pair that commits to nothing: they put the negative inside a possibility, so the shipment may still be there.' },
 
         { id: 't2l2s3-2', type: 'choose', tag: 'epi-cant', level: 'B2',
-          stem: 'Complete the grid: in a deduction, the negative partner of <em>must be</em> is ______.',
-          options: ['mustn\'t be', 'shouldn\'t be', 'don\'t have to be', 'can\'t be'],
+          stem: 'Anan picks up a phone from the table and says, <em>This must be Nok\'s.</em> Mai is just as sure that he is wrong: Nok\'s phone is in a blue case, and this one has none. What does Mai say?',
+          options: ['It mustn\'t be hers.', 'It shouldn\'t be hers.', 'It doesn\'t have to be hers.', 'It can\'t be hers.'],
           answer: 3,
-          why: 'The pair is suppletive — the two halves of one meaning are built from two different words, <em>must</em> and <em>can\'t</em>. <em>Mustn\'t</em> is the negative of the <strong>obligation</strong> <em>must</em> and means "it is forbidden"; <em>don\'t have to</em> is the other obligation negative and means "there is no requirement"; and <em>shouldn\'t</em> is the negative of the weaker expectation rung, so it denies an expectation rather than a certainty.' },
+          why: 'Mai is as certain as Anan, only in the other direction, and the negative of a deduction with <em>must</em> is built from a different word: <em>can\'t</em>. <em>Mustn\'t</em> is the negative of the <strong>obligation</strong> <em>must</em> and would mean the phone is forbidden to be Nok\'s; <em>doesn\'t have to</em> is the other obligation negative and means "there is no requirement"; and <em>shouldn\'t</em> points the right way but only reports an expectation, which is weaker than the certainty Mai has from the missing case.' },
 
         { id: 't2l2s3-3', type: 'spot', tag: 'epi-scale', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The museum has been closed for refurbishment since January,', 'so the photograph on the leaflet', 'mustn\'t be this year\'s,', 'whatever the caption claims.'],
-          answer: 2,
-          fix: 'can\'t be this year\'s,',
-          why: 'A confident negative deduction takes <em>can\'t</em>; <em>mustn\'t</em> is a prohibition and cannot be aimed at a photograph. The other three parts are correct: the closure supplies the evidence, the noun phrase identifies what is being ruled out, and the final clause concedes the caption without weakening the conclusion. Notice that the sentence would also be wrong with <em>may not</em>, which would leave open the very thing the closure rules out.' },
+          words: ['The museum has been closed', 'for refurbishment since January,', 'so the photograph on the leaflet', 'mustn\'t be this year\'s, whatever the caption claims.'],
+          answer: 3,
+          fix: 'can\'t be this year\'s, whatever the caption claims.',
+          why: 'A confident negative deduction takes <em>can\'t</em>; <em>mustn\'t</em> is a prohibition and cannot be aimed at a photograph. The other three parts are correct: the first two supply the evidence, the noun phrase identifies what is being ruled out, and the closing <em>whatever the caption claims</em> concedes the caption without weakening the conclusion. Notice that the sentence would also be wrong with <em>may not</em>, which would leave open the very thing the closure rules out.' },
 
         { id: 't2l2s3-4', type: 'cloze', tag: 'epi-cant', level: 'B2',
-          passage: 'A national survey reports that nine in ten secondary students own a smartphone, and the figure is regularly quoted as evidence that access is no longer a barrier to online homework. The survey, however, was distributed through a messaging app, so households with no phone at all ___(1)___ be represented in it.\n\nOwnership is not access, either. Here the arithmetic is not in dispute: at current prices a two-gigabyte package covers about ninety minutes of video a week, and a single homework assignment can use more than that. The ownership figure ___(2)___ be telling us anything about who is able to do the homework. Until a survey asks about data rather than devices, the ninety per cent should be read with care.',
+          passage: 'A national survey reports that nine in ten secondary students own a smartphone, and the figure is regularly quoted as evidence that access is no longer a barrier to online homework. The survey, however, was distributed through a messaging app, so households with no phone at all ___(1)___ be represented in it.\n\nOwnership is not access, either. Here the arithmetic is not in dispute: at current prices a two-gigabyte package covers about ninety minutes of video a week, and a single homework assignment can use more than that. The ownership figure ___(2)___ be telling us who is able to do the homework. Until a survey asks about data rather than devices, the ninety per cent should be read with care.',
           blank: '(2)',
           stem: 'Choose the best option for blank (2).',
-          options: ['may not', 'need not', 'must not', 'cannot'],
-          answer: 3,
+          options: ['may not', 'cannot', 'need not', 'must not'],
+          answer: 1,
           why: '<em>The arithmetic is not in dispute</em> announces that the writer is at the bottom rung, and <em>cannot</em> is the form English uses for a deduction that something is impossible. <em>May not</em> would leave the question open when the two preceding sentences have just closed it; <em>must not</em> reads as a prohibition laid on a figure, which cannot be instructed; and <em>need not</em> denies a requirement, which belongs to the obligation system and has no place on the certainty ladder.' },
 
         { id: 't2l2s3-5', type: 'choose', tag: 'epi-scale', level: 'B2',
           stem: 'A colleague writes: <em>The pilot data can\'t be complete, so the analysis may not be sound.</em> What is she claiming?',
           options: [
+            'That the data is certainly incomplete, and the analysis is possibly unsound.',
             'That the data is certainly incomplete, and the analysis is certainly unsound.',
             'That the data is possibly incomplete, and the analysis is possibly unsound.',
-            'That the data is possibly incomplete, and the analysis is certainly unsound.',
-            'That the data is certainly incomplete, and the analysis is possibly unsound.'
+            'That the data is possibly incomplete, and the analysis is certainly unsound.'
           ],
-          answer: 3,
+          answer: 0,
           why: 'The sentence uses two rungs deliberately. <em>Can\'t</em> is the bottom rung and states the incompleteness as something the writer will defend; <em>may not</em> is the middle rung with the negative inside it, so unsoundness is only one of the consequences that might follow. Reading both as certain overstates the second clause, reading both as possible understates the first, and reading them the wrong way round reverses the argument she is making.' }
       ]
     }
@@ -568,17 +568,17 @@ T2.levels.push({
         options: [
           'He mustn\'t be in the building.',
           'He may not be in the building.',
-          'He can\'t be in the building.',
-          'He shouldn\'t be in the building.'
+          'He shouldn\'t be in the building.',
+          'He can\'t be in the building.'
         ],
-        answer: 2,
+        answer: 3,
         why: 'Being sure that something is <strong>not</strong> the case is the bottom rung of the ladder, and English spells it <em>can\'t</em>. <em>Mustn\'t</em> forbids him to be there; <em>may not</em> says only that his absence is one possibility, which is compatible with his being upstairs; and <em>shouldn\'t</em> makes his presence contrary to expectation or to advice, and both of those readings allow him to be inside.' },
 
       { id: 't2l2ck-2', type: 'equiv', tag: 'epi-negscope', level: 'B2',
         given: 'The committee can\'t be meeting today.',
         stem: 'Which sentence says the same thing?',
         options: [
-          'It is possible that the committee is not meeting today.',
+          'Perhaps the committee is not meeting today.',
           'It is impossible that the committee is meeting today.',
           'The committee is not allowed to meet today.',
           'The committee is not expected to meet today.'
@@ -600,7 +600,7 @@ T2.levels.push({
         why: '<em>Can\'t</em> reports a conclusion, and the sentence says nothing about what the conclusion rests on: the speaker may have searched the office, or may be reasoning from the fact that it has been shut all week. A deduction always tells you how confident the speaker is and never tells you how they came by the confidence, so this statement can be neither confirmed nor denied from the sentence alone.' },
 
       { id: 't2l2ck-5', type: 'choose', tag: 'epi-scale', level: 'B2',
-        stem: 'On the certainty ladder, which pair are <strong>not</strong> opposites?',
+        stem: 'When these are used to say how sure you are, which pair are <strong>not</strong> opposites?',
         options: [
           '<em>must be</em> / <em>can\'t be</em>',
           '<em>should be</em> / <em>shouldn\'t be</em>',
@@ -653,11 +653,11 @@ T2.levels.push({
           stem: 'The corridor smells of solder and the door of the electronics room is propped open. Which sentence is a deduction about <strong>this moment</strong>?',
           options: [
             'Somebody must repair the amplifier.',
+            'Somebody must be repairing the amplifier.',
             'Somebody should repair the amplifier.',
-            'Somebody can\'t be repairing the amplifier.',
-            'Somebody must be repairing the amplifier.'
+            'Somebody can\'t be repairing the amplifier.'
           ],
-          answer: 3,
+          answer: 1,
           why: 'A modal followed by <em>be</em> + <em>-ing</em> reads the evidence as something under way, and a smell and an open door are evidence of exactly that. <em>Must repair</em> keeps the bare infinitive and so slides into the rule half of the system, where it sounds like an instruction; <em>can\'t be repairing</em> denies what the evidence supports; and <em>should repair</em> is advice about what somebody ought to do, not a conclusion about what is being done.' },
 
         { id: 't2l3s1-2', type: 'cloze', tag: 'epi-prog', level: 'B2',
@@ -719,7 +719,7 @@ T2.levels.push({
       },
       items: [
         { id: 't2l3s2-1', type: 'choose', tag: 'epi-expect', level: 'B2',
-          stem: 'The 9.15 takes two hours and left on time. It is now half past eleven, and the speaker has had no news since departure. Which sentence reports an expectation based on the timetable while admitting it could be wrong?',
+          stem: 'The 9.15 takes two hours and left on time. It is now quarter past eleven, and there has been no news since it set off. Which sentence says the speaker expects the travellers about now but allows for a delay?',
           options: [
             'They must be arriving about now.',
             'They may not be arriving about now.',
@@ -733,12 +733,12 @@ T2.levels.push({
           given: 'If the repairs went as planned, the pool is open again by now.',
           stem: 'Which sentence says the same thing?',
           options: [
+            'The pool should be open again by now.',
             'The pool must be open again by now.',
             'The pool may not be open again by now.',
-            'The pool can\'t be open again by now.',
-            'The pool should be open again by now.'
+            'The pool can\'t be open again by now.'
           ],
-          answer: 3,
+          answer: 0,
           why: 'The <em>if</em>-clause is the giveaway: the speaker is reasoning from a plan rather than from anything observed, and that is exactly what <em>should</em> reports. <em>Must</em> would treat the plan as already confirmed and drop the condition the original sentence insists on; <em>can\'t</em> reverses the sentence into a denial; and <em>may not</em> throws the plan away and leaves the question completely open.' },
 
         { id: 't2l3s2-3', type: 'choose', tag: 'epi-expect', level: 'B2',
@@ -770,8 +770,8 @@ T2.levels.push({
 
         { id: 't2l3s2-5', type: 'choose', tag: 'epi-expect', level: 'B2+',
           stem: 'A report states: <em>If the trend continues, the reservoir ______ fall below the critical level in August.</em> The authors want a firm projection without claiming certainty. Which fits?',
-          options: ['must', 'might not', 'can\'t', 'should'],
-          answer: 3,
+          options: ['must', 'might not', 'should', 'can\'t'],
+          answer: 2,
           why: '<em>Should</em> is the rung for a projection from an established trend: confident enough to name a month, honest enough to leave room for the trend to break. <em>Must</em> would present a forecast as a conclusion already reached, which is the overclaim examiners penalise; <em>can\'t</em> denies the fall the sentence is predicting; and <em>might not</em> is both negative and far weaker than a documented trend warrants.' }
       ]
     },
@@ -805,12 +805,12 @@ T2.levels.push({
           source: 'Adapted for classroom use.',
           stem: 'Which claim are the study\'s authors <strong>least</strong> willing to commit to?',
           options: [
-            'That the association is not simply an artefact of the sampling.',
+            'That the link is not an artefact of the sampling.',
             'That the effect survives adjustment for income and distance.',
-            'That a trial with assigned walking would settle the question.',
-            'That walking to school improves concentration directly.'
+            'That walking to school improves concentration directly.',
+            'That a trial with assigned walking would settle the question.'
           ],
-          answer: 3,
+          answer: 2,
           why: 'The direct-cause claim is the only one placed on the weak middle rung, with <em>may</em>, and the authors immediately set a rival explanation beside it with <em>could</em> — that is the language of two possibilities between which they are not choosing. The sampling claim is the one point the report states flatly, the trial is only predicted, with <em>should</em>, and the survival of the effect after adjustment is likewise asserted with no modal at all, which is the firmest commitment a writer can make.' },
 
         { id: 't2l3s3-2', type: 'choose', tag: 'epi-read', level: 'B2+',
@@ -833,13 +833,13 @@ T2.levels.push({
         { id: 't2l3s3-4', type: 'choose', tag: 'epi-read', level: 'B2+',
           stem: 'Which sentence tells you the writer worked the fact out rather than finding it recorded?',
           options: [
+            'The vault must be older than the rest of the abbey.',
             'The vault is older than the rest of the abbey.',
-            'The vault had already been built when the rest of the abbey was begun.',
             'The vault was built before the rest of the abbey.',
-            'The vault must be older than the rest of the abbey.'
+            'The vault predates the rest of the abbey.'
           ],
-          answer: 3,
-          why: 'A modal is a report on the writer\'s evidence, and <em>must</em> says the conclusion was worked out rather than looked up. A vault cannot be ordered to be older than anything, so there is no second reading here: the sentence can only be a deduction, and it quietly admits that the writer has no document. The other three are bare assertions in three different tenses, which is what a writer produces when the date is on record.' },
+          answer: 0,
+          why: 'A modal is a report on the writer\'s evidence, and <em>must</em> says the conclusion was worked out rather than looked up. A vault cannot be ordered to be older than anything, so there is no second reading here: the sentence can only be a deduction, and it quietly admits that the writer has no document. The other three make the same point about the vault as plain statements with no modal, which is what a writer produces when the date is on record.' },
 
         { id: 't2l3s3-5', type: 'order', tag: 'epi-read', level: 'B2+',
           stem: 'Put the four sentences in the order that makes a coherent paragraph.',
@@ -861,24 +861,24 @@ T2.levels.push({
         source: 'Adapted from a system operator\'s winter outlook.',
         stem: 'What is the operator\'s position on the cold-week-plus-outage scenario?',
         options: [
-          'It will not happen.',
-          'It is expected to happen.',
-          'It is unlikely, but the operator will not rule it out.',
+          'It will not happen this winter.',
+          'It is expected to happen this winter.',
+          'It is unlikely, but it cannot be ruled out.',
           'It has already happened once this winter.'
         ],
         answer: 2,
         why: 'The passage calls the combination <em>unlikely</em> and then says it <em>cannot be ruled out</em> — a weak middle-rung possibility that the operator explicitly declines to push down to the bottom rung. Option 1 does precisely what the operator refuses to do; option 2 promotes a possibility to an expectation, which the word <em>unlikely</em> forbids; and option 4 invents a past event, where the text says only that the emergency measures have never been tested.' },
 
       { id: 't2l3ck-2', type: 'choose', tag: 'epi-prog', level: 'B2',
-        stem: 'Which sentence is a deduction about what is happening right now?',
+        stem: 'The back office has been locked all morning and the auditors are not at their desks. Which sentence is a deduction about what is happening right now?',
         options: [
-          'The auditors must check every invoice over fifty thousand baht.',
-          'The auditors must be checking the invoices — the office has been locked all morning.',
-          'The auditors should check the invoices before the board meets.',
-          'The auditors can check the invoices from the branch office.'
+          'The auditors must check every invoice in the back office.',
+          'The auditors must be checking the invoices in the back office.',
+          'The auditors should check the invoices before Friday.',
+          'The auditors will check the invoices in the back office.'
         ],
         answer: 1,
-        why: 'Only the second sentence puts <em>be</em> + <em>-ing</em> after the modal, which is the form that reads evidence as something under way, and only it offers any evidence at all. The first and third are a requirement and a piece of advice aimed at people who can act on them, and the fourth uses <em>can</em> for ability or permission, which belongs to a different part of the modal system altogether.' },
+        why: 'Only the second sentence puts <em>be</em> + <em>-ing</em> after the modal, which is the form that reads the locked door and the empty desks as evidence of something under way. The fourth is just as confident but, with a bare infinitive, <em>will check</em> is about a later time, not about this morning. The first and third are a requirement and a piece of advice aimed at people who can act on them.' },
 
       { id: 't2l3ck-3', type: 'gap', tag: 'epi-expect', level: 'B2', blank: '(2)',
         lines: [
@@ -891,22 +891,22 @@ T2.levels.push({
         why: 'A tracking page frozen for days is hard evidence, and it leaves the depot as the only explanation, so Sarawut takes the top rung. <em>Should</em> is the expectation rung, which is all the two-day service on its own would support, and choosing it would step back from the evidence Sarawut is actually looking at; <em>mustn\'t</em> is a prohibition, which cannot be aimed at a parcel; and <em>need not</em> denies a requirement and has no place on the certainty ladder.' },
 
       { id: 't2l3ck-4', type: 'choose', tag: 'epi-expect', level: 'B2+',
-        stem: 'Which sentence would a careful writer change?',
+        stem: 'A club\'s membership has risen for three years in a row. Which sentence in the draft report should a careful writer change?',
         options: [
+          'Given the three-year rise, membership must pass ten thousand next year.',
           'On current projections, membership should pass ten thousand next year.',
-          'Membership looks likely to pass ten thousand next year.',
-          'Membership may pass ten thousand next year if the trend holds.',
-          'Membership must pass ten thousand next year, because the trend has been upward for three years.'
+          'If the trend holds, membership may pass ten thousand next year.',
+          'Membership looks likely to pass ten thousand next year.'
         ],
-        answer: 3,
-        why: 'A three-year trend supports an expectation, not a conclusion: <em>must</em> claims that no other outcome is possible, and a trend can always break. The other three are all calibrated to the same evidence — <em>should</em> for a firm projection, <em>may</em> for a conditional one, and <em>looks likely</em> for a leaning the writer will not put a modal behind — and none of them pretends the trend cannot break.' },
+        answer: 0,
+        why: 'A three-year trend supports an expectation, not a conclusion: <em>must</em> claims that no other outcome is possible, and a trend can always break. The other three are all pitched at what the same evidence allows — <em>should</em> for a firm projection, <em>may</em> for a conditional one, and <em>looks likely</em> for a leaning the writer will not put a modal behind — and none of them pretends the trend cannot break.' },
 
       { id: 't2l3ck-5', type: 'spot', tag: 'epi-prog', level: 'B2+',
         stem: 'One of the four parts is wrong. Find it.',
-        words: ['The network has been at full capacity since nine,', 'so the backup job must still run,', 'which would explain why', 'the shared drive is so slow.'],
-        answer: 1,
-        fix: 'so the backup job must still be running,',
-        why: 'A deduction about something under way needs <em>be</em> plus the <em>-ing</em> form after the modal. <em>Must still run</em> keeps the bare infinitive, and a bare infinitive after <em>must</em> reads as a requirement laid on the backup job rather than as a conclusion drawn from the traffic — it also loses the "right now" that a saturated network is evidence for. <em>Still</em> is already in its proper place, between the modal and the verb phrase. The first, third and fourth parts are all correct.' },
+        words: ['The network has been at full capacity since nine', 'and the shared drive is crawling,', 'so the backup job must still run', 'in the background.'],
+        answer: 2,
+        fix: 'so the backup job must still be running',
+        why: 'A deduction about something under way needs <em>be</em> plus the <em>-ing</em> form after the modal. <em>Must still run</em> keeps the bare infinitive, and a bare infinitive after <em>must</em> reads as a requirement laid on the backup job rather than as a conclusion drawn from the traffic — it also loses the "right now" that a saturated network is evidence for. <em>Still</em> is already in its proper place, between the modal and the verb phrase. The first, second and fourth parts are all correct.' },
 
       { id: 't2l3ck-6', type: 'order', tag: 'epi-read', level: 'B2+',
         stem: 'Put the four sentences in the order that makes a coherent paragraph.',

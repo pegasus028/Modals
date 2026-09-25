@@ -35,7 +35,7 @@ MOCKS.push({
           why: 'Perception verbs are stative and assert no achievement, so they escape the single-occasion restriction and <em>could hear</em> is idiomatic even about one specific past afternoon. <em>managed to hear</em> imports effort and difficulty, which the propped-open window rules out. <em>am able to hear</em> is the repair form in present time, and the scene on the bench is finished. <em>could have heard</em> says the opportunity existed and was not used, denying that anything was actually heard.' },
 
         { id: 'm3-3', type: 'choose', tag: 'dist-unreal', level: 'C1',
-          stem: 'From a live planning inquiry, at which the developer can still revise the application: <em>If the developer ______ the affordable-housing quota, the scheme ______ far less opposition.</em>',
+          stem: 'At a planning inquiry, where the developer can still revise the application, an objector says: <em>If the developer ______ the affordable-housing quota, the scheme ______ far less opposition.</em>',
           options: [
             'would meet … would face',
             'met … would face',
@@ -48,7 +48,7 @@ MOCKS.push({
         { id: 'm3-4', type: 'choose', tag: 'past-ambig', level: 'C1',
           stem: 'Read: <em>The duty manager could have closed the barrier.</em> Which continuation forces the reading <strong>the chance was there and was not taken</strong>?',
           options: [
-            'We still do not know who was on the gantry when the alarm went off.',
+            'We still do not know who was on the gantry when the alarm sounded.',
             'She had been trained on that control system for six years by then.',
             'In any case the power to the barrier had already failed by then.',
             'The switch was a metre from where she stood, and nobody touched it.'
@@ -87,24 +87,24 @@ MOCKS.push({
 
         { id: 'm3-7', type: 'spot', tag: 'dist-ifwill', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['If the tribunal will accept', 'the late submission,', 'the hearing can go ahead', 'on the date originally listed.'],
+          words: ['If the missing witness statement will arrive', 'before the end of the week,', 'the hearing can go ahead', 'on the date originally listed.'],
           answer: 0,
-          fix: 'If the tribunal accepts',
-          why: '<em>If</em> already marks the clause as a possibility, so a second operator on top of it is redundant: the form is <em>If the tribunal accepts</em>. <em>will</em> survives in an <em>if</em>-clause only when it means willingness, and a tribunal accepting a document is an outcome, not a favour. Part 2 correctly keeps its modal, because the main clause is where the modality belongs.' },
+          fix: 'If the missing witness statement arrives',
+          why: '<em>If</em> already places the clause in the future, so the verb stays in the present simple: <em>If the missing witness statement arrives</em>. <em>will</em> survives in an <em>if</em>-clause only when it means willingness (<em>if you will wait here</em>), and a document cannot be willing to do anything. Part 3 correctly keeps its modal, because the main clause is where the modality belongs.' },
 
         { id: 'm3-8', type: 'spot', tag: 'past-wasto', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['Because the connecting flight was cancelled,', 'the talks opened without the delegation,', 'which was to have arrive', 'on the Tuesday morning.'],
           answer: 2,
           fix: 'which was to have arrived',
-          why: '<em>was to have done</em> is the form that builds the failure of a plan into the verb phrase, and <em>have</em> must be followed by a past participle: <em>arrived</em>. The bare form <em>arrive</em> can only follow a modal directly, and there is no modal next to it in part 2. Parts 0, 1 and 3 supply exactly the frustrated-plan context that makes <em>was to have</em> the right choice in the first place.' },
+          why: '<em>was to have done</em> is the form that builds the failure of a plan into the verb phrase, and <em>have</em> must be followed by a past participle: <em>arrived</em>. The bare form <em>arrive</em> can only follow a modal directly, and there is no modal next to it in part 3. Parts 1, 2 and 4 supply exactly the frustrated-plan context that makes <em>was to have</em> the right choice in the first place.' },
 
         { id: 'm3-9', type: 'spot', tag: 'hedge-under', level: 'C1',
           stem: 'One of the four parts hedges far more than the claim needs. Find it.',
           words: ['The review concludes, from forty years of gauge records,', 'that winter rainfall in the north', 'has declined over the last three decades,', 'though it may possibly be the case that it has now stopped.'],
           answer: 3,
           fix: 'though it may be the case that it has now stopped.',
-          why: 'Part 3 stacks three hedging devices on one proposition: the modal <em>may</em>, the adverb <em>possibly</em>, which only says again what the modal has already said, and the empty frame <em>be the case that</em>. A levelling-off does need hedging, but one device is enough; the minimal repair is to drop the adverb that duplicates the modal. Parts 0, 1 and 2 assert a specific, datable finding and are right to assert it flatly.' }
+          why: 'Part 4 stacks three hedging devices on one proposition: the modal <em>may</em>, the adverb <em>possibly</em>, which only says again what the modal has already said, and the empty frame <em>be the case that</em>. A levelling-off does need hedging, but one device is enough; the minimal repair is to drop the adverb that duplicates the modal. Parts 1, 2 and 3 assert a specific, datable finding and are right to assert it flatly.' }
       ]
     },
 
@@ -123,7 +123,7 @@ MOCKS.push({
           options: [
             'That was the weakest part of the argument when I first read it, some time ago.',
             'That is certainly the weakest part of the argument, and nobody disputes it.',
-            'That is, I think, the weakest part of the argument, though I am not insisting.',
+            'That is, I think, the weakest part of the argument, though I may be wrong.',
             'That would have been the weakest part of the argument if it had been included.'
           ],
           answer: 2,
@@ -145,7 +145,7 @@ MOCKS.push({
           given: 'It is widely held that smaller cohorts improve the quality of supervision.',
           stem: 'Which sentence says the same thing?',
           options: [
-            'The writer is fairly confident that smaller cohorts improve the quality of supervision.',
+            'The writer is fairly sure that smaller cohorts improve the quality of supervision.',
             'It has now been demonstrated that smaller cohorts improve the quality of supervision.',
             'Smaller cohorts may improve supervision, though on balance they probably will not.',
             'Many people believe that smaller cohorts improve supervision; the writer takes no side.'
@@ -222,7 +222,7 @@ MOCKS.push({
             'They show that the writer is unsure whether care wages are really low at all.',
             'They attribute the claim to other people rather than to the writer of the passage.',
             'They concede a point that the writer is about to turn round and argue against.',
-            'They limit how widely the claim applies without weakening the writer\'s confidence.'
+            'They limit how far the claim applies without weakening the writer\'s confidence.'
           ],
           answer: 3,
           why: 'An approximator narrows the <strong>scope</strong> of a claim — most places, not all — and leaves the writer fully committed within that scope. Option 1 confuses scope with certainty, which is the standard misreading of these words. Option 2 describes an impersonal frame such as <em>it is widely assumed</em>, which the passage uses one sentence earlier for a different job. Option 3 describes a concession, and the writer immediately builds on this claim rather than turning against it.' },

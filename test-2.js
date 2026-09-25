@@ -36,9 +36,9 @@ MOCKS.push({
 
         { id: 'm2-3', type: 'choose', tag: 'deo-source', level: 'B2',
           stem: 'In her opening paragraph the writer sets herself a rule that nobody has imposed on her: <em>I ______ stop checking email before breakfast.</em>',
-          options: ['have to', 'am required to', 'must', 'had to'],
+          options: ['am supposed to', 'am required to', 'must', 'had to'],
           answer: 2,
-          why: 'Where the necessity comes from the speaker herself, English uses <em>must</em>; that is the whole difference the form carries. <em>have to</em> locates the authority outside the speaker, which the stem explicitly rules out. <em>am required to</em> goes further still and reports an external regulation, and it belongs to formal, institutional prose. <em>had to</em> puts the resolution in past time, but the writer is making it now.' },
+          why: 'Where the necessity comes from the speaker herself, English uses <em>must</em>; that is the whole difference the form carries. <em>am supposed to</em> reports an expectation that somebody else has set, which the stem explicitly rules out. <em>am required to</em> goes further still and reports an external regulation, and it belongs to formal, institutional prose. <em>had to</em> puts the resolution in past time, but the writer is making it now.' },
 
         { id: 'm2-4', type: 'choose', tag: 'dyn-occasion', level: 'B2+',
           stem: 'Everyone said the deadline was impossible, and yet the translation team ______ the whole report by Friday evening.',
@@ -68,35 +68,35 @@ MOCKS.push({
           words: ['The new guidelines state', 'that at the end of a session', 'every supervisor must to record', 'the outcome in the shared log.'],
           answer: 2,
           fix: 'every supervisor must record',
-          why: 'A modal is followed by a bare infinitive, so the <em>to</em> in <em>must to record</em> cannot stand. The error survives in writing because many languages build verb-plus-verb sequences with a linking element, and English modals do not. Parts 0, 1 and 3 contain no modal and nothing that could take an infinitive.' },
+          why: 'A modal is followed by a bare infinitive, so the <em>to</em> in <em>must to record</em> cannot stand. The error survives in writing because many languages build verb-plus-verb sequences with a linking element, and English modals do not. Parts 1, 2 and 4 contain no modal and nothing that could take an infinitive.' },
 
         { id: 'm2-7', type: 'spot', tag: 'frame-chain', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['By the time the bell goes', 'the papers will have been collect', 'and stacked at the front', 'of the examination hall.'],
           answer: 1,
           fix: 'the papers will have been collected',
-          why: 'Each link in the chain fixes the form of the next: <em>have</em> takes <em>been</em>, and passive <em>be</em> takes a past participle, so the verb must be <em>collected</em>. The bare form <em>collect</em> belongs immediately after the modal and nowhere else in the phrase. Part 2 shows the correct participle, <em>stacked</em>, in the same coordinate structure, which is the clue.' },
+          why: 'Each link in the chain fixes the form of the next: <em>have</em> takes <em>been</em>, and passive <em>be</em> takes a past participle, so the verb must be <em>collected</em>. The bare form <em>collect</em> belongs immediately after the modal and nowhere else in the phrase. Part 3 shows the correct participle, <em>stacked</em>, in the same coordinate structure, which is the clue.' },
 
         { id: 'm2-8', type: 'spot', tag: 'deo-periph', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['Part-time students must pay', 'the full library charge', 'at the start of every term,', 'until the funding rules changed.'],
           answer: 0,
           fix: 'Part-time students had to pay',
-          why: '<em>must</em> has no past form, so a past obligation is carried by <em>had to</em>; part 3, <em>until the funding rules changed</em>, fixes the whole sentence in past time. <em>must pay</em> reports a rule that is in force now, which part 3 has already said is no longer the case. Parts 1, 2 and 3 are ordinary past-time description with nothing modal in them.' },
+          why: '<em>must</em> has no past form, so a past obligation is carried by <em>had to</em>; part 4, <em>until the funding rules changed</em>, fixes the whole sentence in past time. <em>must pay</em> reports a rule that is in force now, which part 4 has already said is no longer the case. Parts 2, 3 and 4 are ordinary past-time description with nothing modal in them.' },
 
         { id: 'm2-9', type: 'spot', tag: 'dyn-repair', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['Since the second bridge opened,', 'the journey into town has become much shorter,', 'and the villagers', 'have could reach the hospital in minutes.'],
           answer: 3,
           fix: 'have been able to reach the hospital in minutes.',
-          why: 'A perfect requires a past participle and <em>can</em> has none, so the slot is filled by the repair form: <em>have been able to reach</em>. <em>have could</em> is the defectiveness showing through — it is the exact point at which the modal runs out. Part 0 forces a present perfect right across the sentence, so it cannot simply be rewritten with <em>can</em>, and part 1 shows the same perfect used correctly.' },
+          why: 'A perfect requires a past participle and <em>can</em> has none, so the slot is filled by the repair form: <em>have been able to reach</em>. <em>have could</em> is the defectiveness showing through — it is the exact point at which the modal runs out. Part 1 forces a present perfect right across the sentence, so it cannot simply be rewritten with <em>can</em>, and part 2 shows the same perfect used correctly.' },
 
         { id: 'm2-10', type: 'spot', tag: 'past-should', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['The organisers now admit', 'that more than two hundred people were turned away,', 'and that they should book a larger hall', 'for last month\'s concert.'],
           answer: 2,
           fix: 'and that they should have booked a larger hall',
-          why: 'Part 3 dates the booking to one particular past event, so part 2 cannot be advice about a hall still to be hired; it is criticism of something that never happened, which needs <em>should have booked</em>. <em>should book</em> would have to point forward, and <em>for last month\'s concert</em> leaves it nowhere to point. Parts 0, 1 and 3 report what was admitted and what actually occurred, and carry no modal to get wrong.' }
+          why: 'Part 4 dates the booking to one particular past event, so part 3 cannot be advice about a hall still to be hired; it is criticism of something that never happened, which needs <em>should have booked</em>. <em>should book</em> would have to point forward, and <em>for last month\'s concert</em> leaves it nowhere to point. Parts 1, 2 and 4 report what was admitted and what actually occurred, and carry no modal to get wrong.' }
       ]
     },
 
@@ -119,7 +119,7 @@ MOCKS.push({
             'The two files must not be identical.'
           ],
           answer: 1,
-          why: '<em>may not</em> is the possibility of a negative, which is exactly what <em>there is a chance that … not</em> states. <em>can\'t be identical</em> is the impossibility of a positive, a far stronger claim that rules the matching out. Option 2 puts <em>not</em> after <em>be</em>, where English will not have it; the negation belongs on the modal. <em>must not</em> reads as a prohibition, and a file cannot be forbidden to resemble another.' },
+          why: '<em>may not</em> is the possibility of a negative, which is exactly what <em>there is a chance that … not</em> states. <em>can\'t be identical</em> is the impossibility of a positive, a far stronger claim that rules the matching out. Option 3 puts <em>not</em> after <em>be</em>, where English will not have it; the negation belongs on the modal. <em>must not</em> reads as a prohibition, and a file cannot be forbidden to resemble another; even read as a conclusion, it would claim certainty where the original offers only a chance.' },
 
         { id: 'm2-12', type: 'equiv', tag: 'deo-noneed', level: 'B2',
           given: 'There is no requirement for volunteers to attend the Saturday briefing.',
@@ -181,23 +181,23 @@ MOCKS.push({
       items: [
 
         { id: 'm2-16', type: 'cloze', tag: 'deo-negcliff', level: 'B2',
-          passage: 'Briefing note for marathon volunteers.\n\nThank you for signing up. Everyone on a water station should collect a numbered tabard from the depot before six, so that we know where you are if a runner needs help. You ___(16)___ bring your own drinks, since the stations are stocked for volunteers as well as runners, although a few people prefer their own bottle.\n\nVolunteers under eighteen ___(17)___ work on the road-crossing points; we will place you at a water station instead, where there is always a supervisor within sight.\n\nThe course closes at two o\'clock. If a runner is still on your section after that, the sweep vehicle ___(18)___ reach you within about ten minutes, though do not rely on it to the minute; stay where you are and wave it down rather than setting off back on your own.',
+          passage: 'Briefing note for marathon volunteers.\n\nThank you for signing up. Everyone on a water station should collect a numbered tabard from the depot before six, so that we know where you are if a runner needs help. You ___(16)___ bring your own drinks, since the stations are stocked for volunteers as well as runners, though anyone who prefers their own bottle is welcome to bring one.\n\nVolunteers under eighteen ___(17)___ work on the road-crossing points, because our insurance does not cover them there; we will place you at a water station instead, where there is always a supervisor within sight.\n\nThe course closes at two o\'clock. If a runner is still on your section after that, the sweep vehicle ___(18)___ reach you within about ten minutes, though do not rely on it to the minute; stay where you are and wave it down rather than setting off back on your own.',
           blank: '(16)',
           stem: 'Choose the best option for blank (16).',
           options: ['mustn\'t', 'don\'t have to', 'shouldn\'t', 'are not to'],
           answer: 1,
-          why: 'The stations are stocked, so the obligation to bring drinks simply is not there, and <em>don\'t have to</em> is the form that removes an obligation without creating one. <em>mustn\'t</em> forbids, which the following clause contradicts outright — some volunteers do bring a bottle. <em>shouldn\'t</em> advises against it, which is the same contradiction in a weaker form. <em>are not to</em> is a flat prohibition in the register of a written instruction, and a briefing note that has just explained why nobody needs a bottle is not banning one.' },
+          why: 'The stations are stocked, so the obligation to bring drinks simply is not there, and <em>don\'t have to</em> is the form that removes an obligation without creating one. <em>mustn\'t</em> forbids, which the following clause contradicts outright — anyone who prefers is welcome to bring a bottle. <em>shouldn\'t</em> advises against it, and nobody advises against something in the same breath as welcoming it. <em>are not to</em> is a flat prohibition in the register of a written instruction, and a briefing note that has just explained why nobody needs a bottle is not banning one.' },
 
         { id: 'm2-17', type: 'cloze', tag: 'deo-prohibit', level: 'B2',
-          passage: 'Briefing note for marathon volunteers.\n\nThank you for signing up. Everyone on a water station should collect a numbered tabard from the depot before six, so that we know where you are if a runner needs help. You ___(16)___ bring your own drinks, since the stations are stocked for volunteers as well as runners, although a few people prefer their own bottle.\n\nVolunteers under eighteen ___(17)___ work on the road-crossing points; we will place you at a water station instead, where there is always a supervisor within sight.\n\nThe course closes at two o\'clock. If a runner is still on your section after that, the sweep vehicle ___(18)___ reach you within about ten minutes, though do not rely on it to the minute; stay where you are and wave it down rather than setting off back on your own.',
+          passage: 'Briefing note for marathon volunteers.\n\nThank you for signing up. Everyone on a water station should collect a numbered tabard from the depot before six, so that we know where you are if a runner needs help. You ___(16)___ bring your own drinks, since the stations are stocked for volunteers as well as runners, though anyone who prefers their own bottle is welcome to bring one.\n\nVolunteers under eighteen ___(17)___ work on the road-crossing points, because our insurance does not cover them there; we will place you at a water station instead, where there is always a supervisor within sight.\n\nThe course closes at two o\'clock. If a runner is still on your section after that, the sweep vehicle ___(18)___ reach you within about ten minutes, though do not rely on it to the minute; stay where you are and wave it down rather than setting off back on your own.',
           blank: '(17)',
           stem: 'Choose the best option for blank (17).',
           options: ['don\'t have to', 'shouldn\'t have to', 'had better not', 'are not allowed to'],
           answer: 3,
-          why: 'The next clause reassigns these volunteers to a water station, so they are barred from the crossings, and a rule that bars is a prohibition: <em>are not allowed to</em>. <em>don\'t have to</em> merely excuses them, which would leave them free to choose a crossing after all. <em>shouldn\'t have to</em> complains that the arrangement is unfair rather than stating what the arrangement is. <em>had better not</em> warns them off, and a warning is the organiser\'s opinion, not the rule that the following clause then acts on.' },
+          why: 'The insurance does not cover these volunteers at the crossings and the next clause reassigns them, so they are barred, and a rule that bars is a prohibition: <em>are not allowed to</em>. <em>don\'t have to</em> merely excuses them, which would leave them free to choose a crossing the insurance does not cover. <em>shouldn\'t have to</em> complains that the arrangement is unfair rather than stating what the arrangement is. <em>had better not</em> warns them off, and a warning is the organiser\'s opinion, not the rule that the following clause then acts on.' },
 
         { id: 'm2-18', type: 'cloze', tag: 'epi-expect', level: 'B2',
-          passage: 'Briefing note for marathon volunteers.\n\nThank you for signing up. Everyone on a water station should collect a numbered tabard from the depot before six, so that we know where you are if a runner needs help. You ___(16)___ bring your own drinks, since the stations are stocked for volunteers as well as runners, although a few people prefer their own bottle.\n\nVolunteers under eighteen ___(17)___ work on the road-crossing points; we will place you at a water station instead, where there is always a supervisor within sight.\n\nThe course closes at two o\'clock. If a runner is still on your section after that, the sweep vehicle ___(18)___ reach you within about ten minutes, though do not rely on it to the minute; stay where you are and wave it down rather than setting off back on your own.',
+          passage: 'Briefing note for marathon volunteers.\n\nThank you for signing up. Everyone on a water station should collect a numbered tabard from the depot before six, so that we know where you are if a runner needs help. You ___(16)___ bring your own drinks, since the stations are stocked for volunteers as well as runners, though anyone who prefers their own bottle is welcome to bring one.\n\nVolunteers under eighteen ___(17)___ work on the road-crossing points, because our insurance does not cover them there; we will place you at a water station instead, where there is always a supervisor within sight.\n\nThe course closes at two o\'clock. If a runner is still on your section after that, the sweep vehicle ___(18)___ reach you within about ten minutes, though do not rely on it to the minute; stay where you are and wave it down rather than setting off back on your own.',
           blank: '(18)',
           stem: 'Choose the best option for blank (18).',
           options: ['must', 'can', 'might not', 'should'],
@@ -226,9 +226,9 @@ MOCKS.push({
             { who: 'Mali', text: 'That would save me. Tomorrow morning, then, if you are here early.' }
           ],
           stem: 'Choose the best option for gap (20).',
-          options: ['Will I', 'May I', 'Shall I', 'Do I'],
+          options: ['Must I', 'Do I', 'Shall I', 'Need I'],
           answer: 2,
-          why: '<em>Shall I …?</em> is the standard way of offering to do something, and Mali\'s reply — <em>that would save me</em> — accepts an offer. <em>Will I …?</em> asks for a prediction about the speaker\'s own future, which nobody else is in a position to give. <em>Do I …?</em> asks whether that is the existing arrangement, and no arrangement has been made yet. <em>May I …?</em> asks Mali for permission to bring his own adapter, which is not something she has any say over.' }
+          why: '<em>Shall I …?</em> is the standard way of offering to do something, and Mali\'s reply — <em>that would save me</em> — accepts an offer. <em>Must I …?</em> is a natural question from someone who has been told to bring the adapter and would rather not, but nobody has told Teerapat anything; he is volunteering. <em>Do I …?</em> asks whether that is the existing arrangement, and no arrangement has been made yet. <em>Need I …?</em> asks whether it is really necessary, which again treats the adapter as a chore rather than as help he is putting on the table.' }
       ]
     }
   ]

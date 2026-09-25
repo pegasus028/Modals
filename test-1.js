@@ -32,7 +32,7 @@ MOCKS.push({
           words: ['Candidates who register', 'after the closing date', 'will must pay an additional fee', 'before their entry is confirmed.'],
           answer: 2,
           fix: 'will have to pay an additional fee',
-          why: 'A modal has no infinitive, so it can never follow another modal: <em>will must</em> is impossible, and the language repairs it with <em>will have to</em>. Part 2 is the only part with a modal in it; the other three are ordinary phrases with nothing modal to go wrong. This is the gap the whole semi-modal system exists to fill.' },
+          why: 'A modal has no infinitive, so it can never follow another modal: <em>will must</em> is impossible, and the language repairs it with <em>will have to</em>. Part 3 is the only part with a modal in it; the other three are ordinary phrases with nothing modal to go wrong. This is the gap the whole semi-modal system exists to fill.' },
 
         { id: 'm1-3', type: 'choose', tag: 'epi-scale', level: 'B1+',
           stem: 'The lights are on, both bicycles are in the yard and the radio is playing, so someone ______ at home.',
@@ -53,10 +53,10 @@ MOCKS.push({
           why: 'Deductive <em>must</em> has a suppletive negative: the opposite of <em>it must be</em> is <em>it can\'t be</em>, not <em>it mustn\'t be</em>. <em>mustn\'t</em> was already taken by prohibition, so option 1 says the wiring is forbidden to contain the fault. Option 2, <em>may not</em>, only leaves the possibility open, which is far weaker than certainty. Option 3, <em>shouldn\'t</em>, is expectation or advice, not a conclusion drawn from evidence.' },
 
         { id: 'm1-5', type: 'choose', tag: 'epi-negscope', level: 'B2',
-          stem: 'A document examiner has looked at the second signature and found nothing either way, so as things stand it ______ genuine.',
+          stem: 'A document examiner has found a few things about the second signature that worry her, but nothing conclusive, so as things stand it ______ genuine.',
           options: ['can\'t be', 'may not be', 'mustn\'t be', 'shouldn\'t be'],
           answer: 1,
-          why: 'The examiner has left the question open, so what the sentence needs is the possibility of a negative, and that is <em>may not be</em>. <em>can\'t be</em> negates the proposition instead and claims an impossibility the examiner has expressly not established. <em>mustn\'t be</em> forbids the signature from being genuine, which is nonsense about a document nobody can instruct. <em>shouldn\'t be</em> shifts the sentence to what ought to be the case rather than what the evidence allows.' }
+          why: 'The examiner has doubts but no proof, so what the sentence needs is the possibility that it is not genuine, and that is <em>may not be</em>. <em>can\'t be</em> puts the <em>not</em> on the possibility instead and claims an impossibility, which <em>nothing conclusive</em> expressly denies her. <em>mustn\'t be</em> forbids the signature from being genuine, which is nonsense about a document nobody can instruct. <em>shouldn\'t be</em> shifts the sentence to what ought to be the case rather than what the evidence allows.' }
       ]
     },
 
@@ -80,7 +80,7 @@ MOCKS.push({
           words: ['The laboratory is open to all students,', 'so you mustn\'t book a slot in advance', 'unless you need the fume cupboard,', 'which is shared with the research group.'],
           answer: 1,
           fix: 'so you don\'t have to book a slot in advance',
-          why: '<em>mustn\'t</em> forbids, so part 1 as written bans booking — the opposite of what an open laboratory means. Removing an obligation needs <em>don\'t have to</em> or <em>needn\'t</em>; the two forms look like a pair and are near-opposites. The other parts are consistent with each other and contain no negation to misplace.' },
+          why: '<em>mustn\'t</em> forbids, so part 2 as written bans booking — the opposite of what an open laboratory means. Removing an obligation needs <em>don\'t have to</em> or <em>needn\'t</em>; the two forms look like a pair and are near-opposites. The other parts are consistent with each other and contain no negation to misplace.' },
 
         { id: 'm1-8', type: 'gap', tag: 'deo-advice', level: 'B2', blank: '(8)',
           lines: [
@@ -118,7 +118,7 @@ MOCKS.push({
       items: [
 
         { id: 'm1-11', type: 'choose', tag: 'dist-core', level: 'B2+',
-          stem: 'One of these four sentences uses <em>could</em> for remoteness in <strong>time</strong>. Which one?',
+          stem: 'In which sentence does <em>could</em> refer to <strong>past time</strong>?',
           options: [
             'I was wondering whether you could look through the second draft for me.',
             'The stain spreading across the ceiling could be coming from the flat above.',
@@ -133,25 +133,25 @@ MOCKS.push({
           stem: 'Which sentence makes the same request at roughly the same level of politeness?',
           options: [
             'You must move your car at once. It is blocking the loading bay.',
-            'I need you to move your car now. It is blocking the loading bay.',
-            'Would you like to move your car? It is blocking the loading bay.',
+            'I need you to move your car. It is blocking the loading bay.',
+            'Will you move your car? It is blocking the loading bay.',
             'Could you move your car, please? It is blocking the loading bay.'
           ],
           answer: 3,
-          why: '<em>Could you … please</em> sits on the same part of the politeness dial as <em>would you mind</em>: a remote form that makes the request smaller. Option 1 drops the dial to bare obligation and issues an order. Option 2 is grammatical and perfectly clear, but it reports the speaker\'s need and leaves the hearer no room to decline. Option 3 is an offer or an invitation, so it asks about the hearer\'s wishes rather than asking for a favour.' },
+          why: '<em>Could you … please</em> sits on the same part of the politeness dial as <em>would you mind</em>: a remote form that makes the request smaller. Option 1 drops the dial to bare obligation and issues an order. Option 2 is grammatical and perfectly clear, but it reports the speaker\'s need and leaves the hearer no room to decline. Option 3 is the right act at the wrong politeness: it is a request, but <em>Will you …?</em> with no softening sounds impatient, several rungs below <em>would you mind</em>.' },
 
         { id: 'm1-13', type: 'choose', tag: 'past-deduce', level: 'B2+',
           stem: 'The cabinet was locked at six and nothing was signed out overnight, so the missing folder ______ inside the building all night.',
-          options: ['can\'t have been', 'must be', 'must have been', 'should have been'],
+          options: ['can\'t have been', 'must be', 'must have been', 'must had been'],
           answer: 2,
-          why: 'The deduction is being made now about a state that held last night, and that is exactly <em>must have been</em>: present modality over a past proposition. <em>can\'t have been</em> draws the opposite conclusion from the same evidence, which points to the folder staying put rather than leaving the building. <em>must be</em> makes the state present, but the sentence is about a night that has finished. <em>should have been</em> says the folder was not there and that this was somebody\'s fault.' },
+          why: 'The deduction is being made now about a state that held last night, and that is exactly <em>must have been</em>: a present conclusion about a past situation. <em>can\'t have been</em> draws the opposite conclusion from the same evidence, which points to the folder staying put rather than leaving the building. <em>must be</em> makes the state present, but the sentence is about a night that has finished. <em>must had been</em> is the right idea in the wrong shape: after a modal the verb stays bare, so it is always <em>have</em>, never <em>had</em>.' },
 
         { id: 'm1-14', type: 'spot', tag: 'past-should', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['The contractor now accepts', 'that nobody signed the log at any point that week,', 'and that the scaffolding', 'should be inspected on the Friday before the collapse.'],
           answer: 3,
           fix: 'should have been inspected on the Friday before the collapse.',
-          why: 'Part 3 names one particular past day, so it cannot be stating a standing rule; it is looking back at an inspection that never took place, and that criticism needs <em>should have been inspected</em>. <em>should be inspected</em> would have to point at the present or the future, and <em>the Friday before the collapse</em> leaves it nowhere to point. Parts 0, 1 and 2 report what was said and what was done, and carry no modal to get wrong.' },
+          why: 'Part 4 names one particular past day, so it cannot be stating a standing rule; it is looking back at an inspection that never took place, and that criticism needs <em>should have been inspected</em>. <em>should be inspected</em> would have to point at the present or the future, and <em>the Friday before the collapse</em> leaves it nowhere to point. Parts 1, 2 and 3 report what was said and what was done, and carry no modal to get wrong.' },
 
         { id: 'm1-15', type: 'cloze', tag: 'past-needpair', level: 'C1',
           passage: 'Notes from a project review.\n\nThe team had set aside the whole of Tuesday to rebuild the customer index by hand, a job nobody was looking forward to. On Monday afternoon the supplier confirmed that a clean backup from the previous week had been sitting on the archive server all along, and the rebuild came straight off the plan.\n\nIn other words, they ___(15)___ the index by hand, and Tuesday went on the migration script instead.',
@@ -159,7 +159,7 @@ MOCKS.push({
           stem: 'Choose the best option for blank (15).',
           options: ['needn\'t have rebuilt', 'didn\'t need to rebuild', 'mustn\'t have rebuilt', 'couldn\'t have rebuilt'],
           answer: 1,
-          why: '<em>didn\'t need to do</em> states that the necessity was absent and says nothing at all about the action, so it is the only form that fits a job the passage tells you never started. <em>needn\'t have rebuilt</em> would assert that they did rebuild the index and wasted the day on it, which the change of plan rules out — that is the whole difference between the pair. <em>mustn\'t have rebuilt</em> is not English here: <em>mustn\'t</em> forbids and cannot look back. <em>couldn\'t have rebuilt</em> says the job would have been impossible, but nothing was stopping them; it was simply unnecessary.' }
+          why: '<em>didn\'t need to do</em> states that the necessity was absent and says nothing at all about the action, so it is the only form that fits a job the passage tells you never started. <em>needn\'t have rebuilt</em> would assert that they did rebuild the index and wasted the day on it, which the change of plan rules out — that is the whole difference between the pair. <em>mustn\'t have rebuilt</em> could only be a guess about what happened, and British English makes that negative guess with <em>can\'t have</em>; the passage is stating a fact, not guessing. <em>couldn\'t have rebuilt</em> says the job would have been impossible, but nothing was stopping them; it was simply unnecessary.' }
       ]
     },
 
@@ -184,10 +184,10 @@ MOCKS.push({
           why: 'One district and a small difference will support a cautious causal suggestion, and that is what <em>suggests</em> plus <em>may</em> delivers. Option 1 turns a correlation into a demonstrated cause on the strength of a single study. Option 2 adds an invariable future — <em>will always</em> — that no sample from one district can reach. Option 4 overclaims in a third way, quantifying over every individual child when the finding is an average difference between two groups.' },
 
         { id: 'm1-17', type: 'choose', tag: 'hedge-adverb', level: 'C1',
-          stem: 'A housing economist wants to say that an outcome is <strong>likely but not certain</strong>, in one phrase and without repeating herself: <em>Rents within walking distance of the new station ______ rise.</em>',
+          stem: 'A housing economist thinks a rise is <strong>likely but not certain</strong>: <em>Rents within walking distance of the new station ______ rise.</em>',
           options: ['might possibly', 'will certainly', 'may not', 'may well'],
           answer: 3,
-          why: '<em>may well</em> is the standard way of raising a bare possibility to a likelihood: the adverb does work the modal alone cannot do. <em>might possibly</em> stacks an adverb that only repeats the modal, so it adds nothing and reads as padding. <em>will certainly</em> is a booster and claims the certainty the writer has just said she does not have. <em>may not</em> reverses the direction and makes the claim about rents failing to rise.' },
+          why: '<em>may well</em> is the standard way of raising a bare possibility to a likelihood: the adverb does work the modal alone cannot do. <em>might possibly</em> is the right kind of phrase — modal plus adverb — pushed the wrong way: it keeps the claim at a bare possibility, or even below it, so it cannot say <em>likely</em>. <em>will certainly</em> is a booster and claims the certainty the writer has just said she does not have. <em>may not</em> reverses the direction and makes the claim about rents failing to rise.' },
 
         { id: 'm1-18', type: 'equiv', tag: 'hedge-concede', level: 'C1+',
           given: 'Online lectures are certainly convenient for students who live far from campus. Even so, they weaken the informal contact that makes a department work.',
@@ -217,7 +217,7 @@ MOCKS.push({
           words: ['The new rota will take effect in the following January,', 'the director said at the staff briefing,', 'and he added that nobody', 'would be moved between the two sites.'],
           answer: 0,
           fix: 'The new rota would take effect in the following January,',
-          why: 'The whole sentence is indirect speech under a past reporting verb, and <em>the following January</em> is the past-anchored deictic that proves it, so <em>will</em> must take the step back to <em>would</em>. Part 3 already shows the backshifted pattern, which is what makes the inconsistency in part 0 visible. Parts 1 and 2 carry no modal of their own, and <em>would be moved</em> is exactly what the rule produces.' }
+          why: 'The whole sentence is indirect speech under a past reporting verb, and <em>the following January</em> is a time phrase that only works from a past point of view, so <em>will</em> must take the step back to <em>would</em>. Part 4 already shows the backshifted pattern, which is what makes the inconsistency in part 1 visible. Parts 2 and 3 carry no modal of their own, and <em>would be moved</em> is exactly what the rule produces.' }
       ]
     }
   ]
