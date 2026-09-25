@@ -1,15 +1,16 @@
 /* ===========================================================================
    TEST 1 — m1 · THE TRIAGE
-   Twenty items, one per teaching point, sampling all eight stages in order.
+   Twenty-six items, one per teaching point: twenty sampling the eight core stages
+   in order, and six (Part E) keyed to Gateway B2 Unit 5 that route to Stage 9.
    MOCKS[0] is the diagnostic: the engine turns every miss into a study
    checklist, so each item is a clean single-point test of one tag.
    =========================================================================== */
 MOCKS.push({
   id: 'm1',
   name: 'Triage Test',
-  blurb: 'Twenty questions across all eight stages. It is not a score to be proud of or ashamed of — it is a map. What you miss here becomes your checklist.',
-  minutes: 25,
-  total: 20,
+  blurb: 'Twenty-six questions across all nine stages. It is not a score to be proud of or ashamed of — it is a map. What you miss here becomes your checklist.',
+  minutes: 32,
+  total: 26,
   sections: [
 
     /* ------------------------------------------------ PART A, items 1-5 */
@@ -218,6 +219,55 @@ MOCKS.push({
           answer: 0,
           fix: 'The new rota would take effect in the following January,',
           why: 'The whole sentence is indirect speech under a past reporting verb, and <em>the following January</em> is a time phrase that only works from a past point of view, so <em>will</em> must take the step back to <em>would</em>. Part 4 already shows the backshifted pattern, which is what makes the inconsistency in part 1 visible. Parts 2 and 3 carry no modal of their own, and <em>would be moved</em> is exactly what the rule produces.' }
+      ]
+    },
+
+    /* ------------------------------------------ PART E, items 21-26 */
+    {
+      code: 'E',
+      part: 'PART E: UNIT 5 REVIEW',
+      title: 'Rules now, rules then, and guesses',
+      instructions: 'Six questions on the grammar of Unit 5 in your coursebook: what you have to do, what you had to do, and how sure you are about what is true or what happened. A miss here sends you to the Stage 9 review.',
+      points: 1,
+      items: [
+
+        { id: 'm1-21', type: 'choose', tag: 'u5-now-neg', level: 'B1+',
+          stem: 'The school concert is free for students. Complete the notice: <em>Students ______ buy a ticket — just show your student card at the door.</em>',
+          options: ['mustn\'t', 'aren\'t allowed to', 'don\'t have to', 'shouldn\'t'],
+          answer: 2,
+          why: 'The concert is free, so there is no obligation to buy a ticket: <em>don\'t have to</em>. Option 1, <em>mustn\'t</em>, is the near miss: it looks like the negative of <em>have to</em>, but it means buying a ticket is against the rules — the opposite of the message. Option 2 is the same ban in other words. Option 4, <em>shouldn\'t</em>, advises students not to buy one, which is not what a notice about a free concert is saying.' },
+
+        { id: 'm1-22', type: 'spot', tag: 'u5-now-form', level: 'B1+',
+          stem: 'One of the four parts is wrong. Find it.',
+          words: ['The station is only', 'five minutes away, so', 'we needn\'t to take', 'a taxi this evening.'],
+          answer: 2,
+          fix: 'we needn\'t take',
+          why: '<em>Needn\'t</em> is followed by the verb without <em>to</em>: <em>we needn\'t take a taxi</em>. The form with <em>to</em> is <em>we don\'t need to take</em>, which is also correct — the mistake is mixing the two patterns. The other three parts are correct: the description of the station, the linking <em>so</em> and the time phrase are all well formed.' },
+
+        { id: 'm1-23', type: 'choose', tag: 'u5-past-oblig', level: 'B1+',
+          stem: 'The cash machine near our flat was broken, so yesterday we ______ to the bank in town.',
+          options: ['must go', 'had to go', 'have to go', 'must have gone'],
+          answer: 1,
+          why: 'Going to the bank was necessary, and it happened <em>yesterday</em>, so the sentence needs the past of obligation: <em>had to go</em>. <em>Have to go</em> is the near miss — the right verb, but present, and the word <em>yesterday</em> cannot make it past on its own. <em>Must go</em> has no past form. <em>Must have gone</em> is a guess about the past ("I\'m almost sure we went"), but the speaker knows what she did yesterday, so there is nothing to guess.' },
+
+        { id: 'm1-24', type: 'choose', tag: 'u5-past-look', level: 'B2',
+          stem: 'I bought a dictionary for my English course, but on the first day the teacher gave everyone one for free. I ______ one.',
+          options: ['needn\'t have bought', 'mustn\'t have bought', 'needn\'t buy', 'shouldn\'t buy'],
+          answer: 0,
+          why: 'The speaker <strong>did</strong> buy a dictionary, and it turned out to be unnecessary, which is exactly what <em>needn\'t have bought</em> says. <em>Needn\'t buy</em> is the near miss — the right idea of "not necessary", but it is about now or the future, and the buying is finished. <em>Shouldn\'t buy</em> is advice about now, not a comment on a past action. <em>Mustn\'t have bought</em> is not a correct way to talk about something you did.' },
+
+        { id: 'm1-25', type: 'choose', tag: 'u5-guess-now', level: 'B1+',
+          stem: 'Anna\'s sister is in Australia this month, so that girl at the bus stop ______ her. She just looks a bit like her.',
+          options: ['mustn\'t be', 'might not be', 'must be', 'can\'t be'],
+          answer: 3,
+          why: 'Anna\'s sister is on the other side of the world, so the speaker is about 90% sure the girl is <strong>not</strong> her: <em>can\'t be</em>. <em>Mustn\'t be</em> is the near miss. It looks like the opposite of <em>must</em>, but <em>mustn\'t</em> is for rules, not guesses. <em>Might not be</em> is only a 50% "maybe not", too weak when we know the sister is in Australia. <em>Must be</em> says the opposite of the evidence.' },
+
+        { id: 'm1-26', type: 'spot', tag: 'u5-guess-form', level: 'B2',
+          stem: 'One of the four parts is wrong. Find it.',
+          words: ['Josh isn\'t answering his phone.', 'He might forgot to charge it,', 'because the battery was almost dead', 'when I saw him at lunchtime.'],
+          answer: 1,
+          fix: 'He might have forgotten to charge it,',
+          why: 'A guess about the past needs the chain modal + <em>have</em> + past participle: <em>might have forgotten</em>. <s>Might forgot</s> drops <em>have</em> and puts a past simple straight after the modal, which English never allows. The other parts are correct: part 1 is about now, and parts 3 and 4 are ordinary past simple.' }
       ]
     }
   ]

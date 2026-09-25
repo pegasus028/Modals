@@ -282,7 +282,7 @@
   /* =====================================================================
      THE REVISION SHEET
      Every rule the app tests, on one page, in the order the stages run.
-     Sixty-eight principles: about twenty-five minutes to read the first time
+     Seventy-seven principles: about thirty minutes to read the first time
      and five to skim after that. It is the densest thing in the app —
      reading it once is worth more than an hour of clicking, because it
      touches every rule instead of a handful, and every question here is
@@ -707,7 +707,7 @@
      The landing screen. A student arrives, sits one paper, and the app turns
      what they got wrong into a short list of modules to work through. Clear
      the list and the next paper appears. Nothing else is offered until the
-     first paper has been sat, because an eight-system map is not an answer
+     first paper has been sat, because a nine-stage map is not an answer
      to "am I ready?".
      ===================================================================== */
 
@@ -893,9 +893,9 @@
       html += '<div class="gate">' + E.artBand('sim', 'gate-art') +
         '<h2>Where should you start?</h2>' +
         '<p>Take the triage test and find out.</p>' +
-        '<p class="gate-sub">Twenty questions, twenty-five minutes, two from every stage of the ladder. ' +
+        '<p class="gate-sub">Twenty-six questions, thirty-two minutes, drawn from every stage of the ladder, Unit 5 review included. ' +
         'It is not a score to be proud of or ashamed of \u2014 it is a map. Whatever you miss becomes a ' +
-        'checklist pointing at the exact modules that will fix it, so the eight stages stop being eight ' +
+        'checklist pointing at the exact modules that will fix it, so the nine stages stop being nine ' +
         'stages and become the three or four you actually need.</p>' +
         '<button class="btn primary lg" data-sim="' + papers[0].id + '">Start the triage test</button>' +
         '<p class="gate-alt"><button class="btn sm" data-go-pods>Podcasts</button>' +
@@ -2035,7 +2035,7 @@
     var p = S.p;
     var a = p.assignment;
     var html = '<div class="sect-h"><div><h2>Record</h2>' +
-      '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">Where each of the eight stages stands, and what you have earned.</p></div>' +
+      '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">Where each of the nine stages stands, and what you have earned.</p></div>' +
       '<span class="pill gold">' + p.badges.length + ' of ' + C.BADGES.length + ' awards</span></div>';
 
     if (a) {

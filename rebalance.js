@@ -19,7 +19,7 @@ var vm = require('vm');
 
 var DIR = fs.existsSync(path.join(__dirname, 'content.js')) ? __dirname : path.join(__dirname, 'app');
 var STAGE_FILES = ['topic-s1.js', 'topic-s2.js', 'topic-s3.js', 'topic-s4.js',
-  'topic-s5.js', 'topic-s6.js', 'topic-s7.js', 'topic-s8.js'];
+  'topic-s5.js', 'topic-s6.js', 'topic-s7.js', 'topic-s8.js', 'topic-s9.js'];
 var ALL = ['content.js'].concat(STAGE_FILES, ['media.js', 'test-1.js', 'test-2.js', 'test-3.js', 'content-export.js']);
 var WRITE = process.argv.indexOf('--write') >= 0;
 

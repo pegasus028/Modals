@@ -16,6 +16,7 @@
      topic-s6.js   Stage 06  Modality in Past Time
      topic-s7.js   Stage 07  Hedging and Stance
      topic-s8.js   Stage 08  The Whole System
+     topic-s9.js   Stage 09  Unit 5 Review (Gateway to the World B2)
      test-1/2/3.js The triage test and the two final checks
 
    The reasoning behind the ladder is set out in ANALYSIS.md. Nothing in the
@@ -64,7 +65,7 @@
 var CEFR = ['B1', 'B1+', 'B2', 'B2+', 'C1', 'C1+'];
 
 /* --------------------------------------------------------------------------
-   RANKS — one rung per band of stage checks cleared (24 in total).
+   RANKS — one rung per band of stage checks cleared (27 in total).
    The ladder is the certainty scale itself, so every promotion teaches the
    thing the app is about: a student climbs from "might" to "beyond doubt".
    -------------------------------------------------------------------------- */
@@ -73,11 +74,11 @@ var RANKS = [
   { min: 1,  name: 'Might',        note: 'A first signal. Something is there.' },
   { min: 3,  name: 'Could',        note: 'You can name the parts and say what they do.' },
   { min: 6,  name: 'May',          note: 'The everyday forms hold without thinking.' },
-  { min: 9,  name: 'May Well',     note: 'You can explain why a wrong answer is wrong.' },
-  { min: 12, name: 'Should',       note: 'Halfway. The hard stages — distance, past modality — are opening.' },
-  { min: 16, name: 'Will',         note: 'You read a modal and see the frame behind it.' },
-  { min: 20, name: 'Must',         note: 'Exam-ready on nearly everything.' },
-  { min: 24, name: 'Beyond Doubt', note: 'Every stage green. The whole system is yours.' }
+  { min: 10, name: 'May Well',     note: 'You can explain why a wrong answer is wrong.' },
+  { min: 14, name: 'Should',       note: 'Halfway. The hard stages — distance, past modality — are opening.' },
+  { min: 18, name: 'Will',         note: 'You read a modal and see the frame behind it.' },
+  { min: 23, name: 'Must',         note: 'Exam-ready on nearly everything.' },
+  { min: 27, name: 'Beyond Doubt', note: 'Every stage green. The whole system is yours.' }
 ];
 
 /* --------------------------------------------------------------------------
@@ -99,7 +100,7 @@ var BADGES = [
   { id: 'sim1',      name: 'First Paper',      perk: 'You have seen a whole paper.',         how: 'Finish any of the three tests.' },
   { id: 'sim70',     name: 'Seventy Up',       perk: '70% on a full paper.',                 how: 'Score 70% or more on any test.' },
   { id: 'simall',    name: 'All Three Papers', perk: 'Triage and both final checks, done.',  how: 'Finish all three tests.' },
-  { id: 'director',  name: 'Beyond Doubt',     perk: 'Every stage green.',                   how: 'Clear all 24 stage checks.' }
+  { id: 'director',  name: 'Beyond Doubt',     perk: 'Every stage green.',                   how: 'Clear all 27 stage checks.' }
 ];
 
 /* --------------------------------------------------------------------------
@@ -784,6 +785,99 @@ var REMEDIATION = {
       'Commitment Graph: a four-paragraph passage is plotted as a line from bare possibility to flat assertion, one point per sentence; groups compare graphs and must defend any point they placed differently, which forces the modal and the reporting verb to be named out loud.'
     ]
   },
+
+  /* ---------------------------------------- STAGE 09 · Unit 5 review (Gateway to the World B2) */
+/* ---------------------------------------- STAGE 09 · Unit 5 review · rules now */
+  'u5-now-neg': {
+    name: 'No obligation or not allowed? The two negatives are opposites',
+    principle: 'In the positive, these verbs all say that something is necessary, but their negatives go two opposite ways. One kind says there is <strong>no obligation</strong>: nobody requires it, so the choice is yours. The other kind says there is <strong>a rule against it</strong>. Test your choice by adding <em>… but you can if you like</em> — it only makes sense after a no-obligation form. In the positive, the form with <em>to</em> usually passes on somebody else\'s rule; the one without <em>to</em> is for written rules and things you have decided yourself.',
+    reteach: 'Students learn must and have to as near-synonyms in the positive and then assume their negatives are a matching pair too, so mustn\'t and don\'t have to are chosen by sound. The two negatives are in fact opposites: one releases the listener, the other forbids. Teach the negatives as two families rather than as a list — no obligation (don\'t have to, don\'t need to, needn\'t) and not allowed (mustn\'t, can\'t, aren\'t allowed to) — and give students the "but you can if you like" test to run on every sentence. For the positive, stay with the coursebook\'s simple rule: have to for obligations that come from other people, must for written rules and obligations the speaker sets herself. It is still broken when a student writes "You mustn\'t come if you are busy" to a friend, or reads a notice saying "needn\'t" as a ban.',
+    activities: [
+      'Two-box sort: give out cards with real notices, bank and shop rules and messages from friends, and have pairs put each into "no obligation" or "not allowed", reading the "but you can if you like" test aloud for every card.',
+      'Rule makers: students write three rules for a new school club with mustn\'t or aren\'t allowed to, then three freedoms with don\'t have to or needn\'t, and their partner has to explain each one in Thai.'
+    ]
+  },
+
+  'u5-advice': {
+    name: 'Advice and warnings: should, ought to and had better',
+    principle: 'Advice says that something is a good idea, and the listener is still free to say no; a rule does not give that choice. The strongest advice form is a warning about one situation, now or very soon: do it, or something bad will happen. Its short form looks past but is about the present, and its negative puts <em>not</em> at the very end, never on the first word. One advice verb always keeps its <em>to</em>.',
+    reteach: 'The two common problems are form and strength. On form, students write "ought ask", "hadn\'t better" and "had better to", and they read the \'d in "you\'d better" as would. On strength, they use should and had better as if they were the same, or use them for rules. Teach had better as a warning: every had better sentence should be able to continue with "or …" and a bad result, and if nobody can supply one, should is the better choice. Drill the three negatives side by side — shouldn\'t, ought not to, had better not — and have students expand every \'d better into had better aloud. It is still broken when a student writes "You hadn\'t better be late" or "You ought go to the doctor", or uses had better to talk about the past.',
+    activities: [
+      'Or-what chain: read out a had better sentence and the next student must finish it with "or …" and a realistic consequence; sentences that cannot be finished get rewritten with should.',
+      'Agony aunt: students write short problems about money, friends and school, swap them, and reply with one should, one ought to and one \'d better (not) sentence, checking each other\'s to and not.'
+    ]
+  },
+
+  'u5-now-form': {
+    name: 'To or no to? Getting the form of rules and advice right',
+    principle: 'These verbs fall into two groups. The true modals — <em>must</em>, <em>should</em>, <em>needn\'t</em> and the <em>\'d better</em> form — take a verb with no <em>to</em> after them, and they make questions and negatives on their own. The others work like ordinary verbs: they keep <em>to</em> (after <em>ought</em>, <em>have</em>, <em>be allowed</em>, and <em>need</em> in the positive), and their questions and negatives use <em>do</em> or <em>does</em>. Before you add or drop a <em>to</em>, decide which group the verb is in.',
+    reteach: 'Thai learners tend to treat all of these as one pattern, so to appears after needn\'t and must, and disappears after ought and be allowed. Questions show the same confusion: "Has everybody to pay?" and "Do we must …?" both come from applying one group\'s rule to the other. Teach the two groups as a physical sorting task first, then drill questions and negatives group by group: true modals invert and add n\'t, ordinary verbs call for do/does. Make the needn\'t / need to pair explicit, since the positive of needn\'t go is need to go, not need go. It is still broken when a student writes "You needn\'t to worry", "We don\'t allowed to", "Ought we ask?" or "Have you to wear a uniform?"',
+    activities: [
+      'Two-column board race: call out a verb (ought, needn\'t, be allowed, must, have, had better) and teams race to write it in the "no to" or "keeps to" column with a correct example sentence.',
+      'Question factory: give statements such as "Everybody has to pay" and "We should leave now", and pairs turn each into a question and a negative, then check which group each verb belongs to.'
+    ]
+  },
+
+'u5-past-oblig': {
+    name: 'Past obligation: had to, needed to, didn\'t have to',
+    principle: '<em>Must</em> has no past form, so a duty or a necessity in the past is carried by the past tense of <em>have to</em> or <em>need to</em>. These work like ordinary verbs, so their past questions and negatives are made with <em>did</em>, as with any other verb. A time word such as <em>yesterday</em> cannot make a present verb past: the verb itself has to change.',
+    reteach: 'The student is either reaching for must in past contexts (I must go to the bank yesterday) or letting the time word carry the past (We have to go yesterday), which is a common Thai L1 pattern because Thai marks time with adverbs rather than verb forms. A second group has the past right but builds the negative and question as if have to were a modal: hadn\'t to, Had you to pay? Teach have to explicitly as an ordinary verb that happens to express obligation, so it borrows did for questions and negatives exactly like play or buy, and show that must simply has no past cell to fill. Then contrast the two negatives, didn\'t have to (not necessary) against wasn\'t allowed to (forbidden), since that confusion follows immediately. It is still broken when the student writes a past narrative with have to or must beside a past time phrase, or produces hadn\'t to in speech. It is fixed when she can tell a past week at school with had to, didn\'t have to and Did you have to? without prompting.',
+    activities: [
+      'Last-week interviews: pairs ask each other Did you have to…? questions about the previous week (homework, chores, queues, paying for things) and report back with had to and didn\'t have to, while the listener ticks any hadn\'t to or have to…yesterday she hears.',
+      'Correct or not: give a strip of ten past-obligation sentences, half with typical errors (must … yesterday, hadn\'t to, Had you to), and have groups sort and repair them, then explain each repair in one line.'
+    ]
+  },
+
+  'u5-past-prohib': {
+    name: 'Past prohibition: wasn\'t allowed to and couldn\'t',
+    principle: '<em>Mustn\'t</em> has no past form. For something that was forbidden in the past, use the past of <em>be allowed to</em>, and keep the <em>be</em> verb: the person who gets permission <em>is allowed</em>, she does not <em>allow</em>. The past of <em>can</em> can also report a past rule, but it can mean "not possible" as well, so let the situation decide. "Forbidden" is not the same as "not necessary".',
+    reteach: 'Three things usually go wrong together. First, the student tries to put mustn\'t into the past, which is impossible. Second, she drops the be verb and writes I allowed to open an account, which actually says she gave the permission; show the active and passive side by side (My parents allowed me / I was allowed) so the missing was becomes visible. Third, she treats didn\'t have to as the past of mustn\'t, turning a prohibition into a free choice. Practise couldn\'t in both of its past meanings, rule and impossibility, and train students to look for the reason in the sentence before deciding which one is meant. It is still broken when a student answers a question about childhood rules with didn\'t have to, or writes I allowed to. It is fixed when she can describe the rules of her primary school with weren\'t allowed to and couldn\'t, and explain what I couldn\'t go to the party might mean in two different situations.',
+    activities: [
+      'Childhood rules: students write five rules from when they were small (bedtime, phones, going out alone) using wasn\'t allowed to, was allowed to and couldn\'t, then compare with a partner and find the strictest household.',
+      'Two readings: give sentences with couldn\'t and no reason (I couldn\'t pay by card; We couldn\'t go in), and have pairs add one reason that makes it a rule and one that makes it impossible.'
+    ]
+  },
+
+  'u5-past-look': {
+    name: 'Looking back: needn\'t have, didn\'t need to, should have',
+    principle: 'When you did something and it turned out to be unnecessary, use <em>needn\'t</em> followed by <em>have</em> and a past participle. If the action did not happen, use the ordinary verb <em>need</em> in the past negative instead, because it says nothing about whether the thing was done. To say that a past action was a mistake, use <em>should</em> or <em>ought</em> followed by <em>have</em> + past participle, and remember that <em>ought</em> always keeps its <em>to</em>.',
+    reteach: 'The main confusion is between needn\'t have done and didn\'t need to do. Students learn them as synonyms, but needn\'t have done always tells you the action happened, while didn\'t need to leaves it open and is the only choice when the action did not happen. Draw two timelines for each sentence and ask the single question: did it happen? The second problem is form: after should, ought and needn\'t, the past comes from have plus a past participle, so shouldn\'t had, ought have gone and needn\'t took are all impossible. Treat ought have as the modal losing its to rather than as a spelling slip. It is still broken when a student says You needn\'t have come about a guest who stayed at home, or writes shouldn\'t had. It is fixed when she can react to a list of past situations with the right one of the three forms and justify it by saying whether the action took place.',
+    activities: [
+      'Did it happen? Read out short past situations (I bought a guidebook but the tour was free; The café took cards, so I kept my cash) and students hold up a card: needn\'t have or didn\'t need to, then say the full sentence.',
+      'Regret diary: students write four sentences about a past week using should have, ought to have and shouldn\'t have, swap with a partner, and check every one for have + past participle and for the to after ought.'
+    ]
+  },
+
+'u5-guess-now': {
+    name: 'How sure are you about now? Must, might, can\'t',
+    principle: 'Choose the verb by how sure you are: <em>must</em> = about 90% sure something is true, <em>may</em>, <em>might</em> or <em>could</em> = about a 50% possibility, and <em>can\'t</em> = about 90% sure it is not true. For a 50% "maybe not", use <em>may not</em> or <em>might not</em>; <em>couldn\'t</em> is a strong "no", like <em>can\'t</em>. <em>Mustn\'t</em> is for rules, never for guesses, and for something going on right now, add <em>be</em> + <em>-ing</em>.',
+    reteach: 'Students meet must as a rule word first, so when Unit 5 turns it into a guess they keep reading it as obligation, and they build the negative the way obligation does: mustn\'t. The fix is to teach the guessing verbs as a scale of how sure you are, tied to the book\'s own numbers (90%, 50%, 90%-not), and to make students name the evidence before they choose. The two points that stay broken longest are the negatives. The opposite of guessing must is can\'t, never mustn\'t, and the 50% negatives are may not and might not; couldn\'t looks like a softer can\'t but behaves like can\'t. It is still broken when a student writes She mustn\'t be at home to mean I am sure she is out, or uses couldn\'t for a hesitant maybe-not. Check also that students use be + -ing for something happening at this moment (She must be sleeping), since Thai has no verb change to signal that and the simple form (She must sleep) slides back into an order.',
+    activities: [
+      'Evidence cards: give pairs a photo or a short situation (a closed shop at 10 a.m., a friend with a Spanish textbook, a phone ringing in an empty room) and three strips reading 90%, 50% and 90%-not; they must lay down a strip, say the evidence aloud and only then make the guess with must, might or can\'t.',
+      'Negative line-up: put mustn\'t, can\'t, couldn\'t, may not and might not on the board and read out ten guesses; students hold up the correct negative and say whether it is a strong no or a maybe-not, with mustn\'t kept for a rule the teacher slips in.'
+    ]
+  },
+
+  'u5-guess-past': {
+    name: 'How sure are you about the past? Must have, might have, can\'t have',
+    principle: 'To guess about the past, use the guessing verb + <em>have</em> + past participle. With <em>must</em> you are about 90% sure it happened; with <em>may</em>, <em>might</em> or <em>could</em> it is a 50% possibility, and <em>may not</em> or <em>might not</em> give a 50% "maybe not"; with <em>can\'t</em> or <em>couldn\'t</em> you are about 90% sure it did not happen. For something that went on for a while, use <em>have been</em> + <em>-ing</em>.',
+    reteach: 'Once the form is in place, students still choose the wrong strength, because they pick the verb by sound rather than by the evidence in the sentence. Make them underline the evidence first (an empty purse, a locked door, I\'m not sure, or perhaps) and decide whether it points strongly for, strongly against, or neither, before they look at the options. The confusions that survive are couldn\'t have read as a weak maybe-not (it is as strong as can\'t have), mustn\'t have used as the opposite of must have, and had to used for a past guess, which turns a deduction into a story about somebody being made to do something. It is still broken when a student writes He must have been ill on evidence that only allows a maybe, or cannot say why He might not have seen it and He can\'t have seen it describe different situations. Finish with the progressive (might have been working) for activities that went on for a while.',
+    activities: [
+      'News desk: give groups a short real-sounding news story with gaps in the facts (a missing painting, a lost wallet returned, a bank card that stopped working) and have them write three sentences about what happened, one each at 90%, 50% and 90%-not, then swap and challenge each other\'s evidence.',
+      'Strength auction: show twelve past-guess sentences with a one-line situation each; students bet on whether the modal matches the evidence and must rewrite the ones they reject, so must have, might have and can\'t have are always tied to a reason.'
+    ]
+  },
+
+  'u5-guess-form': {
+    name: 'Past guesses: modal + have + past participle',
+    principle: 'Every past guess is a chain of three links: the modal, then <em>have</em>, then the past participle (the third form, as in <em>go – went – gone</em>). Never drop <em>have</em>, never change it to <em>has</em> or <em>had</em>, and never use the past simple as the last link. For the passive, the chain is modal + <em>have been</em> + past participle. The form is only half the job: if the evidence says no, the modal is <em>can\'t</em>, not <em>must</em> or <em>mustn\'t</em>.',
+    reteach: 'The Unit 5 exercise on past deduction is really a list of broken chains: must have saw, might seen, might read it already, can\'t finish it already, must have a rest last night, mustn\'t have been. Thai learners mark past time with a time word and leave the verb alone, so a sentence with already or last night feels past to them even when the verb is not. Teach the chain as three fixed slots (modal, have, past participle) and drill the third slot with irregular verbs, because saw, went and ate are what fill it when the participle is shaky. Watch for has after he or she, and for had in the middle slot. It is still broken when a student can recite the chain but writes She must have gave it back, or produces a perfect chain with the wrong modal, as in It must have been Kim when the reason given proves it was not. Add the passive (must have been created) and the progressive (might have been working) as longer chains in the same order.',
+    activities: [
+      'Chain repair: hand out the seven errors from the book exercise on strips, each cut into modal / have / verb cards; students rebuild each chain correctly and add a time word that proves the guess is about the past.',
+      'Irregular relay: call out a base verb and a guess strength; the first student says the full chain (may have taken, can\'t have known), the next must use it in a sentence about a news story, and any past simple in the third slot sends the team back to the start.'
+    ]
+  },
+
 };
 
 /* Stage files push onto this. Order of the <script> tags sets the order. */

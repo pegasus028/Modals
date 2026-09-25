@@ -1,7 +1,7 @@
 # Fine Tuning — The English Modal System
 
-A self-study app for English modal verbs, B1 → C1. Eight stages, twenty-four levels,
-seventy-two modules, 564 questions, and three tests: a **triage** that decides where a
+A self-study app for English modal verbs, B1 → C1. Nine stages, twenty-seven levels,
+eighty-one modules, 633 questions, and three tests: a **triage** that decides where a
 student should start, and two **final checks**, one at B2 and one at C1.
 
 It runs on the same engine as Mission Control, unchanged. Everything here that is not
@@ -111,7 +111,8 @@ switched off because there are none yet. To turn it on, save them as `slides/s-0
 | `api.js` | one client for both consoles; cloud when a server URL is set, localStorage when not. **Unchanged.** |
 | `content-export.js` | attaches the media to each stage and hands the curriculum to the engine. **Unchanged.** |
 | `content.js` | the rank ladder, the awards, and the 68-tag remediation dictionary that drives the hints and the teacher report |
-| `topic-s1.js` … `topic-s8.js` | the eight stages — the whole syllabus |
+| `topic-s1.js` … `topic-s8.js` | the eight core stages — the whole syllabus |
+| `topic-s9.js` | Stage 9, the Unit 5 review (Gateway to the World B2, Unit 5) — see below |
 | `test-1.js` | the triage. **Loads first, and must: the engine treats the first test as the diagnostic.** |
 | `test-2.js` / `test-3.js` | the B2 and C1 final checks |
 | `media.js` | the podcast, video and slide links |
@@ -121,6 +122,29 @@ switched off because there are none yet. To turn it on, save them as `slides/s-0
 | `ANALYSIS.md` | the first-principles treatment of the modal system the course is built on |
 | `REVIEW-LOG.md` | the record of the content review — one line for every item that changed |
 | `rebalance.js` | evens out which option position the keys sit on; see below |
+| `audit.js` | answer-key balance per stage and per test: key position, key-is-longest rate, spot and True/False splits, hint leaks |
+
+---
+
+## Stage 9 — the Unit 5 review
+
+Stage 9 consolidates the grammar of **Gateway to the World B2, Unit 5** (pp. 60–61,
+64–65, 68–69) in the book's own terms, so students on the coursebook can revise the unit
+inside the app. Three levels, nine modules, 63 items, nine tags (all beginning `u5-`):
+
+| level | modules | book pages |
+|---|---|---|
+| Rules now | have to / must / need to and their negatives · should, ought to, had better · forms: to or no to, questions, negatives | 60, 68, 69 |
+| Rules then | had to, needed to, didn't have to · wasn't allowed to, couldn't · needn't have, didn't need to, should(n't) have | 60–61, 68, 69 |
+| Guesses | must / might / can't about now · must have / might have / can't have · past guesses: have + past participle | 64–65, 68, 69 |
+
+The triage test now has a **Part E** (items m1-21 to m1-26, one per key Unit 5 point). A
+miss there puts the matching Stage 9 module on the student's checklist; Parts A–D still
+route to Stages 1–8 as before. The triage is 26 questions and 32 minutes, and the rank
+ladder tops out at 27 stage checks.
+
+`media.js` has a `t9` entry with the podcast left empty — record `audio/stage-9.mp3` and
+put that path in, and the player appears.
 
 ---
 
@@ -130,8 +154,15 @@ Two scripts, both offline, both run from this folder:
 
 ```
 node verify.js        # structure: ids, tags, answer indices, escaped fields, ranks, media
-node render-test.js   # mounts all 564 items in a headless DOM and answers each one
+node render-test.js   # mounts all 633 items in a headless DOM and answers each one
+node audit.js         # key balance per stage/test; `node audit.js t3` for one stage in detail
 ```
+
+`audit.js` holds the balance the 25 September review set: in every stage and every test
+paper each option position carries about a quarter of the keys, the key is the longest
+option only about a quarter of the time, and the error in `spot` items moves between all
+four parts. Run it after adding or rewording questions, and fix any drift by hand in that
+stage rather than with `rebalance.js`, which only balances the app as a whole.
 
 `verify.js` is the one to run every time. It catches the mistakes that are invisible until
 a student hits them: a duplicate id, a tag with no entry in `REMEDIATION`, an answer index
@@ -150,7 +181,7 @@ to do it. It swaps two options and updates `answer` — it never rewords anythin
 skips any item whose `why` refers to an option by number or by position, so no explanation
 can be made untrue.
 
-Both were clean at the time of writing: 564 items, 68 tags, no errors, no warnings.
+Both were clean at the time of writing: 633 items, 77 tags, no errors, no warnings.
 (They also run from the folder above, if you keep the app in a subfolder.)
 
 ---

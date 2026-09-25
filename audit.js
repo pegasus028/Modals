@@ -12,7 +12,7 @@
    =========================================================================== */
 var fs=require('fs'),vm=require('vm'),path=require('path');
 var DIR=__dirname;
-var ALL=['content.js','topic-s1.js','topic-s2.js','topic-s3.js','topic-s4.js','topic-s5.js','topic-s6.js','topic-s7.js','topic-s8.js','media.js','test-1.js','test-2.js','test-3.js','content-export.js'];
+var ALL=['content.js','topic-s1.js','topic-s2.js','topic-s3.js','topic-s4.js','topic-s5.js','topic-s6.js','topic-s7.js','topic-s8.js', 'topic-s9.js','media.js','test-1.js','test-2.js','test-3.js','content-export.js'];
 var ctx={window:{},console:console};vm.createContext(ctx);
 ALL.forEach(function(f){vm.runInContext(fs.readFileSync(path.join(DIR,f),'utf8'),ctx,{filename:f});});
 var C=ctx.window.CONTENT, R=C.REMEDIATION;

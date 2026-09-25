@@ -169,7 +169,7 @@
     rows.forEach(function (r) {
       html += '<tr class="r' + (T.sel === r.s.id ? ' sel' : '') + '" data-id="' + esc(r.s.id) + '" tabindex="0">' +
         '<td><div class="who2"><b>' + esc(r.p.displayName || r.s.name) + '</b><span>' + esc(r.s.id) + '</span></div></td>' +
-        '<td>' + esc(P.rank(r.p).name) + ' <span class="g" style="color:var(--ink-3);font-family:var(--f-mono);font-size:.75rem">' + r.rank + '/24</span></td>' +
+        '<td>' + esc(P.rank(r.p).name) + ' <span class="g" style="color:var(--ink-3);font-family:var(--f-mono);font-size:.75rem">' + r.rank + '/27</span></td>' +
         '<td><span class="mini"><i style="width:' + r.ready + '%"></i></span> <span style="font-family:var(--f-mono);font-size:.78rem">' + r.ready + '%</span></td>' +
         '<td class="num">' + r.acc + '%</td>' +
         '<td class="num">' + (r.sim ? r.sim + '%' : '—') + '</td>' +
@@ -251,11 +251,11 @@
 
       var h = '<div class="panel-h"><div><h2>' + esc(p.displayName || id) + '</h2>' +
         '<span class="kicker">' + esc(id) + ' · ' + esc(P.rank(p).name) + ' · ' +
-        P.checksCleared(p) + '/24 checks · readiness ' + P.readiness(p) + '%</span></div>' +
+        P.checksCleared(p) + '/27 checks · readiness ' + P.readiness(p) + '%</span></div>' +
         '<span class="pill' + (P.accuracy(p) >= 80 ? ' good' : P.accuracy(p) >= 60 ? '' : ' bad') + '">' +
         P.accuracy(p) + '% accurate</span></div>';
 
-      /* ---- the eight stages, at a glance ---- */
+      /* ---- the nine stages, at a glance ---- */
       h += '<div class="sysbars" style="margin-bottom:16px">';
       P.systemScores(p).forEach(function (r) {
         h += '<div class="sysbar"><span>' + esc(r.code) + ' · ' + esc(r.name) + '</span>' +
@@ -378,7 +378,7 @@
         '<p class="tiny" style="padding:10px 0 12px">Builds a paper from the stage-check bank, weighted towards the tags this student is actually getting wrong. It appears on their console the next time they log in.</p>' +
         '<div style="display:flex;gap:9px;align-items:flex-end;flex-wrap:wrap">' +
         '<div class="field" style="max-width:220px"><label for="sysx">System</label>' +
-        '<select id="sysx"><option value="">All eight stages</option>' +
+        '<select id="sysx"><option value="">All nine stages</option>' +
         C.TOPICS.map(function (t) { return '<option value="' + t.id + '">' + esc(t.code + ' · ' + t.name) + '</option>'; }).join('') +
         '</select></div>' +
         '<div class="field" style="max-width:110px"><label for="nq">Questions</label>' +

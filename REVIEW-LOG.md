@@ -1,4 +1,460 @@
-# Fine Tuning — content review, 22 September 2026
+# Fine Tuning — second content review, 25 September 2026
+
+A stricter second pass over every item (564 stage items, 60 test items) against six requirements:
+
+1. The question sounds natural — no stilted contexts, no grammar jargon in stems.
+2. Exactly one defensible answer.
+3. The hint (the tag's `principle`, shown by the Hint button, plus sort-bin hints) does not give the answer away.
+4. The key is the longest option only about 25% of the time.
+5. Each option position is the key about 25% of the time — per stage and per level, not just app-wide.
+6. Every item has at least one near-miss distractor: an option that would be right in a slightly different context and is wrong only because of what the stem says.
+
+`audit.js` (new) measures 4 and 5 and flags crude hint leaks: `node audit.js` for the summary, `node audit.js t3` for one stage.
+
+## Before → after
+
+| | key position 1/2/3/4 | key longest | spot error part 1/2/3/4 |
+|---|---|---|---|
+| Stage 1 | 3/13/10/15 → 10/11/10/10 | 29% → 24% | 1/8/0/0 → 2/3/2/2 |
+| Stage 2 | 1/3/12/27 → 11/11/11/10 | 14% → 26% | 0/4/4/0 → 2/2/2/2 |
+| Stage 3 | 7/9/12/12 → 9/11/10/10 | 25% → 23% | 2/6/1/0 → 2/3/2/2 |
+| Stage 4 | 10/5/18/9 → 11/11/11/9 | 14% → 24% | 1/6/1/0 → 2/2/2/2 |
+| Stage 5 | 12/13/13/4 → 10/11/11/10 | 40% → 26% | 2/2/3/1 (unchanged) |
+| Stage 6 | 12/2/13/14 → 11/9/11/10 | 34% → 24% | 5/4/0/0 → 3/2/2/2 |
+| Stage 7 | 16/19/5/3 → 11/11/11/10 | 60% → 26% | 1/3/4/0 → 2/2/3/1 |
+| Stage 8 | 23/20/1/0 → 10/11/12/11 | 48% → 25% | 1/3/4/0 → 2/2/2/2 |
+| Triage | 4/4/4/4 | 19% → 25% | 1/1/1/1 |
+| B2 check | 4/4/3/4 | 27% | 1/1/2/1 |
+| C1 check | 4/4/4/4 | 13% → 25% | 1/1/1/1 |
+| **All** | 96/96/95/96 → 95/98/98/92 | 32% → 25% | 16/39/21/4 → 20/21/22/17 |
+
+The app-wide key split was already even after the first review, but only because the stages cancelled each other out: Stage 8 had 43 of 44 keys at options 1–2, Stage 2 had 39 of 43 at 3–4. Every level now uses all four positions.
+
+59 of the 68 hint principles were rewritten so none quotes a key or an example that maps onto an item. The flags `audit.js` still raises are single modal words (*must*, *should*, *could*…) that any accurate statement of the rule has to name.
+
+Also fixed along the way: every `spot` explanation in the three tests numbered the parts 0–3 (the screen shows 1–4); several `why` texts that described the wrong option after the earlier key rebalancing (t5l1s3-2, t4l1s3-1, t4l3s1-3, m2-11).
+
+## Items worth a second look from the teacher
+
+- **t2l2s1-5** now turns on register: *can't* has the right strength but the stem specifies a formal written report.
+- **t2l2s2-2** was flipped to True: *may not be contaminated* leaves open that the samples are contaminated.
+- **t3l1s1-3** keeps *ought to* as a distractor for a compulsory rule — real notices do use *should* for compulsory things, though the stage teaches it as wrong.
+- **t6l3ck-4** (*was going to* vs *was supposed to*) works only because the stem states the criterion.
+- **t7l2ck-2 / t7l2ck-3** rely on fine distinctions (factive *it is widely known*; *would seem to* vs *tend to*).
+- **m1-4, m2-2**: some varieties use *mustn't be* for a deduction; **m1-6**, **m2-18** hold only because the stem states the criterion.
+
+---
+
+
+## Review (second pass): `topic-s1.js` (Stage 1, The Modal Frame)
+
+Audit before: MCQ 41 · key pos 3/13/10/15 (t1l1 0/5/5/4, t1l2 2/2/0/9, t1l3 1/6/5/2) · key longest 12 (29%) · key shortest 11 (27%) · tied-longest 3 · spot 1/8/0/0 · judge T/F 2/1 · hint leaks 4
+Audit after: MCQ 41 · key pos 10/11/10/10 (t1l1 4/4/3/3, t1l2 3/3/4/3, t1l3 3/4/3/4) · key longest 10 (24%) · key shortest 10 (24%) · tied-longest 2 · spot 2/3/2/2 · judge T/F 2/1 · hint leaks 4 in the audit, 0 once hints-topic-s1.json is applied to content.js
+
+## Items changed
+
+t1l1s1-1: no near miss (may / might / could all did the same job) → *might rain* replaced with *must have rained* (same past event, but framed as a deduction); key moved 2→1; `why` rewritten and renumbered.
+t1l1s1-3: stem opened with a wordy framing sentence → trimmed to a single plain question; options and key unchanged.
+t1l1s2-1: position balance → key moved 3→1 (`why` has no option numbers).
+t1l1s2-2: spot error in part 2 (spot positions were 1/8/0/0) → sentence re-segmented (*According to the health centre, / before every appointment / staff must to wash their hands / for at least twenty seconds.*), error now in part 3; fix and `why` updated.
+t1l1s2-3: key was the longest, and *can will* was a random reversal → replaced with the close form *will able to use* (drops *be*); key moved 4→1 and is still the longest (one of the 10 deliberate key-longest items); `why` rewritten.
+t1l1s3-3: *Yes, they are* was defensible (an informal "they are [online]" answer); key was strictly longest → stem now ends *tomorrow*; *are* replaced with *Yes, they have* (right for "Have they been posted?", ruled out by *tomorrow*): a near miss that also ends the length tell; key moved 3→1; `why` rewritten.
+t1l1ck-1: key *should* could be read as obligation, not sureness; no near miss → key now *might run*; *ran on Sundays last year* replaced with *might have run* (same frame, but the proposition has moved into the past), *runs on Sundays and Mondays* replaced with *ran on Sundays*; stem reworded ("keeps that idea exactly as it is and adds only how sure the speaker is"); `why` rewritten.
+t1l1ck-3: spot error in part 2 → re-segmented so *will can book tickets free of charge* is part 4; fix and `why` updated.
+t1l1ck-5: stem "shows that the speaker is sure" made it a reading test → stem is now "says the same thing using a modal"; `why` names option 1 (no modal) as the near miss.
+t1l2s1-2: spot error in part 2 → re-segmented, error now in part 3; fix and `why` updated.
+t1l2s1-3: position balance (t1l2 had no key at 3 and 9 keys at 4) → options reordered, key 4→2.
+t1l2s1-4: stem stated the meaning twice; *musted finish* was a random form → stem simplified; option 3 replaced with the close form *must have finish*; key moved 4→3; `why` now names *must finish* as the near miss (fine English, but forward-looking, so ruled out by *yesterday*).
+t1l2s1-5: all distractors ungrammatical, no near miss → *can not parking* replaced with *Staff don't have to park…* (well formed, but it removes an obligation where the regulations forbid); `why` rewritten.
+t1l2s2-1: key strictly longest → *might taking* replaced with *might have taken* (fine for a finished test, ruled out by *at the moment* and "don't call her"); key moved 4→3; `why` rewritten.
+t1l2s2-3: stem used app jargon ("uses the chain") → "Which sentence is correct?"; *may have being* replaced with the close form *may have be* (key is now the longest, a deliberate one); `why` updated.
+t1l2s2-4: spot error in part 2 → re-segmented, error now in part 1; fix and `why` updated.
+t1l2s2-5: position balance → options reordered, key 4→3.
+t1l2s3-2: position balance → options reordered, key 4→1.
+t1l2s3-4: *must have worked late* was defensible (the light could have been left on) → stem now adds a printer running, which ties the deduction to the present; key moved 4→3; `why` names the near miss.
+t1l2ck-2: *mighted arrive* was a random form → replaced with the close form *might have arrive*; `why` updated.
+t1l2ck-3: spot error in part 2 → re-segmented (…*all mobile phones must be / switch off and left in the tray.*), error now in part 4; fix and `why` updated.
+t1l3s1-1: *must will move* was a random reversal, no close forms → replaced with *will had to move*, and *will musting move* replaced with *will need move* (ordinary *need* without its *to*); `why` rewritten.
+t1l3s1-3: key was strictly longest; *wants can to* was random → replaced with the close form *wants being able to*; key moved 2→1; `why` rewritten.
+t1l3s1-5: all distractors were *must*-variants with no near miss → *musting* replaced with *be able to* (well formed after *will not*, but it says the participant is incapable of giving a reason); key moved 2→4; `why` rewritten.
+t1l3s2-1: key strictly longest; no near miss → stem anchored to the present ("…which is a huge relief to all of us"); options now *could* (right idea, but a past tense, which *since* rules out) / *has able to* / *has be able to* / *has been able to*; key moved 3→4; `why` rewritten.
+t1l3s2-2: *must will* was a random reversal → replaced with the close form *will having to*; key moved 3→1; `why` rewritten.
+t1l3s2-3: option 4 (*need be able demonstrate*) was far from any real learner form → replaced with *need be able to demonstrate* (drops only the *to* after *need*); `why` rewritten.
+t1l3s2-5: no near miss → *haven't could* replaced with *We didn't have to reach the summit* (well formed, but it says there was no need, not that it was impossible); `why` rewritten.
+t1l3ck-1: *without to must explain* was random → replaced with the close form *without have to explain*; `why` rewritten.
+t1l3ck-5: tied-longest with *will musting work* → replaced with the close form *will has to work*; `why` rewritten.
+t1l3ck-6: key strictly longest; *can to* was a random reversal → replaced with the close form *to being able to*; `why` rewritten.
+
+## Principles (content.js, not edited): proposals in hints-topic-s1.json
+frame-defect: the old text named *will have to*, *to be able to* and *has been able to*, which are the keys of t1l3s1-1, t1l3s1-5, t1l3s2-2, t1l3ck-5 and m2-1 → rule stated with no repair forms named.
+frame-semi: the old text named *has been able to*, *to be able to* and *was able to* (keys of t1l3s2-1, t1l3ck-6, and nearly t1l3ck-2) → rule only.
+frame-nice: its examples *Can she…?* and *Yes, she can* mapped onto t1l1ck-4, t1l1s3-1 and t1l1s3-5 → examples switched to *would* / *mustn't*.
+frame-boundary: *you needn't wait* mapped one-to-one onto the t1l3s3-3 key → examples removed.
+
+
+## Review — topic-s2.js (Stage 02, epi-)
+
+Before: MCQ 43 · key pos 1/3/12/27 (t2l1 0/0/6/9, t2l2 0/1/4/9, t2l3 1/2/2/9) · key longest 6 (14%) · key shortest 15 (35%) · tied-longest 4 · spot 0/4/4/0 · judge T/F 0/3 · leak flags 8
+After:  MCQ 43 · key pos 11/11/11/10 (t2l1 4/4/4/3, t2l2 3/4/3/4, t2l3 4/3/4/3) · key longest 11 (26%) · key shortest 11 (26%) · tied-longest 0 · spot 2/2/2/2 · judge T/F 1/2 · leak flags 7 (all single-modal keys such as "must"/"could"/"may not" that any statement of the scale has to name; no example maps onto an item). verify.js CLEAN.
+
+t2l1s1-1 — key at pos 4 → moved to pos 1 (why has no positional references).
+t2l1s1-3 — stilted stem ("pitches the claim at the rung the evidence will bear"); key shortest; pos 4 → plain-English stem ("claims only what the findings support"); key may → could (same rung, so no longer shortest); moved to pos 2; why rewritten.
+t2l1s1-4 — spot error in part 3 → resegmented with a third observation so the error falls in part 4; fix and why updated.
+t2l1s2-1 — pos 3 → pos 1; can't → cannot in a distractor to break the key/distractor length tie; why updated.
+t2l1s2-2 — pos 4 → pos 2.
+t2l1s2-3 — jargon stem ("the weak middle rung in its most formal wording") that also read as the hint → natural school-report context; why opening reworded.
+t2l1s2-4 — pos 4 → pos 1.
+t2l1s3-1 — key "The lift must be out of order again" matched the epi-must principle's "the lift must be broken again", and was key-shortest → new lift wording ("stuck between floors"), distractors tightened; now key-longest; pos 3 → pos 2; why updated.
+t2l1s3-2 — spot error in part 2 → sentence reordered so the error is in part 1; fix and why updated.
+t2l1ck-1 — abstract stem ("least exposed to being proved wrong") → "hardest to prove wrong"; pos 3 → pos 2; can't → cannot to break the length tie; why updated.
+t2l1ck-3 — key matched epi-must principle ("visitors must sign in"; principle rewritten); pos 4 → pos 1; two distractors shortened so the key is modestly longest.
+t2l1ck-4 — spot error in part 3 → resegmented ("This must to be a data-entry error: …") so the error is in part 1; fix and why updated.
+t2l1ck-6 — pos 4 → pos 3.
+t2l2s1-3 — "deduction rather than a prohibition" stem → plain "the speaker's conclusion rather than a rule"; pos 4 → pos 1; ferry distractor shortened (key now longest).
+t2l2s1-4 — key shortest; pos 4 → pos 2; key can't → cannot and might not → may not (key tied-shortest instead); why updated.
+t2l2s1-5 — key shortest; stem named "strength and register" loudly; shouldn't had no near-miss role → stem gives the formal written report; shouldn't replaced by can't (right strength, wrong register: the near miss); why rewritten.
+t2l2s2-1 — stem "reports the speaker's actual position" unclear → "claims no more than the speaker knows"; pos 4 → pos 2; why's "the fourth" → "the sentence with certainly".
+t2l2s2-2 — judge split 0/3 → statement changed so the answer is True ("leaving open the possibility that the samples are contaminated"); why rewritten.
+t2l2s2-3 — mustn't → must not in a distractor to break the length tie; why updated.
+t2l2s2-4 — stem was the epi-negscope principle's "but then again" test almost word for word (hint gave the answer) → new context (complaints up, figures not in); can't is now the near miss; mustn't → must not (tie); why rewritten.
+t2l2s2-5 — pos 4 → pos 1.
+t2l2s3-2 — grammar-recall stem ("Complete the grid: the negative partner of must be is …") answered verbatim by the epi-cant principle → dialogue (Anan/Mai, the phone in the blue case) with full-sentence options; shouldn't is the near miss (right direction, too weak); why rewritten.
+t2l2s3-3 — spot error in part 3 → resegmented so the error is in part 4; fix and why updated.
+t2l2s3-4 — blank (2) "cannot be telling us anything about…" overclaimed and made "may not" defensible → "cannot be telling us who is able to do the homework"; pos 4 → pos 2.
+t2l2s3-5 — pos 4 → pos 1.
+t2l2ck-1 — pos 3 → pos 4.
+t2l2ck-2 — option 1 "It is possible that…" → "Perhaps…" (key now longest; why's option numbers unchanged).
+t2l2ck-5 — "On the certainty ladder" → plain "When these are used to say how sure you are".
+t2l3s1-1 — pos 4 → pos 2.
+t2l3s2-1 — stem spelled out the answer's meaning and had inconsistent timing (9.15 + 2h vs "half past eleven") → quarter past eleven, criterion in plain words ("expects them about now but allows for a delay").
+t2l3s2-2 — pos 4 → pos 1.
+t2l3s2-5 — pos 4 → pos 3.
+t2l3s3-1 — key shortest; pos 4 → pos 3; sampling distractor shortened ("the link is not an artefact of the sampling").
+t2l3s3-4 — pos 4 → pos 1; 70-character distractor → "The vault predates the rest of the abbey." (key now modestly longest); why's "three different tenses" → "plain statements with no modal".
+t2l3ck-1 — key longest by 13 characters (a clear tell) → options evened out ("… this winter"; key "It is unlikely, but it cannot be ruled out.").
+t2l3ck-2 — key was the only option with an evidence clause (longest by 21) and had no near miss → evidence moved into the stem; "can check" replaced by "will check" (confident but wrong time); advice option shortened to break the tie; why rewritten.
+t2l3ck-4 — key carried the only "because …" (longest by 25) → new stem gives the three-year rise; the four options are the same shape; pos 4 → pos 1; why reworded.
+t2l3ck-5 — spot error in part 2 → resegmented so the error is in part 3; fix and why updated.
+
+Principles (hints-topic-s2.json): all seven epi- principles other than epi-negscope rewritten. epi-must ("the lift must be broken again", "visitors must sign in", "that will be the courier") → t2l1s3-1, t2l1ck-3, t2l1s3-4/-5; epi-prog "she must know by now, never must be knowing" → t2l3s1-3; epi-read "she must have missed the train" → t2l3s3-3; epi-expect "They should be there by now" + parcel/traffic/battery → t2l3s2-1/-2, t2l3s2-3; epi-cant "He can't be at home" → t2l2ck-1; epi-scale "the office must be closed" → t2l1s1-1; epi-weak named the "might possibly" distractor of t2l1s2-3. The rules stay the same, with fresh examples and plainer B1–B2 wording (e.g. "epistemic" removed).
+
+
+## topic-s3.js — second-pass review (Stage 03, deo-)
+
+Before: MCQ 40 · key pos 7/9/12/12 · t3l1 2/1/7/4 (pos 3 = 50%) · key longest 10 (25%) · shortest 6 (15%) · tied-longest 2 · spot pos 2/6/1/0 · judge T/F 2/2 · hint leaks 6
+After:  MCQ 40 · key pos 9/11/10/10 · t3l1 4/3/4/3 · t3l2 3/3/3/4 · t3l3 2/5/3/3 · key longest 9 (23%) · shortest 6 (15%) · tied-longest 2 · spot pos 2/3/2/2 · judge T/F 2/2 · hint leaks 0 once hints-topic-s3.json is applied (audit still shows 6 until content.js is updated)
+verify.js: CLEAN
+
+t3l1s1-1 — key sat at option 4 in an over-full level → reordered to option 2 (no positional refs in `why`).
+t3l1s1-3 — *had better* (*We'd all better do it before term ends*) is natural when you pass on a rule, so the distractor could be defended; "We all must/should…" is also unidiomatic word order → stem now says the module is compulsory; subject changed to *Everyone*; options are must / ought to / has to / may; `why` rewritten, with *must* named as the near miss.
+t3l1s1-4 — spot error in part 2 (six of nine spot items had it there) → sentence re-cut so the error falls in part 4 (*…must to send in monthly figures on antibiotic use*); `fix` and `why` updated.
+t3l1s1-5 — present *be supposed to* is often used neutrally to report a rule, so it could be defended as an accurate report → given sentence now adds *and in practice they all do*, which rules out the "rule not kept" reading; `why` names it as the near miss.
+t3l1s2-1 — key at option 3 in an over-full level → moved to option 1.
+t3l1s2-3 — option 1 was *I've* and the other three were *We* (not parallel) → *We've got to leave…*.
+t3l1s2-4 — spot error in part 2 → re-cut (*The organisers of the sports day / have warned us that if the rain / continues into next week, they / will must move it to the covered court.*) so the error is in part 4; `fix` and `why` updated.
+t3l1s3-1 — stem defined *had better* ("clearest warning that something bad will follow"), which made it a reading test → replaced with a situation (a friend's laptop keeps crashing; you want to warn her, not just advise); options are now parallel *…back up your dissertation tonight*; key moved from option 3 to 2; `why` names *should/ought to* as near misses.
+t3l1s3-5 — key at option 3 in an over-full level → moved to option 1; option numbers in `why` renumbered; *had better to* named as the near miss.
+t3l1ck-4 — *I am supposed to redraft* also shows an outside source, so it could be defended for "shows the requirement comes from somebody else" → replaced with *I should redraft…* (which turns the supervisor's insistence into optional advice); `why` updated.
+t3l1ck-5 — `why` said the room "has not been lost yet as far as rehearsals are concerned" (muddled) → it now says *had to* is the form for gap (2) but the search is still ahead of them.
+t3l2s1-1 — option 3 (*Visitors are advised to bring flowers*) was not parallel and was not a near miss → *Bringing flowers is not recommended* (the *should not* reading: right side of the line between banning and releasing, wrong strength); `why` updated.
+t3l2s1-3 — key at option 4, the most-used position in the level → moved to option 3 (no positional refs in `why`).
+t3l2s2-5 — *We hadn't to pay* is regional (northern British) usage, so the `why`'s claim that it "is not current usage" could be challenged → replaced with *We weren't allowed to pay a deposit*; `why` rewritten (*needn't have paid* as the near miss, *mustn't have* as a guess the speakers don't need to make).
+t3l2ck-1 — *won't have to* was correct (Saturday is in the future), even though the `why` said it wasn't; also, a parent can't excuse their own child → rewritten as the coach's email (*…he ______ come to Saturday's practice — though if he feels well enough, he is very welcome to*); options are mustn't / shouldn't / doesn't have to / may not; `why` rewritten.
+t3l3s1-1 — *Members are able to bring a guest* is common permission wording on club websites, so it could be defended → replaced with *Members must bring a guest* (right register, but it turns permission into a requirement); `why` updated.
+t3l3s1-5 — *We couldn't have filmed* could be read as hypothetical past permission, so it could be defended → *We shouldn't have filmed inside the temple*; `why` updated, and *didn't have to* is named as the near miss.
+t3l3s2-4 — spot error in part 2 → re-cut (*…/ if the client requests replacement parts in writing, / the supplier shall to deliver them / within ten working days.*) so the error is in part 3; `fix` and `why` updated.
+
+Principles (hints-topic-s3.json): I rewrote all nine deo- principles. Six were flagged as leaks (the principle contained the literal key: *had to*, *will have to*, *don't have to*, *needn't* plus the example *you needn't sign* = t3l2s2-1, *may not*, *were allowed to*). The other three were close enough to give answers away: deo-source's "notice written by the body that made the rule" matched t3l1ck-1 exactly; deo-advice's *be supposed to* gloss was almost word for word the key of t3l1s3-2; and deo-shall's "imposes a duty" was the key of t3l3s2-1. The new versions state each rule in terms of what it does (where the negative lands, whose authority it is, what the voice is, which form can take a tense) and leave the student to pick the form. They were checked against every deo- key in the stage and in test-1/2/3.
+
+
+## topic-s4.js — second-pass review (stage t4, dyn-)
+
+Before: `t4: MCQ 42  key pos 10/5/18/9  key longest 6 (14%)  key shortest 6 (14%)  tied-longest 5  | spot 8 pos 1/6/1/0  | judge T/F 1/2  | hint leaks 4` (levels l1 4/0/7/2 · l2 2/3/5/3 · l3 4/2/6/4)
+After:  `t4: MCQ 42  key pos 11/11/11/9  key longest 10 (24%)  key shortest 4 (10%)  tied-longest 2  | spot 8 pos 2/2/2/2  | judge T/F 1/2  | hint leaks 4*` (levels l1 4/3/4/2 · l2 3/4/3/3 · l3 4/4/4/4)
+*The 4 remaining leak flags come from content.js principles; they clear once hints-topic-s4.json is applied (checked with the audit's leak logic: 0 leaks).
+
+- t4l1s1-1 — key sat at position 3 (level 1 had no position-2 keys) → swapped options 2/3 (key now 2); `why` ordinals updated.
+- t4l1s1-3 — "could have carved" defensible (past unrealised ability: "until the accident he could have carved a set in a week"), "was carving" arguable as a temporary habit → replaced with "has been able to carve" (near miss: right repair, wrong time) and "was able carve"; key moved to 2; `why` rewritten.
+- t4l1s1-4 — spot error in part 2 (6 of 8 spots) → re-segmented the sentence so the error falls in part 4; fix and `why` updated.
+- t4l1s1-5 — "Hardly anyone … could operate" defensible as present hypothetical ability → replaced with "will operate" (near miss: about the subject, but about willingness, not skill); `why` updated.
+- t4l1s3-1 — `why` said "Only the second" but the key was option 3 → swapped options 2/3 so key is option 2 and the `why` is now true.
+- t4l1ck-1 — key tied longest with "being able to publish" → replaced that with "be able to publish" (near miss: right repair, missing the first *to*); key now strictly longest; `why` updated.
+- t4l1ck-2 — "Nobody … could operate" defensible as present hypothetical → replaced with "could have operated"; `why` updated.
+- t4l1ck-4 — spot error in part 2 → rewrote the sentence (new system/auditors) with the error in part 4; fix and `why` updated.
+- t4l2s1-2 — spot error in part 2 → re-segmented so the error ("but the driver could deliver") is in part 3; removed ambiguous "before it closed".
+- t4l2s1-3 — "could have carried" defensible (unused capacity); key-shortest; key at position 3 → replaced with "can carry"; reordered so key is option 2; `why` names "managed to carry" as the near miss.
+- t4l2s1-4 — key tied longest with "were able to getting" → changed that distractor to "were able get" (same form error type); key now strictly longest; `why` updated.
+- t4l2s1-5 — stem stilted ("The aunt kept the four languages… the parcel was in fact released") → "Two facts: my aunt spoke four languages all her life, and she once persuaded a customs officer to release a parcel."
+- t4l2s2-1 — "managed to see" defensible (nothing ruled out effort); "could have seen" also defensible with no outcome stated; principle example mapped onto the stem → new stem (smoke clears, team photographs the area), "managed to see" replaced with "can see"; `why` rewritten with "could have seen" as the near miss.
+- t4l2s3-1 — key at position 3 (level/stage overuse) → reordered, key now option 1 (`why` refers by form only).
+- t4l2s3-4 — `why` ended with a confusing meta sentence about where "the key has to sit" → removed.
+- t4l2ck-1 — "could be getting" padded the longest slot → replaced with "could got" (plausible learner form error); key now strictly longest; `why` updated.
+- t4l3s1-1 — "The committee will not meet…" defensible as a refusal (a committee makes decisions) → replaced with "The results will not be ready until next week."; `why` updated.
+- t4l3s1-2 — no near miss (does / will / would are all plainly out), and "I have tried three times this morning" would let a past refusal stand → Nan's line anchored in the present ("I am pressing Start right now"), "would" replaced with "wouldn't" as the near miss; `why` rewritten.
+- t4l3s1-3 — `why` treated option 2 as the key while the key was option 3 → swapped options 2/3 (key now 2, `why` now true); stem reworded in plainer English.
+- t4l3s1-4 — spot error in part 2 → re-segmented, error now in part 1; fix updated.
+- t4l3s2-1 — "couldn't" defensible (having the key does not rule out a jammed lock) → stem now "…but however politely we asked, he ______ the gate"; `why` rewritten with couldn't as the near miss.
+- t4l3s2-3 — key not longest in a meaning item; distractor wording uneven → options tightened ("He had no spare key to give us." / "He was forbidden to give us one." / "He decided not to let us have one." / "He had not been asked for one."); key now longest.
+- t4l3s2-5 — key at position 3 → reordered, key now option 2 (`why` refers by form only).
+- t4l3ck-1 — "would not" defensible after "I have pressed the release twice" ("…and it wouldn't open") → stem now in the present ("I am pressing the release as hard as I can, and the boot still ______ open"); `why` updated.
+- t4l3ck-5 — "will have found" arguably defensible as a deduction; "used to be find" not a plausible form → replaced with "will find" (near miss: characteristic will, wrong time) and "used to finding"; `why` updated.
+- t4l3ck-6 — "can't" defensible (the firm could be saying he is unable) → context now: driver is ten minutes away and insists the pallets were fine; "needn't" (arguable as his claim) replaced with "shouldn't"; `why` rewritten.
+
+Principles (content.js, proposed in hints-topic-s4.json): dyn-repair (examples "hopes to be able to" / "being able to drive" mapped onto t4l1ck-1 / t4l1s2-3), dyn-general (example "Delays can last for hours" was the t4l1s3-3 stem), dyn-occexcept ("From the balcony I could see…" mapped onto t4l2s2-1), dyn-will (contained key "won't" and "The door won't open" ≈ t4l3ck-1/t4l3s1-2), dyn-would (contained key "wouldn't"), dyn-habit ("He WILL leave his boots in the hallway" is the t4l3s3-3 stem; "own a bookshop" ≈ a t4l3s3-2 card). dyn-ability and dyn-occasion unchanged.
+
+
+## Review (second pass): `topic-s5.js` (Stage 5, Distance)
+
+Before: MCQ 42 · key pos 12/13/13/4 (t5l1 2/4/4/3, t5l2 6/4/5/0, t5l3 4/5/4/1) · key longest 17 (40%) · key shortest 7 (17%) · tied-longest 3 · spot 2/2/3/1 · judge T/F 1/2 · hint leaks flagged 10
+After:  MCQ 42 · key pos 10/11/11/10 (t5l1 3/3/3/4, t5l2 4/4/4/3, t5l3 3/4/4/3) · key longest 11 (26%) · key shortest 7 (17%) · tied-longest 4 (not systematic) · spot 2/2/3/1 · judge T/F 1/2 · hint leaks: 10 still flagged because content.js is unchanged. With the principles proposed in hints-topic-s5.json, 5 flags remain. Every one is a single-word modal key that the rule has to name next to other modals (could / might / would), so none is a real leak.
+
+## Items changed
+
+t5l1s1-3: the key was the longest option, and at position 2 → shortened it to "Softening the claim: the figure is offered, not asserted." and moved it to option 1. The `why` option numbers are updated.
+t5l1s1-5: the key ("were allowed to") narrowed *could* to permission and was the longest option → changed it to "were able to", which covers both general possibility and permission and is no longer the longest. The `why` is adjusted.
+t5l1s2-1: the stem used "pitched at the strength the evidence will bear" → reworded in plain English as "claims no more than the evidence can support".
+t5l1s2-3: the stem was stilted ("Which verb phrase should be chosen:") → reworded as "the most cautious … Which should she choose?". Options and key are unchanged.
+t5l1s2-4: the key needed to move for position balance → *might* is now option 4. The `why` refers to options by word, so it needed no change.
+t5l1s3-2: the `why` gave the wrong positions. It called the key "the second continuation" and described option 2 as "the fourth", left over from an earlier option swap → rewrote the `why` to match the current order (key = option 4) and named option 2 as the near miss.
+t5l1ck-3: the key was the longest by 12 characters → shortened it to "I expected the deposit to be refundable, so this is a surprise.".
+t5l1ck-4: the distractor *would be able to* could be defended as a past-habitual "would" in a recollection → replaced it with *may*. Now *can* and *may* are right-meaning, wrong-time near misses. The `why` is rewritten.
+t5l1ck-6: the stem used "What is the reading?", which is jargon → changed to "What does she mean?".
+t5l2s1-2: needed for position balance → reordered so *Would* is option 4. The `why` refers to options by word, so it needed no change.
+t5l2s1-5: the key was the longest option ("Is it all right with you if…") → replaced it with "Do you mind if I take the earlier train?". This is the same permission one rung nearer, and now option 3 ("Do you mind that I took…") is the near miss. The `why` explains both.
+t5l2s2-4: *Will I…?* is a real offer frame in Irish and Scottish English, and *Might I…?* can be read as a formal offer, so both distractors were defensible → changed the options to Must / Need / Would / Shall. *Must I* is the near miss: a well-formed question, but reluctant. The key moved to option 4 and the `why` is rewritten.
+t5l2s3-2: needed for position balance → *would* moved to option 4. The `why` refers to options by word, so it needed no change.
+t5l2ck-3: the key (the "wrong" email line) also differed in "at some point", not just in its frame, so it was not parallel → made it "…whether you might enter all marks by 5 p.m. on Friday", parallel with the other three. It is still the longest option, which the frame being tested makes unavoidable.
+t5l2ck-5: *should* could be defended (British "should" = "would" in a consequent: "It should save time if requests included…") → replaced it with *must*. The `why` is rewritten and names *will* as the near miss.
+t5l2ck-6: option 4 ("Would you mind if I carried that for you?") is a perfectly courteous offer, but the `why` gave the wrong reason for rejecting it → the `why` now says it takes over the whole box, which is exactly the implication the stem rules out.
+t5l3s1-3: the stem used the jargon "unreal consequent", and the key was the longest option → the stem is now plain English ("describe an imagined situation, with the if left unsaid"), and "second draft" in the key is now "draft".
+t5l3s1-5: the key was the longest option by 12 characters → changed it to "They still haven't shared the new timetable, and I'm getting impatient."
+t5l3s2-1: the stem used the jargon "consequent … pitched at the strength" → changed to "claims no more than the argument can support".
+t5l3s2-3: the key was the longest option, option 4 ("a question and a statement") was a throwaway with no near miss, and the options were not parallel → all four are now in the form "The first …; the second …". The new option 4 is a near miss: it rightly says the second sentence is stronger, but puts that certainty on the if-clause. The key is shortened and the `why` is extended.
+t5l3s3-3: the distractor "If the train will be late, we will take a taxi" is arguably acceptable (will for a situation already known now, with a consequence) → changed to "…we will miss the connection", which is clearly a plain prediction. The `why` still holds.
+t5l3ck-1: option 4 ("If the archive is digitised, researchers would stop…") could be defended as tentative *would*, and "internally consistent" was jargon → the stem is now "Which sentence is correct?", option 4 is now "If the archive were digitised, researchers stop travelling…", and the `why` is rewritten.
+t5l3ck-2: needed for position balance → *would* moved to option 4. The `why` refers to options by word, so it needed no change.
+t5l3ck-5: needed for position balance → *could* moved to option 4. The `why` refers to options by word, so it needed no change.
+
+## Principles (content.js, not edited): proposals in hints-topic-s5.json
+- dist-request: contained the key "No, not at all" (t5l2s1-3), the formula "Would you mind" (t5l2s1-2 gap) and the whole wording of the t5l2s1-1 key frame → rewritten to describe the dial by what it does, not by quoting the frames.
+- dist-offer: listed *Shall I…?*, *Would you like me to…?* and *You might want to…*, which are the keys of t5l2s2-1/-3/-4, t5l2ck-2/-6 and m2-20 → rewritten around "who does the work".
+- dist-soften: quoted *It would be helpful if…* and *I would be grateful if you could…*, the keys of t5l2s3-2/-3 and t5l2ck-5 → rewritten to state the rules (step back in both clauses; remote about the asking, exact about the thing asked; don't soften a rule).
+- dist-unreal: example "I wish they would decide" matched the t5l3s1-2 build item one to one, and "if the council released the land, prices would fall" matched t5l3s1-1 → the full example sentences are removed and the rule is kept.
+- dist-unrealposs: was a near-paraphrase of the t5l3s2-3 key (capacity vs outcome) → that pairing is dropped.
+- dist-ifwill: "If you'll just wait here…" matched the t5l3s3-3 key, and "are willing to" matched the t5l3ck-6 key → both are removed; the three exceptions are named without examples.
+- dist-tentative: the chain "is → may → might" answered t5l1s2-3 ("most cautious of must/will/should/might") → replaced by the pairwise notch rule.
+- dist-core: the example "we could walk there when we lived closer" had the same shape as the t5l1ck-4 cloze → replaced by descriptions of each cue.
+- dist-read: left unchanged, no leak.
+
+
+## Review — topic-s6.js (Stage 06, tag prefix past-)
+
+Before: MCQ 41 · key pos 12/2/13/14 · key longest 14 (34%) · key shortest 2 (5%) · tied-longest 5 · spot 9 pos 5/4/0/0 · judge T/F 1/3 · hint leaks 2 · levels l1 3/0/6/5, l2 3/1/5/5, l3 6/1/2/4
+After:  MCQ 41 · key pos 11/9/11/10 · key longest 10 (24%) · key shortest 2 (5%) · tied-longest 5 · spot 9 pos 3/2/2/2 · judge T/F 2/2 · levels l1 3/3/4/4, l2 4/3/4/3, l3 4/3/3/3
+Hint leaks: the 2 audit flags remain until content.js takes the principles in hints-topic-s6.json. With those principles no key or example leaks. One crude flag stays: t6l2s2-3 key "might have" is the rule's own name, not an example. `node verify.js` CLEAN.
+
+t6l1s1-1 — key never in position 2 across the level → reordered options (key 3→2); why has no positional references.
+t6l1s1-2 — spot error always in part 1/2 across the stage → re-segmented so the error ("must failed") is in part 4; why updated to match the new parts.
+t6l1s1-3 — "mustn't have seen" is a real deduction ("I conclude he didn't") in AmE/Irish/Australian use, so close to "impossible"; given sentence stilted → given "There is no way that…", distractor replaced with near miss "may not have seen" (right family, wrong strength), key moved 4→2; why rewritten.
+t6l1s1-4 — "must have taken" can be a requirement ("applicants must have taken…"), so the why's "no obligation reading left" was an overclaim → given now opens "Judging by the timestamps," so it is plainly a deduction; why corrected.
+t6l1s1-5 — "post-mortem report" reads as an autopsy to this audience → "incident report".
+t6l1s2-1 — "must have occurred" was defensible (same site and morning, only one sample contaminated, so arguably conclusive) → context now says the records are unchecked and nothing is certain yet; key moved 3→2; why names the near miss.
+t6l1s2-2 — bin hints used "proposition" jargon → plain wording, no HTML.
+t6l1s2-4 — passage said the door was "shut" (not locked), so "must have had a key" was not forced and "may have" was defensible → door "locked", lock "cannot be opened without a key"; why updated.
+t6l1s3-1 — key strictly longest; "must travel" no near miss → replaced with "can't have been travelling" (right shape, wrong direction); why updated.
+t6l1s3-3 — stem described the answer ("was in the middle of") so it became a reading test → evidence context (cover off, half the settings changed); why rewritten with "must have calibrated" as the near miss.
+t6l1s3-5 — "the pour must have been going on" was awkward; why mentioned "cracking" that is not in the text → "they ___ it" with "must have been pouring / must pour / can't have been pouring / had to pour"; key no longer longest; why fixed.
+t6l1ck-1 — minutes are not written before a meeting, so the context was contrived → a speech dated three days before a ceremony, with the same form set; why names the near miss.
+t6l1ck-2 — why did not cover the deduction reading of "mustn't have" → why says that even as a deduction it is far stronger than "perhaps".
+t6l1ck-3 — spot position rebalance; the ending ("the late start") did not follow → re-segmented with the error in part 3, new ending "why they looked so tired this morning".
+t6l1ck-5 — stem said "possible past cause" but the options are about timing → "offers a possible explanation without claiming that it is certain".
+t6l2s1-1 — "had to send" was defensible as a statement of the rule ("the clerk had to send each form…") in a blame line → replaced with "needn't have sent"; key moved 3→2; why rewritten.
+t6l2s1-2 — position rebalance → key 4→2 (reordered distractors); why has no positional references.
+t6l2s1-3 — bin hint "the speaker is inside the subject" was unclear → "the speaker is one of the people in the subject".
+t6l2s1-4 — spot position rebalance → re-segmented, error "ought have circulated" now in part 4; why updated.
+t6l2s2-1 — "a second route" was unclear (no first route named) → "had another option and did not use it"; why wording aligned.
+t6l2s2-2 — judge split 1 True / 3 not-True → stem changed to "The jumper did not clear the bar." (True); why rewritten.
+t6l2s2-3 — position rebalance; hint leaked the key ("You might have told me!") → key moved 4→1; why names "may have" as the near miss; new principle proposed.
+t6l2s3-1 — stem said "a flooded basement", but the key says the basement did not flood → "a report on last week's storm… pump had been installed in the basement"; why names the near miss.
+t6l2s3-3 — option 1 "would have kept its visitors" can describe today, so it was defensible; stem used grammar terms → stem asks how the town would be different "today"; option 1 now anchored "in 2020" (right form, wrong time); why updated (option numbers unchanged).
+t6l2ck-1 — "would have signed" has the assumption reading ("presumably the storeman signed it"), which does tell you it was signed → replaced with "can't have signed"; why rewritten.
+t6l2ck-2 — spot position rebalance → result clause first, error in the if-clause, now part 3; fix and why updated.
+t6l2ck-5 — "could be mentioning" was no near miss, and the key was strictly longest → replaced with "needn't have mentioned" (a reproach, but for something that was done); why rewritten.
+t6l2ck-6 — "post-mortem" → "review" in the passage and why; why names the near miss.
+t6l3s1-1 — "mustn't have taken" is defensible as a regional deduction → "couldn't take" (right outcome, wrong reason); why rewritten.
+t6l3s1-4 — "mustn't have submitted" had the same regional problem; key only in position 4 → replaced with "wasn't allowed to submit" (near miss: no copy, but because of a ban); key moved 4→2; why rewritten.
+t6l3s2-1 — position rebalance → key 1→2; why names "would have been completed" as the near miss.
+t6l3s2-2 — position rebalance → key 1→3; why names "can't have been" as the near miss.
+t6l3s2-4 — punctuation only (comma after "as planned").
+t6l3s2-5 — "project post-mortem" → "project review".
+t6l3s3-4 — key was 90 characters against about 60 for the others (a strong tell), and the options were wrapped in "Replace it with…" → options are now plain rewrites: "had time to … but did not" (key), "may have", "would have … if ordered to" (near miss), "were unable to"; stem and why rewritten.
+t6l3s3-5 — "gone round the parked lorry instead of overtaking on the outside" contradicted itself → "through the gap on the inside instead of pulling out into the traffic"; why updated.
+t6l3ck-2 — no near miss → "must have opened" replaced with "was to open" (the neutral member of the family, with no failure); why updated.
+
+
+## Review — topic-s7.js (Stage 07, hedge-*)
+
+Before: MCQ 43 · key pos 16/19/5/3 (l1 4/6/1/3, l2 6/7/2/0, l3 6/6/2/0) · key longest 26 (60%) · key shortest 3 (7%) · spot pos 1/3/4/0 · judge T/F/CT 1/1/2 · hint leaks 5
+After:  MCQ 43 · key pos 11/11/11/10 (l1 4/4/3/3, l2 4/4/4/3, l3 3/3/4/4) · key longest 11 (26%) · key shortest 3 (7%) · tied-longest 0 · spot pos 2/2/3/1 · judge unchanged · hint leaks: 5 in content.js, 0 once hints-topic-s7.json is applied
+verify.js: CLEAN
+
+t7l1s1-1 — no near miss (third distractor a plain universal) → replaced with "suggests … is likely to shorten journeys in other cities too" (wrong only because the survey covers one city); why updated
+t7l1s1-3 — key longest and wordy ("narrows the range of situations in which the writer is claiming…") → shortened to "It limits the claim to some cases instead of every case."; jargon ("quantifier over situations") removed from why
+t7l1s1-4 — stilted stem ("strongest pitch such a forecast can honestly take"); key longest; distractors not parallel ("quite soon") → plain-English stem; all options now end "within a decade"; underclaim turned into a near miss ("could conceivably remove some…": honest but not the strongest); key shortened
+t7l1s2-1 — key longest (120); no near miss; policy distractor off-topic → "study" made "survey" (so design is clearly observational); near miss added ("cut teenagers' sleep by twenty-seven minutes": right figure, causal claim); key shortened ("was linked to shorter sleep"); key moved 2→3; why renumbered
+t7l1s2-3 — key 150 chars and far longest; "Cars are no longer necessary" a throwaway → key shortened ("may have helped to reduce…"); new near miss "The figures show that the tram line cut car journeys … by nine per cent"; key moved 2→3; why renumbered
+t7l1s2-5 — option 1 ("causes 4,200 premature deaths a year") arguably defensible as a cited statistic → made a forecast ("will cause … next year"), which clearly needs a hedge; why updated
+t7l1ck-2 — key 99 chars, distractors all weak (too short / informal / tense) → key shortened; "too short" replaced by near miss "It hedges its predictions so heavily that it takes no clear position" (right fault type, wrong direction); tense distractor reworded; why updated
+t7l1ck-3 — spot position overused (part 2) → clause reordered so the pile-up is part 1 ("It may perhaps possibly be that … , although the sample was small."); fix and why updated
+t7l1ck-6 — key 142 chars, far longest → key shortened ("has weighed how far the evidence goes"); option 4 given its full natural wording ("a clear position on the question")
+t7l2s1-4 — spot position overused (part 3) → resegmented; error now in part 4 ("almost would certainly fail to generalise nationally."); fix and why updated
+t7l2s1-5 — "could conceivably cover its costs" defensible as a near-synonym of "highly unlikely" → replaced with near miss "is unlikely to cover" (right form, drops "highly"); key moved 1→4; why renumbered (kept as a key-longest item: the extra degree word is the point)
+t7l2s2-1 — key longest; "It is certain that" a weak distractor → replaced with impersonal-frame near miss "It has been clearly shown that…" (frame, but presents the view as settled); key moved 2→4; why renumbered
+t7l2s2-2 — key ("footfall has fallen since the market moved") dropped the causal claim of the original, so it was not quite equivalent → all options rebuilt on "moving the market has reduced footfall"; "would" option now a clear near miss (conditional reading); why updated
+t7l2s2-3 — jargon in stem ("enclose a proposition") → "is there nothing inside the frame that a reader could dispute or evidence could test?"
+t7l2s2-5 — position balance → options reordered, key 2→3 (why refers to options by wording, still accurate)
+t7l2s3-3 — no near miss; "This proves that the triage system works" not parallel → near miss "This suggests that there has been a certain amount of change" (right verb, blurs the figure); distractors made parallel; why updated
+t7l2s3-5 — key longest; why wrongly said "appear to tend to" doubles one branch (theory puts them in different branches) → key shortened ("appear to have shortened waiting times"); key moved 1→3; why corrected (the doubling is "in most cases" + "tend to")
+t7l2ck-2 — no near miss; hint leak → "it certainly follows" replaced with near miss "it is widely known" (factive: vouches for the claim); key moved 2→4; why updated; principle rewritten (hints file)
+t7l2ck-3 — key longest, not parallel; "It is unlikely that rural applicants apply early" defensible as equivalent → all options now "… apply later in the cycle"; last distractor replaced by "would seem to" (evidential, not scope); why updated
+t7l3s1-1 — key 144 chars, far longest → key shortened; option 1 rebuilt as a true near miss (full concessive shape with the balance reversed: "Although automation will certainly … it might possibly …"); key moved 2→4; why renumbered
+t7l3s1-3 — key longest; "too long for an essay" a throwaway → key shortened; new distractor "The counter should come first…"; "subordinator" jargon removed from option 1; key moved 2→3; why renumbered
+t7l3s2-2 — judge "must therefore be treated with caution" is arguably obligation, not a booster → given rewritten with an epistemic must ("so the findings must tell us little about state schools"); stem de-jargoned
+t7l3s2-3 — "must be the worst in the region" gave no ground, so no near miss → "With so many cars on its roads, the capital must have the worst air…" (reason given, step does not follow); "deontic" removed from why
+t7l3s2-5 — "must not" defensible ("the programme must not be judged on the fourth district alone" is normal academic English) → replaced with "might not"; key moved 1→4; why updated
+t7l3s3-2 — key 139 chars, far longest → options recast in parallel "Instruction: <em>…example</em>" form; key "Keep just one hedge: …which suggests that the policy had some effect."
+t7l3s3-3 — key added evidence not in the original ("on every published measure") and flipped the second claim ("will definitely solve" → "is unlikely to relieve"), so not a calibration → key "Traffic … appears to be getting worse, and the new ring road may help to ease it"; two near misses each repairing only one half; key moved 1→4; why rewritten
+t7l3s3-5 — key longest, and why said "The key is the longest option here" → key "Each claim pitched to match its evidence, so that the force varies."; option 4 now clearly the near miss (varies, but by pattern); why updated
+t7l3ck-2 — key longest; platitude distractor gave no near miss → near miss "As the new timetable was popular with staff, it must have raised exam results"; key shortened; key moved 2→4; why renumbered
+t7l3ck-3 — "will not" defensible (counter at least as strong as concession is allowed); gap labelled (2) with no (1) → tutor line now asks for a counter "firmly, without promising what nobody can know yet"; blank relabelled (1); key moved 1→3; why updated
+
+
+## Review — topic-s8.js (Stage 08, `sys-`), second pass
+
+Before: MCQ 44 · key pos 23/20/1/0 (t8l1 8/6/0/0, t8l2 6/7/1/0, t8l3 9/7/0/0) · key longest 21 (48%) · key shortest 5 (11%) · tied-longest 2 · spot pos 1/3/4/0 · judge T/F 1/2 · hint leaks flagged 7
+After:  MCQ 44 · key pos 10/11/12/11 (t8l1 3/3/4/4, t8l2 3/4/4/3, t8l3 4/4/4/4) · key longest 11 (25%) · key shortest 6 (14%) · tied-longest 1 (t8l2s1-1, a three-way tie on a pure form item) · spot pos 2/2/2/2 · judge T/F 1/2 · `node verify.js` CLEAN
+Hint leaks: all 9 `sys-` principles rewritten in hints-topic-s8.json. With them in place the audit would flag only 4 single-word keys that any accurate statement of the rule has to contain (must/should/should/need). None of the new principles contains a key phrase or an example that maps onto an item.
+
+## Level 1
+t8l1s1-1 — key longest; position 1; option 3 (speaker's authority vs outside authority) was a defensible second ambiguity → shortened the key, replaced option 3 with the near miss "firm deduction or cautious guess", key moved to 3, why rewritten
+t8l1s1-4 — position 1; epistemic half of the key ("probably closed already") did not fit "at the end of each cycle" → key now "…or that it can be expected to be closed by then", moved to 4; option 3 (instruction/permission) labelled as the near miss in why
+t8l1s1-5 — spot error in part 3 → re-segmented so the error falls in part 4; "suppletive" removed from why
+t8l1s2-1 — key 111 chars against 31–82 → key shortened (still longest, by 7 chars), moved to 3; stative-verb option labelled as the near miss
+t8l1s2-3 — position 1 → key moved to 4; deadline option labelled as the near miss
+t8l1s2-5 — key 108 chars against 19–43, and no near miss → options made parallel short noun phrases (key now shortest); "plural subject" became the near miss "households, which cannot take instructions"; key moved to 2
+t8l1s3-1 — position 2, key longest → key moved to 4 (still longest, by 4 chars); "should" labelled as the near miss
+t8l1s3-3 — position 1 → key moved to 3; travel-piece option labelled as the near miss
+t8l1s3-5 — stem said "standard practice", which gave away "routinely" → stem rephrased ("what researchers in the field already do")
+t8l1ck-1 — key longest, position 2 → option 3 made longer with a natural "o'clock", options reordered with the key at 3; the passive-plus-deadline option labelled as the near miss
+t8l1ck-3 — spot error in part 2 → clause rebuilt so the error is in part 1; the stem now says it is a contract clause, because the "contract states" frame was removed from the words
+t8l1ck-5 — position 2 → key moved to 1; the "obliged" option labelled as the near miss
+t8l1ck-6 — stem had "epistemic reading" → plain-English stem (engineer working something out, not giving an instruction); key moved to 4; bare "must" labelled as the near miss; "operator" removed from why
+
+## Level 2
+t8l2s1-1 — stem was stilted and listed the slot order ("modal, perfect, progressive, passive, verb"), which gave the answer → natural gapped sentence; why notes that the chain is rare
+t8l2s1-2 — build stem contained "should have been", which is the key → stem now "Nobody reported the incident at the time. Put the words in order to criticise that."
+t8l2s1-3 — key longest; stem had "string of auxiliaries" → plain stem; key reworded shorter ("replacing the seals may turn out to be necessary…"), moved to 4; "already replaced" labelled as the near miss
+t8l2s1-5 — key 91 chars against 73–80; stem jargon ("the perfect after the modal") → stem "What does have completed add here?"; key shortened (82 vs 80), moved to 2; the deduction option labelled as the near miss
+t8l2s2-1 — position 2 → key moved to 1; "must have held" labelled as the near miss
+t8l2s2-2 — position 2 → key moved to 3; "might move" labelled as the near miss
+t8l2s2-3 — stem used the term "backshift" → plain description of stepping back; key moved to 4
+t8l2s2-5 — position 2 → key moved to 1; "might have had" labelled as the near miss
+t8l2s3-1 — distractors Would/Will/Might were all ruled out just by the hint's list of three verbs, and there was no near miss → options now Were/Should/Had/Would (Were and Had need a different verb form and a different main clause); key at 2; why rewritten
+t8l2s3-3 — key 145 chars; the old principle stated the key's two reasons word for word → key shortened (79 vs 88), key moved to 3; "more certain" labelled as the near miss
+t8l2s3-5 — position 1 → key moved to 4; "Should … to decide" labelled as the near miss
+t8l2ck-1 — stem jargon ("slots"); key tied for longest → stem "Which sentence is grammatical?"; option 4 is now "must been being audited" (breaks the tie); key moved to 1
+t8l2ck-3 — position 1 → options reordered with the key at 3
+t8l2ck-5 — position 1 → key moved to 2; the "will"-clause option labelled as the near miss
+
+## Level 3
+t8l3s1-1 — position 1 → key moved to 4; the requests option labelled as the near miss
+t8l3s1-3 — position 1 → key moved to 2 (still longest); the forecast reading labelled as the near miss
+t8l3s1-5 — key 85 chars against 50–61 → key shortened and options 2 and 4 given natural completions; key moved to 3; "If it will speed things up" labelled as the near miss
+t8l3s2-3 — key 127 chars, position 1 → key shortened (95, still longest), moved to 4; the "must is stronger" option labelled as the near miss
+t8l3s2-5 — position 1 → key moved to 3; "Ought the tribunal consider" labelled as the near miss
+t8l3s3-1 — key 109 chars and it spelled out the criterion ("without hedge or attribution") → key shortened to "…where the writer states that the figure is not in dispute" (no longer longest)
+t8l3s3-2 — key 115 chars and it named the signals → key "doubts the claim but does not say so directly"; option 4 reworded as the near miss ("doubts whether there is any effect…"); key moved to 3
+t8l3s3-4 — key 89 chars against 28–57 → key "Granted a possibility, then refused to rely on it."; key moved to 1; option 4 labelled as the near miss
+t8l3ck-1 — key 118 chars → key shortened (92 vs 85), moved to 4; option 1 labelled as the near miss
+t8l3ck-2 — key 71 chars against 47–56 → key shortened (61), moved to 3; the generic timber option labelled as the near miss
+t8l3ck-3 — spot error in part 3 → error moved to part 4 by splitting the reporting frame from the clause
+t8l3ck-5 — position 1 → key moved to 4; "would" labelled as the near miss
+t8l3ck-6 — key 119 chars → key "Setting one source against another without committing to either." (no longer longest); "Predicting that the backlog will not clear" labelled as the near miss
+
+## Principles (hints-topic-s8.json)
+sys-ambig — its example "He must be in the library… nothing inside the sentence decides" matched t8l1s1-1 one to one → restated as a general rule with no example
+sys-clues — "must know" matched t8l1ck-4; the "shipment" example sat very close to t8l1s2-2 → examples replaced by descriptions (state, finished event, in progress, a subject that cannot act)
+sys-disambig — named "protocols" (the key of t8l1s3-3) and listed "is presumably" / "is required to" (the keys of t8l1ck-6 and t8l1s3-1) → uses forms that appear in no item (has a duty to / it seems that)
+sys-chain — contained t8l2s1-1's key "might have been being examined" → shows the order with no example chain
+sys-report — "must → had to" gave the key of t8l2ck-3 and m3-14, and the list of six non-movers eliminated every distractor in t8l2s2-3 → states the mechanism without the lists
+sys-invert — "Should you require further assistance" matched m3-5, and "archaic… compressed" was the key of t8l2s3-3 → keeps the three verbs but no example, and no reason for the formality
+sys-will — "That'll be the courier" matched t8l3ck-2, "She will keep interrupting" matched t8l3ck-5, and "will can" was the key of t8l3s1-1 → gives the four readings in general terms and the "when?" test
+sys-periphery — "I need hardly remind you" matched t8l3ck-4 and "He daren't ask" matched t8l3s2-4 → states the rule without those examples
+sys-track — "ministers say the scheme will…" matched t8l3ck-6 → "a claim introduced by someone else's reporting verb belongs to them"
+
+
+## Review — test-1.js (m1), test-2.js (m2), test-3.js (m3)
+
+Audit before → after (`node audit.js mN`):
+- m1: MCQ 16 · key pos 4/4/4/4 → 4/4/4/4 · key longest 3 (19%) → 4 (25%) · shortest 4 (25%) → 4 (25%) · tied-longest 1 → 0 · spot 1/1/1/1
+- m2: MCQ 15 · key pos 4/4/3/4 → 4/4/3/4 · key longest 4 (27%) → 4 (27%) · shortest 3 (20%) → 3 (20%) · tied-longest 1 → 1 · spot 1/1/2/1
+- m3: MCQ 16 · key pos 4/4/4/4 → 4/4/4/4 · key longest 2 (13%) → 4 (25%) · shortest 2 (13%) → 3 (19%) · tied-longest 4 → 0 · spot 1/1/1/1
+
+No keys moved position. Test order untouched (m1 still MOCKS[0]). No hints file (tests show no hints).
+`node verify.js`: test files load clean; the only errors are in t6l1s2-2 (topic-s6.js, another reviewer's file).
+
+App-wide fix: every `spot` `why` in the three tests numbered the segments 0–3, but engine.js labels them 1–4 (`i + 1`) on screen and in the answer line, and the stage files use 1–4 too. So students were told, for example, "part 0" or "Part 2 is the only part with a modal" when the error was in segment 3. Renumbered in all 12 affected items (listed below). m3-6 had no numbers.
+
+## m1
+m1-2 — `why` said "Part 2" (0-based) for the segment shown as 3 → renumbered.
+m1-5 — "found nothing either way" made a bare *may not be* read oddly one-sided, and the `why` used "negates the proposition" → examiner now has "a few things that worry her, but nothing conclusive", which motivates *may not be* and rules out *can't be* explicitly; `why` in plain English.
+m1-7 — `why` "part 1" → part 2.
+m1-11 — stem used the term "remoteness in time" → "In which sentence does *could* refer to **past time**?"; options and key unchanged.
+m1-12 — distractor *Would you like to move your car?* is a common polite directive in British English (defensible as the same request) → replaced with *Will you move your car?*, the right act at the wrong politeness (near miss); dropped *now* from option 2 so the key is no longer tied longest (now strictly longest; 63/60/55/64); `why` rewritten for option 3.
+m1-13 — *should have been* was defensible as expectation ("by procedure it should have been there all night") → replaced with *must had been* (close form near miss); `why` rewritten; key no longer depends on length.
+m1-14 — `why` "Part 3 … Parts 0, 1 and 2" → Part 4 … Parts 1, 2 and 3.
+m1-15 — `why` claimed *mustn't have* "cannot look back", which is untrue (epistemic *must not have* exists, especially in AmE) → `why` now says it could only be a guess, British English guesses with *can't have*, and the passage states a fact.
+m1-17 — stem was stilted ("in one phrase and without repeating herself") and the `why` said *possibly* only repeats the modal, which contradicts the hedge-adverb principle (downward adverbs refine) → stem now "thinks a rise is likely but not certain"; `why` explains *might possibly* as modal+adverb pushed the wrong way (near miss).
+m1-20 — `why` "Part 3 … part 0 … Parts 1 and 2" → Part 4 … part 1 … Parts 2 and 3; "past-anchored deictic" put in plain English.
+
+Not changed: m1-1, m1-3, m1-4, m1-6, m1-8, m1-9, m1-10, m1-16, m1-18, m1-19.
+
+## m2
+m2-3 — distractor *have to* is very natural for a resolution you set yourself ("I really have to stop…"), so it could be defended → replaced with *am supposed to* (an expectation set by someone else; the source near miss); `why` follows.
+m2-6 — `why` "Parts 0, 1 and 3" → Parts 1, 2 and 4.
+m2-7 — `why` "Part 2 shows … stacked" → Part 3.
+m2-8 — `why` "part 3 … part 3 … Parts 1, 2 and 3" → part 4 … part 4 … Parts 2, 3 and 4.
+m2-9 — `why` "Part 0 … part 1" → Part 1 … part 2.
+m2-10 — `why` "Part 3 … part 2 … Parts 0, 1 and 3" → Part 4 … part 3 … Parts 1, 2 and 4.
+m2-11 — `why` called the *might be not* option "Option 2" (it is option 3) → fixed; the *must not* explanation also covers the reading of *must not* as a conclusion (too certain).
+m2-16 — *shouldn't* was defensible ("you shouldn't bring drinks …, although a few people prefer their own bottle" reads as advice plus concession) → passage now says "though anyone who prefers their own bottle is welcome to bring one", which rules out *shouldn't*, *mustn't* and *are not to*; `why` follows. The passage is updated in all three copies (m2-16/17/18).
+m2-17 — *don't have to* was defensible ("they needn't work the crossings; we'll place you elsewhere") → passage adds "because our insurance does not cover them there", which makes it a prohibition; `why` follows.
+m2-20 — *May I …?* is a normal polite offer form ("May I get you a drink?"), and *Will I …?* means *Shall I* in Scottish and Irish English, so both were defensible → options now *Must I / Do I / Shall I / Need I*, with *Must I* as the near miss (natural if he'd been told to bring it); key still option 3 and still strictly longest; `why` rewritten.
+
+Not changed: m2-1, m2-2, m2-4, m2-5, m2-12, m2-13, m2-14, m2-15, m2-18, m2-19.
+
+## m3
+m3-3 — the stem began "From a live planning inquiry, at which…", which is stilted → "At a planning inquiry, where the developer can still revise the application, an objector says:".
+m3-4 — key tied longest (67/67) → option 1 "went off" → "sounded"; key now strictly longest.
+m3-7 — no single error: "If the tribunal will accept the late submission" is good English with *will* = willingness (a tribunal decides whether to accept), which is exactly the exception the `why` names → rewritten around a subject that can't be willing: "If the missing witness statement will arrive / before the end of the week, / …"; `fix` and `why` follow; error still in part 1.
+m3-8 — `why` "part 2 … Parts 0, 1 and 3" → part 3 … Parts 1, 2 and 4.
+m3-9 — `why` "Part 3 … Parts 0, 1 and 2" → Part 4 … Parts 1, 2 and 3.
+m3-10 — three-way tie for longest (78/78/78) included the key, and "though I am not insisting" is unidiomatic → key tail now "though I may be wrong" (74).
+m3-12 — key tied longest (87/87) → option 1 "fairly confident" → "fairly sure"; key now strictly longest.
+m3-17 — key tied longest (82/82) → key "how widely" → "how far" (79); a distractor is now the longest.
+
+Not changed: m3-1, m3-2, m3-5, m3-6, m3-11, m3-13, m3-14, m3-15, m3-16, m3-18, m3-19, m3-20.
+
+## Unsure / flagged
+- m1-6 (key *have to*, distractor *must*): *I'm sorry, but I must move our meeting — the clinic…* is natural British English. The item works only because the stem says the form must show that the necessity is not hers. This is the paper's only must/have-to contrast now, so I left it. The same softness applies to any deo-source item.
+- m1-4 / m2-2 (*mustn't be* as the deduction distractor): the deduction reading of *mustn't* is heard in some regional varieties (Australian, Irish, northern British). I kept it because this contrast is the app's main teaching point, and the given sentence and context point to standard British English.
+- m2-18 (*can* vs *should* for the sweep vehicle): *can* is a statement of capacity and is mildly defensible. I left it as is.
+
+
+---
+
+# First review, 22 September 2026
+
 
 Every one of the 564 questions was re-read for correctness and clarity. What follows is
 the per-item record: one line for each item that changed, grouped by file, exactly as the
