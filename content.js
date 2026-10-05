@@ -17,6 +17,7 @@
      topic-s7.js   Stage 07  Hedging and Stance
      topic-s8.js   Stage 08  The Whole System
      topic-s9.js   Stage 09  Unit 5 Review (Gateway to the World B2)
+     topic-s10.js  Stage 10  Modals in the TCAS70 Paper
      test-1/2/3.js The triage test and the two final checks
 
    The reasoning behind the ladder is set out in ANALYSIS.md. Nothing in the
@@ -65,7 +66,7 @@
 var CEFR = ['B1', 'B1+', 'B2', 'B2+', 'C1', 'C1+'];
 
 /* --------------------------------------------------------------------------
-   RANKS — one rung per band of stage checks cleared (27 in total).
+   RANKS — one rung per band of stage checks cleared (30 in total).
    The ladder is the certainty scale itself, so every promotion teaches the
    thing the app is about: a student climbs from "might" to "beyond doubt".
    -------------------------------------------------------------------------- */
@@ -73,12 +74,12 @@ var RANKS = [
   { min: 0,  name: 'No Reading',   note: 'The dial is at zero. Nothing checked yet.' },
   { min: 1,  name: 'Might',        note: 'A first signal. Something is there.' },
   { min: 3,  name: 'Could',        note: 'You can name the parts and say what they do.' },
-  { min: 6,  name: 'May',          note: 'The everyday forms hold without thinking.' },
-  { min: 10, name: 'May Well',     note: 'You can explain why a wrong answer is wrong.' },
-  { min: 14, name: 'Should',       note: 'Halfway. The hard stages — distance, past modality — are opening.' },
-  { min: 18, name: 'Will',         note: 'You read a modal and see the frame behind it.' },
-  { min: 23, name: 'Must',         note: 'Exam-ready on nearly everything.' },
-  { min: 27, name: 'Beyond Doubt', note: 'Every stage green. The whole system is yours.' }
+  { min: 7,  name: 'May',          note: 'The everyday forms hold without thinking.' },
+  { min: 11, name: 'May Well',     note: 'You can explain why a wrong answer is wrong.' },
+  { min: 15, name: 'Should',       note: 'Halfway. The hard stages — distance, past modality — are opening.' },
+  { min: 20, name: 'Will',         note: 'You read a modal and see the frame behind it.' },
+  { min: 25, name: 'Must',         note: 'Exam-ready on nearly everything.' },
+  { min: 30, name: 'Beyond Doubt', note: 'Every stage green. The whole system is yours.' }
 ];
 
 /* --------------------------------------------------------------------------
@@ -100,7 +101,7 @@ var BADGES = [
   { id: 'sim1',      name: 'First Paper',      perk: 'You have seen a whole paper.',         how: 'Finish any of the three tests.' },
   { id: 'sim70',     name: 'Seventy Up',       perk: '70% on a full paper.',                 how: 'Score 70% or more on any test.' },
   { id: 'simall',    name: 'All Three Papers', perk: 'Triage and both final checks, done.',  how: 'Finish all three tests.' },
-  { id: 'director',  name: 'Beyond Doubt',     perk: 'Every stage green.',                   how: 'Clear all 27 stage checks.' }
+  { id: 'director',  name: 'Beyond Doubt',     perk: 'Every stage green.',                   how: 'Clear all 30 stage checks.' }
 ];
 
 /* --------------------------------------------------------------------------
@@ -877,6 +878,98 @@ var REMEDIATION = {
       'Irregular relay: call out a base verb and a guess strength; the first student says the full chain (may have taken, can\'t have known), the next must use it in a sentence about a news story, and any past simple in the third slot sends the team back to the start.'
     ]
   },
+
+  /* ---------------------------------------- STAGE 10 · Modals in the TCAS70 Paper */
+  'tc-request': {
+    name: 'Requests, offers and permission: who does the action?',
+    principle: 'Before you choose, ask who will do the action. In a request the listener does it; in an offer the speaker does it for the listener; in a request for permission the speaker does it but asks first. Each job has its own replies, so read the line after the blank and work backwards: thanks follows an offer, <em>Go ahead</em> follows a request for permission. With <em>mind</em> questions, a reply that starts with a no-word means yes.',
+    reteach: 'The student is matching options by topic and politeness level rather than by function, so any polite question about the right object looks correct. The fix is a single question asked before reading the options: who will do the action? Put three columns on the board (listener does it, speaker does it for the listener, speaker does it with permission) and sort the forms, then sort the replies, so that each reply becomes a fingerprint of one job. Treat Would you mind as its own drill, because Thai yes/no logic makes Yes, I would sound like agreement; have students paraphrase every mind question as "Would it bother you…?" before answering. Watch the one-word switch between Would you like to (invitation) and Would you like me to (offer), and the tense after Do you mind if I (present) and Would you mind if I (past). It is still broken when the student chooses a request where the next line says That\'s kind of you, or answers a mind question with Yes, of course. It is fixed when she can cover the options, read the next line, and say which job the blank did before she looks.',
+    activities: [
+      'Reply first: deal out reply cards (Not at all; Go ahead; Thanks, but I can manage; I\'d love to, but…; Sure) and pairs must write the question that produced each one, then swap and check who does the action in their partner\'s question.',
+      'Mind or not: the teacher reads twelve quick questions, half with mind and half without, and students hold up a green card (I\'m happy to) or a red card (I\'d rather not) for a spoken reply given by a volunteer, so that Not at all and Yes, I would are judged in context.'
+    ]
+  },
+
+  'tc-advice': {
+    name: 'Advice and warnings: how strong, and when?',
+    principle: 'Advice comes in strengths: a gentle suggestion leaves the choice open, firm advice says what you think is right, and a warning adds a bad result if the listener ignores it. Then check the time. Advice looks forward, so it can answer <em>What should I do?</em>; a form with <em>have</em> + past participle looks back at a mistake that has already been made, and nothing can be done about it. The reply after the blank usually shows which time the blank was about.',
+    reteach: 'Two errors come together here. The first is strength: students treat should, had better and why don\'t you as interchangeable, so they miss the warning signalled by or you\'ll… in the next clause. The second is time: should have looks like stronger advice to Thai learners, because Thai marks the past with a time word rather than the verb, so they pick it as the answer to What should I do? Teach the reply as the clue: I\'ll do it tonight answers forward-looking advice, It\'s too late now answers should have, and an immediate action answers a warning. Give the one friendly exception, Oh, you shouldn\'t have!, as a fixed phrase for presents so that it does not confuse the rule. It is still broken when the student chooses should have for a friend asking for help, or reads you\'d better as polite advice to a teacher. It is fixed when she can place six replies on a timeline and say what kind of line must come before each.',
+    activities: [
+      'Help or blame: read short problems aloud (My phone is cracked; I failed the quiz; I can\'t sleep before exams) and students answer with one line of advice and one line of should have, then the class votes on which one the speaker actually needs right now.',
+      'Strength ladder: give each group strips with eight advice lines and a picture of a ladder with three rungs (suggest, advise, warn), plus a separate box for looking back; groups place the strips and must add an or… consequence to every line they put on the warning rung.'
+    ]
+  },
+
+  'tc-guess-talk': {
+    name: 'Guessing in conversation: how sure is the speaker?',
+    principle: 'In conversation a modal can be a guess, and its strength must match the evidence around the blank: strong proof for, a possibility, or strong proof against. For a guess about the past, add <em>have</em> + past participle and keep the same strength. The rule word for "not allowed" is never a guess, and a form that says what was the right thing to do is not a guess either. Stance markers must match too: second-hand news, limited knowledge and "correct me if I\'m wrong" are all less than certain.',
+    reteach: 'Students choose guesses by sound and by the first modal they learned, which is usually must as obligation, so must be joking and that can\'t be right are learned as idioms with no link to strength. Rebuild the link: before looking at options, students underline the evidence in the line before and after the blank and label it strong for, maybe, or strong against. Then they choose must, might or can\'t, and add have + past participle if the evidence is about something already over. Keep should have out of the guessing family explicitly, because it shares the shape and is the most common distractor. Add the stance markers as a matching step: apparently for second-hand news, as far as I know for limited knowledge, if I\'m not mistaken for a polite correction. It is still broken when the student picks might for a name written on the lid, or mustn\'t for a strong no. It is fixed when she can justify each choice by pointing at the evidence words.',
+    activities: [
+      'Evidence auction: show a scene card (a wet umbrella by the door, a name on a lunchbox, a friend who was in Chiang Mai yesterday) and teams bid with must, might or can\'t sentences; the class only accepts a bid if the team can point to the evidence that justifies its strength.',
+      'Stance swap: give pairs a short dialogue with every stance marker removed and a list of markers (apparently, as far as I know, obviously, if I\'m not mistaken); they replace each one and explain what the rest of the line tells them about the speaker\'s certainty or source.'
+    ]
+  },
+
+  'tc-modal-passive': {
+    name: 'Modal passives: must be checked, should have been reported',
+    principle: 'Ask two questions in order. First: does the subject do the action or receive it? If it receives it, the verb needs <em>be</em> and a past participle. Second: when? For now or later the modal is followed by <em>be</em>; for the past it is followed by <em>have been</em>. Modals that keep their <em>to</em> take <em>to be</em> before the past participle. Look for the doer in another sentence and for the time word near the blank.',
+    reteach: 'In Text Completion the four options are forms of one verb, so a student who checks only one dimension will be caught by the option that is right on the other. The usual pattern is choosing the right time with the wrong voice (should have reported for faults, must check for tunnels) or the right voice with the wrong time (must have been checked before the next rainy season). Teach a fixed two-step routine on a grid: voice down the side, time across the top, and the four options placed in its cells, so the student can see that only one cell fits both clues. Add the to-keeping modals (need to, ought to, is expected to) as a separate row, and drill the past participle after be, since ought to be teach is a common production error. Point out that the negative of a passive guess is can\'t have been, not mustn\'t have been. It is still broken when the student can name the voice but still picks an active form under time pressure. It is fixed when she can say both answers, doer and time, before choosing.',
+    activities: [
+      'Voice-time grid: give each pair a 2×2 grid (active/passive × now/past) and a set of four-option items; they place every option in its cell and circle the one that matches both clues from the passage before checking the key.',
+      'Notice writer: groups write five lines for a school notice (lockers, lab safety, field-trip rules) using must be, need to be, ought to be and is expected to be, then a sixth line criticising last year\'s trip with should have been; another group checks every past participle.'
+    ]
+  },
+
+  'tc-subjunctive': {
+    name: 'The subjunctive: recommend that she be',
+    principle: 'After words that say what should happen — <em>recommend</em>, <em>suggest</em>, <em>insist</em>, <em>demand</em>, <em>It is essential / vital that</em> — the that-clause uses the bare base form for every subject and every tense, or <em>should</em> + base form. Nothing else fits: no <em>-s</em>, no <em>to</em>, no future or conditional modal. If the subject receives the action, use <em>be</em> + past participle; the negative is <em>not</em> + base form. But when <em>suggest</em> or <em>insist</em> reports a fact, use a normal tense.',
+    reteach: 'Students who have just mastered third-person -s apply it everywhere, so that every student brings feels obviously right to them, and will looks natural because the plan is in the future. Present the subjunctive as a hidden should: write the sentence with should, then rub should out and show that the verb is left untouched. Drill the elimination routine on four-option items (cross out -s, past, to, will and would), then add the passive (be changed, be introduced) and the negative (not be shared) as longer versions of the same base form. Teach the fact reading of suggest and insist separately and late, with research and dispute contexts (the data suggest that…, she insisted that she had locked the door), so that students decide by meaning, not by the trigger. It is still broken when the student adds -s after a singular subject or picks will be in a recommendation, or forces a base form onto the data suggest. It is fixed when she can sort a mixed set of that-clauses into should-happen and is-true before choosing the verb.',
+    activities: [
+      'Disappearing should: students write five recommendations from a school nurse with should, then rewrite them without it and read them aloud, checking that every verb stayed bare; any -s that appears costs the group a point.',
+      'Two meanings of suggest: pairs get ten sentences with suggest or insist and a gap; they first label each sentence advice or fact, and only then fill the gap, so the decision about meaning always comes before the decision about form.'
+    ]
+  },
+
+  'tc-cond': {
+    name: 'Modals in conditionals: would, could, might, and Should you…?',
+    principle: 'In an if-sentence the modal belongs in the result clause, not after <em>if</em> or <em>unless</em>. Each half has its own time: find the time word in each clause and build each half for that time, so a past condition can have a present result. <em>Unless</em> already means "if not", so it takes a present verb and no extra negative. In formal notices, <em>if</em> can disappear and the verb comes first, and the word that begins such a condition is not advice.',
+    reteach: 'Three habits cause most errors. Students copy the future into the if-clause (if it will rain), because Thai uses the same future marker in both halves. They build both halves to the same type even when the result clause says now or today, which is the mixed-conditional trap TCAS has used. And they add a negative after unless, reversing the meaning. Teach the two-clock principle with a timeline under each half of the sentence, and make students underline the time word in each clause before choosing. Treat unless as if not by physically rewriting it, so the double negative becomes visible. Introduce the inverted forms (Should you need, Had it not been for, Were it not for) as formal notice language and stress that should there means if, not advice. It is still broken when the student picks would have known with now in the result, or writes unless it doesn\'t stop. It is fixed when she can transform a formal inverted condition into an if-sentence and back without changing its meaning.',
+    activities: [
+      'Two clocks: give pairs ten if-sentences with a gap in one half; before filling it, they draw a small clock over each clause and write past, now or future, and only then choose the form; mixed conditionals are scored double.',
+      'Notice rewrite: hand out real-style notices with if-clauses (If you lose your card…, If you wish to join…) and groups rewrite them in the formal inverted style, then another group rewrites them back and checks that the meaning has not changed.'
+    ]
+  },
+
+  'tc-read-hedge': {
+    name: 'Hedged claims in the news: may is not will',
+    principle: 'Writers show how sure they are. A plain verb is a fact, <em>will</em> is a firm prediction, a probable outcome comes next, a possibility is weaker still, and a verb that says what the evidence points to is not a proof. Find the sentence an option is about, mark how strong its claim is, and keep the option on the same rung: an option that is stronger or weaker than the text does not match it, even if every other word is the same.',
+    reteach: 'Students read news for topic words, so an option that repeats the topic and the key nouns looks true, and the change from may to will is invisible to them. The fix is to make the strength of each claim a thing they mark on the page. Use a five-rung ladder (fact, will, likely or expected, may or could, appears to) and have students write the rung number in the margin beside every hedged sentence before they read the questions. Then each option gets a rung number too, and any mismatch rules it out. Teach the source question alongside the strength question, since news reports attribute hedges (officials say, researchers warn), and distinguish Can\'t tell from False in judge items: a may claim neither confirms nor denies a will statement. It is still broken when the student chooses an option that turns a proposal into a decision, or treats appears to as proved. It is fixed when she can explain every wrong option by naming the rung it jumped to.',
+    activities: [
+      'Rung numbers: students annotate a short news report by writing a rung number (1 = fact to 5 = appears to) beside every claim, then compare with a partner and resolve every disagreement by quoting the exact word that sets the strength.',
+      'Headline inflation: groups receive a careful news paragraph and write the most exaggerated honest-looking headline they can, then swap and repair each other\'s headline so that it keeps the original modal strength.'
+    ]
+  },
+
+  'tc-fineprint': {
+    name: 'Fine print: must, need not, may, cannot',
+    principle: 'Rules in notices and ads come in four kinds: something you have to do, something you do not have to do, something you are allowed to do, and something that is forbidden. The two negatives are opposites: "not necessary" leaves the choice to you, while "forbidden" does not. In a rule, the possibility modal usually gives permission. For NOT and EXCEPT questions, check every option against the rule words one by one.',
+    reteach: 'The student reads every negative in fine print as a prohibition, so need not, don\'t have to and cannot all become "not allowed", and an option such as using the pass without booking a seat is wrongly ruled out. The second confusion is may: students read it as a possibility, which is its job in a report, and miss the permission it gives in a rule. Teach a four-column table (must / need not / may / cannot) and have students copy every rule line of an ad into the right column before answering any question; the questions then become look-ups. Point out the formal forms that ads use instead of must, such as will be required to and must be reserved, and the passives cannot be shared and cannot be combined. Drill conditions (age, dates, valid ID, at least one day in advance), because TCAS ad items often ask who qualifies. It is still broken when the student says need not book means booking is banned. It is fixed when she can answer a NOT allowed item and then explain why each of the three allowed options is allowed.',
+    activities: [
+      'Four-column fine print: pairs take a real-style ad, copy every rule into must, need not, may or cannot, and then write one question of their own (Which student can…?) for another pair to answer from the table alone.',
+      'Who gets in: give a notice with conditions and a set of character cards (age, day, ID status, booking time); students decide which characters qualify and must quote the rule word that decides each case.'
+    ]
+  },
+
+  'tc-read-stance': {
+    name: 'The writer\'s stance: should, must, could have, might want to',
+    principle: 'A writer\'s modals carry her attitude. A recommendation and an insistence both point forward and show that the text is arguing, not reporting. A form with <em>have</em> + past participle that describes a chance that was not taken carries criticism or disappointment. A soft suggestion addresses readers politely. Mark each modal as recommend, insist, criticise the past or suggest politely, and let the pattern answer purpose, tone and "whom does the writer criticise" questions.',
+    reteach: 'Students meet should and could mainly as advice and ability, so in an opinion piece they read could have moved as a guess or as ability and miss the criticism, and they read should have listened as advice for the future. They also judge tone by topic words rather than by the modals, so an article about tired teenagers is called sympathetic even when it attacks tutoring schools. Teach a four-letter margin code (R recommend, I insist, C criticise the past, P polite suggestion) and require students to code every modal before answering tone or purpose questions. Show how one writer can be harsh with one group and gentle with another in the same article, and have students compare the strongest modal used for each group. It is still broken when the student calls a should have sentence advice, or cannot say whom the writer criticises most. It is fixed when she can name the purpose of an opinion piece and support it with two coded modals.',
+    activities: [
+      'Margin code: students code every modal in a short opinion article with R, I, C or P, then use only their codes to answer three questions on purpose, tone and the group most criticised, and check their answers against the text.',
+      'Same facts, two writers: groups receive a set of facts about a school decision and write two short paragraphs, one neutral report with no modals of stance and one opinion piece using ought to, must, should have and might want to; the class guesses which group each paragraph is aimed at.'
+    ]
+  },
+
 
 };
 

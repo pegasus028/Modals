@@ -35,7 +35,7 @@ vm.createContext(ctx);
 
 [ 'content.js',
   'topic-s1.js', 'topic-s2.js', 'topic-s3.js', 'topic-s4.js',
-  'topic-s5.js', 'topic-s6.js', 'topic-s7.js', 'topic-s8.js', 'topic-s9.js',
+  'topic-s5.js', 'topic-s6.js', 'topic-s7.js', 'topic-s8.js', 'topic-s9.js', 'topic-s10.js',
   'media.js', 'test-1.js', 'test-2.js', 'test-3.js',
   'content-export.js', 'engine.js'
 ].forEach(function (f) {

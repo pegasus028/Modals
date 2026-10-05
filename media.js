@@ -52,7 +52,8 @@ var MEDIA = {
   t6: { title: 'Modality in Past Time',                 podcast: 'audio/stage-6.mp3', slides: '', video: '' },
   t7: { title: 'Hedging and Stance',                    podcast: 'audio/stage-7.mp3', slides: '', video: '' },
   t8: { title: 'The Whole System',                      podcast: 'audio/stage-8.mp3', slides: '', video: '' },
-  t9: { title: 'Unit 5 Review',                         podcast: '', slides: '', video: '' }   /* save audio/stage-9.mp3 and set podcast to that path */
+  t9: { title: 'Unit 5 Review',                         podcast: 'audio/stage-9.mp3', slides: '', video: '' },
+  t10: { title: 'Modals in the TCAS70 Paper',           podcast: '', slides: '', video: '' }   /* save audio/stage-10.mp3 and set podcast to that path */
 };
 
 /* How long each episode runs, in minutes, if you want the card to say so.

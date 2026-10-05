@@ -1,7 +1,7 @@
 # Fine Tuning — The English Modal System
 
-A self-study app for English modal verbs, B1 → C1. Nine stages, twenty-seven levels,
-eighty-one modules, 633 questions, and three tests: a **triage** that decides where a
+A self-study app for English modal verbs, B1 → C1. Ten stages, thirty levels,
+ninety modules, 702 questions, and three tests: a **triage** that decides where a
 student should start, and two **final checks**, one at B2 and one at C1.
 
 It runs on the same engine as Mission Control, unchanged. Everything here that is not
@@ -107,12 +107,15 @@ switched off because there are none yet. To turn it on, save them as `slides/s-0
 | `teacher.html` / `teacher.js` | the class console |
 | `podcasts.html` | the listening-only page |
 | `theme.css` | all the design tokens and components; light and dark follow the OS |
-| `engine.js` | item rendering and marking, progress, unlocks, the fault list, XP, badges, test scoring. **Copied from Mission Control unchanged.** |
+| `engine.js` | item rendering and marking, progress, unlocks, the fault list, XP, badges, test scoring. From Mission Control, plus four pieces ported from TCAS70 Launchpad (Oct 2026): the mind-map drawer, the italic *Situation* line in dialogues, order-item feedback that names sentences by their first words, and "rules covered" counting only rules answered correctly. Pass marks unchanged (60% / 75%). |
 | `api.js` | one client for both consoles; cloud when a server URL is set, localStorage when not. **Unchanged.** |
 | `content-export.js` | attaches the media to each stage and hands the curriculum to the engine. **Unchanged.** |
-| `content.js` | the rank ladder, the awards, and the 68-tag remediation dictionary that drives the hints and the teacher report |
+| `content.js` | the rank ladder, the awards, and the 86-tag remediation dictionary that drives the hints and the teacher report |
 | `topic-s1.js` … `topic-s8.js` | the eight core stages — the whole syllabus |
 | `topic-s9.js` | Stage 9, the Unit 5 review (Gateway to the World B2, Unit 5) — see below |
+| `topic-s10.js` | Stage 10, modals in the TCAS70 paper — see below |
+| `lenses.js` | the lesson lenses for all 90 modules: ภาษาไทย, mind map, story, chant, moves, analogy and trap — see below |
+| `lab-data.js` | the Modal Lab: dial scenes, Detective cases, Cliff sentences, Time Machine items and the 73 flashcards |
 | `test-1.js` | the triage. **Loads first, and must: the engine treats the first test as the diagnostic.** |
 | `test-2.js` / `test-3.js` | the B2 and C1 final checks |
 | `media.js` | the podcast, video and slide links |
@@ -140,11 +143,90 @@ inside the app. Three levels, nine modules, 63 items, nine tags (all beginning `
 
 The triage test now has a **Part E** (items m1-21 to m1-26, one per key Unit 5 point). A
 miss there puts the matching Stage 9 module on the student's checklist; Parts A–D still
-route to Stages 1–8 as before. The triage is 26 questions and 32 minutes, and the rank
-ladder tops out at 27 stage checks.
+route to Stages 1–8 as before.
 
-`media.js` has a `t9` entry with the podcast left empty — record `audio/stage-9.mp3` and
-put that path in, and the player appears.
+October 2026: two items were replaced so that every point on the Unit 5 grammar page (p. 68)
+is practised, not just explained — `t9l1s1-5` now tests *can't* for refusing permission
+("Can I go…?" — "No, you can't"), and `t9l3s1-5` tests *mightn't* in a guess about the
+future. The theory of both modules gained a matching line and example. The podcast
+(`audio/stage-9.mp3`) is now wired in.
+
+### Coverage of the Unit 5 grammar page
+
+| point on p. 68 | where it is practised |
+|---|---|
+| have to / don't have to / must / mustn't / need to / don't need to / needn't (no *to*) / can't (refusing permission) | t9l1s1, t9l1s3 |
+| should / shouldn't / ought to / had better (rare in negatives and questions) | t9l1s2, t9l1s3 |
+| had to / didn't have to / needed to | t9l2s1 |
+| didn't need to vs needn't have + pp | t9l2s3 |
+| wasn't / weren't allowed to, couldn't (prohibited or not possible) | t9l2s2 |
+| should / ought to / shouldn't have + pp (criticism) | t9l2s3 |
+| must / may / might / could / may not / mightn't / can't — present and future | t9l3s1 |
+| must have / may (not) have / might (not) have / could have / can't have | t9l3s2, t9l3s3 |
+
+The Modal Lab's **Rule Board** lays the same page out as one interactive grid.
+
+---
+
+## Stage 10 — modals in the TCAS70 paper
+
+The TCAS70 Launchpad map shows where modals actually cost marks in the A-Level paper:
+conversation gaps (advice, requests, permission, *should have* — 10 keys across the five
+mocks), and Text Completion blanks that hinge on the subjunctive, conditionals and passive
+infinitives. Stage 10 trains exactly those, in the paper's own item shapes (dialogue gaps
+where the line after the blank decides, cloze passages, reading questions). 63 items,
+nine tags (all beginning `tc-`):
+
+| level | modules |
+|---|---|
+| Conversations: the line after the blank | requests, offers, permission · advice, warnings and *should have* · guessing in conversation and stance markers |
+| Text Completion: modals inside the sentence | modal + passive and passive infinitives · the subjunctive after *recommend / suggest / insist that* · conditionals and inversion |
+| Reading: what the writer is sure of | hedged claims in news · rules and fine print · the writer's stance through modals |
+
+The triage now has a **Part F** (m1-27 to m1-32) that routes to Stage 10. The triage is
+32 questions and 38 minutes, and the rank ladder tops out at 30 stage checks.
+`media.js` has a `t10` entry with the podcast left empty — save `audio/stage-10.mp3` and
+put that path in.
+
+---
+
+## Lesson lenses
+
+Every module now opens with tabs, the same set as TCAS70 Launchpad: **Explain · Simple
+English · ภาษาไทย · Mind map · Story · Chant · Moves**. Explain also shows an analogy and
+the trap. The Story tab is a short comic strip with a recurring cast (Nong Bot, the robot
+who takes every modal literally; Ploy, Fah, Mai, Nan, Pim, Mint; and T.Chris, who fixes
+Bot's mistake). Chant has a play button for a kick-kick-clap beat.
+
+The lenses live in `lenses.js`, keyed by module id, and are merged into the module's
+theory when the lesson opens — so a module without an entry simply shows fewer tabs.
+The Settings switch for simpler English now opens lessons on the Simple English tab.
+The Thai was written for this app and has not yet been read by a native speaker; it is
+worth a skim.
+
+---
+
+## The Modal Lab
+
+A new tab in the student nav. None of it touches the route or the checklist.
+
+- **The Certainty Dial** — slide from *can't* to *must* and watch the sentence change;
+  switch to PAST and *have* + participle appears (and *should* / *will* are greyed out,
+  with the reason). Challenge mode shows a piece of evidence and the student sets the dial.
+- **The Rule Board** — the Unit 5 grammar page as one grid, present against past. "Cover
+  the forms" hides every cell for self-testing; each row links to its Stage 9 module.
+- **Games** — *Modal Detective* (40 cases: must / might / can't, now and past, 10 s each),
+  *The Negation Cliff* (40 sentences: no obligation or not allowed?), *Time Machine*
+  (30 items: send a sentence into the past). Three lives, a streak multiplier, a reason
+  after every answer, keys 1–4, best scores kept, and XP for points.
+- **Sprints** — six timed runs over the practice bank (never the tests): How Sure?, Rules,
+  Unit 5 Blitz, Politeness, TCAS70 Pace (67 s a question) and Full Mix 20. Weak and unseen
+  rules come first; misses go onto the fault list.
+- **Flashcards** — 73 modal forms (form, function, meaning, Thai, example) in a five-box
+  Leitner cycle.
+
+Best scores, sprint records and flashcard boxes are saved inside the student's progress
+(`lab`, `sprints`, `flash`), so they travel with the account.
 
 ---
 
@@ -154,7 +236,7 @@ Two scripts, both offline, both run from this folder:
 
 ```
 node verify.js        # structure: ids, tags, answer indices, escaped fields, ranks, media
-node render-test.js   # mounts all 633 items in a headless DOM and answers each one
+node render-test.js   # mounts all 702 items in a headless DOM and answers each one
 node audit.js         # key balance per stage/test; `node audit.js t3` for one stage in detail
 ```
 
@@ -181,7 +263,10 @@ to do it. It swaps two options and updates `answer` — it never rewords anythin
 skips any item whose `why` refers to an option by number or by position, so no explanation
 can be made untrue.
 
-Both were clean at the time of writing: 633 items, 77 tags, no errors, no warnings.
+`verify.js` also checks `lenses.js` and `lab-data.js` (module ids, escaped fields, answer
+values, card themes).
+
+All clean at the time of writing (5 October 2026): 702 items, 86 tags, no errors, no warnings.
 (They also run from the folder above, if you keep the app in a subfolder.)
 
 ---
@@ -212,4 +297,4 @@ paragraph break in a passage, never `<p>`. `verify.js` checks all of this.
 - Nothing else is ever locked. Every stage and every level is open from the first day; the
   checklist the triage builds is the shortest route, not the only one.
 - The rank ladder is the certainty scale itself: **No Reading → Might → Could → May → May
-  Well → Should → Will → Must → Beyond Doubt**, one rung per band of the 24 stage checks.
+  Well → Should → Will → Must → Beyond Doubt**, one rung per band of the 30 stage checks.

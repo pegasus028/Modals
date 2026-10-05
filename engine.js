@@ -124,7 +124,9 @@
     Object.keys(C.REMEDIATION).forEach(function (tag) {
       total++;
       var st = p.stats && p.stats.byTag && p.stats.byTag[tag];
-      if (st && st.a) seen++;
+      /* Answered correctly at least once. Merely meeting a rule and getting
+         it wrong is not cover. */
+      if (st && st.c) seen++;
     });
     return { seen: seen, total: total };
   }
@@ -424,7 +426,7 @@
     if (item.lines) {
       var d = el('div', 'dialogue');
       item.lines.forEach(function (l) {
-        var row = el('div', 'dline');
+        var row = el('div', 'dline' + (l.who === 'Situation' ? ' dsit' : ''));
         row.appendChild(el('span', 'who', esc(l.who)));
         /* The dialogue tracks the current gap the same way the gapped text
            does, so advancing through questions 6 to 10 moves the highlight
@@ -730,10 +732,16 @@
         check: function () {
           var ok = picked.length === item.items.length &&
             picked.every(function (v, i) { return v === i; });
+          /* The cards carry no letters on screen, so "A-B-C-D" meant nothing
+             to a student. Name each one by its opening words instead. */
+          var head = function (i) {
+            var w = String(item.items[i]).replace(/<[^>]+>/g, '').split(/\s+/).slice(0, 3).join(' ');
+            return '\u201c' + w + '\u2026\u201d';
+          };
           return {
             correct: ok,
-            givenText: picked.map(function (i) { return 'ABCD'[i] || (i + 1); }).join('-') || '(no answer)',
-            expectedText: item.items.map(function (x, i) { return 'ABCD'[i] || (i + 1); }).join('-')
+            givenText: picked.map(head).join(' \u2192 ') || '(no answer)',
+            expectedText: item.items.map(function (x, i) { return head(i); }).join(' \u2192 ')
           };
         },
         lock: function () {
@@ -747,6 +755,30 @@
     }
   };
 
+  /* Mind maps for the lesson lenses are drawn from data (ported from TCAS70
+     Launchpad), so every map re-themes itself in dark mode. */
+  var PAL = ['var(--accent)', 'var(--gold)', 'var(--ok)', 'var(--no)', 'var(--ink-3, #7a8599)', 'var(--accent-line)', '#8e6bbf'];
+  function mindMapSvg(m) {
+    var W = 860, H = 380, cx = W / 2, cy = H / 2, n = m.branches.length;
+    var s = '<svg class="mindmap" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Mind map: ' + esc(m.center) + '">';
+    var nodes = '';
+    m.branches.forEach(function (b, i) {
+      var ang = -Math.PI / 2 + i * 2 * Math.PI / n, bx = cx + Math.cos(ang) * 190, by = cy + Math.sin(ang) * 120;
+      var col = PAL[i % PAL.length];
+      s += '<path d="M' + cx + ',' + cy + ' Q' + (cx + Math.cos(ang) * 80) + ',' + (cy + Math.sin(ang) * 30) + ' ' + bx + ',' + by + '" stroke="' + col + '" stroke-width="4" fill="none" opacity=".75"/>';
+      var leaves = b.leaves || [], right = Math.cos(ang) >= -0.05;
+      leaves.forEach(function (lf, j) {
+        var ly = by - (leaves.length - 1) * 11 + j * 22, lx = bx + (right ? 72 : -72);
+        s += '<line x1="' + bx + '" y1="' + by + '" x2="' + lx + '" y2="' + ly + '" stroke="' + col + '" stroke-width="1.5" opacity=".6"/>';
+        nodes += '<text x="' + (lx + (right ? 4 : -4)) + '" y="' + (ly + 4) + '" class="mm-leaf" text-anchor="' + (right ? 'start' : 'end') + '">' + esc(lf) + '</text>';
+      });
+      nodes += '<rect x="' + (bx - 62) + '" y="' + (by - 14) + '" width="124" height="28" rx="14" fill="var(--surface)" stroke="' + col + '" stroke-width="2"/>' +
+        '<text x="' + bx + '" y="' + (by + 4) + '" class="mm-branch" text-anchor="middle">' + esc(b.label) + '</text>';
+    });
+    nodes += '<ellipse cx="' + cx + '" cy="' + cy + '" rx="92" ry="30" fill="var(--accent)"/>' +
+      '<text x="' + cx + '" y="' + (cy + 5) + '" class="mm-center" text-anchor="middle">' + esc(m.center) + '</text>';
+    return s + nodes + '</svg>';
+  }
   function mount(item, host) {
     host.innerHTML = '';
     host.dataset.type = item.type;
@@ -1034,7 +1066,7 @@
   global.Engine = {
     el: el, esc: esc, shuffle: shuffle, norm: norm, today: today, daysBetween: daysBetween,
     stripTags: stripTags,
-    mount: mount, TYPE_LABEL: TYPE_LABEL, Bank: Bank, art: artSvg, artBand: artBand, ART: ART,
+    mount: mount, mindMapSvg: mindMapSvg, TYPE_LABEL: TYPE_LABEL, Bank: Bank, art: artSvg, artBand: artBand, ART: ART,
     PASS_SUB: PASS_SUB, PASS_CHECK: PASS_CHECK, SPEED_MS: SPEED_MS, XP_SPEED: XP_SPEED,
     Progress: Progress
   };

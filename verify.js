@@ -1,8 +1,8 @@
 /* ===========================================================================
    FINE TUNING — verify.js
    Offline pre-flight check. Run with:  node verify.js
-   Loads content.js, the eight stage files and the three tests exactly as the
-   browser does, then runs the twenty checks from the engine contract.
+   Loads content.js, the ten stage files and the three tests exactly as the
+   browser does, then lenses.js and lab-data.js, then runs the twenty checks from the engine contract.
    Exits non-zero if anything fails, so it can gate a deploy.
    =========================================================================== */
 var fs = require('fs');
@@ -16,7 +16,7 @@ var DIR = fs.existsSync(path.join(__dirname, 'content.js'))
 var FILES = [
   'content.js',
   'topic-s1.js', 'topic-s2.js', 'topic-s3.js', 'topic-s4.js',
-  'topic-s5.js', 'topic-s6.js', 'topic-s7.js', 'topic-s8.js', 'topic-s9.js',
+  'topic-s5.js', 'topic-s6.js', 'topic-s7.js', 'topic-s8.js', 'topic-s9.js', 'topic-s10.js',
   'media.js',
   'test-1.js', 'test-2.js', 'test-3.js',
   'content-export.js'
@@ -278,6 +278,70 @@ topicIds.forEach(function (id) {
     if (share < 0.17) warn('option ' + (i + 1) + ' holds only ' + Math.round(share * 100) +
       '% of the four-option keys (' + c + ' of ' + n + ') \u2014 run rebalance.js');
   });
+})();
+
+/* ------------------------------------------- lesson lenses and Modal Lab */
+(function () {
+  var HTML = /<\/?[a-z][^>]*>/i;
+  ['lenses.js', 'lab-data.js'].forEach(function (f) {
+    var fp = path.join(DIR, f);
+    if (!fs.existsSync(fp)) return warn(f + ' is missing — that feature will simply not appear');
+    try { vm.runInContext(fs.readFileSync(fp, 'utf8'), ctx, { filename: f }); }
+    catch (e) { err('THROWS: ' + f + ' — ' + e.message); }
+  });
+  var L = ctx.LENSES || {}, subIds = {};
+  C.TOPICS.forEach(function (t) { t.levels.forEach(function (lv) { lv.subs.forEach(function (sb) { subIds[sb.id] = 1; }); }); });
+  Object.keys(L).forEach(function (id) {
+    var x = L[id];
+    if (!subIds[id]) return err('lenses.js: "' + id + '" is not a module id');
+    if (x.thai && HTML.test(x.thai)) err('lenses.js ' + id + ': HTML in thai (that field is escaped)');
+    if (x.map) {
+      if (!x.map.center || !Array.isArray(x.map.branches)) err('lenses.js ' + id + ': map needs center + branches');
+      else x.map.branches.forEach(function (b) {
+        if (!b.label || !Array.isArray(b.leaves)) err('lenses.js ' + id + ': map branch needs label + leaves');
+        [b.label].concat(b.leaves || []).forEach(function (t) { if (HTML.test(t || '')) err('lenses.js ' + id + ': HTML in map text'); });
+      });
+    }
+    if (x.story && !(Array.isArray(x.story.panels) && x.story.panels.length)) err('lenses.js ' + id + ': story has no panels');
+    if (x.chant && !(Array.isArray(x.chant.lines) && x.chant.lines.length)) err('lenses.js ' + id + ': chant has no lines');
+    if (x.moves && !Array.isArray(x.moves)) err('lenses.js ' + id + ': moves must be a list');
+  });
+  Object.keys(subIds).forEach(function (id) { if (!L[id]) warn('module ' + id + ' has no lesson lenses'); });
+
+  var LB = ctx.LAB;
+  if (LB) {
+    var seen = {};
+    function uid(r, k) { if (seen[r.id]) err('lab-data.js: duplicate id ' + r.id); seen[r.id] = 1; }
+    (LB.dial || []).forEach(function (d) {
+      uid(d);
+      (d.evidence || []).forEach(function (e) {
+        if (['cant', 'weak', 'should', 'will', 'must'].indexOf(e.rung) < 0) err('lab-data.js ' + d.id + ': bad rung ' + e.rung);
+        if (e.time === 'past' && ['cant', 'weak', 'must'].indexOf(e.rung) < 0) err('lab-data.js ' + d.id + ': a past rung must be must, weak or cant');
+      });
+    });
+    (LB.detective || []).forEach(function (d) {
+      uid(d);
+      if (['must', 'might', 'cant'].indexOf(d.answer) < 0) err('lab-data.js ' + d.id + ': bad answer');
+      if ((d.sentence || '').split('___').length !== 2) err('lab-data.js ' + d.id + ': sentence needs exactly one ___');
+    });
+    (LB.cliff || []).forEach(function (d) {
+      uid(d);
+      if (['free', 'ban'].indexOf(d.answer) < 0) err('lab-data.js ' + d.id + ': bad answer');
+      if ((d.text || '').split('___').length !== 2) err('lab-data.js ' + d.id + ': text needs exactly one ___');
+    });
+    (LB.timeMachine || []).forEach(function (d) {
+      uid(d);
+      if (!Array.isArray(d.options) || !(d.answer >= 0 && d.answer < d.options.length)) err('lab-data.js ' + d.id + ': answer out of range');
+    });
+    var TH = ctx.MODAL_CARD_THEMES || {};
+    (ctx.MODAL_CARDS || []).forEach(function (c, i) {
+      if (!Array.isArray(c) || c.length !== 7) err('lab-data.js: card ' + i + ' needs 7 fields');
+      else if (!TH[c[3]]) err('lab-data.js: card "' + c[0] + '" has unknown theme ' + c[3]);
+    });
+    console.log('lenses: ' + Object.keys(L).length + ' modules · lab: ' + (LB.dial || []).length + ' dial scenes, ' +
+      (LB.detective || []).length + ' detective, ' + (LB.cliff || []).length + ' cliff, ' + (LB.timeMachine || []).length +
+      ' time machine, ' + (ctx.MODAL_CARDS || []).length + ' cards');
+  }
 })();
 
 /* ------------------------------------------------------------------ report */

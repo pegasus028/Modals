@@ -1,5 +1,5 @@
 /* ===========================================================================
-   MISSION CONTROL — student.js
+   FINE TUNING — student.js
    =========================================================================== */
 (function () {
   'use strict';
@@ -248,13 +248,15 @@
   }
 
   /* --------------------------------------------------------------- views */
-  var VIEWS = ['plan', 'map', 'play', 'review', 'revise', 'vids', 'pods', 'faults', 'record', 'settings'];
+  var VIEWS = ['plan', 'map', 'play', 'review', 'lab', 'revise', 'vids', 'pods', 'faults', 'record', 'settings'];
   function show(v) {
     /* An award card left open would sit on top of whatever comes next and
        swallow every click, so changing view clears it — and cancels any award
        still queued behind it. */
     clearTimeout(S.celebrateTimer);
     $('#modal-slot').innerHTML = '';
+    if (v !== 'play') stopBeat();
+    if (v !== 'lab') stopArcade();
     VIEWS.forEach(function (x) { $('#view-' + x).classList.toggle('hidden', x !== v); });
     document.querySelectorAll('.nav button[data-view]').forEach(function (b) {
       b.classList.toggle('on', b.dataset.view === v);
@@ -263,6 +265,7 @@
     try { if (location.hash.replace('#', '') !== v) history.replaceState(null, '', '#' + v); } catch (e) {}
     if (v === 'map') paintMap();
     if (v === 'plan') paintPlan();
+    if (v === 'lab') paintLab();
     if (v === 'revise') paintRevise();
     if (v === 'vids') paintVids();
     if (v === 'pods') paintPods();
@@ -1422,7 +1425,47 @@
     var s = E.Bank.sub(subId);
     var t = E.Bank.topic(s.topicId);
     var lv = E.Bank.level(s.levelId);
-    var paras = (S.simple && s.theory.simple) ? s.theory.simple : s.theory.body;
+    /* A lesson is a set of lenses on one idea. Every student gets the full
+       explanation; the other tabs (lenses.js) are for whoever that explanation
+       missed. A module with no lens entry simply shows fewer tabs. */
+    var th = {}, k0;
+    for (k0 in s.theory) th[k0] = s.theory[k0];
+    var lens = (typeof LENSES !== 'undefined' && LENSES[subId]) || {};
+    for (k0 in lens) if (!th[k0]) th[k0] = lens[k0];
+    var tabs = [['explain', 'Explain']];
+    if (th.simple) tabs.push(['simple', 'Simple English']);
+    if (th.thai) tabs.push(['thai', 'ภาษาไทย']);
+    if (th.map) tabs.push(['map', 'Mind map']);
+    if (th.story) tabs.push(['story', 'Story']);
+    if (th.chant) tabs.push(['chant', 'Chant']);
+    if (th.moves) tabs.push(['moves', 'Moves']);
+    var cur = S.lessonTab && tabs.some(function (x) { return x[0] === S.lessonTab; }) ? S.lessonTab : (S.simple && th.simple ? 'simple' : 'explain');
+    function pane(k) {
+      if (k === 'explain' || k === 'simple') {
+        var paras = k === 'simple' ? th.simple : th.body;
+        var h = '<div class="prose">' + paras.map(function (x) { return '<p>' + x + '</p>'; }).join('') + '</div>';
+        if (th.analogy) h += '<div class="lens analogy"><div class="lens-k">Think of it like this · ' + esc(th.analogy.title || '') + '</div><p>' + th.analogy.text + '</p></div>';
+        if (th.examples) h += '<div class="exlist">' + th.examples.map(function (x) {
+          return '<div><div class="s">' + x.s + '</div><div class="g">' + esc(x.g) + '</div></div>'; }).join('') + '</div>';
+        if (th.trap) h += '<div class="lens trap"><div class="lens-k">⚠ The trap</div><p>' + th.trap + '</p></div>';
+        return h;
+      }
+      if (k === 'thai') return '<div class="lens thai"><div class="lens-k">สรุปภาษาไทย</div><p>' + esc(th.thai) + '</p></div>' +
+        (th.trap ? '<div class="lens trap"><div class="lens-k">⚠ The trap</div><p>' + th.trap + '</p></div>' : '');
+      if (k === 'map') return '<div class="mm-wrap">' + E.mindMapSvg(th.map) + '</div>' +
+        '<div class="mm-list">' + th.map.branches.map(function (b) { return '<div><b>' + esc(b.label) + '</b> — ' + b.leaves.map(esc).join(' · ') + '</div>'; }).join('') + '</div>';
+      if (k === 'story') return '<div class="story"><div class="lens-k">' + esc(th.story.title || 'Story') + '</div>' +
+        th.story.panels.map(function (pn, i) {
+          return '<div class="panel p' + (i % 4) + '"><span class="pn">' + (i + 1) + '</span><b>' + esc(pn.who) + '</b><p>' + pn.text + '</p></div>'; }).join('') +
+        (th.story.moral ? '<div class="moral">★ ' + th.story.moral + '</div>' : '') + '</div>';
+      if (k === 'chant') return '<div class="chant"><div class="lens-k">' + esc(th.chant.title || 'Chant') + '</div>' +
+        (th.chant.beat ? '<div class="beat">Beat: ' + esc(th.chant.beat) + '</div>' : '') +
+        '<div class="lyrics">' + th.chant.lines.map(function (l) { return '<div>' + l + '</div>'; }).join('') + '</div>' +
+        '<button class="btn sm" id="p-beat">' + (beatTimer ? '■ Stop the beat' : '▶ Play the beat') + '</button></div>';
+      if (k === 'moves') return '<div class="moves"><div class="lens-k">Stand up and do it</div>' + th.moves.map(function (m, i) {
+        return '<div class="move"><span class="mn">' + (i + 1) + '</span><div><b>' + esc(m.move) + '</b><p>“' + m.says + '”</p></div></div>'; }).join('') + '</div>';
+      return '';
+    }
     var html = '<div class="play">' +
       '<div class="play-top"><button class="btn ghost sm" id="p-back">← Stages</button>' +
       '<span style="flex:1"></span><span class="qcount">' + esc(t.code) + ' · Level ' + lv.n + '</span></div>' +
@@ -1430,24 +1473,530 @@
       E.artBand(t.art) +
       '<p class="kicker">' + esc(s.cefr) + ' · Module</p>' +
       '<h3>' + esc(s.name) + '</h3>' +
-      '<p class="key">' + s.theory.key + '</p>' +
-      '<button class="btn sm simple-btn" id="p-simple">' +
-        (S.simple ? 'Show the full explanation' : 'Explain this more simply') + '</button>' +
-      '<div class="prose">' + paras.map(function (x) { return '<p>' + x + '</p>'; }).join('') + '</div>';
-    if (s.theory.examples) {
-      html += '<div class="exlist">' + s.theory.examples.map(function (x) {
-        return '<div><div class="s">' + x.s + '</div><div class="g">' + esc(x.g) + '</div></div>';
-      }).join('') + '</div>';
-    }
-    html += '<button class="btn primary wide" id="p-start">Start the ' + s.items.length + ' questions →</button>' +
+      '<p class="key">' + th.key + '</p>' +
+      '<div class="lesson-tabs" role="tablist">' + tabs.map(function (x) {
+        return '<button class="ltab' + (x[0] === cur ? ' on' : '') + '" role="tab" aria-selected="' + (x[0] === cur) + '" data-tab="' + x[0] + '">' + x[1] + '</button>'; }).join('') + '</div>' +
+      '<div class="lesson-pane">' + pane(cur) + '</div>' +
+      '<button class="btn primary wide" id="p-start">Start the ' + s.items.length + ' questions →</button>' +
       '</div></div>';
     $('#view-play').innerHTML = html;
     show('play');
-    $('#p-back').addEventListener('click', function () { show(S.planReturn ? 'plan' : 'map'); });
-    $('#p-simple').addEventListener('click', function () { S.simple = !S.simple; openSub(subId); });
+    $('#p-back').addEventListener('click', function () { stopBeat(); show(S.planReturn ? 'plan' : 'map'); });
+    Array.prototype.forEach.call(document.querySelectorAll('.ltab'), function (b) {
+      b.addEventListener('click', function () {
+        S.lessonTab = b.getAttribute('data-tab');
+        if (S.lessonTab !== 'chant') stopBeat();
+        var y = window.scrollY; openSub(subId); window.scrollTo(0, y);
+      });
+    });
+    var beat = $('#p-beat');
+    if (beat) beat.addEventListener('click', function () { playBeat(beat); });
     $('#p-start').addEventListener('click', function () {
+      stopBeat();
       startRun('module', s.items, { subId: subId, title: s.name });
     });
+  }
+
+  /* A simple drum loop (kick–kick–clap) so a chant can be rapped, not just read. */
+  var beatCtx = null, beatTimer = null;
+  function stopBeat() { if (beatTimer) { clearInterval(beatTimer); beatTimer = null; } }
+  function playBeat(btn) {
+    if (beatTimer) { stopBeat(); btn.textContent = '▶ Play the beat'; return; }
+    try { beatCtx = beatCtx || new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return; }
+    if (beatCtx.state === 'suspended' && beatCtx.resume) beatCtx.resume();
+    var n = 0;
+    function hit(freq, dur, noise) {
+      var t0 = beatCtx.currentTime, g = beatCtx.createGain();
+      g.gain.setValueAtTime(0.6, t0); g.gain.exponentialRampToValueAtTime(0.001, t0 + dur); g.connect(beatCtx.destination);
+      if (noise) {
+        var b = beatCtx.createBuffer(1, Math.floor(beatCtx.sampleRate * dur), beatCtx.sampleRate), d = b.getChannelData(0);
+        for (var i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+        var src = beatCtx.createBufferSource(); src.buffer = b; src.connect(g); src.start(t0);
+      } else {
+        var o = beatCtx.createOscillator(); o.frequency.setValueAtTime(freq, t0); o.frequency.exponentialRampToValueAtTime(40, t0 + dur);
+        o.connect(g); o.start(t0); o.stop(t0 + dur);
+      }
+    }
+    beatTimer = setInterval(function () { var k = n % 4; if (k === 3) hit(0, 0.15, true); else hit(120, 0.2); n++; }, 400);
+    btn.textContent = '■ Stop the beat';
+  }
+
+  /* =====================================================================
+     THE MODAL LAB
+     Hands-on tools for seeing the system, four short games, timed sprints
+     over the practice bank, and Leitner flashcards of the forms. The data
+     lives in lab-data.js; the games never touch the course progress except
+     for XP and their own best scores (S.p.lab, S.p.sprints, S.p.flash).
+     ===================================================================== */
+  var LABD = typeof LAB !== 'undefined' ? LAB : { dial: [], detective: [], cliff: [], timeMachine: [] };
+  function labRec(key) { S.p.lab = S.p.lab || {}; return S.p.lab[key] || (S.p.lab[key] = { best: 0, runs: 0 }); }
+  function wireAll(sel, fn) { Array.prototype.forEach.call(document.querySelectorAll(sel), function (b) { b.addEventListener('click', function (ev) { fn(b, ev); }); }); }
+  function labTop(title) {
+    return '<div class="play-top"><button class="btn ghost sm" id="lab-back">← Modal Lab</button>' +
+      '<span style="flex:1"></span><span class="qcount">' + esc(title) + '</span></div>';
+  }
+  function wireBack() { var b = $('#lab-back'); if (b) b.addEventListener('click', function () { stopArcade(); S.labScreen = null; paintLab(); }); }
+
+  /* ------------------------------------------------------------ sprints */
+  var SPRINTS = [
+    { key: 'sure', name: 'How Sure? Sprint', n: 12, sec: 360, pre: ['epi-', 'past-deduce', 'past-weak', 'past-prog', 'u5-guess', 'tc-guess'],
+      blurb: '12 guesses about now and the past in 6 minutes: must, might, can\'t — with and without have.' },
+    { key: 'rules', name: 'Rules Sprint', n: 12, sec: 360, pre: ['deo-', 'u5-now', 'u5-past', 'u5-advice', 'past-should', 'past-needpair'],
+      blurb: '12 questions on have to, mustn\'t, needn\'t, should and their past forms in 6 minutes.' },
+    { key: 'unit5', name: 'Unit 5 Blitz', n: 15, sec: 450, pre: ['u5-'],
+      blurb: 'Gateway B2 Unit 5 only: 15 questions in 7½ minutes. Good the night before the unit test.' },
+    { key: 'polite', name: 'Politeness Sprint', n: 10, sec: 360, pre: ['dist-request', 'dist-offer', 'dist-soften', 'tc-request', 'tc-advice'],
+      blurb: '10 requests, offers and pieces of advice in 6 minutes: who does the action, and how strong is it?' },
+    { key: 'tcas', name: 'TCAS70 Pace', n: 12, sec: 804, pre: ['tc-'], types: ['gap', 'cloze', 'read', 'choose', 'equiv'],
+      blurb: '12 exam-shaped questions at the real paper\'s pace of 67 seconds each.' },
+    { key: 'mix', name: 'Full Mix 20', n: 20, sec: 720, pre: [''],
+      blurb: '20 questions from every stage in 12 minutes. Weak and unseen rules come first.' }
+  ];
+  var SPRINT_TYPES = ['choose', 'equiv', 'gap', 'cloze', 'judge', 'spot', 'read'];
+  function sprintPool(sp) {
+    var byTag = (S.p.stats && S.p.stats.byTag) || {}, types = sp.types || SPRINT_TYPES;
+    var ids = Object.keys(E.Bank.all()).filter(function (id) {
+      if (!E.Bank.topicOf(id)) return false;          /* practice items only, never the tests */
+      var it = E.Bank.item(id);
+      if (types.indexOf(it.type || 'choose') < 0) return false;
+      return sp.pre.some(function (p) { return it.tag.indexOf(p) === 0; });
+    });
+    /* Weak and unseen tags first, then the rest — shuffled within each band. */
+    var weak = [], fresh = [], rest = [];
+    E.shuffle(ids).forEach(function (id) {
+      var st = byTag[E.Bank.item(id).tag];
+      if (!st || !st.a) fresh.push(id); else if (st.c / st.a < 0.7) weak.push(id); else rest.push(id);
+    });
+    return weak.concat(fresh, rest);
+  }
+  function startSprint(key) {
+    var sp = SPRINTS.filter(function (x) { return x.key === key; })[0];
+    var pool = sprintPool(sp), picked = [], used = {};
+    /* Items that share a passage travel together. */
+    pool.some(function (id) {
+      if (picked.length >= sp.n) return true;
+      if (used[id]) return false;
+      picked.push(id); used[id] = 1;
+      var txt = E.Bank.item(id).passage || '';
+      if (txt.length > 200) pool.forEach(function (o) {
+        if (picked.length < sp.n && !used[o] && E.Bank.item(o).passage === txt) { picked.push(o); used[o] = 1; }
+      });
+      return false;
+    });
+    if (!picked.length) return toast('No questions for this sprint yet.');
+    startRun('sprint', picked.map(E.Bank.item), { title: sp.name, limitSec: sp.sec, sprintKey: sp.key });
+  }
+
+  /* --------------------------------------------------------- flashcards */
+  var BOX_DAYS = [0, 1, 3, 7, 21];
+  var CARDS = typeof MODAL_CARDS !== 'undefined' ? MODAL_CARDS : [];
+  var CARD_THEMES = typeof MODAL_CARD_THEMES !== 'undefined' ? MODAL_CARD_THEMES : {};
+  function cardKey(e) { return e[0] + '|' + e[1]; }
+  function dueCards(theme) {
+    var now = Date.now(), f = S.p.flash || {};
+    return CARDS.filter(function (e) {
+      if (theme && theme !== 'all' && theme !== 'due' && e[3] !== theme) return false;
+      var st = f[cardKey(e)];
+      if (theme === 'due') return st && st.box < 5 && st.due <= now;
+      return !st || (st.box < 5 && st.due <= now);
+    });
+  }
+  function startCards(theme) {
+    var deck = E.shuffle(dueCards(theme)).slice(0, 20);
+    if (!deck.length) return toast(theme === 'due' ? 'Nothing due — come back tomorrow.' : 'Every card in this set is resting. Try another set.');
+    S.cards = { deck: deck, i: 0, knew: 0, flipped: false, theme: theme };
+    S.labScreen = 'cards';
+    paintCard();
+  }
+  function paintCard() {
+    var c = S.cards, e = c.deck[c.i];
+    if (!e) return finishCards();
+    var st = (S.p.flash || {})[cardKey(e)];
+    $('#view-lab').innerHTML = '<div class="play"><div class="play-top"><button class="btn ghost sm" id="fc-quit" aria-label="Quit flashcards">✕</button>' +
+      '<div class="bar-line thin"><span style="width:' + Math.round(100 * c.i / c.deck.length) + '%"></span></div>' +
+      '<span class="qcount">' + (c.i + 1) + ' / ' + c.deck.length + '</span></div>' +
+      '<div class="flashcard' + (c.flipped ? ' flipped' : '') + '" id="fc" tabindex="0" role="button" aria-label="Flip card">' +
+        '<div class="fc-front"><span class="fc-meta">' + esc(e[2]) + ' · ' + esc(CARD_THEMES[e[3]] || '') + '</span>' +
+          '<div class="fc-word">' + esc(e[0]) + '</div><span class="fc-tap">Say what it means and make a sentence, then tap to flip</span></div>' +
+        '<div class="fc-back"><div class="fc-word sm">' + esc(e[0]) + '</div><p class="fc-meta">' + esc(e[1]) + '</p><p class="fc-def">' + esc(e[4]) + '</p>' +
+          '<p class="fc-th">' + esc(e[5]) + '</p><p class="fc-ex">“' + esc(e[6]) + '”</p>' +
+          '<span class="fc-meta">Box ' + (st ? st.box : 0) + ' of 5</span></div>' +
+      '</div>' +
+      (c.flipped ? '<div class="fc-rate"><button class="btn" id="fc-no">Not yet</button><button class="btn primary" id="fc-yes">Knew it</button></div>'
+                 : '<div class="fc-rate"><button class="btn primary wide" id="fc-flip">Flip</button></div>') + '</div>';
+    function flip() { c.flipped = true; paintCard(); }
+    $('#fc').addEventListener('click', function () { if (!c.flipped) flip(); });
+    $('#fc').addEventListener('keydown', function (ev) { if ((ev.key === 'Enter' || ev.key === ' ') && !c.flipped) { ev.preventDefault(); flip(); } });
+    var fb = $('#fc-flip'); if (fb) fb.addEventListener('click', flip);
+    $('#fc-quit').addEventListener('click', function () { S.cards = null; S.labScreen = null; sync(); paintLab(); });
+    function rate(ok) {
+      S.p.flash = S.p.flash || {};
+      var cur = S.p.flash[cardKey(e)] || { box: 0 };
+      var box = ok ? Math.min(5, cur.box + 1) : 1;
+      S.p.flash[cardKey(e)] = { box: box, due: Date.now() + (BOX_DAYS[Math.min(box, 4)] || 0) * 86400000 - 3600000 };
+      if (ok) c.knew++;
+      else c.deck.push(e);   /* a missed card comes back at the end of this session */
+      c.i++; c.flipped = false; paintCard();
+    }
+    var y = $('#fc-yes'), n = $('#fc-no');
+    if (y) y.addEventListener('click', function () { rate(true); });
+    if (n) n.addEventListener('click', function () { rate(false); });
+  }
+  function finishCards() {
+    var c = S.cards; S.cards = null;
+    sync();
+    $('#view-lab').innerHTML = '<div class="play"><div class="card result"><div class="seal">★</div>' +
+      '<h3>' + c.knew + ' card' + (c.knew === 1 ? '' : 's') + ' known</h3><p>Known cards move up a box and come back after 1, 3, 7 and 21 days; a card in box 5 is retired. Missed cards come back tomorrow.</p>' +
+      '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn" id="fc-back">Back to the Modal Lab</button>' +
+      '<button class="btn primary" id="fc-more">Another 20</button></div></div></div>';
+    $('#fc-back').addEventListener('click', function () { S.labScreen = null; paintLab(); });
+    $('#fc-more').addEventListener('click', function () { startCards(c.theme); });
+  }
+  function flashStats() {
+    var f = S.p.flash || {}, boxes = [0, 0, 0, 0, 0, 0];
+    CARDS.forEach(function (e) { var st = f[cardKey(e)]; boxes[st ? st.box : 0]++; });
+    return boxes;
+  }
+
+  /* -------------------------------------------------------- lab home */
+  var GAMES = [
+    { key: 'detective', name: 'Modal Detective', icon: '🔍', blurb: 'Read the clue, make the call: must, might or can\'t — about now and about the past. Ten seconds a case, three lives.' },
+    { key: 'cliff', name: 'The Negation Cliff', icon: '⛰', blurb: 'No obligation, or not allowed? One word flips the meaning. Eight seconds a sentence.' },
+    { key: 'time', name: 'Time Machine', icon: '⏳', blurb: 'Send a rule, a guess or a piece of advice into the past — must becomes had to, not musted.' }
+  ];
+  function paintLab() {
+    if (S.labScreen === 'cards' && S.cards) return paintCard();
+    if (S.labScreen === 'dial') return paintDial();
+    if (S.labScreen === 'board') return paintBoard9();
+    if (S.labScreen === 'game') { stopArcade(); ARC = null; S.labScreen = null; }
+    var lab = S.p.lab || {}, rec = S.p.sprints || {};
+    var html = '<div class="card speedlab lab-hero">' + E.artBand('signal') +
+      '<p class="kicker">Modal Lab</p><h3>Play with the system</h3>' +
+      '<p class="muted">Two tools to see how modals work, three quick games, timed sprints and flashcards. ' +
+      'None of it changes your route — it is here to make the rules stick.</p></div>';
+
+    html += '<h3 class="lab-h">See it</h3><div class="sprint-grid">' +
+      '<div class="card sprint-card tool-card"><div class="sp-h"><b>🎚 The Certainty Dial</b><span class="pill">Stages 2 · 6 · 9</span></div>' +
+        '<p>Slide from <em>can\'t</em> to <em>must</em> and watch the sentence change. Flip to the past and <em>have</em> appears. Then read real evidence and set the dial yourself.</p>' +
+        '<button class="btn primary sm" data-tool="dial">Open the dial</button></div>' +
+      '<div class="card sprint-card tool-card"><div class="sp-h"><b>🗂 The Rule Board</b><span class="pill">Unit 5 · Stage 9</span></div>' +
+        '<p>The whole Unit 5 grammar page as one board: present against past, rules against guesses. Cover the forms and test yourself.</p>' +
+        '<button class="btn primary sm" data-tool="board">Open the board</button></div>' +
+      '</div>';
+
+    html += '<h3 class="lab-h">Games</h3><div class="sprint-grid">' + GAMES.map(function (g) {
+      var r = lab[g.key];
+      return '<div class="card sprint-card"><div class="sp-h"><b>' + g.icon + ' ' + esc(g.name) + '</b>' +
+        (r && r.best ? '<span class="pill good">Best ' + r.best + '</span>' : '<span class="pill">New</span>') + '</div>' +
+        '<p>' + esc(g.blurb) + '</p>' +
+        '<button class="btn primary sm" data-game="' + g.key + '">Play</button></div>';
+    }).join('') + '</div>';
+
+    html += '<h3 class="lab-h">Sprints</h3><p class="muted lab-sub">Real questions from the course, against the clock. A sprint never touches your checklist, but misses do go onto your fault list.</p>' +
+      '<div class="sprint-grid">' + SPRINTS.map(function (sp) {
+      var r = rec[sp.key];
+      return '<div class="card sprint-card"><div class="sp-h"><b>' + esc(sp.name) + '</b><span class="pill">' + sp.n + ' Q · ' + mmss(sp.sec) + '</span></div>' +
+        '<p>' + esc(sp.blurb) + '</p>' +
+        (r ? '<p class="tiny">Best ' + pct(r.best) + '% in ' + mmss(r.bestSec || 0) + ' · ' + r.runs + ' run' + (r.runs === 1 ? '' : 's') + '</p>' : '<p class="tiny">Not tried yet</p>') +
+        '<button class="btn primary sm" data-sprint="' + sp.key + '">Start</button></div>';
+    }).join('') + '</div>';
+
+    if (CARDS.length) {
+      var boxes = flashStats(), due = dueCards('due').length;
+      html += '<div class="card fc-panel"><p class="kicker">Flashcards · the modal forms</p><h3>' + CARDS.length + ' forms, meanings and Thai</h3>' +
+        '<div class="boxes">' + boxes.map(function (b, i) { return '<div><b>' + b + '</b><span>' + (i ? 'Box ' + i : 'New') + (i === 5 ? ' ✓' : '') + '</span></div>'; }).join('') + '</div>' +
+        '<div class="fc-themes"><button class="btn primary sm" data-cards="due">Due today (' + due + ')</button>' +
+        '<button class="btn sm" data-cards="all">Mixed 20</button>' +
+        Object.keys(CARD_THEMES).map(function (k) { return '<button class="btn sm" data-cards="' + k + '">' + esc(CARD_THEMES[k]) + '</button>'; }).join('') +
+        '</div></div>';
+    }
+    $('#view-lab').innerHTML = html;
+    wireAll('[data-sprint]', function (b) { startSprint(b.getAttribute('data-sprint')); });
+    wireAll('[data-cards]', function (b) { startCards(b.getAttribute('data-cards')); });
+    wireAll('[data-game]', function (b) { startGame(b.getAttribute('data-game')); });
+    wireAll('[data-tool]', function (b) {
+      S.labScreen = b.getAttribute('data-tool'); S.dial = null;
+      if (S.labScreen === 'dial') paintDial(); else paintBoard9();
+      window.scrollTo({ top: 0 });
+    });
+  }
+
+  /* --------------------------------------------------- the certainty dial */
+  var RUNGS = [
+    { k: 'cant',   now: 'can\'t', past: 'can\'t have', name: 'can\'t', sure: 'About 90% sure it is NOT true', th: 'ไม่มีทาง… (มั่นใจราว 90% ว่าไม่ใช่)' },
+    { k: 'weak',   now: 'may / might / could', past: 'may / might / could have', name: 'may · might · could', sure: 'About 50% — one possibility among others', th: 'อาจจะ… (เป็นไปได้ราว 50%)' },
+    { k: 'should', now: 'should', past: null, name: 'should', sure: 'What a timetable or a reliable pattern leads you to expect', th: 'น่าจะ… (ตามกำหนดการหรือตามปกติ)' },
+    { k: 'will',   now: 'will', past: null, name: 'will', sure: 'So predictable that you don\'t need to check', th: 'คง…แน่ ๆ (คาดได้เลยโดยไม่ต้องเช็ก)' },
+    { k: 'must',   now: 'must', past: 'must have', name: 'must', sure: 'About 90% sure it IS true — the evidence leaves one explanation', th: 'ต้อง…แน่ ๆ (มั่นใจราว 90% จากหลักฐาน)' }
+  ];
+  function rungIdx(k) { for (var i = 0; i < RUNGS.length; i++) if (RUNGS[i].k === k) return i; return 0; }
+  function dialSvg(idx, time) {
+    /* A half-moon gauge, five sectors from can't (left) to must (right). */
+    var cx = 160, cy = 150, r = 120, s = '<svg class="dial-svg" viewBox="0 0 320 175" role="img" aria-label="Certainty dial set to ' + esc(RUNGS[idx].name) + '">';
+    var cols = ['var(--no)', 'var(--gold)', 'var(--accent-line)', 'var(--accent)', 'var(--ok)'];
+    for (var i = 0; i < 5; i++) {
+      var a0 = Math.PI + i * Math.PI / 5, a1 = Math.PI + (i + 1) * Math.PI / 5;
+      var off = time === 'past' && !RUNGS[i].past;
+      s += '<path data-rung="' + i + '" class="dial-sec' + (i === idx ? ' on' : '') + (off ? ' off' : '') + '" d="M' + cx + ',' + cy +
+        ' L' + (cx + r * Math.cos(a0)) + ',' + (cy + r * Math.sin(a0)) + ' A' + r + ',' + r + ' 0 0 1 ' + (cx + r * Math.cos(a1)) + ',' + (cy + r * Math.sin(a1)) + ' Z" fill="' + cols[i] + '"/>';
+      var am = (a0 + a1) / 2, lx = cx + r * 0.76 * Math.cos(am), ly = cy + r * 0.76 * Math.sin(am);
+      s += '<text x="' + lx + '" y="' + (ly + 4) + '" text-anchor="middle" class="dial-lab' + (off ? ' off' : '') + '">' + ['can\'t', 'might', 'should', 'will', 'must'][i] + '</text>';
+    }
+    var ang = Math.PI + (idx + 0.5) * Math.PI / 5;
+    s += '<line class="dial-needle" x1="' + cx + '" y1="' + cy + '" x2="' + (cx + (r - 52) * Math.cos(ang)) + '" y2="' + (cy + (r - 52) * Math.sin(ang)) + '"/>' +
+      '<circle cx="' + cx + '" cy="' + cy + '" r="9" class="dial-hub"/>' +
+      '<text x="10" y="170" class="dial-end">0% — no way</text><text x="310" y="170" text-anchor="end" class="dial-end">certain</text></svg>';
+    return s;
+  }
+  function dialSentence(sc, rung, time) {
+    var m = time === 'past' ? rung.past : rung.now;
+    if (!m) return null;
+    var vp = time === 'past' ? sc.past : sc.now;
+    return esc(sc.subject) + ' <b class="dial-modal">' + esc(m) + '</b> ' + esc(vp) + '.';
+  }
+  function paintDial() {
+    var D = S.dial || (S.dial = { scene: 0, rung: 4, time: 'now', quiz: null });
+    var sc = LABD.dial[D.scene];
+    if (!sc) { $('#view-lab').innerHTML = '<div class="play">' + labTop('The Certainty Dial') + '<div class="card empty">No dial scenes yet.</div></div>'; wireBack(); return; }
+    var q = D.quiz, ev = q ? q.items[q.i] : null;
+    var time = ev ? ev.time : D.time;
+    var rung = RUNGS[D.rung];
+    var sent = dialSentence(sc, rung, time);
+    var html = '<div class="play">' + labTop('The Certainty Dial') + '<div class="card dial-card">';
+    if (!q) {
+      html += '<p class="kicker">Explore</p><h3>How sure are you?</h3>' +
+        '<div class="dial-scenes">' + LABD.dial.map(function (x, i) {
+          return '<button class="chipbtn' + (i === D.scene ? ' on' : '') + '" data-scene="' + i + '">' + esc(x.subject) + ' · ' + esc(x.now.replace(/^be /, '')) + '</button>'; }).join('') + '</div>';
+    } else {
+      html += '<p class="kicker">Evidence ' + (q.i + 1) + ' of ' + q.items.length + ' · score ' + q.score + '</p>' +
+        '<div class="dial-ev"><span class="lens-k">' + (ev.time === 'past' ? 'About the past' : 'About now') + '</span><p>' + esc(ev.text) + '</p></div>' +
+        '<p class="muted">Set the dial to match the evidence, then lock it in.</p>';
+    }
+    html += '<div class="dial-wrap">' + dialSvg(D.rung, time) + '</div>' +
+      '<input type="range" min="0" max="4" step="1" value="' + D.rung + '" id="dial-range" class="dial-range" aria-label="Certainty">' +
+      '<div class="dial-time">' +
+        '<button class="tog' + (time === 'now' ? ' on' : '') + '" data-time="now"' + (q ? ' disabled' : '') + '>NOW</button>' +
+        '<button class="tog' + (time === 'past' ? ' on' : '') + '" data-time="past"' + (q ? ' disabled' : '') + '>PAST</button></div>';
+    if (!q || q.locked) {
+      html += '<div class="dial-out">' + (sent ? '<p class="dial-sent">' + sent + '</p>' :
+          '<p class="dial-sent off">' + esc(sc.subject) + ' <b class="dial-modal"><s>' + esc(rung.now) + ' have</s></b> ' + esc(sc.past) + '.</p>' +
+          '<p class="tiny">In the past, <em>' + esc(rung.now) + ' have</em> + past participle usually turns into criticism or a missed chance (Stage 6), not a guess. For past guesses use <em>must have</em>, <em>may / might / could have</em> or <em>can\'t have</em>.</p>') +
+        (sent ? '<p class="dial-sure"><b>' + esc(rung.sure) + '</b><br><span class="th">' + esc(rung.th) + '</span></p>' : '') +
+        (!q && sc.thai ? '<p class="tiny">' + esc(sc.thai) + '</p>' : '') + '</div>';
+    }
+    if (q && q.locked) {
+      var right = RUNGS[rungIdx(ev.rung)], ok = q.lastOk;
+      html += '<div class="verdict ' + (ok ? 'ok' : 'no') + '"><div><b>' + (ok ? 'Right.' : 'Not quite.') + '</b> The evidence points to <b>' + esc(right.name) + '</b>: ' +
+        dialSentence(sc, right, ev.time) + '</div></div>' +
+        '<button class="btn primary wide" id="dial-next">' + (q.i + 1 < q.items.length ? 'Next evidence →' : 'See your score') + '</button>';
+    } else if (q) {
+      html += '<button class="btn primary wide" id="dial-lock">Lock it in</button>';
+    } else {
+      html += '<button class="btn primary wide" id="dial-quiz">Challenge: set the dial from the evidence →</button>';
+    }
+    html += '</div></div>';
+    $('#view-lab').innerHTML = html;
+    wireBack();
+    function setRung(i) {
+      if (q && q.locked) return;
+      if (time === 'past' && !RUNGS[i].past && q) return;
+      D.rung = i; paintDial();
+    }
+    $('#dial-range').addEventListener('input', function () { setRung(+this.value); });
+    wireAll('.dial-sec', function (b) { setRung(+b.getAttribute('data-rung')); });
+    wireAll('[data-scene]', function (b) { D.scene = +b.getAttribute('data-scene'); paintDial(); });
+    wireAll('[data-time]', function (b) { D.time = b.getAttribute('data-time'); paintDial(); });
+    var qz = $('#dial-quiz');
+    if (qz) qz.addEventListener('click', function () { D.quiz = { items: E.shuffle(sc.evidence.slice()), i: 0, score: 0, locked: false }; D.rung = 1; paintDial(); });
+    var lk = $('#dial-lock');
+    if (lk) lk.addEventListener('click', function () {
+      q.locked = true; q.lastOk = RUNGS[D.rung].k === ev.rung;
+      if (q.lastOk) { q.score++; S.p.xp = (S.p.xp || 0) + 1; }
+      paintDial();
+    });
+    var nx = $('#dial-next');
+    if (nx) nx.addEventListener('click', function () {
+      q.i++; q.locked = false;
+      if (q.i >= q.items.length) {
+        var rec = labRec('dial'); rec.runs++; if (q.score > rec.best) rec.best = q.score;
+        toast('You matched ' + q.score + ' of ' + q.items.length + ' pieces of evidence.');
+        D.quiz = null; D.scene = (D.scene + 1) % LABD.dial.length; paintHeader(); sync();
+      } else D.rung = 1;
+      paintDial();
+    });
+  }
+
+  /* ------------------------------------------------------ the rule board */
+  var BOARD = [
+    { group: 'Rules', label: 'It is necessary', th: 'จำเป็นต้อง / ต้อง', sub: 't9l1s1', subPast: 't9l2s1',
+      now: { forms: ['have to', 'must', 'need to'], note: '<em>have to</em> = often someone else\'s rule; <em>must</em> = often your own idea or a written rule.', ex: 'You <b>have to</b> pay before leaving the shop.' },
+      past: { forms: ['had to', 'needed to'], note: '<em>Must</em> has no past: never <s>musted</s>, never <s>must</s> + yesterday.', ex: 'I stopped because I <b>needed to</b> rest.' } },
+    { group: 'Rules', label: 'It is not necessary', th: 'ไม่จำเป็นต้อง', sub: 't9l1s1', subPast: 't9l2s3',
+      now: { forms: ['don\'t have to', 'don\'t need to', 'needn\'t'], note: 'No <em>to</em> after <em>needn\'t</em>: <s>needn\'t to go</s>.', ex: 'We <b>needn\'t</b> go to class at the weekend.' },
+      past: { forms: ['didn\'t have to', 'didn\'t need to', 'needn\'t have + pp'], note: '<em>didn\'t need to</em>: maybe we did it, maybe not. <em>needn\'t have done</em>: we DID it, but it wasn\'t necessary.', ex: 'You <b>needn\'t have bought</b> me a present. But thank you!' } },
+    { group: 'Rules', label: 'It is not allowed', th: 'ห้าม / ไม่อนุญาต', sub: 't9l1s1', subPast: 't9l2s2',
+      now: { forms: ['mustn\'t', 'can\'t', 'aren\'t allowed to'], note: '<em>can\'t</em> is also how we refuse permission: "Can I…?" — "No, you can\'t."', ex: 'You <b>can\'t</b> go out tonight — you\'ve got an exam tomorrow.' },
+      past: { forms: ['wasn\'t / weren\'t allowed to', 'couldn\'t'], note: '<em>couldn\'t</em> can also mean it was not possible. The context decides.', ex: 'I <b>wasn\'t allowed to</b> go to school alone when I was small.' } },
+    { group: 'Rules', label: 'Advice', th: 'คำแนะนำ / ควร', sub: 't9l1s2', subPast: 't9l2s3',
+      now: { forms: ['should / shouldn\'t', 'ought to', 'had (\'d) better (not)'], note: '<em>had better</em> = a good idea now, often a warning. <em>Ought to</em> and <em>had better</em> are rare in questions and negatives.', ex: 'You <b>\'d better</b> save up if you want a new phone.' },
+      past: { forms: ['should have + pp', 'ought to have + pp', 'shouldn\'t have + pp'], note: 'Criticism or regret: the past action was a mistake, and it is too late now.', ex: 'I <b>should have been</b> more careful with my money.' } },
+    { group: 'Guesses', label: '≈ 90% sure it IS true', th: 'ต้อง…แน่ ๆ', sub: 't9l3s1', subPast: 't9l3s2',
+      now: { forms: ['must'], note: 'A guess from evidence, not a rule. Its opposite is <em>can\'t</em>, never <em>mustn\'t</em>.', ex: 'She lives in an enormous house. She <b>must</b> be rich.' },
+      past: { forms: ['must have + pp'], note: 'Modal + <em>have</em> + past participle — never <s>must have saw</s>.', ex: 'He hasn\'t got any money left. He <b>must have spent</b> it all.' } },
+    { group: 'Guesses', label: '≈ 50% possible', th: 'อาจจะ…', sub: 't9l3s1', subPast: 't9l3s2',
+      now: { forms: ['may / might / could', 'may not / mightn\'t'], note: 'Also for the future: <em>It might rain later.</em> <em>couldn\'t</em> is NOT a 50% negative.', ex: 'The match <b>mightn\'t</b> go ahead if it rains.' },
+      past: { forms: ['may (not) have + pp', 'might (not) have + pp', 'could have + pp'], note: '<em>couldn\'t have</em> is a strong no, like <em>can\'t have</em>.', ex: 'She <b>might have been</b> in the garden — I\'m not sure.' } },
+    { group: 'Guesses', label: '≈ 90% sure it is NOT true', th: 'ไม่มีทาง…', sub: 't9l3s1', subPast: 't9l3s2',
+      now: { forms: ['can\'t'], note: 'Not <s>mustn\'t</s> — that is a rule.', ex: 'She\'s only fourteen. She <b>can\'t</b> have a driving licence.' },
+      past: { forms: ['can\'t have + pp', 'couldn\'t have + pp'], note: 'Evidence now, guess about then.', ex: 'He didn\'t do well in the test. He <b>can\'t have studied</b> much.' } }
+  ];
+  function paintBoard9() {
+    var B = S.board || (S.board = { cover: false, open: {} });
+    var html = '<div class="play">' + labTop('The Rule Board') + '<div class="card board-card">' +
+      '<p class="kicker">Gateway B2 · Unit 5 grammar, on one board</p><h3>Rules and guesses, now and then</h3>' +
+      '<p class="muted">Each row is one meaning. Read across to see how it moves into the past. Turn on <b>Cover</b>, say the forms aloud, then tap a cell to check.</p>' +
+      '<div class="dial-time"><button class="tog' + (!B.cover ? ' on' : '') + '" data-cover="0">Show all</button><button class="tog' + (B.cover ? ' on' : '') + '" data-cover="1">Cover the forms</button></div>' +
+      '<div class="rboard">' +
+      '<div class="rb-h"></div><div class="rb-h">Present / future</div><div class="rb-h">Past</div>';
+    var lastGroup = '';
+    BOARD.forEach(function (row, i) {
+      if (row.group !== lastGroup) { html += '<div class="rb-group">' + (row.group === 'Rules' ? 'Obligation, prohibition and advice' : 'Speculation and deduction') + '</div>'; lastGroup = row.group; }
+      html += '<div class="rb-label"><b>' + esc(row.label) + '</b><span class="th">' + esc(row.th) + '</span></div>';
+      ['now', 'past'].forEach(function (t) {
+        var c = row[t], id = i + t, hide = B.cover && !B.open[id];
+        html += '<button class="rb-cell' + (hide ? ' covered' : '') + '" data-cell="' + id + '">' +
+          '<span class="rb-t">' + (t === 'now' ? 'Present' : 'Past') + '</span>' +
+          (hide ? '<span class="rb-q">? tap to reveal</span>' :
+            '<span class="rb-forms">' + c.forms.map(function (f) { return '<i>' + esc(f) + '</i>'; }).join('') + '</span>' +
+            '<span class="rb-ex">' + c.ex + '</span><span class="rb-note">' + c.note + '</span>') +
+          '</button>';
+      });
+      html += '<div class="rb-go"><button class="btn ghost sm" data-practise="' + row.sub + '">Practise: present →</button>' +
+        (row.subPast !== row.sub ? '<button class="btn ghost sm" data-practise="' + row.subPast + '">Practise: past →</button>' : '') + '</div>';
+    });
+    html += '</div></div></div>';
+    $('#view-lab').innerHTML = html;
+    wireBack();
+    wireAll('[data-cover]', function (b) { B.cover = b.getAttribute('data-cover') === '1'; B.open = {}; paintBoard9(); });
+    wireAll('[data-cell]', function (b) { if (!B.cover) return; var id = b.getAttribute('data-cell'); B.open[id] = !B.open[id]; paintBoard9(); });
+    wireAll('[data-practise]', function (b) { S.labScreen = null; S.planReturn = false; openSub(b.getAttribute('data-practise')); });
+  }
+
+  /* ------------------------------------------------------------ arcade */
+  /* One small engine for all three games: a round of cases, a countdown bar
+     for each, three lives, a streak multiplier, and a verdict with the reason
+     after every answer so the game teaches as it goes. */
+  var ARC = null;
+  function stopArcade() { if (ARC && ARC.tick) { clearInterval(ARC.tick); ARC.tick = null; } }
+  function gameDef(key) {
+    if (key === 'detective') return {
+      key: key, title: 'Modal Detective', n: 10, secs: 10, pool: LABD.detective,
+      prompt: function (it) {
+        return '<div class="arc-clue"><span class="lens-k">' + (it.time === 'past' ? 'Clue · about the past' : 'Clue · about now') + '</span><p>' + esc(it.clue) + '</p></div>' +
+          '<p class="arc-sent">' + esc(it.sentence).replace('___', '<span class="arc-gap">' + (it.time === 'past' ? '___ have' : '___') + '</span>') + '</p>';
+      },
+      choices: function (it) {
+        var h = it.time === 'past' ? ' have' : '';
+        return [{ v: 'must', l: 'must' + h }, { v: 'might', l: 'might' + h }, { v: 'cant', l: 'can\'t' + h }];
+      },
+      fill: function (it) { var f = { must: 'must', might: 'might', cant: 'can\'t' }[it.answer] + (it.time === 'past' ? ' have' : ''); return esc(it.sentence).replace('___', '<b>' + f + '</b>'); }
+    };
+    if (key === 'cliff') return {
+      key: key, title: 'The Negation Cliff', n: 12, secs: 8, pool: LABD.cliff,
+      prompt: function (it) { return '<p class="arc-sent">' + esc(it.text).replace('___', '<span class="arc-gap">___</span>') + '</p>'; },
+      choices: function (it) { return E.shuffle([{ v: 'free', l: it.free, sub: 'no obligation' }, { v: 'ban', l: it.ban, sub: 'not allowed' }]); },
+      fill: function (it) { return esc(it.text).replace('___', '<b>' + esc(it[it.answer]) + '</b>'); }
+    };
+    return {
+      key: 'time', title: 'Time Machine', n: 8, secs: 18, pool: LABD.timeMachine,
+      prompt: function (it) { return '<div class="arc-clue"><span class="lens-k">Now</span><p>' + esc(it.now) + '</p></div><p class="muted">Which sentence sends it correctly into the past?</p>'; },
+      choices: function (it) { return it.options.map(function (o, i) { return { v: i, l: o, long: true }; }); },
+      fill: function (it) { return esc(it.options[it.answer]); }
+    };
+  }
+  function startGame(key) {
+    var g = gameDef(key);
+    if (!g.pool || !g.pool.length) return toast('This game has no cases yet.');
+    stopArcade();
+    ARC = { g: g, items: E.shuffle(g.pool.slice()).slice(0, g.n), i: 0, lives: 3, score: 0, streak: 0, best: 0, log: [], state: 'ask' };
+    S.labScreen = 'game';
+    paintArc();
+  }
+  function paintArc() {
+    var A = ARC, g = A.g, it = A.items[A.i];
+    if (!it || A.lives <= 0) return endArc();
+    var ch = A.state === 'ask' ? (A.ch = g.choices(it)) : A.ch;
+    var html = '<div class="play">' + labTop(g.title) +
+      '<div class="arc-hud"><span class="arc-lives" aria-label="' + A.lives + ' lives">' + '♥♥♥'.slice(0, A.lives) + '<i>' + '♥♥♥'.slice(0, 3 - A.lives) + '</i></span>' +
+      '<span class="arc-score">' + A.score + '</span>' +
+      (A.streak >= 2 ? '<span class="combo">▲ ' + A.streak + ' streak' + (A.streak >= 3 ? ' · ×2' : '') + '</span>' : '') +
+      '<span class="qcount">' + (A.i + 1) + ' / ' + A.items.length + '</span></div>' +
+      '<div class="arc-bar"><span id="arc-bar" style="width:100%"></span></div>' +
+      '<div class="card qcard arc-card">' + g.prompt(it) +
+      '<div class="arc-choices' + (ch.some(function (c) { return c.long; }) ? ' long' : '') + '">' + ch.map(function (c, k) {
+        var cls = '';
+        if (A.state === 'shown') cls = String(c.v) === String(it.answer) ? ' right' : String(c.v) === String(A.picked) ? ' wrong' : ' dim';
+        return '<button class="arc-btn' + cls + '" data-v="' + c.v + '"' + (A.state === 'shown' ? ' disabled' : '') + '><kbd>' + (k + 1) + '</kbd>' + esc(c.l) + (c.sub ? '<small>' + esc(c.sub) + '</small>' : '') + '</button>';
+      }).join('') + '</div>';
+    if (A.state === 'shown') {
+      html += '<div class="verdict ' + (A.lastOk ? 'ok' : 'no') + '"><div><b>' + (A.lastOk ? (A.lastPts ? '+' + A.lastPts + ' · ' : '') + 'Right.' : A.timedOut ? 'Time up.' : 'Not quite.') + '</b> ' +
+        g.fill(it) + '</div><div class="verdict-w">' + it.why + '</div></div>' +
+        '<button class="btn primary wide" id="arc-next">' + (A.lives <= 0 ? 'See your score' : A.i + 1 < A.items.length ? 'Next →' : 'See your score') + '</button>';
+    }
+    html += '</div></div>';
+    $('#view-lab').innerHTML = html;
+    wireBack();
+    function answer(v, timedOut) {
+      if (A.state !== 'ask') return;
+      stopArcade();
+      var ok = !timedOut && String(v) === String(it.answer);
+      var left = Math.max(0, A.deadline - Date.now()) / 1000;
+      A.state = 'shown'; A.picked = v; A.lastOk = ok; A.timedOut = !!timedOut; A.lastPts = 0;
+      if (ok) {
+        A.streak++; if (A.streak > A.best) A.best = A.streak;
+        A.lastPts = Math.round((100 + left * 10) * (A.streak >= 3 ? 2 : 1));
+        A.score += A.lastPts;
+      } else { A.streak = 0; A.lives--; A.log.push(it); }
+      paintArc();
+    }
+    if (A.state === 'ask') {
+      A.deadline = Date.now() + g.secs * 1000;
+      A.tick = setInterval(function () {
+        var left = A.deadline - Date.now(), bar = document.getElementById('arc-bar');
+        if (!bar) { stopArcade(); return; }
+        bar.style.width = Math.max(0, 100 * left / (g.secs * 1000)) + '%';
+        bar.classList.toggle('low', left < 3000);
+        if (left <= 0) answer(null, true);
+      }, 100);
+      wireAll('.arc-btn', function (b) { answer(b.getAttribute('data-v'), false); });
+    }
+    var nx = $('#arc-next');
+    if (nx) { nx.addEventListener('click', function () { A.i++; A.state = 'ask'; paintArc(); }); nx.focus(); }
+    A.key = function (ev) {
+      if (S.labScreen !== 'game' || !ARC) return;
+      if (A.state === 'ask' && /^[1-4]$/.test(ev.key) && ch[+ev.key - 1]) answer(ch[+ev.key - 1].v, false);
+    };
+  }
+  document.addEventListener('keydown', function (ev) { if (ARC && ARC.key && !$('#view-lab').classList.contains('hidden')) ARC.key(ev); });
+  function endArc() {
+    var A = ARC; stopArcade();
+    var rec = labRec(A.g.key), isBest = A.score > rec.best;
+    rec.runs++; if (isBest) rec.best = A.score;
+    S.p.xp = (S.p.xp || 0) + Math.max(0, Math.round(A.score / 100));
+    paintHeader(); sync();
+    var html = '<div class="play"><div class="card result"><div class="seal">' + (A.lives > 0 ? '★' : '✕') + '</div>' +
+      '<p class="kicker">' + esc(A.g.title) + '</p><h3>' + A.score + ' points' + (isBest ? ' · new best!' : '') + '</h3>' +
+      '<p>' + (A.lives > 0 ? 'Round complete with ' + A.lives + ' ' + (A.lives === 1 ? 'life' : 'lives') + ' left.' : 'Out of lives.') +
+      ' Longest streak: ' + A.best + '. Best so far: ' + rec.best + '.</p>';
+    if (A.log.length) html += '<div class="misslist">' + A.log.map(function (it) {
+      return '<div class="miss"><b>' + A.g.fill(it) + '</b>' + it.why + '</div>'; }).join('') + '</div>';
+    html += '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn" id="arc-home">Back to the Modal Lab</button>' +
+      '<button class="btn primary" id="arc-again">Play again</button></div></div></div>';
+    ARC = null;
+    $('#view-lab').innerHTML = html;
+    $('#arc-home').addEventListener('click', function () { S.labScreen = null; paintLab(); });
+    var key = A.g.key;
+    $('#arc-again').addEventListener('click', function () { startGame(key); });
   }
 
   /* =====================================================================
@@ -1457,8 +2006,18 @@
     S.run = {
       kind: kind, items: items.slice(), i: 0, results: [],
       subId: meta.subId, checkId: meta.checkId, title: meta.title,
-      hintedAny: false, t0: 0
+      hintedAny: false, t0: 0, sprintKey: meta.sprintKey,
+      deadline: meta.limitSec ? Date.now() + meta.limitSec * 1000 : 0, limitSec: meta.limitSec || 0, started: Date.now()
     };
+    if (S.sprintClock) { clearInterval(S.sprintClock); S.sprintClock = null; }
+    if (S.run.deadline) {
+      S.sprintClock = setInterval(function () {
+        var r = S.run; if (!r || !r.deadline) { clearInterval(S.sprintClock); S.sprintClock = null; return; }
+        var left = Math.max(0, r.deadline - Date.now()), c = document.getElementById('sprint-clock');
+        if (c) { c.textContent = mmss(Math.ceil(left / 1000)); c.classList.toggle('low', left < 30000); }
+        if (!left) { clearInterval(S.sprintClock); S.sprintClock = null; r.timeUp = true; finishRun(); }
+      }, 250);
+    }
     if (kind === 'check' || kind === 'set') S.run.items = E.shuffle(S.run.items);
     show('play');
     renderQ();
@@ -1476,7 +2035,8 @@
     var prog = Math.round(100 * r.i / r.items.length);
     var canHint = r.kind === 'module' || r.kind === 'faults' || r.kind === 'speed';
     /* Reading items are never raced: the passage takes longer than the ring. */
-    var timed = r.kind !== 'set' && !!TIMED_TYPES[item.type] && !item.passage;
+    if (r.finished) return;
+    var timed = r.kind !== 'set' && r.kind !== 'sprint' && !!TIMED_TYPES[item.type] && !item.passage;
     var combo = r.combo || 0;
 
     $('#view-play').innerHTML = '<div class="play">' +
@@ -1485,6 +2045,7 @@
         '<div class="bar-line thin"><span style="width:' + prog + '%"></span></div>' +
         (combo >= 3 ? '<span class="combo">▲ ' + combo + ' in a row</span>' : '') +
         '<span class="qcount">' + (r.i + 1) + ' / ' + r.items.length + '</span>' +
+        (r.deadline ? '<span class="sprint-clock" id="sprint-clock">' + mmss(Math.ceil(Math.max(0, r.deadline - Date.now()) / 1000)) + '</span>' : '') +
         (timed ?
           '<div class="timer" id="timer" title="Answer inside 7 seconds for a time bonus">' +
             '<svg width="38" height="38" viewBox="0 0 38 38">' +
@@ -1527,7 +2088,9 @@
 
     $('#p-quit').addEventListener('click', function () {
       if (r.results.length && !confirm('Leave now? This attempt will not be saved.')) return;
-      stopTimer(); S.run = null;
+      stopTimer(); var wasSprint = r.kind === 'sprint'; S.run = null;
+      if (S.sprintClock) { clearInterval(S.sprintClock); S.sprintClock = null; }
+      if (wasSprint) { show('lab'); return; }
       if (S.planReturn) { S.planReturn = false; show('plan'); } else show('map');
     });
 
@@ -1602,9 +2165,12 @@
      ===================================================================== */
   function finishRun() {
     var r = S.run;
+    if (!r) return;
     if (r.cleanup) { r.cleanup(); r.cleanup = null; }
+    if (S.sprintClock) { clearInterval(S.sprintClock); S.sprintClock = null; }
+    if (r.finished) return; r.finished = true;
     var correct = r.results.filter(function (x) { return x.correct; }).length;
-    var score = correct / r.results.length;
+    var score = correct / Math.max(1, r.kind === 'sprint' ? r.items.length : r.results.length);
     var passed, head, note;
 
     if (r.kind === 'module') {
@@ -1628,6 +2194,18 @@
       passed = score >= 0.7;
       head = 'Paper submitted';
       note = 'Your teacher can see this result and the full breakdown.';
+    } else if (r.kind === 'sprint') {
+      var used = Math.round((Date.now() - r.started) / 1000);
+      S.p.sprints = S.p.sprints || {};
+      var rec = S.p.sprints[r.sprintKey] || { runs: 0, best: 0 };
+      rec.runs++; rec.last = score; rec.lastSec = used; rec.at = new Date().toISOString();
+      if (score > rec.best || (score === rec.best && (!rec.bestSec || used < rec.bestSec))) { rec.best = score; rec.bestSec = used; }
+      S.p.sprints[r.sprintKey] = rec;
+      passed = score >= 0.8;
+      head = correct + ' of ' + r.items.length + (r.timeUp ? ' · time up' : ' in ' + mmss(used));
+      note = r.timeUp ? 'The clock won. ' + (r.items.length - r.results.length) + ' question(s) were left unanswered — in a real paper those are free marks thrown away. Next time: answer, and move on.'
+        : score >= 0.8 ? 'Fast and accurate. Try to beat ' + mmss(used) + ' next time without dropping a mark.'
+        : 'You beat the clock but lost marks. Speed only counts once accuracy is there: read the explanations below, then run it again.';
     } else if (r.kind === 'speed') {
       var cov = P.tagsCovered(S.p);
       passed = true;
@@ -1653,10 +2231,11 @@
     }
     html += '<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">' +
       '<button class="btn primary" id="r-map">' +
-        (r.kind === 'speed' ? 'Back to your plan' : S.planReturn ? 'Back to the checklist' : 'Back to the systems') +
+        (r.kind === 'sprint' ? 'Back to the Modal Lab' : r.kind === 'speed' ? 'Back to your plan' : S.planReturn ? 'Back to the checklist' : 'Back to the stages') +
       '</button>' +
       (r.kind === 'module' || r.kind === 'check' ? '<button class="btn" id="r-again">Try again</button>' : '') +
       (r.kind === 'speed' ? '<button class="btn primary" id="r-speed">Another twenty</button>' : '') +
+      (r.kind === 'sprint' ? '<button class="btn primary" id="r-sprint">Run it again</button>' : '') +
 
       '</div></div></div>';
 
@@ -1666,9 +2245,12 @@
     sync();
     var rs = $('#r-speed');
     if (rs) rs.addEventListener('click', function () { S.run = null; startSpeed(20); });
+    var rsp = $('#r-sprint');
+    if (rsp) rsp.addEventListener('click', function () { S.run = null; startSprint(r.sprintKey); });
     $('#r-map').addEventListener('click', function () {
       var wasSpeed = r.kind === 'speed';
       S.run = null;
+      if (r.kind === 'sprint') { show('lab'); return; }
       if (wasSpeed) { S.planReturn = false; show('plan'); return; }
       if (S.planReturn) { S.planReturn = false; show('plan'); } else show('map');
     });

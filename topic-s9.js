@@ -39,6 +39,7 @@ T9.levels.push({
         examples: [
           { s: 'You <b>don\'t have to</b> pay to go into the park — it\'s free.', g: 'no obligation: nobody asks you to pay.' },
           { s: 'You <b>mustn\'t</b> feed the animals at the zoo.', g: 'a rule: feeding them is not allowed.' },
+          { s: '"Can I borrow your bike?" — "Sorry, you <b>can\'t</b>. I need it today."', g: 'can\'t refuses permission: it is the usual no to a Can I …? question.' },
           { s: 'I <b>must</b> save some money this month.', g: 'the speaker has decided this herself.' },
           { s: '<s>You mustn\'t bring a coat — it\'s really warm today.</s>', g: 'the speaker means there is no need, so it should be: you don\'t have to bring a coat.' }
         ]
@@ -89,13 +90,13 @@ T9.levels.push({
         { id: 't9l1s1-5', type: 'gap', tag: 'u5-now-neg', level: 'B1',
           blank: '(1)',
           lines: [
-            { who: 'Fah', text: 'Are you coming to the cinema with us on Saturday?' },
-            { who: 'Ploy', text: 'I\'d love to, but I ___(1)___ work in my aunt\'s shop all day. She needs help with the big sale.' }
+            { who: 'Fah', text: 'Mum, can I go to Ploy\'s sleepover tonight? Everyone in my class is going!' },
+            { who: 'Mum', text: 'No, you ___(1)___. Your piano exam starts at eight tomorrow morning, and you need a good night\'s sleep.' }
           ],
           stem: 'Choose the best option for gap (1).',
-          options: ['mustn\'t', 'don\'t have to', 'have to', 'needn\'t'],
+          options: ['don\'t have to', 'needn\'t', 'can\'t', 'couldn\'t'],
           answer: 2,
-          why: 'Ploy is saying no to the cinema because somebody else — her aunt — needs her at the shop, so she needs a positive obligation: <em>have to</em>. Option 2, <em>don\'t have to</em>, is the near miss: it would be right if she were free and accepting, but after <em>I\'d love to, but …</em> she must be giving a reason she can\'t come. Option 4, <em>needn\'t</em>, has the same problem. Option 1, <em>mustn\'t</em>, would mean working in the shop is against the rules, which makes no sense when her aunt is asking for help.' }
+          why: 'Fah asks for permission with <em>Can I …?</em>, and Mum says no, so she needs the word that <strong>refuses permission</strong>: <em>No, you can\'t.</em> <em>Don\'t have to</em> and <em>needn\'t</em> are the near misses: they say there is no obligation, which answers a question like <em>Do I have to go?</em> — but Fah wants to go, and Mum is stopping her. <em>Couldn\'t</em> talks about the past or a guess, so it cannot refuse a request about tonight.' }
       ]
     },
 
@@ -599,7 +600,7 @@ T9.levels.push({
         key: 'To guess about now, choose the verb by how sure you are: <em>must</em> = about 90% sure it is true, <em>may</em>, <em>might</em> or <em>could</em> = about a 50% possibility, and <em>can\'t</em> = about 90% sure it is <strong>not</strong> true.',
         body: [
           'Often we don\'t know something for certain, but we can make a good guess from what we see or hear. <em>She lives in an enormous house. She <strong>must</strong> be rich.</em> The house is our evidence, and <em>must</em> says we are about 90% sure. It is not a rule here: nobody is telling her to be rich.',
-          'When the evidence could point either way, use <em>may</em>, <em>might</em> or <em>could</em>: <em>Take an umbrella. It <strong>might</strong> rain later.</em> That is about a 50% possibility. The 50% negatives are <em>may not</em> and <em>might not</em> (<em>mightn\'t</em>): <em>The shop <strong>might not</strong> be open yet.</em> Be careful: <em>couldn\'t</em> is <strong>not</strong> a 50% negative. <em>It couldn\'t be true</em> means almost the same as <em>It can\'t be true</em>.',
+          'When the evidence could point either way, use <em>may</em>, <em>might</em> or <em>could</em>: <em>Take an umbrella. It <strong>might</strong> rain later.</em> That is about a 50% possibility — and notice that <em>later</em> is in the future: the same verbs guess about the future as well as about now. The 50% negatives are <em>may not</em> and <em>might not</em> (<em>mightn\'t</em>): <em>The shop <strong>might not</strong> be open yet.</em> Be careful: <em>couldn\'t</em> is <strong>not</strong> a 50% negative. <em>It couldn\'t be true</em> means almost the same as <em>It can\'t be true</em>.',
           'When you are about 90% sure something is <strong>not</strong> true, use <em>can\'t</em>: <em>She\'s only fourteen. She <strong>can\'t</strong> have a driving licence.</em> The opposite of <em>must</em> in a guess is <em>can\'t</em>, not <em>mustn\'t</em>. <em>Mustn\'t</em> is for rules (<em>You mustn\'t use your phone in the exam</em>), so <s>She mustn\'t have a driving licence</s> sounds as if somebody has banned her from having one.',
           'All these verbs are followed by the infinitive without <em>to</em>. If you are guessing about something that is going on right now, use <em>be</em> + <em>-ing</em>: <em>She\'s got a Spanish textbook. She <strong>must be learning</strong> Spanish.</em>'
         ],
@@ -611,6 +612,7 @@ T9.levels.push({
         examples: [
           { s: 'She lives in an enormous house. She <b>must be</b> rich.', g: 'about 90% sure it is true.' },
           { s: 'The shop <b>might not be</b> open yet. Let\'s ring first.', g: 'a 50% "maybe not". Couldn\'t would be much stronger.' },
+          { s: 'It\'s cloudy, but the match <b>mightn\'t</b> be cancelled — let\'s wait and see.', g: 'mightn\'t = might not: a 50% guess about the future.' },
           { s: 'You\'ve only just had lunch. You <b>can\'t be</b> hungry again!', g: 'about 90% sure it is not true. The opposite of must here is can\'t, never mustn\'t.' },
           { s: 'She\'s got a Spanish textbook. She <b>must be learning</b> Spanish.', g: 'a guess about something going on now: be + -ing.' }
         ]
@@ -661,11 +663,11 @@ T9.levels.push({
           answer: 2,
           why: 'The typing is Dad\'s evidence, and the activity is going on at this moment, so he needs a 90% guess with <em>be</em> + <em>-ing</em>: <em>must be working</em>. <em>Must work</em> is the near miss. It has the right verb, but the simple form does not fit something happening right now, and with <em>right now</em> it sounds like an order. <em>Can\'t be working</em> says the opposite of what the typing shows. <em>Mustn\'t be working</em> sounds as if Ploy is forbidden to work.' },
 
-        { id: 't9l3s1-5', type: 'judge', tag: 'u5-guess-now', level: 'B1+',
-          given: 'Ella: "Someone\'s at the door. It might be the delivery driver with my new trainers."',
-          stem: 'Ella is sure that it is the delivery driver.',
+        { id: 't9l3s1-5', type: 'choose', tag: 'u5-guess-now', level: 'B1+',
+          stem: 'The weather app shows a 50% chance of storms tomorrow afternoon. The coach writes to the team: <em>Bring your raincoats. The match ______ go ahead tomorrow, so check the LINE group before you leave home.</em>',
+          options: ['can\'t', 'mightn\'t', 'mustn\'t', 'needn\'t'],
           answer: 1,
-          why: 'False. <em>Might be</em> shows only a 50% possibility: Ella hopes it is the delivery driver, but it could be someone else. If she were about 90% sure, she would say <em>It must be the delivery driver</em>. "Can\'t tell" is not right either, because the word <em>might</em> itself tells us how sure she is.' }
+          why: 'A 50% forecast points both ways, so the coach is guessing about the future with a "maybe not": <em>mightn\'t</em>, the short form of <em>might not</em>. <em>Can\'t</em> is the near miss: it would mean she is about 90% sure the match will not happen, which is too strong for a 50% forecast — and then nobody would need to check the group. <em>Mustn\'t</em> is a rule, and nobody is forbidding the match. <em>Needn\'t</em> says the match is not necessary, which has nothing to do with the weather.' }
       ]
     },
 

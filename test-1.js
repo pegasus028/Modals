@@ -1,16 +1,17 @@
 /* ===========================================================================
    TEST 1 — m1 · THE TRIAGE
-   Twenty-six items, one per teaching point: twenty sampling the eight core stages
-   in order, and six (Part E) keyed to Gateway B2 Unit 5 that route to Stage 9.
+   Thirty-two items, one per teaching point: twenty sampling the eight core stages
+   in order, six (Part E) keyed to Gateway B2 Unit 5 that route to Stage 9, and
+   six (Part F) in the shapes of the TCAS70 paper that route to Stage 10.
    MOCKS[0] is the diagnostic: the engine turns every miss into a study
    checklist, so each item is a clean single-point test of one tag.
    =========================================================================== */
 MOCKS.push({
   id: 'm1',
   name: 'Triage Test',
-  blurb: 'Twenty-six questions across all nine stages. It is not a score to be proud of or ashamed of — it is a map. What you miss here becomes your checklist.',
-  minutes: 32,
-  total: 26,
+  blurb: 'Thirty-two questions across all ten stages. It is not a score to be proud of or ashamed of — it is a map. What you miss here becomes your checklist.',
+  minutes: 38,
+  total: 32,
   sections: [
 
     /* ------------------------------------------------ PART A, items 1-5 */
@@ -268,6 +269,82 @@ MOCKS.push({
           answer: 1,
           fix: 'He might have forgotten to charge it,',
           why: 'A guess about the past needs the chain modal + <em>have</em> + past participle: <em>might have forgotten</em>. <s>Might forgot</s> drops <em>have</em> and puts a past simple straight after the modal, which English never allows. The other parts are correct: part 1 is about now, and parts 3 and 4 are ordinary past simple.' }
+      ]
+    },
+
+    /* ------------------------------------------ PART F, items 27-32 */
+    {
+      code: 'F',
+      part: 'PART F: MODALS IN THE TCAS70 PAPER',
+      title: 'Conversations, text completion and reading',
+      instructions: 'Six questions in the shapes of the TCAS70 A-Level English paper: a conversation gap, a mistake to find, a gapped passage, a sentence to complete, a news report and a notice. A miss here sends you to Stage 10.',
+      points: 1,
+      items: [
+
+        { id: 'm1-27', type: 'gap', tag: 'tc-request', level: 'B2',
+          blank: '(1)',
+          lines: [
+            { who: 'Situation', text: 'In a classroom, five minutes before a group presentation' },
+            { who: 'Ploy', text: 'The projector won\'t turn on, and my hands are full of handouts.' },
+            { who: 'Mai', text: '___(1)___' },
+            { who: 'Ploy', text: 'Yes, please. That would be a big help.' }
+          ],
+          stem: 'Choose the best option for gap (1).',
+          options: [
+            'Shall I take a look at it?',
+            'Would you mind helping me?',
+            'Could you pass me a handout?',
+            'Can I borrow one of the handouts?'
+          ],
+          answer: 0,
+          why: 'Ploy answers <em>Yes, please. That would be a big help</em>, which is how you accept an offer, so Mai offered to do something for her: <em>Shall I take a look at it?</em> <em>Would you mind helping me?</em> asks Ploy to do the work, and a <em>mind</em> question is never answered <em>Yes, please</em>. <em>Could you pass me a handout?</em> is a request and <em>Can I borrow one of the handouts?</em> asks permission; neither would be called a big help to Ploy.' },
+
+        { id: 'm1-28', type: 'spot', tag: 'tc-advice', level: 'B2',
+          stem: 'One of the four parts is wrong. Find it.',
+          words: ['Mint\'s laptop broke last night,', 'so I told her', 'that she\'d better not panic', 'and should have taken it to a repair shop tomorrow.'],
+          answer: 3,
+          fix: 'and should take it to a repair shop tomorrow.',
+          why: 'The repair is planned for <em>tomorrow</em>, so this is advice about the future: <em>should take it</em>. <em>Should have taken</em> looks back at a chance that has already gone, which cannot be true of tomorrow. The other parts are correct, including <em>she\'d better not panic</em>, where <em>not</em> correctly follows <em>better</em>.' },
+
+        { id: 'm1-29', type: 'cloze', tag: 'tc-modal-passive', level: 'B2+',
+          passage: 'The school pool was closed suddenly last week after several swimmers fell ill. Many parents believe the water ___(1)___ before the new term began, and the school has now promised to check it every week.',
+          blank: '(1)',
+          stem: 'Choose the best option for blank (1).',
+          options: ['should test', 'should have been tested', 'should be tested', 'should have tested'],
+          answer: 1,
+          why: 'Water does not test anything; somebody tests it, so the verb is passive, and <em>before the new term began</em> puts it in the past: the parents believe a check was needed and did not happen, so <em>should have been tested</em>. <em>Should have tested</em> is the near miss: the right time but active, so the water would be doing the testing. <em>Should be tested</em> is about now or the future, and <em>should test</em> is active and present.' },
+
+        { id: 'm1-30', type: 'choose', tag: 'tc-subjunctive', level: 'B2+',
+          stem: 'The head teacher has recommended that every student ______ a hat during outdoor PE lessons in April.',
+          options: ['wears', 'to wear', 'wear', 'will wear'],
+          answer: 2,
+          why: '<em>Recommended that</em> introduces what should happen, so the verb is the bare base form for every subject: that every student <em>wear</em> a hat. <em>Wears</em> is the near miss: <em>every student</em> is singular, but after a recommendation the verb takes no <em>-s</em>. <em>To wear</em> cannot follow <em>that</em> + subject, and <em>will wear</em> turns the recommendation into a prediction.' },
+
+        { id: 'm1-31', type: 'read', tag: 'tc-read-hedge', level: 'B2+',
+          passage: 'New airport rail line could open next October\n\nThe new rail line to Bangkok\'s second airport could open as early as next October, according to the transport ministry. Engineers say most of the track is finished, but the signalling system is still being tested.\n\nOfficials admit that the date may change if problems are found during the tests. A full timetable is expected to be published in the summer.',
+          source: 'Illustrative news report written for practice',
+          stem: 'Which statement is TRUE according to the report?',
+          options: [
+            'The line will definitely open next October.',
+            'The signalling system has failed its tests.',
+            'Engineers have not started building the track.',
+            'The opening date is not yet certain.'
+          ],
+          answer: 3,
+          why: 'The line <em>could</em> open next October, and officials say the date <em>may change</em>, so the opening date is not yet certain. <em>The line will definitely open next October</em> is the trap: it turns <em>could</em> into a certainty. The signalling is <em>still being tested</em>, not failed, and most of the track is already finished.' },
+
+        { id: 'm1-32', type: 'read', tag: 'tc-fineprint', level: 'B2',
+          passage: 'RIVERSIDE MUSEUM: STUDENT WEDNESDAYS\n\nEntry is free for students every Wednesday.\n\n• Students must show a valid student ID at the ticket desk.\n\n• Visitors need not book in advance, but groups of more than ten must book a week ahead.\n\n• Photos may be taken in all galleries. Flash cannot be used.\n\n• Bags larger than A4 must be left in the lockers.',
+          source: 'Illustrative notice',
+          stem: 'Which of the following is NOT allowed?',
+          options: [
+            'Using flash in a gallery',
+            'Visiting alone without booking',
+            'Taking photos in a gallery',
+            'Keeping a small bag with you'
+          ],
+          answer: 0,
+          why: '<em>Flash cannot be used</em> is a ban, so using flash is not allowed. <em>Visiting alone without booking</em> is the near miss: <em>need not book</em> means booking is not necessary, not that it is forbidden, and only large groups must book. Photos <em>may be taken</em>, which gives permission, and only bags larger than A4 must go in the lockers.' }
       ]
     }
   ]

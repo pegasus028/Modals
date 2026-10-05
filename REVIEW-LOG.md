@@ -1065,3 +1065,19 @@ Key positions are now 5/5/5/5.
 
 **16 of 20 items changed.**
 
+
+
+---
+
+# 5 October 2026 — coverage pass (Unit 5 page and TCAS70)
+
+| item | change |
+|---|---|
+| t9l1s1-5 | replaced: was a positive *have to* gap (still tested in t9l1ck-1, t9l2s1); now a dialogue in which Mum refuses permission — *No, you can't* — against *don't have to / needn't / couldn't*. Key position unchanged (3). |
+| t9l3s1-5 | replaced: was a True/False on *might* (the 50% reading is still tested by t9l3s1-3 and t9l3ck-1); now a future guess with *mightn't* against *can't / mustn't / needn't*. |
+| t9l1s1, t9l3s1 theory | one example added each (*can't* refusing permission; *mightn't* about the future); t9l3s1 body notes that the same verbs guess about the future. |
+| t10l2ck-3 | distractor *Had not it been* (ungrammatical anywhere) replaced by the real learner error *Hadn't it been* (no contraction in an inverted condition). |
+| Stage 10 | new: 63 items, 9 `tc-` tags; triage Part F (m1-27 … m1-32). |
+
+Balance after the pass (`node audit.js`): t9 keys 12/10/12/10, key longest 27%;
+t10 keys 12/13/13/12, key longest 26%; all MCQs 122/123/125/116, key longest 25%.
