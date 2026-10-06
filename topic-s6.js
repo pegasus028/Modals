@@ -71,7 +71,7 @@ T6.levels.push({
           given: 'Judging by the timestamps, the surveyor must have taken the second set of readings before the tide turned.',
           stem: 'The writer is reporting a requirement that was placed on the surveyor.',
           answer: 1,
-          why: 'False. <em>Judging by the timestamps</em> tells you the writer is reasoning from evidence, so <em>must have taken</em> is a deduction: the writer is concluding, now, that the readings were taken then. A requirement in past time would be <em>had to take</em>, and being a real past tense it would also state that the taking happened, which this sentence only concludes. "Can\'t tell" would need the sentence to be genuinely two-way, but the opening phrase leaves no room for a rule: the writer is working it out from the record.' },
+          why: 'False. <em>Judging by the timestamps</em> tells you the writer is reasoning from evidence, so <em>must have taken</em> is a deduction: the writer is concluding, now, that the readings were taken then. A requirement in past time would be <em>had to take</em>, and being a real past tense it would normally imply that the taking happened, which this sentence only concludes. "Can\'t tell" would need the sentence to be genuinely two-way, but the opening phrase leaves no room for a rule: the writer is working it out from the record.' },
 
         { id: 't6l1s1-5', type: 'choose', tag: 'past-deduce', level: 'C1',
           stem: 'An incident report contains the line <em>The duty engineer had to reset the system manually.</em> Which statement about that sentence is correct?',
@@ -82,7 +82,7 @@ T6.levels.push({
             'It reports an opportunity, and the reset never took place.'
           ],
           answer: 0,
-          why: '<em>Had to</em> is the genuine past tense of obligation, and like any past tense it asserts that the event took place: the requirement existed and was met. An inference would need <em>must have reset</em>, which leaves the writer reasoning rather than recording. A criticism would need <em>should have reset</em>, and that form says the reset never happened at all. An opportunity not taken would need <em>could have reset</em>. All four options are built to the same pattern, so the choice turns on the verb phrase alone — and this is why <em>must have</em> cannot be filed as the past of <em>must</em>.' }
+          why: '<em>Had to</em> is the genuine past tense of obligation, and in a report like this it tells you the event took place: the requirement existed and was met. An inference would need <em>must have reset</em>, which leaves the writer reasoning rather than recording. A criticism would need <em>should have reset</em>, and that form says the reset never happened at all. An opportunity not taken would need <em>could have reset</em>. All four options are built to the same pattern, so the choice turns on the verb phrase alone — and this is why <em>must have</em> cannot be filed as the past of <em>must</em>.' }
       ]
     },
 
@@ -252,14 +252,14 @@ T6.levels.push({
           'The committee didn\'t need to see the revised figures.'
         ],
         answer: 2,
-        why: '<em>Perhaps … never</em> puts the negative inside the proposition and leaves the possibility open, which is exactly <em>may not have seen</em>. <em>Can\'t have seen</em> hardens a guess into a certainty by negating the possibility instead of the seeing. <em>Mustn\'t have seen</em> is a prohibition in careful British usage and cannot be applied to a finished event; and even where people use it as a deduction, it means "I am fairly sure they did not", which is still far stronger than <em>perhaps</em>. <em>Didn\'t need to see</em> swaps the question of what happened for the question of what was required.' },
+        why: '<em>Perhaps … never</em> puts the negative inside the proposition and leaves the possibility open, which is exactly <em>may not have seen</em>. <em>Can\'t have seen</em> hardens a guess into a certainty by negating the possibility instead of the seeing. <em>Mustn\'t have seen</em> is not a deduction at all: <em>mustn\'t</em> prohibits, and nothing can be forbidden once it is over. <em>Didn\'t need to see</em> swaps the question of what happened for the question of what was required.' },
 
       { id: 't6l1ck-3', type: 'spot', tag: 'past-deduce', level: 'B2+',
         stem: 'One of the four parts is wrong. Find it.',
         words: ['The evening ferry was cancelled', 'and nobody saw them at the port,', 'so the delegation must arrive by road yesterday,', 'which would explain why they looked so tired this morning.'],
         answer: 2,
         fix: 'so the delegation must have arrived by road yesterday,',
-        why: 'The past cannot be carried by the adverb. <em>Yesterday</em> tells the reader when, but the verb phrase still has to be put into the past by <em>have</em> plus a participle: <em>must have arrived</em>. This is the commonest first-language shortcut in the whole stage, because a language that marks time with particles has no reason to touch the verb. The other three parts are correctly built.' },
+        why: 'The past cannot be carried by the adverb. <em>Yesterday</em> tells the reader when, but the verb phrase still has to be put into the past by <em>have</em> plus a participle: <em>must have arrived</em>. This is a common shortcut for learners whose first language marks time with particles, since such a language has no reason to touch the verb. The other three parts are correctly built.' },
 
       { id: 't6l1ck-4', type: 'cloze', tag: 'past-prog', level: 'B2+',
         passage: 'The temperature trace from the sample freezer ends abruptly at 03:14 and resumes at 06:02. During those three hours no reading of any kind was recorded.\n\nThe unit ___(1)___ without power for the whole of that period, and the samples ___(2)___ slowly the entire time. Nothing in the duty log explains the gap, and the technician on call insists that the alarm never sounded.',
@@ -359,7 +359,7 @@ T6.levels.push({
           words: ['The revised evacuation plan was ready in September,', 'but staff did not see it until late November.', 'The safety committee accepts that it', 'ought have circulated the plan at the start of term.'],
           answer: 3,
           fix: 'ought to have circulated the plan at the start of term.',
-          why: '<em>Ought</em> is the one modal that keeps its <em>to</em>, in every construction: <em>ought to go</em>, <em>ought to have circulated</em>. Dropping it over-applies the rule that modals take a bare infinitive, which is true of the others and false of this one. The remaining parts are sound: two ordinary past-tense statements of fact, and a present-tense reporting clause that introduces the criticism.' },
+          why: '<em>Ought</em> keeps its <em>to</em> before a verb: <em>ought to go</em>, <em>ought to have circulated</em>. Dropping it over-applies the rule that modals take a bare infinitive, which is true of the others and false of this one. The remaining parts are sound: two ordinary past-tense statements of fact, and a present-tense reporting clause that introduces the criticism.' },
 
         { id: 't6l2s1-5', type: 'choose', tag: 'past-should', level: 'C1',
           stem: 'A minister said afterwards: <em>We shouldn\'t have released the figures before the audit was complete.</em> What does that sentence tell you?',
@@ -407,7 +407,7 @@ T6.levels.push({
             'The department had to appeal within thirty days.'
           ],
           answer: 2,
-          why: '<em>Could have appealed</em> puts the opportunity in past time and leaves it there: the option was open, and on this reading nothing came of it. <em>Must have appealed</em> is a deduction that an appeal was in fact made. <em>Can\'t have appealed</em> is the near miss: it also ends with no appeal, but it gets there by weighing evidence rather than by naming an option that was not taken. <em>Had to appeal</em> says an appeal was required and, being a real past tense, that it happened.' },
+          why: '<em>Could have appealed</em> puts the opportunity in past time and leaves it there: the option was open, and on this reading nothing came of it. <em>Must have appealed</em> is a deduction that an appeal was in fact made. <em>Can\'t have appealed</em> is the near miss: it also ends with no appeal, but it gets there by weighing evidence rather than by naming an option that was not taken. <em>Had to appeal</em> says an appeal was required and, being a real past tense, implies that it happened.' },
 
         { id: 't6l2s2-2', type: 'judge', tag: 'past-could', level: 'C1',
           given: 'With a longer run-up, the jumper could have cleared the bar.',
@@ -417,9 +417,9 @@ T6.levels.push({
 
         { id: 't6l2s2-3', type: 'choose', tag: 'past-could', level: 'C1',
           stem: 'Anan learns at the door that the meeting was moved. He says to his colleague: <em>You ______ told me it had been changed!</em>',
-          options: ['might have', 'may have', 'can\'t have', 'must have'],
+          options: ['might have', 'needn\'t have', 'can\'t have', 'must have'],
           answer: 0,
-          why: 'Stressed <em>might have</em> is English\'s standard reproach: it says an easy and obvious act was not performed, and it is the only one of the four that can carry a complaint. <em>May have</em> is the near miss: it sits on the same rung of the certainty scale but has no reproach reading, so it would come out as an odd guess about whether his colleague spoke. <em>Must have told</em> deduces that the colleague did tell him, which the situation contradicts. <em>Can\'t have told</em> reaches the right conclusion but as a piece of reasoning rather than a complaint.' },
+          why: 'Stressed <em>might have</em> is English\'s standard reproach: it says an easy and obvious act was not performed, and it is the only one of the four that complains about something left undone. <em>Needn\'t have told</em> is the near miss: it can also carry a mild reproach, but for something that <strong>was</strong> done — it says the colleague did tell him and had no need to, which the situation contradicts. <em>Must have told</em> deduces that the colleague did tell him, which the situation also contradicts. <em>Can\'t have told</em> reaches the right conclusion but as a piece of reasoning rather than a complaint.' },
 
         { id: 't6l2s2-4', type: 'build', tag: 'past-could', level: 'C1',
           stem: 'A near-miss report describes a lorry that stopped a metre short. Put the words in order to say what did not happen but very easily might have.',
@@ -437,7 +437,7 @@ T6.levels.push({
             'The council needn\'t have widened the footpath when the road was resurfaced.'
           ],
           answer: 2,
-          why: 'Only <em>could have widened</em> stops at noting that the chance was there and declines to grade anybody. <em>Should have widened</em> agrees that the widening never happened but adds that the failure was a fault, which is the verdict the question excludes. <em>Must have widened</em> runs in the opposite direction and deduces that the footpath was widened after all. <em>Needn\'t have widened</em> belongs to a different family again: it says the widening was carried out and turned out to be unnecessary.' }
+          why: 'Only <em>could have widened</em> can simply note that the chance was there without passing a verdict on anybody. <em>Should have widened</em> agrees that the widening never happened but adds that the failure was a fault, which is the verdict the question excludes. <em>Must have widened</em> runs in the opposite direction and deduces that the footpath was widened after all. <em>Needn\'t have widened</em> belongs to a different family again: it says the widening was carried out and turned out to be unnecessary.' }
       ]
     },
 
@@ -482,7 +482,7 @@ T6.levels.push({
           stem: 'Choose the best option for blank (1).',
           options: ['would have registered', 'would register', 'must have registered', 'had registered'],
           answer: 0,
-          why: 'The inverted <em>Had the detectors been serviced</em> is an unreal past condition, and its consequent takes <em>would have</em> plus a participle. <em>Would register</em> is the present unreal consequent and clashes with a condition set in the spring. <em>Must have registered</em> turns the sentence into a deduction that the detectors did their job, which the timeline flatly denies. <em>Had registered</em> repeats the past perfect of the condition in a slot that needs the modal.' },
+          why: 'The inverted <em>Had the detectors been serviced</em> is an unreal past condition, and its consequent takes <em>would have</em> plus a participle. <em>Would register</em> is a present result — possible in a mixed conditional about the detectors today, but this paragraph is about the night of the fire, so the result must be past too. <em>Must have registered</em> turns the sentence into a deduction that the detectors did their job, which the timeline flatly denies. <em>Had registered</em> repeats the past perfect of the condition in a slot that needs the modal.' },
 
         { id: 't6l2s3-3', type: 'choose', tag: 'past-would', level: 'C1',
           stem: 'The railway line closed in 2019 and the town has lost a third of its visitors since. Which sentence says how the town would be different <strong>today</strong> if the line had stayed open?',
@@ -493,7 +493,7 @@ T6.levels.push({
             'If the line would have stayed open, the town would still have its visitors.'
           ],
           answer: 1,
-          why: 'Each clause carries the time of its own proposition: the condition is past (<em>had stayed</em>) and the consequence is present and continuing (<em>would still have</em>). Option 1 is the near miss: a well-formed third conditional, but <em>in 2020</em> confines the result to past time and says nothing about the town today. Option 3 makes both halves present unreal and loses the 2019 closure altogether. Option 4 puts <em>would have</em> into the <em>if</em>-clause, where English never allows it.' },
+          why: 'Each clause carries the time of its own proposition: the condition is past (<em>had stayed</em>) and the consequence is present and continuing (<em>would still have</em>). Option 1 is the near miss: a well-formed third conditional, but <em>in 2020</em> confines the result to past time and says nothing about the town today. Option 3 makes both halves present unreal and loses the 2019 closure altogether. Option 4 puts <em>would have</em> into the <em>if</em>-clause, where standard written English does not allow it.' },
 
         { id: 't6l2s3-4', type: 'order', tag: 'past-would', level: 'C1',
           stem: 'Put the four sentences in the order that makes a coherent extract from an accident report.',
@@ -550,13 +550,13 @@ T6.levels.push({
           'The company needn\'t have bought the warehouse in 2021.'
         ],
         answer: 2,
-        why: '<em>Could have bought</em> states that the opportunity existed and entails that nothing came of it, which is precisely what the given sentence reports. <em>Should have bought</em> adds a verdict the given sentence does not contain — it makes the decision a fault. <em>Must have bought</em> is a deduction that the purchase went through. <em>Needn\'t have bought</em> says the warehouse was bought and that buying it was unnecessary.' },
+        why: '<em>Could have bought</em> here names a chance that existed and was not taken, which is precisely what the given sentence reports. <em>Should have bought</em> adds a verdict the given sentence does not contain — it makes the decision a fault. <em>Must have bought</em> is a deduction that the purchase went through. <em>Needn\'t have bought</em> says the warehouse was bought and that buying it was unnecessary.' },
 
       { id: 't6l2ck-4', type: 'sort', tag: 'past-should', level: 'C1',
         stem: 'In each sentence, is the speaker taking the action to have happened, or taking it not to have happened?',
         bins: [
-          { key: 'yes', label: 'The speaker takes it to have happened', hint: 'you cannot use the sentence and then deny the event' },
-          { key: 'no', label: 'The speaker takes it not to have happened', hint: 'the form itself says the event never took place' }
+          { key: 'yes', label: 'The speaker takes it to have happened', hint: 'the sentence presents the event as having happened' },
+          { key: 'no', label: 'The speaker takes it not to have happened', hint: 'in this sentence the form presents the event as not having happened' }
         ],
         items: [
           { text: 'You <em>shouldn\'t have signed</em> the delivery note.', bin: 'yes' },
@@ -566,18 +566,13 @@ T6.levels.push({
           { text: 'We <em>could have signed</em> a longer lease at the same rent, but nobody thought of it.', bin: 'no' },
           { text: 'The night porter <em>must have signed</em> it, since nobody else was there.', bin: 'yes' }
         ],
-        why: 'This is the line between Level 1 and Level 2, and it is a line about what the speaker is committed to rather than about proof. <em>Had to sign</em> is a real past tense and states the signing outright; <em>must have signed</em> only deduces it, and a deduction can be wrong — but nobody can offer that deduction and then deny the signing, so the two land on the same side. The three evaluative forms do the opposite: <em>should have</em>, <em>could have</em> and <em>would have</em> each entail that the event never occurred, and differ only in whether that is a fault, a missed chance or an unreal result. <em>Shouldn\'t have</em> is the exception that proves the pattern, because the negative flips the entailment back.' },
+        why: 'This is the line between Level 1 and Level 2, and it is a line about what the speaker is committed to rather than about proof. <em>Had to sign</em> is a real past tense and normally implies that the signing took place; <em>must have signed</em> only deduces it, and a deduction can be wrong — but nobody offers that deduction while believing the note unsigned, so the two land on the same side. The three evaluative forms do the opposite: in these sentences <em>should have</em>, <em>could have</em> and <em>would have</em> each present the event as not having happened, and differ only in whether that is a fault, a missed chance or an unreal result. <em>Shouldn\'t have</em> is the exception that proves the pattern, because the negative flips it back.' },
 
       { id: 't6l2ck-5', type: 'choose', tag: 'past-could', level: 'C1',
         stem: 'Which sentence reproaches the listener for failing to do something easy and obvious?',
-        options: [
-          'You may have mentioned the closure.',
-          'You needn\'t have mentioned the closure.',
-          'You must have mentioned the closure.',
-          'You might have mentioned the closure.'
-        ],
+        options: ['You would have mentioned the closure.', 'You needn\'t have mentioned the closure.', 'You must have mentioned the closure.', 'You might have mentioned the closure.'],
         answer: 3,
-        why: 'Stressed <em>might have</em> is the reproach form: it says the mentioning would have cost nothing and did not happen. <em>Needn\'t have mentioned</em> is the near miss: it can also be a mild reproach, but for something the listener <strong>did</strong> — it says the closure was mentioned and there was no need to. <em>May have mentioned</em> is the same rung of the certainty scale but has no reproach reading, so it can only be a weak guess about whether the listener spoke. <em>Must have mentioned</em> deduces that they did.' },
+        why: 'Stressed <em>might have</em> is the reproach form: it says the mentioning would have cost nothing and did not happen. <em>Needn\'t have mentioned</em> is the near miss: it can also be a mild reproach, but for something the listener <strong>did</strong> — it says the closure was mentioned and there was no need to. <em>Would have mentioned</em> is not a reproach for something left undone: on its own it assumes that the listener did mention the closure, or supplies the result half of an unreal condition that has been left out. <em>Must have mentioned</em> deduces that they did.' },
 
       { id: 't6l2ck-6', type: 'cloze', tag: 'past-should', level: 'C1',
         passage: 'The review of the March outage makes uncomfortable reading. The on-call rota had a gap between midnight and two, and that gap ___(1)___ flagged when the rota was drawn up in January.\n\nNobody noticed it for six weeks. By the time the outage began there was no engineer to call, and the service stayed down for ninety minutes.',
@@ -662,10 +657,10 @@ T6.levels.push({
 
         { id: 't6l3s1-5', type: 'spot', tag: 'past-needpair', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['We needn\'t have reserved seats for the afternoon session,', 'so we walked straight in', 'and found the back three rows', 'completely empty.'],
+          words: ['We needn\'t have reserved seats for the afternoon session,', 'so we didn\'t book at all', 'and found the back three rows', 'completely empty.'],
           answer: 0,
           fix: 'We didn\'t need to reserve seats for the afternoon session,',
-          why: '<em>Needn\'t have reserved</em> asserts that seats were reserved, and the next clause flatly contradicts it — you cannot walk straight in on a booking you never made. Because the event is asserted rather than implied, nothing that follows can cancel it, so the only repair is the other half of the pair. The remaining three parts are correct, and it is their consistency that exposes the clash in the first.' }
+          why: '<em>Needn\'t have reserved</em> asserts that seats were reserved, and the next clause flatly contradicts it by saying no booking was made. Because the event is asserted rather than implied, nothing that follows can cancel it, so the only repair is the other half of the pair. The remaining three parts are correct, and it is their consistency that exposes the clash in the first.' }
       ]
     },
 
@@ -816,7 +811,7 @@ T6.levels.push({
           stem: 'Choose the best option for gap (2).',
           options: ['could have gone', 'must have gone', 'needn\'t have gone', 'was going to go'],
           answer: 0,
-          why: 'The <em>but</em> clause gives a reason why an available course was not taken, which is the chance-not-taken reading of <em>could have</em>. <em>Must have gone</em> deduces that he did go through the gap, which the rest of the line denies. <em>Needn\'t have gone</em> would assert that he went round and add that it was unnecessary. <em>Was going to go</em> would report an intention the cyclist formed, and a rider who never saw the gap can have formed no such intention — quite apart from the fact that nothing at the scene gives the officer access to his intentions.' }
+          why: 'The <em>but</em> clause gives a reason why an available course was not taken, which is the chance-not-taken reading of <em>could have</em>. <em>Must have gone</em> deduces that he did go through the gap, which the rest of the line denies. <em>Needn\'t have gone</em> would assert that he did go through the gap and add that it was unnecessary. <em>Was going to go</em> would report an intention the cyclist formed, and a rider who never saw the gap can have formed no such intention — quite apart from the fact that nothing at the scene gives the officer access to his intentions.' }
       ]
     }
   ],

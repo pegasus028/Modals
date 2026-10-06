@@ -153,7 +153,7 @@ T4.levels.push({
           stem: 'Choose the best option for blank (2).',
           options: ['can issue', 'is able issue', 'could have issued', 'has been able to issue'],
           answer: 3,
-          why: 'A <em>since</em> clause with a tally of warnings already given demands a present perfect, and the perfect needs a participle that a modal cannot supply — hence <em>has been able to</em>. <em>Can issue</em> is present and cannot count up occasions that are over, as <em>arrived</em> shows. <em>Could have issued</em> says the warnings were possible and never given, which contradicts the paragraph. <em>Is able issue</em> loses the <em>to</em>.' }
+          why: 'A <em>since</em> clause with a tally of warnings already given demands a present perfect, and the perfect needs a participle that a modal cannot supply — hence <em>has been able to</em>. <em>Can issue</em> is present and cannot count up occasions that are over, as <em>arrived</em> shows. <em>Could have issued</em> either says the warnings were possible and never given or only guesses that they were given, and the paragraph reports them as fact. <em>Is able issue</em> loses the <em>to</em>.' }
       ]
     },
 
@@ -235,7 +235,7 @@ T4.levels.push({
             'Lithium cells could have vented when they were overcharged.'
           ],
           answer: 2,
-          why: '<em>Occasionally</em> is exactly what general-possibility <em>can</em> encodes, so the third sentence reports the finding at the strength the evidence supports. <em>Will</em> claims an invariable property — every overcharged cell, every time — which overstates it. <em>Must</em> is a deduction or an obligation, neither of which a materials report is making. <em>Could have vented</em> refers to specific cells on a past occasion and says the venting did not happen.' }
+          why: '<em>Occasionally</em> is exactly what general-possibility <em>can</em> encodes, so the third sentence reports the finding at the strength the evidence supports. <em>Will</em> claims an invariable property — every overcharged cell, every time — which overstates it. <em>Must</em> is a deduction or an obligation, neither of which a materials report is making. <em>Could have vented</em> is about particular cells on a past occasion, and only says venting was possible then — not a general property.' }
       ]
     }
   ],
@@ -274,7 +274,7 @@ T4.levels.push({
         words: ['Once the new system goes live,', 'every invoice from the past year', 'will be stored in one place, and the auditors', 'will can find any of them in a single search.'],
         answer: 3,
         fix: 'will be able to find any of them in a single search.',
-        why: 'Two modals cannot stand together, because a modal has no infinitive for the first one to take. <em>Will be able to find</em> is the only way to say this. The rest of the sentence is sound: the time clause correctly uses a present tense for future reference, and <em>will be stored</em> is an ordinary future passive with no second modal in it.' },
+        why: 'Two modals cannot stand together, because a modal has no infinitive for the first one to take. <em>Will be able to find</em> is the standard repair. The rest of the sentence is sound: the time clause correctly uses a present tense for future reference, and <em>will be stored</em> is an ordinary future passive with no second modal in it.' },
 
       { id: 't4l1ck-5', type: 'gap', tag: 'dyn-ability', level: 'B2',
         blank: '(1)',
@@ -285,7 +285,7 @@ T4.levels.push({
         stem: 'Choose the best option for gap (1).',
         options: ['can', 'may', 'is allowed to', 'could have'],
         answer: 0,
-        why: 'Ploy is looking for someone with the skill, and present skill is <em>can</em>. <em>May</em> would ask who is authorised, or who might possibly do it, and neither is the question. <em>Is allowed to</em> is permission again. <em>Could have</em> refers to a past opportunity that was not taken, which makes no sense of a survey that has only just arrived.' },
+        why: 'Ploy is looking for someone with the skill, and present skill is <em>can</em>. <em>May</em> would ask who is authorised, or who might possibly do it, and neither is the question. <em>Is allowed to</em> is permission again. <em>Could have</em> moves the question into the past — a chance that was missed, or a guess about what happened — which makes no sense of a survey that has only just arrived.' },
 
       { id: 't4l1ck-6', type: 'sort', tag: 'dyn-general', level: 'B2+',
         stem: 'Each sentence uses <em>can</em>. Does it name a capacity, or say that something sometimes happens?',
@@ -351,9 +351,9 @@ T4.levels.push({
 
         { id: 't4l2s1-3', type: 'choose', tag: 'dyn-occasion', level: 'B2+',
           stem: 'Throughout the 1990s the old ferry ______ lorries as well as passengers.',
-          options: ['managed to carry', 'could carry', 'was able carry', 'can carry'],
+          options: ['has been able to carry', 'could carry', 'was able carry', 'can carry'],
           answer: 1,
-          why: '<em>Throughout the 1990s</em> describes a capacity that held for a decade, which is precisely the imperfective reading <em>could</em> exists for. <em>Managed to carry</em> is the near miss: it would suit one difficult crossing, but it forces a single occasion and imports a struggle that a decade-long capacity does not have. <em>Was able carry</em> drops the <em>to</em>. <em>Can carry</em> is present and cannot describe a finished decade.' },
+          why: '<em>Throughout the 1990s</em> describes a capacity that held for a decade, which is precisely the imperfective reading <em>could</em> exists for. <em>Has been able to carry</em> is the near miss: <em>be able to</em> is the right repair when a perfect is needed, but a present perfect runs up to now, and the 1990s are over. <em>Was able carry</em> drops the <em>to</em>. <em>Can carry</em> is present and cannot describe a finished decade.' },
 
         { id: 't4l2s1-4', type: 'equiv', tag: 'dyn-occasion', level: 'B2+',
           given: 'The negotiators worked through the night and finally got an agreement.',
@@ -365,7 +365,7 @@ T4.levels.push({
             'The negotiators were able get an agreement after working through the night.'
           ],
           answer: 1,
-          why: 'The original reports one negotiation that ended in a signed agreement after difficulty, and <em>succeeded in -ing</em> carries exactly that. <em>Could get</em> is blocked: a single completed achievement cannot take <em>could</em>. <em>Could have got</em> reverses the outcome and says the agreement was available but never reached. The last option is the right idea with the wrong form, since it drops the <em>to</em> that <em>able</em> always needs.' },
+          why: 'The original reports one negotiation that ended in a signed agreement after difficulty, and <em>succeeded in -ing</em> carries exactly that. <em>Could get</em> is blocked: a single completed achievement cannot take <em>could</em>. <em>Could have got</em> either names a chance that was missed or only guesses that an agreement was reached, and the original reports it as a fact. The last option is the right idea with the wrong form, since it drops the <em>to</em> that <em>able</em> always needs.' },
 
         { id: 't4l2s1-5', type: 'choose', tag: 'dyn-occasion', level: 'B2+',
           stem: 'Two facts: my aunt spoke four languages all her life, and she once persuaded a customs officer to release a parcel. Which sentence reports both of them correctly?',
@@ -376,7 +376,7 @@ T4.levels.push({
             'My aunt could speak four languages, and she could have persuaded the customs officer to release the parcel.'
           ],
           answer: 1,
-          why: 'The two halves need different forms because they are doing different things. Knowing four languages is a standing power, so <em>could</em>; persuading the officer on one occasion is an achievement that came off, so <em>was able to</em>. The first option uses <em>could</em> for both and loses the outcome. The third applies <em>managed to</em> to a lifelong skill, which reads as though learning each language were a single struggle. The fourth ends by saying the persuasion never actually happened.' }
+          why: 'The two halves need different forms because they are doing different things. Knowing four languages is a standing power, so <em>could</em>; persuading the officer on one occasion is an achievement that came off, so <em>was able to</em>. The first option uses <em>could</em> for both and loses the outcome. The third applies <em>managed to</em> to a lifelong skill, which reads as though learning each language were a single struggle. The fourth turns the persuasion into a chance she did not take, or at best a guess, when it actually happened.' }
       ]
     },
 
@@ -408,7 +408,7 @@ T4.levels.push({
           stem: 'Once the smoke had cleared, the survey team on the ridge ______ the whole of the burnt area, and they photographed every part of it before noon.',
           options: ['can see', 'could have seen', 'was able to seeing', 'could see'],
           answer: 3,
-          why: '<em>See</em> is a perception verb and therefore stative, so no achievement is being asserted and <em>could</em> is free even about one morning — indeed it is the natural form. <em>Could have seen</em> is the near miss: it would fit if they had never gone up, but it says the view was available and not taken, and the photographs show it was. <em>Can see</em> is present, while the whole story is past. <em>Was able to seeing</em> puts an <em>-ing</em> where <em>able to</em> requires an infinitive.' },
+          why: '<em>See</em> is a perception verb and therefore stative, so no achievement is being asserted and <em>could</em> is free even about one morning — indeed it is the natural form. <em>Could have seen</em> is the near miss: it would fit if they had never gone up, but here it would mean either a view that was available and not taken or a mere guess that they saw it — and the photographs show they did. <em>Can see</em> is present, while the whole story is past. <em>Was able to seeing</em> puts an <em>-ing</em> where <em>able to</em> requires an infinitive.' },
 
         { id: 't4l2s2-2', type: 'judge', tag: 'dyn-occexcept', level: 'B2+',
           given: 'Even with the microphone on, the delegates at the back couldn\'t hear the closing speech.',
@@ -420,7 +420,7 @@ T4.levels.push({
           stem: 'Despite nearly an hour of trying, he ______ the padlock that night.',
           options: ['could open', 'was able to not open', 'couldn\'t open', 'could have opened'],
           answer: 2,
-          why: 'The sentence reports a failure on one occasion, and the negative escapes the single-occasion rule entirely, so <em>couldn\'t open</em> is both correct and idiomatic. <em>Could open</em> is blocked twice over: it is an affirmative single occasion, and it contradicts <em>despite nearly an hour of trying</em>. <em>Was able to not open</em> puts the negation inside the proposition, which would mean he had the power to keep it shut. <em>Could have opened</em> says the chance existed and was missed, which is Stage 6 and a different claim.' },
+          why: 'The sentence reports a failure on one occasion, and the negative escapes the single-occasion rule entirely, so <em>couldn\'t open</em> is both correct and idiomatic. <em>Could open</em> is blocked twice over: it is an affirmative single occasion, and it contradicts <em>despite nearly an hour of trying</em>. <em>Was able to not open</em> puts the negation inside the proposition, which would mean he had the power to keep it shut. <em>Could have opened</em> is Stage 6 territory — a chance that was missed, or a guess that he did open it — and neither is the plain failure the sentence reports.' },
 
         { id: 't4l2s2-4', type: 'sort', tag: 'dyn-occexcept', level: 'B2+',
           stem: 'In which of these sentences is <em>could</em> acceptable as it stands?',
@@ -442,7 +442,7 @@ T4.levels.push({
           stem: 'After forty minutes of reading the file line by line, I finally ______ the missing semicolon.',
           options: ['could spot', 'could have spotted', 'could be spotting', 'managed to spot'],
           answer: 3,
-          why: '<em>Spot</em> looks like a perception verb, but <em>after forty minutes</em> and <em>finally</em> force an achievement reading: the sentence is reporting a culmination, not a state. That brings the single-occasion rule back and makes <em>managed to</em> the right form, since the difficulty is part of the point. <em>Could spot</em> is blocked by the achievement reading. <em>Could be spotting</em> describes an activity in progress. <em>Could have spotted</em> says it was never found.' }
+          why: '<em>Spot</em> looks like a perception verb, but <em>after forty minutes</em> and <em>finally</em> force an achievement reading: the sentence is reporting a culmination, not a state. That brings the single-occasion rule back and makes <em>managed to</em> the right form, since the difficulty is part of the point. <em>Could spot</em> is blocked by the achievement reading. <em>Could be spotting</em> describes an activity in progress. <em>Could have spotted</em> turns the find into a missed chance or a guess, when <em>finally</em> reports that it happened.' }
       ]
     },
 
@@ -476,7 +476,7 @@ T4.levels.push({
           stem: 'Choose the best option for blank (2).',
           options: ['was able to land', 'could land', 'could have landed', 'could be landing'],
           answer: 0,
-          why: 'The helicopter landed once, on a named morning, and the paragraph goes on to report what followed — a single occasion with an outcome, which blocks <em>could</em> and calls for the periphrasis. <em>Could land</em> would only say the crew had the general power to land in school fields. <em>Could have landed</em> says the landing was possible and never happened, which contradicts the rescue. <em>Could be landing</em> describes something in progress.' },
+          why: 'The helicopter landed once, on a named morning, and the paragraph goes on to report what followed — a single occasion with an outcome, which blocks <em>could</em> and calls for the periphrasis. <em>Could land</em> would only say the crew had the general power to land in school fields. <em>Could have landed</em> would make the landing either a chance that was not taken or a guess, which contradicts the rescue the paragraph reports. <em>Could be landing</em> describes something in progress.' },
 
         { id: 't4l2s3-2', type: 'choose', tag: 'dyn-repair', level: 'B2+',
           stem: 'For the past two years, students from the far bank ______ to school without crossing the ford.',
@@ -537,7 +537,7 @@ T4.levels.push({
         words: ['The archivist could track down', 'the owner of the photograph', 'on the afternoon it arrived,', 'and the museum bought the print the same week.'],
         answer: 0,
         fix: 'The archivist was able to track down',
-        why: 'The second half confirms that the search actually came off on one named afternoon, so this is an achievement and <em>was able to track down</em> or <em>managed to track down</em> is required. The verb matters here: <em>identify</em> or <em>recognise</em> would be a cognition verb and would escape the rule altogether, whereas tracking someone down names a result reached after effort. The other three parts are correct, and <em>the archivist could track down an owner in a morning</em>, with no occasion named, would be perfectly good English.' },
+        why: 'The second half confirms that the search actually came off on one named afternoon, so this is an achievement and <em>was able to track down</em> or <em>managed to track down</em> is required. The verb matters here: <em>recognise</em> or <em>remember</em> would be cognition verbs and would escape the rule altogether, whereas tracking someone down names a result reached after effort. The other three parts are correct, and <em>the archivist could track down an owner in a morning</em>, with no occasion named, would be perfectly good English.' },
 
       { id: 't4l2ck-4', type: 'equiv', tag: 'dyn-occexcept', level: 'B2+',
         given: 'In the 2019 trial, ten of the twelve prototypes failed to complete the full test cycle.',
@@ -549,7 +549,7 @@ T4.levels.push({
           'In the 2019 trial, ten of the twelve prototypes may not complete the full test cycle.'
         ],
         answer: 0,
-        why: 'A failure on one occasion is exactly what the negative <em>could not</em> is free to report, and it is the standard form in a results paragraph. <em>Could have completed</em> reverses the finding by saying the capacity was there and unused. The third option has the right meaning but puts an <em>-ing</em> after <em>able to</em>, which takes an infinitive. <em>May not complete</em> is a present hedge about what might happen, not a report of what did.' },
+        why: 'A failure on one occasion is exactly what the negative <em>could not</em> is free to report, and it is the standard form in a results paragraph. <em>Could have completed</em> loses the finding: it reads either as a capacity that was there and unused or as a guess that they did complete it, and the original reports a failure. The third option has the right meaning but puts an <em>-ing</em> after <em>able to</em>, which takes an infinitive. <em>May not complete</em> is a present hedge about what might happen, not a report of what did.' },
 
       { id: 't4l2ck-5', type: 'build', tag: 'dyn-repair', level: 'B2+',
         stem: 'Put the words in order. The sentence describes an ability the library will have in the future.',
@@ -624,22 +624,17 @@ T4.levels.push({
           why: 'Nan is pressing the button and the machine is not cooperating, which is the inanimate refusal that <em>won\'t</em> carries in present time. <em>Wouldn\'t</em> is the near miss: it is the same refusal, but in past time, and Nan is describing what is happening right now. <em>Does</em> would assert that it feeds the paper perfectly well. <em>Will</em> does the same, since the affirmative of this reading is a prediction, not a complaint.' },
 
         { id: 't4l3s1-3', type: 'choose', tag: 'dyn-will', level: 'B2+',
-          stem: 'After <em>if</em>, a <em>will</em> that simply predicts is not possible. In which sentence does the <em>will</em> after <em>if</em> mean something else, so that the sentence is correct?',
-          options: [
-            'If it will rain tomorrow, we will move the ceremony indoors.',
-            'If you will take a seat, the registrar will call you shortly.',
-            'If the train will be late, we will send a message to the office.',
-            'If the results will arrive on Friday, we will publish them at once.'
-          ],
+          stem: 'After <em>if</em>, <em>will</em> is not normally used for a simple prediction. In which sentence does the <em>will</em> after <em>if</em> mean something else, so that the sentence is correct?',
+          options: ['If it will rain tomorrow, we will move the ceremony indoors.', 'If you will take a seat, the registrar will call you shortly.', 'If the train will be late tonight, we will take a taxi from the station.', 'If the results will arrive on Friday, we will publish them at once.'],
           answer: 1,
-          why: 'An <em>if</em>-clause already marks the situation as a possibility, so it does not need a second operator to predict it — which is why the first, third and fourth, every one of them a prediction, are ruled out. The second is different: <em>will</em> there is willingness, not prediction, so it is contributing something the <em>if</em> has not already supplied. This is the one use of <em>will</em> that survives in an <em>if</em>-clause.' },
+          why: 'An <em>if</em>-clause already marks the situation as a possibility, so it does not need a second operator to predict it — which is why the first, third and fourth, every one of them a prediction, are ruled out. The second is different: <em>will</em> there is willingness, not prediction, so it is contributing something the <em>if</em> has not already supplied. This is one of the few uses of <em>will</em> that survive in an <em>if</em>-clause.' },
 
         { id: 't4l3s1-4', type: 'spot', tag: 'dyn-will', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The old chest freezer does not want to close', 'properly any more,', 'so everything inside it', 'is slowly thawing.'],
+          words: ['The old chest freezer is not willing to close', 'properly any more,', 'so everything inside it', 'is slowly thawing.'],
           answer: 0,
           fix: 'The old chest freezer will not close',
-          why: 'English attributes refusal to an object with <em>won\'t</em>, not with a verb of wanting — a freezer has no wishes, and the phrase is a direct translation of a pattern that works in other languages. <em>Will not close</em> says exactly the intended thing. The rest of the sentence is sound, and the final clause is in fact good evidence that a refusal reading is what is wanted.' },
+          why: '<em>Be willing to</em> needs a subject with a will of its own, and a freezer has none; English gives refusal to an object with <em>won\'t</em>. <em>Will not close</em> says exactly the intended thing. The rest of the sentence is sound, and the final clause is in fact good evidence that a refusal reading is what is wanted.' },
 
         { id: 't4l3s1-5', type: 'equiv', tag: 'dyn-will', level: 'B2+',
           given: 'The porter is refusing to take the trolley up to the third floor.',

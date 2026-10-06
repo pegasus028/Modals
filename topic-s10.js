@@ -48,9 +48,9 @@ var T10_P_HEAT = 'After two students fainted during a morning assembly in April,
 
 var T10_P_VOLUNTEER = 'More than 300 students from our school spent the October holiday filling sandbags in villages along the river. ___(1)___ for their help, many families would have lost everything. One volunteer, Mai, said she was exhausted but proud. "If I hadn\'t joined the team, I ___(2)___ so much about my own province now," she said.\n\nThe villagers are already worried about next year. Unless the riverbanks ___(3)___ before the next rainy season, the same homes are likely to flood again. ___(4)___ you wish to join next year\'s team, please contact Ms Ladda in the Student Affairs Office.';
 
-var T10_P_NEWS = 'Bangkok schools may start later next year\n\nBy a staff reporter\n\n(1) Secondary schools in Bangkok could be allowed to start lessons at 9 a.m. instead of 8 a.m. from next May, according to a proposal that education officials will discuss this month.\n\n(2) The idea follows a study by researchers at Chao Phraya University, which found that students at three schools that already start later slept about 40 minutes more each night. The researchers say the extra sleep appears to improve concentration in morning lessons, but they warn that the study was small and that a longer trial is needed.\n\n(3) Officials say the change is likely to be popular with students but may cause problems for working parents, who often drop their children off on the way to work. Traffic on some roads could also become heavier at 8.30 a.m.\n\n(4) A final decision is expected by the end of the year. If the plan is approved, it will apply first to schools in six districts.';
+var T10_P_NEWS = 'Bangkok schools may start later next year\n\nBy a staff reporter\n\n(1) Secondary schools in Bangkok could be allowed to start lessons at 9 a.m. instead of 8 a.m. from next May, according to a proposal that education officials will discuss this month.\n\n(2) The idea follows a study by researchers at a Bangkok university, which found that students at three schools that already start later slept about 40 minutes more each night. The researchers say the extra sleep appears to improve concentration in morning lessons, but they warn that the study was small and that a longer trial is needed.\n\n(3) Officials say the change is likely to be popular with students but may cause problems for working parents, who often drop their children off on the way to work. Traffic on some roads could also become heavier at 8.30 a.m.\n\n(4) A final decision is expected by the end of the year. If the plan is approved, it will apply first to schools in six districts.';
 
-var T10_P_AD = 'SKYLINE STUDY PASS\n\nFor M4–M6 students: unlimited access to all 12 Skyline study cafés in Bangkok for just 690 baht a month.\n\n• Show a valid student ID card every time you enter.\n\n• You need not book a seat, but group rooms must be reserved at least one day in advance.\n\n• Members may bring their own snacks. Hot food is not allowed in the study areas.\n\n• Passes cannot be shared with or transferred to another person.\n\n• This offer cannot be combined with any other discount.\n\n• Members under 16 will be required to show a letter from a parent when they buy their first pass.\n\nOffer valid for passes bought between 1 November and 31 December 2026.';
+var T10_P_AD = 'SKYLINE STUDY PASS\n\nFor M4–M6 students: unlimited access to all 12 Skyline study cafés in Bangkok for just 690 baht a month.\n\n• Show a valid student ID card every time you enter.\n\n• You need not book a seat, but group rooms must be reserved at least one day in advance.\n\n• Members may bring their own snacks. Hot food is not allowed in the study areas.\n\n• Passes cannot be shared with or transferred to another person.\n\n• This offer cannot be combined with any other discount.\n\n• Members under 16 will be required to show a letter from a parent when they buy their first pass.\n\nOffer valid for passes bought between 1 November and 31 December.';
 
 var T10_P_OPINION = 'Every March, thousands of Thai teenagers sit the TCAS papers after months of late nights in tutoring schools. Most of them are told what to study; very few are told how to rest. Schools ought to treat sleep as part of exam preparation, not as a reward for after it.\n\nThis is not a new idea. Five years ago, a group of Bangkok schools could have moved their extra classes from 7 p.m. to the weekend, and several head teachers wanted to. The plan was dropped because parents worried that their children would fall behind. In hindsight, those schools should have listened to their own students, who had asked for exactly this change.\n\nTutoring schools must also take responsibility. A centre that keeps sixteen-year-olds in a classroom until ten at night is not helping them; it is selling them anxiety. Parents, for their part, might want to ask how many hours their child actually sleeps before they book another course.';
 
@@ -216,7 +216,7 @@ T10.levels.push({
           given: 'Ploy, opening a birthday present: "Oh, you <em>shouldn\'t have</em>! I\'ve wanted this book for ages."',
           stem: 'Ploy is thanking her friend for the present.',
           answer: 0,
-          why: 'True. <em>Oh, you shouldn\'t have!</em> is the one use of <em>shouldn\'t have</em> that is not a criticism. Said as you open a present, it means "You didn\'t need to do that — how kind", and the second sentence, <em>I\'ve wanted this book for ages</em>, shows that Ploy is delighted. It is not False, because she is not complaining about the gift, and it is not Can\'t tell, because the fixed phrase and her next sentence make her feeling clear.' },
+          why: 'True. <em>Oh, you shouldn\'t have!</em> is a fixed phrase for thanking someone for a gift; it is not a criticism. Said as you open a present, it means "You didn\'t need to do that — how kind", and the second sentence, <em>I\'ve wanted this book for ages</em>, shows that Ploy is delighted. It is not False, because she is not complaining about the gift, and it is not Can\'t tell, because the fixed phrase and her next sentence make her feeling clear.' },
 
         { id: 't10l1s2-5', type: 'choose', tag: 'tc-advice', level: 'B2',
           stem: 'Ploy asks: <em>My laptop keeps freezing during online lessons. What should I do?</em> Which reply actually answers her question?',
@@ -270,16 +270,11 @@ T10.levels.push({
           why: 'The ticket shows the other cinema <em>in black and white</em>, so Mai is almost sure about something that happened when Nan booked: <em>must have chosen</em>. <em>Should have chosen</em> is the near miss: it has <em>have</em> + past participle, but it is not a guess — it would mean that choosing the wrong cinema was the right thing to do. <em>Can\'t have chosen</em> says the opposite of the evidence, and <em>must choose</em> is about now, not the past booking.' },
 
         { id: 't10l1s3-3', type: 'equiv', tag: 'tc-guess-talk', level: 'B2',
-          given: '"Krit <em>can\'t have seen</em> my message. He\'s been in an exam all morning."',
+          given: '"Ploy <em>can\'t have seen</em> my message. She\'s been in an exam all morning."',
           stem: 'Which sentence means the same as the first sentence?',
-          options: [
-            'I\'m almost sure Krit didn\'t see my message.',
-            'Perhaps Krit didn\'t see my message.',
-            'Krit wasn\'t allowed to read messages in the exam.',
-            'Krit saw my message but didn\'t reply.'
-          ],
+          options: ['I\'m almost sure Ploy didn\'t see my message.', 'Perhaps Ploy didn\'t see my message.', 'Ploy wasn\'t allowed to read messages in the exam.', 'Ploy saw my message but didn\'t reply.'],
           answer: 0,
-          why: '<em>Can\'t have seen</em> is a strong guess about the past: the speaker is almost sure it did not happen, and the exam all morning is her evidence. <em>Perhaps Krit didn\'t see my message</em> is the near miss: right direction, but only a maybe. <em>Krit wasn\'t allowed to read messages in the exam</em> reads <em>can\'t</em> as a rule, but with <em>have</em> + past participle it is a guess. <em>Krit saw my message but didn\'t reply</em> says the opposite.' },
+          why: '<em>Can\'t have seen</em> is a strong guess about the past: the speaker is almost sure it did not happen, and the exam all morning is her evidence. <em>Perhaps Ploy didn\'t see my message</em> is the near miss: right direction, but only a maybe. <em>Ploy wasn\'t allowed to read messages in the exam</em> reads <em>can\'t</em> as a rule, but with <em>have</em> + past participle it is a guess. <em>Ploy saw my message but didn\'t reply</em> says the opposite.' },
 
         { id: 't10l1s3-4', type: 'choose', tag: 'tc-guess-talk', level: 'B2',
           stem: 'Which word fits best? <em>______, the canteen is closing early today. I heard it from a girl in M5, but I haven\'t seen a notice yet.</em>',
@@ -319,13 +314,13 @@ T10.levels.push({
         ],
         stem: 'Choose the best option for gap (1).',
         options: [
-          'Would you like me to hold it?',
+          'Would you like me to help you with it?',
           'Would you mind holding it?',
           'Could you hold my bag too?',
           'Can I put my bag on top of it?'
         ],
         answer: 0,
-        why: 'The passenger answers <em>Thanks, but I can manage</em>, which is how you refuse an offer, so Mai offered to do something for her: <em>Would you like me to hold it?</em> <em>Would you mind holding it?</em> is the near miss: it uses the same polite frame, but it asks the passenger to do the work — to hold her own suitcase. <em>Could you hold my bag too?</em> is a request and <em>Can I put my bag on top of it?</em> asks permission; neither is refused with <em>I can manage</em>.' },
+        why: 'The passenger answers <em>Thanks, but I can manage</em>, which is how you refuse an offer, so Mai offered to do something for her: <em>Would you like me to help you with it?</em> <em>Would you mind holding it?</em> is the near miss: it uses the same polite frame, but it asks the passenger to do the work — to hold her own suitcase. <em>Could you hold my bag too?</em> is a request and <em>Can I put my bag on top of it?</em> asks permission; neither is refused with <em>I can manage</em>.' },
 
       { id: 't10l1ck-2', type: 'choose', tag: 'tc-request', level: 'B2',
         stem: 'Mai missed a lesson and wants to take a photo of her friend\'s notes herself. Which question asks for permission correctly?',
@@ -405,8 +400,8 @@ T10.levels.push({
         body: [
           '<strong>Two questions, in this order: who, then when.</strong> First ask whether the subject does the action or receives it. Drainage tunnels do not check anything; engineers check them, so the tunnels need a passive. Then ask about time. For now or the future, use modal + <em>be</em> + past participle: <em>Library books must be returned by Friday.</em> For the past, use modal + <em>have been</em> + past participle: <em>The bridge should have been repaired years ago</em> (it was not — a criticism); <em>The parcel can\'t have been posted yet</em> (I am almost sure it was not — a guess).',
           '<strong>Modals that keep their <em>to</em>.</strong> <em>Need to, ought to, have to</em> and <em>be expected / likely / supposed to</em> are followed by <em>to be</em> + past participle: <em>Every visitor needs to be checked at the gate. Swimming ought to be taught in every school. The work is expected to be finished by June.</em> The past participle is not optional: <s>ought to be teach</s> and <s>need to be check</s> are wrong.',
-          '<strong>How TCAS tests it.</strong> Text Completion gives four forms of one verb — <em>must check / must be checked / must have been checked / must be checking</em> — and only one has both the right voice and the right time. Look for the time clue (<em>before the next rainy season</em>, <em>months earlier</em>, <em>by the end of March</em>) and for the doer (<em>engineers</em>, <em>officials</em>), which is often in another sentence. TCAS69 tested the same shape with a passive infinitive: <em>the next foundation to be questioned</em>.',
-          '<strong>The usual traps.</strong> An active form at the right time (<em>must check</em> — but tunnels cannot check). A passive at the wrong time (<em>must have been checked</em> when the clue says <em>before the next season</em>). A missing <em>been</em> or past participle (<em>ought to be teach</em>). And <em>mustn\'t have been</em> for a negative guess, where English uses <em>can\'t have been</em>.'
+          '<strong>How TCAS tests it.</strong> Text Completion gives four forms of one verb — <em>must check / must be checked / had to be checked / must be checking</em> — and only one has both the right voice and the right time. Look for the time clue (<em>before the next rainy season</em>, <em>months earlier</em>, <em>by the end of March</em>) and for the doer (<em>engineers</em>, <em>officials</em>), which is often in another sentence. TCAS69 tested the same shape with a passive infinitive: <em>the next foundation to be questioned</em>.',
+          '<strong>The usual traps.</strong> An active form at the right time (<em>must check</em> — but tunnels cannot check). A passive at the wrong time (<em>had to be checked</em> when the clue says <em>before the next season</em>). A missing <em>been</em> or past participle (<em>ought to be teach</em>). And <em>mustn\'t have been</em> for a negative guess, where English uses <em>can\'t have been</em>.'
         ],
         simple: [
           'Does the subject do it or receive it? If it receives it, use the passive.',
@@ -424,9 +419,9 @@ T10.levels.push({
         { id: 't10l2s1-1', type: 'cloze', tag: 'tc-modal-passive', level: 'B2+',
           passage: T10_P_DRAIN, blank: '(1)',
           stem: 'Choose the best option for blank (1).',
-          options: ['must check', 'must be checked', 'must have been checked', 'must be checking'],
+          options: ['must check', 'must be checked', 'had to be checked', 'must be checking'],
           answer: 1,
-          why: 'Engineers check the tunnels, so the tunnels receive the action, and <em>before the next rainy season begins</em> puts it in the future: modal + <em>be</em> + past participle, <em>must be checked</em>. <em>Must have been checked</em> is the near miss: the right voice, but it looks back at the past, which clashes with <em>before the next rainy season</em>. <em>Must check</em> and <em>must be checking</em> are active, so the tunnels would be doing the checking.' },
+          why: 'Engineers check the tunnels, so the tunnels receive the action, and <em>before the next rainy season begins</em> puts it in the future: modal + <em>be</em> + past participle, <em>must be checked</em>. <em>Had to be checked</em> is the near miss: the right voice, but it is past, which clashes with <em>engineers say</em> and <em>before the next rainy season begins</em>. <em>Must check</em> and <em>must be checking</em> are active, so the tunnels would be doing the checking.' },
 
         { id: 't10l2s1-2', type: 'cloze', tag: 'tc-modal-passive', level: 'B2+',
           passage: T10_P_DRAIN, blank: '(2)',
@@ -450,11 +445,11 @@ T10.levels.push({
           why: 'Skills are taught by teachers, so after <em>ought to be</em> the verb must be a past participle: <em>ought to be taught</em>. The other three parts are correct: <em>according to the report</em>, the plural subject <em>basic first-aid skills</em>, and <em>are now taught in a few schools</em>, which is already a correct passive.' },
 
         { id: 't10l2s1-5', type: 'build', tag: 'tc-modal-passive', level: 'B2+',
-          stem: 'Build the sentence from a school-trip notice. It means that a teacher has to identify each student before the bus leaves.',
-          tiles: ['Every student', 'needs', 'to be', 'identified', 'by a teacher', 'before the bus leaves.'],
-          solution: 'Every student needs to be identified by a teacher before the bus leaves.',
+          stem: 'Build the sentence from a school-trip notice. It means that a teacher has to check in each student before the bus leaves.',
+          tiles: ['Every student', 'needs', 'to be', 'checked in', 'by a teacher', 'before the bus leaves.'],
+          solution: 'Every student needs to be checked in by a teacher before the bus leaves.',
           alt: [],
-          why: 'The students do not identify anybody; a teacher identifies them, so the verb is passive. <em>Need</em> keeps its <em>to</em>, so the passive is <em>to be</em> + past participle: <em>needs to be identified</em>. <em>By a teacher</em> names the doer, and the time clause comes last.' }
+          why: 'The students do not check anybody in; a teacher checks them in, so the verb is passive. <em>Need</em> keeps its <em>to</em>, so the passive is <em>to be</em> + past participle: <em>needs to be checked in</em>. <em>By a teacher</em> names the doer, and the time clause comes last.' }
       ]
     },
 
@@ -485,9 +480,9 @@ T10.levels.push({
         { id: 't10l2s2-1', type: 'cloze', tag: 'tc-subjunctive', level: 'B2+',
           passage: T10_P_HEAT, blank: '(2)',
           stem: 'Choose the best option for blank (2).',
-          options: ['brings', 'to bring', 'bring', 'would bring'],
+          options: ['bringing', 'to bring', 'bring', 'would bring'],
           answer: 2,
-          why: '<em>Insisted that</em> introduces what the parents want to happen, so the verb is the bare base form for every subject: that every student <em>bring</em> a water bottle. <em>Brings</em> is the near miss: <em>every student</em> is singular, so an <em>-s</em> looks natural, but after a trigger like <em>insist</em> the clause is a demand, not a fact, and takes no <em>-s</em>. <em>To bring</em> cannot follow <em>that</em> + subject, and <em>would bring</em> turns the demand into a prediction.' },
+          why: '<em>Insisted that</em> introduces what the parents want to happen, so the verb is the bare base form for every subject: that every student <em>bring</em> a water bottle. <em>Bringing</em> is not a finite verb, so the that-clause would have no verb. <em>To bring</em> cannot follow <em>that</em> + subject, and <em>would bring</em> turns the demand into a prediction.' },
 
         { id: 't10l2s2-2', type: 'cloze', tag: 'tc-subjunctive', level: 'B2+',
           passage: T10_P_HEAT, blank: '(3)',
@@ -505,10 +500,10 @@ T10.levels.push({
 
         { id: 't10l2s2-4', type: 'spot', tag: 'tc-subjunctive', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The dentist', 'recommended that my brother', 'brushes his teeth', 'after every meal.'],
+          words: ['The dentist', 'recommended that my brother', 'to brush his teeth', 'after every meal.'],
           answer: 2,
           fix: 'brush his teeth',
-          why: 'The dentist is saying what the brother should do, so the verb after <em>recommended that</em> is the bare base form, <em>brush</em>, with no <em>-s</em>, even though <em>my brother</em> is singular. <em>Should brush</em> would also be correct. The other three parts are fine.' },
+          why: 'The dentist is saying what the brother should do, so the verb after <em>recommended that</em> is the bare base form, <em>brush</em>, with no <em>to</em>: <em>that</em> + subject is followed by the base form itself. <em>Should brush</em> would also be correct. The other three parts are fine.' },
 
         { id: 't10l2s2-5', type: 'sort', tag: 'tc-subjunctive', level: 'C1',
           stem: 'Does the that-clause say what should happen, or what is true?',
@@ -603,7 +598,7 @@ T10.levels.push({
         stem: 'Choose the best option for blank (3).',
         options: ['to complete', 'to be completed', 'being completed', 'to have completed'],
         answer: 1,
-        why: 'A plan does not complete anything; officials complete it, so the infinitive after <em>is expected</em> is passive: <em>to be completed</em>. <em>To complete</em> is the near miss: the right shape, but active, so the plan would be doing the completing. <em>Being completed</em> does not follow <em>expected</em>, and <em>to have completed</em> is active and looks back, which clashes with <em>by the end of March</em>.' },
+        why: 'A plan does not complete anything; officials complete it, so the infinitive after <em>is expected</em> is passive: <em>to be completed</em>. <em>To complete</em> is the near miss: the right shape, but active, so the plan would be doing the completing. <em>Being completed</em> does not follow <em>expected</em>, and <em>to have completed</em> is active too, so again the plan would be doing the completing.' },
 
       { id: 't10l2ck-2', type: 'cloze', tag: 'tc-subjunctive', level: 'B2+',
         passage: T10_P_HEAT, blank: '(1)',

@@ -26,7 +26,7 @@ MOCKS.push({
           stem: 'If the ferry is cancelled again, passengers ______ wait until Thursday for the next crossing.',
           options: ['will have to', 'will must', 'will need', 'must have to'],
           answer: 0,
-          why: 'A modal has no infinitive, so nothing can follow <em>will</em> except a bare verb; the repair for <em>must</em> in that slot is <em>have to</em>. <em>will must</em> stacks one modal under another, which English never allows. <em>will need</em> is a lexical verb and needs <em>to</em> before the infinitive: <em>will need to wait</em>. <em>must have to</em> is a deduction about an obligation — I conclude that they are obliged — rather than a statement of what a cancellation would require, and it leaves the future unmarked.' },
+          why: 'A modal has no infinitive, so nothing can follow <em>will</em> except a bare verb; the repair for <em>must</em> in that slot is <em>have to</em>. <em>will must</em> stacks one modal under another, which English never allows. <em>will need</em> is a lexical verb and needs <em>to</em> before the infinitive: <em>will need to wait</em>. <em>must have to</em> stacks two necessity forms; standard English uses one, and for a future obligation that is <em>will have to</em>.' },
 
         { id: 'm2-2', type: 'choose', tag: 'epi-cant', level: 'B2',
           stem: 'The shutters have not been opened and four days of post are still lying in the hall, so the tenants ______ back from the coast yet.',
@@ -38,7 +38,7 @@ MOCKS.push({
           stem: 'In her opening paragraph the writer sets herself a rule that nobody has imposed on her: <em>I ______ stop checking email before breakfast.</em>',
           options: ['am supposed to', 'am required to', 'must', 'had to'],
           answer: 2,
-          why: 'Where the necessity comes from the speaker herself, English uses <em>must</em>; that is the whole difference the form carries. <em>am supposed to</em> reports an expectation that somebody else has set, which the stem explicitly rules out. <em>am required to</em> goes further still and reports an external regulation, and it belongs to formal, institutional prose. <em>had to</em> puts the resolution in past time, but the writer is making it now.' },
+          why: '<em>must</em> shows that the speaker owns or endorses the obligation — here it is her own resolution, as the stem spells out. This is a British tendency, not a law. <em>am supposed to</em> reports an expectation that somebody else has set, which the stem explicitly rules out. <em>am required to</em> goes further still and reports an external regulation, and it belongs to formal, institutional prose. <em>had to</em> puts the resolution in past time, but the writer is making it now.' },
 
         { id: 'm2-4', type: 'choose', tag: 'dyn-occasion', level: 'B2+',
           stem: 'Everyone said the deadline was impossible, and yet the translation team ______ the whole report by Friday evening.',
@@ -79,17 +79,17 @@ MOCKS.push({
 
         { id: 'm2-8', type: 'spot', tag: 'deo-periph', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Part-time students must pay', 'the full library charge', 'at the start of every term,', 'until the funding rules changed.'],
+          words: ['Part-time students must pay', 'the full library charge', 'at the start of every term,', 'until the funding rules changed last year.'],
           answer: 0,
           fix: 'Part-time students had to pay',
-          why: '<em>must</em> has no past form, so a past obligation is carried by <em>had to</em>; part 4, <em>until the funding rules changed</em>, fixes the whole sentence in past time. <em>must pay</em> reports a rule that is in force now, which part 4 has already said is no longer the case. Parts 2, 3 and 4 are ordinary past-time description with nothing modal in them.' },
+          why: '<em>must</em> has no past form, so a past obligation is carried by <em>had to</em>; part 4, <em>until the funding rules changed last year</em>, fixes the whole sentence in past time. <em>must pay</em> reports a rule that is in force now, which part 4 has already said is no longer the case. Parts 2, 3 and 4 are ordinary past-time description with nothing modal in them.' },
 
         { id: 'm2-9', type: 'spot', tag: 'dyn-repair', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Since the second bridge opened,', 'the journey into town has become much shorter,', 'and the villagers', 'have could reach the hospital in minutes.'],
+          words: ['Since the second bridge opened,', 'the journey into town has become much shorter,', 'and the villagers', 'have could get to the market in minutes.'],
           answer: 3,
-          fix: 'have been able to reach the hospital in minutes.',
-          why: 'A perfect requires a past participle and <em>can</em> has none, so the slot is filled by the repair form: <em>have been able to reach</em>. <em>have could</em> is the defectiveness showing through — it is the exact point at which the modal runs out. Part 1 forces a present perfect right across the sentence, so it cannot simply be rewritten with <em>can</em>, and part 2 shows the same perfect used correctly.' },
+          fix: 'have been able to get to the market in minutes.',
+          why: 'A perfect requires a past participle and <em>can</em> has none, so the perfect is the repair form <em>have been able to get</em> (plain <em>can get</em> would also be correct). <em>have could</em> is the defectiveness showing through — it is the exact point at which the modal runs out. Parts 1, 2 and 3 are correct, and part 2 shows the same present perfect used properly.' },
 
         { id: 'm2-10', type: 'spot', tag: 'past-should', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
@@ -122,16 +122,11 @@ MOCKS.push({
           why: '<em>may not</em> is the possibility of a negative, which is exactly what <em>there is a chance that … not</em> states. <em>can\'t be identical</em> is the impossibility of a positive, a far stronger claim that rules the matching out. Option 3 puts <em>not</em> after <em>be</em>, where English will not have it; the negation belongs on the modal. <em>must not</em> reads as a prohibition, and a file cannot be forbidden to resemble another; even read as a conclusion, it would claim certainty where the original offers only a chance.' },
 
         { id: 'm2-12', type: 'equiv', tag: 'deo-noneed', level: 'B2',
-          given: 'There is no requirement for volunteers to attend the Saturday briefing.',
+          given: 'Coming to the Saturday briefing is optional for volunteers.',
           stem: 'Which sentence says the same thing?',
-          options: [
-            'Volunteers mustn\'t attend the Saturday briefing.',
-            'Volunteers needn\'t have attended the Saturday briefing.',
-            'Volunteers shouldn\'t attend the Saturday briefing.',
-            'Volunteers needn\'t attend the Saturday briefing.'
-          ],
+          options: ['Volunteers mustn\'t attend the Saturday briefing.', 'Volunteers needn\'t have attended the Saturday briefing.', 'Volunteers can\'t attend the Saturday briefing.', 'Volunteers don\'t have to attend the Saturday briefing.'],
           answer: 3,
-          why: '<em>needn\'t</em> removes an obligation and creates none, which is precisely what <em>no requirement</em> means. <em>mustn\'t attend</em> creates a prohibition, turning an open invitation into a ban. <em>needn\'t have attended</em> looks back at a briefing that has already happened and says people went unnecessarily. <em>shouldn\'t attend</em> advises against going, which the original does not.' },
+          why: '<em>don\'t have to</em> removes an obligation and creates none, which is precisely what <em>optional</em> means. <em>mustn\'t attend</em> creates a prohibition, turning an optional briefing into a ban. <em>needn\'t have attended</em> looks back at a briefing that has already happened and says people went unnecessarily. <em>can\'t attend</em> says they are not allowed or not able to come, which the original does not.' },
 
         { id: 'm2-13', type: 'equiv', tag: 'epi-scale', level: 'B2',
           given: 'It is just about possible that the committee will meet before the recess, but I would not count on it.',
@@ -167,7 +162,7 @@ MOCKS.push({
             'You were not allowed to carry the boxes up, and you did it anyway.'
           ],
           answer: 2,
-          why: '<em>needn\'t have done</em> builds the wasted effort into the form: the action happened, and the necessity was not there. Option 1 is the meaning of <em>didn\'t need to</em>, which normally implies the work was never started. Option 2 adds blame, and <em>needn\'t have</em> carries none — it reports waste, not fault. Option 4 keeps the carrying but turns an absent obligation into a prohibition that was then broken.' }
+          why: '<em>needn\'t have done</em> builds the wasted effort into the form: the action happened, and the necessity was not there. Option 1 says the carrying never happened; <em>needn\'t have</em> says it did happen and was unnecessary. Option 2 adds blame, and <em>needn\'t have</em> carries none — it reports waste, not fault. Option 4 keeps the carrying but turns an absent obligation into a prohibition that was then broken.' }
       ]
     },
 
@@ -205,30 +200,18 @@ MOCKS.push({
           why: '<em>should</em> here is expectation, not advice: it says what the schedule predicts while leaving room for the warning that follows. <em>must</em> claims a confident deduction, which the clause <em>do not rely on it to the minute</em> immediately withdraws. <em>can</em> states a capacity of the vehicle in general rather than a prediction about this afternoon. <em>might not</em> reverses the direction and would leave a volunteer with no reason to wait.' },
 
         { id: 'm2-19', type: 'gap', tag: 'dyn-ability', level: 'B2', blank: '(19)',
-          lines: [
-            { who: 'Mali', text: 'I have been practising the demonstration all week, and I still ___(19)___ get the projector to mirror my laptop.' },
-            { who: 'Teerapat', text: 'The socket on the side of the desk is loose. Try the one at the back instead.' },
-            { who: 'Mali', text: 'I did, twice. Nothing at all. If it fails on Friday I will be talking through the slides from memory.' },
-            { who: 'Teerapat', text: '___(20)___ bring my adapter in tomorrow? You could test it in the room before the class arrives.' },
-            { who: 'Mali', text: 'That would save me. Tomorrow morning, then, if you are here early.' }
-          ],
+          lines: [{ who: 'Mali', text: 'I have been practising the demonstration all week, and I still ___(19)___ get the projector to mirror my laptop.' }, { who: 'Pim', text: 'The socket on the side of the desk is loose. Try the one at the back instead.' }, { who: 'Mali', text: 'I did, twice. Nothing at all. If it fails on Friday I will be talking through the slides from memory.' }, { who: 'Pim', text: '___(20)___ bring my adapter in tomorrow? You could test it in the room before the class arrives.' }, { who: 'Mali', text: 'That would save me. Tomorrow morning, then, if you are here early.' }],
           stem: 'Choose the best option for gap (19).',
           options: ['can\'t', 'couldn\'t', 'am not able', 'mustn\'t'],
           answer: 0,
           why: 'The inability is going on now — <em>I have been practising all week, and I still …</em> — so the present form <em>can\'t</em> is required. <em>couldn\'t</em> pushes the failure back into finished past time, which <em>still</em> contradicts. <em>am not able</em> is the repair form with its <em>to</em> missing: it would have to be <em>am not able to get</em>. <em>mustn\'t</em> forbids, and nobody has banned Mali from using the projector.' },
 
         { id: 'm2-20', type: 'gap', tag: 'dist-offer', level: 'B2+', blank: '(20)',
-          lines: [
-            { who: 'Mali', text: 'I have been practising the demonstration all week, and I still ___(19)___ get the projector to mirror my laptop.' },
-            { who: 'Teerapat', text: 'The socket on the side of the desk is loose. Try the one at the back instead.' },
-            { who: 'Mali', text: 'I did, twice. Nothing at all. If it fails on Friday I will be talking through the slides from memory.' },
-            { who: 'Teerapat', text: '___(20)___ bring my adapter in tomorrow? You could test it in the room before the class arrives.' },
-            { who: 'Mali', text: 'That would save me. Tomorrow morning, then, if you are here early.' }
-          ],
+          lines: [{ who: 'Mali', text: 'I have been practising the demonstration all week, and I still ___(19)___ get the projector to mirror my laptop.' }, { who: 'Pim', text: 'The socket on the side of the desk is loose. Try the one at the back instead.' }, { who: 'Mali', text: 'I did, twice. Nothing at all. If it fails on Friday I will be talking through the slides from memory.' }, { who: 'Pim', text: '___(20)___ bring my adapter in tomorrow? You could test it in the room before the class arrives.' }, { who: 'Mali', text: 'That would save me. Tomorrow morning, then, if you are here early.' }],
           stem: 'Choose the best option for gap (20).',
           options: ['Must I', 'Do I', 'Shall I', 'Need I'],
           answer: 2,
-          why: '<em>Shall I …?</em> is the standard way of offering to do something, and Mali\'s reply — <em>that would save me</em> — accepts an offer. <em>Must I …?</em> is a natural question from someone who has been told to bring the adapter and would rather not, but nobody has told Teerapat anything; he is volunteering. <em>Do I …?</em> asks whether that is the existing arrangement, and no arrangement has been made yet. <em>Need I …?</em> asks whether it is really necessary, which again treats the adapter as a chore rather than as help he is putting on the table.' }
+          why: '<em>Shall I …?</em> is the standard way of offering to do something, and Mali\'s reply — <em>that would save me</em> — accepts an offer. <em>Must I …?</em> is a natural question from someone who has been told to bring the adapter and would rather not, but nobody has told Pim anything; she is volunteering. <em>Do I …?</em> asks whether that is the existing arrangement, and no arrangement has been made yet. <em>Need I …?</em> asks whether it is really necessary, which again treats the adapter as a chore rather than as help she is putting on the table.' }
       ]
     }
   ]

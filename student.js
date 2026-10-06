@@ -1725,7 +1725,7 @@
   var RUNGS = [
     { k: 'cant',   now: 'can\'t', past: 'can\'t have', name: 'can\'t', sure: 'About 90% sure it is NOT true', th: 'ไม่มีทาง… (มั่นใจราว 90% ว่าไม่ใช่)' },
     { k: 'weak',   now: 'may / might / could', past: 'may / might / could have', name: 'may · might · could', sure: 'About 50% — one possibility among others', th: 'อาจจะ… (เป็นไปได้ราว 50%)' },
-    { k: 'should', now: 'should', past: null, name: 'should', sure: 'What a timetable or a reliable pattern leads you to expect', th: 'น่าจะ… (ตามกำหนดการหรือตามปกติ)' },
+    { k: 'should', now: 'should', past: null, name: 'should', sure: 'What a plan or timetable leads you to expect, if nothing has gone wrong', th: 'น่าจะ… (ถ้าทุกอย่างเป็นไปตามแผน)' },
     { k: 'will',   now: 'will', past: null, name: 'will', sure: 'So predictable that you don\'t need to check', th: 'คง…แน่ ๆ (คาดได้เลยโดยไม่ต้องเช็ก)' },
     { k: 'must',   now: 'must', past: 'must have', name: 'must', sure: 'About 90% sure it IS true — the evidence leaves one explanation', th: 'ต้อง…แน่ ๆ (มั่นใจราว 90% จากหลักฐาน)' }
   ];
@@ -1829,7 +1829,7 @@
   /* ------------------------------------------------------ the rule board */
   var BOARD = [
     { group: 'Rules', label: 'It is necessary', th: 'จำเป็นต้อง / ต้อง', sub: 't9l1s1', subPast: 't9l2s1',
-      now: { forms: ['have to', 'must', 'need to'], note: '<em>have to</em> = often someone else\'s rule; <em>must</em> = often your own idea or a written rule.', ex: 'You <b>have to</b> pay before leaving the shop.' },
+      now: { forms: ['have to', 'must', 'need to'], note: '<em>must</em> = the speaker owns the rule (\'I say so\'); <em>have to</em> = the speaker passes it on (\'not my idea\').', ex: 'You <b>have to</b> pay before leaving the shop.' },
       past: { forms: ['had to', 'needed to'], note: '<em>Must</em> has no past: never <s>musted</s>, never <s>must</s> + yesterday.', ex: 'I stopped because I <b>needed to</b> rest.' } },
     { group: 'Rules', label: 'It is not necessary', th: 'ไม่จำเป็นต้อง', sub: 't9l1s1', subPast: 't9l2s3',
       now: { forms: ['don\'t have to', 'don\'t need to', 'needn\'t'], note: 'No <em>to</em> after <em>needn\'t</em>: <s>needn\'t to go</s>.', ex: 'We <b>needn\'t</b> go to class at the weekend.' },
@@ -2038,6 +2038,7 @@
     if (r.finished) return;
     var timed = r.kind !== 'set' && r.kind !== 'sprint' && !!TIMED_TYPES[item.type] && !item.passage;
     var combo = r.combo || 0;
+    var limitMs = E.speedMs ? E.speedMs(item) : E.SPEED_MS, limitS = Math.round(limitMs / 1000);
 
     $('#view-play').innerHTML = '<div class="play">' +
       '<div class="play-top">' +
@@ -2047,12 +2048,12 @@
         '<span class="qcount">' + (r.i + 1) + ' / ' + r.items.length + '</span>' +
         (r.deadline ? '<span class="sprint-clock" id="sprint-clock">' + mmss(Math.ceil(Math.max(0, r.deadline - Date.now()) / 1000)) + '</span>' : '') +
         (timed ?
-          '<div class="timer" id="timer" title="Answer inside 7 seconds for a time bonus">' +
+          '<div class="timer" id="timer" title="Answer inside ' + limitS + ' seconds for a time bonus">' +
             '<svg width="38" height="38" viewBox="0 0 38 38">' +
               '<circle class="track" cx="19" cy="19" r="15" fill="none" stroke-width="4"></circle>' +
               '<circle class="run" id="timer-run" cx="19" cy="19" r="15" fill="none" stroke-width="4" ' +
                 'stroke-linecap="round" stroke-dasharray="94.2" stroke-dashoffset="0"></circle>' +
-            '</svg><b id="timer-n">7</b></div>' : '') +
+            '</svg><b id="timer-n">' + limitS + '</b></div>' : '') +
       '</div>' +
       '<div class="card qcard">' +
         '<div class="qtype"><span>' + esc(E.TYPE_LABEL[item.type] || 'Question') + '</span><span class="lv">' + esc(item.level) + '</span></div>' +
@@ -2074,8 +2075,8 @@
       var ring = $('#timer-run'), num = $('#timer-n'), box = $('#timer');
       var CIRC = 94.2;
       tick = setInterval(function () {
-        var left = Math.max(0, E.SPEED_MS - (Date.now() - r.t0));
-        ring.setAttribute('stroke-dashoffset', String(CIRC * (1 - left / E.SPEED_MS)));
+        var left = Math.max(0, limitMs - (Date.now() - r.t0));
+        ring.setAttribute('stroke-dashoffset', String(CIRC * (1 - left / limitMs)));
         if (left > 0) num.textContent = Math.ceil(left / 1000);
         else { box.classList.add('cold'); num.textContent = '—'; clearInterval(tick); tick = null; }
       }, 100);
@@ -2112,7 +2113,7 @@
       var out = view.check();
       view.lock();
       var hinted = !!r.thisHinted; r.thisHinted = false;
-      var fast = timed && !hinted && out.correct && ms <= E.SPEED_MS;
+      var fast = timed && !hinted && out.correct && ms <= limitMs;
 
       var row = P.recordAttempt(S.p, item, out.correct, ms, hinted, fast);
       row.given = String(out.givenText).slice(0, 180);

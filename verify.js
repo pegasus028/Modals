@@ -75,6 +75,9 @@ function checkItem(it, where, opts) {
     if (!Array.isArray(it.words) || !it.words.length) err(it.id + ': spot needs words[]');
     else if (!(it.answer >= 0 && it.answer < it.words.length)) err(it.id + ': spot answer out of range');
     if (!it.fix) err(it.id + ': spot has no fix');
+    if (it.also != null && (!Array.isArray(it.also) || it.also.some(function (k) {
+      return !(k >= 0 && k < (it.words || []).length) || k === it.answer;
+    }))) err(it.id + ': spot also[] must list other valid part indices');
     (it.words || []).forEach(function (w) {
       if (ESCAPED_FIELDS_NO_HTML.test(w)) err(it.id + ': HTML inside spot words[] (that field is escaped)');
     });

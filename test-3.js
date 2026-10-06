@@ -30,12 +30,12 @@ MOCKS.push({
 
         { id: 'm3-2', type: 'choose', tag: 'dyn-occexcept', level: 'B2+',
           stem: 'The window on to the corridor had been propped open, so from the bench outside I ______ every word the panel said.',
-          options: ['managed to hear', 'am able to hear', 'could hear', 'could have heard'],
+          options: ['must have heard', 'am able to hear', 'could hear', 'could have heard'],
           answer: 2,
-          why: 'Perception verbs are stative and assert no achievement, so they escape the single-occasion restriction and <em>could hear</em> is idiomatic even about one specific past afternoon. <em>managed to hear</em> imports effort and difficulty, which the propped-open window rules out. <em>am able to hear</em> is the repair form in present time, and the scene on the bench is finished. <em>could have heard</em> says the opportunity existed and was not used, denying that anything was actually heard.' },
+          why: 'Perception verbs are stative and assert no achievement, so they escape the single-occasion restriction and <em>could hear</em> is idiomatic even about one specific past afternoon. <em>must have heard</em> is a deduction, but the speaker is reporting what she heard herself, so there is nothing to guess. <em>am able to hear</em> is the repair form in present time, and the scene on the bench is finished. <em>could have heard</em> says the opportunity existed and was not used, denying that anything was actually heard.' },
 
         { id: 'm3-3', type: 'choose', tag: 'dist-unreal', level: 'C1',
-          stem: 'At a planning inquiry, where the developer can still revise the application, an objector says: <em>If the developer ______ the affordable-housing quota, the scheme ______ far less opposition.</em>',
+          stem: 'At a planning inquiry, where the developer can still revise the application, an objector says: <em>If the scheme ______ the affordable-housing quota, it ______ far less opposition.</em>',
           options: [
             'would meet … would face',
             'met … would face',
@@ -43,7 +43,7 @@ MOCKS.push({
             'met … will face'
           ],
           answer: 1,
-          why: 'Both halves of an unreal sentence step back together, so a hypothesis about a decision that is still open takes a past form in the <em>if</em>-clause and <em>would</em> in the result: <em>met … would face</em>. Option 1 puts <em>would</em> inside the <em>if</em>-clause, where the conditional conjunction has already supplied the modality. Option 3 is the past-unreal pair, which says the quota can no longer be met — but the stem states that the application can still be revised. Option 4 leaves the result clause in the real world while the condition has already stepped out of it.' },
+          why: 'Both halves of an unreal sentence step back together, so a hypothesis about a decision that is still open takes a past form in the <em>if</em>-clause and <em>would</em> in the result: <em>met … would face</em>. Option 1 puts <em>would</em> in the <em>if</em>-clause, which normally needs a sense of willingness, and a scheme cannot be willing. Option 3 is the past-unreal pair, which says the quota can no longer be met — but the stem states that the application can still be revised. Option 4 leaves the result clause in the real world while the condition has already stepped out of it.' },
 
         { id: 'm3-4', type: 'choose', tag: 'past-ambig', level: 'C1',
           stem: 'Read: <em>The duty manager could have closed the barrier.</em> Which continuation forces the reading <strong>the chance was there and was not taken</strong>?',
@@ -90,21 +90,21 @@ MOCKS.push({
           words: ['If the missing witness statement will arrive', 'before the end of the week,', 'the hearing can go ahead', 'on the date originally listed.'],
           answer: 0,
           fix: 'If the missing witness statement arrives',
-          why: '<em>If</em> already places the clause in the future, so the verb stays in the present simple: <em>If the missing witness statement arrives</em>. <em>will</em> survives in an <em>if</em>-clause only when it means willingness (<em>if you will wait here</em>), and a document cannot be willing to do anything. Part 3 correctly keeps its modal, because the main clause is where the modality belongs.' },
+          why: '<em>If</em> already places the clause in the future, so the verb stays in the present simple: <em>If the missing witness statement arrives</em>. <em>will</em> is normally kept out of an <em>if</em>-clause about a future condition; it appears there mainly for willingness (<em>if you will wait here</em>) or when the <em>if</em>-event follows from the main clause (<em>if it will help</em>), and neither fits a document arriving. Part 3 correctly keeps its modal, because the main clause is where the modality belongs.' },
 
         { id: 'm3-8', type: 'spot', tag: 'past-wasto', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['Because the connecting flight was cancelled,', 'the talks opened without the delegation,', 'which was to have arrive', 'on the Tuesday morning.'],
           answer: 2,
           fix: 'which was to have arrived',
-          why: '<em>was to have done</em> is the form that builds the failure of a plan into the verb phrase, and <em>have</em> must be followed by a past participle: <em>arrived</em>. The bare form <em>arrive</em> can only follow a modal directly, and there is no modal next to it in part 3. Parts 1, 2 and 4 supply exactly the frustrated-plan context that makes <em>was to have</em> the right choice in the first place.' },
+          why: '<em>was to have done</em> is the form that builds the failure of a plan into the verb phrase, and after <em>have</em> the verb must be a past participle: <em>was to have arrived</em>. The bare form <em>arrive</em> fits only <em>was to arrive</em>, which states the plan without saying it failed. Parts 1, 2 and 4 supply exactly the frustrated-plan context that makes <em>was to have</em> the right choice in the first place.' },
 
         { id: 'm3-9', type: 'spot', tag: 'hedge-under', level: 'C1',
           stem: 'One of the four parts hedges far more than the claim needs. Find it.',
           words: ['The review concludes, from forty years of gauge records,', 'that winter rainfall in the north', 'has declined over the last three decades,', 'though it may possibly be the case that it has now stopped.'],
           answer: 3,
-          fix: 'though it may be the case that it has now stopped.',
-          why: 'Part 4 stacks three hedging devices on one proposition: the modal <em>may</em>, the adverb <em>possibly</em>, which only says again what the modal has already said, and the empty frame <em>be the case that</em>. A levelling-off does need hedging, but one device is enough; the minimal repair is to drop the adverb that duplicates the modal. Parts 1, 2 and 3 assert a specific, datable finding and are right to assert it flatly.' }
+          fix: 'though the decline may now have stopped.',
+          why: 'Part 4 stacks three hedging devices on one proposition: the modal <em>may</em>, the adverb <em>possibly</em>, which only says again what the modal has already said, and the empty frame <em>be the case that</em>. A levelling-off does need hedging, but one device is enough, so the repair keeps <em>may</em> and drops the other two: <em>though the decline may now have stopped</em>. Parts 1, 2 and 3 assert a specific, datable finding and are right to assert it flatly.' }
       ]
     },
 
@@ -148,10 +148,10 @@ MOCKS.push({
             'The writer is fairly sure that smaller cohorts improve the quality of supervision.',
             'It has now been demonstrated that smaller cohorts improve the quality of supervision.',
             'Smaller cohorts may improve supervision, though on balance they probably will not.',
-            'Many people believe that smaller cohorts improve supervision; the writer takes no side.'
+            'Many people believe that smaller cohorts improve supervision; the sentence does not say whether the writer agrees.'
           ],
           answer: 3,
-          why: 'An impersonal frame moves the <strong>source</strong> of a claim away from the writer; it does not lower anyone\'s confidence in it, and option 4 keeps both the wide belief and the writer\'s silence about it. Option 1 treats the frame as a hedge on the writer\'s own certainty, which is the commonest misreading of the pattern. Option 2 upgrades a widespread belief into a demonstrated result. Option 3 adds a negative lean that nothing in the original supports.' },
+          why: 'An impersonal frame moves the <strong>source</strong> of a claim away from the writer: it reports a wide belief and leaves open whether the writer shares it, which is what option 4 says. Option 1 turns the frame into a statement about the writer\'s own certainty, which the sentence never makes. Option 2 upgrades a widespread belief into a demonstrated result. Option 3 adds a negative lean that nothing in the original supports.' },
 
         { id: 'm3-13', type: 'equiv', tag: 'hedge-concede', level: 'C1+',
           given: 'Critics are right that the new fare zones are complicated. That complexity, however, is what allows the discount for short journeys to exist at all.',
@@ -175,7 +175,7 @@ MOCKS.push({
             'The finance director told them that they had to have the revised figures before the board met.'
           ],
           answer: 3,
-          why: 'Deontic <em>must</em> has no past, so under a past reporting verb it steps back into <em>had to</em>, and the subordinate clause backshifts with it. Option 1 produces <em>must have had</em>, which is a deduction about a finished past state, not a requirement. Option 2 converts an instruction into a prediction that the figures would simply appear. Option 3 downgrades a requirement to a recommendation the team could decline.' }
+          why: 'In reported speech <em>must</em> can stay as <em>must</em> or step back to <em>had to</em>; of these options only <em>had to</em> keeps the requirement, and the rest of the clause backshifts with it. Option 1 produces <em>must have had</em>, which is a deduction about a finished past state, not a requirement. Option 2 converts an instruction into a prediction that the figures would simply appear. Option 3 downgrades a requirement to a recommendation the team could decline.' }
       ]
     },
 
@@ -238,7 +238,7 @@ MOCKS.push({
             'The shortfall had to be closed by training at home.'
           ],
           answer: 0,
-          why: 'Under a past reporting verb, <em>will</em> takes one step back to <em>would</em>, so the original commitment was a plain prediction: <em>will be closed</em>. Option 2 unwinds the backshift into a past unreal, which would mean the ministers were talking about something that never happened. Option 3 replaces a confident promise with a possibility, and a hedged original would have been reported with <em>might</em>. Option 4 turns a prediction into an obligation, and <em>had to</em> is what a reported <em>must</em> would have produced.' },
+          why: 'Under a past reporting verb, <em>will</em> takes one step back to <em>would</em>, so the original commitment was a plain prediction: <em>will be closed</em>. Option 2 unwinds the backshift into a past unreal, which would mean the ministers were talking about something that never happened. Option 3 replaces a confident promise with a possibility, and a hedged original would have been reported with <em>may</em> or <em>might</em>. Option 4 turns a prediction into an obligation, and <em>had to</em> is what a reported <em>must</em> would have produced.' },
 
         { id: 'm3-19', type: 'read', tag: 'epi-read', level: 'C1',
           passage: 'The demographic arithmetic is not in dispute. Within two decades, one person in four in most high-income countries will be over sixty-five, and the fastest-growing group of all is the one over eighty-five, which is the group that needs daily help. Whatever else is uncertain, demand for care workers will rise, and it will rise faster than the working-age population that has to supply them.\n\nWhat follows from that is much less clear. It is widely assumed that the shortage is essentially a problem of pay, and the assumption is not unreasonable: care work tends to sit near the bottom of the wage distribution, and turnover in most places is high. Yet the studies that have tried to isolate the effect of a pay rise report gains that are modest and short-lived. Pay may well be a necessary condition for a stable workforce; the evidence that it is a sufficient one is thin.\n\nA second answer is technology. Lifting aids, fall sensors and medication reminders already reduce the physical load of the work, and a home fitted with them could be managed on fewer visits than one without. It would be a mistake, though, to read that as a solution rather than a margin. The tasks that consume a care worker\'s day, such as noticing that somebody has stopped eating or judging whether a bruise needs a doctor, are exactly the ones that resist automation, and they must be done by someone who knows the person.\n\nThat leaves migration, which is where most systems have quietly settled. Ministers in several countries told their parliaments that the shortfall would be closed by training at home, and in each case the numbers have been made up from abroad instead. There is nothing dishonourable in recruiting abroad, but it is not a plan; it exports the shortage to the countries that trained the workers.\n\nNone of this points to a single lever. What the evidence does support is a narrower claim: a system that pays badly, recruits abroad and waits for a device will not hold, and the countries that recognised this earliest appear to be the ones now struggling least.',
@@ -247,11 +247,11 @@ MOCKS.push({
           options: [
             'Certain that higher pay would solve the shortage, since pay is called the problem.',
             'Certain that higher pay would not help at all, since the studies found no effect.',
-            'Confident that pay is part of the answer, but doubtful that pay alone is enough.',
+            'Fairly sure that pay is part of the answer, but doubtful that pay alone is enough.',
             'Unwilling to take a position either way, since no evidence is cited on the point.'
           ],
           answer: 2,
-          why: 'The sentence <em>Pay may well be a necessary condition … the evidence that it is a sufficient one is thin</em> commits to pay mattering and then withholds commitment on pay being sufficient — two different strengths in one sentence. Option 1 reads the concession as the writer\'s conclusion and ignores <em>thin</em>. Option 2 over-reads <em>modest and short-lived</em> into no effect at all, which the phrase does not say. Option 4 ignores the studies the writer explicitly leans on.' },
+          why: 'The sentence <em>Pay may well be a necessary condition … the evidence that it is a sufficient one is thin</em> leans towards pay mattering and then withholds commitment on pay being sufficient — two different strengths in one sentence. Option 1 reads the concession as the writer\'s conclusion and ignores <em>thin</em>. Option 2 over-reads <em>modest and short-lived</em> into no effect at all, which the phrase does not say. Option 4 ignores the studies the writer explicitly leans on.' },
 
         { id: 'm3-20', type: 'read', tag: 'sys-track', level: 'C1+',
           passage: 'The demographic arithmetic is not in dispute. Within two decades, one person in four in most high-income countries will be over sixty-five, and the fastest-growing group of all is the one over eighty-five, which is the group that needs daily help. Whatever else is uncertain, demand for care workers will rise, and it will rise faster than the working-age population that has to supply them.\n\nWhat follows from that is much less clear. It is widely assumed that the shortage is essentially a problem of pay, and the assumption is not unreasonable: care work tends to sit near the bottom of the wage distribution, and turnover in most places is high. Yet the studies that have tried to isolate the effect of a pay rise report gains that are modest and short-lived. Pay may well be a necessary condition for a stable workforce; the evidence that it is a sufficient one is thin.\n\nA second answer is technology. Lifting aids, fall sensors and medication reminders already reduce the physical load of the work, and a home fitted with them could be managed on fewer visits than one without. It would be a mistake, though, to read that as a solution rather than a margin. The tasks that consume a care worker\'s day, such as noticing that somebody has stopped eating or judging whether a bruise needs a doctor, are exactly the ones that resist automation, and they must be done by someone who knows the person.\n\nThat leaves migration, which is where most systems have quietly settled. Ministers in several countries told their parliaments that the shortfall would be closed by training at home, and in each case the numbers have been made up from abroad instead. There is nothing dishonourable in recruiting abroad, but it is not a plan; it exports the shortage to the countries that trained the workers.\n\nNone of this points to a single lever. What the evidence does support is a narrower claim: a system that pays badly, recruits abroad and waits for a device will not hold, and the countries that recognised this earliest appear to be the ones now struggling least.',

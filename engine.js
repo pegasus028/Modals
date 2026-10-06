@@ -31,7 +31,11 @@
   function esc(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
-  function today() { return new Date().toISOString().slice(0, 10); }
+  /* "Today" is the date in Bangkok (UTC+7, no daylight saving), not in UTC:
+     with toISOString() alone, anything done before 7 a.m. counted towards
+     yesterday, which broke streaks for early-morning revision. */
+  var BKK_MS = 7 * 3600 * 1000;
+  function today() { return new Date(Date.now() + BKK_MS).toISOString().slice(0, 10); }
   function daysBetween(a, b) {
     return Math.round((new Date(b + 'T00:00:00') - new Date(a + 'T00:00:00')) / 86400000);
   }
@@ -488,12 +492,16 @@
         toks.push(b); line.appendChild(b);
       });
       host.appendChild(line);
+      /* Some mistakes span two parts (an auxiliary and its verb, say). Any
+         part listed in item.also points at the same mistake and is marked
+         right as well; the explanation still names item.answer. */
+      var oks = [item.answer].concat(item.also || []);
       return {
         response: function () { return chosen; },
         hasResponse: function () { return chosen >= 0; },
         check: function () {
           return {
-            correct: chosen === item.answer,
+            correct: oks.indexOf(chosen) >= 0,
             givenText: chosen >= 0 ? '(' + (chosen + 1) + ') ' + item.words[chosen] : '(no answer)',
             expectedText: '(' + (item.answer + 1) + ') ' + item.words[item.answer] + ' → ' + item.fix
           };
@@ -502,7 +510,7 @@
           line.dataset.locked = '1';
           toks.forEach(function (b, i) {
             b.disabled = true;
-            if (i === item.answer) b.classList.add('right');
+            if (i === item.answer || (i === chosen && oks.indexOf(i) >= 0)) b.classList.add('right');
             else if (i === chosen) b.classList.add('wrong');
           });
           host.appendChild(el('div', 'fixnote',
@@ -804,6 +812,22 @@
   var XP_CORRECT = 10, XP_HINT_PENALTY = 4, XP_SUB = 40, XP_CHECK = 120, XP_MOCK = 250;
   var XP_SPEED = 6, SPEED_MS = 7000;
   var PASS_SUB = 0.6, PASS_CHECK = 0.75;
+  /* The time bonus used one 7-second limit for every question, but the median
+     timed question here is about 46 words long, and 94% of them cannot even be
+     read in 7 seconds at 200 words a minute — so the bonus paid for clicking
+     before reading. The limit now scales with what is on screen: a quarter of
+     a second per word (about 240 words a minute, brisk but readable), never
+     under 7 seconds and never over 25. */
+  var SPEED_MS_PER_WORD = 250, SPEED_MS_MAX = 25000;
+  function speedMs(item) {
+    if (!item) return SPEED_MS;
+    var bits = [item.stem, item.given].concat(item.options || [], item.words || [],
+      (item.lines || []).map(function (l) { return l && l.text; }),
+      item.table ? [].concat.apply([], item.table.rows || []) : []);
+    var words = bits.map(function (s) { return String(s || '').replace(/<[^>]+>/g, ' '); })
+      .join(' ').split(/\s+/).filter(Boolean).length;
+    return Math.min(SPEED_MS_MAX, Math.max(SPEED_MS, words * SPEED_MS_PER_WORD));
+  }
 
   function blank(id, name) {
     return {
@@ -875,8 +899,11 @@
      right again and it is retired. */
   var BOX_DAYS = { 1: 1, 2: 3 };
   function addDays(iso, n) {
-    var d = iso ? new Date(iso + 'T00:00:00') : new Date();
-    d.setDate(d.getDate() + n);
+    /* Pure calendar arithmetic in UTC. The old version parsed the date as
+       local midnight and printed it in UTC, which on a Bangkok device lands
+       on the previous day — so "returns tomorrow" meant "returns today". */
+    var d = new Date((iso || today()) + 'T00:00:00Z');
+    d.setUTCDate(d.getUTCDate() + n);
     return d.toISOString().slice(0, 10);
   }
   function scheduleReview(p, itemId, correct) {
@@ -1067,7 +1094,7 @@
     el: el, esc: esc, shuffle: shuffle, norm: norm, today: today, daysBetween: daysBetween,
     stripTags: stripTags,
     mount: mount, mindMapSvg: mindMapSvg, TYPE_LABEL: TYPE_LABEL, Bank: Bank, art: artSvg, artBand: artBand, ART: ART,
-    PASS_SUB: PASS_SUB, PASS_CHECK: PASS_CHECK, SPEED_MS: SPEED_MS, XP_SPEED: XP_SPEED,
+    PASS_SUB: PASS_SUB, PASS_CHECK: PASS_CHECK, SPEED_MS: SPEED_MS, speedMs: speedMs, XP_SPEED: XP_SPEED,
     Progress: Progress
   };
 })(window);

@@ -96,7 +96,7 @@ T9.levels.push({
           stem: 'Choose the best option for gap (1).',
           options: ['don\'t have to', 'needn\'t', 'can\'t', 'couldn\'t'],
           answer: 2,
-          why: 'Fah asks for permission with <em>Can I …?</em>, and Mum says no, so she needs the word that <strong>refuses permission</strong>: <em>No, you can\'t.</em> <em>Don\'t have to</em> and <em>needn\'t</em> are the near misses: they say there is no obligation, which answers a question like <em>Do I have to go?</em> — but Fah wants to go, and Mum is stopping her. <em>Couldn\'t</em> talks about the past or a guess, so it cannot refuse a request about tonight.' }
+          why: 'Fah asks for permission with <em>Can I …?</em>, and Mum says no, so she needs the word that <strong>refuses permission</strong>: <em>No, you can\'t.</em> <em>Don\'t have to</em> and <em>needn\'t</em> are the near misses: they say there is no obligation, which answers a question like <em>Do I have to go?</em> — but Fah wants to go, and Mum is stopping her. <em>Couldn\'t</em> is not used to refuse permission now: Mum would say <em>No, you can\'t</em>.' }
       ]
     },
 
@@ -157,7 +157,7 @@ T9.levels.push({
           ],
           answer: 2,
           fix: 'you ought to ask the driver',
-          why: '<em>Ought</em> gives the same advice as <em>should</em>, but unlike <em>should</em> it always keeps its <em>to</em>: <em>you ought to ask</em>. <em>You should ask the driver</em> would also be correct. The other three parts are fine: the <em>if</em> clause, the question phrase and the time clause are all correctly formed.' },
+          why: '<em>Ought</em> gives the same advice as <em>should</em>, but unlike <em>should</em>, in standard English it keeps its <em>to</em>: <em>you ought to ask</em>. <em>You should ask the driver</em> would also be correct. The other three parts are fine: the <em>if</em> clause, the question phrase and the time clause are all correctly formed.' },
 
         { id: 't9l1s2-5', type: 'equiv', tag: 'u5-advice', level: 'B1+',
           given: 'It\'s a good idea for you to compare prices online before you buy a new laptop.',
@@ -224,7 +224,7 @@ T9.levels.push({
           stem: 'You are going to a festival and want to know whether there is an entry fee for everyone. Put the words in order to make the question.',
           tiles: ['to', 'pay', 'everybody', 'get', 'have', 'does', 'in', 'to'],
           solution: 'does everybody have to pay to get in',
-          alt: [],
+          alt: ['to get in does everybody have to pay'],
           why: '<em>Have to</em> makes its question with <em>does</em>, like an ordinary verb: <em>Does everybody have to pay …?</em> <em>Everybody</em> takes a singular verb, so it is <em>does</em>, not <em>do</em>. The second <em>to</em> belongs to <em>to get in</em>, which gives the purpose. <s>Has everybody to pay?</s> is not possible in modern English, and there is no <em>has</em> tile for that reason.' },
 
         { id: 't9l1s3-4', type: 'choose', tag: 'u5-now-form', level: 'B1+',
@@ -244,7 +244,7 @@ T9.levels.push({
           stem: 'Choose the best option for blank (1).',
           options: ['aren\'t allowed to', 'aren\'t allowed', 'don\'t allowed to', 'aren\'t be allowed to'],
           answer: 0,
-          why: '<em>Be allowed to</em> needs both parts: the verb <em>be</em> (<em>aren\'t</em>) and <em>to</em> before the next verb. Option 2 is the near miss — right as far as it goes, but without <em>to</em> it cannot join onto <em>have</em>. Option 3 uses <em>do</em> instead of <em>be</em>, but <em>allowed</em> is not an ordinary verb here, so it needs <em>be</em>. Option 4 puts in <em>be</em> twice.' }
+          why: '<em>Be allowed to</em> needs both parts: the verb <em>be</em> (<em>aren\'t</em>) and <em>to</em> before the next verb. Option 2 is the near miss — right as far as it goes, but without <em>to</em> it cannot join onto <em>have</em>. Option 3 uses <em>do</em> instead of <em>be</em>, but <em>allowed</em> here is a passive past participle, so it needs <em>be</em>: <em>aren\'t allowed to</em>. Option 4 puts in <em>be</em> twice.' }
       ]
     }
   ],
@@ -261,7 +261,7 @@ T9.levels.push({
           'I must remember my sister\'s birthday.'
         ],
         answer: 2,
-        why: 'A uniform at work is a rule made by the employer, and <em>have to</em> is the usual choice for an obligation that comes from other people. The three sentences with <em>must</em> are all things the speaker has decided for herself: to call Grandma, to spend less on snacks, to remember a birthday. Option 2 is the closest — it sounds strict, like a rule — but nobody has made it except the speaker.' },
+        why: 'A uniform at work is the employer\'s rule, and the speaker is passing it on, so <em>have to</em> fits: it reports an obligation that is not the speaker\'s own idea. With <em>must</em>, the speaker presents the obligation as her own (“I say so”): to call Grandma, to spend less on snacks, to remember a birthday. This is a British tendency, not a fixed rule. Option 2 is the closest — it sounds strict, like a rule — but nobody has made it except the speaker.' },
 
       { id: 't9l1ck-2', type: 'equiv', tag: 'u5-now-neg', level: 'B1+',
         given: 'Visitors under 12 are not allowed to use the gym.',
@@ -282,9 +282,9 @@ T9.levels.push({
           { who: 'Ann', text: 'Hmm. You ___(1)___ lend her any more money until she does.' }
         ],
         stem: 'Choose the best option for gap (1).',
-        options: ['had better not to', 'hadn\'t better', 'ought not', 'shouldn\'t'],
+        options: ['had better not to', 'hadn\'t better', 'don\'t ought to', 'shouldn\'t'],
         answer: 3,
-        why: 'Ann is giving advice, and <em>shouldn\'t</em> is followed by the bare verb: <em>You shouldn\'t lend her any more money</em>. Option 3 is the near miss: <em>ought not</em> gives the same advice, but it needs its <em>to</em> — <em>ought not to lend</em>. Option 1 adds a <em>to</em> that <em>had better</em> never takes, and option 2 puts the <em>not</em> in the wrong place; the correct form is <em>had better not lend</em>.' },
+        why: 'Ann is giving advice, and <em>shouldn\'t</em> is followed by the bare verb: <em>You shouldn\'t lend her any more money</em>. Option 3, <em>don\'t ought to</em>, makes the negative with <em>do</em>, but <em>ought</em> makes it with <em>not</em>: <em>ought not to lend</em>. Option 1 adds a <em>to</em> that <em>had better</em> never takes, and option 2 puts the <em>not</em> in the wrong place; the correct form is <em>had better not lend</em>.' },
 
       { id: 't9l1ck-4', type: 'choose', tag: 'u5-advice', level: 'B1+',
         stem: 'Which sentence sounds most like a warning?',
@@ -455,10 +455,10 @@ T9.levels.push({
           stem: 'Choose the best option for gap (1).',
           options: ['allowed to', 'had to', 'were allowed to', 'weren\'t allowed to'],
           answer: 2,
-          why: 'Anna says <em>Yes</em> — there was permission in the past — so the answer is <em>were allowed to</em>. <em>Weren\'t allowed to</em> is the near miss: the right form, but it says the opposite of <em>Yes</em>. <em>Allowed to</em> on its own is missing <em>were</em>, so it would mean that the students gave the permission. <em>Had to</em> is past, but it says using the computers was compulsory, which is not what Fern asked about.' },
+          why: 'Anna says <em>Yes</em> — there was permission in the past — so the answer is <em>were allowed to</em>. <em>Weren\'t allowed to</em> is the near miss: the right form, but it says the opposite of <em>Yes</em>. <em>Allowed to</em> on its own is missing <em>were</em>; without <em>be</em> there is no passive, and <em>we allowed to use them</em> is not a correct sentence. <em>Had to</em> is past, but it says using the computers was compulsory, which is not what Fern asked about.' },
 
         { id: 't9l2s2-5', type: 'build', tag: 'u5-past-prohib', level: 'B1+',
-          stem: 'Your friend asks how you did the maths test yesterday without a calculator. Put the words in order to explain the rule.',
+          stem: 'Your friend asks why you did the maths test yesterday without a calculator. Put the words in order to explain the rule.',
           tiles: ['we', 'weren\'t', 'allowed', 'to', 'use', 'calculators', 'in', 'the', 'test'],
           solution: 'we weren\'t allowed to use calculators in the test',
           alt: ['in the test we weren\'t allowed to use calculators'],
@@ -539,7 +539,7 @@ T9.levels.push({
         stem: 'Sorry I didn\'t answer your call yesterday. I ______ my dad in his shop all afternoon.',
         options: ['must help', 'must have helped', 'had to help', 'have to help'],
         answer: 2,
-        why: 'The call was <em>yesterday</em>, so the speaker needs the past of obligation: <em>had to help</em>. <em>Must have helped</em> is the near miss — it looks past, but it is a guess about the past, and the speaker knows exactly where she was yesterday afternoon, so there is nothing to guess. <em>Have to help</em> is present, so it cannot explain yesterday. <em>Must help</em> has no past form.' },
+        why: 'The call was <em>yesterday</em>, so the speaker needs the past of obligation: <em>had to help</em>. <em>Must have helped</em> is the near miss — it looks past, but it is a guess about the past, and the speaker knows exactly where she was yesterday afternoon, so there is nothing to guess. <em>Have to help</em> is present, so it cannot explain yesterday. <em>Must</em> has no past form, so <em>must help</em> cannot talk about yesterday.' },
 
       { id: 't9l2ck-2', type: 'equiv', tag: 'u5-past-oblig', level: 'B2',
         given: 'It was necessary for us to show our passports twice at the airport.',
@@ -619,22 +619,22 @@ T9.levels.push({
       },
       items: [
         { id: 't9l3s1-1', type: 'choose', tag: 'u5-guess-now', level: 'B1+',
-          stem: 'Tom is only fifteen, so that ______ his car parked outside. It must be his dad\'s.',
+          stem: 'Nan is only fifteen, so that ______ her car parked outside. It must be her dad\'s.',
           options: ['can\'t be', 'mustn\'t be', 'might not be', 'must be'],
           answer: 0,
-          why: 'At fifteen Tom is too young to drive, and the next sentence shows the speaker is sure it is somebody else\'s car, so we need "about 90% sure it is <strong>not</strong> true": <em>can\'t be</em>. <em>Mustn\'t be</em> is the near miss. It looks like the opposite of <em>must</em>, but <em>mustn\'t</em> is for rules (<em>You mustn\'t park here</em>), not guesses. <em>Might not be</em> is only a 50% "maybe not", too weak for a speaker who then says <em>It must be his dad\'s</em>. <em>Must be</em> says the opposite of what the evidence shows.' },
+          why: 'At fifteen Nan is too young to drive, and the next sentence shows the speaker is sure it is somebody else\'s car, so we need "about 90% sure it is <strong>not</strong> true": <em>can\'t be</em>. <em>Mustn\'t be</em> is the near miss. It looks like the opposite of <em>must</em>, but <em>mustn\'t</em> is for rules (<em>You mustn\'t park here</em>), not guesses. <em>Might not be</em> is only a 50% "maybe not", too weak for a speaker who then says <em>It must be her dad\'s</em>. <em>Must be</em> says the opposite of what the evidence shows.' },
 
         { id: 't9l3s1-2', type: 'equiv', tag: 'u5-guess-now', level: 'B1+',
-          given: 'It\'s possible that Dan isn\'t at home right now.',
+          given: 'It\'s possible that Dao isn\'t at home right now.',
           stem: 'Which sentence means the same?',
           options: [
-            'Dan can\'t be at home right now.',
-            'Dan might not be at home right now.',
-            'Dan couldn\'t be at home right now.',
-            'Dan mustn\'t be at home right now.'
+            'Dao can\'t be at home right now.',
+            'Dao might not be at home right now.',
+            'Dao couldn\'t be at home right now.',
+            'Dao mustn\'t be at home right now.'
           ],
           answer: 1,
-          why: '<em>It\'s possible that … isn\'t</em> is a 50% "maybe not", and the 50% negatives are <em>may not</em> and <em>might not</em>: option 2. Option 3, <em>couldn\'t be</em>, is the near miss. It looks like a softer <em>can\'t</em>, but in a guess <em>couldn\'t</em> means almost the same as <em>can\'t</em>: about 90% sure it is not true. Option 1, <em>can\'t be</em>, is just as strong. Option 4, <em>mustn\'t be</em>, sounds as if Dan is not allowed to be at home.' },
+          why: '<em>It\'s possible that … isn\'t</em> is a 50% "maybe not", and the 50% negatives are <em>may not</em> and <em>might not</em>: option 2. Option 3, <em>couldn\'t be</em>, is the near miss. It looks like a softer <em>can\'t</em>, but in a guess <em>couldn\'t</em> means almost the same as <em>can\'t</em>: about 90% sure it is not true. Option 1, <em>can\'t be</em>, is just as strong. Option 4, <em>mustn\'t be</em>, sounds as if Dao is not allowed to be at home.' },
 
         { id: 't9l3s1-3', type: 'sort', tag: 'u5-guess-now', level: 'B1+',
           stem: 'How sure is the speaker? Put each sentence in the right box.',
@@ -696,28 +696,28 @@ T9.levels.push({
       },
       items: [
         { id: 't9l3s2-1', type: 'choose', tag: 'u5-guess-past', level: 'B2',
-          stem: 'Ben\'s trainers are covered in mud, and there\'s a muddy trail all the way across the kitchen floor. He ______ home through the park.',
+          stem: 'Bua\'s trainers are covered in mud, and there\'s a muddy trail all the way across the kitchen floor. She ______ home through the park.',
           options: ['must be walking', 'can\'t have walked', 'mustn\'t have walked', 'must have walked'],
           answer: 3,
-          why: 'The mud is the evidence we can see now, and the walk happened earlier, so the guess needs <em>have</em> + past participle: <em>must have walked</em>, about 90% sure. <em>Must be walking</em> is the near miss: the right strength, but it is about now, and Ben is already home. <em>Can\'t have walked</em> has the right form but says the opposite of what the mud shows. <em>Mustn\'t have walked</em> is not how English makes a guess (the opposite of <em>must have</em> is <em>can\'t have</em>), and it points the wrong way too.' },
+          why: 'The mud is the evidence we can see now, and the walk happened earlier, so the guess needs <em>have</em> + past participle: <em>must have walked</em>, about 90% sure. <em>Must be walking</em> is the near miss: the right strength, but it is about now, and Bua is already home. <em>Can\'t have walked</em> has the right form but says the opposite of what the mud shows. <em>Mustn\'t have walked</em> is not how English makes a guess (the opposite of <em>must have</em> is <em>can\'t have</em>), and it points the wrong way too.' },
 
         { id: 't9l3s2-2', type: 'equiv', tag: 'u5-guess-past', level: 'B2',
-          given: 'I\'m almost certain that Sam didn\'t read my message.',
+          given: 'I\'m almost certain that Sai didn\'t read my message.',
           stem: 'Which sentence means the same?',
           options: [
-            'Sam couldn\'t have read my message.',
-            'Sam might not have read my message.',
-            'Sam must have read my message.',
-            'Sam didn\'t have to read my message.'
+            'Sai couldn\'t have read my message.',
+            'Sai might not have read my message.',
+            'Sai must have read my message.',
+            'Sai didn\'t have to read my message.'
           ],
           answer: 0,
-          why: '<em>Almost certain … didn\'t</em> means about 90% sure it did not happen, which is <em>can\'t have</em> or <em>couldn\'t have</em>: option 1. Option 2, <em>might not have read</em>, is the near miss. It is about not reading, but it is only a 50% "maybe not", far weaker than <em>almost certain</em>. Option 3 is 90% sure in the wrong direction. Option 4 says Sam was not required to read it, which is about rules, not guesses.' },
+          why: '<em>Almost certain … didn\'t</em> means about 90% sure it did not happen, which is <em>can\'t have</em> or <em>couldn\'t have</em>: option 1. Option 2, <em>might not have read</em>, is the near miss. It is about not reading, but it is only a 50% "maybe not", far weaker than <em>almost certain</em>. Option 3 is 90% sure in the wrong direction. Option 4 says Sai was not required to read it, which is about rules, not guesses.' },
 
         { id: 't9l3s2-3', type: 'judge', tag: 'u5-guess-past', level: 'B2',
-          given: 'Jack: "You can\'t have gone to the right café. The one I mean is closed on Mondays."',
-          stem: 'Jack thinks his friend went to a different café.',
+          given: 'Jane: "You can\'t have gone to the right café. The one I mean is closed on Mondays."',
+          stem: 'Jane thinks her friend went to a different café.',
           answer: 0,
-          why: 'True. <em>Can\'t have gone</em> means Jack is about 90% sure it did <strong>not</strong> happen: his friend did not go to the café Jack means, because that one is closed on Mondays. So Jack thinks the friend went somewhere else. <em>Can\'t</em> here is not about ability (the friend was perfectly able to go there); it is a guess based on evidence.' },
+          why: 'True. <em>Can\'t have gone</em> means Jane is about 90% sure it did <strong>not</strong> happen: her friend did not go to the café Jane means, because that one is closed on Mondays. So Jane thinks the friend went somewhere else. <em>Can\'t</em> here is not about ability or permission; it is Jane\'s conclusion from the evidence.' },
 
         { id: 't9l3s2-4', type: 'cloze', tag: 'u5-guess-past', level: 'B2',
           passage: 'A painting worth £2 million has disappeared from a small museum in York. The alarm did not go off, and the doors were still locked when staff arrived this morning.\n\nThe manager told reporters that it was too early to say how the thief got in. "Someone ___(1)___ climbed in through the roof, or perhaps a member of staff helped them. We just don\'t know yet," she said. The police are now checking the museum\'s cameras.',
@@ -773,24 +773,24 @@ T9.levels.push({
           why: 'The smell is the evidence now, and the baking happened while we were out, so the chain is modal + <em>have</em> + past participle: <em>must have made</em>. <em>Must has made</em> is the near miss. All three parts are there, but <em>have</em> never changes after a modal, even with <em>he</em> or <em>she</em>. <em>Must made</em> drops <em>have</em>. <em>Must be making</em> would be a guess about now, which <em>while we were out</em> rules out.' },
 
         { id: 't9l3s3-3', type: 'build', tag: 'u5-guess-form', level: 'B2',
-          stem: 'Your friend says he walked all the way home from the city centre: fifteen kilometres! Put the words in order to show that you don\'t believe him.',
+          stem: 'Your friend says she walked all the way home from the city centre: fifteen kilometres! Put the words in order to show that you don\'t believe her.',
           tiles: ['walked', 'can\'t', 'that', 'you', 'all', 'have', 'way'],
           solution: 'you can\'t have walked all that way',
           alt: [],
-          why: 'You don\'t believe him, so you are about 90% sure it did not happen: <em>can\'t have</em> + past participle. The order never changes: subject, modal, <em>have</em>, past participle, then the rest. <s>You can\'t walked</s> drops <em>have</em>, and <s>You have can\'t walked</s> puts the links in the wrong order.' },
+          why: 'You don\'t believe her, so you are about 90% sure it did not happen: <em>can\'t have</em> + past participle. The order never changes: subject, modal, <em>have</em>, past participle, then the rest. <s>You can\'t walked</s> drops <em>have</em>, and <s>You have can\'t walked</s> puts the links in the wrong order.' },
 
         { id: 't9l3s3-4', type: 'spot', tag: 'u5-guess-form', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['Someone has eaten the last piece of cake,', 'but it must have been Dad,', 'because he\'s been at work', 'since seven o\'clock this morning.'],
           answer: 1,
           fix: 'but it can\'t have been Dad,',
-          why: 'The grammar of part 2 looks fine, but the modal is wrong. Dad has been at work all day, so the speaker is sure it was <strong>not</strong> him, and that needs <em>can\'t have been</em>. <em>Must have been</em> says the opposite of the reason given in parts 3 and 4. The other parts are correct: the present perfect in parts 1 and 3 fits something with a result now.' },
+          why: 'The grammar of part 2 looks fine, but the modal is wrong. Dad has been at work all day, so the speaker is sure it was <strong>not</strong> him, and that needs <em>can\'t have been</em>. <em>Must have been</em> says the opposite of the reason given in parts 3 and 4. The other parts are correct: part 1 is a present perfect with a result now (the cake is gone), and part 3 is a present perfect for a state that has continued up to now.' },
 
         { id: 't9l3s3-5', type: 'choose', tag: 'u5-guess-form', level: 'B2',
           stem: 'This old map ______ by hand. You can still see the pencil lines under the ink.',
-          options: ['must have been drawn', 'must have drawn', 'must be drawn', 'must been drawn'],
+          options: ['must have been drawn', 'must have drawn', 'must be drawing', 'must been drawn'],
           answer: 0,
-          why: 'The map did not draw anything (somebody drew it), so the guess needs the passive: modal + <em>have been</em> + past participle, <em>must have been drawn</em>. <em>Must have drawn</em> is the near miss: it is a correct past guess, but active, so it says the map did the drawing. <em>Must be drawn</em> is about now or the future, not an old map. <em>Must been drawn</em> leaves out <em>have</em>.' }
+          why: 'The map did not draw anything (somebody drew it), so the guess needs the passive: modal + <em>have been</em> + past participle, <em>must have been drawn</em>. <em>Must have drawn</em> is the near miss: it is a correct past guess, but active, so it says the map did the drawing. <em>Must be drawing</em> is about an action going on now, and it also makes the map the one doing the drawing. <em>Must been drawn</em> leaves out <em>have</em>.' }
       ]
     }
   ],

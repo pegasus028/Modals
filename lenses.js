@@ -12,12 +12,12 @@
    =========================================================================== */
 var LENSES = {
  "t1l1s1": {
-  "thai": "ประโยคที่มี modal จะมีสองชั้นเสมอ ชั้นล่างคือ “เนื้อความ” (proposition) ว่าเกิดอะไรขึ้นในโลกจริง ส่วนชั้นบนคือ “กรอบ” (frame) ที่บอกว่าผู้พูดคิดอย่างไรกับเรื่องนั้น เช่น มั่นใจแค่ไหน เป็นการคาดเดา เป็นข้อบังคับ หรือเป็นการอนุญาต ลองเทียบ It rains in April. (เดือนเมษายนฝนตก — บอกข้อเท็จจริงเรื่องฝน) กับ It may rain in April. (เดือนเมษายนฝนอาจจะตก — บอกว่าผู้พูดไม่แน่ใจ) ฝนยังเป็นฝนเหมือนเดิม สิ่งที่เปลี่ยนคือจุดยืนของผู้พูดเท่านั้น วิธีเช็กคือลองเถียงด้วยหลักฐาน ถ้าเถียงได้ เช่น “ไม่จริง ทีมแพ้แล้ว” แปลว่าเป็นเนื้อความ ระวัง must have rained ด้วย แม้จะพูดถึงอดีต แต่ก็ยังเป็นการสรุปของผู้พูด ไม่ใช่การรายงานข้อเท็จจริง",
+  "thai": "ประโยคที่มี modal จะมีสองชั้นเสมอ ชั้นล่างคือ “เนื้อความ” (proposition) ว่าเกิดอะไรขึ้นในโลกจริง ส่วนชั้นบนคือ “กรอบ” (frame) ที่บอกว่าผู้พูดคิดอย่างไรกับเรื่องนั้น เช่น มั่นใจแค่ไหน เป็นการคาดเดา เป็นข้อบังคับ หรือเป็นการอนุญาต ลองเทียบ It rains in April. (เดือนเมษายนฝนตก — บอกข้อเท็จจริงเรื่องฝน) กับ It may rain in April. (เดือนเมษายนฝนอาจจะตก — บอกว่าผู้พูดไม่แน่ใจ) ฝนยังเป็นฝนเหมือนเดิม สิ่งที่เปลี่ยนคือจุดยืนของผู้พูดเท่านั้น วิธีเช็กคือลองเถียงด้วยหลักฐาน ถ้าเถียงได้ เช่น “ไม่จริง เดือนเมษาฝนไม่ตกหรอก” แปลว่าเป็นเนื้อความ ส่วนกรอบเถียงแบบนั้นไม่ได้ เพราะบอกแค่ความมั่นใจของผู้พูด ระวัง must have rained ด้วย แม้จะพูดถึงอดีต แต่ก็ยังเป็นการสรุปของผู้พูด ไม่ใช่การรายงานข้อเท็จจริง",
   "analogy": {
    "title": "Photo and caption",
    "text": "Picture an IG story of a packed BTS platform. The photo is the <strong>proposition</strong> — it never changes. Now try three captions: <em>The train <strong>is</strong> late.</em> <em>The train <strong>might</strong> be late.</em> <em>The train <strong>must</strong> be late.</em> The platform, the crowd and the train are exactly the same each time. Only the caption moves, and the caption tells your friends about <em>you</em>: how sure you are."
   },
-  "trap": "Learners read a modal as part of the news. They take <em>The train <strong>may</strong> be cancelled</em> as “the train won't run”, and they take <em>It <strong>must have</strong> rained</em> as a report of the weather because it is about the past. Tests put it right next to the plain fact <em>It rained</em> as the near miss. Dodge: if there is a modal anywhere in the verb, the sentence tells you how sure the speaker is, not what happened.",
+  "trap": "Learners read a modal as part of the news. They take <em>The train <strong>may</strong> be cancelled</em> as “the train won't run”, and they take <em>It <strong>must have</strong> rained</em> as a report of the weather because it is about the past. Tests put it right next to the plain fact <em>It rained</em> as the near miss. Dodge: a modal in the verb adds the speaker's stance (here, how sure the speaker is); it doesn't report what happened.",
   "map": {
    "center": "Two layers",
    "branches": [
@@ -46,7 +46,7 @@ var LENSES = {
     {
      "label": "Disagree test",
      "leaves": [
-      "fact → “No, they lost!”",
+      "fact → “No, it doesn't!”",
       "frame → about the speaker"
      ]
     },
@@ -342,7 +342,7 @@ var LENSES = {
   ]
  },
  "t1l2s1": {
-  "thai": "หลัง modal ทุกตัว กริยาตัวถัดไปต้องเป็น bare infinitive คือกริยาช่องที่ 1 ที่ไม่มี to ไม่เติม -s และไม่เติม -ed เช่น must go, will be, can meet ไม่ว่าประธานจะเป็น I, she, they หรือ neither ก็ใช้รูปเดิมเสมอ ระวังกริยา be ด้วย หลัง modal ต้องใช้ be ไม่ใช่ is หรือ being เช่น The lift will be out of service. (ลิฟต์จะใช้งานไม่ได้) อีกเรื่องที่สำคัญมากคือ modal ทำเป็นอดีตเองไม่ได้ จะเติม yesterday แล้วใช้ must finish หรือ must finished ไม่ได้ ต้องย้ายความเป็นอดีตไปไว้ที่ have + V3 แทน เช่น She must have finished the report yesterday. (เมื่อวานเธอคงทำรายงานเสร็จแล้วแน่ ๆ) วิธีเช็กคือดูคำแรกของกลุ่มกริยา ถ้าเป็น modal คำถัดไปต้องเป็นรูปเปล่าเท่านั้น",
+  "thai": "หลัง modal ทุกตัว กริยาตัวถัดไปต้องเป็น bare infinitive คือกริยาช่องที่ 1 ที่ไม่มี to ไม่เติม -s และไม่เติม -ed เช่น must go, will be, can meet ไม่ว่าประธานจะเป็น I, she, they หรือ neither ก็ใช้รูปเดิมเสมอ ระวังกริยา be ด้วย หลัง modal ต้องใช้ be ไม่ใช่ is หรือ being เช่น The lift will be out of service. (ลิฟต์จะใช้งานไม่ได้) อีกเรื่องที่สำคัญมากคือ must ทำเป็นอดีตเองไม่ได้ จะเติม yesterday แล้วใช้ must finish หรือ must finished ไม่ได้ ถ้าเป็นการคาดเดา ต้องย้ายความเป็นอดีตไปไว้ที่ have + V3 แทน เช่น She must have finished the report yesterday. (เมื่อวานเธอคงทำรายงานเสร็จแล้วแน่ ๆ) วิธีเช็กคือดูคำแรกของกลุ่มกริยา ถ้าเป็น modal คำถัดไปต้องเป็นรูปเปล่าเท่านั้น",
   "analogy": {
    "title": "Plain uniform only",
    "text": "Think of the modal as the guard at the school gate. Every verb that walks in after it must wear the <strong>plain uniform</strong>: no <em>-s</em> badge, no <em>-ed</em> badge, no <em>to</em> bag. <em>She must go</em>, <em>they must go</em>: same uniform for everyone. Talking about yesterday? The guard won't let a past badge in, so <em>have</em> walks in first: <em>must <strong>have gone</strong></em>."
@@ -405,7 +405,7 @@ var LENSES = {
     },
     {
      "who": "Fah",
-     "text": "Bot, I can't finish it yesterday. Yesterday is over!"
+     "text": "Bot, <em>must finish</em>… <em>yesterday</em>? Yesterday is over!"
     },
     {
      "who": "Nong Bot",
@@ -416,7 +416,7 @@ var LENSES = {
      "text": "The past can't sit on the modal or on the verb after it. Use <em>have</em>: <em>She <strong>must have finished</strong> it.</em>"
     }
    ],
-   "moral": "A modal has no past: the past goes into <em>have</em> + V3, as in <em>must have finished</em>."
+   "moral": "<em>Must</em> can't carry past time: for a past deduction, put the past into <em>have</em> + V3, as in <em>must have finished</em>."
   },
   "chant": {
    "title": "Plain After the Modal",
@@ -662,7 +662,7 @@ var LENSES = {
   ]
  },
  "t1l3s1": {
-  "thai": "modal มีรูปเดียวเท่านั้น ไม่มีรูป to-infinitive ไม่มีรูป -ing และไม่มีรูป V3 จึงเอาไปวางหลัง will หลัง to หลัง have หรือหลัง without ไม่ได้เลย เช่น will must, to can, has must ผิดทั้งหมด ภาษาอังกฤษจึงใช้วลีกริยาธรรมดาที่มีความหมายเหมือนกันมาแทน คือ have to แทน must, be able to แทน can, be allowed to แทน may ที่แปลว่าอนุญาต และ be supposed to แทน should วลีพวกนี้ผันได้ครบทุกรูป เช่น We will have to leave at six. (พวกเราจะต้องออกเดินทางตอนหกโมง) หรือ She has been able to walk unaided since March. (เธอเดินเองได้ตั้งแต่เดือนมีนาคม) สิ่งสำคัญคือ นี่ไม่ใช่ “ทางเลือกที่ฟังดูหรูกว่า” แต่เป็นทางเดียวที่ถูกไวยากรณ์ เพราะในตำแหน่งนั้นไม่มี modal ให้เลือกเลย",
+  "thai": "modal มีรูปเดียวเท่านั้น ไม่มีรูป to-infinitive ไม่มีรูป -ing และไม่มีรูป V3 จึงเอาไปวางหลัง will หลัง to หลัง have หรือหลัง without ไม่ได้เลย เช่น will must, to can, has must ผิดทั้งหมด ภาษาอังกฤษจึงใช้วลีกริยาธรรมดาที่มีความหมายเหมือนกันมาแทน คือ have to แทน must, be able to แทน can และ be allowed to แทน may ที่แปลว่าอนุญาต วลีพวกนี้ผันได้ครบทุกรูป เช่น We will have to leave at six. (พวกเราจะต้องออกเดินทางตอนหกโมง) หรือ She has been able to walk unaided since March. (เธอเดินเองได้ตั้งแต่เดือนมีนาคม) สิ่งสำคัญคือ นี่ไม่ใช่ “ทางเลือกที่ฟังดูหรูกว่า” แต่เป็นทางเดียวที่ถูกไวยากรณ์ เพราะในตำแหน่งนั้นไม่มี modal ให้เลือกเลย",
   "analogy": {
    "title": "The charger adaptor",
    "text": "Your phone charger has <strong>one</strong> plug shape. In the normal socket it works fine: that's <em>must</em>, <em>can</em> or <em>may</em> in an ordinary sentence. But some sockets need a different shape: after <em>will</em>, after <em>to</em>, after <em>has</em>. The modal plug just won't go in. So you use the adaptor (<em>have to</em>, <em>be able to</em>, <em>be allowed to</em>), which fits every socket: <em>will have to</em>, <em>to be able to</em>, <em>has been able to</em>."
@@ -1117,12 +1117,12 @@ var LENSES = {
   ]
  },
  "t2l1s2": {
-  "thai": "เวลาคาดเดา may, might และ could มีความหมายเกือบเหมือนกัน ทั้งสามคำบอกว่า \"เป็นไปได้ เป็นหนึ่งในหลายคำตอบ\" เช่น The fault may / might / could be in the router. (ปัญหาอาจจะอยู่ที่เราเตอร์ก็ได้) หนังสือบางเล่มบอกว่า might อ่อนกว่า may ซึ่งก็จริง แต่ต่างกันน้อยมาก ความต่างที่สำคัญกว่าคือระดับภาษา may เป็นคำที่ใช้ในงานเขียนทางการ เช่น รายงานหรืองานวิชาการ ส่วน might และ could ใช้บ่อยในภาษาพูด สิ่งที่ต้องตัดสินใจจริง ๆ คือ \"ขั้น\" บนบันได เพราะถ้าเปลี่ยนจาก may เป็น must หรือ can't ความหมายจะเปลี่ยนทั้งประโยค แต่ถ้าเปลี่ยนจาก may เป็น might ความหมายแทบไม่เปลี่ยนเลย และอย่าซ้อนคำแสดงความไม่แน่ใจ เช่น might possibly หรือ could maybe เพราะ might อย่างเดียวก็บอกครบแล้ว ซ้อนไปจะฟังเหมือนผู้เขียนตัดสินใจไม่ได้",
+  "thai": "เวลาคาดเดา may, might และ could มีความหมายเกือบเหมือนกัน ทั้งสามคำบอกว่า \"เป็นไปได้ เป็นหนึ่งในหลายคำตอบ\" เช่น The fault may / might / could be in the router. (ปัญหาอาจจะอยู่ที่เราเตอร์ก็ได้) บางคนรู้สึกว่า might ฟังไม่แน่ใจกว่า may นิดหน่อย แต่ต่างกันน้อยมาก และเจ้าของภาษาเองก็ยังเห็นไม่ตรงกัน ความต่างที่สำคัญกว่าคือระดับภาษา may เป็นคำที่ใช้ในงานเขียนทางการ เช่น รายงานหรืองานวิชาการ ส่วน might และ could ใช้บ่อยในภาษาพูด สิ่งที่ต้องตัดสินใจจริง ๆ คือ \"ขั้น\" บนบันได เพราะถ้าเปลี่ยนจาก may เป็น must หรือ can't ความหมายจะเปลี่ยนทั้งประโยค แต่ถ้าเปลี่ยนจาก may เป็น might ความหมายแทบไม่เปลี่ยนเลย และในงานเขียนไม่จำเป็นต้องซ้อนคำแสดงความไม่แน่ใจ เช่น might possibly หรือ could maybe (ไม่ผิดไวยากรณ์) เพราะ might อย่างเดียวก็บอกครบแล้ว ซ้อนบ่อย ๆ จะฟังเหมือนผู้เขียนตัดสินใจไม่ได้",
   "analogy": {
    "title": "One drink, three names",
    "text": "At the canteen you might order <em>cha yen</em>, write <em>Thai iced tea</em> on the class menu poster, or just say \"the orange one\". Same drink, three names — you pick the name for the situation. <em>May</em>, <em>might</em> and <em>could</em> are one guess with three names: <em>may</em> for the written report, <em>might</em> and <em>could</em> for chatting. Switching to <em>must</em> is ordering a different drink."
   },
-  "trap": "Students memorise \"might = 30%, may = 50%\" and waste time choosing between them, then miss the real change: the rung. Thai อาจจะ…ก็ได้ also makes a double hedge feel normal, so <s>might possibly</s> and <s>could maybe</s> look \"careful\". Tests put <em>may</em>, <em>might</em> and <em>could</em> side by side so none can be the one answer. Dodge: if two options differ only by may/might/could, the answer is the odd rung out.",
+  "trap": "Students memorise \"might = 30%, may = 50%\" and waste time choosing between them, then miss the real change: the rung. Thai อาจจะ…ก็ได้ also makes a double hedge feel normal, so <em>might possibly</em> and <em>could maybe</em> look \"careful\". They aren't wrong, but one hedge is usually enough. Tests put <em>may</em>, <em>might</em> and <em>could</em> side by side so none can be the one answer. Dodge: if two options differ only by may/might/could, the answer is the odd rung out.",
   "map": {
    "center": "The weak middle",
    "branches": [
@@ -1155,11 +1155,11 @@ var LENSES = {
      ]
     },
     {
-     "label": "No double hedge",
+     "label": "Double hedge?",
      "leaves": [
-      "✗ might possibly",
-      "✗ could maybe",
-      "one hedge is enough"
+      "might possibly = extra-unsure",
+      "not wrong, but rarely needed",
+      "one hedge is usually enough"
      ]
     }
    ]
@@ -1198,8 +1198,8 @@ var LENSES = {
     "One possibility, three names in the game!",
     "<em>May</em> for writing, formal and neat,",
     "<em>Might</em> and <em>could</em> when you chat in the street.",
-    "<s>Might possibly</s>? <s>Could maybe</s>? No way!",
-    "One hedge is enough — that's all you say!",
+    "<em>Might possibly</em>? <em>Could maybe</em>? Too much to say —",
+    "One hedge is enough in your essay today!",
     "Change the word — the claim stays the same,",
     "Change the rung — it's a brand-new claim!"
    ]
@@ -1219,7 +1219,7 @@ var LENSES = {
    },
    {
     "move": "Hold up two fingers, then fold one down",
-    "says": "Not <s>might possibly</s> — one hedge only."
+    "says": "One hedge is usually enough: just <em>might</em>."
    },
    {
     "move": "Move a flat hand up a level",
@@ -1228,12 +1228,12 @@ var LENSES = {
   ]
  },
  "t2l1s3": {
-  "thai": "must มีสองหน้าที่ หน้าที่แรกคือข้อบังคับ เช่น Visitors must sign in. (ผู้มาติดต่อต้องลงชื่อ) หน้าที่ที่สองคือการคาดเดาจากหลักฐาน เช่น The lift must be broken again. (ลิฟต์ต้องเสียอีกแล้วแน่ ๆ) วิธีแยกง่าย ๆ คือดูประธาน ถ้าประธานเป็นสิ่งของ เช่น ลิฟต์ เครื่องพิมพ์ หรือตัวเลข ซึ่งทำตามกฎไม่ได้ must ตรงนั้นเป็นการคาดเดาเสมอ และดูคำที่ตามหลัง ถ้าเป็นสภาพ เช่น be, know, belong หรือเป็น be + -ing ก็มักเป็นการคาดเดา ส่วน will ไม่ใช่แค่ \"อนาคต\" แต่เป็นการคาดเดาอย่างมั่นใจจากสิ่งที่เรารู้อยู่แล้ว เช่น ได้ยินกริ่งดังตามเวลาปกติแล้วพูดว่า That will be the courier. (นั่นคงเป็นคนส่งของแน่เลย) ซึ่งเป็นการคาดเดาเรื่อง \"ตอนนี้\" ระวังประโยค Somebody must work late ฟังเหมือนเป็นคำสั่ง ถ้าจะคาดเดาต้องใช้ Somebody must be working late.",
+  "thai": "must มีสองหน้าที่ หน้าที่แรกคือข้อบังคับ เช่น Visitors must sign in. (ผู้มาติดต่อต้องลงชื่อ) หน้าที่ที่สองคือการคาดเดาจากหลักฐาน เช่น The lift must be broken again. (ลิฟต์ต้องเสียอีกแล้วแน่ ๆ) วิธีแยกง่าย ๆ คือดูประธาน ถ้าประธานเป็นสิ่งของ เช่น ลิฟต์ เครื่องพิมพ์ หรือตัวเลข ซึ่งทำตามกฎไม่ได้ และไม่ใช่ประโยค passive ที่บอกว่าคนต้องทำอะไรกับสิ่งนั้น must ตรงนั้นมักเป็นการคาดเดา (แต่ The form must be signed. ยังเป็นกฎ) และดูคำที่ตามหลัง ถ้าเป็นสภาพ เช่น be, know, belong หรือเป็น be + -ing ก็มักเป็นการคาดเดา ส่วน will ไม่ใช่แค่ \"อนาคต\" แต่เป็นการคาดเดาอย่างมั่นใจจากสิ่งที่เรารู้อยู่แล้ว เช่น ได้ยินกริ่งดังตามเวลาปกติแล้วพูดว่า That will be the courier. (นั่นคงเป็นคนส่งของแน่เลย) ซึ่งเป็นการคาดเดาเรื่อง \"ตอนนี้\" ระวังประโยค Somebody must work late ฟังเหมือนเป็นคำสั่ง ถ้าจะคาดเดาต้องใช้ Somebody must be working late.",
   "analogy": {
    "title": "Shoes outside the door",
    "text": "At 7.30 the guard blows his whistle: everyone <em>must</em> be inside the gate. That is a rule. Later you see forty pairs of shoes outside the music room and say, \"There <em>must</em> be a rehearsal.\" Nobody ordered anything — you worked it out. Then your phone buzzes at 9 p.m. sharp: \"That'll be Mum.\" <em>Will</em> here is a guess about right now, from habit."
   },
-  "trap": "Thai ต้อง makes students read every <em>must</em> as a rule, and จะ makes every <em>will</em> look like the future. So in \"which one is a deduction?\" they choose a rule, and they write <s>Somebody must work late</s> when they mean a guess about now. Dodge: ask \"Can the subject obey?\" A lift, a server or a printer can't — so its <em>must</em> is a deduction.",
+  "trap": "Thai ต้อง makes students read every <em>must</em> as a rule, and จะ makes every <em>will</em> look like the future. So in \"which one is a deduction?\" they choose a rule, and they write <s>Somebody must work late</s> when they mean a guess about now. Dodge: ask \"Can the subject obey?\" A lift, a server or a printer can't — so <em>The lift must be stuck</em> is a deduction. But a passive rule (<em>Forms must be signed</em>) is still a rule.",
   "map": {
    "center": "must / will = deduce",
    "branches": [
@@ -1254,7 +1254,7 @@ var LENSES = {
     {
      "label": "Deduction clues",
      "leaves": [
-      "subject can't obey",
+      "subject can't obey (not a passive rule)",
       "must be / know / belong",
       "must be + -ing = now"
      ]
@@ -1319,7 +1319,7 @@ var LENSES = {
     "A person who can act — that's what rules are for!",
     "Phone rings at seven? \"<em>That'll</em> be Nok!\"",
     "<em>Will</em> isn't future — it's reading the clock!",
-    "Can the subject obey? If it can't, it's a guess:",
+    "Lift or printer? It can't obey — it's a guess:",
     "<em>Must be</em>, <em>will be</em> — I worked it out, yes!"
    ]
   },
@@ -1338,7 +1338,7 @@ var LENSES = {
    },
    {
     "move": "Hold out a fist (the subject) and shake your head at it",
-    "says": "Can it obey? No → it's a deduction."
+    "says": "Can it obey? No, and it's not a passive rule → it's a deduction."
    }
   ]
  },
@@ -1431,7 +1431,7 @@ var LENSES = {
     "Car's still here? He <em>can't</em> be out,",
     "<em>Mustn't</em> is a rule — no guessing about!",
     "Like <em>go</em> and <em>went</em>, they don't look the same,",
-    "<em>Must</em> and <em>can't</em> — one meaning, two names!",
+    "<em>Must</em> and <em>can't</em> — same strength, two names!",
     "Writing it formal? Spell out <em>cannot</em>,",
     "Sure that it's false? <em>Can't</em> hits the spot!"
    ]
@@ -1570,17 +1570,17 @@ var LENSES = {
   ]
  },
  "t2l2s3": {
-  "thai": "สรุปทั้งระบบในตารางเดียว ฝั่งบวกเรียงจากบนลงล่าง must · will · should / ought to · may / might / could ฝั่งลบเรียงจากล่างขึ้นบน can't / cannot · won't · shouldn't · may not / might not จุดสำคัญคือ ขั้นบนสุดกับขั้นล่างสุดเป็นคู่กัน must ↔ can't มั่นใจราว 95% เท่ากันแต่คนละทิศ will ↔ won't ต่ำลงมานิดหนึ่ง should ↔ shouldn't ประมาณ 75% ส่วนขั้นกลางยังอยู่ตรงกลาง may ↔ may not เพราะ \"อาจจะใช่\" กับ \"อาจจะไม่ใช่\" ไม่แน่ใจเท่ากัน ตัวเลขเหล่านี้วัดความมั่นใจของผู้พูด ไม่ใช่ตัวเหตุการณ์ เวลาเขียนให้ตัดสินใจระดับความมั่นใจก่อน แล้วค่อยเลือกคำจากตาราง จากนั้นอ่านทวนว่าไม่มีใครอ่าน modal ของเราเป็นกฎได้ เช่น The archive can't be on the third floor. (ห้องเก็บเอกสารไม่มีทางอยู่ชั้นสามหรอก) ห้ามใช้ mustn't เพราะแปลว่า \"ห้าม\"",
+  "thai": "สรุปทั้งระบบในตารางเดียว ฝั่งบวกเรียงจากบนลงล่าง must · will · should / ought to · may / might / could ฝั่งลบเรียงจากล่างขึ้นบน can't / cannot · won't · shouldn't · may not / might not จุดสำคัญคือ ขั้นบนสุดกับขั้นล่างสุดเป็นคู่กัน must ↔ can't มั่นใจมากเท่ากันแต่คนละทิศ will ↔ won't ต่ำลงมานิดหนึ่ง should ↔ shouldn't คือระดับ “คาดว่าน่าจะ” ส่วนขั้นกลางยังอยู่ตรงกลาง may ↔ may not เพราะ \"อาจจะใช่\" กับ \"อาจจะไม่ใช่\" ไม่แน่ใจเท่ากัน ระดับเหล่านี้วัดความมั่นใจของผู้พูด ไม่ใช่ตัวเหตุการณ์ เวลาเขียนให้ตัดสินใจระดับความมั่นใจก่อน แล้วค่อยเลือกคำจากตาราง จากนั้นอ่านทวนว่าไม่มีใครอ่าน modal ของเราเป็นกฎได้ เช่น The archive can't be on the third floor. (ห้องเก็บเอกสารไม่มีทางอยู่ชั้นสามหรอก) ห้ามใช้ mustn't เพราะแปลว่า \"ห้าม\"",
   "analogy": {
    "title": "The class timetable",
-   "text": "You never guess what's in Period 3 on Tuesday — you find the row, find the column and read the box. The certainty grid works the same way. Row = how sure you are (about 95%, a bit less, about 75%, the middle). Column = yes or no. And the \"no\" box in the <em>must</em> row doesn't say <em>mustn't</em> — it says <em>can't</em>."
+   "text": "You never guess what's in Period 3 on Tuesday — you find the row, find the column and read the box. The certainty grid works the same way. Row = how sure you are (sure, a bit less sure, expected, the middle). Column = yes or no. And the \"no\" box in the <em>must</em> row doesn't say <em>mustn't</em> — it says <em>can't</em>."
   },
   "trap": "Students fill the negative column by adding <em>-n't</em> to everything (<em>must</em> → <s>mustn't</s>) and read <em>may not</em> as a strong \"no\". Tests mix both: a sort with <em>can't</em>, <em>couldn't</em>, <em>may not</em> and <em>might not</em>, or a cloze where <em>must not</em> and <em>need not</em> sit beside <em>cannot</em>. Dodge: decide first — sure, or still open? — then read the word off the grid.",
   "map": {
    "center": "The certainty grid",
    "branches": [
     {
-     "label": "Top (~95%)",
+     "label": "Top (sure)",
      "leaves": [
       "must ↔ can't / cannot",
       "just as sure, flipped"
@@ -1594,7 +1594,7 @@ var LENSES = {
      ]
     },
     {
-     "label": "Expect (~75%)",
+     "label": "Expect",
      "leaves": [
       "should ↔ shouldn't",
       "shouldn't = expect not"
@@ -1661,7 +1661,7 @@ var LENSES = {
    "lines": [
     "<em>Must</em> flips to <em>can't</em> — top to the floor,",
     "<em>Will</em> flips to <em>won't</em> — just a little bit lower,",
-    "<em>Should</em> flips to <em>shouldn't</em> — seventy-five,",
+    "<em>Should</em> flips to <em>shouldn't</em> — expected, both sides,",
     "<em>May</em> flips to <em>may not</em> — the middle's alive!",
     "Pick the strength first, then read the box,",
     "Check it's not a rule — <s>mustn't</s> gets knocked!"
@@ -1799,12 +1799,12 @@ var LENSES = {
   ]
  },
  "t2l3s2": {
-  "thai": "should มีสองหน้าที่ หน้าที่แรกคือให้คำแนะนำ เช่น You should book early. (เธอควรจองเร็ว ๆ) หน้าที่ที่สองคือการคาดการณ์จากสิ่งที่เป็นปกติ เช่น The results should be online by Friday. (ผลน่าจะขึ้นออนไลน์ภายในวันศุกร์) วิธีแยกคือดูประธาน ถ้าเป็นพัสดุ แบตเตอรี่ หรือฝน ซึ่งรับคำแนะนำไม่ได้ should ตรงนั้นแปลว่า \"น่าจะ\" ไม่ใช่ \"ควร\" และมักมีคำบอกเวลา เช่น by now, by Friday หรือตามด้วย be / be + -ing should แบบคาดการณ์มั่นใจพอจะวางแผนได้ แต่ยอมรับว่าอาจผิดได้ จึงเหมาะกับตารางเวลา พยากรณ์อากาศ และการประมาณ ought to อยู่ขั้นเดียวกันแต่ทางการกว่านิดหน่อย ส่วน shouldn't แปลว่า \"ไม่น่าจะ\" เช่น There shouldn't be much traffic before six. อย่าเปลี่ยนไปใช้ must เพราะตารางเวลาไม่ใช่หลักฐานที่ยืนยันได้",
+  "thai": "should มีสองหน้าที่ หน้าที่แรกคือให้คำแนะนำ เช่น You should book early. (เธอควรจองเร็ว ๆ) หน้าที่ที่สองคือการคาดการณ์จากสิ่งที่เป็นปกติ เช่น The results should be online by Friday. (ผลน่าจะขึ้นออนไลน์ภายในวันศุกร์) วิธีแยกคือดูประธาน ถ้าเป็นพัสดุ แบตเตอรี่ หรือฝน ซึ่งรับคำแนะนำไม่ได้ should ตรงนั้นแปลว่า \"น่าจะ\" ไม่ใช่ \"ควร\" (ยกเว้นรูป passive ที่เป็นคำแนะนำ เช่น Goggles should be worn.) และมักมีคำบอกเวลา เช่น by now, by Friday หรือตามด้วย be / be + -ing should แบบคาดการณ์มั่นใจพอจะวางแผนได้ แต่ยอมรับว่าอาจผิดได้ จึงเหมาะกับตารางเวลา พยากรณ์อากาศ และการประมาณ ought to อยู่ขั้นเดียวกันแต่ทางการกว่านิดหน่อย ส่วน shouldn't แปลว่า \"ไม่น่าจะ\" เช่น There shouldn't be much traffic before six. อย่าเปลี่ยนไปใช้ must เพราะตารางเวลาไม่ใช่หลักฐานที่ยืนยันได้",
   "analogy": {
    "title": "The BTS screen",
    "text": "The platform screen says the next train comes in three minutes. \"It <em>should</em> be here in three minutes.\" You trust the pattern enough to stand by the doors, but you won't be shocked by a delay. You'd only say <em>must</em> if you could hear it braking into the station. And you can't give a train advice — so this <em>should</em> isn't advice. It's an expectation."
   },
-  "trap": "Thai teaches ควร = <em>should</em>, so students read every <em>should</em> as advice — even when the subject is a parcel, a battery or the rain. The other slip: climbing to <em>must</em> to sound confident (<s>They left at nine, so they must be arriving now</s>). Tests offer <em>must</em> as the \"strong\" choice for a timetable or a trend. Dodge: ask \"Can the subject take advice?\" No → it's an expectation, so keep <em>should</em>.",
+  "trap": "Thai teaches ควร = <em>should</em>, so students read every <em>should</em> as advice — even when the subject is a parcel, a battery or the rain. The other slip: climbing to <em>must</em> to sound confident (<s>They left at nine, so they must be arriving now</s>). Tests offer <em>must</em> as the \"strong\" choice for a timetable or a trend. Dodge: ask \"Can the subject take advice?\" No, and it isn't a passive instruction (<em>should be worn</em>) → it's an expectation, so keep <em>should</em>.",
   "map": {
    "center": "should = expect",
    "branches": [
@@ -1825,7 +1825,7 @@ var LENSES = {
     {
      "label": "Clues",
      "leaves": [
-      "subject can't act",
+      "subject can't act (not a passive instruction)",
       "by now / by Friday",
       "should be / be + -ing"
      ]
@@ -1877,7 +1877,7 @@ var LENSES = {
      "text": "Pim isn't advising the parcel, Bot — she's expecting it. <em>Should</em> here means \"if things go normally\"."
     }
    ],
-   "moral": "When the subject can't take advice, <em>should</em> is an expectation from a normal pattern — confident, but it might be wrong."
+   "moral": "When the subject can't take advice (and it isn't a passive instruction like <em>Goggles should be worn</em>), <em>should</em> is an expectation from a normal pattern — confident, but it might be wrong."
   },
   "chant": {
    "title": "Advice or Expect?",
@@ -2032,27 +2032,29 @@ var LENSES = {
   ]
  },
  "t3l1s1": {
-  "thai": "must กับ have to แปลว่า “ต้อง” เหมือนกัน และมีน้ำหนักเท่ากัน ความต่างไม่ได้อยู่ที่ความแรง แต่อยู่ที่ “ใครเป็นคนตั้งกฎ” ถ้าผู้พูดเป็นคนออกกฎเอง ให้ใช้ must เช่น I must stop checking my phone. (ฉันต้องเลิกเช็กมือถือ — ฉันตั้งใจเอง) ส่วน have to ใช้เมื่อข้อบังคับมาจากภายนอก อย่างโรงเรียนหรือกฎหมาย เช่น I have to be at the clinic by eight. (ฉันต้องไปคลินิกก่อนแปดโมง — คลินิกเป็นคนกำหนด) วิธีเช็กง่าย ๆ คือถามว่า “ถ้าไม่ทำ ใครจะไม่พอใจ” ถ้าเป็นผู้พูดเองใช้ must ถ้าเป็นคนอื่นหรือหน่วยงานอื่นใช้ have to และจำไว้ว่า must ตามด้วยกริยาช่องหนึ่งโดยไม่มี to ต้องพูดว่า must go ไม่ใช่ must to go",
+  "thai": "must กับ have to แปลว่า “ต้อง” เหมือนกัน และมีน้ำหนักเท่ากัน ความต่างไม่ได้อยู่ที่ความแรง แต่อยู่ที่ว่าผู้พูด “เป็นเจ้าของ” ข้อบังคับนั้นหรือไม่ ถ้าผู้พูดยืนยันเองว่า “ฉันบอกให้ทำ” ให้ใช้ must เช่น ความตั้งใจของตัวเอง I must stop checking my phone. (ฉันต้องเลิกเช็กมือถือ — ฉันตั้งใจเอง) ครูหรือพ่อแม่สั่งเอง You must wear your school pin. หรือประกาศของโรงเรียนเอง ส่วน have to ใช้เมื่อผู้พูดแค่ส่งต่อกฎจากที่อื่น หรือสถานการณ์บังคับ (“ไม่ใช่ความคิดของฉัน”) เช่น I have to be at the clinic by eight. (ฉันต้องไปคลินิกก่อนแปดโมง — คลินิกเป็นคนกำหนด) วิธีเช็กคือถามว่าผู้พูดกำลังบอกว่า “ฉันสั่ง ฉันเห็นด้วย” หรือ “มีคนอื่นกำหนดมา” ถ้าไม่แน่ใจ ใช้ have to ได้เสมอ และนี่เป็นแนวโน้มในภาษาอังกฤษแบบบริติช ไม่ใช่กฎตายตัว จำไว้ด้วยว่า must ตามด้วยกริยาช่องหนึ่งโดยไม่มี to ต้องพูดว่า must go ไม่ใช่ must to go",
   "analogy": {
    "title": "Alarm clock or school bell",
-   "text": "Your phone alarm at 5:30 is <em>must</em>: you set it yourself, because <em>I must</em> finish my reading before school. The school bell at 7:30 is <em>have to</em>: nobody asked you — the school set it. Both get you moving with the same force. The only question is <strong>whose finger set the time</strong>: yours (<em>must</em>) or somebody else's (<em>have to</em>)."
+   "text": "Your phone alarm at 5:30 is <em>must</em>: you set it yourself, because <em>I must</em> finish my reading before school. The school bell at 7:30 is different. When you tell a friend about it, it's <em>have to</em>: ‘We <em>have to</em> be in by 7:30’ — you're passing the school's rule on. The school's own notice says ‘Students <em>must</em> be in by 7:30’ — the school owns it. Same force every time; the only question is <strong>whose voice owns the rule</strong>: the speaker's (<em>must</em>) or someone else's, passed on (<em>have to</em>)."
   },
-  "trap": "Thai ต้อง covers both, so students grab <em>must</em> by habit — or think <em>must</em> is ‘stronger’. It isn't; it only claims the rule as the speaker's own. Tests give a rule from a ministry, a boss or an insurer and make <em>must</em> the near miss. They also plant <s>must to send</s>. Dodge: ask ‘Who would be annoyed if it weren't done?’ Me → <em>must</em>; anyone else → <em>have to</em>.",
+  "trap": "Thai ต้อง covers both, so students grab <em>must</em> by habit — or think <em>must</em> is ‘stronger’. It isn't; it only shows that the speaker owns or backs the rule. In the present, tests don't hinge on <em>must</em> vs <em>have to</em>; they test <em>had to</em> / <em>will have to</em> and <em>mustn't</em> vs <em>don't have to</em>. They also plant <s>must to send</s>. Dodge: ask ‘Is the speaker saying “I say so”, or passing it on?’ I say so → <em>must</em>; passing it on → <em>have to</em>; unsure → <em>have to</em> is always safe.",
   "map": {
    "center": "must vs have to",
    "branches": [
     {
-     "label": "must = me",
+     "label": "must = I say so",
      "leaves": [
-      "I made the rule",
+      "speaker owns or backs it",
       "I must stop snacking",
+      "You must wear your pin (teacher)",
       "notice by the rule-maker"
      ]
     },
     {
-     "label": "have to = them",
+     "label": "have to = passed on",
      "leaves": [
-      "rule from outside",
+      "rule from elsewhere",
+      "circumstances",
       "clinic set it → have to",
       "‘Apparently’ → have to"
      ]
@@ -2067,9 +2069,9 @@ var LENSES = {
     {
      "label": "Quick test",
      "leaves": [
-      "Who'd be annoyed?",
-      "me → must",
-      "someone else → have to"
+      "I say so? → must",
+      "passing it on? → have to",
+      "unsure → have to"
      ]
     },
     {
@@ -2106,16 +2108,16 @@ var LENSES = {
      "text": "Correcting… Every team <em>has to</em> hand it in. And I <em>must</em> stop stealing rules. Beep."
     }
    ],
-   "moral": "Use <em>must</em> for a rule you make yourself, and <em>have to</em> for a rule you pass on from somebody else."
+   "moral": "Use <em>must</em> when the speaker owns or backs the rule (‘I say so’): your own resolution, a teacher's or parent's order, the school's own notice. Use <em>have to</em> when you pass on a rule from somewhere else."
   },
   "chant": {
    "title": "Whose Rule?",
    "beat": "kick-kick-clap (4/4)",
    "lines": [
-    "Who made the rule? Point and say!",
-    "<em>Must</em> — it's mine, I chose today!",
-    "<em>Have to</em> — the boss, the law, the bell,",
-    "Passing it on? <em>Have to</em> works well!",
+    "Whose voice is it? Point and say!",
+    "<em>Must</em> — I say so, do it today!",
+    "<em>Have to</em> — passed on: the law, the bell,",
+    "Not my idea? <em>Have to</em> works well!",
     "Same strength, same push — a different source,",
     "<em>Must</em> + verb, no <em>to</em>, of course!"
    ]
@@ -2123,11 +2125,11 @@ var LENSES = {
   "moves": [
    {
     "move": "Tap your own chest twice",
-    "says": "<em>Must</em> — I made this rule: <em>I must stop snacking.</em>"
+    "says": "<em>Must</em> — I say so: <em>I must stop snacking.</em>"
    },
    {
     "move": "Point over your shoulder with your thumb",
-    "says": "<em>Have to</em> — they made it: <em>I have to be at the clinic by eight.</em>"
+    "says": "<em>Have to</em> — passed on: <em>I have to be at the clinic by eight.</em>"
    },
    {
     "move": "Hold both fists out at exactly the same height",
@@ -2140,7 +2142,7 @@ var LENSES = {
   ]
  },
  "t3l1s2": {
-  "thai": "must เป็น modal ที่มีแค่รูปปัจจุบัน ไม่มีรูปอดีต ไม่มีรูป -ing และวางหลัง will หรือ has ไม่ได้ เมื่อประโยคต้องการกาลอื่น จึงต้องให้ have to มาทำงานแทน อดีตใช้ had to อนาคตใช้ will have to และ present perfect ใช้ has had to เช่น We had to cancel the trip. (เราจำเป็นต้องยกเลิกทริป) had to เป็นรูปอดีตของข้อบังคับเพียงรูปเดียวในภาษาอังกฤษ ห้ามเขียน will must เพราะ modal สองตัวอยู่ติดกันไม่ได้ และระวัง must have cancelled เพราะนั่นคือการคาดเดาเรื่องในอดีต ไม่ใช่ข้อบังคับในอดีต ส่วนรูปอื่น ๆ have got to เป็นภาษาพูดและใช้ได้เฉพาะปัจจุบันเท่านั้น จึงพูดว่า will have got to ไม่ได้ need to นุ่มนวลกว่า บอกว่าสถานการณ์ทำให้จำเป็น และ be required to เป็นภาษาทางการที่ใช้ในกฎระเบียบ",
+  "thai": "must เป็น modal ที่มีแค่รูปปัจจุบัน ไม่มีรูปอดีต ไม่มีรูป -ing และวางหลัง will หรือ has ไม่ได้ เมื่อประโยคต้องการกาลอื่น จึงต้องให้ have to มาทำงานแทน อดีตใช้ had to อนาคตใช้ will have to และ present perfect ใช้ has had to เช่น We had to cancel the trip. (เราจำเป็นต้องยกเลิกทริป) had to เป็นรูปอดีตปกติของ must ห้ามเขียน will must เพราะ modal สองตัวอยู่ติดกันไม่ได้ และระวัง must have cancelled เพราะนั่นคือการคาดเดาเรื่องในอดีต ไม่ใช่ข้อบังคับในอดีต ส่วนรูปอื่น ๆ have got to เป็นภาษาพูดและใช้ได้เฉพาะปัจจุบันเท่านั้น จึงพูดว่า will have got to ไม่ได้ need to นุ่มนวลกว่า บอกว่าสถานการณ์ทำให้จำเป็น และ be required to เป็นภาษาทางการที่ใช้ในกฎระเบียบ",
   "analogy": {
    "title": "The universal adapter",
    "text": "<em>Must</em> is a charger with only one plug: it fits the <strong>present</strong> socket and nothing else. Need power in the past, the future or the perfect? Grab the universal adapter, <em>have to</em>: <em>had to</em>, <em>will have to</em>, <em>has had to</em>. Same electricity, every socket. And <em>have got to</em>? A plug that only works at home — present only."
@@ -2152,7 +2154,7 @@ var LENSES = {
     {
      "label": "Past",
      "leaves": [
-      "had to = the only past",
+      "had to = the normal past",
       "✗ must (last winter)",
       "must have = guess ≠ rule"
      ]
@@ -2240,7 +2242,7 @@ var LENSES = {
    },
    {
     "move": "Throw your thumb back over your shoulder",
-    "says": "Past: <em>had to</em> — the only past of obligation."
+    "says": "Past: <em>had to</em> — the normal past of <em>must</em>."
    },
    {
     "move": "Push one hand forward, away from you",
@@ -2257,7 +2259,7 @@ var LENSES = {
   ]
  },
  "t3l1s3": {
-  "thai": "ใต้ must ยังมีอีกระดับหนึ่ง คือข้อบังคับที่เลี่ยงได้ should และ ought to แปลว่า “ควร” หมายถึงทางเลือกที่ดีที่สุด แต่ไม่ได้บังคับ จะเลือกไม่ทำก็ได้ และ ought to ต้องมี to เสมอ ส่วน had better ไม่ใช่รูปอดีต และไม่ได้อ่อนกว่า should แต่แรงกว่า เพราะแฝงคำขู่ว่า “ไม่อย่างนั้นจะเกิดเรื่องไม่ดี” ใช้กับตอนนี้หรืออนาคตอันใกล้ และตามด้วยกริยาช่องหนึ่งโดยไม่มี to เช่น You'd better back up your file. (เธอสำรองไฟล์ไว้เถอะ ไม่อย่างนั้นงานหายแน่) ส่วน be supposed to ใช้รายงานกฎที่คนอื่นตั้ง และมักแฝงว่าไม่มีใครทำตาม เช่น We're supposed to log every visitor. (ตามกฎต้องลงชื่อผู้มาติดต่อ แต่จริง ๆ ไม่มีใครทำ) ในเรียงความวิชาการให้ใช้ should ไม่ใช้ had better เพราะ had better เป็นภาษาพูดที่พูดกับคนตรงหน้า",
+  "thai": "ใต้ must ยังมีอีกระดับหนึ่ง คือข้อบังคับที่เลี่ยงได้ should และ ought to แปลว่า “ควร” หมายถึงทางเลือกที่ดีที่สุด แต่ไม่ได้บังคับ จะเลือกไม่ทำก็ได้ และ ought to ต้องมี to เสมอ ส่วน had better ไม่ใช่รูปอดีต และไม่ได้อ่อนกว่า should แต่แรงกว่า เพราะแฝงคำขู่ว่า “ไม่อย่างนั้นจะเกิดเรื่องไม่ดี” ใช้กับตอนนี้หรืออนาคตอันใกล้ และตามด้วยกริยาช่องหนึ่งโดยไม่มี to เช่น You'd better back up your file. (เธอสำรองไฟล์ไว้เถอะ ไม่อย่างนั้นงานหายแน่) ส่วน be supposed to ใช้รายงานกฎที่คนอื่นตั้ง และมักแฝงว่าไม่มีใครทำตาม เช่น We're supposed to log every visitor. (ตามกฎแล้วเราต้องลงชื่อผู้มาติดต่อ — มักแฝงว่าไม่ค่อยมีใครทำจริง) ในเรียงความวิชาการให้ใช้ should ไม่ใช้ had better เพราะ had better เป็นภาษาพูดที่พูดกับคนตรงหน้า",
   "analogy": {
    "title": "Three battery messages",
    "text": "At 40%, your phone says: ‘You <em>should</em> turn on battery saver.’ Good advice — ignore it if you like. At 3%: ‘You'd <em>better</em> charge now’ — or it dies in the middle of your LINE call. And the canteen sign? ‘Students are <em>supposed to</em> charge phones at home.’ Everyone ignores it. Advice, warning, broken rule — three different messages."
@@ -2293,9 +2295,9 @@ var LENSES = {
     {
      "label": "Pressure now",
      "leaves": [
-      "must > had better",
-      "had better > should",
-      "should > supposed to"
+      "must > had better > should",
+      "supposed to = a reported rule",
+      "often not kept"
      ]
     },
     {
@@ -2377,7 +2379,7 @@ var LENSES = {
    "title": "Two rules on the BTS",
    "text": "On the BTS, you <em>mustn't</em> eat or drink — try it with your bubble tea and staff will stop you. But you <em>don't have to</em> ride in the first carriage — any carriage is fine. In the first rule the <em>not</em> sits on the <strong>action</strong> (eating = forbidden). In the second it sits on the <strong>rule</strong> (no rule = your choice). Same little word, opposite worlds."
   },
-  "trap": "Thai ไม่ต้อง can mean both ‘don't!’ and ‘no need’, so students write <s>You mustn't come if you're busy</s> when they mean ‘it's your choice’. That doesn't blur the meaning — it flips it. Tests hide a clue that only fits no-obligation: <em>unless</em>, <em>optional</em>, ‘you're welcome to’. Dodge: add ‘…but you can if you like’. Makes sense → <em>don't have to</em>; contradiction → <em>mustn't</em>.",
+  "trap": "Thai ไม่ต้อง (no need) and ต้องไม่ (must not) use the same two words in a different order, so students mix them up and write <s>You mustn't come if you're busy</s> when they mean ‘it's your choice’. That doesn't blur the meaning — it flips it. Tests hide a clue that only fits no-obligation: <em>unless</em>, <em>optional</em>, ‘you're welcome to’. Dodge: add ‘…but you can if you like’. Makes sense → <em>don't have to</em>; contradiction → <em>mustn't</em>.",
   "map": {
    "center": "The negation cliff",
    "branches": [
@@ -2461,7 +2463,7 @@ var LENSES = {
     "<em>Mustn't</em> means NO — the rule says stop!",
     "<em>Don't have to</em> means FREE — do it or not!",
     "Not on the action? That's a ban!",
-    "Not on the rule? Do it if you can!",
+    "Not on the rule? Skip it — you can!",
     "‘But you can if you like’ — try it out,",
     "If it fits, it's freedom, no doubt!",
     "Same little <em>not</em>, but the meanings collide —",
@@ -2488,12 +2490,12 @@ var LENSES = {
   ]
  },
  "t3l2s2": {
-  "thai": "needn't กับ don't need to แปลว่า “ไม่จำเป็นต้อง” เหมือน don't have to และไม่เคยแปลว่าห้าม ความต่างอยู่ที่ไวยากรณ์ เพราะ need เป็นได้ทั้ง modal และกริยาธรรมดา ถ้าเป็น modal จะไม่มี do ไม่มี to ไม่เติม -s และเติม not ได้ทันที เช่น You needn't worry. หรือ Need we decide today? ถ้าเป็นกริยาธรรมดา ต้องมี do และ to เช่น She doesn't need to worry. ห้ามผสมสองแบบเข้าด้วยกัน เช่น don't needn't to worry เป็นรูปที่ผิด เช่น You needn't bring anything. (ไม่ต้องเอาอะไรมานะ ภาควิชาเตรียมอาหารกลางวันไว้แล้ว) ส่วนเรื่องอดีต didn't need to pay แปลว่า ไม่จำเป็นต้องจ่าย และปกติก็ไม่ได้จ่าย แต่ needn't have paid แปลว่า จ่ายไปแล้ว ทั้งที่ไม่จำเป็นเลย ถ้าแทนที่ด้วย needn't แล้วความหมายยังเหมือนเดิม แปลว่าประโยคนั้นไม่ควรใช้ mustn't ตั้งแต่แรก",
+  "thai": "needn't กับ don't need to แปลว่า “ไม่จำเป็นต้อง” เหมือน don't have to และไม่เคยแปลว่าห้าม ความต่างอยู่ที่ไวยากรณ์ เพราะ need เป็นได้ทั้ง modal และกริยาธรรมดา ถ้าเป็น modal จะไม่มี do ไม่มี to ไม่เติม -s และเติม not ได้ทันที เช่น You needn't worry. หรือ Need we decide today? ถ้าเป็นกริยาธรรมดา ต้องมี do และ to เช่น She doesn't need to worry. ห้ามผสมสองแบบเข้าด้วยกัน เช่น don't needn't to worry เป็นรูปที่ผิด ตัวอย่างที่ถูก: You needn't bring anything. (ไม่ต้องเอาอะไรมานะ ภาควิชาเตรียมอาหารกลางวันไว้แล้ว) ส่วนเรื่องอดีต didn't need to pay แปลว่า ไม่จำเป็นต้องจ่าย (ไม่ได้บอกว่าจ่ายหรือไม่ แต่ส่วนใหญ่หมายถึงไม่ได้จ่าย) แต่ needn't have paid แปลว่า จ่ายไปแล้ว ทั้งที่ไม่จำเป็นเลย ถ้าแทนที่ด้วย needn't แล้วความหมายยังเหมือนเดิม แปลว่าประโยคนั้นไม่ควรใช้ mustn't ตั้งแต่แรก",
   "analogy": {
    "title": "The student-card sign",
    "text": "A sign at 7-Eleven: ‘You <em>needn't</em> show your student card — the discount is automatic.’ Show it if you like; nobody stops you. Nothing is banned — the rule just disappears. <em>Don't need to</em> is the same message in everyday clothes: ‘You <em>don't need to</em> show it.’ And if you'd already dug it out of your bag? ‘I <em>needn't have shown</em> it.’"
   },
-  "trap": "<em>Needn't</em> looks like a cousin of <em>mustn't</em> — both end in <em>n't</em> — so students read it as a ban. It's the opposite: it sits with <em>don't have to</em>. Tests also mix the two patterns (<s>don't needn't to</s>) and swap <em>needn't have paid</em> (you paid) with <em>didn't need to pay</em> (you didn't). Dodge: swap in <em>don't have to</em> — if the meaning holds, <em>needn't</em> fits.",
+  "trap": "<em>Needn't</em> looks like a cousin of <em>mustn't</em> — both end in <em>n't</em> — so students read it as a ban. It's the opposite: it sits with <em>don't have to</em>. Tests also mix the two patterns (<s>don't needn't to</s>) and swap <em>needn't have paid</em> (you paid) with <em>didn't need to pay</em> (no need — it doesn't say whether you paid). Dodge: swap in <em>don't have to</em> — if the meaning holds, <em>needn't</em> fits.",
   "map": {
    "center": "No need: needn't",
    "branches": [
@@ -2531,7 +2533,7 @@ var LENSES = {
     {
      "label": "Past",
      "leaves": [
-      "didn't need to → not done",
+      "didn't need to → no need (done or not)",
       "needn't have → done anyway"
      ]
     },
@@ -2722,7 +2724,7 @@ var LENSES = {
   ]
  },
  "t3l3s1": {
-  "thai": "การอนุญาตคือการบอกว่ากฎเปิดทางให้ทำได้ can กับ may ให้อนุญาตเหมือนกันและแรงเท่ากัน ความต่างอยู่ที่ระดับภาษา can ใช้พูดทั่วไป ส่วน may เป็นทางการ ใช้ในประกาศหรือกฎระเบียบ เช่น Members may bring one guest. (สมาชิกพาแขกมาได้หนึ่งคน) เพราะ can กับ may เป็น modal จึงไม่มีรูปอดีตหรือรูปอนาคตสำหรับความหมายนี้ ถ้าต้องการบอกการอนุญาตในอดีตให้ใช้ were allowed to และในอนาคตใช้ will be allowed to ห้ามเขียน will can ส่วน be permitted to เป็นทางการกว่า be allowed to สิ่งสำคัญคือ การอนุญาตไม่ใช่ข้อบังคับ You may leave at four แปลว่า “กลับได้” ไม่ได้แปลว่า “ต้องกลับ” และ weren't allowed to แปลว่า “ไม่ได้รับอนุญาต” ซึ่งต่างจาก didn't have to ที่แปลว่า “ไม่จำเป็นต้อง”",
+  "thai": "การอนุญาตคือการบอกว่ากฎเปิดทางให้ทำได้ can กับ may ให้อนุญาตเหมือนกันและแรงเท่ากัน ความต่างอยู่ที่ระดับภาษา can ใช้พูดทั่วไป ส่วน may เป็นทางการ ใช้ในประกาศหรือกฎระเบียบ เช่น Members may bring one guest. (สมาชิกพาแขกมาได้หนึ่งคน) เพราะ can กับ may เป็น modal จึงไม่มีรูปอนาคตสำหรับความหมายนี้ ถ้าต้องการบอกการอนุญาตในอดีตให้ใช้ were allowed to (หรือใช้ could กับการอนุญาตทั่วไปในอดีต เช่น We could leave early on Fridays.) และในอนาคตใช้ will be allowed to ห้ามเขียน will can ส่วน be permitted to เป็นทางการกว่า be allowed to สิ่งสำคัญคือ การอนุญาตไม่ใช่ข้อบังคับ You may leave at four แปลว่า “กลับได้” ไม่ได้แปลว่า “ต้องกลับ” และ weren't allowed to แปลว่า “ไม่ได้รับอนุญาต” ซึ่งต่างจาก didn't have to ที่แปลว่า “ไม่จำเป็นต้อง”",
   "analogy": {
    "title": "The group-chat admin",
    "text": "In your class LINE group, the admin posts: ‘You <em>can</em> share memes after 9 p.m.’ The school's official page says the same thing in a suit and tie: ‘Students <em>may</em> share…’ Same open door, different clothes. Last year? ‘We <em>were allowed to</em> post any time.’ Next term? ‘We <em>will be allowed to</em>…’ And an open door is not a push: <em>may</em> post ≠ <em>must</em> post."
@@ -2749,7 +2751,7 @@ var LENSES = {
     {
      "label": "Other tenses",
      "leaves": [
-      "past: were allowed to",
+      "past: were allowed to / could (general)",
       "future: will be allowed to",
       "✗ will can"
      ]
@@ -2840,7 +2842,7 @@ var LENSES = {
   "thai": "ในภาษาพูดทั่วไป shall เหลือใช้แค่การเสนอหรือการชวน เช่น Shall I help? หรือ Shall we go? ซึ่งประธานเป็น I หรือ we และเป็นประโยคคำถาม แต่ในสัญญา กฎหมาย และระเบียบ shall ไม่ได้บอกอนาคต มันแปลว่า “ต้อง” คือหน้าที่ตามข้อตกลง เช่น The tenant shall give one month's notice. (ผู้เช่าต้องแจ้งล่วงหน้าหนึ่งเดือน) และ shall not แปลว่า “ห้าม” ส่วน be to เช่น is to หรือ are to เป็นคำสั่งจากผู้มีอำนาจ เช่น You are to report to reception. (ให้ไปรายงานตัวที่แผนกต้อนรับ) หรือรูป passive เช่น All windows are to be closed by six. ทั้งสองแบบตามด้วยกริยาช่องหนึ่ง จึงห้ามเขียน shall to deliver หรือ are to reporting และอย่าเอา shall แบบสัญญาไปใช้คุยกับเพื่อนหรือเขียนเรียงความ เพราะจะฟังเหมือนสัญญาเช่า",
   "analogy": {
    "title": "The two lives of shall",
-   "text": "<em>Shall</em> lives two lives. After school it's friendly: ‘<em>Shall</em> we get mookata?’ — first person, a question, an offer. At the condo office it wears a uniform: ‘The tenant <em>shall</em> pay the rent by the 5th’ — third person, a statement, a duty. And <em>be to</em> is the announcement over the school speakers: ‘All M4 students <em>are to</em> report to the hall.’ Nobody asks; you go."
+   "text": "<em>Shall</em> lives two lives. After school it's friendly: ‘<em>Shall</em> we get mookata?’ — first person, a question, a friendly suggestion. At the condo office it wears a uniform: ‘The tenant <em>shall</em> pay the rent by the 5th’ — third person, a statement, a duty. And <em>be to</em> is the announcement over the school speakers: ‘All M4 students <em>are to</em> report to the hall.’ Nobody asks; you go."
   },
   "trap": "Thai students learn <em>shall</em> = future (จะ), so they read <em>The contractor shall remove the waste</em> as a prediction. In a contract it's a duty — read it as <em>must</em>. Tests also plant <s>shall to deliver</s> and <s>are to reporting</s>, and ask which voice a school letter needs (<em>are not to</em>, not <em>shall not</em>). Dodge: question + I/we = offer; statement + third-person party = duty.",
   "map": {
@@ -2889,8 +2891,8 @@ var LENSES = {
      "label": "Where?",
      "leaves": [
       "contracts, rules, rubrics",
-      "Task 1 rules & processes",
-      "not in Task 2 essays"
+      "official notices",
+      "not in Task 1 or Task 2 essays"
      ]
     }
    ]
@@ -2994,7 +2996,7 @@ var LENSES = {
      "label": "Recommend",
      "leaves": [
       "should / ought to",
-      "be expected to"
+      "are advised to"
      ]
     },
     {
@@ -3474,7 +3476,7 @@ var LENSES = {
      "label": "Don't over-fix",
      "leaves": [
       "10-year skill → could",
-      "able to swim at 5 = odd"
+      "able to swim at 5 = OK, could more usual"
      ]
     }
    ]
@@ -3541,12 +3543,12 @@ var LENSES = {
   ]
  },
  "t4l2s2": {
-  "thai": "กฎที่ห้ามใช้ could กับความสำเร็จครั้งเดียวมีข้อยกเว้นสองข้อ และทั้งสองข้อมาจากเหตุผลเดียวกัน คือกฎนี้ห้าม could เฉพาะเมื่อประโยคยืนยันว่า “ทำสำเร็จ” ในครั้งหนึ่งเท่านั้น ข้อแรก กริยาการรับรู้และการคิด เช่น see, hear, smell, understand, remember เป็นกริยาบอกสภาพ ไม่ใช่ความสำเร็จ จึงใช้ could ได้ตามปกติ เช่น From the top of the tower we could see as far as the estuary. (จากยอดหอคอยเรามองเห็นไปไกลถึงปากแม่น้ำ) ข้อสอง รูปปฏิเสธ couldn't ใช้ได้เสมอ เพราะความล้มเหลวไม่ใช่ความสำเร็จ เช่น She couldn't win the final. (เธอไม่สามารถชนะนัดชิงได้) แต่ระวัง ถ้ามีคำอย่าง finally, at last หรือ after forty minutes แม้จะเป็นกริยาอย่าง spot ก็กลายเป็นความสำเร็จ ต้องใช้ managed to",
+  "thai": "กฎที่ห้ามใช้ could กับความสำเร็จครั้งเดียวมีข้อยกเว้นสองข้อ และทั้งสองข้อมาจากเหตุผลเดียวกัน คือกฎนี้ห้าม could เฉพาะเมื่อประโยคยืนยันว่า “ทำสำเร็จ” ในครั้งหนึ่งเท่านั้น ข้อแรก กริยาการรับรู้และการคิด เช่น see, hear, smell, understand, remember เป็นกริยาบอกสภาพ ไม่ใช่ความสำเร็จ จึงใช้ could ได้ตามปกติ เช่น From the top of the tower we could see as far as the estuary. (จากยอดหอคอยเรามองเห็นไปไกลถึงปากแม่น้ำ) ข้อสอง รูปปฏิเสธ couldn't ใช้ได้เสมอ เพราะความล้มเหลวไม่ใช่ความสำเร็จ เช่น She couldn't win the final. (เธอไม่สามารถชนะนัดชิงได้) แต่ระวัง ถ้าเป็นกริยาที่บอกความสำเร็จ เช่น spot, find หรือ reach ซึ่งมักมาพร้อมคำอย่าง finally, at last หรือ after forty minutes ต้องใช้ managed to ส่วน At last we could see the coast. ยังใช้ could ได้ เพราะ see เป็นกริยาการรับรู้ (เหมือน hear) ซึ่งใช้ could ได้",
   "analogy": {
    "title": "The rooftop view",
    "text": "On a rooftop in Bangkok you <em>could see</em> the whole river — no effort, the view was just there, so <em>could</em> is fine. Your phone had no signal up there: you <em>couldn't</em> call anyone. A failure wins no trophy, so <em>couldn't</em> is fine too. But after twenty minutes of searching the crowd at Siam, you <em>finally</em> spotted your friend — that's a win you worked for: <em>managed to spot</em>."
   },
-  "trap": "After learning the single-occasion rule, students over-apply it: they ‘fix’ <em>we could hear every word</em> or <em>she couldn't win</em> because each is one occasion. Tests reward the opposite (‘Which sentence is correct as it stands?’) — then flip it with <em>finally spotted</em>, where a sense verb turns into an achievement. Dodge: <em>could</em> is blocked only if the sentence is affirmative AND says something was brought off.",
+  "trap": "After learning the single-occasion rule, students over-apply it: they ‘fix’ <em>we could hear every word</em> or <em>she couldn't win</em> because each is one occasion. Tests reward the opposite (‘Which sentence is correct as it stands?’) — then flip it with <em>finally spotted</em>: <em>spot</em> means finding something after a search, so it is an achievement (but <em>at last we could see the coast</em> is fine). Dodge: <em>could</em> is blocked only if the sentence is affirmative AND says something was brought off.",
   "map": {
    "center": "Where could is OK",
    "branches": [
@@ -3579,10 +3581,10 @@ var LENSES = {
      ]
     },
     {
-     "label": "Warning words",
+     "label": "Warning sign",
      "leaves": [
-      "finally · at last",
-      "after an hour → managed to"
+      "finally + spot / find / reach → managed to",
+      "at last we could see ✓"
      ]
     }
    ]
@@ -3625,7 +3627,7 @@ var LENSES = {
     "Understand, remember — still inside the rule.",
     "<em>Couldn't</em> win? <em>Couldn't</em> find? Say it any time —",
     "A failure's not a trophy, so the negative's fine.",
-    "But <em>finally</em>, <em>at last</em>, <em>after an hour</em>? —",
+    "But <em>finally spotted</em>, <em>at last found</em>, <em>reached</em> after an hour? —",
     "That's a win you worked for: <em>managed to</em> has the power!"
    ]
   },
@@ -3868,7 +3870,7 @@ var LENSES = {
    "title": "Read, no reply",
    "text": "You sent your friend a message on LINE last night. It says <strong>Read</strong>, but no reply came all evening. She <em>wouldn't</em> answer — she saw it and chose not to. If her phone had died at 0%, she <em>couldn't</em> answer. Same silence, two different stories: one about her decision, one about her battery."
   },
-  "trap": "Students translate both as ‘<em>ไม่ได้</em>’ / ‘not able’ and pick <em>couldn't</em>, so a refusal turns into an excuse. Tests plant the clue that kills inability: <em>he was standing there with the key</em>, <em>however politely we asked</em>, <em>she had the number in front of her</em>. Dodge: would asking nicely have changed it? Yes → a decision → <em>wouldn't</em>. No → <em>couldn't</em>.",
+  "trap": "Students translate both as ‘<em>ไม่ได้</em>’ / ‘not able’ and pick <em>couldn't</em>, so a refusal turns into an excuse. Tests plant the clue that kills inability: <em>he was standing there with the key</em>, <em>however politely we asked</em>, <em>she had the number in front of her</em>. Dodge: was it a choice? He could have done it but said no → <em>wouldn't</em>; something stopped him (no key, a broken lock) → <em>couldn't</em>.",
   "map": {
    "center": "would / wouldn't",
    "branches": [
@@ -3976,12 +3978,12 @@ var LENSES = {
   ]
  },
  "t4l3s3": {
-  "thai": "will และ would ยังใช้บอก “พฤติกรรมที่เป็นนิสัยหรือธรรมชาติ” ได้ด้วย ไม่ได้หมายถึงอนาคต เช่น Oil will float on water. (น้ำมันย่อมลอยบนน้ำ) หรือ She'll sit in the same seat every week. (เธอมักนั่งที่เดิมทุกสัปดาห์) ส่วน would ใช้เล่าสิ่งที่ทำซ้ำ ๆ ในอดีต เช่น On Sundays my grandfather would walk the whole length of the beach. (ทุกวันอาทิตย์คุณปู่มักจะเดินเล่นไปตลอดแนวชายหาด) would ใช้แทน used to ได้เฉพาะการกระทำที่เกิดซ้ำ แต่ใช้กับสภาพไม่ได้ ถ้ากริยาเป็น be, have, own, live, know ต้องใช้ used to เท่านั้น เช่น He used to own a bookshop. ไม่ใช่ He would own a bookshop. และถ้าเน้นเสียงที่ will เช่น He WILL leave his boots in the hallway. จะกลายเป็นการบ่นว่า “ชอบทำแบบนี้อยู่เรื่อย น่ารำคาญจริง ๆ”",
+  "thai": "will และ would ยังใช้บอก “พฤติกรรมที่เป็นนิสัยหรือธรรมชาติ” ได้ด้วย ไม่ได้หมายถึงอนาคต เช่น Oil will float on water. (น้ำมันย่อมลอยบนน้ำ) หรือ She'll sit in the same seat every week. (เธอมักนั่งที่เดิมทุกสัปดาห์) ส่วน would ใช้เล่าสิ่งที่ทำซ้ำ ๆ ในอดีต เช่น On Sundays my grandfather would walk the whole length of the beach. (ทุกวันอาทิตย์คุณปู่มักจะเดินเล่นไปตลอดแนวชายหาด) would ใช้แทน used to ได้เฉพาะการกระทำที่เกิดซ้ำ แต่ใช้กับสภาพไม่ได้ ถ้ากริยาเป็น be, have (ที่แปลว่ามีหรือเป็นเจ้าของ), own, live, know ต้องใช้ used to เท่านั้น เช่น He used to own a bookshop. ไม่ใช่ He would own a bookshop. และถ้าเน้นเสียงที่ will เช่น He WILL leave his boots in the hallway. จะกลายเป็นการบ่นว่า “ชอบทำแบบนี้อยู่เรื่อย น่ารำคาญจริง ๆ”",
   "analogy": {
    "title": "Mai's usual order",
    "text": "In the canteen, Mai <em>will</em> always order khao man gai — that's just what Mai does, not a plan for tomorrow. Back in M1 she <em>would</em> buy pink milk every break: real, repeated, past. But she <em>used to</em> be shy — that's a state, so no <em>would</em>. And Pim <em>WILL</em> put her bag on your chair? Stress it, and it's a complaint."
   },
-  "trap": "Thai <em>เคย</em> covers every past habit, so students use <em>would</em> for states too: <s>He would own a bookshop</s>, <s>She would be scared of storms</s>. Tests sort <em>used to</em> sentences into ‘<em>would</em> works / only <em>used to</em>’, and offer <em>will find</em> for a routine that belongs to the past. Dodge: can you picture it happening again and again? Then <em>would</em> is fine; <em>be</em>, <em>have</em>, <em>own</em>, <em>live</em>, <em>know</em> take only <em>used to</em>.",
+  "trap": "Thai <em>เคย</em> covers every past habit, so students use <em>would</em> for states too: <s>He would own a bookshop</s>, <s>She would be scared of storms</s>. Tests sort <em>used to</em> sentences into ‘<em>would</em> works / only <em>used to</em>’, and offer <em>will find</em> for a routine that belongs to the past. Dodge: can you picture it happening again and again? Then <em>would</em> is fine; <em>be</em>, <em>have</em> (= own), <em>own</em>, <em>live</em>, <em>know</em> take only <em>used to</em>.",
   "map": {
    "center": "will / would = habit",
    "branches": [
@@ -4002,7 +4004,7 @@ var LENSES = {
     {
      "label": "States → used to",
      "leaves": [
-      "be/have/own/live/know",
+      "be/have (= own)/own/live/know",
       "✗ would own a shop",
       "✓ used to own a shop"
      ]
@@ -4199,26 +4201,26 @@ var LENSES = {
   ]
  },
  "t5l1s2": {
-  "thai": "เวลาเราไม่อยากพูดฟันธง ภาษาอังกฤษใช้รูป remote ของ modal เพื่อลดน้ำหนักของข้อความ โดยไม่เปลี่ยนเนื้อหาเลย That is the answer (ฟันธงเต็มที่) → That may be the answer (อาจจะใช่) → That might be the answer (อาจจะใช่ แต่ระวังกว่าอีกขั้น) ในคู่ can/could, may/might, will/would, shall/should ตัวที่เป็นรูปอดีตจะระมัดระวังกว่าหนึ่งขั้น ส่วน I would say, I would think และ I'd have thought ไม่ได้ทำให้เหตุการณ์ไม่แน่นอน แต่ทำให้ “การพูด” นุ่มลง เช่น I would say the deposit is refundable. (ดิฉันว่ามัดจำได้คืนนะคะ) ก็ยังหมายความว่าได้คืนจริง ๆ ระวังความผิดพลาด 2 แบบ คือพูดฟันธงเกินหลักฐาน เช่น The pilot study proves… และใส่คำลังเลซ้อนกันหลายคำ เช่น might possibly perhaps ซึ่งไม่ได้ทำให้ระวังขึ้น แต่ฟังเหมือนไม่มีอะไรจะพูด ใช้คำลังเลคำเดียวที่มีน้ำหนักพอดีก็พอ",
+  "thai": "เวลาเราไม่อยากพูดฟันธง ภาษาอังกฤษใช้รูป remote ของ modal เพื่อลดน้ำหนักของข้อความ โดยไม่เปลี่ยนเนื้อหาเลย That is the answer (ฟันธงเต็มที่) → That may be the answer หรือ That might be the answer (อาจจะใช่ ทั้งสองคำอยู่ระดับเดียวกัน บางคนรู้สึกว่า might ลังเลกว่านิดหน่อย) ในคู่ can/could และ will/would ตัวที่เป็นรูปอดีตจะระมัดระวังกว่าหนึ่งขั้น ส่วน I would say, I would think และ I'd have thought ไม่ได้ทำให้เหตุการณ์ไม่แน่นอน แต่ทำให้ “การพูด” นุ่มลง เช่น I would say the deposit is refundable. (ดิฉันว่ามัดจำได้คืนนะคะ) ก็ยังหมายความว่าได้คืนจริง ๆ ระวังความผิดพลาด 2 แบบ คือพูดฟันธงเกินหลักฐาน เช่น The pilot study proves… และใส่คำลังเลซ้อนกันหลายคำ เช่น might possibly perhaps ซึ่งไม่ได้ทำให้ระวังขึ้น แต่ฟังเหมือนไม่มีอะไรจะพูด ใช้คำลังเลคำเดียวที่มีน้ำหนักพอดีก็พอ",
   "analogy": {
    "title": "Sugar level at the bubble-tea shop",
-   "text": "At a bubble-tea shop you choose the sugar: 100%, 50%, 25%. <em>That is the answer</em> is 100% — full commitment. <em>That may be the answer</em> is 50%. <em>That might be the answer</em> is 25%. The tea — the content — is exactly the same; only the strength changes. And shouting “less, less, less!” (<em>might possibly perhaps</em>) doesn't get you a better drink. Pick one level."
+   "text": "At a bubble-tea shop you choose the sugar: 100%, 50%, 25%. <em>That is the answer</em> is 100% — full commitment. <em>That may — or might — be the answer</em> is about 50%. The tea — the content — is exactly the same; only the strength changes. And shouting “less, less, less!” (<em>might possibly perhaps</em>) doesn't get you a better drink. Pick one level."
   },
-  "trap": "Thai makes a claim careful with words like อาจจะ or น่าจะ, so students either write flat English — <em>The study <strong>proves</strong>…</em> — or stack every hedge they know: <s>might possibly perhaps indicate</s>. Tests give four strengths of one claim (<em>must / will / should / might</em>) and ask which fits the evidence, or hide the hedge pile-up in a spot-the-error. Dodge: one claim, one hedge — and ask “how strong is the evidence?” first.",
+  "trap": "Thai makes a claim careful with words like อาจจะ or น่าจะ, so students either write flat English — <em>The study proves…</em> — or stack every hedge they know: <s>might possibly perhaps indicate</s>. Tests give four strengths of one claim (<em>must / will / should / might</em>) and ask which fits the evidence, or hide the hedge pile-up in a spot-the-error. Dodge: one claim, one hedge — and ask “how strong is the evidence?” first.",
   "map": {
    "center": "Step back = weaker",
    "branches": [
     {
      "label": "Pairs",
      "leaves": [
-      "can→could, may→might",
-      "will→would, shall→should"
+      "can→could",
+      "will→would"
      ]
     },
     {
      "label": "Strength",
      "leaves": [
-      "is > may be > might be",
+      "is > may / might be",
       "must>will>should>might",
       "content stays the same"
      ]
@@ -4280,13 +4282,13 @@ var LENSES = {
    "title": "One Hedge Rap",
    "beat": "kick-kick-clap (4/4)",
    "lines": [
-    "Is it true? Say “<em>is</em>”. Not sure? Say “<em>may</em>”.",
-    "Less sure? Say “<em>might</em>” — just one more step away.",
+    "Is it true? Say “<em>is</em>”. Not sure? Say “<em>may</em>” or “<em>might</em>” —",
+    "Same step for both: just one step away.",
     "“<em>I would say</em>” makes the <strong>saying</strong> soft and light,",
     "But the fact stays put — I'm just not holding tight.",
     "<s>Might possibly perhaps</s>? Stop! That's way too much —",
     "One hedge does the job, one careful touch.",
-    "Small study? Don't say “<em>proves</em>” — say “<em>suggests</em> it <em>might</em>”,",
+    "Small study? Don't say “<em>proves</em>” — “<em>suggests</em>” is light,",
     "Match the hedge to the evidence and your claim sounds right!"
    ]
   },
@@ -4297,11 +4299,7 @@ var LENSES = {
    },
    {
     "move": "Lower your hand to shoulder height",
-    "says": "That <strong>may</strong> be the answer"
-   },
-   {
-    "move": "Lower your hand to desk height",
-    "says": "That <strong>might</strong> be the answer — one more step back"
+    "says": "That <strong>may</strong> / <strong>might</strong> be the answer — one step back"
    },
    {
     "move": "Hold up one finger, then wave away three fingers",
@@ -4422,7 +4420,7 @@ var LENSES = {
   "thai": "การขอร้องคือการขอเวลาหรือแรงของคนอื่น ภาษาอังกฤษจึงใช้ระยะห่างทางไวยากรณ์ทำให้คำขอดู “เล็กลง” ระดับไล่จาก Open the window. → Can you open the window? → Could you open the window? → Would you mind opening the window? → I was wondering whether you might be able to open the window. เนื้อหาเหมือนเดิมทุกประโยค ต่างกันแค่ระยะห่าง เลือกระดับจาก 2 อย่างเท่านั้น คือ ขอเรื่องใหญ่แค่ไหน และเรากับผู้ฟังห่างกันแค่ไหน ระวัง Would you mind…? เพราะ mind แปลว่า “ขัดข้อง” ถ้ายินดีช่วยต้องตอบ No, not at all. (ไม่ขัดข้องเลยค่ะ) ถ้าตอบ Yes, I would. คือปฏิเสธ และ mind ต้องตามด้วย -ing เช่น Would you mind opening the window? ไม่ใช่ mind to open นอกจากนี้อย่าสุภาพเกินไปกับเพื่อนสนิทเรื่องเล็ก ๆ เพราะจะฟังเหมือนประชดหรือเย็นชา",
   "analogy": {
    "title": "How high is your wai?",
-   "text": "Think of the <em>wai</em>. To a friend you barely lift your hands; to a teacher, higher; to a monk, higher still. The request dial works the same way: <em>Can you</em> → <em>Could you</em> → <em>Would you mind</em> → <em>I was wondering whether you might</em>. The size of the favour and the distance between you set the height. And a deep wai to your best friend for a pen? She'll think you're joking."
+   "text": "Think of the <em>wai</em>. To a friend you barely lift your hands; to a teacher, higher; to your grandparents, higher still. The request dial works the same way: <em>Can you</em> → <em>Could you</em> → <em>Would you mind</em> → <em>I was wondering whether you might</em>. The size of the favour and the distance between you set the height. And a deep wai to your best friend for a pen? She'll think you're joking."
   },
   "trap": "Two Thai-transfer traps. First, <em>Would you mind…?</em> — students hear a question and say <em>Yes</em> to agree, but <em>Yes, I would</em> means “yes, I object”: a refusal. Second, verb-plus-verb: <s>Would you mind to check</s>. Tests also hide a register trap: four grammatical requests, only one pitched right for the favour and the person. Dodge: agree with <em>No, not at all</em>, put <em>-ing</em> after <em>mind</em>, and ask “how big is the favour, how far away is the person?”",
   "map": {
@@ -4534,7 +4532,7 @@ var LENSES = {
   ]
  },
  "t5l2s2": {
-  "thai": "ต้องแยก 3 อย่างให้ออก คือ การขอร้อง (ผู้ฟังเป็นคนทำ) การเสนอช่วย (ผู้พูดทำเอง) และการแนะนำ (ผู้ฟังเป็นคนทำ แต่เราไปบอกเขา) การเสนอช่วยแบบปกติใช้ Shall I…? เช่น Shall I carry the projector down for you? (ให้ช่วยถือโปรเจกเตอร์ลงไปให้ไหมคะ) ถ้าต้องการระวังมากขึ้นกับคนที่ไม่สนิท ใช้ Would you like me to…? ส่วน I could… เป็นการเสนอแบบนุ่มที่สุด สำหรับการแนะนำ ต้องพูดให้อ่อนลงเพราะเป็นการไปบอกให้คนอื่นทำ ใช้ You could try…, You might want to…, It might be worth -ing ไม่ควรใช้ You should หรือ You must ถ้าเราไม่มีอำนาจ เช่น เพื่อนวิจารณ์เรียงความของเพื่อน และ You had better… เป็นการเตือนว่าถ้าไม่ทำจะเกิดเรื่องไม่ดี ส่วน You could always… คือทางเลือกสำรอง วิธีเช็กง่าย ๆ คือถามว่า “สุดท้ายใครเป็นคนลงมือทำ”",
+  "thai": "ต้องแยก 3 อย่างให้ออก คือ การขอร้อง (ผู้ฟังเป็นคนทำ) การเสนอช่วย (ผู้พูดทำเอง) และการแนะนำ (ผู้ฟังเป็นคนทำ แต่เราไปบอกเขา) การเสนอช่วยแบบปกติใช้ Shall I…? เช่น Shall I carry the projector down for you? (ให้ช่วยถือโปรเจกเตอร์ลงไปให้ไหมคะ) ถ้าต้องการระวังมากขึ้นกับคนที่ไม่สนิท ใช้ Would you like me to…? ส่วน I could… เป็นการเสนอแบบนุ่มที่สุด สำหรับการแนะนำ ต้องพูดให้อ่อนลงเพราะเป็นการไปบอกให้คนอื่นทำ ใช้ You could try…, You might want to…, It might be worth -ing ส่วนคำสั่ง You must ใช้ได้เมื่อมีอำนาจจริงเท่านั้น และ You should เป็นคำแนะนำตรง ๆ ใช้กับเพื่อนได้ แต่เวลาวิจารณ์งานของเพื่อน เช่น เรียงความ You might want to… จะนุ่มกว่า และ You had better… เป็นการเตือนว่าถ้าไม่ทำจะเกิดเรื่องไม่ดี ส่วน You could always… คือทางเลือกสำรอง วิธีเช็กง่าย ๆ คือถามว่า “สุดท้ายใครเป็นคนลงมือทำ”",
   "analogy": {
    "title": "Who carries the bag?",
    "text": "Your friend's 7-Eleven bags are heavy. <em>Shall I carry one?</em> — <strong>you</strong> do the work: an offer. <em>You could always ask for a second bag</em> — <strong>she</strong> does the work: a suggestion. Both are soft and friendly; the difference is whose hands the bag ends up in. Before you choose a frame, look at the end of the sentence and ask: who is carrying the bag now?"
@@ -4567,10 +4565,10 @@ var LENSES = {
      ]
     },
     {
-     "label": "Authority only",
+     "label": "Strong",
      "leaves": [
-      "You should / You must",
-      "peer ≠ authority"
+      "You must = needs authority",
+      "You should = direct advice"
      ]
     },
     {
@@ -4621,7 +4619,7 @@ var LENSES = {
     "If <strong>you</strong> do the work, it's <strong>advice</strong> — keep it light:",
     "“<em>You might want to</em>…”, “<em>You could try</em>…” — that sounds right.",
     "“<em>You could always</em>…” — a Plan B, just for you,",
-    "But <em>must</em> and <em>should</em> need power — a classmate? Not you!"
+    "But <em>must</em> needs power, and <em>should</em> is blunt — so soften it too!"
    ]
   },
   "moves": [
@@ -4639,7 +4637,7 @@ var LENSES = {
    },
    {
     "move": "Start to wag your finger, then pull it back quickly",
-    "says": "<em>You must…</em> — only with real authority, never to a classmate"
+    "says": "<em>You must…</em> — an order needs real authority"
    }
   ]
  },
@@ -4752,9 +4750,9 @@ var LENSES = {
   "thai": "ประโยคเงื่อนไขที่ไม่เป็นจริง ต้อง “ถอย” ทั้งสองส่วนพร้อมกัน ส่วน if ใช้รูปอดีต ส่วนผลใช้ would + กริยาช่องที่ 1 เช่น If the council released the land, prices would fall. (ถ้าเทศบาลปล่อยที่ดินออกมา ราคาก็จะลดลง แต่ความจริงยังไม่ได้ปล่อย) ถ้าใช้ will หรือ present ในส่วนผล ประโยคจะผิด เพราะสองส่วนอยู่คนละโลก would ที่ไม่มี if ให้เห็นก็มักซ่อนเงื่อนไขไว้ เช่น That would take three days. หมายถึง ถ้าทำจริงจะใช้เวลาสามวัน ส่วน wish ก็พูดถึงสิ่งที่ไม่เป็นจริงเช่นกัน I wish I knew คืออยากให้ตอนนี้เป็นอีกแบบ I wish they would decide คืออยากให้คนอื่นเปลี่ยนพฤติกรรม และกำลังหงุดหงิดที่ต้องรอ I wish I had asked คือเสียดายเรื่องในอดีต และห้ามพูด I wish I would เพราะเราจะบ่นความเต็มใจของตัวเองไม่ได้",
   "analogy": {
    "title": "Tap Play, stay in the game",
-   "text": "Open a game on your phone and tap <strong>Play</strong>: now everything happens in the game world. <em>If I had a million baht</em> taps Play. So the result must stay in the game too: <em>I <strong>would</strong> buy a café</em>. Saying <em>I <s>will</s> buy a café</em> is like spending real money on a game item that doesn't exist. Both halves of the sentence must be in the same world."
+   "text": "Open a game on your phone and tap <strong>Play</strong>: now everything happens in the game world. <em>If I had a million baht</em> taps Play. So the result must stay in the game too: I <strong>would</strong> buy a café. Saying I <s>will</s> buy a café is like spending real money on a game item that doesn't exist. Both halves of the sentence must be in the same world."
   },
-  "trap": "Thai uses the same จะ for real and imagined results, so students write <s>If the council released the land, prices will fall</s> — an unreal <em>if</em> glued to a real prediction. With wishes they write <s>I wish the committee decides</s> or <s>I wish I would</s>. Tests put <em>will</em>, the present, <em>would</em> and <em>would have</em> side by side. Dodge: if the <em>if</em> uses a past form for something not true now, the other half needs <em>would</em> + bare verb.",
+  "trap": "Thai uses the same จะ for real and imagined results, so students write <s>If the council released the land, prices will fall</s> — an unreal <em>if</em> glued to a real prediction. With wishes they write <s>I wish the committee decides</s> or <s>I wish I would</s>. Tests put <em>will</em>, the present, <em>would</em> and <em>would have</em> side by side. Dodge: if the <em>if</em> uses a past form for something not true now, the other half needs <em>would</em> (or <em>could</em> / <em>might</em>) + bare verb.",
   "map": {
    "center": "Unreal = 2 steps back",
    "branches": [
@@ -4769,7 +4767,7 @@ var LENSES = {
     {
      "label": "Result half",
      "leaves": [
-      "would + bare verb",
+      "would / could / might + bare verb",
       "prices would fall"
      ]
     },
@@ -4832,7 +4830,7 @@ var LENSES = {
    "beat": "kick-kick-clap (4/4)",
    "lines": [
     "If it isn't real, <strong>both halves</strong> go back:",
-    "Past after <em>if</em>, then <em>would</em> on the track!",
+    "Past after <em>if</em>, then <em>would</em> (or <em>could</em>, <em>might</em>) on the track!",
     "“<s>If I had the cash, I will</s>…” — no, no, no!",
     "“<em>If I had the cash, I would</em>…” — now go!",
     "“<em>I wish I knew</em>” — it's now, and it's not true,",
@@ -4864,9 +4862,9 @@ var LENSES = {
   "thai": "ในประโยคเงื่อนไขที่ไม่เป็นจริง ส่วนผลไม่จำเป็นต้องใช้ would เสมอ would บอกว่าผลจะเกิดขึ้นแน่นอนในโลกสมมุติ แต่ might และ could บอกแค่ว่าผลอาจเกิดขึ้น จึงมีระยะห่างสองชั้น ชั้นแรกคือสถานการณ์ไม่เป็นจริง ชั้นที่สองคือในโลกสมมุตินั้นผลก็ยังไม่แน่นอน เช่น If the council invested in the branch line, ridership might recover. (ถ้าเทศบาลลงทุนกับทางรถไฟสายนี้ จำนวนผู้โดยสารอาจจะกลับมา) ในงานเขียนวิชาการที่พูดถึงแผนที่ยังไม่มีใครทดลอง might และ could มักซื่อตรงกว่า would ความต่างคือ could เน้นความสามารถที่การเปลี่ยนแปลงจะสร้างขึ้น ส่วน might เน้นโอกาสที่ผลจะเกิดจริง และระวัง modal ที่อยู่ในส่วน if เช่น if you could send it by Friday เป็นการขอร้อง ไม่ใช่ส่วนหนึ่งของเงื่อนไข",
   "analogy": {
    "title": "The MRT line not built yet",
-   "text": "Imagine a new MRT line that doesn't exist yet. <em>If the line were built, the trains <strong>would</strong> be full</em> — you're promising passengers in a world nobody has seen. <em>…the line <strong>could</strong> carry 50,000 people a day</em> — the trains would have room. <em>…people <strong>might</strong> use it</em> — maybe they'd come, maybe not. Step into the imagined world first; then choose how sure you are inside it."
+   "text": "Imagine a new MRT line that doesn't exist yet. If the line were built, the trains <strong>would</strong> be full — you're promising passengers in a world nobody has seen. …the line <strong>could</strong> carry 50,000 people a day — the trains would have room. …people <strong>might</strong> use it — maybe they'd come, maybe not. Step into the imagined world first; then choose how sure you are inside it."
   },
-  "trap": "Students learn “unreal = <em>would</em>” as a formula, so a policy essay says <em>congestion <strong>would certainly</strong> fall by a fifth</em> about a scheme nobody has tested — grammatical, but claiming far too much. Others mix worlds: <s>If the levy were introduced, congestion will fall</s>. Dodge: find the contrary-to-fact <em>if</em>, then ask “how sure can I be inside it?” — usually <em>might</em> or <em>could</em>.",
+  "trap": "Students learn “unreal = <em>would</em>” as a formula, so a policy essay says congestion <strong>would certainly</strong> fall by a fifth about a scheme nobody has tested — grammatical, but claiming far too much. Others mix worlds: <s>If the levy were introduced, congestion will fall</s>. Dodge: find the contrary-to-fact <em>if</em>, then ask “how sure can I be inside it?” — usually <em>might</em> or <em>could</em>.",
   "map": {
    "center": "Unreal + uncertain",
    "branches": [
@@ -4976,12 +4974,12 @@ var LENSES = {
   ]
  },
  "t5l3s3": {
-  "thai": "นักเรียนมักจำว่า “ห้ามใช้ will หลัง if” แต่ไม่รู้เหตุผล เหตุผลคือ will เป็น modal ไม่ใช่ tense หน้าที่ของมันคือบอกว่าเป็นการคาดการณ์ ไม่ใช่ข้อเท็จจริง แต่ if ทำหน้าที่นั้นไปแล้ว จึงไม่ต้องพูดซ้ำ ส่วน if จึงใช้ present simple แม้จะพูดถึงอนาคต แล้วไปใส่ will ในส่วนผลแทน เช่น If it rains tomorrow, the match will be moved. (ถ้าพรุ่งนี้ฝนตก จะเลื่อนการแข่งขัน) กฎเดียวกันใช้กับ when, as soon as, until, before และประโยคที่ไม่เป็นจริงก็ห้ามใช้ if it would rain ด้วยเหตุผลเดียวกัน แต่ will อยู่หลัง if ได้ถ้ามีความหมายอื่นที่ if ไม่ได้บอก คือ ความเต็มใจ (If you'll wait here… = ถ้าคุณยินดีรอ) การอนุมานเกี่ยวกับตอนนี้ (If that will be all…) และการบ่นพฤติกรรมที่ทำซ้ำ ๆ (If you will keep leaving the door open…)",
+  "thai": "นักเรียนมักจำว่า “ห้ามใช้ will หลัง if” แต่ไม่รู้เหตุผล เหตุผลคือ will เป็น modal ไม่ใช่ tense หน้าที่ของมันคือบอกว่าเป็นการคาดการณ์ ไม่ใช่ข้อเท็จจริง แต่ if ทำหน้าที่นั้นไปแล้ว จึงไม่ต้องพูดซ้ำ ส่วน if จึงใช้ present simple แม้จะพูดถึงอนาคต แล้วไปใส่ will ในส่วนผลแทน เช่น If it rains tomorrow, the match will be moved. (ถ้าพรุ่งนี้ฝนตก จะเลื่อนการแข่งขัน) กฎเดียวกันใช้กับ when, as soon as, until, before และประโยคที่ไม่เป็นจริงก็ห้ามใช้ if it would rain ด้วยเหตุผลเดียวกัน แต่ will อยู่หลัง if ได้ถ้ามีความหมายอื่นที่ if ไม่ได้บอก คือ ความเต็มใจ (If you'll wait here… = ถ้าคุณยินดีรอ) ผลที่จะตามมาทีหลัง (If it'll help, I'll stay late. = ถ้าช่วยได้ ฉันจะอยู่ต่อให้) และการบ่นพฤติกรรมที่ทำซ้ำ ๆ (If you will keep leaving the door open…)",
   "analogy": {
    "title": "Umbrella under the skywalk",
-   "text": "Walking under the BTS skywalk in the rain, you fold your umbrella — the roof already keeps you dry. <em>If</em> is the roof: it already marks the clause as “maybe”. Predictive <em>will</em> is the umbrella doing the same job, so fold it: <em>If it <strong>rains</strong> tomorrow…</em>. Open <em>will</em> only when it has a different job — <em>If you<strong>'ll</strong> wait here</em> means <em>if you are willing to</em>."
+   "text": "Walking under the BTS skywalk in the rain, you fold your umbrella — the roof already keeps you dry. <em>If</em> is the roof: it already marks the clause as “maybe”. Predictive <em>will</em> is the umbrella doing the same job, so fold it: If it <strong>rains</strong> tomorrow…. Open <em>will</em> only when it has a different job — If <strong>you'll</strong> wait here means <em>if you are willing to</em>."
   },
-  "trap": "Students think “tomorrow = future = <em>will</em> (จะ)”, so they write <s>If it will rain tomorrow</s> and <s>before the term will start</s>. Tests also plant the reverse trap: a correct <em>If you will just sign at the bottom…</em> that students “fix” because they learned a flat ban. Dodge: try swapping <em>will</em> for <em>are willing to</em>, <em>turns out to be the case now</em> or <em>insist on -ing</em>. If one fits, keep <em>will</em>; if none fits, use the present.",
+  "trap": "Students think “tomorrow = future = <em>will</em> (จะ)”, so they write <s>If it will rain tomorrow</s> and <s>before the term will start</s>. Tests also plant the reverse trap: a correct <em>If you will just sign at the bottom…</em> that students “fix” because they learned a flat ban. Dodge: does <em>will</em> mean <em>are willing to</em>, <em>insist on -ing</em>, or a result that comes after the main clause (<em>If it'll help, I'll stay late</em>)? If so, keep <em>will</em>; if not, use the present.",
   "map": {
    "center": "if + will = double job",
    "branches": [
@@ -5017,7 +5015,7 @@ var LENSES = {
      "label": "Will stays if…",
      "leaves": [
       "willing: If you'll wait",
-      "now: If that will be all",
+      "result: If it'll help",
       "insist: If you will keep"
      ]
     }
@@ -5051,7 +5049,7 @@ var LENSES = {
      "text": "So: <em>will</em> repeating “maybe” — goes. <em>Will</em> with a new job — stays. Beep!"
     }
    ],
-   "moral": "<em>If</em> already marks the possibility, so predictive <em>will</em> goes — but <em>will</em> for willingness, a deduction about now, or a complaint stays."
+   "moral": "<em>If</em> already marks the possibility, so predictive <em>will</em> goes — but <em>will</em> for willingness, a result that comes later, or a complaint stays."
   },
   "chant": {
    "title": "Don't Say It Twice",
@@ -5059,7 +5057,7 @@ var LENSES = {
    "lines": [
     "<em>If</em> says <strong>maybe</strong> — <em>will</em> says <strong>maybe</strong> too,",
     "Don't say it twice — one word will do!",
-    "“<em>If it <strong>rains</strong> tomorrow</em>, the match <em>will</em> move” —",
+    "“If it <strong>rains</strong> tomorrow, the match <strong>will</strong> move” —",
     "Present after <em>if</em>, future in the result: that's the groove!",
     "<em>When</em>, <em>until</em>, <em>before</em>, <em>as soon as</em> — same law,",
     "“<s>If it would rain</s>”? Same reason — same flaw!",
@@ -5074,7 +5072,7 @@ var LENSES = {
    },
    {
     "move": "Push your right hand forward, away from you",
-    "says": "The future lives in the result: <em>…the match <strong>will</strong> be moved</em>"
+    "says": "The future lives in the result: …the match <strong>will</strong> be moved"
    },
    {
     "move": "Open your palm and guide a friend towards a chair",
@@ -5082,11 +5080,11 @@ var LENSES = {
    },
    {
     "move": "Fold your arms and tap your foot",
-    "says": "<em>If you <strong>will</strong> keep leaving the door open…</em> — a complaint, so it stays"
+    "says": "If you <strong>will</strong> keep leaving the door open… — a complaint, so it stays"
    },
    {
-    "move": "Tap your temple",
-    "says": "<em>If that will be all…</em> — a deduction about now, so it stays"
+    "move": "Point ahead, then give a thumbs up",
+    "says": "<em>If it'll help, I'll stay late</em> — the help comes later, so it stays"
    }
   ]
  },
@@ -5452,7 +5450,7 @@ var LENSES = {
   ]
  },
  "t6l2s1": {
-  "thai": "should have + V3 ไม่ใช่การคาดเดา แต่เป็นการตัดสินว่า “เรื่องนั้นไม่ได้เกิดขึ้น และการที่ไม่เกิดขึ้นถือเป็นความผิด” ถ้าประธานเป็น you หรือบุคคลอื่น จะเป็นการตำหนิ เช่น You should have told me. = เธอควรจะบอกฉันนะ (แต่ไม่ได้บอก) ถ้าประธานเป็น I หรือ we จะกลายเป็นความเสียใจหรือคำขอโทษ เช่น I should have checked the figures. = ฉันน่าจะตรวจตัวเลขก่อน ส่วน shouldn't have + V3 ความหมายกลับกัน คือเรื่องนั้นเกิดขึ้นไปแล้ว และไม่ควรเกิด ought to have มีความหมายเหมือนกันแต่ทางการกว่า และต้องมี to เสมอ ห้ามเขียน ought have นอกจากนี้ระวัง should have ที่แปลว่า “น่าจะ...แล้ว” ตามกำหนดการ เช่น They should have landed by now. ประโยคนี้ไม่ได้ตำหนิใคร เป็นแค่การคาดการณ์จากตารางเวลา",
+  "thai": "should have + V3 ไม่ใช่การคาดเดา แต่เป็นการตัดสินว่า “เรื่องนั้นไม่ได้เกิดขึ้น และการที่ไม่เกิดขึ้นถือเป็นความผิด” ถ้าประธานเป็น you หรือบุคคลอื่น จะเป็นการตำหนิ เช่น You should have told me. = เธอควรจะบอกฉันนะ (แต่ไม่ได้บอก) ถ้าประธานเป็น I หรือ we จะกลายเป็นความเสียใจหรือคำขอโทษ เช่น I should have checked the figures. = ฉันควรจะตรวจตัวเลขก่อน (แต่ไม่ได้ตรวจ) ส่วน shouldn't have + V3 ความหมายกลับกัน คือเรื่องนั้นเกิดขึ้นไปแล้ว และไม่ควรเกิด ought to have มีความหมายเหมือนกันแต่ทางการกว่า และต้องมี to เสมอ ห้ามเขียน ought have นอกจากนี้ระวัง should have ที่แปลว่า “น่าจะ...แล้ว” ตามกำหนดการ เช่น They should have landed by now. ประโยคนี้ไม่ได้ตำหนิใคร เป็นแค่การคาดการณ์จากตารางเวลา",
   "analogy": {
    "title": "The red BTS gate",
    "text": "Your Rabbit card beeps red at the BTS gate: no money left. Your friend says, “You <em>should have topped it up</em> at 7-Eleven!” You didn't, and that was the mistake — blame. You sigh, “I <em>should have</em>…” — the same words, now regret. Then you add, “I <em>shouldn't have spent</em> it all on bubble tea.” That one <strong>did</strong> happen, and it was the mistake."
@@ -5519,7 +5517,7 @@ var LENSES = {
     },
     {
      "who": "Ploy",
-     "text": "Now he's apologising for printing a poster he never printed…"
+     "text": "Now Bot's apologising for printing a poster it never printed…"
     },
     {
      "who": "T.Chris",
@@ -5557,7 +5555,7 @@ var LENSES = {
    },
    {
     "move": "Pinch a tiny invisible word between finger and thumb and hold it up",
-    "says": "<em>ought <strong>to</strong> have</em> — never drop the <em>to</em>!"
+    "says": "<em>ought to have</em> — never drop the <strong>to</strong>!"
    },
    {
     "move": "Tap your wrist like a watch",
@@ -5566,7 +5564,7 @@ var LENSES = {
   ]
  },
  "t6l2s2": {
-  "thai": "could have + V3 ในบทนี้ไม่ใช่การเดา แต่บอกว่า “ในอดีตมีโอกาสหรือทางเลือกนั้นอยู่จริง แต่ไม่ได้ทำ” เช่น We could have sold the building in 2019. = ตอนนั้นเราขายตึกได้ (แต่ไม่ได้ขาย ตอนนี้ตึกยังเป็นของเราอยู่) ต่างจาก could have ที่เป็นการเดา ซึ่งยังไม่รู้ว่าเกิดหรือไม่ ส่วน You might have told me! ถ้าเน้นเสียงที่ might จะเป็นการต่อว่า ประมาณว่า “บอกกันสักคำก็ไม่ได้!” เพราะเป็นเรื่องง่าย ๆ ที่อีกฝ่ายไม่ยอมทำ รูปเดียวกันนี้ยังใช้แสดงความโล่งใจได้ด้วย เช่น That could have ended very badly. = เกือบแย่แล้ว (แต่ก็ไม่ได้แย่) ข้อสำคัญคือ could have แค่บอกว่ามีทางเลือกอยู่ ไม่ได้ตำหนิใคร ส่วน should have บอกเพิ่มว่าการไม่ทำนั้นเป็นความผิด",
+  "thai": "could have + V3 ในบทนี้ไม่ใช่การเดา แต่บอกว่า “ในอดีตมีโอกาสหรือทางเลือกนั้นอยู่จริง แต่ไม่ได้ทำ” เช่น We could have sold the building in 2019. = ตอนนั้นเราขายตึกได้ (แต่ไม่ได้ขาย ตอนนี้ตึกยังเป็นของเราอยู่) ต่างจาก could have ที่เป็นการเดา ซึ่งยังไม่รู้ว่าเกิดหรือไม่ ส่วน You might have told me! ถ้าเน้นเสียงที่ might จะเป็นการต่อว่า ประมาณว่า “บอกกันสักคำก็ไม่ได้!” เพราะเป็นเรื่องง่าย ๆ ที่อีกฝ่ายไม่ยอมทำ รูปเดียวกันนี้ยังใช้แสดงความโล่งใจได้ด้วย เช่น That could have ended very badly. = เกือบแย่แล้ว (แต่ก็ไม่ได้แย่) ข้อสำคัญคือ could have เฉย ๆ บอกแค่ว่ามีทางเลือกอยู่ แต่ถ้าพูดกับ you และเน้นเสียง เช่น You COULD have told me! ก็เป็นการต่อว่าได้เหมือน might have ส่วน should have บอกตรง ๆ ว่าการไม่ทำนั้นเป็นความผิด",
   "analogy": {
    "title": "The unused coupon",
    "text": "Yesterday the Grab app showed you a half-price coupon for noodles, and you ignored it. Today you think, “I <em>could have</em> got them half price.” The coupon was really there, and you didn't use it. Your best friend finds out you saw it and says, “You <em>might have</em> told me!” — that's not a guess, it's a complaint: telling her was easy, and you didn't."
@@ -5606,7 +5604,7 @@ var LENSES = {
     {
      "label": "vs should have",
      "leaves": [
-      "could = road was there",
+      "could = road was there (no fault stated)",
       "should = + it was a fault"
      ]
     }
@@ -5652,7 +5650,7 @@ var LENSES = {
     "“You <em>MIGHT</em> have told me!” — it was easy, so why?",
     "Nearly fell down? <em>Could have</em> been bad —",
     "But it didn't happen, so be glad!",
-    "<em>Could have</em>: the road was there, no blame in sight;",
+    "<em>Could have</em>: the road was there — stress it, and it's a fight;",
     "<em>Should have</em> adds the blame — get it right!"
    ]
   },
@@ -5671,7 +5669,7 @@ var LENSES = {
    },
    {
     "move": "Draw a road in the air with one finger",
-    "says": "<em>Could have</em> = the road was there. No blame."
+    "says": "<em>Could have</em> = the road was there. No blame — unless you stress it."
    },
    {
     "move": "Draw the same road, then wag your finger",
@@ -5680,7 +5678,7 @@ var LENSES = {
   ]
  },
  "t6l2s3": {
-  "thai": "would have + V3 คือผลลัพธ์ของเงื่อนไขที่ไม่เป็นจริงในอดีต รูปที่ใช้คือ If + had + V3, ... would have + V3 เช่น If the alarm had sounded, the staff would have evacuated. = ถ้าตอนนั้นสัญญาณเตือนดัง พนักงานก็คงจะอพยพออกไปแล้ว สิ่งที่ต้องจำคือ ทั้งสองส่วนไม่ได้เกิดขึ้นจริง สัญญาณไม่ได้ดัง และพนักงานก็ไม่ได้อพยพ เงื่อนไขไม่จำเป็นต้องมีคำว่า if เสมอ อาจมาในรูปวลี เช่น Without the second pump หรือแบบกลับประโยค Had it been serviced นอกจากนี้สองส่วนอาจอยู่คนละเวลาได้ เช่น เงื่อนไขในอดีต แต่ผลในปัจจุบัน the plant would still be running ข้อผิดพลาดที่พบบ่อยคือใส่ would ในส่วน if ซึ่งผิด และเขียน would of ซึ่งผิดเสมอ ต้องเขียน would have หรือ would've",
+  "thai": "would have + V3 คือผลลัพธ์ของเงื่อนไขที่ไม่เป็นจริงในอดีต รูปที่ใช้คือ If + had + V3, ... would have + V3 เช่น If the alarm had sounded, the staff would have evacuated. = ถ้าตอนนั้นสัญญาณเตือนดัง พนักงานก็คงจะอพยพออกไปแล้ว สิ่งที่ต้องจำคือ ทั้งสองส่วนไม่ได้เกิดขึ้นจริง สัญญาณไม่ได้ดัง และพนักงานก็ไม่ได้อพยพ เงื่อนไขไม่จำเป็นต้องมีคำว่า if เสมอ อาจมาในรูปวลี เช่น Without the second pump หรือแบบกลับประโยค Had it been serviced นอกจากนี้สองส่วนอาจอยู่คนละเวลาได้ เช่น เงื่อนไขในอดีต แต่ผลในปัจจุบัน the plant would still be running ข้อผิดพลาดที่พบบ่อยคือใส่ would have ในส่วน if ซึ่งผิด และเขียน would of ซึ่งผิดเสมอ ต้องเขียน would have หรือ would've",
   "analogy": {
    "title": "The snooze button",
    "text": "You pressed snooze, fell back asleep, missed the school van and paid for a Grab. “If I <em>had got up</em> at six, I <em>would have caught</em> the van.” Both halves are a dream: you didn't get up, and you didn't catch it. Then: “If I'd caught the van, I'<em>d still have</em> my 200 baht.” Past condition, present result — each half keeps its own time."
@@ -5771,7 +5769,7 @@ var LENSES = {
     "<em>If</em> I <em>had</em> known, I <em>would have</em> gone —",
     "I didn't know, I didn't go — both halves gone!",
     "<em>Had</em> in the <em>if</em>, <em>would have</em> at the end,",
-    "<em>Would</em> in the <em>if</em>? No way, my friend!",
+    "<em>Would have</em> in the <em>if</em>? No way, my friend!",
     "Not <s>would of</s> — it's <em>would have</em>, that's the rule,",
     "Say <em>would've</em> fast, but spell it right at school!",
     "Past <em>if</em>, result now? Yes, they can mix:",
@@ -5793,7 +5791,7 @@ var LENSES = {
    },
    {
     "move": "Cover your left hand with your right and shake your head",
-    "says": "No <em>would</em> in the <em>if</em>-part!"
+    "says": "No <em>would have</em> in the <em>if</em>-part!"
    },
    {
     "move": "Write the word “have” in the air with your finger",
@@ -5807,7 +5805,7 @@ var LENSES = {
    "title": "The umbrella in the sun",
    "text": "You carried your big umbrella all day — on the BTS, to school, to tutoring — and the sun never stopped shining. Your friend laughs: “You <em>needn't have brought</em> it!” You did bring it, and the effort was wasted. Mai checked the weather app, saw no rain and left hers at home: she <em>didn't need to bring</em> one, so she didn't."
   },
-  "trap": "Thai ไม่จำเป็นต้อง covers both forms, so learners swap them freely. But <em>needn't have</em> + V3 <strong>asserts</strong> the action happened, and nothing after it can deny it: <s>We needn't have reserved seats, so we walked straight in</s>. Tests write exactly that clash and ask you to spot it. Dodge: ask “Was the effort already spent?” Yes → <em>needn't have</em>; skipped → <em>didn't need to</em>.",
+  "trap": "Thai ไม่จำเป็นต้อง covers both forms, so learners swap them freely. But <em>needn't have</em> + V3 <strong>asserts</strong> the action happened, and nothing after it can deny it: <s>We needn't have reserved seats, so we didn't</s>. Tests write exactly that clash and ask you to spot it. Dodge: ask “Was the effort already spent?” Yes → <em>needn't have</em>; skipped → <em>didn't need to</em>.",
   "map": {
    "center": "needn't vs didn't need",
    "branches": [
@@ -6029,7 +6027,7 @@ var LENSES = {
    "title": "One sticker, three moods",
    "text": "On LINE, the same smiley sticker can mean “I'm happy”, “whatever” or “I'm annoyed” — you only know from the messages around it. <em>Could have</em> is the same: one form, three meanings. Read the words around it: a <em>but</em> (a chance not taken), a clue like <em>nobody has heard</em> (a guess), or <em>if / with / without</em> (an unreal result)."
   },
-  "trap": "Thai learners translate every <em>could have</em> as อาจจะ — a guess — and miss that two of the three readings mean it did <strong>not</strong> happen. Tests add a clue (<em>but</em>, <em>if</em>, <em>nobody knows</em>) that forces one reading and offer the others as distractors. Writers clash too: <s>He could have left at six, but I do not know whether he did</s>. Dodge: find the clue — <em>but</em> → chance missed; evidence → guess; condition → unreal.",
+  "trap": "Thai learners translate every <em>could have</em> as อาจจะ — a guess — and miss that two of the three readings mean it did <strong>not</strong> happen. Tests add a clue (<em>but</em>, <em>if</em>, <em>nobody knows</em>) that forces one reading and offer the others as distractors. Writers clash too: <s>I could have taken a taxi, and I took one</s>. Dodge: find the clue — <em>but</em> → chance missed; evidence → guess; condition → unreal.",
   "map": {
    "center": "could have × 3",
    "branches": [
@@ -6135,10 +6133,10 @@ var LENSES = {
   ]
  },
  "t7l1s1": {
-  "thai": "ในงานเขียนเชิงวิชาการ hedge อย่าง may, tends to หรือ it appears that ไม่ได้มีไว้เพื่อความสุภาพ และไม่ใช่เพราะไม่กล้าฟันธง แต่เป็น “รายงานหลักฐาน” ที่บอกผู้อ่านว่าผู้เขียนมั่นใจแค่ไหน ประโยคที่ไม่มี hedge เช่น This proves that smaller classes raise attainment. เท่ากับสัญญาว่าเป็นจริงทุกกรณีทุกที่ เจอข้อยกเว้นเพียงกรณีเดียวก็ล้มทั้งประโยค ส่วน This suggests that smaller classes may raise attainment. (ผลนี้ชี้ว่าห้องเรียนขนาดเล็กอาจช่วยให้ผลการเรียนดีขึ้น) อ้างแค่ว่าเป็นจริงได้ในบางกรณี จึงล้มยากกว่ามาก เป้าหมายไม่ใช่ความระมัดระวัง แต่คือ “ความพอดี” ระหว่างน้ำหนักของข้ออ้างกับหลักฐาน ถ้าแรงเกินไป ผู้ตรวจจะมองว่า over-generalise ถ้าอ่อนเกินไป ก็ดูเหมือนไม่มีอะไรจะพูด และข้อเท็จจริงที่ยืนยันแล้ว เช่น Water boils at 100 degrees at sea level. ไม่ต้อง hedge เลย",
+  "thai": "ในงานเขียนเชิงวิชาการ hedge อย่าง may, tends to หรือ it appears that ไม่ได้มีไว้เพื่อความสุภาพ และไม่ใช่เพราะไม่กล้าฟันธง แต่เป็น “รายงานหลักฐาน” ที่บอกผู้อ่านว่าผู้เขียนมั่นใจแค่ไหน ประโยคที่ไม่มี hedge เช่น This proves that smaller classes raise attainment. เท่ากับสัญญาว่าเป็นจริงทุกกรณีทุกที่ เจอข้อยกเว้นเพียงกรณีเดียวก็ล้มทั้งประโยค ส่วน This suggests that smaller classes may raise attainment. (ผลนี้ชี้ว่าห้องเรียนขนาดเล็กอาจช่วยให้ผลการเรียนดีขึ้น) อ้างแค่ว่าอาจเป็นจริง ไม่ได้ยืนยันว่าเป็นจริง จึงล้มยากกว่ามาก เป้าหมายไม่ใช่ความระมัดระวัง แต่คือ “ความพอดี” ระหว่างน้ำหนักของข้ออ้างกับหลักฐาน ถ้าแรงเกินไป ผู้ตรวจจะมองว่า over-generalise ถ้าอ่อนเกินไป ก็ดูเหมือนไม่มีอะไรจะพูด และข้อเท็จจริงที่ยืนยันแล้ว เช่น Water boils at 100 degrees at sea level. ไม่ต้อง hedge เลย",
   "analogy": {
    "title": "The one-visit food review",
-   "text": "You tried the new mookata place in Siam once and loved it. Post <em>‘This is THE best mookata in Bangkok — everyone will love it!’</em> and one friend who hated it destroys your whole post. Post <em>‘From one visit, it <strong>seems</strong> really good — it <strong>may</strong> be worth a try’</em> and nobody can knock it down. Same experience, smaller promise. That smaller promise is a hedge."
+   "text": "You tried the new mookata place in Siam once and loved it. Post <em>‘This is THE best mookata in Bangkok — everyone will love it!’</em> and one friend who hated it destroys your whole post. Post ‘From one visit, it <strong>seems</strong> really good — it <strong>may</strong> be worth a try’ and nobody can knock it down. Same experience, smaller promise. That smaller promise is a hedge."
   },
   "trap": "Thai students often feel that a hedge sounds weak or just เกรงใจ, so they write every claim at full force: <em>proves</em>, <em>will</em>, <em>everyone</em>. Others swing the other way and stack five hedges. Tests offer both extremes, plus a sneaky middle option that stretches one city's survey to <em>other cities too</em>. Dodge: ask ‘How much evidence is there?’ One study → <em>suggests … may</em>; a settled fact → no hedge.",
   "map": {
@@ -6162,7 +6160,7 @@ var LENSES = {
     {
      "label": "Hedged claim",
      "leaves": [
-      "= true in some cases",
+      "= possibly true, not proved",
       "much harder to knock down"
      ]
     },
@@ -6366,7 +6364,7 @@ var LENSES = {
    },
    {
     "move": "Hand on heart, sit up tall",
-    "says": "My thesis: <em>I would argue that fees should be capped.</em> No hedge needed."
+    "says": "My thesis: <em>Tuition fees should be capped.</em> No hedge needed."
    }
   ]
  },
@@ -6420,6 +6418,13 @@ var LENSES = {
      "leaves": [
       "in smaller clinics ✓",
       "limits who, not how sure"
+     ]
+    },
+    {
+     "label": "Verb + modal ✓",
+     "leaves": [
+      "suggests that … may",
+      "evidence verb + one modal = normal"
      ]
     }
    ]
@@ -6497,7 +6502,7 @@ var LENSES = {
    "title": "Ordering som tam",
    "text": "At the som tam stall you don't just say ‘spicy’ — you say ‘spicy, a lot’ or ‘spicy, just a little’. The modal is the order: <em>may</em>, <em>might</em> and <em>could</em> are all plain ‘spicy’. The adverb after it tunes the level: <em>may well</em> is extra spicy, <em>might conceivably</em> is barely spicy. <em>May possibly</em> is shouting ‘spicy, spicy!’ — the cook just hears the same order twice."
   },
-  "trap": "Thai อาจจะไม่ turns into <em>may not</em> when the student means ‘probably not’ — but <em>may not</em> leaves both outcomes open. And เกือบจะแน่นอน puts ‘almost’ first, giving <s>almost would certainly</s>. Tests ask for ‘probably not’ and offer <em>may not</em> and <em>cannot</em> as bait, or hide a wrongly placed adverb in a spot-the-error item. Dodge: ‘probably not’ = <em>is unlikely to</em>; then check the adverb comes <strong>after</strong> the modal.",
+  "trap": "Thai อาจจะไม่ turns into <em>may not</em> when the student means ‘probably not’ — but <em>may not</em> leaves both outcomes open. And เกือบจะแน่นอน puts ‘almost’ first, giving <s>almost would certainly</s>. Tests ask for ‘probably not’ and offer <em>may not</em> and <em>cannot</em> as bait, or hide a wrongly placed adverb in a spot-the-error item. Dodge: ‘probably not’ = <em>is unlikely to</em>; then check the adverb comes <strong>after</strong> the modal (with a negative, <em>probably won't</em> is fine too).",
   "map": {
    "center": "Modal + adverb",
    "branches": [
@@ -6540,8 +6545,8 @@ var LENSES = {
     {
      "label": "Word order",
      "leaves": [
-      "adverb AFTER the modal",
-      "may well, not well may"
+      "adverb after the modal: may well",
+      "with not: probably won't ✓"
      ]
     }
    ]
@@ -6567,11 +6572,11 @@ var LENSES = {
     },
     {
      "who": "Nong Bot",
-     "text": "Correct. My data said 95 per cent. Beep."
+     "text": "Correct. My data said it was almost certain. Beep."
     },
     {
      "who": "T.Chris",
-     "text": "Bot, 95 per cent isn't plain <em>may</em>. Say: ‘It <em>will almost certainly</em> sell out.’"
+     "text": "Bot, almost certain isn't plain <em>may</em>. Say: ‘It <em>will almost certainly</em> sell out.’"
     }
    ],
    "moral": "Plain <em>may</em> is the rough middle; an adverb after the modal — <em>may well</em>, <em>will almost certainly</em>, <em>might conceivably</em> — puts the claim on the right rung."
@@ -7065,12 +7070,12 @@ var LENSES = {
    },
    {
     "move": "Hold up one finger only",
-    "says": "Boost once. <em>Clearly and undoubtedly</em> is a pile-up in reverse."
+    "says": "Boost once. <em>Clearly and undoubtedly</em> is a booster pile-up — one is enough."
    }
   ]
  },
  "t7l3s3": {
-  "thai": "การปรับระดับความแรงของข้ออ้างเป็นทักษะตอน “แก้ไขงาน” ให้ตรวจย่อหน้าทีละข้ออ้าง แล้วถามว่า “อะไรในย่อหน้านี้ทำให้ข้ออ้างนี้เป็นจริง” คำตอบมีแค่สามแบบ คือ หลักฐานพอดี หลักฐานน้อยเกินไป ให้ลดลงหนึ่งขั้น (proves → suggests, will → is likely to, everyone → most) หรือหลักฐานมากกว่าที่เขียนไว้ ให้ยกระดับขึ้นหรือตัด hedge ออก และห้าม hedge ตัวเลขที่ให้ไปแล้ว ย่อหน้าที่ดีมี “รูปทรง” ประโยคหัวเรื่องมักเป็นข้ออ้างที่แรงที่สุด เช่น Smaller classes are likely to benefit the youngest pupils most. (ห้องเรียนขนาดเล็กน่าจะเป็นประโยชน์ต่อเด็กเล็กที่สุด) ส่วนขยายมีหลักฐานและขอบเขตที่ชัดเจน ส่วนประโยคสุดท้ายเป็นจุดที่ใช้ booster ได้ เพราะผู้อ่านเห็นหลักฐานแล้ว ถ้าทุกประโยคเป็น may เหมือนกันหมด หรือเป็น will เหมือนกันหมด ผู้อ่านจะไม่รู้ว่าประโยคไหนสำคัญ",
+  "thai": "การปรับระดับความแรงของข้ออ้างเป็นทักษะตอน “แก้ไขงาน” ให้ตรวจย่อหน้าทีละข้ออ้าง แล้วถามว่า “อะไรในย่อหน้านี้ทำให้ข้ออ้างนี้เป็นจริง” คำตอบมีแค่สามแบบ คือ หลักฐานพอดี หลักฐานน้อยเกินไป ให้ลดลงหนึ่งขั้น (proves → suggests, will → is likely to, everyone → most) หรือหลักฐานมากกว่าที่เขียนไว้ ให้ยกระดับขึ้นหรือตัด hedge ออก และห้าม hedge ตัวเลขที่ให้ไปแล้ว ย่อหน้าที่ดีมี “รูปทรง” ประโยคหัวเรื่องมักเป็นข้ออ้างหลักที่กว้างที่สุด เช่น Smaller classes are likely to benefit the youngest pupils most. (ห้องเรียนขนาดเล็กน่าจะเป็นประโยชน์ต่อเด็กเล็กที่สุด) ส่วนขยายมีหลักฐานและขอบเขตที่ชัดเจน ส่วนประโยคสุดท้ายเป็นจุดที่ใช้ booster ได้ เพราะผู้อ่านเห็นหลักฐานแล้ว ถ้าทุกประโยคเป็น may เหมือนกันหมด หรือเป็น will เหมือนกันหมด ผู้อ่านจะไม่รู้ว่าประโยคไหนสำคัญ",
   "analogy": {
    "title": "The highlighter test",
    "text": "Borrow a friend's notes where every line is highlighted yellow. Which line matters? No idea. Notes with no highlighting at all are just as useless. A paragraph where every claim says <em>will</em> is the all-yellow page; one where every claim says <em>may</em> is the blank page. Highlight by evidence: bold where the proof is solid, light where it isn't."
@@ -7103,7 +7108,7 @@ var LENSES = {
     {
      "label": "Paragraph shape",
      "leaves": [
-      "topic: boldest claim",
+      "topic: the main (widest) claim",
       "middle: evidence + scope",
       "end: earned booster"
      ]
@@ -7151,7 +7156,7 @@ var LENSES = {
     "<em>What here makes you true?</em> — then set the weight!",
     "Too little? Step down — <em>proves</em> to <em>suggests</em>,",
     "More than you admitted? Cut the hedge — no stress!",
-    "Topic sentence bold, the middle brings the facts,",
+    "Topic sentence leads, the middle brings the facts,",
     "Last line draws the step — <em>must therefore</em> — that's the max!",
     "All <em>may</em>, all <em>will</em> — flat as a floor,",
     "Vary the force — that's what the argument's for!"
@@ -7172,7 +7177,7 @@ var LENSES = {
    },
    {
     "move": "Draw a wave in the air: high, lower, high",
-    "says": "Bold topic · evidence · earned ending — a paragraph with shape"
+    "says": "Main claim · evidence · earned ending — a paragraph with shape"
    },
    {
     "move": "Slide a flat hand along, perfectly level, and shake your head",
@@ -7214,8 +7219,8 @@ var LENSES = {
     {
      "label": "can",
      "leaves": [
-      "able = has the stamina",
-      "authorised = a rule"
+      "possible: can be cold in December",
+      "allowed: you can go now"
      ]
     },
     {
@@ -7302,7 +7307,7 @@ var LENSES = {
   ]
  },
  "t8l1s2": {
-  "thai": "must เป็นการคาดเดาหรือข้อบังคับ? หลักมีข้อเดียว: ข้อบังคับต้องมี “คนที่ทำตามได้” และ “การกระทำที่ทำได้จริง” ส่วนการคาดเดาไม่ต้องมีอะไรเลย ดังนั้นถ้ากริยาบอกสภาวะ (must know) เป็น perfect ที่จบไปแล้ว (must have left) หรือเป็น progressive ที่กำลังเกิดอยู่ (must be waiting) จะเป็นการคาดเดาเสมอ เพราะสั่งให้ใคร “รู้” หรือ “ทำไปแล้ว” ไม่ได้ ประธานที่ไม่ใช่ผู้กระทำ เช่น สินค้าหรือฝน ก็สั่งไม่ได้ แต่ถ้ามีเส้นตายในอนาคตกับการกระทำที่คนควบคุมได้ จะเป็นข้อบังคับ เช่น You must be there by four. (เธอต้องไปถึงที่นั่นภายในสี่โมง) ส่วน passive ที่ระบุผู้กระทำ เช่น must be signed by the applicant ยังเป็นกฎได้ ถ้าเป็นคน + การกระทำปกติ + ไม่มีเบาะแสอื่น เช่น Dr Suwan must supervise the night shift. ประโยคเปิดได้ทั้งสองความหมาย ต้องดูบริบท",
+  "thai": "must เป็นการคาดเดาหรือข้อบังคับ? หลักมีข้อเดียว: ข้อบังคับต้องมี “คนที่ทำตามได้” และ “การกระทำที่ทำได้จริง” ส่วนการคาดเดาไม่ต้องมีอะไรเลย ดังนั้นถ้ากริยาบอกสภาวะ (must know) เป็น perfect ที่จบไปแล้ว (must have left) หรือเป็น progressive ที่กำลังเกิดอยู่ (must be waiting) มักจะเป็นการคาดเดา เพราะสั่งให้ใคร “รู้” หรือ “ทำไปแล้ว” ไม่ได้ (แต่นี่เป็นแค่เบาะแส ไม่ใช่กฎตายตัว เช่น You must be quiet. หรือ Applicants must have completed Year 12. เป็นกฎ) ประธานที่ไม่ใช่ผู้กระทำ เช่น สินค้าหรือฝน ก็สั่งไม่ได้ แต่ถ้ามีเส้นตายในอนาคตกับการกระทำที่คนควบคุมได้ จะเป็นข้อบังคับ เช่น You must be there by four. (เธอต้องไปถึงที่นั่นภายในสี่โมง) ส่วน passive ที่ระบุผู้กระทำ เช่น must be signed by the applicant ยังเป็นกฎได้ ถ้าเป็นคน + การกระทำปกติ + ไม่มีเบาะแสอื่น เช่น Dr Suwan must supervise the night shift. ประโยคเปิดได้ทั้งสองความหมาย ต้องดูบริบท",
   "analogy": {
    "title": "The monitor's rule board",
    "text": "The class monitor can only write rules on the board that a person could actually obey: <em>“Everyone must hand in phones by 8:00.”</em> She can't write <s>Everyone must know the answer</s>, <s>Everyone must have finished last week</s>, or <s>The rain must stop by lunch</s> — nobody can obey those. So test any <em>must</em>: could it go on her board? If not, it isn't a rule. It's a deduction."
@@ -7379,7 +7384,7 @@ var LENSES = {
      "text": "Bot, a rule needs someone who can obey it. Fah can't choose to know, and rain obeys nobody. Nan was guessing."
     }
    ],
-   "moral": "If nobody could obey it — a state, a finished event, something already happening, or a subject like rain — the <em>must</em> is a deduction; a person, an action and a deadline make it a rule."
+   "moral": "If nobody could obey it — a state, a finished event, something already happening, or a subject like rain — the <em>must</em> is usually a deduction; a person, an action and a deadline usually make it a rule."
   },
   "chant": {
    "title": "Who Can Obey?",
@@ -7388,7 +7393,7 @@ var LENSES = {
     "A rule needs a person with a job to do —",
     "If no one can obey it, it's a guess right through!",
     "<em>Must know</em>, <em>must have left</em>, <em>must be waiting</em> there:",
-    "State, done, happening — guesses, I swear!",
+    "State, done, happening — usually a guess, I'd swear!",
     "A shipment, the weather can't take a command,",
     "But “by four o'clock” — that's a rule, understand?",
     "A person plus an action, no clue in sight?",
@@ -7398,7 +7403,7 @@ var LENSES = {
   "moves": [
    {
     "move": "Freeze like a statue",
-    "says": "States, finished things, things already happening — you can't order them. Guess!"
+    "says": "States, finished things, things already happening — usually not orders. Guess!"
    },
    {
     "move": "Tap your wrist like a watch",
@@ -7435,14 +7440,14 @@ var LENSES = {
      "label": "Leave it",
      "leaves": [
       "film review, blog, news",
-      "staff handbook = rules"
+      "chats with friends"
      ]
     },
     {
      "label": "Fix it",
      "leaves": [
       "contracts, safety notices",
-      "protocols, exam rules"
+      "handbooks, protocols, exam rules"
      ]
     },
     {
@@ -7712,7 +7717,7 @@ var LENSES = {
    "panels": [
     {
      "who": "Mai",
-     "text": "(looking at an empty desk) Nan's bag isn't here. She <em>must</em> be sick."
+     "text": "(looking at an empty desk) Nan's never late, and her mum just phoned the office. She <em>must</em> be sick."
     },
     {
      "who": "Fah",
@@ -7747,8 +7752,8 @@ var LENSES = {
     "<em>Must</em> for a guess? It stays — that's true!",
     "<em>Would</em>, <em>could</em>, <em>might</em>, <em>should</em>, <em>ought to</em>, <em>had better</em> —",
     "Already back, they don't change a letter.",
-    "Still true today? You can leave it alone —",
-    "Only step back when the moment has gone."
+    "Still true today? Step back or leave it alone —",
+    "Both are correct, so the choice is your own."
    ]
   },
   "moves": [
@@ -7780,7 +7785,7 @@ var LENSES = {
    "title": "Three VIP wristbands",
    "text": "At the concert's VIP door, only three wristbands get you in without a ticket called <em>if</em>: <strong>should</strong>, <strong>were</strong> and <strong>had</strong>. <em>Did</em>, <em>was</em> and <em>would</em> get turned away every time. And there's a dress code inside: formal only, so no contractions — <em>Had they not</em>, never <s>Hadn't they</s>. That's why you see this door in letters and contracts, not in your LINE chats."
   },
-  "trap": "Students treat this like making a question and invert any auxiliary: <s>Did the council act sooner, …</s>, <s>Was the contract to be terminated, …</s>, or contract the negative, <s>Hadn't the surveyor noticed, …</s>. They also mix the patterns: <s>Were the ministry decide</s>, <s>Should the ministry to decide</s>. Dodge: check the wristband and its partner — <em>should</em> + bare verb → <em>will</em>; <em>were</em> + <em>to</em> + verb → <em>would</em>; <em>had</em> + participle → <em>would have</em>.",
+  "trap": "Students treat this like making a question and invert any auxiliary: <s>Did the council act sooner, …</s>, <s>Was the contract to be terminated, …</s>, or contract the negative, <s>Hadn't the surveyor noticed, …</s>. They also mix the patterns: <s>Were the ministry decide</s>, <s>Should the ministry to decide</s>. Dodge: check the wristband and its partner — <em>should</em> + bare verb → <em>will</em>; <em>were</em> + <em>to</em> + verb (or <em>Were I you</em>) → <em>would</em>; <em>had</em> + participle → <em>would have</em>.",
   "map": {
    "center": "If-less conditionals",
    "branches": [
@@ -7795,7 +7800,7 @@ var LENSES = {
      "label": "Were",
      "leaves": [
       "Were the plan to fail, …",
-      "+ to + verb → would"
+      "+ to + verb / Were I you → would"
      ]
     },
     {
@@ -7897,7 +7902,7 @@ var LENSES = {
    "title": "Mint the predictor",
    "text": "Mint predicts everything. Someone knocks: <em>“That'll be the Grab rider.”</em> (now). Ice cream in the sun: <em>“It'll melt.”</em> (always). Fah again: <em>“She will leave her charger on the desk.”</em> (a habit). The canteen: <em>“They'll run out of mango sticky rice by noon.”</em> (the future). One word, one job — <strong>predicting</strong>. Only one of those four predictions is about later."
   },
-  "trap": "Thai <em>จะ</em> feels like a future marker, so students treat <em>will</em> as a future tense. They write <s>If it will rain tomorrow</s> because of “ถ้าพรุ่งนี้ฝนจะตก”, and read <em>the polymer will creep</em> as a forecast instead of a property. Tests offer “it refers to events not yet happened” as the reason <em>will</em> is a modal. Dodge: ask “when?” — if the answer is <em>now</em>, <em>always</em> or <em>whenever</em>, it isn't future.",
+  "trap": "Thai <em>จะ</em> feels like a future marker, so students treat <em>will</em> as a future tense. They write <s>If it will rain tomorrow</s> because of “ถ้าพรุ่งนี้ฝนจะตก”, and read <em>the polymer will creep</em> as a forecast instead of a property. Tests offer “it refers to events that have not happened yet” as the reason <em>will</em> is a modal. Dodge: ask “when?” — if the answer is <em>now</em>, <em>always</em> or <em>whenever</em>, it isn't future.",
   "map": {
    "center": "Will = prediction",
    "branches": [
@@ -8009,7 +8014,7 @@ var LENSES = {
   ]
  },
  "t8l3s2": {
-  "thai": "modal บางตัวกำลัง “หดหาย” และเหลือที่ใช้แคบลงเรื่อยๆ shall เหลือสองที่ คือในสัญญาหรือภาษากฎหมาย เช่น The tenant shall pay the rent monthly. (ผู้เช่าต้องชำระค่าเช่ารายเดือน) และในคำถามเสนอหรือชวน เช่น Shall I open the window? / Shall we start? ส่วน need และ dare เป็นได้ทั้ง modal และกริยาธรรมดา แบบ modal ใช้ได้เฉพาะในประโยคปฏิเสธและคำถาม (หรือกับ hardly) ไม่เติม -s ไม่ใช้ do และตามด้วยกริยารูปเดิมไม่มี to เช่น He needn't wait. / Need I say more? แบบกริยาธรรมดาใช้ do เติม -s และมี to เช่น He doesn't need to wait. ห้ามผสมสองแบบ เช่น He doesn't need wait หรือ He needs not wait ส่วน ought to เป็น modal ตัวเดียวที่ยังมี to ติดอยู่ รูปคำถาม Ought I to go? ถูกต้องแต่ฟังแข็งมาก คนส่วนใหญ่จึงใช้ Should I go? แทน",
+  "thai": "modal บางตัวกำลัง “หดหาย” และเหลือที่ใช้แคบลงเรื่อยๆ shall เหลือสองที่ คือในสัญญาหรือภาษากฎหมาย เช่น The tenant shall pay the rent monthly. (ผู้เช่าต้องชำระค่าเช่ารายเดือน) และในคำถามเสนอหรือชวน เช่น Shall I open the window? / Shall we start? ส่วน need และ dare เป็นได้ทั้ง modal และกริยาธรรมดา แบบ modal ใช้ได้เฉพาะในประโยคปฏิเสธและคำถาม (หรือกับ hardly) ไม่เติม -s ไม่ใช้ do และตามด้วยกริยารูปเดิมไม่มี to เช่น He needn't wait. / Need I say more? แบบกริยาธรรมดาใช้ do เติม -s และมี to เช่น He doesn't need to wait. สำหรับ need ห้ามผสมสองแบบ เช่น He doesn't need wait หรือ He needs not wait (แต่ dare ผสมได้ เช่น She doesn't dare ask ถูกต้อง) ส่วน ought to เป็น modal ตัวเดียวที่ยังมี to ติดอยู่ รูปคำถาม Ought I to go? ถูกต้องแต่ฟังแข็งมาก คนส่วนใหญ่จึงใช้ Should I go? แทน",
   "analogy": {
    "title": "The old shops on your soi",
    "text": "Every soi used to have a little family grocery. Now the 7-Eleven sells almost everything, and the old shops survive by doing one thing well. <em>Shall</em> now only does contracts and <em>“Shall we…?”</em>. Modal <em>need</em> and <em>dare</em> only open for negatives and questions. And <em>ought to</em> is slowly losing customers to <em>should</em> — the 7-Eleven next door."
@@ -8090,7 +8095,7 @@ var LENSES = {
      "text": "Bot: say “Shall we go?” — save the other <em>shall</em> for contracts. And pick one <em>need</em>: “You needn't wait” or “You don't need to wait.”"
     }
    ],
-   "moral": "<em>Shall</em>, modal <em>need</em>, <em>dare</em> and <em>ought to</em> live in narrow corners — use them there, and never mix the modal pattern with the ordinary-verb pattern."
+   "moral": "<em>Shall</em>, modal <em>need</em>, <em>dare</em> and <em>ought to</em> live in narrow corners — use them there, and never mix the modal and ordinary-verb patterns of <em>need</em>."
   },
   "chant": {
    "title": "The Shrinking Edges",
@@ -8130,7 +8135,7 @@ var LENSES = {
   ]
  },
  "t8l3s3": {
-  "thai": "ในบทความหนึ่งเรื่อง ความมั่นใจของผู้เขียนไม่ได้คงที่ แต่เปลี่ยนไปทีละประโยค ผู้อ่านต้องตามให้ทันว่าความมั่นใจขึ้นหรือลงตรงไหน และเป็นความมั่นใจของใคร ให้ดูสี่อย่าง: หนึ่ง modal อยู่ระดับไหน สอง เป็นความเห็นของใคร สาม มีคำลดน้ำหนักหรือคำเน้นไหม เช่น may well, arguably, clearly และสี่ ประโยคที่ไม่มี modal เลย ซึ่งแสดงความมั่นใจสูงสุดของผู้เขียน ข้อผิดพลาดที่พบบ่อยคือคิดว่าความมั่นใจของคนที่ถูกอ้างถึงเป็นของผู้เขียน เช่น Ministers insist the scheme will cut waiting times. (รัฐมนตรียืนกรานว่าโครงการจะลดเวลารอคิวได้) คำว่า insist หรือ claim บอกเป็นนัยว่าผู้เขียนไม่ได้เห็นด้วย ส่วน show, find หรือ establish แสดงว่าผู้เขียนยอมรับ และเมื่อเจอ may well … but … จุดยืนที่แท้จริงของผู้เขียนอยู่หลัง but",
+  "thai": "ในบทความหนึ่งเรื่อง ความมั่นใจของผู้เขียนไม่ได้คงที่ แต่เปลี่ยนไปทีละประโยค ผู้อ่านต้องตามให้ทันว่าความมั่นใจขึ้นหรือลงตรงไหน และเป็นความมั่นใจของใคร ให้ดูสี่อย่าง: หนึ่ง modal อยู่ระดับไหน สอง เป็นความเห็นของใคร สาม มีคำลดน้ำหนักหรือคำเน้นไหม เช่น may well, arguably, clearly และสี่ ประโยคที่ไม่มี modal เลย ซึ่งแสดงความมั่นใจสูงสุดของผู้เขียน ข้อผิดพลาดที่พบบ่อยคือคิดว่าความมั่นใจของคนที่ถูกอ้างถึงเป็นของผู้เขียน เช่น Ministers insist the scheme will cut waiting times. (รัฐมนตรียืนกรานว่าโครงการจะลดเวลารอคิวได้) คำว่า insist หรือ claim บอกเป็นนัยว่าผู้เขียนเว้นระยะ ไม่ได้รับรองข้อความนั้นเอง ส่วน show, find หรือ establish แสดงว่าผู้เขียนยอมรับ และเมื่อเจอ may well … but … จุดยืนที่แท้จริงของผู้เขียนอยู่หลัง but",
   "analogy": {
    "title": "The sports-day group chat",
    "text": "In the sports-day chat, Pim posts: <em>“Nan says Red will definitely win.”</em> That's Nan's confidence, not Pim's. Then Pim writes: <em>“Red may well win the relay, but Blue has the best sprinters.”</em> Her real view is after <em>but</em>. Finally: <em>“Blue won all three races last year.”</em> No <em>maybe</em>, no <em>says</em> — that's Pim at full volume. Reading a passage is following one voice through the chat."
@@ -8247,7 +8252,7 @@ var LENSES = {
   ]
  },
  "t9l1s1": {
-  "thai": "ในประโยคบอกเล่า have to, must และ need to แปลว่า “ต้อง” เหมือนกัน แต่พอเป็นประโยคปฏิเสธ ความหมายจะแยกเป็นสองฝั่งตรงข้ามกันเลย ฝั่งแรกคือ don't have to, don't need to และ needn't แปลว่า “ไม่จำเป็นต้อง” จะทำหรือไม่ทำก็ได้ อีกฝั่งคือ mustn't, can't และ aren't allowed to แปลว่า “ห้าม” เพราะมีกฎไม่ให้ทำ เช่น You don't have to bring a coat. (ไม่ต้องเอาเสื้อโค้ทมาก็ได้) แต่ You mustn't feed the animals. (ห้ามให้อาหารสัตว์) คนไทยมักคิดว่า “ไม่ต้อง” คือ mustn't ซึ่งทำให้ความหมายกลับด้าน วิธีเช็กง่าย ๆ คือลองเติม …but you can if you like ถ้าฟังขึ้นแปลว่าเป็น “ไม่จำเป็น” นอกจากนี้ have to มักเป็นกฎที่คนอื่นตั้ง ส่วน must มักเป็นสิ่งที่เราตั้งใจเอง หรือเป็นกฎที่เขียนไว้ในป้ายประกาศ",
+  "thai": "ในประโยคบอกเล่า have to, must และ need to แปลว่า “ต้อง” เหมือนกัน แต่พอเป็นประโยคปฏิเสธ ความหมายจะแยกเป็นสองฝั่งตรงข้ามกันเลย ฝั่งแรกคือ don't have to, don't need to และ needn't แปลว่า “ไม่จำเป็นต้อง” จะทำหรือไม่ทำก็ได้ อีกฝั่งคือ mustn't, can't และ aren't allowed to แปลว่า “ห้าม” เพราะมีกฎไม่ให้ทำ เช่น You don't have to bring a coat. (ไม่ต้องเอาเสื้อโค้ทมาก็ได้) แต่ You mustn't feed the animals. (ห้ามให้อาหารสัตว์) คนไทยมักคิดว่า “ไม่ต้อง” คือ mustn't ซึ่งทำให้ความหมายกลับด้าน วิธีเช็กง่าย ๆ คือลองเติม …but you can if you like ถ้าฟังขึ้นแปลว่าเป็น “ไม่จำเป็น” นอกจากนี้ ในประโยคบอกเล่า must มักใช้เมื่อผู้พูดเป็นเจ้าของหรือรับรองข้อบังคับนั้นเอง เช่น เราตั้งใจเอง ครูหรือพ่อแม่เป็นคนสั่ง หรือป้ายประกาศของโรงเรียน ส่วน have to ใช้เมื่อผู้พูดเล่าต่อข้อบังคับที่มาจากที่อื่น เช่น กฎที่คนอื่นตั้ง หรือสถานการณ์บังคับ นี่เป็นแนวโน้มในภาษาอังกฤษแบบบริติช ไม่ใช่กฎตายตัว ถ้าไม่แน่ใจ ใช้ have to ได้เสมอ",
   "analogy": {
    "title": "Green sign, red sign",
    "text": "At the canteen there are two signs. Green: <em>You don't have to pay cash — phone pay is fine.</em> That's a free choice. Red: <em>You mustn't take trays out of the canteen.</em> That's a rule. Without <em>not</em>, <em>have to</em> and <em>must</em> say the same thing. Add <em>not</em> and they split: <em>don't have to</em> stays green, <em>mustn't</em> turns red."
@@ -8259,8 +8264,8 @@ var LENSES = {
     {
      "label": "Positive",
      "leaves": [
-      "have to = others' rule",
-      "must = my idea or a sign",
+      "have to = passing a rule on",
+      "must = I say so (me, teacher, notice)",
       "need to = it's necessary"
      ]
     },
@@ -8355,7 +8360,7 @@ var LENSES = {
    },
    {
     "move": "Point at someone else, then tap your own chest",
-    "says": "<em>Have to</em> = their rule… <em>must</em> = my own idea!"
+    "says": "<em>Have to</em> = I'm passing on a rule… <em>must</em> = I say so (me, a teacher, the school notice)!"
    },
    {
     "move": "Raise your hand to ask, then shake your head",
@@ -8402,7 +8407,7 @@ var LENSES = {
      ]
     },
     {
-     "label": "Negatives",
+     "label": "Form traps",
      "leaves": [
       "'d better not + verb",
       "✗ hadn't better",
@@ -8815,7 +8820,7 @@ var LENSES = {
   "thai": "needn't have + V3 (กริยาช่องที่ 3) แปลว่า “ทำไปแล้ว แต่จริง ๆ ไม่จำเป็นต้องทำเลย” เช่น You needn't have bought me a present. But thank you! (ไม่เห็นต้องซื้อของขวัญมาให้เลย แต่ก็ขอบคุณนะ) ส่วน didn't need to + V1 บอกแค่ว่า “ไม่จำเป็น” ไม่ได้บอกว่าทำหรือไม่ได้ทำ ดังนั้นถ้าเรื่องนั้นไม่ได้เกิดขึ้น ให้ใช้ didn't need to ห้ามใช้ needn't have ถ้าจะบอกว่าในอดีตควรทำแต่ไม่ได้ทำ ใช้ should have หรือ ought to have + V3 เช่น I should have been more careful with my money. (น่าจะระวังเรื่องเงินมากกว่านี้) และ shouldn't have + V3 แปลว่า “ไม่น่าทำเลย” คือทำไปแล้วและรู้สึกเสียใจ ระวังรูปด้วย หลัง modal ต้องตามด้วย have + V3 เสมอ และ ought ต้องมี to",
   "analogy": {
    "title": "Three friends, one gate",
-   "text": "Three friends think they're late for school. Ploy takes a Grab, but the gate is still open for twenty minutes: <em>I needn't have taken a Grab</em> — she did, and it wasn't necessary. Fah checks the time and doesn't rush: <em>I didn't need to rush.</em> Mint misses the bus and arrives late: <em>I should have left earlier.</em>"
+   "text": "Three friends think they're late for school. Ploy takes a Grab, but the gate stays open for another twenty minutes: <em>I needn't have taken a Grab</em> — she did, and it wasn't necessary. Fah checks the time and doesn't rush: <em>I didn't need to rush.</em> Mint misses the bus and arrives late: <em>I should have left earlier.</em>"
   },
   "trap": "Thai ไม่จำเป็นต้อง covers both, so students choose <em>needn't have</em> for something that never happened. Tests hide the clue in the next sentence (“so we didn't”, “I paid for them myself”), and that clue rules out <em>needn't have</em>. Others write <s>ought have</s> or <s>shouldn't had</s>. Dodge: ask “Did it happen?” Yes, but it wasn't necessary → <em>needn't have done</em>. No → <em>didn't need to do</em>.",
   "map": {
@@ -8976,23 +8981,23 @@ var LENSES = {
    "panels": [
     {
      "who": "Fah",
-     "text": "Is that Tom's car outside? He's only fifteen!"
+     "text": "Is that Nan's car outside? She's only fifteen!"
     },
     {
      "who": "Nong Bot",
-     "text": "Beep! Calculating… That <s>mustn't</s> be his car!"
+     "text": "Beep! Calculating… That <s>mustn't</s> be her car!"
     },
     {
      "who": "Pim",
-     "text": "Wait — is there a new law? Who banned his car?"
+     "text": "Wait — is there a new law? Who banned her car?"
     },
     {
      "who": "T.Chris",
-     "text": "No law, Bot. You're 90% sure it's <strong>not</strong> his: <em>It <strong>can't</strong> be his car.</em> <em>Mustn't</em> is for rules, not guesses."
+     "text": "No law, Bot. You're 90% sure it's <strong>not</strong> hers: <em>It <strong>can't</strong> be her car.</em> <em>Mustn't</em> is for rules, not guesses."
     },
     {
      "who": "Nong Bot",
-     "text": "Recalculating… It <em>can't</em> be Tom's. It <em>must</em> be his dad's! Beep!"
+     "text": "Recalculating… It <em>can't</em> be Nan's. It <em>must</em> be her dad's! Beep!"
     }
    ],
    "moral": "In a guess, <em>must</em> = 90% yes, <em>may</em> / <em>might</em> / <em>could</em> = 50%, <em>can't</em> = 90% no — never <em>mustn't</em>."
@@ -9089,7 +9094,7 @@ var LENSES = {
    "panels": [
     {
      "who": "Ploy",
-     "text": "Mai's trainers are covered in mud. Where has she been?"
+     "text": "Mai's trainers are covered in mud — and the park path is the only muddy way home."
     },
     {
      "who": "Nong Bot",
@@ -9222,11 +9227,11 @@ var LENSES = {
     },
     {
      "who": "Nong Bot",
-     "text": "Got it! The last piece vanished ten minutes ago, but Dad left an hour ago. He <em>can't have eaten</em> it. Mint <em>must have eaten</em> it!"
+     "text": "Got it! The last piece vanished ten minutes ago, but Dad left an hour ago. He <em>can't have eaten</em> it. And Mint has chocolate on her face — Mint <em>must have eaten</em> it!"
     },
     {
      "who": "Mint",
-     "text": "(chocolate all over her face) …No comment."
+     "text": "(wiping her face) …No comment."
     }
    ],
    "moral": "Every past guess is modal + <em>have</em> + V3 — and the evidence chooses the modal: <em>must have</em> for yes, <em>can't have</em> for no."
@@ -9501,12 +9506,12 @@ var LENSES = {
   ]
  },
  "t10l1s3": {
-  "thai": "ในบทสนทนา must และ can't มักไม่ได้หมายถึงกฎ แต่เป็นการคาดเดาว่าผู้พูดมั่นใจแค่ไหน must be = เกือบแน่ใจว่าใช่ might be หรือ could be = อาจจะใช่ can't be = เกือบแน่ใจว่าไม่ใช่ ถ้าเดาเรื่องในอดีตให้เติม have + V3 เช่น She must have forgotten. (เธอต้องลืมแน่ ๆ) ห้ามใช้ mustn't กับการคาดเดา เพราะ mustn't คือการห้าม และ should have ก็ไม่ใช่การคาดเดา ให้ดูหลักฐานในบรรทัดก่อนและหลังช่องว่าง ถ้าหลักฐานชัดมาก เช่น มีชื่อเขียนอยู่บนฝาขวด ใช้ must ถ้าหลักฐานค้าน ใช้ can't นอกจากนี้ stance marker ต้องเข้ากับระดับความมั่นใจด้วย เช่น Apparently = ได้ยินมาจากคนอื่น As far as I know = เท่าที่ฉันรู้",
+  "thai": "ในบทสนทนา must และ can't มักไม่ได้หมายถึงกฎ แต่เป็นการคาดเดาว่าผู้พูดมั่นใจแค่ไหน must be = เกือบแน่ใจว่าใช่ might be หรือ could be = อาจจะใช่ can't be = เกือบแน่ใจว่าไม่ใช่ ถ้าเดาเรื่องในอดีตให้เติม have + V3 เช่น She must have forgotten. (เธอต้องลืมแน่ ๆ) ห้ามใช้ mustn't กับการคาดเดา เพราะ mustn't คือการห้าม ส่วน should have ส่วนใหญ่หมายถึง “ควรทำแต่ไม่ได้ทำ” หรือ “น่าจะ…แล้วตามที่คาดไว้” เช่น The parcel should have arrived by now. ไม่ใช่การเดาจากหลักฐานแบบ must have ให้ดูหลักฐานในบรรทัดก่อนและหลังช่องว่าง ถ้าหลักฐานชัดมาก เช่น มีชื่อเขียนอยู่บนฝาขวด ใช้ must ถ้าหลักฐานค้าน ใช้ can't นอกจากนี้ stance marker ต้องเข้ากับระดับความมั่นใจด้วย เช่น Apparently = ได้ยินมาจากคนอื่น As far as I know = เท่าที่ฉันรู้",
   "analogy": {
    "title": "The Grab driver's dot",
    "text": "Your Grab app shows the car outside your soi: <em>He must be here.</em> The map shows him stuck on Sukhumvit: <em>He can't be here yet.</em> The dot has frozen: <em>He might be close.</em> The order has vanished: <em>He must have cancelled.</em> Your guess follows <strong>what the screen shows</strong>, never what you hope."
   },
-  "trap": "Thai learners meet <em>must</em> as a rule first, so the negative they reach for is <em>mustn't</em> — but the opposite of a <em>must</em> guess is <em>can't</em>. TCAS also puts <em>should have</em> beside <em>must have</em>: the same shape, but it says what was right to do, not what probably happened. And it pairs strong evidence with a weak <em>might</em>. Dodge: underline the evidence, rate it strong yes, maybe or strong no, then choose.",
+  "trap": "Thai learners meet <em>must</em> as a rule first, so the negative they reach for is <em>mustn't</em> — but the opposite of a <em>must</em> guess is <em>can't</em>. TCAS also puts <em>should have</em> beside <em>must have</em>: the same shape, but it usually says what was right to do (or what was expected), not what the evidence shows. And it pairs strong evidence with a weak <em>might</em>. Dodge: underline the evidence, rate it strong yes, maybe or strong no, then choose.",
   "map": {
    "center": "How sure is she?",
    "branches": [
@@ -9534,10 +9539,10 @@ var LENSES = {
      ]
     },
     {
-     "label": "Not guesses",
+     "label": "Not evidence-based guesses",
      "leaves": [
       "mustn't = a rule",
-      "should have = right thing"
+      "should have = right thing / expected"
      ]
     },
     {
@@ -9614,7 +9619,7 @@ var LENSES = {
   ]
  },
  "t10l2s1": {
-  "thai": "ข้อ Text Completion มักให้ตัวเลือกเป็นกริยาตัวเดียวกันสี่รูป ให้ถามสองคำถามตามลำดับ ข้อแรก ประธานเป็นผู้ทำหรือผู้ถูกกระทำ ถ้าถูกกระทำต้องใช้ passive ข้อสอง เป็นเรื่องของเวลาไหน ถ้าเป็นปัจจุบันหรืออนาคตใช้ modal + be + V3 เช่น must be checked ถ้าเป็นอดีตใช้ modal + have been + V3 เช่น should have been reported (ควรได้รับการรายงาน แต่ไม่มีใครรายงาน) หรือ can't have been sent (ไม่น่าจะถูกส่งออกไป) หลัง need to, ought to และ is expected to ใช้ to be + V3 เช่น needs to be identified กับดักที่พบบ่อยคือตัวเลือกที่เวลาถูกแต่เป็น active หรือเป็น passive แต่เวลาผิด อย่าลืมหาผู้กระทำซึ่งมักอยู่ในอีกประโยคหนึ่ง",
+  "thai": "ข้อ Text Completion มักให้ตัวเลือกเป็นกริยาตัวเดียวกันสี่รูป ให้ถามสองคำถามตามลำดับ ข้อแรก ประธานเป็นผู้ทำหรือผู้ถูกกระทำ ถ้าถูกกระทำต้องใช้ passive ข้อสอง เป็นเรื่องของเวลาไหน ถ้าเป็นปัจจุบันหรืออนาคตใช้ modal + be + V3 เช่น must be checked ถ้าเป็นอดีตใช้ modal + have been + V3 เช่น should have been reported (ควรได้รับการรายงาน แต่ไม่มีใครรายงาน) หรือ can't have been sent (ไม่มีทางถูกส่งออกไปแล้วแน่ ๆ) หลัง need to, ought to และ is expected to ใช้ to be + V3 เช่น needs to be identified กับดักที่พบบ่อยคือตัวเลือกที่เวลาถูกแต่เป็น active หรือเป็น passive แต่เวลาผิด อย่าลืมหาผู้กระทำซึ่งมักอยู่ในอีกประโยคหนึ่ง",
   "analogy": {
    "title": "The Shopee parcel",
    "text": "A Shopee parcel never sends itself: somebody sends it, so the parcel always takes <em>be</em> + V3. The shop promises delivery within three days — it <em>must be delivered</em> by Friday. The return box is still by your door after a week — it <em>should have been sent</em> back already. First ask <strong>who does the job</strong>, then check the date."
@@ -9663,27 +9668,27 @@ var LENSES = {
    ]
   },
   "story": {
-   "title": "The Self-Checking Computer",
+   "title": "The Self-Fixing Projector",
    "panels": [
     {
      "who": "Nan",
-     "text": "The class computer has a virus again!"
+     "text": "The classroom projector is broken again!"
     },
     {
      "who": "Nong Bot",
-     "text": "It <s>must check</s> itself. Beep. Computer, check yourself!"
+     "text": "It <s>must fix</s> itself. Beep. Projector, fix yourself!"
     },
     {
      "who": "Mai",
-     "text": "Bot, a computer can't check itself. Somebody has to check it."
+     "text": "Bot, a projector can't fix itself. Somebody has to fix it."
     },
     {
      "who": "Nong Bot",
-     "text": "Then it must be checked. Beep. And it <s>should have checked</s> last month."
+     "text": "Then it must be fixed. Beep. And it <s>should have fixed</s> last month."
     },
     {
      "who": "T.Chris",
-     "text": "Half right, Bot. It <em>should have been checked</em> last month — by a person. The computer receives the action, so it needs <em>be</em> + V3."
+     "text": "Half right, Bot. It <em>should have been fixed</em> last month — by a technician. The projector receives the action, so it needs <em>be</em> + V3."
     }
    ],
    "moral": "When the subject receives the action, use modal + <em>be</em> + V3 for now, and modal + <em>have been</em> + V3 for the past."
@@ -9722,12 +9727,12 @@ var LENSES = {
   ]
  },
  "t10l2s2": {
-  "thai": "หลังคำที่บอกว่า “อะไรควรจะเกิดขึ้น” เช่น recommend, suggest, insist, demand และ It is essential/vital that ประโยค that ต้องใช้กริยารูปพื้นฐาน (V1 ไม่เติม -s) กับทุกประธานและทุกเวลา เช่น The coach insisted that every swimmer arrive by six. หรือจะใส่ should หน้ากริยาก็ได้ ห้ามใช้ will หรือ would ห้ามเติม -s และห้ามมี to ถ้าประธานถูกกระทำ ใช้ be + V3 เช่น that the menu be changed ส่วนรูปปฏิเสธใช้ not + V1 โดยไม่ต้องมี do เช่น that the questions not be shared แต่ต้องระวัง ถ้า suggest หรือ insist ใช้รายงานข้อเท็จจริง เช่น The study suggests that teenagers need more sleep. (งานวิจัยชี้ว่าวัยรุ่นต้องการนอนมากขึ้น) ให้ใช้ tense ตามปกติ",
+  "thai": "หลังคำที่บอกว่า “อะไรควรจะเกิดขึ้น” เช่น recommend, suggest, insist, demand และ It is essential/vital that ประโยค that ต้องใช้กริยารูปพื้นฐาน (V1 ไม่เติม -s) กับทุกประธานและทุกเวลา เช่น The coach insisted that every swimmer arrive by six. หรือจะใส่ should หน้ากริยาก็ได้ ห้ามใช้ will หรือ would และห้ามมี to ส่วนรูปเติม -s พบได้ในภาษาพูดแบบบริติช แต่ไม่ใช่คำตอบในข้อสอบ ถ้าประธานถูกกระทำ ใช้ be + V3 เช่น that the menu be changed ส่วนรูปปฏิเสธใช้ not + V1 โดยไม่ต้องมี do เช่น that the questions not be shared แต่ต้องระวัง ถ้า suggest หรือ insist ใช้รายงานข้อเท็จจริง เช่น The study suggests that teenagers need more sleep. (งานวิจัยชี้ว่าวัยรุ่นต้องการนอนมากขึ้น) ให้ใช้ tense ตามปกติ",
   "analogy": {
    "title": "Two notes from the doctor",
    "text": "A doctor at a Bangkok hospital writes two kinds of note. The prescription says what must happen: <em>that the patient rest for three days</em> — a plain verb, no <em>-s</em>, whoever the patient is. The lab report says what is true: <em>The patient has a fever.</em> After <em>recommend</em> or <em>insist</em> you are writing the <strong>prescription</strong>; after <em>The study suggests</em> you are writing the <strong>lab report</strong>."
   },
-  "trap": "Third-person <em>-s</em> took you years to learn, so <em>that every student brings</em> feels right — and <em>will</em> feels right because the plan is in the future. Both are wrong after a trigger + <em>that</em>. The opposite trap is forcing a base form after <em>The data suggest that…</em>, which reports a fact. Dodge: say a silent <em>should</em> before the verb — if the sentence still means the same, use the bare base form.",
+  "trap": "Third-person <em>-s</em> took you years to learn, so <em>that every student brings</em> feels right — it's informal at best; the exam answer is the base form, <em>that every student bring</em>. <em>Will</em> feels right too, because the plan is in the future, but it's wrong after a trigger + <em>that</em>. The opposite trap is forcing a base form after <em>The data suggest that…</em>, which reports a fact. Dodge: say a silent <em>should</em> before the verb — if the sentence still means the same, use the bare base form.",
   "map": {
    "center": "The hidden should",
    "branches": [
@@ -9750,7 +9755,7 @@ var LENSES = {
     {
      "label": "Not here",
      "leaves": [
-      "-s ✗ · to ✗",
+      "to ✗ · -s = informal only",
       "will / would ✗"
      ]
     },
@@ -9779,7 +9784,7 @@ var LENSES = {
     },
     {
      "who": "Nong Bot",
-     "text": "Error! Mai is singular. <s>that Mai rests</s>. Beep. Fixing your grammar…"
+     "text": "Error! Mai is singular. It should be <em>that Mai rests</em>. Beep. Fixing your grammar…"
     },
     {
      "who": "Pim",
@@ -9806,7 +9811,7 @@ var LENSES = {
    "lines": [
     "<em>Recommend</em>, <em>suggest</em>, <em>insist</em>, <em>demand</em> —",
     "A silent <em>should</em> is close at hand.",
-    "No <em>-s</em>, no <em>to</em>, no <em>will</em> in sight:",
+    "No <em>to</em>, no <em>will</em>, no exam <em>-s</em> in sight:",
     "<em>That she be there</em> — the base form's right!",
     "Passive? Add <em>be</em> and V3:",
     "<em>That the menu be changed</em> — easy!",
@@ -9821,7 +9826,7 @@ var LENSES = {
    },
    {
     "move": "Wipe an imaginary -s off the desk",
-    "says": "No <em>-s</em>: <em>that every student bring</em>"
+    "says": "Exam form, no <em>-s</em>: <em>that every student bring</em>"
    },
    {
     "move": "Cross your forearms in an X",
@@ -9834,12 +9839,12 @@ var LENSES = {
   ]
  },
  "t10l2s3": {
-  "thai": "ในประโยคเงื่อนไข modal จะอยู่ในวรรคผลลัพธ์ ไม่อยู่หลัง if เช่น If it rains, the match will be moved indoors. (ไม่ใช่ If it will rain) ถ้าเป็นเรื่องสมมติในปัจจุบันใช้ would, could หรือ might + V1 ถ้าสมมติในอดีตใช้ would, could หรือ might have + V3 และแต่ละวรรคมีเวลาของตัวเอง ถ้าเงื่อนไขเป็นอดีตแต่ผลเป็นปัจจุบัน (มีคำว่า now หรือ today) ให้ใช้ would + V1 เรียกว่า mixed conditional คำว่า unless แปลว่า “ถ้าไม่” จึงใช้กริยาปัจจุบันและไม่ต้องเติม not ซ้ำอีก ภาษาทางการจะตัด if แล้วยกกริยาขึ้นมาไว้หน้าประธาน เช่น Should you need help = If you need help (should ตรงนี้ไม่ได้แปลว่า “ควร”) และ Had it not been for… = ถ้าไม่มี… (ในอดีต)",
+  "thai": "ในประโยคเงื่อนไข will ที่บอกอนาคตจะอยู่ในวรรคผลลัพธ์ ไม่อยู่หลัง if เช่น If it rains, the match will be moved indoors. (ไม่ใช่ If it will rain) ส่วน can หรือ should ใช้หลัง if ได้ เช่น If you can come, … ถ้าเป็นเรื่องสมมติในปัจจุบันใช้ would, could หรือ might + V1 ถ้าสมมติในอดีตใช้ would, could หรือ might have + V3 และแต่ละวรรคมีเวลาของตัวเอง ถ้าเงื่อนไขเป็นอดีตแต่ผลเป็นปัจจุบัน (มีคำว่า now หรือ today) ให้ใช้ would + V1 เรียกว่า mixed conditional คำว่า unless แปลว่า “ถ้าไม่” จึงใช้กริยาปัจจุบันและไม่ต้องเติม not ซ้ำอีก ภาษาทางการจะตัด if แล้วยกกริยาขึ้นมาไว้หน้าประธาน เช่น Should you need help = If you need help (should ตรงนี้ไม่ได้แปลว่า “ควร”) และ Had it not been for… = ถ้าไม่มี… (ในอดีต)",
   "analogy": {
    "title": "Platform and train",
-   "text": "An if-sentence is a BTS trip. The <em>if</em>-clause is the platform where you wait; the result is the train. The modal is the announcement, and it plays only <strong>on the train</strong>: <em>If it rains</em>, <em>we'll stay in</em> — never <em>if it will rain</em>. Each part keeps its own clock, too: if you had caught yesterday's train, you <em>wouldn't be</em> late now."
+   "text": "An if-sentence is a BTS trip. The <em>if</em>-clause is the platform where you wait; the result is the train. Future <em>will</em> is the announcement, and it plays only <strong>on the train</strong>: <em>If it rains</em>, <em>we'll stay in</em> — never <em>if it will rain</em>. Each part keeps its own clock, too: if you had set your alarm last night, you <em>wouldn't be</em> late now."
   },
-  "trap": "Thai uses the same future word in both halves, so <em>if it will rain</em> sounds natural, and students add a second <em>not</em> after <em>unless</em>, which flips the meaning. TCAS also loves the mixed conditional: a past <em>if</em>-clause with <em>now</em> in the result, where the type 3 form is the trap. And formal <em>Should you need…</em> gets misread as advice. Dodge: find the time word in each half, and keep modals out of the condition.",
+  "trap": "Thai uses the same future word in both halves, so <em>if it will rain</em> sounds natural, and students add a second <em>not</em> after <em>unless</em>, which flips the meaning. TCAS also loves the mixed conditional: a past <em>if</em>-clause with <em>now</em> in the result, where the type 3 form is the trap. And formal <em>Should you need…</em> gets misread as advice. Dodge: find the time word in each half, and keep future <em>will</em> out of the condition.",
   "map": {
    "center": "Two clocks in an if",
    "branches": [
@@ -9922,7 +9927,7 @@ var LENSES = {
    "beat": "kick-kick-clap (4/4)",
    "lines": [
     "No <em>will</em> after <em>if</em>, no <em>will</em> after <em>unless</em>,",
-    "The modal rides the result — no more, no less.",
+    "Future <em>will</em> rides the result — no more, no less.",
     "<em>If I had time</em>, I <em>would</em>, I <em>could</em>, I <em>might</em>,",
     "<em>If I'd known</em> before, I'd <em>have</em> got it right.",
     "Past in the <em>if</em>, but <em>now</em> in the rest?",
@@ -9958,7 +9963,7 @@ var LENSES = {
   "thai": "ข่าวและบทความบอกระดับความมั่นใจด้วยคำกริยาช่วย ประโยคที่ใช้กริยาธรรมดาโดยไม่มี modal คือข้อเท็จจริง will คือการคาดการณ์ที่มั่นใจ is likely to และ is expected to คือน่าจะเกิดขึ้น may, might และ could คืออาจจะเกิดขึ้น ส่วน appears to คือหลักฐานตอนนี้ชี้ไปทางนั้น แต่ยังพิสูจน์ไม่ได้ ในคำถามแบบ Which statement is TRUE? กับดักคือตัวเลือกที่ใช้ will หรือ has ทั้งที่บทความเขียนว่า may ให้หาประโยคที่ตัวเลือกพูดถึง ขีดเส้นใต้คำแสดงความมั่นใจ แล้วเลือกตัวเลือกที่มั่นใจ “เท่ากัน” เช่น may cause problems มีความหมายเท่ากับ might cause difficulties ไม่ใช่ will cause problems",
   "analogy": {
    "title": "The weather app",
-   "text": "A weather app never says <em>It will rain at 3 p.m.</em>; it shows a percentage. A news report works the same way: <em>may</em> is the 40% icon, <em>is likely to</em> is 70%, and <em>will</em> is 100%. If a friend posts <em>It WILL rain!</em> after seeing 40%, she has <strong>changed the forecast</strong>. TCAS options do exactly the same thing."
+   "text": "A weather app rarely promises <em>It will rain at 3 p.m.</em>; it shows how likely rain is. A news report works the same way: <em>may</em> is the 'possible' icon, <em>is likely to</em> the 'probable' icon, and <em>will</em> the 'certain' icon. If a friend posts <em>It WILL rain!</em> after seeing 'possible', she has <strong>changed the forecast</strong>. TCAS options do exactly the same thing."
   },
   "trap": "Students read news for topic words, so an option that repeats <em>later start</em> and <em>next May</em> looks true even when it says <em>will</em> and the text says <em>could</em>. The opposite trap turns <em>appears to</em> into <em>proved</em>. A judge item may also want Can't tell, because <em>may</em> neither confirms nor denies <em>will</em>. Dodge: underline the modal in the text, underline the modal in the option, and check they sit on the same rung.",
   "map": {
@@ -9975,7 +9980,7 @@ var LENSES = {
      "label": "Certain",
      "leaves": [
       "will apply",
-      "= 100%"
+      "= sure"
      ]
     },
     {
@@ -10249,7 +10254,7 @@ var LENSES = {
      "text": "Both look back, Bot. A chance existed, it was missed, and the writer thinks that was a mistake. That's criticism."
     }
    ],
-   "moral": "In an opinion piece, <em>could have</em> and <em>should have</em> + V3 criticise a missed chance; they are not ability, guesses or advice."
+   "moral": "In an opinion piece, <em>could have</em> and <em>should have</em> + V3 usually criticise a missed chance — but check the context: <em>could have</em> can also be a guess about the past."
   },
   "chant": {
    "title": "Read the Mood",

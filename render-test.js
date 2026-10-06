@@ -145,6 +145,18 @@ all.forEach(function (item) {
       click(o2[other]);
       if (v2.check().correct) fails.push(item.id + ': option ' + (other + 1) + ' is ALSO marked correct');
     }
+    /* Spot items: click every part in turn. Only `answer` and the parts in
+       `also` may count as right (audit, October 2026). */
+    if (item.type === 'spot') {
+      var oks = [item.answer].concat(item.also || []);
+      item.words.forEach(function (w, wi) {
+        host.innerHTML = '';
+        var v3 = E.mount(item, host);
+        click(host.querySelectorAll('.seg')[wi]);
+        var ok3 = v3.check().correct;
+        if (ok3 !== (oks.indexOf(wi) >= 0)) fails.push(item.id + ': clicking part ' + (wi + 1) + ' is marked ' + (ok3 ? 'right' : 'wrong'));
+      });
+    }
   } catch (e) {
     fails.push(item.id + ' THREW while being answered: ' + e.message);
   }

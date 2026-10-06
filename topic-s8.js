@@ -52,7 +52,7 @@ T8.levels.push({
             '<em>Must</em> can be a firm deduction or a cautious guess, and nothing here chooses.'
           ],
           answer: 2,
-          why: 'The same word serves the epistemic and the deontic domain, so the message may report an inference or relay an instruction, and a reader who acts on the wrong one goes to the wrong place. Option 4 is the near miss: it stays inside the deduction reading and asks how strong it is, but a deducing <em>must</em> always sits at the top of the scale, so there is no cautious reading for it to be confused with. Option 1 is false: a modal plus a bare infinitive refers to now, and past reference goes into the proposition as <em>must have been</em> (Stage 6). Option 2 fails because nothing follows <em>be</em> but a place phrase, so there is no participle for a passive to attach to.' },
+          why: 'The same word serves the epistemic and the deontic domain, so the message may report an inference or relay an instruction, and a reader who acts on the wrong one goes to the wrong place. Option 4 is the near miss: it stays inside the deduction reading and asks how strong it is, but a deducing <em>must</em> always sits at the top of the scale, so there is no cautious reading for it to be confused with. Option 1 is false: <em>must</em> with a bare infinitive refers to now or to the future, and past reference goes into the proposition as <em>must have been</em> (Stage 6). Option 2 fails because nothing follows <em>be</em> but a place phrase, so there is no participle for a passive to attach to.' },
 
         { id: 't8l1s1-2', type: 'judge', tag: 'sys-ambig', level: 'C1',
           given: 'Visitors may use the reading room on production of a day pass.',
@@ -81,7 +81,7 @@ T8.levels.push({
             'That closing the valve is the required procedure, or that it can be expected to be closed by then.'
           ],
           answer: 3,
-          why: '<em>Should</em> is ambiguous in exactly the way <em>must</em> is: deontic weak obligation (Stage 3) against epistemic expectation (Stage 2, <em>should</em> and <em>ought to</em> as expectation). The engineer cannot tell whether the line is an instruction to carry out or a prediction to verify, and those call for different actions. Option 1 offers two times rather than two readings, and both readings look at the same moment anyway. Option 2 is not available at all: <em>the valve</em> is a definite singular and picks out one valve, and a claim about the type would have to read <em>valves of this type</em>. Option 3 is the near miss: an instruction is one of the two readings, but it is paired with a second rule-reading, and <em>should</em> has no permission sense at all — permission would need <em>may</em> or <em>can</em>.' },
+          why: '<em>Should</em> is ambiguous in exactly the way <em>must</em> is: deontic weak obligation (Stage 3) against epistemic expectation (Stage 2, <em>should</em> and <em>ought to</em> as expectation). The engineer cannot tell whether the line is an instruction to carry out or a prediction to verify, and those call for different actions. Option 1 offers two times rather than two readings, and both readings look at the same moment anyway. Option 2 is a question about which valve is meant, not about the modal, and it leaves the modal\'s meaning untouched. Option 3 is the near miss: an instruction is one of the two readings, but it is paired with a second rule-reading, and <em>should</em> has no permission sense at all — permission would need <em>may</em> or <em>can</em>.' },
 
         { id: 't8l1s1-5', type: 'spot', tag: 'sys-ambig', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
@@ -125,7 +125,7 @@ T8.levels.push({
             'Because <em>in secret</em> is an adverbial of manner rather than of time.'
           ],
           answer: 2,
-          why: 'Obligation is about an open choice, and the perfect closes the event before the moment of speaking, so only the epistemic reading survives (Stage 6). Option 1 is false in the plainest way: <em>The committee must approve every change to the timetable</em> is a rule, and collective nouns take duties constantly. Option 2 is the near miss — a stative verb really would force a deduction — but <em>meet</em> is dynamic and entirely controllable, which is why <em>The committee must meet before Friday</em> is a perfectly good requirement; it is the perfect that blocks the reading, not the verb. Option 4 is accurate about the adverbial but irrelevant, since manner adverbials sit comfortably in both domains.' },
+          why: 'Obligation is about an open choice, and here the perfect closes the event before the moment of speaking; with no future deadline for it to look back from (compare the rule <em>The committee must have met by Friday</em>), only the epistemic reading survives (Stage 6). Option 1 is false in the plainest way: <em>The committee must approve every change to the timetable</em> is a rule, and collective nouns take duties constantly. Option 2 is the near miss — a stative verb is a strong cue for deduction, though not a law (<em>Staff must know the fire exits</em>) — but <em>meet</em> is dynamic and entirely controllable, which is why <em>The committee must meet before Friday</em> is a perfectly good requirement; it is the perfect that blocks the reading, not the verb. Option 4 is accurate about the adverbial but irrelevant, since manner adverbials sit comfortably in both domains.' },
 
         { id: 't8l1s2-2', type: 'cloze', tag: 'sys-clues', level: 'C1',
           passage: 'The container was logged out of Laem Chabang on the eleventh and has not been scanned since. It ___(1)___ be sitting in a transit yard somewhere between the port and the depot, because nothing else would account for the silence.\n\nUnder the carrier\'s own terms, every consignment ___(2)___ be scanned at each transfer point, and a missing scan ___(3)___ be reported within forty-eight hours. Neither of those things happened.',
@@ -162,7 +162,7 @@ T8.levels.push({
             'The strength of <em>must</em> compared with <em>should</em>.'
           ],
           answer: 1,
-          why: '<em>Must be doing</em> is deduction about what is happening now (Stage 2): it describes a pattern already under way, and an instruction cannot be issued to be in the middle of something; a rule on this subject would have to read <em>must not under-report</em>. Option 1 is the near miss — a subject that cannot act really would block the obligation reading — but households can act, and <em>Households must declare all income</em> is an ordinary rule. Option 3 measures the size of the effect and is neutral between the domains. Option 4 is about position on the scale, and that scale runs through both domains alike, so it cannot distinguish them.' }
+          why: '<em>Must be doing</em> is the classic signature of deduction about what is happening now (Stage 2), and here there is no time point at which a rule could require the activity to be under way; a rule on this subject would have to read <em>must not under-report</em>. Option 1 is the near miss — a subject that cannot act really would block the obligation reading — but households can act, and <em>Households must declare all income</em> is an ordinary rule. Option 3 measures the size of the effect and is neutral between the domains. Option 4 is about position on the scale, and that scale runs through both domains alike, so it cannot distinguish them.' }
       ]
     },
 
@@ -211,7 +211,7 @@ T8.levels.push({
           items: [
             { text: 'The alarm panel <em>must</em> have been reset overnight.', bin: 'epi' },
             { text: 'Contractors <em>must</em> sign out at the gatehouse before the end of each shift.', bin: 'deo' },
-            { text: 'She <em>can\'t</em> be the duty officer — she is on the rota for Thursday.', bin: 'epi' },
+            { text: 'That <em>can\'t</em> be the duty officer on the phone — she left for the airport an hour ago.', bin: 'epi' },
             { text: 'Passengers <em>may not</em> board without a printed boarding card.', bin: 'deo' },
             { text: 'The soil <em>must</em> be more acidic here than in the lower field.', bin: 'epi' },
             { text: 'Every dose <em>is to be</em> recorded in the ward book.', bin: 'deo' }
@@ -270,20 +270,20 @@ T8.levels.push({
         stem: 'Choose the best option for blank (2).',
         options: ['might', 'must', 'may well', 'can'],
         answer: 1,
-        why: 'The clause sits inside a reported rule — <em>under the council\'s own publication scheme</em> — and a scheme with a deadline imposes a duty, so the slot needs deontic necessity, which <em>must</em> supplies. <em>Might</em> and <em>may well</em> are weak-middle epistemic forms from Stage 2, and either would turn a published obligation into a guess about what the council might get round to. <em>Can</em> stays in the deontic domain but drops from necessity to permission, which would mean the council was merely allowed to publish and could not have missed anything. Blank (1) is the opposite case: there the evidence clause makes a weak epistemic form exactly right.' },
+        why: 'The clause sits inside a reported rule — <em>under the council\'s own publication scheme</em> — and a scheme with a deadline imposes a duty, so the slot needs deontic necessity, which <em>must</em> supplies. <em>Might</em> and <em>may well</em> are weak-middle epistemic forms from Stage 2, and either would turn a published obligation into a guess about what the council might get round to. <em>Can</em> stays in the deontic domain but drops from necessity to permission, which would mean the council was merely allowed to publish and could not have missed anything. Blank (1) is the opposite case: officers offering a guess about their own work take a weak epistemic form, and the <em>though</em>-clause casts doubt even on that.' },
 
       { id: 't8l1ck-3', type: 'spot', tag: 'sys-disambig', level: 'C1',
         stem: 'This clause is from a supply contract. One of the four parts is wrong. Find it.',
         words: ['The supplier can\'t have subcontracted', 'any part of the work', 'without the prior written consent', 'of the purchasing authority.'],
         answer: 0,
         fix: 'The supplier shall not subcontract',
-        why: '<em>Can\'t have done</em> is epistemic: it is a confident deduction that something did not happen, so the clause states a belief where a contract has to impose a prohibition. Contracts use <em>shall not</em> or <em>may not</em>, which are deontic only, and they use the present, because the clause governs conduct still to come. The other three parts are correct: the object, the consent condition and the naming of the authority are all properly built.' },
+        why: '<em>Can\'t have done</em> is epistemic: it is a confident deduction that something did not happen, so the clause states a belief where a contract has to impose a prohibition. Contracts use <em>shall not</em> or <em>may not</em>, which the contractual setting fixes as prohibitions, and they use the present, because the clause governs conduct still to come. The other three parts are correct: the object, the consent condition and the naming of the authority are all properly built.' },
 
       { id: 't8l1ck-4', type: 'judge', tag: 'sys-clues', level: 'C1',
         given: 'The technician must know by now whether the drive can be recovered.',
         stem: 'The speaker is imposing a duty on the technician.',
         answer: 1,
-        why: 'False. <em>Know</em> names a mental state the technician does not take up by choice, and <em>by now</em> measures elapsed time rather than setting a deadline — two clues agreeing that this is a deduction from how much time has passed. A duty would need a controllable action and a real deadline, as in <em>must tell us by four</em>. The answer is not <em>Can\'t tell</em>, because nothing in the sentence leaves the second reading open.' },
+        why: 'False. <em>Know</em> can carry a duty (<em>All staff must know the evacuation route</em>), but <em>by now</em> measures elapsed time rather than setting a deadline, and that settles it as a deduction from how much time has passed. A duty here would need a real deadline, as in <em>must tell us by four</em>. The answer is not <em>Can\'t tell</em>, because nothing in the sentence leaves the second reading open.' },
 
       { id: 't8l1ck-5', type: 'equiv', tag: 'sys-ambig', level: 'C1',
         given: 'Passengers may use the forward lounge.',
@@ -356,7 +356,7 @@ T8.levels.push({
           stem: 'Nobody reported the incident at the time. Put the words in order to criticise that.',
           tiles: ['the', 'incident', 'should', 'have', 'been', 'reported', 'immediately'],
           solution: 'the incident should have been reported immediately',
-          alt: ['the incident should have been immediately reported', 'the incident should immediately have been reported'],
+          alt: ['the incident should have been immediately reported', 'the incident should immediately have been reported', 'the incident should have immediately been reported'],
           why: 'Three slots: <em>should</em> frames the event as what was required, <em>have</em> places it before now, and <em>been reported</em> makes the incident the thing acted on rather than the actor. <em>Should be reported</em> would lose the past and with it the criticism, which is the whole point of the sentence (Stage 6). <em>Should have reported</em> drops the passive and makes the incident the reporter.' },
 
         { id: 't8l2s1-3', type: 'choose', tag: 'sys-chain', level: 'C1+',
@@ -395,7 +395,7 @@ T8.levels.push({
             'It is forced, because <em>shall</em> has no simple present form in legal drafting.'
           ],
           answer: 1,
-          why: 'A perfect after a modal places the event before a reference point, and here that point is 31 March; the duty is therefore to have finished by then rather than to be working then, which is why a contract distinguishes <em>shall have completed</em> from <em>shall be working</em>. Option 1 reads the perfect as plain past time reference, but the date named is in the future and a contract speaks forward. Option 3 is the near miss, and the Level 1 confusion: after <em>must</em> a perfect would indeed signal a deduction, but contractual <em>shall</em> is deontic only, so no deduction is available whatever follows it. Option 4 invents a gap — <em>shall complete the works by 31 March</em> is equally good drafting for a duty of a slightly different shape.' }
+          why: 'A perfect after a modal places the event before a reference point, and here that point is 31 March; the duty is therefore to have finished by then rather than to be working then, which is why a contract distinguishes <em>shall have completed</em> from <em>shall be working</em>. Option 1 reads the perfect as plain past time reference, but the date named is in the future and a contract speaks forward. Option 3 is the near miss, and the Level 1 confusion: after <em>must</em> a perfect usually signals a deduction, unless it looks back from a deadline, as here; and in a contract <em>shall</em> is read as imposing a duty, so a deduction is not the reading any drafter intends. Option 4 invents a gap — <em>shall complete the works by 31 March</em> is equally good drafting for a duty of a slightly different shape.' }
       ]
     },
 
@@ -509,7 +509,7 @@ T8.levels.push({
           stem: '______ the tribunal find in the claimant\'s favour, the costs will be met by the authority.',
           options: ['Were', 'Should', 'Had', 'Would'],
           answer: 1,
-          why: 'Two signs point to <em>should</em>: the bare infinitive <em>find</em>, which only a modal can be followed by, and the <em>will</em>-clause after the comma, which is the pattern for a possibility that is remote but still open. <em>Were</em> is the near miss: it can head an inverted condition, but it would need <em>to find</em> and a <em>would</em>-clause (<em>Were the tribunal to find…, the costs would be met</em>). <em>Had</em> would need the participle <em>found</em> and a <em>would have</em>-clause. <em>Would</em> cannot head an inverted conditional at all.' },
+          why: 'Two signs point to <em>should</em>: the bare infinitive <em>find</em>, which rules out <em>Were</em> (it needs <em>to find</em>) and <em>Had</em> (it needs <em>found</em>), and the <em>will</em>-clause after the comma, which is the pattern for a possibility that is remote but still open. <em>Were</em> is the near miss: it can head an inverted condition, but it would need <em>to find</em> and a <em>would</em>-clause (<em>Were the tribunal to find…, the costs would be met</em>). <em>Had</em> would need the participle <em>found</em> and a <em>would have</em>-clause. <em>Would</em> cannot head an inverted conditional at all.' },
 
         { id: 't8l2s3-2', type: 'order', tag: 'sys-invert', level: 'C1+',
           stem: 'Put the four sentences in the order that makes a coherent paragraph from a formal letter.',
@@ -522,15 +522,10 @@ T8.levels.push({
           why: 'The paragraph moves from what has actually happened, to an open future possibility marked by <em>should</em>, to the consequence of that possibility, and last of all to a closed past alternative marked by <em>had</em>. Three signals fix the order and leave no second reading: the first sentence is the only one with nothing to refer back to, <em>that</em> in the <em>were</em>-sentence can only point at the request for documents, and <em>Finally</em> can only introduce the closing sentence. A student who puts the <em>were</em>-sentence first leaves <em>that</em> with nothing to point at.' },
 
         { id: 't8l2s3-3', type: 'choose', tag: 'sys-invert', level: 'C1+',
-          stem: 'Why does <em>Were the pilot scheme to be extended, the unit cost would fall sharply</em> sound more formal than <em>If the pilot scheme were extended, the unit cost would fall sharply</em>?',
-          options: [
-            'Because <em>were to be extended</em> is more certain than <em>were extended</em>.',
-            'Because inversion is only possible when the condition is passive.',
-            'Because it is an old word order, and dropping <em>if</em> makes the clause more compact.',
-            'Because the inverted form refers to the future, while the <em>if</em> form refers to the present.'
-          ],
+          stem: 'Why does <em>Were the pilot scheme to be extended, the unit cost would fall sharply</em> sound more formal than <em>If the pilot scheme were to be extended, the unit cost would fall sharply</em>?',
+          options: ['Because the inverted form presents the extension as more likely than the <em>if</em> form does.', 'Because inversion is only possible when the condition is passive.', 'Because it is an old word order, and dropping <em>if</em> makes the clause more compact.', 'Because the inverted form refers to the future, while the <em>if</em> form refers to the present.'],
           answer: 2,
-          why: 'The inverted form is the last trace of an older grammar, so it is noticeable, and dropping <em>if</em> compresses the clause, so it is efficient; formal written English values both. Option 1 is the near miss, since <em>were to</em> really does change something — but it marks the possibility as more remote, not more certain, and in any case the two sentences make the same claim. Option 2 is refuted by <em>Were the minister to resign</em>, which contains no passive at all. Option 4 is false — both are unreal-present conditionals and both look forward from now.' },
+          why: 'The inverted form is the last trace of an older grammar, so it is noticeable, and dropping <em>if</em> compresses the clause, so it is efficient; formal written English values both. Option 1 is the near miss, since inversion does feel weightier — but it changes the register, not the likelihood: both sentences contain <em>were to</em>, and both present the extension as equally remote. Option 2 is refuted by <em>Were the minister to resign</em>, which contains no passive at all. Option 4 is false — both are unreal conditionals and both look forward from now.' },
 
         { id: 't8l2s3-4', type: 'spot', tag: 'sys-invert', level: 'C1+',
           stem: 'One of the four parts is wrong. Find it.',
@@ -582,9 +577,9 @@ T8.levels.push({
           { who: 'Reporter', text: 'He also said the committee ___(2)___ well reject half of the ones that did arrive, which is not the same thing at all.' }
         ],
         stem: 'Choose the best option for gap (1).',
-        options: ['must have been', 'would must', 'had to', 'musts'],
+        options: ['may well', 'would must', 'had to', 'musts'],
         answer: 2,
-        why: 'The original was a deontic <em>must</em>, which has no past form of its own, and here the situation has moved on — the January deadline has passed and the report says so — which is exactly when the step back is called for, so the gap takes <em>had to</em>. Where a deadline still stood, leaving <em>must</em> in place would be just as good; backshift is available, not compulsory. <em>Must have been</em> is well formed but turns a deadline into a deduction that the applications had already been lodged. <em>Would must</em> stacks two modals. <em>Musts</em> inflects a modal for the third person, which the class never allows.' },
+        why: 'The original was a deontic <em>must</em>, which has no past form of its own, and here the situation has moved on — the January deadline has passed and the report says so — which is exactly when the step back is called for, so the gap takes <em>had to</em>. Where a deadline still stood, leaving <em>must</em> in place would be just as good; backshift is available, not compulsory. <em>May well</em> turns the deadline into a guess about what applicants were likely to do. <em>Would must</em> stacks two modals. <em>Musts</em> inflects a modal for the third person, which the class never allows.' },
 
       { id: 't8l2ck-4', type: 'build', tag: 'sys-report', level: 'C1+',
         stem: 'Put the words in order to make the fully backshifted report of <em>"We may have underestimated the cost," she admitted.</em>',
@@ -668,9 +663,9 @@ T8.levels.push({
             { text: 'Copper <em>will</em> conduct heat far better than steel.', bin: 'now' },
             { text: 'He <em>will</em> reply to messages at two in the morning, night after night.', bin: 'now' },
             { text: 'The tunnel <em>will</em> open to traffic next spring.', bin: 'fut' },
-            { text: 'Under load, the older cables <em>will</em> sag by several centimetres.', bin: 'now' }
+            { text: 'Under load, cables of this type <em>will</em> sag by several centimetres.', bin: 'now' }
           ],
-          why: 'Four of the six have no future reference at all: a deduction about who is at the gate, a generic truth about copper, a complaint about somebody\'s habits, where <em>night after night</em> rules a single coming occasion out, and a conditional generalisation about cables, where <em>under load</em> supplies a condition rather than a time. The two future ones both name a date, which is the surest sign that the prediction is about a particular coming event. A useful check: ask <em>when</em>, and if the only answer is <em>whenever</em> or <em>always</em>, the reading is not future.' },
+          why: 'Four of the six have no future reference at all: a deduction about who is at the gate, a generic truth about copper, a complaint about somebody\'s habits, where <em>night after night</em> rules a single coming occasion out, and a conditional generalisation about cables of a type, where <em>under load</em> supplies a condition rather than a time. The two future ones both name a date, which is the surest sign that the prediction is about a particular coming event. A useful check: ask <em>when</em>, and if the only answer is <em>whenever</em> or <em>always</em>, the reading is not future.' },
 
         { id: 't8l3s1-3', type: 'choose', tag: 'sys-will', level: 'C1+',
           stem: 'A materials report reads: <em>Under sustained load the polymer will creep by up to three per cent.</em> What is the writer claiming?',
@@ -681,24 +676,19 @@ T8.levels.push({
             'That the writer is fairly sure the material has already crept.'
           ],
           answer: 1,
-          why: '<em>Under sustained load</em> is a condition, not a time, and a prediction attached to a condition rather than to a moment is the generic reading: it holds of every instance. Option 1 reads <em>will</em> deontically, which it never is — there is no permission sense anywhere in the modal. Option 3 is the near miss: it hears a tense and turns a material property into a forecast, which would be right with a date instead of a condition, but would make the figure useless to an engineer choosing a component. Option 4 would need the perfect, <em>will have crept</em>, and even then the deduction would be about one particular sample rather than about the polymer.' },
+          why: '<em>Under sustained load</em> is a condition, not a time, and a prediction attached to a condition rather than to a moment is the generic reading: it holds of every instance. Option 1 gives <em>will</em> a permission sense, which it never has; its only rule-giving use is a command, as in <em>You will report at nine</em>. Option 3 is the near miss: it hears a tense and turns a material property into a forecast, which would be right with a date instead of a condition, but would make the figure useless to an engineer choosing a component. Option 4 would need the perfect, <em>will have crept</em>, and even then the deduction would be about one particular sample rather than about the polymer.' },
 
         { id: 't8l3s1-4', type: 'judge', tag: 'sys-will', level: 'C1+',
           given: 'If the committee will not release the minutes, we shall have to apply formally.',
           stem: 'Here <em>will</em> marks the committee\'s refusal rather than plain future time.',
           answer: 0,
-          why: 'True. Plain futurity is blocked in an <em>if</em>-clause, because <em>if</em> has already framed the clause as a possibility and a second operator doing the same work has nothing to add; a <em>will</em> that survives there must therefore be doing one of its other jobs. With a negative and a human subject that job is willingness, so the clause means <em>if the committee refuses to release the minutes</em> (Stage 4). The answer is not <em>Can\'t tell</em>, because the grammar settles it without any appeal to context: the futurity reading is not available at all, and the repair for that reading would be <em>if the committee does not release</em>.' },
+          why: 'True. Plain futurity normally takes the present in an <em>if</em>-clause (<em>if the committee does not release</em>), so a <em>will</em> that appears there is usually doing one of its other jobs. With a negative and a human subject that job is willingness, so the clause means <em>if the committee refuses to release the minutes</em> (Stage 4). The answer is not <em>Can\'t tell</em>: <em>will not</em> with a human agent is the standard way of saying <em>refuses to</em>, and a writer who meant plain future would have written <em>does not release</em>.' },
 
         { id: 't8l3s1-5', type: 'choose', tag: 'sys-will', level: 'C1+',
           stem: 'Which sentence is <strong>not</strong> acceptable English?',
-          options: [
-            'If you will sign at the bottom, I will witness it.',
-            'If it will speed things up, I will send the signed contract by courier.',
-            'If the survey will take over an hour, we should book the afternoon.',
-            'If the funding is confirmed in June, the launch can go ahead as planned.'
-          ],
+          options: ['If you will sign at the bottom, I will witness it.', 'If it will speed things up, I will send the signed contract by courier.', 'If it will rain on Saturday, the match will be postponed.', 'If the funding is confirmed in June, the launch can go ahead as planned.'],
           answer: 2,
-          why: 'In option 3, <em>will</em> is marking nothing but futurity inside a clause that <em>if</em> has already modalised, so the operator is redundant and the string is blocked; the repair is <em>If the survey takes over an hour</em>. Option 1 is willingness — roughly <em>if you would be so good as to sign</em> — and is a standard polite formula. Option 2 is the near miss: the speeding up is a <strong>result of the sending</strong> rather than a supposition about the world, and <em>will</em> is predicting that result, which is real work only it can do; compare the fixed <em>if it will help</em>. Option 4 is the ordinary present-tense conditional and is exactly what option 3 should have been.' }
+          why: 'In option 3, <em>will</em> marks nothing but futurity, and when a future event is the condition for a later result, English puts that event in the present: <em>If it rains on Saturday</em>. Option 1 is willingness — roughly <em>if you would be so good as to sign</em> — and is a standard polite formula. Option 2 is the near miss: the speeding up is a <strong>result of the sending</strong> rather than a supposition about the world, and <em>will</em> is predicting that result, which is real work only it can do; compare the fixed <em>if it will help</em>. Option 4 is the ordinary present-tense conditional, the pattern option 3 should have followed.' }
       ]
     },
 
@@ -753,7 +743,7 @@ T8.levels.push({
             'Because <em>shall</em> can mark a duty, a right or a plain future, and readers cannot always tell which.'
           ],
           answer: 3,
-          why: 'This is Level 1\'s complaint in its most expensive form: a single form with more than one reading, in a genre where the reader has to act, and courts have had to decide whether a particular <em>shall</em> imposed a duty or merely described what would happen. Option 1 is false — <em>shall</em> has the full modal signature. Option 2 is the near miss, since in everyday speech <em>must</em> does sound firmer; but in drafting both impose obligation, and the manual\'s argument is about clarity rather than force. Option 3 inverts the facts, since contractual <em>shall</em> is almost always third person and it is the first-person future <em>shall</em> that has died out.' },
+          why: 'This is Level 1\'s complaint in its most expensive form: a single form with more than one reading, in a genre where the reader has to act, and courts have had to decide whether a particular <em>shall</em> imposed a duty or merely described what would happen. Option 1 is false — <em>shall</em> has the full modal signature. Option 2 is the near miss, since in everyday speech <em>must</em> does sound firmer; but in drafting both impose obligation, and the manual\'s argument is about clarity rather than force. Option 3 inverts the facts, since contractual <em>shall</em> is almost always third person and it is the first-person future <em>shall</em> that is fading.' },
 
         { id: 't8l3s2-4', type: 'equiv', tag: 'sys-periphery', level: 'C1+',
           given: 'He doesn\'t dare to question the figures in front of the finance committee.',
@@ -815,7 +805,7 @@ T8.levels.push({
             'In the fourth paragraph, where the review calls the forecast irreconcilable with the data.'
           ],
           answer: 0,
-          why: '<em>The figure is not in dispute</em> and <em>what is in dispute is what produced it</em> are the only sentences in the passage that carry neither a modal nor a source, and a bare assertion in the writer\'s own voice outranks every modal there is. Options 2 and 4 both point at strong claims, but each one is handed to somebody else — <em>officials say</em>, <em>it states flatly</em>, <em>the review concludes</em> — so they report other people\'s confidence, however firm it sounds. Option 3 identifies real hedging but attributes it correctly to the review, and hedged reported modality is the weakest combination in the passage, not the strongest. Note that the eleven per cent figure itself is sourced to the monitoring stations; it is the sentence about the dispute, not the number, that the writer owns.' },
+          why: 'Of the four options, only the first points to a sentence in the writer\'s own voice: <em>The figure is not in dispute</em> carries neither a modal nor a source, and a bare assertion of that kind outranks every modal there is. Options 2 and 4 both point at strong claims, but each one is handed to somebody else — <em>officials say</em>, <em>it states flatly</em>, <em>the review concludes</em> — so they report other people\'s confidence, however firm it sounds. Option 3 identifies real hedging but attributes it correctly to the review, and hedged reported modality is the weakest combination in the passage, not the strongest. Note that the eleven per cent figure itself is sourced to the monitoring stations; it is the sentence about the dispute, not the number, that the writer owns.' },
 
         { id: 't8l3s3-2', type: 'choose', tag: 'sys-track', level: 'C1+',
           stem: 'A literature review contains: <em>Several authors have claimed that the effect must be causal, though none has controlled for selection.</em> What does this tell you about the reviewer\'s own position?',
@@ -834,7 +824,7 @@ T8.levels.push({
           stem: 'Choose the best option for blank (2).',
           options: ['must', 'may', 'will', 'has to'],
           answer: 1,
-          why: 'The sentence sets out two rival mechanisms and the next sentence says in as many words that the data cannot choose between them, so the writer needs the weak middle rung (Stage 2), which commits to neither. <em>Must</em> and <em>will</em> both sit near the top of the ladder and would assert exactly what the authors have just disclaimed. <em>Has to</em> is worse again: it is a deontic form, and it would place a requirement on the cost rather than make a claim about it. Note the contrast with blank (1), where <em>unequivocal</em> calls for the flat epistemic negative <em>cannot</em>.' },
+          why: 'The sentence sets out two rival mechanisms and the next sentence says in as many words that the data cannot choose between them, so the writer needs the weak middle rung (Stage 2), which commits to neither. <em>Must</em> and <em>will</em> both sit near the top of the ladder and would assert exactly what the authors have just disclaimed. <em>Has to</em> is worse again: read epistemically it is as strong as <em>must</em> (<em>it can only be operating directly</em>), and read as a rule it places a requirement on the cost; neither fits authors who have just said the data cannot choose. Note the contrast with blank (1), where <em>unequivocal</em> calls for the flat epistemic negative <em>cannot</em>.' },
 
         { id: 't8l3s3-4', type: 'choose', tag: 'sys-track', level: 'C1+',
           stem: 'A paragraph opens <em>It may well be that the shortfall is temporary</em> and closes <em>The department cannot, however, plan on that assumption.</em> What has the writer done?',
@@ -845,7 +835,7 @@ T8.levels.push({
             'Raised the claim from possibility to certainty.'
           ],
           answer: 0,
-          why: '<em>May well</em> grants that the shortfall might be temporary without endorsing it, and <em>cannot</em> is an unhedged negative in the writer\'s own voice; the position lives in the second sentence, which is where a concessive paragraph always puts it (Stage 7). Option 2 confuses conceding with withdrawing — nothing was asserted in the first place, so there is nothing to retract. Option 3 misses that <em>cannot</em> is not a hedge but the firmest form available. Option 4 is the near miss: it has the direction right but the target wrong, because the certainty attaches to what the department can plan on, not to the shortfall.' },
+          why: '<em>May well</em> grants that the shortfall might be temporary without endorsing it, and <em>cannot</em> is an unhedged negative in the writer\'s own voice; the position lives in the second sentence, which is where a concessive paragraph normally puts it (Stage 7). Option 2 confuses conceding with withdrawing — nothing was asserted in the first place, so there is nothing to retract. Option 3 misses that <em>cannot</em> is not a hedge but the firmest form available. Option 4 is the near miss: it has the direction right but the target wrong, because the certainty attaches to what the department can plan on, not to the shortfall.' },
 
         { id: 't8l3s3-5', type: 'order', tag: 'sys-track', level: 'C1+',
           stem: 'Put the four sentences in the order that makes a coherent paragraph in which the writer\'s commitment rises from a bare possibility to a firm conclusion.',
@@ -874,7 +864,7 @@ T8.levels.push({
           'It rises: the writer moves from the authors\' hedged suggestion to a firm claim of their own.'
         ],
         answer: 3,
-        why: 'Paragraph three is attributed and hedged throughout — <em>the authors suggest</em>, <em>may come</em>, <em>could not be detected</em> — while paragraph four drops both the attribution and the hedging and adds a booster: <em>is not a general remedy</em>, <em>would be spending on the wrong age group</em>, and <em>does establish</em>, where <em>does</em> is doing emphatic work. Option 1 is the near miss: a finding and a mechanism really are both in play, but it reverses the direction and misplaces the speculation, which belongs to paragraph three. Option 2 ignores the fact that paragraph four contains no hedge at all. Option 3 misreads the paragraph, which endorses the authors\' caution precisely against the newspapers.' },
+        why: 'Paragraph three is attributed and hedged — <em>the authors suggest</em>, <em>may come</em> — and its one flat statement, <em>could not be detected</em>, reports a finding from the trial rather than a claim of the writer\'s own. Paragraph four drops both the attribution and the hedging and adds a booster: <em>is not a general remedy</em>, <em>would be spending on the wrong age group</em>, and <em>does establish</em>, where <em>does</em> is doing emphatic work. Option 1 is the near miss: a finding and a mechanism really are both in play, but it reverses the direction and misplaces the speculation, which belongs to paragraph three. Option 2 misreads <em>could not be detected</em> as a hedge and ignores the fact that paragraph four contains no hedge at all. Option 3 misreads the paragraph, which endorses the authors\' caution precisely against the newspapers.' },
 
       { id: 't8l3ck-2', type: 'choose', tag: 'sys-will', level: 'C1+',
         stem: 'Which use of <em>will</em> is a deduction about the present?',

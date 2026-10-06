@@ -125,6 +125,7 @@ switched off because there are none yet. To turn it on, save them as `slides/s-0
 | `ANALYSIS.md` | the first-principles treatment of the modal system the course is built on |
 | `REVIEW-LOG.md` | the record of the content review — one line for every item that changed |
 | `rebalance.js` | evens out which option position the keys sit on; see below |
+| `qa.js` | content rules from the October 2026 audit (modal-verbs rules, hint giveaways, test-vs-lesson copies, Thai glosses, spot and sort traps); see QA-REPORT.md |
 | `audit.js` | answer-key balance per stage and per test: key position, key-is-longest rate, spot and True/False splits, hint leaks |
 
 ---
@@ -238,6 +239,7 @@ Two scripts, both offline, both run from this folder:
 node verify.js        # structure: ids, tags, answer indices, escaped fields, ranks, media
 node render-test.js   # mounts all 702 items in a headless DOM and answers each one
 node audit.js         # key balance per stage/test; `node audit.js t3` for one stage in detail
+node qa.js            # content rules (October 2026 audit); must report 0 errors
 ```
 
 `audit.js` holds the balance the 25 September review set: in every stage and every test

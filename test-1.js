@@ -27,7 +27,7 @@ MOCKS.push({
           stem: 'Every candidate ______ two forms of identification when collecting the examination permit.',
           options: ['must shows', 'must to show', 'must showing', 'must show'],
           answer: 3,
-          why: 'A modal is followed by a bare infinitive, so <em>must show</em> is the only possible shape. <em>must shows</em> adds the third-person <em>-s</em> that a modal never takes, because the modal is not the verb of the clause. <em>must to show</em> inserts <em>to</em>, which is the commonest transfer error from a language that builds verb-plus-verb freely. <em>must showing</em> puts an <em>-ing</em> form where only a bare form can stand.' },
+          why: 'A modal is followed by a bare infinitive, so <em>must show</em> is the only possible shape. <em>must shows</em> adds the third-person <em>-s</em>, which a modal never takes for any subject. <em>must to show</em> inserts <em>to</em>, which is the commonest transfer error from a language that builds verb-plus-verb freely. <em>must showing</em> puts an <em>-ing</em> form where only a bare form can stand.' },
 
         { id: 'm1-2', type: 'spot', tag: 'frame-defect', level: 'B1+',
           stem: 'One of the four parts is wrong. Find it.',
@@ -38,9 +38,9 @@ MOCKS.push({
 
         { id: 'm1-3', type: 'choose', tag: 'epi-scale', level: 'B1+',
           stem: 'The lights are on, both bicycles are in the yard and the radio is playing, so someone ______ at home.',
-          options: ['must be', 'should be', 'may be', 'can be'],
+          options: ['must be', 'can\'t be', 'may be', 'can be'],
           answer: 0,
-          why: 'Three converging pieces of evidence leave no other reasonable conclusion, which is the top rung of the scale: <em>must be</em>. <em>should be</em> states what a pattern predicts rather than what this evidence shows, so it would fit a timetable, not a lit window. <em>may be</em> drops to the weak middle and throws away the evidence you have just been given. <em>can be</em> is not used for a deduction about one particular situation at all; it states a general capacity.' },
+          why: 'Three converging pieces of evidence leave no other reasonable conclusion, which is the top rung of the scale: <em>must be</em>. <em>can\'t be</em> draws the opposite conclusion from the same evidence, as if a lit window and a playing radio proved the house was empty. <em>may be</em> drops to the weak middle and throws away the evidence you have just been given. <em>can be</em> is not used for a deduction about one particular situation at all; it states a general capacity.' },
 
         { id: 'm1-4', type: 'equiv', tag: 'epi-cant', level: 'B2',
           given: 'I am certain that the fault is not in the wiring.',
@@ -72,10 +72,10 @@ MOCKS.push({
       items: [
 
         { id: 'm1-6', type: 'choose', tag: 'deo-source', level: 'B2',
-          stem: 'A research student writes to her supervisor. The necessity is not hers, and she wants the sentence to show where it comes from: <em>I am sorry, but I ______ move our Thursday meeting — the clinic has given me a fixed appointment at two.</em>',
+          stem: 'A research student writes to her supervisor. She is passing on an appointment the clinic has fixed for her, not a decision of her own: <em>I am sorry, but I ______ move our Thursday meeting — the clinic has given me a fixed appointment at two.</em>',
           options: ['must', 'have to', 'want to', 'am supposed to'],
           answer: 1,
-          why: '<em>have to</em> reports a requirement issued somewhere else — here by the clinic — which is what the stem asks the sentence to show. <em>must</em> puts the necessity in the writer\'s own mouth, so it claims the decision as hers and leaves the named external cause with nothing to do. <em>want to</em> turns a constraint into a preference, which is not what an apology and a fixed appointment are reporting. <em>am supposed to</em> reports a rule somebody else has laid down and hints that it is not being kept, and no rule requires her to move the meeting.' },
+          why: '<em>have to</em> reports a requirement issued somewhere else — here by the clinic — which is exactly the stance the stem describes. <em>must</em> puts the necessity in the writer\'s own mouth, so it claims the decision as hers and leaves the named external cause with nothing to do. <em>want to</em> turns a constraint into a preference, which is not what an apology and a fixed appointment are reporting. <em>am supposed to</em> reports a rule somebody else has laid down and hints that it is not being kept, and no rule requires her to move the meeting.' },
 
         { id: 'm1-7', type: 'spot', tag: 'deo-negcliff', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
@@ -106,7 +106,7 @@ MOCKS.push({
           stem: 'Since the new filter was fitted, the plant ______ meet the discharge limit every single month.',
           options: ['has been able to', 'has could', 'could have', 'will be able to'],
           answer: 0,
-          why: 'A perfect needs a past participle and <em>can</em> has none, so the repair form is forced: <em>has been able to</em>. <em>has could</em> is the error itself — a modal has no participle and cannot stand after <em>have</em>. <em>could have</em> shifts the meaning to a chance that was not taken, which contradicts <em>every single month</em>. <em>will be able to</em> is the right repair in the wrong slot: it points forward, while <em>since the new filter was fitted</em> asks for a record running from the past up to now.' }
+          why: 'A perfect needs a past participle and <em>can</em> has none, so the repair form is forced: <em>has been able to</em>. <em>has could</em> is the error itself — a modal has no participle and cannot stand after <em>have</em>. <em>could have</em> shifts the meaning to a chance that was not taken, which contradicts <em>every single month</em>, and it would need the participle <em>met</em>, not <em>meet</em>. <em>will be able to</em> is the right repair in the wrong slot: it points forward, while <em>since the new filter was fitted</em> asks for a record running from the past up to now.' }
       ]
     },
 
@@ -122,7 +122,7 @@ MOCKS.push({
         { id: 'm1-11', type: 'choose', tag: 'dist-core', level: 'B2+',
           stem: 'In which sentence does <em>could</em> refer to <strong>past time</strong>?',
           options: [
-            'I was wondering whether you could look through the second draft for me.',
+            'Do you think you could look through the second draft for me?',
             'The stain spreading across the ceiling could be coming from the flat above.',
             'In the years the mill was running, you could smell the dye from the station.',
             'If the timetable were redrawn, the whole branch line could run on time.'
@@ -175,7 +175,7 @@ MOCKS.push({
       items: [
 
         { id: 'm1-16', type: 'choose', tag: 'hedge-over', level: 'C1',
-          stem: 'A study in one district finds that children who eat a school breakfast score slightly higher in reading tests. Which sentence reports the finding at the strength it will bear?',
+          stem: 'A study in one district finds that children who eat a school breakfast score slightly higher in reading tests. Which sentence states the finding no more strongly than the evidence allows?',
           options: [
             'This proves that eating a school breakfast raises a child\'s reading attainment.',
             'Giving children a school breakfast will always improve their reading attainment.',
@@ -243,19 +243,19 @@ MOCKS.push({
           words: ['The station is only', 'five minutes away, so', 'we needn\'t to take', 'a taxi this evening.'],
           answer: 2,
           fix: 'we needn\'t take',
-          why: '<em>Needn\'t</em> is followed by the verb without <em>to</em>: <em>we needn\'t take a taxi</em>. The form with <em>to</em> is <em>we don\'t need to take</em>, which is also correct — the mistake is mixing the two patterns. The other three parts are correct: the description of the station, the linking <em>so</em> and the time phrase are all well formed.' },
+          why: 'After <em>needn\'t</em> the next verb is bare, exactly as after <em>must</em> or <em>can</em>: <em>we needn\'t take a taxi</em>. <s>needn\'t to take</s> blends that modal pattern with the ordinary-verb pattern <em>we don\'t need to take</em>, which is correct on its own. Parts 1, 2 and 4 are fine: a description of the station, the linking <em>so</em> and a time phrase.' },
 
         { id: 'm1-23', type: 'choose', tag: 'u5-past-oblig', level: 'B1+',
-          stem: 'The cash machine near our flat was broken, so yesterday we ______ to the bank in town.',
-          options: ['must go', 'had to go', 'have to go', 'must have gone'],
+          stem: 'The lift in our building was out of order, so yesterday we ______ the stairs to the eighth floor.',
+          options: ['must climb', 'had to climb', 'have to climb', 'must have climbed'],
           answer: 1,
-          why: 'Going to the bank was necessary, and it happened <em>yesterday</em>, so the sentence needs the past of obligation: <em>had to go</em>. <em>Have to go</em> is the near miss — the right verb, but present, and the word <em>yesterday</em> cannot make it past on its own. <em>Must go</em> has no past form. <em>Must have gone</em> is a guess about the past ("I\'m almost sure we went"), but the speaker knows what she did yesterday, so there is nothing to guess.' },
+          why: 'Climbing the stairs was necessary, and it happened <em>yesterday</em>, so the sentence needs the past of obligation: <em>had to climb</em>. <em>Have to climb</em> is the near miss — the right verb, but present, and the word <em>yesterday</em> cannot make it past on its own. <em>Must climb</em> is present too, because <em>must</em> has no past form. <em>Must have climbed</em> is a guess about the past ("I\'m almost sure we climbed"), but the speaker knows what she did yesterday, so there is nothing to guess.' },
 
         { id: 'm1-24', type: 'choose', tag: 'u5-past-look', level: 'B2',
           stem: 'I bought a dictionary for my English course, but on the first day the teacher gave everyone one for free. I ______ one.',
-          options: ['needn\'t have bought', 'mustn\'t have bought', 'needn\'t buy', 'shouldn\'t buy'],
+          options: ['needn\'t have bought', 'can\'t have bought', 'needn\'t buy', 'shouldn\'t buy'],
           answer: 0,
-          why: 'The speaker <strong>did</strong> buy a dictionary, and it turned out to be unnecessary, which is exactly what <em>needn\'t have bought</em> says. <em>Needn\'t buy</em> is the near miss — the right idea of "not necessary", but it is about now or the future, and the buying is finished. <em>Shouldn\'t buy</em> is advice about now, not a comment on a past action. <em>Mustn\'t have bought</em> is not a correct way to talk about something you did.' },
+          why: 'The first sentence tells you the dictionary <strong>was</strong> bought, and the free copy shows the purchase was a waste: an action that happened but was not necessary is what <em>needn\'t have bought</em> describes. <em>Needn\'t buy</em> has the right idea at the wrong time: it is about a purchase still to come. <em>Shouldn\'t buy</em> gives advice about now or later, not a comment on a finished action. <em>Can\'t have bought</em> is a deduction that the buying never happened, but the speaker knows perfectly well that she bought one.' },
 
         { id: 'm1-25', type: 'choose', tag: 'u5-guess-now', level: 'B1+',
           stem: 'Anna\'s sister is in Australia this month, so that girl at the bus stop ______ her. She just looks a bit like her.',
@@ -265,9 +265,9 @@ MOCKS.push({
 
         { id: 'm1-26', type: 'spot', tag: 'u5-guess-form', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Josh isn\'t answering his phone.', 'He might forgot to charge it,', 'because the battery was almost dead', 'when I saw him at lunchtime.'],
+          words: ['Jane isn\'t answering her phone.', 'She might forgot to charge it,', 'because the battery was almost dead', 'when I saw her at lunchtime.'],
           answer: 1,
-          fix: 'He might have forgotten to charge it,',
+          fix: 'She might have forgotten to charge it,',
           why: 'A guess about the past needs the chain modal + <em>have</em> + past participle: <em>might have forgotten</em>. <s>Might forgot</s> drops <em>have</em> and puts a past simple straight after the modal, which English never allows. The other parts are correct: part 1 is about now, and parts 3 and 4 are ordinary past simple.' }
       ]
     },
@@ -316,9 +316,9 @@ MOCKS.push({
 
         { id: 'm1-30', type: 'choose', tag: 'tc-subjunctive', level: 'B2+',
           stem: 'The head teacher has recommended that every student ______ a hat during outdoor PE lessons in April.',
-          options: ['wears', 'to wear', 'wear', 'will wear'],
+          options: ['wearing', 'to wear', 'wear', 'will wear'],
           answer: 2,
-          why: '<em>Recommended that</em> introduces what should happen, so the verb is the bare base form for every subject: that every student <em>wear</em> a hat. <em>Wears</em> is the near miss: <em>every student</em> is singular, but after a recommendation the verb takes no <em>-s</em>. <em>To wear</em> cannot follow <em>that</em> + subject, and <em>will wear</em> turns the recommendation into a prediction.' },
+          why: '<em>Recommended that</em> introduces what should happen, so the verb is the base form for every subject: that every student <em>wear</em> a hat (<em>should wear</em> would also be correct). <em>Wearing</em> is the near miss: it is the right verb, but an <em>-ing</em> form cannot be the main verb of a <em>that</em>-clause. <em>To wear</em> cannot follow <em>that</em> + subject either, and <em>will wear</em> turns the recommendation into a prediction.' },
 
         { id: 'm1-31', type: 'read', tag: 'tc-read-hedge', level: 'B2+',
           passage: 'New airport rail line could open next October\n\nThe new rail line to Bangkok\'s second airport could open as early as next October, according to the transport ministry. Engineers say most of the track is finished, but the signalling system is still being tested.\n\nOfficials admit that the date may change if problems are found during the tests. A full timetable is expected to be published in the summer.',
@@ -334,17 +334,12 @@ MOCKS.push({
           why: 'The line <em>could</em> open next October, and officials say the date <em>may change</em>, so the opening date is not yet certain. <em>The line will definitely open next October</em> is the trap: it turns <em>could</em> into a certainty. The signalling is <em>still being tested</em>, not failed, and most of the track is already finished.' },
 
         { id: 'm1-32', type: 'read', tag: 'tc-fineprint', level: 'B2',
-          passage: 'RIVERSIDE MUSEUM: STUDENT WEDNESDAYS\n\nEntry is free for students every Wednesday.\n\n• Students must show a valid student ID at the ticket desk.\n\n• Visitors need not book in advance, but groups of more than ten must book a week ahead.\n\n• Photos may be taken in all galleries. Flash cannot be used.\n\n• Bags larger than A4 must be left in the lockers.',
+          passage: 'RIVERSIDE MUSEUM: STUDENT WEDNESDAYS\n\nEntry is free for students every Wednesday.\n\n• Visitors may use the free lockers by the entrance.\n\n• Food and drink must not be taken into the galleries.\n\n• Children under 12 must be with an adult.\n\n• Sketching is welcome in all galleries, but easels cannot be used.',
           source: 'Illustrative notice',
           stem: 'Which of the following is NOT allowed?',
-          options: [
-            'Using flash in a gallery',
-            'Visiting alone without booking',
-            'Taking photos in a gallery',
-            'Keeping a small bag with you'
-          ],
+          options: ['Setting up an easel in a gallery', 'Sketching in one of the galleries', 'Using a locker by the entrance', 'Visiting free as a student on a Wednesday'],
           answer: 0,
-          why: '<em>Flash cannot be used</em> is a ban, so using flash is not allowed. <em>Visiting alone without booking</em> is the near miss: <em>need not book</em> means booking is not necessary, not that it is forbidden, and only large groups must book. Photos <em>may be taken</em>, which gives permission, and only bags larger than A4 must go in the lockers.' }
+          why: '<em>Easels cannot be used</em> is a ban, so setting up an easel is not allowed. <em>Sketching in one of the galleries</em> is the near miss: it sits in the same rule, but <em>is welcome</em> permits it, and only the easel is banned. Visitors <em>may use</em> the lockers, which gives permission, and entry is free for students every Wednesday.' }
       ]
     }
   ]
