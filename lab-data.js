@@ -2,7 +2,8 @@
    MODAL LAB — data for the four mini-games and the flashcard deck.
    Plain ES5, loaded by a script tag. Text is plain text; only the `why`
    fields may carry em/strong tags.
-     LAB.dial         Certainty Dial — 8 scenes (rungs: cant · weak · should · will · must)
+     LAB.dial         Certainty Dial — 8 scenes (rungs: cant · weak · should · will · must);
+                      optional `chip` overrides the scene button label
      LAB.detective    Modal Detective — 40 cases (20 now, 20 past; must / might / cant)
      LAB.cliff        The Negation Cliff — 40 sentences (free = no obligation, ban = not allowed)
      LAB.timeMachine  Time Machine — 30 items (pick the correct past version; key 10/10/10)
@@ -27,7 +28,7 @@ var LAB = {
         { text: 'After tutoring last night she went either to the library or straight home. Her mum isn’t sure which.', rung: 'weak', time: 'past' }
       ] },
 
-    { id: 'dial2', subject: 'That', now: 'be Grandma', past: 'been Grandma',
+    { id: 'dial2', chip: 'The caller · Grandma', subject: 'That', now: 'be Grandma', past: 'been Grandma',
       thai: 'คนที่โทรมาคือคุณยาย',
       evidence: [
         { text: 'The phone is ringing at 8 p.m. on Sunday, and Grandma has called at exactly 8 every Sunday for years. You don’t even look at the screen.', rung: 'will', time: 'now' },

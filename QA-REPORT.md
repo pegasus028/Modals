@@ -1,6 +1,50 @@
 # QA report — Fine Tuning (Modals)
 
-## Audit — 7 October 2026
+## Modal Lab play-through — 7 October 2026
+
+Every Lab tool and game was played as a student in headless Chromium at 390 px (light) and 420 px (dark), with the API URL blanked and every Apps Script request aborted (**zero reached the live Sheet**). The Lab content had been read item by item in the morning audit below; this pass is about how the games behave in a student's hands.
+
+### Headline
+
+| | |
+|---|---|
+| Live site = repo before the pass | yes (`cmp`-identical to `21a52ed`) |
+| Bugs found by playing | 9 (2 that block or mislead, 7 that weaken the game) |
+| Files changed | `student.js`, `theme.css`, `lab-data.js` (one label), `README.md`, cache tags in `index.html` / `teacher.html` |
+| New test | `lab-test.js` — plays the whole Lab in a real browser (dial drag, a full Challenge, all three games including a time-out, both Rule Board covers, flashcards by keyboard) and ends `LAB OK` |
+| Content (items, keys, explanations) | unchanged; `verify.js` CLEAN, `render-test.js` all 702 mark correctly, `qa.js` 0 errors |
+| IDs, storage keys, API URL, Sheet columns | **unchanged** — best scores, flashcard boxes and progress are safe |
+
+### What a student ran into, and what changed
+
+| Where | Before | After |
+|---|---|---|
+| **Certainty Dial · Challenge** | The sentence the dial builds was hidden until *Lock it in*, so the student set a gauge blind and only then saw what she had claimed | The sentence and its meaning ("About 90% sure it IS true…" + Thai) update live as she turns the dial; after locking, it stays as **Your sentence** with a green or red frame |
+| **Certainty Dial · slider** | Every step of the slider rebuilt the whole card, including the slider. A drag stopped after one notch: dragging end to end from *can't* landed on *might*. On a phone the dial could only be moved by tapping | Turning the dial redraws only the gauge and the sentence; a full drag reaches *must* (tested) |
+| Certainty Dial · past evidence | Moving the slider to *should* or *will* on past evidence silently did nothing, while the slider thumb moved — needle and slider disagreed | The thumb snaps back and a note says *should* / *will* have no past guess form |
+| Certainty Dial · verdict | "Not quite. The evidence points to should" with no reason; a run ended in a toast | Wrong answers give the right sentence and what that setting means; a Challenge ends on a result card listing each piece of evidence, her setting and the right one, with **Next scene** / **Back to Explore** |
+| Games · clock | One flat clock per game: Detective 10 s for clues of up to 34 words (median 27), Time Machine 18 s for up to 67 words (median 45), Cliff 8 s for up to 25. Slower readers timed out before finishing the clue, so the game paid for guessing | 0.4 s a word on screen + 3 s, never below the old figure, never above 30 s (e.g. a 46-word Detective screen 20 s, a long Time Machine set 25–30 s). Time bonus = share of the clock left, max +100 as before |
+| Games · time bar | After answering, the bar jumped back to full | It freezes where the answer was given |
+| Games · result card | Each miss showed only the correct sentence, in red uppercase monospace — it looked like the error | Each miss shows the clue, **You chose: …** (or "time ran out"), the right sentence and the reason, in readable type |
+| Games · scrolling | A new case could start its clock with the clue scrolled off the top (after scrolling down to *Next*) | A new case scrolls the clue into view |
+| Modal Lab tab | Tapping **Modal Lab** while inside the dial, board, a game or flashcards re-opened the same tool; the only way home was the small "← Modal Lab" link | The tab returns to the Lab home (flashcard boxes are saved first) |
+
+Smaller improvements: Rule Board gets **Cover the past** (hides only the past column — "say how this meaning moves back in time") besides **Cover all**, with a "cells checked" count; flashcards take Space (flip), 1 (not yet) and 2 (knew it); the dial takes 1–5 and Enter; key hints are hidden on touch screens; the dial's tool card shows the best Challenge score; the phone-call scene button reads "The caller · Grandma" instead of "That · Grandma"; game blurbs no longer promise "ten seconds a case".
+
+### Checked and fine
+
+Sprints (all six start from the Lab, run their clock, finish on a result card and return to the Lab); flashcard Leitner boxes; Rule Board links to Stage 9 modules; no console errors; no sideways scroll at 390 px; explicit dark background. Cache tags bumped to `?v=2026-10-07lab` because `student.js` and `theme.css` changed together.
+
+### Judgement calls for you
+
+- **Scoring change.** Time Machine's maximum per answer drops from 280 to 200 points (the bonus is now a share of the clock), and The Negation Cliff's rises from 180 to 200. Old Time Machine best scores will be a little harder to beat.
+- **Clock length.** 0.4 s a word suits B1 readers; if the games now feel too relaxed for your stronger groups, the one number to change is in `arcSecs()` in `student.js`.
+- **XP from the Lab** is unchanged: replaying a dial scene or a game still earns XP. It only feeds the header count and the teacher report, not ranks or the checklist.
+- **Storage keys shared with Mission Control** (P0 below) are still waiting for your go-ahead.
+
+Run `node lab-test.js` after any change to the Lab (needs `npm install playwright`; set `CHROME_PATH` to use an installed Chromium).
+
+## Earlier review — October 2026 (content audit, 7 October)
 
 Audited against the **app-audit** checklist, with every item, lens, Lab card and hint read against the teacher's **modal-verbs** rules (§3 core rules, §5 item rules, §9 common mistakes). Stages 1–8 and the three tests had been reviewed twice before (see REVIEW-LOG.md). Stage 9 (Unit 5 gaps), Stage 10 (TCAS70), the 90 lesson lenses and the Modal Lab had never been reviewed.
 

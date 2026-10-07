@@ -278,6 +278,13 @@
     b.addEventListener('click', function () {
       if (S.exam && !confirm('Leave the test? Your answers so far will be lost.')) return;
       S.exam = null;
+      /* Tapping "Modal Lab" while already inside a Lab tool or game goes back
+         to the Lab's home, as a student expects of a tab. */
+      if (b.dataset.view === 'lab' && !$('#view-lab').classList.contains('hidden') && S.labScreen) {
+        stopArcade(); ARC = null;
+        if (S.cards) { S.cards = null; sync(); }
+        S.labScreen = null;
+      }
       show(b.dataset.view);
     });
   });
@@ -1622,8 +1629,9 @@
           '<p class="fc-th">' + esc(e[5]) + '</p><p class="fc-ex">“' + esc(e[6]) + '”</p>' +
           '<span class="fc-meta">Box ' + (st ? st.box : 0) + ' of 5</span></div>' +
       '</div>' +
-      (c.flipped ? '<div class="fc-rate"><button class="btn" id="fc-no">Not yet</button><button class="btn primary" id="fc-yes">Knew it</button></div>'
-                 : '<div class="fc-rate"><button class="btn primary wide" id="fc-flip">Flip</button></div>') + '</div>';
+      (c.flipped ? '<div class="fc-rate"><button class="btn" id="fc-no"><kbd>1</kbd> Not yet</button><button class="btn primary" id="fc-yes"><kbd>2</kbd> Knew it</button></div>'
+                 : '<div class="fc-rate"><button class="btn primary wide" id="fc-flip">Flip</button></div>') +
+      '<p class="tiny dial-keys">Keys: Space flips · 1 not yet · 2 knew it</p></div>';
     function flip() { c.flipped = true; paintCard(); }
     $('#fc').addEventListener('click', function () { if (!c.flipped) flip(); });
     $('#fc').addEventListener('keydown', function (ev) { if ((ev.key === 'Enter' || ev.key === ' ') && !c.flipped) { ev.preventDefault(); flip(); } });
@@ -1641,7 +1649,20 @@
     var y = $('#fc-yes'), n = $('#fc-no');
     if (y) y.addEventListener('click', function () { rate(true); });
     if (n) n.addEventListener('click', function () { rate(false); });
+    c.key = function (ev) {
+      if (!c.flipped && (ev.key === ' ' || ev.key === 'Enter')) { ev.preventDefault(); flip(); }
+      else if (c.flipped && ev.key === '1') rate(false);
+      else if (c.flipped && ev.key === '2') rate(true);
+    };
   }
+  document.addEventListener('keydown', function (ev) {
+    if (S.labScreen !== 'cards' || !S.cards || !S.cards.key || $('#view-lab').classList.contains('hidden')) return;
+    var tg = ev.target && ev.target.tagName;
+    if (tg === 'INPUT' || tg === 'TEXTAREA' || tg === 'SELECT' || ev.ctrlKey || ev.metaKey || ev.altKey) return;
+    if (tg === 'BUTTON' && (ev.key === ' ' || ev.key === 'Enter')) return;   /* a focused button clicks itself */
+    if (ev.target && ev.target.id === 'fc') return;                           /* the card has its own Space/Enter */
+    S.cards.key(ev);
+  });
   function finishCards() {
     var c = S.cards; S.cards = null;
     sync();
@@ -1660,9 +1681,9 @@
 
   /* -------------------------------------------------------- lab home */
   var GAMES = [
-    { key: 'detective', name: 'Modal Detective', icon: '🔍', blurb: 'Read the clue, make the call: must, might or can\'t — about now and about the past. Ten seconds a case, three lives.' },
-    { key: 'cliff', name: 'The Negation Cliff', icon: '⛰', blurb: 'No obligation, or not allowed? One word flips the meaning. Eight seconds a sentence.' },
-    { key: 'time', name: 'Time Machine', icon: '⏳', blurb: 'Send a rule, a guess or a piece of advice into the past — must becomes had to, not musted.' }
+    { key: 'detective', name: 'Modal Detective', icon: '🔍', blurb: 'Read the clue, make the call: must, might or can\'t — about now and about the past. Ten cases against the clock, three lives.' },
+    { key: 'cliff', name: 'The Negation Cliff', icon: '⛰', blurb: 'No obligation, or not allowed? One word flips the meaning. Twelve quick sentences, three lives.' },
+    { key: 'time', name: 'Time Machine', icon: '⏳', blurb: 'Send a rule, a guess or a piece of advice into the past — must becomes had to, not musted. Eight sentences, three lives.' }
   ];
   function paintLab() {
     if (S.labScreen === 'cards' && S.cards) return paintCard();
@@ -1677,6 +1698,7 @@
 
     html += '<h3 class="lab-h">See it</h3><div class="sprint-grid">' +
       '<div class="card sprint-card tool-card"><div class="sp-h"><b>🎚 The Certainty Dial</b><span class="pill">Stages 2 · 6 · 9</span></div>' +
+        (lab.dial && lab.dial.runs ? '<p class="tiny">Challenge: best ' + lab.dial.best + ' matched · ' + lab.dial.runs + ' scene' + (lab.dial.runs === 1 ? '' : 's') + ' played</p>' : '') +
         '<p>Slide from <em>can\'t</em> to <em>must</em> and watch the sentence change. Flip to the past and <em>have</em> appears. Then read real evidence and set the dial yourself.</p>' +
         '<button class="btn primary sm" data-tool="dial">Open the dial</button></div>' +
       '<div class="card sprint-card tool-card"><div class="sp-h"><b>🗂 The Rule Board</b><span class="pill">Unit 5 · Stage 9</span></div>' +
@@ -1754,77 +1776,155 @@
     var vp = time === 'past' ? sc.past : sc.now;
     return esc(sc.subject) + ' <b class="dial-modal">' + esc(m) + '</b> ' + esc(vp) + '.';
   }
+  /* The sentence the dial is building, with what that setting claims. It is
+     shown live in Explore and in the Challenge, so the student reads the
+     sentence she is about to commit to before she locks it in. */
+  function dialOutHtml(sc, rung, time, explore) {
+    var sent = dialSentence(sc, rung, time);
+    if (!sent) return '<p class="dial-sent off">' + esc(sc.subject) + ' <b class="dial-modal"><s>' + esc(rung.now) + ' have</s></b> ' + esc(sc.past) + '.</p>' +
+      '<p class="tiny">In the past, <em>' + esc(rung.now) + ' have</em> + past participle usually turns into criticism or a missed chance (Stage 6), not a guess. For past guesses use <em>must have</em>, <em>may / might / could have</em> or <em>can\'t have</em>.</p>';
+    return '<p class="dial-sent">' + sent + '</p>' +
+      '<p class="dial-sure"><b>' + esc(rung.sure) + '</b><br><span class="th">' + esc(rung.th) + '</span></p>' +
+      (explore && sc.thai ? '<p class="tiny">' + esc(sc.thai) + '</p>' : '');
+  }
+  function dialResultHtml(D, sc) {
+    var R = D.done;
+    var html = '<div class="card result dial-result"><div class="seal">' + (R.score === R.n ? '★' : '◐') + '</div>' +
+      '<p class="kicker">The Certainty Dial · ' + esc(sc.chip || (sc.subject + ' · ' + sc.now.replace(/^be /, ''))) + '</p>' +
+      '<h3>' + R.score + ' of ' + R.n + ' pieces of evidence matched</h3>' +
+      (R.best ? '<p>New best for the dial!</p>' : '') + '<div class="misslist">';
+    R.log.forEach(function (x) {
+      var right = RUNGS[rungIdx(x.ev.rung)], mine = RUNGS[x.picked];
+      html += '<div class="miss arc-miss ' + (x.ok ? 'ok' : 'no') + '"><span class="arc-ev">' + (x.ev.time === 'past' ? 'Past · ' : 'Now · ') + esc(x.ev.text) + '</span>' +
+        (x.ok ? '' : '<span class="arc-you">You set: ' + esc(mine.name) + '</span>') +
+        '<span class="arc-ok">' + (x.ok ? '✓ ' : '→ ') + dialSentence(sc, right, x.ev.time) + '</span></div>';
+    });
+    html += '</div><div class="arc-actions"><button class="btn" id="dial-explore">Back to Explore</button>' +
+      '<button class="btn primary" id="dial-again">Next scene →</button></div></div>';
+    return html;
+  }
   function paintDial() {
     var D = S.dial || (S.dial = { scene: 0, rung: 4, time: 'now', quiz: null });
     var sc = LABD.dial[D.scene];
     if (!sc) { $('#view-lab').innerHTML = '<div class="play">' + labTop('The Certainty Dial') + '<div class="card empty">No dial scenes yet.</div></div>'; wireBack(); return; }
+    if (D.done) {
+      $('#view-lab').innerHTML = '<div class="play">' + labTop('The Certainty Dial') + dialResultHtml(D, LABD.dial[D.doneScene]) + '</div>';
+      wireBack();
+      $('#dial-explore').addEventListener('click', function () { D.done = null; D.rung = 4; paintDial(); window.scrollTo({ top: 0 }); });
+      $('#dial-again').addEventListener('click', function () { D.done = null; startDialQuiz(); });
+      return;
+    }
     var q = D.quiz, ev = q ? q.items[q.i] : null;
     var time = ev ? ev.time : D.time;
     var rung = RUNGS[D.rung];
-    var sent = dialSentence(sc, rung, time);
-    var html = '<div class="play">' + labTop('The Certainty Dial') + '<div class="card dial-card">';
+    var html = '<div class="play">' + labTop('The Certainty Dial') + '<div class="card dial-card" id="dial-card">';
     if (!q) {
       html += '<p class="kicker">Explore</p><h3>How sure are you?</h3>' +
         '<div class="dial-scenes">' + LABD.dial.map(function (x, i) {
-          return '<button class="chipbtn' + (i === D.scene ? ' on' : '') + '" data-scene="' + i + '">' + esc(x.subject) + ' · ' + esc(x.now.replace(/^be /, '')) + '</button>'; }).join('') + '</div>';
+          return '<button class="chipbtn' + (i === D.scene ? ' on' : '') + '" data-scene="' + i + '">' + esc(x.chip || (x.subject + ' · ' + x.now.replace(/^be /, ''))) + '</button>'; }).join('') + '</div>';
     } else {
-      html += '<p class="kicker">Evidence ' + (q.i + 1) + ' of ' + q.items.length + ' · score ' + q.score + '</p>' +
+      html += '<p class="kicker">Challenge · evidence ' + (q.i + 1) + ' of ' + q.items.length + ' · score ' + q.score + '</p>' +
         '<div class="dial-ev"><span class="lens-k">' + (ev.time === 'past' ? 'About the past' : 'About now') + '</span><p>' + esc(ev.text) + '</p></div>' +
-        '<p class="muted">Set the dial to match the evidence, then lock it in.</p>';
+        (q.locked ? '' : '<p class="muted dial-tip">Turn the dial until the sentence says what the evidence shows, then lock it in.</p>');
     }
-    html += '<div class="dial-wrap">' + dialSvg(D.rung, time) + '</div>' +
-      '<input type="range" min="0" max="4" step="1" value="' + D.rung + '" id="dial-range" class="dial-range" aria-label="Certainty">' +
+    html += '<div class="dial-wrap" id="dial-wrap">' + dialSvg(D.rung, time) + '</div>' +
+      '<input type="range" min="0" max="4" step="1" value="' + D.rung + '" id="dial-range" class="dial-range" aria-label="Certainty"' +
+        ' aria-valuetext="' + esc(rung.name) + '"' + (q && q.locked ? ' disabled' : '') + '>' +
       '<div class="dial-time">' +
         '<button class="tog' + (time === 'now' ? ' on' : '') + '" data-time="now"' + (q ? ' disabled' : '') + '>NOW</button>' +
-        '<button class="tog' + (time === 'past' ? ' on' : '') + '" data-time="past"' + (q ? ' disabled' : '') + '>PAST</button></div>';
-    if (!q || q.locked) {
-      html += '<div class="dial-out">' + (sent ? '<p class="dial-sent">' + sent + '</p>' :
-          '<p class="dial-sent off">' + esc(sc.subject) + ' <b class="dial-modal"><s>' + esc(rung.now) + ' have</s></b> ' + esc(sc.past) + '.</p>' +
-          '<p class="tiny">In the past, <em>' + esc(rung.now) + ' have</em> + past participle usually turns into criticism or a missed chance (Stage 6), not a guess. For past guesses use <em>must have</em>, <em>may / might / could have</em> or <em>can\'t have</em>.</p>') +
-        (sent ? '<p class="dial-sure"><b>' + esc(rung.sure) + '</b><br><span class="th">' + esc(rung.th) + '</span></p>' : '') +
-        (!q && sc.thai ? '<p class="tiny">' + esc(sc.thai) + '</p>' : '') + '</div>';
-    }
+        '<button class="tog' + (time === 'past' ? ' on' : '') + '" data-time="past"' + (q ? ' disabled' : '') + '>PAST</button></div>' +
+      '<p class="tiny dial-note" id="dial-note" role="status" aria-live="polite"></p>' +
+      '<div class="dial-out' + (q && q.locked ? ' locked ' + (q.lastOk ? 'ok' : 'no') : '') + '" id="dial-out" aria-live="polite">' +
+        (q && q.locked ? '<span class="lens-k">Your sentence</span>' : '') + dialOutHtml(sc, rung, time, !q) + '</div>';
     if (q && q.locked) {
       var right = RUNGS[rungIdx(ev.rung)], ok = q.lastOk;
-      html += '<div class="verdict ' + (ok ? 'ok' : 'no') + '"><div><b>' + (ok ? 'Right.' : 'Not quite.') + '</b> The evidence points to <b>' + esc(right.name) + '</b>: ' +
-        dialSentence(sc, right, ev.time) + '</div></div>' +
+      html += '<div class="verdict ' + (ok ? 'ok' : 'no') + '" id="dial-verdict">' + (ok
+          ? '<div><b>Right.</b> The evidence fits <b>' + esc(right.name) + '</b>.</div>'
+          : '<div><b>Not quite.</b> The evidence points to <b>' + esc(right.name) + '</b>: ' + dialSentence(sc, right, ev.time) + '</div>' +
+            '<div class="verdict-w">' + esc(right.name) + ' = ' + esc(right.sure.charAt(0).toLowerCase() + right.sure.slice(1)) + '.</div>') + '</div>' +
         '<button class="btn primary wide" id="dial-next">' + (q.i + 1 < q.items.length ? 'Next evidence →' : 'See your score') + '</button>';
     } else if (q) {
       html += '<button class="btn primary wide" id="dial-lock">Lock it in</button>';
     } else {
       html += '<button class="btn primary wide" id="dial-quiz">Challenge: set the dial from the evidence →</button>';
     }
-    html += '</div></div>';
+    html += '</div>' + (q ? '<p class="tiny dial-keys">Keys: 1–5 turn the dial · Enter locks it in</p>' : '') + '</div>';
     $('#view-lab').innerHTML = html;
     wireBack();
-    function setRung(i) {
-      if (q && q.locked) return;
-      if (time === 'past' && !RUNGS[i].past && q) return;
-      D.rung = i; paintDial();
+    var range = $('#dial-range'), note = $('#dial-note');
+    /* Turning the dial redraws only the gauge and the sentence. Rebuilding the
+       whole card would replace the slider in the middle of a drag, and on a
+       phone the thumb would stop after one step. */
+    function refresh() {
+      rung = RUNGS[D.rung];
+      $('#dial-wrap').innerHTML = dialSvg(D.rung, time);
+      $('#dial-out').innerHTML = dialOutHtml(sc, rung, time, !q);
+      range.value = D.rung; range.setAttribute('aria-valuetext', rung.name);
     }
-    $('#dial-range').addEventListener('input', function () { setRung(+this.value); });
-    wireAll('.dial-sec', function (b) { setRung(+b.getAttribute('data-rung')); });
+    function setRung(i) {
+      if (q && q.locked) { range.value = D.rung; return; }
+      if (q && time === 'past' && !RUNGS[i].past) {
+        range.value = D.rung;
+        note.textContent = RUNGS[i].name + ' has no past guess form. For the past, choose can\'t have, might have or must have.';
+        return;
+      }
+      note.textContent = '';
+      if (i === D.rung) return;
+      D.rung = i; refresh();
+    }
+    D.setRung = setRung;
+    range.addEventListener('input', function () { setRung(+this.value); });
+    $('#dial-wrap').addEventListener('click', function (e) {
+      var t = e.target.closest ? e.target.closest('[data-rung]') : null;
+      if (t) setRung(+t.getAttribute('data-rung'));
+    });
     wireAll('[data-scene]', function (b) { D.scene = +b.getAttribute('data-scene'); paintDial(); });
     wireAll('[data-time]', function (b) { D.time = b.getAttribute('data-time'); paintDial(); });
     var qz = $('#dial-quiz');
-    if (qz) qz.addEventListener('click', function () { D.quiz = { items: E.shuffle(sc.evidence.slice()), i: 0, score: 0, locked: false }; D.rung = 1; paintDial(); });
+    if (qz) qz.addEventListener('click', startDialQuiz);
     var lk = $('#dial-lock');
     if (lk) lk.addEventListener('click', function () {
       q.locked = true; q.lastOk = RUNGS[D.rung].k === ev.rung;
-      if (q.lastOk) { q.score++; S.p.xp = (S.p.xp || 0) + 1; }
+      q.log.push({ ev: ev, picked: D.rung, ok: q.lastOk });
+      if (q.lastOk) { q.score++; S.p.xp = (S.p.xp || 0) + 1; paintHeader(); }
       paintDial();
+      var v = $('#dial-verdict'); if (v && v.scrollIntoView) v.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      var n = $('#dial-next'); if (n) n.focus({ preventScroll: true });
     });
     var nx = $('#dial-next');
     if (nx) nx.addEventListener('click', function () {
       q.i++; q.locked = false;
       if (q.i >= q.items.length) {
-        var rec = labRec('dial'); rec.runs++; if (q.score > rec.best) rec.best = q.score;
-        toast('You matched ' + q.score + ' of ' + q.items.length + ' pieces of evidence.');
+        var rec = labRec('dial'); rec.runs++;
+        var isBest = q.score > rec.best; if (isBest) rec.best = q.score;
+        D.done = { score: q.score, n: q.items.length, log: q.log, best: isBest && rec.runs > 1 };
+        D.doneScene = D.scene;
         D.quiz = null; D.scene = (D.scene + 1) % LABD.dial.length; paintHeader(); sync();
       } else D.rung = 1;
       paintDial();
+      dialToTop();
     });
   }
+  function startDialQuiz() {
+    var D = S.dial, sc = LABD.dial[D.scene];
+    D.quiz = { items: E.shuffle(sc.evidence.slice()), i: 0, score: 0, locked: false, log: [] };
+    D.rung = 1; paintDial(); dialToTop();
+  }
+  function dialToTop() {
+    var c = $('#view-lab .play');
+    if (c && c.getBoundingClientRect().top < 0) window.scrollTo({ top: Math.max(0, window.scrollY + c.getBoundingClientRect().top - 8) });
+  }
+  document.addEventListener('keydown', function (ev) {
+    if (S.labScreen !== 'dial' || !S.dial || $('#view-lab').classList.contains('hidden')) return;
+    var tg = ev.target && ev.target.tagName;
+    if (tg === 'INPUT' && ev.target.type !== 'range' || tg === 'TEXTAREA' || tg === 'SELECT') return;
+    if (ev.ctrlKey || ev.metaKey || ev.altKey) return;
+    if (/^[1-5]$/.test(ev.key) && S.dial.setRung && $('#dial-range')) { S.dial.setRung(+ev.key - 1); ev.preventDefault(); return; }
+    if (ev.key === 'Enter' && tg !== 'BUTTON') {
+      var b = $('#dial-lock') || $('#dial-next');
+      if (b) { ev.preventDefault(); b.click(); }
+    }
+  });
 
   /* ------------------------------------------------------ the rule board */
   var BOARD = [
@@ -1854,8 +1954,11 @@
     var B = S.board || (S.board = { cover: false, open: {} });
     var html = '<div class="play">' + labTop('The Rule Board') + '<div class="card board-card">' +
       '<p class="kicker">Gateway B2 · Unit 5 grammar, on one board</p><h3>Rules and guesses, now and then</h3>' +
-      '<p class="muted">Each row is one meaning. Read across to see how it moves into the past. Turn on <b>Cover</b>, say the forms aloud, then tap a cell to check.</p>' +
-      '<div class="dial-time"><button class="tog' + (!B.cover ? ' on' : '') + '" data-cover="0">Show all</button><button class="tog' + (B.cover ? ' on' : '') + '" data-cover="1">Cover the forms</button></div>' +
+      '<p class="muted">Each row is one meaning. Read across to see how it moves into the past. Cover a column, say the forms aloud, then tap a cell to check.</p>' +
+      '<div class="dial-time rb-modes"><button class="tog' + (!B.cover ? ' on' : '') + '" data-cover="0" aria-pressed="' + !B.cover + '">Show all</button>' +
+        '<button class="tog' + (B.cover === 'past' ? ' on' : '') + '" data-cover="past" aria-pressed="' + (B.cover === 'past') + '">Cover the past</button>' +
+        '<button class="tog' + (B.cover === 'all' ? ' on' : '') + '" data-cover="all" aria-pressed="' + (B.cover === 'all') + '">Cover all</button></div>' +
+      (B.cover ? '<p class="tiny rb-count">' + Object.keys(B.open).filter(function (k) { return B.open[k]; }).length + ' of ' + (B.cover === 'all' ? BOARD.length * 2 : BOARD.length) + ' cells checked</p>' : '') +
       '<div class="rboard">' +
       '<div class="rb-h"></div><div class="rb-h">Present / future</div><div class="rb-h">Past</div>';
     var lastGroup = '';
@@ -1863,8 +1966,8 @@
       if (row.group !== lastGroup) { html += '<div class="rb-group">' + (row.group === 'Rules' ? 'Obligation, prohibition and advice' : 'Speculation and deduction') + '</div>'; lastGroup = row.group; }
       html += '<div class="rb-label"><b>' + esc(row.label) + '</b><span class="th">' + esc(row.th) + '</span></div>';
       ['now', 'past'].forEach(function (t) {
-        var c = row[t], id = i + t, hide = B.cover && !B.open[id];
-        html += '<button class="rb-cell' + (hide ? ' covered' : '') + '" data-cell="' + id + '">' +
+        var c = row[t], id = i + t, coverable = B.cover === 'all' || (B.cover === 'past' && t === 'past'), hide = coverable && !B.open[id];
+        html += '<button class="rb-cell' + (hide ? ' covered' : '') + '" data-cell="' + id + '"' + (coverable ? ' aria-expanded="' + !hide + '"' : ' tabindex="-1"') + '>' +
           '<span class="rb-t">' + (t === 'now' ? 'Present' : 'Past') + '</span>' +
           (hide ? '<span class="rb-q">? tap to reveal</span>' :
             '<span class="rb-forms">' + c.forms.map(function (f) { return '<i>' + esc(f) + '</i>'; }).join('') + '</span>' +
@@ -1877,8 +1980,13 @@
     html += '</div></div></div>';
     $('#view-lab').innerHTML = html;
     wireBack();
-    wireAll('[data-cover]', function (b) { B.cover = b.getAttribute('data-cover') === '1'; B.open = {}; paintBoard9(); });
-    wireAll('[data-cell]', function (b) { if (!B.cover) return; var id = b.getAttribute('data-cell'); B.open[id] = !B.open[id]; paintBoard9(); });
+    wireAll('[data-cover]', function (b) { var v = b.getAttribute('data-cover'); B.cover = v === '0' ? false : v; B.open = {}; paintBoard9(); });
+    wireAll('[data-cell]', function (b) {
+      var id = b.getAttribute('data-cell');
+      if (!(B.cover === 'all' || (B.cover === 'past' && /past$/.test(id)))) return;
+      var y = window.scrollY; B.open[id] = !B.open[id]; paintBoard9(); window.scrollTo({ top: y });
+      var again = document.querySelector('[data-cell="' + id + '"]'); if (again) again.focus({ preventScroll: true });
+    });
     wireAll('[data-practise]', function (b) { S.labScreen = null; S.planReturn = false; openSub(b.getAttribute('data-practise')); });
   }
 
@@ -1922,16 +2030,30 @@
     S.labScreen = 'game';
     paintArc();
   }
+  /* Time for one case. The clock used to be one flat number per game (10 s,
+     8 s, 18 s), but the cases differ a lot in length: a 34-word Detective
+     clue or a 67-word Time Machine set could not be read in time, so the
+     game paid for guessing. Now: 0.4 s a word on screen (about 150 words a
+     minute, a B1 reading pace) plus 3 s to decide, never below the game's
+     old figure and never above 30 s. */
+  function arcWords(html) { return String(html).replace(/<[^>]+>/g, ' ').split(/\s+/).filter(function (w) { return /[A-Za-z0-9]/.test(w); }).length; }
+  function arcSecs(g, it, ch) {
+    var words = arcWords(g.prompt(it)) + ch.reduce(function (n, c) { return n + arcWords(c.l); }, 0);
+    return Math.max(g.secs, Math.min(30, Math.ceil(words * 0.4) + 3));
+  }
   function paintArc() {
     var A = ARC, g = A.g, it = A.items[A.i];
     if (!it || A.lives <= 0) return endArc();
-    var ch = A.state === 'ask' ? (A.ch = g.choices(it)) : A.ch;
+    var fresh = A.state === 'ask';
+    var ch = fresh ? (A.ch = g.choices(it)) : A.ch;
+    if (fresh) A.secs = arcSecs(g, it, ch);
+    var barW = fresh ? 100 : Math.round(100 * (A.leftFrac || 0));
     var html = '<div class="play">' + labTop(g.title) +
       '<div class="arc-hud"><span class="arc-lives" aria-label="' + A.lives + ' lives">' + '♥♥♥'.slice(0, A.lives) + '<i>' + '♥♥♥'.slice(0, 3 - A.lives) + '</i></span>' +
       '<span class="arc-score">' + A.score + '</span>' +
       (A.streak >= 2 ? '<span class="combo">▲ ' + A.streak + ' streak' + (A.streak >= 3 ? ' · ×2' : '') + '</span>' : '') +
-      '<span class="qcount">' + (A.i + 1) + ' / ' + A.items.length + '</span></div>' +
-      '<div class="arc-bar"><span id="arc-bar" style="width:100%"></span></div>' +
+      '<span class="qcount arc-n">' + (A.i + 1) + ' / ' + A.items.length + '</span></div>' +
+      '<div class="arc-bar" title="' + A.secs + ' seconds for this one"><span id="arc-bar" class="' + (!fresh && barW < 30 ? 'low' : '') + '" style="width:' + barW + '%"></span></div>' +
       '<div class="card qcard arc-card">' + g.prompt(it) +
       '<div class="arc-choices' + (ch.some(function (c) { return c.long; }) ? ' long' : '') + '">' + ch.map(function (c, k) {
         var cls = '';
@@ -1939,39 +2061,48 @@
         return '<button class="arc-btn' + cls + '" data-v="' + c.v + '"' + (A.state === 'shown' ? ' disabled' : '') + '><kbd>' + (k + 1) + '</kbd>' + esc(c.l) + (c.sub ? '<small>' + esc(c.sub) + '</small>' : '') + '</button>';
       }).join('') + '</div>';
     if (A.state === 'shown') {
-      html += '<div class="verdict ' + (A.lastOk ? 'ok' : 'no') + '"><div><b>' + (A.lastOk ? (A.lastPts ? '+' + A.lastPts + ' · ' : '') + 'Right.' : A.timedOut ? 'Time up.' : 'Not quite.') + '</b> ' +
+      html += '<div class="verdict ' + (A.lastOk ? 'ok' : 'no') + '" role="status"><div><b>' + (A.lastOk ? (A.lastPts ? '+' + A.lastPts + ' · ' : '') + 'Right.' : A.timedOut ? 'Time up.' : 'Not quite.') + '</b> ' +
         g.fill(it) + '</div><div class="verdict-w">' + it.why + '</div></div>' +
         '<button class="btn primary wide" id="arc-next">' + (A.lives <= 0 ? 'See your score' : A.i + 1 < A.items.length ? 'Next →' : 'See your score') + '</button>';
     }
     html += '</div></div>';
     $('#view-lab').innerHTML = html;
     wireBack();
+    /* A new case starts its clock straight away, so bring the clue into view
+       in case the student had scrolled down to the Next button. */
+    if (fresh) { var top = $('#view-lab .play'); if (top && top.getBoundingClientRect().top < 0) window.scrollTo({ top: Math.max(0, window.scrollY + top.getBoundingClientRect().top - 8) }); }
     function answer(v, timedOut) {
       if (A.state !== 'ask') return;
       stopArcade();
       var ok = !timedOut && String(v) === String(it.answer);
-      var left = Math.max(0, A.deadline - Date.now()) / 1000;
-      A.state = 'shown'; A.picked = v; A.lastOk = ok; A.timedOut = !!timedOut; A.lastPts = 0;
+      var leftFrac = Math.max(0, A.deadline - Date.now()) / (A.secs * 1000);
+      A.state = 'shown'; A.picked = v; A.lastOk = ok; A.timedOut = !!timedOut; A.lastPts = 0; A.leftFrac = timedOut ? 0 : leftFrac;
       if (ok) {
         A.streak++; if (A.streak > A.best) A.best = A.streak;
-        A.lastPts = Math.round((100 + left * 10) * (A.streak >= 3 ? 2 : 1));
+        A.lastPts = Math.round((100 + 100 * leftFrac) * (A.streak >= 3 ? 2 : 1));
         A.score += A.lastPts;
-      } else { A.streak = 0; A.lives--; A.log.push(it); }
+      } else {
+        A.streak = 0; A.lives--;
+        var mine = timedOut ? null : ch.filter(function (c) { return String(c.v) === String(v); })[0];
+        A.log.push({ it: it, you: mine ? mine.l : null });
+      }
       paintArc();
+      var vd = document.querySelector('#view-lab .verdict');
+      if (vd && vd.scrollIntoView) vd.scrollIntoView({ block: 'nearest' });
     }
-    if (A.state === 'ask') {
-      A.deadline = Date.now() + g.secs * 1000;
+    if (fresh) {
+      A.deadline = Date.now() + A.secs * 1000;
       A.tick = setInterval(function () {
         var left = A.deadline - Date.now(), bar = document.getElementById('arc-bar');
         if (!bar) { stopArcade(); return; }
-        bar.style.width = Math.max(0, 100 * left / (g.secs * 1000)) + '%';
+        bar.style.width = Math.max(0, 100 * left / (A.secs * 1000)) + '%';
         bar.classList.toggle('low', left < 3000);
         if (left <= 0) answer(null, true);
       }, 100);
       wireAll('.arc-btn', function (b) { answer(b.getAttribute('data-v'), false); });
     }
     var nx = $('#arc-next');
-    if (nx) { nx.addEventListener('click', function () { A.i++; A.state = 'ask'; paintArc(); }); nx.focus(); }
+    if (nx) { nx.addEventListener('click', function () { A.i++; A.state = 'ask'; paintArc(); }); nx.focus({ preventScroll: true }); }
     A.key = function (ev) {
       if (S.labScreen !== 'game' || !ARC) return;
       if (A.state === 'ask' && /^[1-4]$/.test(ev.key) && ch[+ev.key - 1]) answer(ch[+ev.key - 1].v, false);
@@ -1986,17 +2117,22 @@
     paintHeader(); sync();
     var html = '<div class="play"><div class="card result"><div class="seal">' + (A.lives > 0 ? '★' : '✕') + '</div>' +
       '<p class="kicker">' + esc(A.g.title) + '</p><h3>' + A.score + ' points' + (isBest ? ' · new best!' : '') + '</h3>' +
-      '<p>' + (A.lives > 0 ? 'Round complete with ' + A.lives + ' ' + (A.lives === 1 ? 'life' : 'lives') + ' left.' : 'Out of lives.') +
+      '<p>' + (A.lives > 0 ? 'Round complete with ' + A.lives + ' ' + (A.lives === 1 ? 'life' : 'lives') + ' left.' : 'Out of lives after ' + (A.i + 1) + ' of ' + A.items.length + '.') +
       ' Longest streak: ' + A.best + '. Best so far: ' + rec.best + '.</p>';
-    if (A.log.length) html += '<div class="misslist">' + A.log.map(function (it) {
-      return '<div class="miss"><b>' + A.g.fill(it) + '</b>' + it.why + '</div>'; }).join('') + '</div>';
-    html += '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn" id="arc-home">Back to the Modal Lab</button>' +
+    if (A.log.length) html += '<p class="kicker arc-missh">Look again</p><div class="misslist">' + A.log.map(function (x) {
+      var it = x.it;
+      return '<div class="miss arc-miss no">' + (it.clue ? '<span class="arc-ev">' + esc(it.clue) + '</span>' : it.now ? '<span class="arc-ev">Now: ' + esc(it.now) + '</span>' : '') +
+        '<span class="arc-you">' + (x.you === null ? 'No answer — time ran out' : 'You chose: ' + esc(x.you)) + '</span>' +
+        '<span class="arc-ok">→ ' + A.g.fill(it) + '</span><span class="arc-why">' + it.why + '</span></div>'; }).join('') + '</div>';
+    html += '<div class="arc-actions"><button class="btn" id="arc-home">Back to the Modal Lab</button>' +
       '<button class="btn primary" id="arc-again">Play again</button></div></div></div>';
     ARC = null;
     $('#view-lab').innerHTML = html;
+    window.scrollTo({ top: 0 });
     $('#arc-home').addEventListener('click', function () { S.labScreen = null; paintLab(); });
     var key = A.g.key;
     $('#arc-again').addEventListener('click', function () { startGame(key); });
+    $('#arc-again').focus({ preventScroll: true });
   }
 
   /* =====================================================================

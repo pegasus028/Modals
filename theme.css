@@ -466,4 +466,28 @@ input::placeholder{color:var(--ink-3)}
 .arc-btn.wrong{border-color:var(--no);background:var(--no-soft)}
 .arc-btn.dim{opacity:.45}
 .arc-btn[disabled]{cursor:default}
+/* Lab, October 2026 review: readable miss lists, live dial note, key hints */
+.arc-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.arc-missh{margin:6px 0 0;text-align:left;width:100%}
+.miss.arc-miss{display:flex;flex-direction:column;gap:5px;border-left:4px solid var(--rule)}
+.miss.arc-miss.no{border-left-color:var(--no)}
+.miss.arc-miss.ok{border-left-color:var(--ok)}
+.miss.arc-miss b{display:inline;font:inherit;font-weight:700;text-transform:none;letter-spacing:0;color:inherit;margin:0}
+.arc-ev{color:var(--ink-2);font-size:.86rem;line-height:1.45}
+.arc-you{font:600 .78rem var(--f-mono);color:var(--no)}
+.arc-ok{font:600 1rem/1.45 var(--f-display);color:var(--ink)}
+.arc-ok .dial-modal,.arc-ok b{color:var(--ok)}
+.arc-why{font-size:.88rem;color:var(--ink-2);line-height:1.5}
+.dial-note{min-height:0;margin:0;text-align:center;color:var(--no)}
+.dial-note:empty{display:none}
+.dial-out.locked{border:1px solid var(--rule)}
+.dial-out.locked.ok{border-color:var(--ok)}
+.dial-out.locked.no{border-color:var(--no)}
+.dial-out .lens-k{display:block;margin-bottom:4px}
+.dial-keys{text-align:center;margin:8px 0 0;color:var(--ink-3)}
+.dial-result{gap:10px}
+.fc-rate kbd,.rb-modes kbd{font:600 .7rem var(--f-mono);opacity:.7;margin-right:4px}
+.rb-modes{flex-wrap:wrap}
+.rb-count{text-align:center;margin:0;color:var(--ink-3)}
+@media (hover:none){.dial-keys,.fc-rate kbd{display:none}}
 .result .seal{width:74px;height:74px;border-radius:50%;background:var(--gold-soft);color:var(--gold);display:grid;place-items:center;font-size:26px;border:2px solid var(--gold)}

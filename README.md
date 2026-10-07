@@ -213,18 +213,27 @@ A new tab in the student nav. None of it touches the route or the checklist.
 
 - **The Certainty Dial** — slide from *can't* to *must* and watch the sentence change;
   switch to PAST and *have* + participle appears (and *should* / *will* are greyed out,
-  with the reason). Challenge mode shows a piece of evidence and the student sets the dial.
-- **The Rule Board** — the Unit 5 grammar page as one grid, present against past. "Cover
-  the forms" hides every cell for self-testing; each row links to its Stage 9 module.
-- **Games** — *Modal Detective* (40 cases: must / might / can't, now and past, 10 s each),
+  with the reason). Challenge mode shows a piece of evidence; the student turns the dial
+  and reads the sentence she is building **before** she locks it in, then gets a verdict.
+  A Challenge ends on a result card listing every piece of evidence with her setting and
+  the right one. Keys 1–5 turn the dial and Enter locks it in.
+- **The Rule Board** — the Unit 5 grammar page as one grid, present against past.
+  "Cover the past" hides only the past column (say how each meaning moves back in time);
+  "Cover all" hides every cell; each row links to its Stage 9 module.
+- **Games** — *Modal Detective* (40 cases: must / might / can't, now and past),
   *The Negation Cliff* (40 sentences: no obligation or not allowed?), *Time Machine*
-  (30 items: send a sentence into the past). Three lives, a streak multiplier, a reason
-  after every answer, keys 1–4, best scores kept, and XP for points.
+  (30 items: send a sentence into the past). Each case gets 0.4 s a word on screen plus
+  3 s (never less than 10 / 8 / 18 s, never more than 30 s), and the time bonus is a
+  share of that clock, so long cases are not a guessing race. Three lives, a streak
+  multiplier, a reason after every answer, keys 1–4, best scores kept, XP for points.
+  The result card lists each miss with the answer given and the right one.
 - **Sprints** — six timed runs over the practice bank (never the tests): How Sure?, Rules,
   Unit 5 Blitz, Politeness, TCAS70 Pace (67 s a question) and Full Mix 20. Weak and unseen
   rules come first; misses go onto the fault list.
 - **Flashcards** — 73 modal forms (form, function, meaning, Thai, example) in a five-box
-  Leitner cycle.
+  Leitner cycle. Space flips, 1 = not yet, 2 = knew it.
+
+Tapping the **Modal Lab** tab from inside any tool or game returns to the Lab's home.
 
 Best scores, sprint records and flashcard boxes are saved inside the student's progress
 (`lab`, `sprints`, `flash`), so they travel with the account.
@@ -240,6 +249,7 @@ node verify.js        # structure: ids, tags, answer indices, escaped fields, ra
 node render-test.js   # mounts all 702 items in a headless DOM and answers each one
 node audit.js         # key balance per stage/test; `node audit.js t3` for one stage in detail
 node qa.js            # content rules (October 2026 audit); must report 0 errors
+node lab-test.js      # plays the Modal Lab in headless Chromium (needs playwright); must end LAB OK
 ```
 
 `audit.js` holds the balance the 25 September review set: in every stage and every test
