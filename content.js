@@ -98,7 +98,7 @@ var BADGES = [
   { id: 'run10',     name: 'Ten Clean',        perk: 'Ten in a row.',                        how: 'Answer 10 questions correctly in a row.' },
   { id: 'reflight',  name: 'Second Reading',   perk: 'A second attempt, taken.',             how: 'Pass a stage check you previously failed.' },
   { id: 'quick',     name: 'Quick Ear',        perk: 'Reading speed counts in the exam.',    how: 'Earn 25 time bonuses by answering before the ring runs out (longer questions get more time).' },
-  { id: 'sim1',      name: 'First Paper',      perk: 'You have seen a whole paper.',         how: 'Finish any of the three tests.' },
+  { id: 'sim1',      name: 'First Paper',      perk: 'You have seen a whole paper.',         how: 'Finish any test paper, a unit test included.' },
   { id: 'sim70',     name: 'Seventy Up',       perk: '70% on a full paper.',                 how: 'Score 70% or more on any test.' },
   { id: 'simall',    name: 'All Three Papers', perk: 'Triage and both final checks, done.',  how: 'Finish all three tests.' },
   { id: 'director',  name: 'Beyond Doubt',     perk: 'Every stage green.',                   how: 'Clear all 30 stage checks.' }
@@ -111,6 +111,17 @@ var BADGES = [
    One block per stage, in stage order.
    -------------------------------------------------------------------------- */
 var REMEDIATION = {
+
+  /* ------------------------------------- UNIT 5 VOCABULARY (unit tests only) */
+  'u5-vocab': {
+    name: 'Unit 5 vocabulary: money and shopping words',
+    principle: 'The Unit 5 word list (Gateway to the World B2, p. 60): money in and money out, the small word after the big word (<em>spend ON</em>, <em>cut down ON</em>, <em>run out OF</em>, <em>pay BACK</em>, <em>afford TO</em>), the uncountables <em>cash</em>, <em>change</em> and <em>money</em>, and the fixed idioms <em>cost an arm and a leg</em>, <em>tighten your belt</em> and <em>snap up a bargain</em>.',
+    reteach: 'These items appear only on the Unit tests tab, so a miss creates no module on the stage map. Revise the word with its frame rather than its meaning alone, in the Money Matters app (pegasus028.github.io/MU5Vocab): the study card gives the level, two examples, the collocations and the trap for each word, and the Patterns tab groups them (money in versus money out, the careful-to-reckless scale, cheap versus good value).',
+    activities: [
+      'Frame drill: read a sentence with the small word missing (She spent 200 baht ___ stickers; We ran out ___ cash) and say the whole frame back, not the word alone.',
+      'Two columns: sort fifteen words into MONEY IN and MONEY OUT, then build one sentence that uses one word from each column.'
+    ]
+  },
 
   /* ---------------------------------------- STAGE 01 · The Modal Frame */
   'frame-twolayer': {

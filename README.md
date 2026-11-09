@@ -118,6 +118,7 @@ switched off because there are none yet. To turn it on, save them as `slides/s-0
 | `lab-data.js` | the Modal Lab: dial scenes, Detective cases, Cliff sentences, Time Machine items and the 73 flashcards |
 | `test-1.js` | the triage. **Loads first, and must: the engine treats the first test as the diagnostic.** |
 | `test-2.js` / `test-3.js` | the B2 and C1 final checks |
+| `test-u5-1.js` / `test-u5-2.js` | two Unit 5 mock unit tests in the school's format (vocabulary 5 · cloze 5 · error ID 5 · closest 5), flagged `unit: true` so they live on the **Unit tests** tab and never enter the route, the triage logic or the awards; vocabulary items carry the `u5-vocab` tag, which routes nowhere by design (added 9 Nov 2026) |
 | `media.js` | the podcast, video and slide links |
 | `roster.js` | the class list behind the Fast Access tab, and an optional deadline |
 | `Code.gs` | the Google Apps Script server — paste into a Sheet, not served from here |

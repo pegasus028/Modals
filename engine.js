@@ -1038,7 +1038,7 @@
       var m = p.mocks || {};
       return Object.keys(m).some(function (k) { return m[k].best >= 0.7; });
     },
-    simall: function (p) { return Object.keys(p.mocks || {}).length >= (C.MOCKS || []).length; },
+    simall: function (p) { var core = (C.MOCKS || []).filter(function (m) { return !m.unit; }); return core.every(function (m) { return !!(p.mocks || {})[m.id]; }); },
     director: function (p) { return checksCleared(p) >= ALL_LEVELS.length; }
   };
   function checkBadges(p) {

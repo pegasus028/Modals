@@ -18,7 +18,7 @@ var FILES = [
   'topic-s1.js', 'topic-s2.js', 'topic-s3.js', 'topic-s4.js',
   'topic-s5.js', 'topic-s6.js', 'topic-s7.js', 'topic-s8.js', 'topic-s9.js', 'topic-s10.js',
   'media.js',
-  'test-1.js', 'test-2.js', 'test-3.js',
+  'test-1.js', 'test-2.js', 'test-3.js', 'test-u5-1.js', 'test-u5-2.js',
   'content-export.js'
 ];
 
@@ -249,6 +249,8 @@ Object.keys(C.REMEDIATION).forEach(function (tag) {
   if (!tagsUsed[tag]) err('REMEDIATION tag "' + tag + '" is never used — tag coverage can never reach 100%');
 });
 Object.keys(tagsUsed).forEach(function (tag) {
+  /* Vocabulary on the unit tests is marked but deliberately routes nowhere. */
+  if (tag === 'u5-vocab') return;
   if (!tagsOnModuleItems[tag]) err('tag "' + tag + '" is only used in checks/tests — a miss on it will route the student nowhere');
 });
 var topRank = C.RANKS[C.RANKS.length - 1];

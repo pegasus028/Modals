@@ -248,7 +248,11 @@
   }
 
   /* --------------------------------------------------------------- views */
-  var VIEWS = ['plan', 'map', 'play', 'review', 'lab', 'revise', 'vids', 'pods', 'faults', 'record', 'settings'];
+  /* Unit tests (mock papers flagged unit: true) live on their own tab; the
+     route, the triage logic and the awards see only the core papers. */
+  function corePapers() { return (C.MOCKS || []).filter(function (m) { return !m.unit; }); }
+  function unitPapers() { return (C.MOCKS || []).filter(function (m) { return m.unit; }); }
+  var VIEWS = ['plan', 'map', 'play', 'review', 'lab', 'utests', 'revise', 'vids', 'pods', 'faults', 'record', 'settings'];
   function show(v) {
     /* An award card left open would sit on top of whatever comes next and
        swallow every click, so changing view clears it — and cancels any award
@@ -266,6 +270,7 @@
     if (v === 'map') paintMap();
     if (v === 'plan') paintPlan();
     if (v === 'lab') paintLab();
+    if (v === 'utests') paintUnitTests();
     if (v === 'revise') paintRevise();
     if (v === 'vids') paintVids();
     if (v === 'pods') paintPods();
@@ -894,7 +899,7 @@
   }
 
   function paintPlan() {
-    var p = S.p, papers = C.MOCKS || [];
+    var p = S.p, papers = corePapers();
     var html = '';
 
     /* ---- nothing sat yet: one question, one button */
@@ -1073,6 +1078,89 @@
   }
 
   /* =====================================================================
+     UNIT TESTS
+     Mock unit tests in the school's format (Part A vocabulary, Part B cloze,
+     error identification, closest in meaning). They are ordinary mock papers
+     to the engine, so the clock, the review and the error list all work, but
+     they sit on their own tab and never enter the route or the awards.
+     ===================================================================== */
+  function paintUnitTests() {
+    var p = S.p, papers = unitPapers();
+    var html = '<div class="sect-h"><div><h2>Unit tests</h2>' +
+      '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">Unit 5 mock tests in your school’s unit-test format: ' +
+      'five vocabulary items, a five-gap text, five error-spotting items and five closest-in-meaning items. ' +
+      'Twenty questions, twenty minutes, one mark each. Sit Test 1, read every answer back, work on anything the ' +
+      'checklist points at, then sit Test 2.</p></div></div>';
+    if (!papers.length) {
+      html += '<p class="tiny">No unit tests have been loaded yet.</p>';
+      $('#view-utests').innerHTML = html; return;
+    }
+    papers.forEach(function (m, idx) {
+      var rec = (p.mocks || {})[m.id];
+      var plan = planFor(p, m.id);
+      html += '<div class="step' + (rec ? ' sat' : ' open') + '">';
+      html += '<div class="step-h"><span class="step-n">' + (idx + 1) + '</span>' +
+        '<span class="step-t"><span class="step-name">' + esc(m.name) + '</span>' +
+        '<span class="step-s">' +
+          (rec ? 'Sat ' + esc(new Date(rec.at).toLocaleDateString()) + ' · ' + rec.marks + ' of ' + rec.total + ' marks'
+               : m.total + ' questions · ' + m.minutes + ' minutes') +
+        '</span></span>' +
+        (rec ? '<span class="step-pct' + (rec.best >= 0.7 ? ' good' : '') + '">' + pct(rec.best) + '%</span>'
+             : '<button class="btn primary sm" data-sim="' + m.id + '">Start</button>') +
+        '</div>';
+      html += '<div class="step-b"><p style="color:var(--ink-2);font-size:.92rem">' + esc(m.blurb) + '</p></div>';
+      if (rec) {
+        html += '<div class="step-acts">' +
+          (rec.review ? '<button class="btn sm" data-review="' + m.id + '">Read your answers</button>' +
+                        '<button class="btn sm" data-errs="' + m.id + '">Examine errors</button>' : '') +
+          (rec.pace ? '<button class="btn sm" data-pace="' + m.id + '">Where the time went</button>' : '') +
+          '<button class="btn sm" data-sim="' + m.id + '">Sit it again</button></div>';
+      }
+      if (rec && plan) {
+        if (!plan.subs.length) {
+          html += '<div class="step-b"><p class="allclear">No grammar modules to revisit from this paper.</p></div>';
+        } else {
+          var left = planLeft(p, m.id);
+          html += '<div class="step-b"><p class="ck-h">' + (left
+            ? left + ' of ' + plan.subs.length + ' Unit 5 module' + (plan.subs.length === 1 ? '' : 's') + ' to revisit.'
+            : 'All ' + plan.subs.length + ' cleared.') + '</p><div class="ckstack">';
+          plan.subs.forEach(function (subId) {
+            var sb = E.Bank.sub(subId); if (!sb) return;
+            var t = E.Bank.topic(sb.topicId), done = subCleared(p, subId), r = p.subs[subId];
+            html += '<button class="ckrow' + (done ? ' done' : '') + '" data-plan-sub="' + subId + '">' +
+              '<span class="ck-box">' + (done ? '✓' : '') + '</span>' +
+              '<span class="ck-txt"><span class="ck-name">' + esc(sb.name) + '</span>' +
+              '<span class="ck-sub">' + esc(t ? t.code + ' · ' + t.name : '') + ' · ' +
+                plan.missed[subId] + (plan.missed[subId] === 1 ? ' question' : ' questions') + ' missed</span></span>' +
+              '<span class="ck-go">' + (done ? pct(r.best) + '%' : 'Open →') + '</span></button>';
+          });
+          html += '</div></div>';
+        }
+      }
+      html += '</div>';
+    });
+    html += '<p class="tiny" style="margin-top:14px">Vocabulary items are marked but do not create a checklist: the ' +
+      'checklist only points at Unit 5 grammar modules on the stage map.</p>';
+    $('#view-utests').innerHTML = html;
+    var host = $('#view-utests');
+    host.querySelectorAll('[data-sim]').forEach(function (b) {
+      b.addEventListener('click', function () { confirmSim(b.dataset.sim); });
+    });
+    host.querySelectorAll('[data-review]').forEach(function (b) {
+      b.addEventListener('click', function () { openReview(b.dataset.review, false); });
+    });
+    host.querySelectorAll('[data-errs]').forEach(function (b) {
+      b.addEventListener('click', function () { openReview(b.dataset.errs, true); });
+    });
+    host.querySelectorAll('[data-pace]').forEach(function (b) {
+      b.addEventListener('click', function () { showPace(b.dataset.pace); });
+    });
+    host.querySelectorAll('[data-plan-sub]').forEach(function (b) {
+      b.addEventListener('click', function () { S.planReturn = true; openSub(b.dataset.planSub); });
+    });
+  }
+
+  /* =====================================================================
      SYSTEMS MAP
      ===================================================================== */
   function nextAction(p) {
@@ -1082,7 +1170,7 @@
     }
     /* Until the first paper has been sat, it is the whole recommendation.
        Eight stages is a lot to face without knowing which one is weakest. */
-    var papers = C.MOCKS || [];
+    var papers = corePapers();
     for (var q = 0; q < papers.length; q++) {
       var mk = papers[q];
       if (!(p.mocks || {})[mk.id]) {
@@ -1119,7 +1207,7 @@
     var due = P.dueReview(p).length;
     if (due) return { kind: 'faults', label: 'Clear your fault list',
                       sub: due + (due === 1 ? ' question is' : ' questions are') + ' due' };
-    var un = (C.MOCKS || []).filter(function (m) { return !(p.mocks || {})[m.id]; })[0];
+    var un = corePapers().filter(function (m) { return !(p.mocks || {})[m.id]; })[0];
     if (un) return { kind: 'sim', id: un.id, label: un.name, sub: '20 questions · ' + un.minutes + ' minutes' };
     return null;
   }
@@ -2734,13 +2822,13 @@
     }
 
     html += '<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px">' +
-      '<button class="btn primary" id="x-done">See what to work on</button>' +
+      '<button class="btn primary" id="x-done">' + (mock.unit ? 'Back to the unit tests' : 'See what to work on') + '</button>' +
       '<button class="btn" id="x-review">Read every question back</button>' +
       (wrong.length ? '<button class="btn" id="x-errs">Examine errors (' + wrong.length + ')</button>' : '') +
       '<button class="btn" id="x-sims">The stage map</button></div>' +
       '</div></div>';
     $('#view-play').innerHTML = html;
-    $('#x-done').addEventListener('click', function () { show('plan'); });
+    $('#x-done').addEventListener('click', function () { show(mock.unit ? 'utests' : 'plan'); });
     $('#x-review').addEventListener('click', function () { openReview(mock.id, false); });
     var xe = $('#x-errs');
     if (xe) xe.addEventListener('click', function () { openReview(mock.id, true); });
