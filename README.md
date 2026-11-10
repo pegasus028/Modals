@@ -311,3 +311,14 @@ paragraph break in a passage, never `<p>`. `verify.js` checks all of this.
   checklist the triage builds is the shortest route, not the only one.
 - The rank ladder is the certainty scale itself: **No Reading → Might → Could → May → May
   Well → Should → Will → Must → Beyond Doubt**, one rung per band of the 30 stage checks.
+
+
+## Deduction tab (10 Nov 2026)
+
+A nav tab for Gateway B2 Unit 5 "Grammar in context 2" (speculation and deduction, Student's Book pp. 64-65), view `deduce`, `paintDeduce()` in `student.js`:
+
+1. **The patterns**: the Certainty Ladder, the senses-and-tenses quadrant and four things to remember, as static tables (styles `.dd-*` in `index.html`).
+2. **Practise**: the three Stage 9 "Guesses" modules (`t9l3s1`, `t9l3s2`, `t9l3s3`).
+3. **Test yourself**: the unit tests flagged `tab: 'deduce'` (`test-u5-3.js`, `test-u5-4.js`, ids `u5t3`, `u5t4`). They are also listed on the Unit tests tab; finishing one returns to this tab.
+
+`unitCardsHtml()` and `wireUnitCards()` build the test cards for both tabs. The new tests use only existing tags (`u5-guess-now`, `u5-guess-past`, `u5-guess-form`, the part 1 tags and `u5-vocab`). No Apps Script change.

@@ -252,7 +252,7 @@
      route, the triage logic and the awards see only the core papers. */
   function corePapers() { return (C.MOCKS || []).filter(function (m) { return !m.unit; }); }
   function unitPapers() { return (C.MOCKS || []).filter(function (m) { return m.unit; }); }
-  var VIEWS = ['plan', 'map', 'play', 'review', 'lab', 'utests', 'revise', 'vids', 'pods', 'faults', 'record', 'settings'];
+  var VIEWS = ['plan', 'map', 'play', 'review', 'lab', 'utests', 'deduce', 'revise', 'vids', 'pods', 'faults', 'record', 'settings'];
   function show(v) {
     /* An award card left open would sit on top of whatever comes next and
        swallow every click, so changing view clears it — and cancels any award
@@ -271,6 +271,7 @@
     if (v === 'plan') paintPlan();
     if (v === 'lab') paintLab();
     if (v === 'utests') paintUnitTests();
+    if (v === 'deduce') paintDeduce();
     if (v === 'revise') paintRevise();
     if (v === 'vids') paintVids();
     if (v === 'pods') paintPods();
@@ -1089,12 +1090,22 @@
     var html = '<div class="sect-h"><div><h2>Unit tests</h2>' +
       '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">Unit 5 mock tests in your school’s unit-test format: ' +
       'five vocabulary items, a five-gap text, five error-spotting items and five closest-in-meaning items. ' +
-      'Twenty questions, twenty minutes, one mark each. Sit Test 1, read every answer back, work on anything the ' +
-      'checklist points at, then sit Test 2.</p></div></div>';
+      'Twenty questions, twenty minutes, one mark each. Tests 1 and 2 cover obligation, prohibition and advice; ' +
+      'Tests 3 and 4 add speculation and deduction. Sit one, read every answer back, work on anything the ' +
+      'checklist points at, then sit the next.</p></div></div>';
     if (!papers.length) {
       html += '<p class="tiny">No unit tests have been loaded yet.</p>';
       $('#view-utests').innerHTML = html; return;
     }
+    html += unitCardsHtml(papers);
+    html += UT_FOOT;
+    $('#view-utests').innerHTML = html;
+    wireUnitCards($('#view-utests'));
+  }
+  var UT_FOOT = '<p class="tiny" style="margin-top:14px">Vocabulary items are marked but do not create a checklist: the ' +
+      'checklist only points at Unit 5 grammar modules on the stage map.</p>';
+  function unitCardsHtml(papers) {
+    var p = S.p, html = '';
     papers.forEach(function (m, idx) {
       var rec = (p.mocks || {})[m.id];
       var plan = planFor(p, m.id);
@@ -1139,10 +1150,9 @@
       }
       html += '</div>';
     });
-    html += '<p class="tiny" style="margin-top:14px">Vocabulary items are marked but do not create a checklist: the ' +
-      'checklist only points at Unit 5 grammar modules on the stage map.</p>';
-    $('#view-utests').innerHTML = html;
-    var host = $('#view-utests');
+    return html;
+  }
+  function wireUnitCards(host) {
     host.querySelectorAll('[data-sim]').forEach(function (b) {
       b.addEventListener('click', function () { confirmSim(b.dataset.sim); });
     });
@@ -1157,6 +1167,73 @@
     });
     host.querySelectorAll('[data-plan-sub]').forEach(function (b) {
       b.addEventListener('click', function () { S.planReturn = true; openSub(b.dataset.planSub); });
+    });
+  }
+
+
+  /* =====================================================================
+     SPECULATION AND DEDUCTION (Gateway B2 Unit 5, pp. 64-65)
+     One tab that gathers the topic: the patterns as tables, the three
+     Stage 9 "Guesses" modules, and the unit tests flagged tab: 'deduce'.
+     ===================================================================== */
+  var DEDUCE_SUBS = ['t9l3s1', 't9l3s2', 't9l3s3'];
+  function paintDeduce() {
+    var p = S.p, h = '';
+    h += '<div class="sect-h"><div><h2>Speculation and deduction</h2>' +
+      '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">Unit 5, Grammar in context 2 (Student’s Book pp. 64–65): ' +
+      '<em>must</em>, <em>may</em>, <em>might</em>, <em>could</em> and <em>can’t</em> for guesses about now and about the past. ' +
+      'Read the patterns, practise the three modules, then sit the two tests.</p></div></div>';
+
+    h += '<h3 class="dd-h">1 · The patterns</h3>';
+    h += '<div class="dd-card"><p class="dd-t">The Certainty Ladder</p>' +
+      '<p class="dd-p">A guessing modal says “I don’t know, but I can work it out.” When you know, there is no modal.</p>' +
+      '<div class="dd-scroll"><table class="sectable dd-table"><tr><th>Rung</th><th>Meaning</th><th>Now</th><th>Before now</th><th>Example</th></tr>' +
+      '<tr><td><span class="dd-chip g">must</span></td><td>sure yes</td><td>must be</td><td>must have been</td><td>Her umbrella is dripping. It <b>must</b> be raining.</td></tr>' +
+      '<tr><td><span class="dd-chip b">may · might · could</span></td><td>possible</td><td>might be</td><td>might have been</td><td>She hasn’t replied. She <b>might</b> be asleep.</td></tr>' +
+      '<tr><td><span class="dd-chip y">may not · might not</span></td><td>possibly not</td><td>might not be</td><td>might not have been</td><td>She <b>might not</b> have seen my message.</td></tr>' +
+      '<tr><td><span class="dd-chip o">can’t</span></td><td>sure no</td><td>can’t be</td><td>can’t have been</td><td>The door is locked. The lesson <b>can’t</b> be in there.</td></tr>' +
+      '</table></div></div>';
+
+    h += '<div class="dd-card"><p class="dd-t">Senses and tenses</p>' +
+      '<p class="dd-p">Left to right changes the tense: only <em>have</em> + V3 is added. Top to bottom changes the sense.</p>' +
+      '<div class="dd-quad">' +
+      '<div class="dd-ax"></div><div class="dd-ax">← PAST · modal + have + V3</div><div class="dd-ax">PRESENT · modal + verb →</div>' +
+      '<div class="dd-ax">↑ POSITIVE</div>' +
+      '<div class="dd-q b"><small>SURE YES</small><b>must have + V3</b><small>POSSIBLE</small><b>may / might / could have + V3</b></div>' +
+      '<div class="dd-q g"><small>SURE YES</small><b>must</b><small>POSSIBLE (also the future)</small><b>may · might · could</b></div>' +
+      '<div class="dd-ax">↓ NEGATIVE</div>' +
+      '<div class="dd-q o"><small>POSSIBLY NOT</small><b>may not / might not have + V3</b><small>SURE NO</small><b>can’t have + V3</b></div>' +
+      '<div class="dd-q y"><small>POSSIBLY NOT (also the future)</small><b>may not · might not</b><small>SURE NO</small><b>can’t</b></div>' +
+      '</div></div>';
+
+    h += '<div class="dd-card"><p class="dd-t">Four things to remember</p>' +
+      '<div class="dd-scroll"><table class="sectable dd-table"><tr><th>Pattern</th><th>What it means</th><th>Right</th><th>Wrong</th></tr>' +
+      '<tr><td>The evidence decides</td><td>Strong clue = must or can’t. Weak clue or none = may, might, could. Find the clue first.</td><td>She has three cars. She <b>must</b> be rich.</td><td>a guess with no clue</td></tr>' +
+      '<tr><td>One trick for the past</td><td>Keep the modal and add <em>have</em> + V3. <em>Have</em> never changes.</td><td>must <b>have seen</b></td><td>must have saw · might seen · must had</td></tr>' +
+      '<tr><td>The opposite of must</td><td>For a guess it is <em>can’t</em>. <em>Mustn’t</em> is a prohibition. <em>Couldn’t</em> = sure no, never “possibly not”.</td><td>It <b>can’t</b> have been hard.</td><td>It mustn’t have been hard.</td></tr>' +
+      '<tr><td>Guess or rule?</td><td><em>must have paid</em> = I am sure she paid. <em>had to pay</em> = paying was necessary.</td><td>She <b>must have</b> paid: here is the receipt.</td><td>She had to pay (for a guess)</td></tr>' +
+      '</table></div></div>';
+
+    h += '<h3 class="dd-h">2 · Practise</h3><div class="ckstack">';
+    DEDUCE_SUBS.forEach(function (subId) {
+      var sb = E.Bank.sub(subId); if (!sb) return;
+      var done = subCleared(p, subId), r = (p.subs || {})[subId];
+      h += '<button class="ckrow' + (done ? ' done' : '') + '" data-dd-sub="' + subId + '">' +
+        '<span class="ck-box">' + (done ? '✓' : '') + '</span>' +
+        '<span class="ck-txt"><span class="ck-name">' + esc(sb.name) + '</span>' +
+        '<span class="ck-sub">Stage 9 · Guesses' + (r && r.best != null ? ' · best ' + pct(r.best) + '%' : '') + '</span></span>' +
+        '<span class="ck-go">' + (done ? pct(r.best) + '%' : 'Open →') + '</span></button>';
+    });
+    h += '</div>';
+
+    h += '<h3 class="dd-h">3 · Test yourself</h3>';
+    var papers = unitPapers().filter(function (m) { return m.tab === 'deduce'; });
+    h += papers.length ? unitCardsHtml(papers) + UT_FOOT : '<p class="tiny">No tests have been loaded yet.</p>';
+    var host = $('#view-deduce');
+    host.innerHTML = h;
+    wireUnitCards(host);
+    host.querySelectorAll('[data-dd-sub]').forEach(function (b) {
+      b.addEventListener('click', function () { openSub(b.dataset.ddSub); });
     });
   }
 
@@ -2828,7 +2905,7 @@
       '<button class="btn" id="x-sims">The stage map</button></div>' +
       '</div></div>';
     $('#view-play').innerHTML = html;
-    $('#x-done').addEventListener('click', function () { show(mock.unit ? 'utests' : 'plan'); });
+    $('#x-done').addEventListener('click', function () { show(mock.unit ? (mock.tab === 'deduce' ? 'deduce' : 'utests') : 'plan'); });
     $('#x-review').addEventListener('click', function () { openReview(mock.id, false); });
     var xe = $('#x-errs');
     if (xe) xe.addEventListener('click', function () { openReview(mock.id, true); });
