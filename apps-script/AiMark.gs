@@ -1,12 +1,15 @@
 /* ===========================================================================
-   FINE TUNING — AiMark.gs   (second file in the Apps Script project)
+   FINE TUNING — AiMark.gs   (live: appended to the end of Code.gs in the
+   Apps Script project bound to the "Modals" Sheet; deployed as Version 3,
+   18 Nov 2026)
    AI marking for the "Unit 5 test prep" tab (prep.js). One written answer
    per call; Claude says whether it is correct and gives short feedback.
 
    SETUP (once)
      Project Settings → Script Properties → add
        ANTHROPIC_API_KEY   your Anthropic API key   (required)
-       AI_MODEL            optional, default claude-sonnet-5-5
+       AI_MODEL            optional, default claude-sonnet-5-5 (do not send
+                           temperature: this model rejects it with HTTP 400)
        AI_DAILY_LIMIT      optional, default 600 calls a day
      Code.gs routes the action:  case 'aiMark': return json(doAiMark(payload));
      Run aiMarkSelfTest() once from the editor to approve the
@@ -78,14 +81,18 @@ function doAiMark(p) {
     contentType: 'application/json',
     headers: { 'x-api-key': key, 'anthropic-version': '2023-06-01' },
     payload: JSON.stringify({
-      model: model, max_tokens: 400, temperature: 0,
+      model: model, max_tokens: 400,
       system: system,
       messages: [{ role: 'user', content: task }]
     }),
     muteHttpExceptions: true
   });
   var code = res.getResponseCode();
-  if (code !== 200) return { ok: false, error: 'api-' + code };
+  if (code !== 200) {
+    var msg = '';
+    try { msg = (JSON.parse(res.getContentText()).error || {}).message || ''; } catch (e) {}
+    return { ok: false, error: 'api-' + code + (msg ? ': ' + String(msg).slice(0, 200) : '') };
+  }
   var body = JSON.parse(res.getContentText());
   var text = (body.content || []).map(function (c) { return c.text || ''; }).join('');
   var m = text.match(/\{[\s\S]*\}/);
