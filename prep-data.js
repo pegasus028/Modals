@@ -27,7 +27,7 @@
    "would rather", "'ve got to" -> "have got to", "dont" -> "don't" etc.
    =========================================================================== */
 window.PREP = {
-  version: '2026-11-18',
+  version: '2026-11-18c',
   tests: [
 
   /* =====================================================================
@@ -55,7 +55,7 @@ window.PREP = {
             options: ['needn’t have', 'didn’t need to', 'shouldn’t', 'mustn’t have'], answer: 0,
             why: 'She printed it (it happened), but it was not necessary: needn’t have + V3. Didn’t need to and shouldn’t need a bare verb, not printed.' },
           { id: 'p1-1-1-3', focus: 'strong advice with a warning (had better)',
-            stem: 'Your bank card runs out next week. You ______ order a new one before your trip, or you won’t be able to use cashpoints abroad.',
+            stem: 'Your bank card expires next week. You ______ order a new one before your trip, or you won’t be able to use cashpoints abroad.',
             options: ['are allowed to', 'don’t need to', 'used to', 'had better'], answer: 3,
             why: 'Clue: “or you won’t be able to…” is a warning about one situation, so had better. Don’t need to says the opposite; used to is a past habit.' },
           { id: 'p1-1-1-4', focus: 'prohibition (mustn’t)',
@@ -64,7 +64,7 @@ window.PREP = {
             why: 'Clue: people who do it are asked to leave, so it is not allowed: mustn’t. Don’t have to and needn’t only mean it is not necessary.' },
           { id: 'p1-1-1-5', focus: 'preference (would rather + bare verb + than)',
             stem: 'I ______ save my allowance for the concert than spend it on bubble tea every day.',
-            options: ['had better', 'would rather', 'ought to', 'prefer'], answer: 1,
+            options: ['had better', 'ought to', 'would rather', 'prefer'], answer: 2,
             why: 'Would rather + bare verb + than compares two choices. Prefer would need “to save … rather than spend”; had better and ought to do not go with than.' }
         ]
       },
@@ -109,6 +109,8 @@ window.PREP = {
         code: '4', title: 'Correct or incorrect?', type: 'fix',
         instructions: 'Some sentences are correct. Some contain one modal error. Correct only the incorrect ones.',
         items: [
+          { id: 'p1-1-4-4', sentence: 'Students aren’t allowed to use their phones in the exam room.', ok: true,
+            why: 'Correct: aren’t allowed to + bare verb = forbidden.' },
           { id: 'p1-1-4-1', sentence: 'You mustn’t pay a booking fee if you buy your ticket at the box office.', ok: false,
             model: 'You don’t have to pay a booking fee if you buy your ticket at the box office.',
             tiles: ['You', 'don’t have to', 'pay a booking fee', 'if you buy', 'your ticket', 'at the box office.'],
@@ -123,6 +125,8 @@ window.PREP = {
             tip: 'Must has no past form. What does it borrow for yesterday?',
             why: 'Must has no past form. For a past obligation, swap the word: had to.',
             tests: { pass: ['had to', 'Yesterday we had to wait an hour to get into the hall.'], fail: ['must have waited', 'have to'] } },
+          { id: 'p1-1-4-5', sentence: 'Fah should have shopped around before she bought her headphones.', ok: true,
+            why: 'Correct: should have + V3 = a good idea that she didn’t follow.' },
           { id: 'p1-1-4-3', sentence: 'You had better to keep the receipt in case you need a refund.', ok: false,
             model: 'You had better keep the receipt in case you need a refund.',
             tiles: ['You', 'had better', 'keep the receipt', 'in case', 'you need', 'a refund.'],
@@ -130,10 +134,6 @@ window.PREP = {
             tip: 'Which modals take “to” after them, and which take a bare verb?',
             why: 'Had better is followed by a bare verb: had better keep, not had better to keep.',
             tests: { pass: ['had better keep', "You'd better keep the receipt in case you need a refund."], fail: ['had better to keep', 'should to keep'] } },
-          { id: 'p1-1-4-4', sentence: 'Students aren’t allowed to use their phones in the exam room.', ok: true,
-            why: 'Correct: aren’t allowed to + bare verb = forbidden.' },
-          { id: 'p1-1-4-5', sentence: 'Fah should have shopped around before she bought her headphones.', ok: true,
-            why: 'Correct: should have + V3 = a good idea that she didn’t follow.' },
           { id: 'p1-1-4-6', sentence: 'We didn’t need to buy drinks because the ticket price included them.', ok: true,
             why: 'Correct: didn’t need to + bare verb = it was not necessary (and we didn’t buy them).' }
         ]
@@ -201,13 +201,13 @@ window.PREP = {
             stem: 'This morning Mai had 500 baht. She went to the night market after school, and now her purse is empty and she is carrying three shopping bags. She ______ spent it all at the market.',
             options: ['can’t have', 'should', 'might', 'must have'], answer: 3,
             why: 'Past + strong evidence (empty purse, three bags) = must have + V3. Should and might need have before spent.' },
-          { id: 'p1-2-1-4', focus: 'expected result, future (should)',
-            stem: 'The concert starts at 7 p.m. Fah left home at 5 p.m., and the journey usually takes an hour. She ______ get there in time.',
-            options: ['can’t', 'should', 'mustn’t', 'might not'], answer: 1,
-            why: 'Clue: “usually takes an hour” = what we expect. Should is for expected results. Can’t and might not go against the evidence.' },
+          { id: 'p1-2-1-4', focus: 'sure no, now (can’t)',
+            stem: 'Fah’s message says she is already inside the concert hall, but I can see her standing at the bus stop across the road. She ______ be inside the hall yet.',
+            options: ['must', 'can’t', 'mustn’t', 'should'], answer: 1,
+            why: 'I can see her at the bus stop, so it is impossible that she is inside: can’t. Mustn’t is a prohibition, never a guess.' },
           { id: 'p1-2-1-5', focus: 'possible, past (might have)',
-            stem: 'Jane’s receipt says she paid 1,200 baht, but she thought the price tag said 1,500 baht. The shop ______ given her a discount, or she might have read the tag wrong.',
-            options: ['must have', 'might have', 'can’t have', 'should have'], answer: 1,
+            stem: 'Jane’s receipt says she paid 1,200 baht, but she thought the price tag said 1,500 baht. The shop ______ given her a discount, or perhaps she read the tag wrong.',
+            options: ['might have', 'must have', 'can’t have', 'should have'], answer: 0,
             why: 'Two possible reasons, so we are not sure: might have + V3. Must have is too sure; should have means a good idea she missed.' }
         ]
       },
@@ -216,16 +216,16 @@ window.PREP = {
         instructions: 'Read the evidence carefully. Choose the statement that is best supported.',
         items: [
           { id: 'p1-2-2-1', context: 'Nok ordered a dress online two days ago. The shop’s website says delivery takes two to three days.', focus: 'should (expected)',
-            options: ['It must arrive today.', 'It should arrive today or tomorrow.', 'It can’t arrive this week.'], answer: 1,
+            options: ['It must arrive by tomorrow.', 'It should arrive by tomorrow.', 'It can’t arrive by tomorrow.'], answer: 1,
             why: 'The website gives a usual time, so we expect it: should. Must is too sure; can’t goes against the evidence.' },
           { id: 'p1-2-2-2', context: 'Praew’s card was refused at the till. Yesterday she spent all her savings on a new phone.', focus: 'must (strong evidence)',
-            options: ['Her account might be full.', 'Her account can’t be almost empty.', 'Her account must be almost empty.'], answer: 2,
-            why: 'Two strong clues (card refused, all savings spent), so must.' },
+            options: ['Her account might be almost empty.', 'Her account can’t be almost empty.', 'Her account must be almost empty.'], answer: 2,
+            why: 'Two strong clues (card refused, all savings spent), so must. Might is too weak for evidence this strong.' },
           { id: 'p1-2-2-3', context: 'Mint says she bought the last concert T-shirt, but the shop still has twenty on the shelf.', focus: 'can’t have (past, sure no)',
             options: ['She can’t have bought the last one.', 'She must have bought the last one.', 'She should have bought the last one.'], answer: 0,
             why: 'Twenty are still on the shelf, so it is impossible: can’t have + V3.' },
           { id: 'p1-2-2-4', context: 'A new bubble tea shop opens next week. Nobody has tried it yet.', focus: 'might (no evidence)',
-            options: ['It must be the best shop in Siam.', 'It can’t be popular.', 'It might be popular.'], answer: 2,
+            options: ['It must be the best shop in Siam.', 'It might be popular.', 'It can’t be popular.'], answer: 1,
             why: 'No evidence either way, so only a possibility: might.' }
         ]
       },
@@ -331,7 +331,7 @@ window.PREP = {
             why: 'Two strong clues (80% of the battery gone, two hours of videos) make must have the right choice.',
             tests: { pass: ['Because her battery dropped from 100% to 20%.', 'because she watched videos for 2 hours'], fail: ['because she likes her phone'] } },
           { id: 'p1-2-5-5', situation: 'A new café is giving away free drinks today. There is no queue outside at 9 a.m., but the café has only just opened.',
-            a: 'The café can’t be popular.', b: 'The café might get busier later.', answer: 'B',
+            a: 'The café might get busier later.', b: 'The café can’t be popular.', answer: 'A',
             model: 'Because it has only just opened, and more people might come later.',
             tiles: ['Because', 'it has only', 'just opened,', 'and more people', 'might come later.'],
             all: ["(just opened|only just|early|later|free|not sure|n't sure|too soon|no proof|still)"], none: [],
@@ -424,13 +424,13 @@ window.PREP = {
         code: '4', title: 'Correct or incorrect?', type: 'fix',
         instructions: 'Some sentences are correct. Some contain one modal error. Correct only the incorrect ones.',
         items: [
-          { id: 'p2-1-4-1', sentence: 'You don’t have to share your PIN with anyone, not even your friends.', ok: false,
-            model: 'You mustn’t share your PIN with anyone, not even your friends.',
-            tiles: ['You', 'mustn’t share', 'your PIN', 'with anyone,', 'not even', 'your friends.'],
+          { id: 'p2-1-4-1', sentence: 'You don’t have to share your PIN with anyone. It is against the bank’s rules.', ok: false,
+            model: 'You mustn’t share your PIN with anyone. It is against the bank’s rules.',
+            tiles: ['You', 'mustn’t share', 'your PIN', 'with anyone.', 'It is against', 'the bank’s rules.'],
             all: ["\\b(mustn't|can't|shouldn't|aren't allowed to|are not allowed to|must never|should never)\\b"], none: ["\\bdon't have to\\b"],
             tip: 'Is sharing your PIN just not necessary, or is it forbidden?',
-            why: 'Sharing your PIN is forbidden, not just unnecessary: mustn’t (ต้องไม่).',
-            tests: { pass: ["mustn't", "You mustn't share your PIN with anyone, not even your friends.", "can't share"], fail: ["don't need to", "needn't"] } },
+            why: '“Against the rules” means sharing your PIN is forbidden, not just unnecessary: mustn’t (ต้องไม่).',
+            tests: { pass: ["mustn't", "You mustn't share your PIN with anyone. It is against the bank's rules.", "can't share"], fail: ["don't need to", "needn't"] } },
           { id: 'p2-1-4-2', sentence: 'Ploy needn’t have bought a calculator. The school lends them to students for free.', ok: true,
             why: 'Correct: she bought one (needn’t have + V3), but it was not necessary.' },
           { id: 'p2-1-4-3', sentence: 'We didn’t allowed to use calculators in the maths test.', ok: false,
@@ -505,11 +505,11 @@ window.PREP = {
         instructions: 'Choose the option that best matches the evidence and the level of certainty.',
         items: [
           { id: 'p2-2-1-1', focus: 'sure no, now (can’t)',
-            stem: 'Pim gets 3,000 baht a month. This week she has already spent a fortune: 2,800 baht on concert tickets, a new dress and dinner. She ______ have much money left this month.',
+            stem: 'Pim gets 3,000 baht a month. This month she has already spent a fortune: 2,800 baht on concert tickets, a new dress and dinner. She ______ have much money left.',
             options: ['mustn’t', 'should', 'must', 'can’t'], answer: 3,
             why: 'Only 200 baht is left, so it is impossible that she has much: can’t. Mustn’t is a prohibition, never a guess.' },
           { id: 'p2-2-1-2', focus: 'possible, now (might)',
-            stem: 'Ploy’s phone has been ringing for five minutes, but she isn’t answering. She ______ be in the shower.',
+            stem: 'I have called Ploy three times in the last five minutes, but she isn’t answering. She ______ be in the shower.',
             options: ['might', 'must', 'mustn’t', 'can’t'], answer: 0,
             why: 'There are many possible reasons, so it is only a possibility: might. There is no strong clue for must or can’t.' },
           { id: 'p2-2-1-3', focus: 'sure no, past (can’t have)',
@@ -721,7 +721,7 @@ window.PREP = {
         choices: [['O', 'obligation'], ['P', 'prohibition'], ['A', 'advice'], ['N', 'no obligation']],
         instructions: 'For each sentence, choose O, P, A or N. Then tap the words that helped you decide.',
         items: [
-          { id: 'p3-1-3-1', sentence: 'You’ve got to be 18 to open a credit card account.', answer: 'O', clue: ['’ve got to', 'got to'],
+          { id: 'p3-1-3-1', sentence: 'You’ve got to be 18 to get a credit card in the UK.', answer: 'O', clue: ['’ve got to', 'got to'],
             why: 'Have got to = have to: it is necessary.' },
           { id: 'p3-1-3-2', sentence: 'Students mustn’t leave the group during the trip.', answer: 'P', clue: ['mustn’t'],
             why: 'Mustn’t = forbidden.' },
@@ -855,8 +855,8 @@ window.PREP = {
             options: ['She can’t get the sale price.', 'She might not get the sale price.', 'She must get the sale price.'], answer: 1,
             why: 'Two minutes are left, so it is possible she misses it, but it is not certain: might not.' },
           { id: 'p3-2-2-4', context: 'The school coach leaves for Ayutthaya at 8 a.m. The journey usually takes about two hours.', focus: 'should (expected)',
-            options: ['They must arrive at exactly 10 a.m.', 'They can’t arrive before noon.', 'They should arrive at about 10 a.m.'], answer: 2,
-            why: '“Usually about two hours” = what we expect: should.' }
+            options: ['They should arrive at about 10 a.m.', 'They can’t arrive before noon.', 'They must arrive at about 10 a.m.'], answer: 0,
+            why: '“Usually about two hours” = what we expect: should. Must is too sure for “usually”.' }
         ]
       },
       {
@@ -937,12 +937,12 @@ window.PREP = {
             why: 'The 800-baht purchase matches the missing money exactly: strong evidence, so must have.',
             tests: { pass: ['because the account shows an 800 baht purchase', 'because 800 baht is missing and there is a purchase'], fail: ['because she likes shopping'] } },
           { id: 'p3-2-5-2', situation: 'The weather forecast says there is a small chance of rain. Fah wants to go to the floating market.',
-            a: 'It might rain.', b: 'It must rain.', answer: 'A',
+            a: 'It might rain.', b: 'It will definitely rain.', answer: 'A',
             model: 'Because the forecast only says there is a small chance of rain.',
             tiles: ['Because', 'the forecast', 'only says', 'there is', 'a small chance', 'of rain.'],
             all: ["(small chance|chance|forecast|not (sure|certain)|n't (sure|certain)|maybe|possib)"], none: [],
             tip: 'Is a small chance strong evidence?',
-            why: 'A small chance is weak evidence, so only might. Must would mean we are sure it will rain.',
+            why: 'A small chance is weak evidence, so only might. “Will definitely” would mean we are sure about the rain.',
             tests: { pass: ['because there is only a small chance of rain', "because it's not certain"], fail: ['because Fah likes markets'] } },
           { id: 'p3-2-5-3', situation: 'Kaew says her new trainers were “a real bargain”, but she paid the same price as in every other shop.',
             a: 'They might have been a real bargain.', b: 'They can’t have been a real bargain.', answer: 'B',

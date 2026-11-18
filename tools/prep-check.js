@@ -50,6 +50,25 @@ D.tests.forEach(t => {
   })));
   if (n !== 51) E(t.id + ' has ' + n + ' items');
 });
+/* Balance (audit of 18 Nov 2026): no key position may be learnable. */
+const pick3 = [0,0,0], pick2 = [0,0];
+D.tests.forEach(t => t.papers.forEach(p => p.sections.forEach(s => {
+  if (s.type === 'pick') s.items.forEach(it => (it.options.length === 3 ? pick3 : pick2)[it.answer]++);
+  if (s.type === 'mc' || s.type === 'pick') {
+    const seq = s.items.map(it => it.answer).join('');
+    if (/(\d)\1\1/.test(seq)) E(t.id + ' P' + p.code + '.' + s.code + ' same key position three times in a row');
+  }
+  if (s.type === 'fix') {
+    const seq = s.items.map(it => it.ok ? 'C' : 'E').join('');
+    if (/^E+C+$|^C+E+$/.test(seq)) E(t.id + ' P' + p.code + '.' + s.code + ' errors and correct sentences are in two blocks: ' + seq);
+  }
+})));
+if (Math.max(...pos.mc) - Math.min(...pos.mc) > 2) E('MC key positions uneven: ' + pos.mc);
+if (Math.max(...pick3) - Math.min(...pick3) > 1) E('3-option key positions uneven: ' + pick3);
+if (Math.abs(pick2[0] - pick2[1]) > 2) E('2-option key positions uneven: ' + pick2);
+if (Math.abs(pos.reason.A - pos.reason.B) > 2) E('Reasoning keys uneven: ' + JSON.stringify(pos.reason));
+if (longest / mcN > 0.25) E('MC key is the longest option in ' + longest + '/' + mcN);
+console.log('Pick keys: 3-option', pick3, '2-option', pick2);
 console.log('MC key positions', pos.mc, 'longest-key', longest + '/' + mcN);
 console.log('Pick key positions', pos.pick, 'Reason', pos.reason, 'Tags', tagCount);
 console.log(err ? err + ' errors' : 'OK', warn + ' warnings');

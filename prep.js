@@ -153,24 +153,37 @@
       a: item.a || '', b: item.b || '', chosen: extra && extra.chosen || '',
       model: item.model || '', notes: item.why || '', student: String(answer).slice(0, 400)
     };
-    var ctl = global.AbortController ? new AbortController() : null;
-    var timer = setTimeout(function () { if (ctl) ctl.abort(); }, 15000);
-    return fetch(url, {
-      method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify({ action: 'aiMark', payload: payload }),
-      signal: ctl ? ctl.signal : undefined
-    }).then(function (r) { return r.json(); }).then(function (j) {
-      clearTimeout(timer);
-      if (!j || !j.ok || typeof j.correct !== 'boolean') {
-        aiState.fails++;
-        /* No key on the server, or an unknown action: stop asking this session. */
-        if (j && /no-key|Unknown action/i.test(j.error || '')) aiState.off = true;
-        if (aiState.fails >= 3) aiState.off = true;
-        return null;
-      }
-      aiState.fails = 0;
-      return j;
-    }).catch(function () { clearTimeout(timer); aiState.fails++; if (aiState.fails >= 3) aiState.off = true; return null; });
+    /* One call to the server. Resolves to the reply, or to {ok:false, error}. */
+    function ask() {
+      var ctl = global.AbortController ? new AbortController() : null;
+      var timer = setTimeout(function () { if (ctl) ctl.abort(); }, 15000);
+      return fetch(url, {
+        method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ action: 'aiMark', payload: payload }),
+        signal: ctl ? ctl.signal : undefined
+      }).then(function (r) { return r.json(); }).then(function (j) {
+        clearTimeout(timer);
+        return (j && j.ok && typeof j.correct === 'boolean') ? j : { ok: false, error: (j && j.error) || 'bad-reply' };
+      }).catch(function () { clearTimeout(timer); return { ok: false, error: 'network' }; });
+    }
+    function failed(j) {
+      aiState.fails++;
+      /* No key on the server, or an unknown action: stop asking this session. */
+      if (/no-key|Unknown action/i.test(j.error || '')) aiState.off = true;
+      if (aiState.fails >= 3) aiState.off = true;
+      return null;
+    }
+    return ask().then(function (j) {
+      if (j.ok) { aiState.fails = 0; return j; }
+      /* About 1 reply in 30 comes back unreadable ('parse'). Ask once more
+         before falling back to the rule checker; never retry the errors that
+         a second call cannot fix. */
+      if (/no-key|Unknown action|limit|empty/i.test(j.error || '')) return failed(j);
+      return ask().then(function (k) {
+        if (k.ok) { aiState.fails = 0; return k; }
+        return failed(k);
+      });
+    });
   }
 
   /* Mark a written answer: AI first, the rule checker as fallback. */

@@ -1,6 +1,73 @@
 # QA report — Fine Tuning (Modals)
 
-## Modal Lab play-through — 7 October 2026
+## Unit 5 test prep audit — 18 November 2026 (evening, Claude Fable 5.2)
+
+Scope: the three mock tests on the **Unit 5 test prep** tab (`prep-data.js`, 153 items) and the AI marking of written answers. Asked for: natural questions, one correct answer, keys spread evenly over the options, key the longest option about 25% of the time, AI checking working.
+
+### Headline
+
+| | |
+|---|---|
+| Live site = repo before the audit | yes (`prep-data.js`, `prep.js`, `prep.css`, `index.html` identical to `edb8f54`) |
+| Items read | all 153 (own read; the build's independent blind solve was earlier the same day) |
+| Items changed | 15 (wording 7, key position 6, order 1 section, parallel options 3; some items in two groups) |
+| AI marking, live `/exec` | 96 answers sent: every verdict that came back was right (93/93); 3 replies (about 3%) came back unreadable (`parse`) |
+| Files changed | `prep-data.js`, `prep.js` (one retry), `tools/prep-check.js` (balance checks), new `tools/prep-smoke.js`, cache tags in `index.html` |
+| Apps Script | **not changed**, no redeploy needed |
+| IDs, storage keys, API URL | unchanged |
+
+### Balance, before → after
+
+| Measure | Before | After |
+|---|---|---|
+| Multiple choice key position a/b/c/d (30 items) | 6 / 10 / 6 / 8 | 7 / 8 / 7 / 8 |
+| Mock 1, both "Choose the best modal" parts | the same pattern twice: c a d b b | c a d b c · c a d b a |
+| Three-statement items, key A/B/C (12) | 3 / 3 / 6 | 4 / 4 / 4 |
+| Two-statement items, key A/B (12) | 6 / 6 | 6 / 6 |
+| Better reasoning, Student A/B (15) | 6 / 9 | 7 / 8 |
+| Key is the single longest option (multiple choice) | 5 / 30 (17%) | 5 / 30 (17%) |
+| Mock 1 "Correct or incorrect?" order | error, error, error, correct, correct, correct | correct, error, error, correct, error, correct |
+| O/P/A/N and P/F/Pa letters | 5/4/4/5 and 6/6/6 | unchanged |
+
+In the statement items the options differ only in the modal, so a key that is "longest" there is longer by one or two letters; that is not a cue.
+
+### Item changes
+
+| Item | Problem | Fix |
+|---|---|---|
+| p1-1-1-3 | "Your bank card runs out next week" | "expires" |
+| p1-1-1-5 | key position | would rather moved from b to c |
+| p1-2-1-4 | a second *should* item with the same four options as p1-2-1-1 | new *can't* item (Fah says she is inside; I can see her at the bus stop) |
+| p1-2-1-5 | the stem contained the key ("or she might have read the tag wrong") | "or perhaps she read the tag wrong"; key moved from b to a |
+| p1-2-2-1 | the key was the only option with "today or tomorrow", and much the longest | all three statements end "by tomorrow"; only the modal differs |
+| p1-2-2-2 | "Her account might be full" is not natural | might / can't / must be almost empty |
+| p1-2-2-4 | key position | might moved from C to B |
+| p1-2-5-5 | Student A/B balance | statements swapped; key is now A |
+| p1-1-4 (section) | three errors then three correct sentences | mixed; ids unchanged |
+| p2-1-4-1 | "You don't have to share your PIN with anyone, not even your friends" can be read as a correct sentence | "…with anyone. It is against the bank's rules." (model and tiles updated) |
+| p2-2-1-1 | "this week … this month" in one item | "this month" throughout |
+| p2-2-1-2 | "Ploy's phone has been ringing for five minutes" | "I have called Ploy three times in the last five minutes" |
+| p3-1-3-1 | "18 to open a credit card account" (not true in Thailand) | "18 to get a credit card in the UK" |
+| p3-2-2-4 | key had "about", the *must* option had "exactly" (a give-away), key position | both say "at about 10 a.m."; key moved from C to A |
+| p3-2-5-2 | "It must rain" is not natural English for a prediction | "It will definitely rain" |
+
+### AI marking
+
+- Tested on the live endpoint with 96 answers across all three mocks: model answers, other correct wordings (*needn't*, *couldn't use*, *Fern can't be right about the price*), form errors (*could have buy*, *should had kept*, *didn't allowed*), right grammar with the wrong conclusion (*The jacket must have cost 200 baht*, *The bank can't have charged her a fee*), copied evidence, filler, reasons not based on the evidence, and an answer telling the marker to mark it correct. All 93 readable verdicts were right. Average 3.9 s.
+- 3 of 96 replies were unreadable (`parse`). The page then used the rule checker, which is weaker for reasons and unusual correct answers. **Fix:** `prep.js` now asks once more before falling back (not for `no-key`, `limit` or `empty`).
+- Not changed (needs an Apps Script redeploy, left for after the school test): the marker's "polish" note is sometimes fussy when the answer is only the corrected words (it may ask for a full stop on *don't have to*).
+
+### New checks
+
+`tools/prep-check.js` now fails on: multiple-choice positions more than 2 apart, three-statement keys more than 1 apart, reasoning keys more than 2 apart, the same key position three times running in a part, key longest in more than 25% of multiple-choice items, and a "Correct or incorrect?" part with all errors first or last. `tools/prep-smoke.js` plays the tab in a browser with the server intercepted.
+
+### Judgement calls for T.Chris
+
+- Each "Correct or incorrect?" part has 3 errors in 6; the school paper had 2 in 6.
+- p1-2-5-1 (will definitely vs might, tickets tomorrow): *might* is keyed; *should* would be the most natural modal but is not offered.
+- Form-only distractors (*didn't need to printed*, *should spent*) make a few Paper 1 and Paper 2 items answerable from form alone. Kept: they are her real error types.
+
+## Earlier review — Modal Lab play-through — 7 October 2026
 
 Every Lab tool and game was played as a student in headless Chromium at 390 px (light) and 420 px (dark), with the API URL blanked and every Apps Script request aborted (**zero reached the live Sheet**). The Lab content had been read item by item in the morning audit below; this pass is about how the games behave in a student's hands.
 
