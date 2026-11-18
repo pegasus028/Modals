@@ -322,3 +322,11 @@ A nav tab for Gateway B2 Unit 5 "Grammar in context 2" (speculation and deductio
 3. **Test yourself**: the unit tests flagged `tab: 'deduce'` (`test-u5-3.js`, `test-u5-4.js`, ids `u5t3`, `u5t4`). They are also listed on the Unit tests tab; finishing one returns to this tab.
 
 `unitCardsHtml()` and `wireUnitCards()` build the test cards for both tabs. The new tests use only existing tags (`u5-guess-now`, `u5-guess-past`, `u5-guess-form`, the part 1 tags and `u5-vocab`). No Apps Script change.
+
+## Unit 5 test prep and the Decision tree (18 Nov 2026)
+
+- **Unit 5 test prep** tab (`view-prep`): three mock tests for Mikii in `prep-data.js`, run by `prep.js`, styled by `prep.css`. Each mock copies the shape of her school practice test of 18 Nov: Paper 1 obligation/prohibition/advice/permission (choose the modal 5, same form different meaning 4, O/P/A/N + clue 6, correct or incorrect 6, rewrite with a key word 5) and Paper 2 speculation and deduction (choose 5, same situation different certainty 4, present/future/past + clue 6, make the deduction 5, better reasoning 5). 51 items each, feedback after every answer.
+- Written answers are marked by Claude through the class server (action `aiMark`, file `apps-script/AiMark.gs`, key in Script Property `ANTHROPIC_API_KEY`). Without a key, or offline, the page marks with its own rule checker (`all` / `none` patterns per item). A wrong written answer becomes tiles to put in order (half a mark).
+- Check content edits with `node tools/prep-check.js` (structure, key balance, tiles = model, rule checker against sample answers).
+- Results: localStorage `ft.prep.v1`, and a summary in each student's progress as `prep` (reaches the sheet).
+- The **Deduction** tab is now the **Decision tree** (`tree.js`, same view id `deduce`): what the modal is doing → when → positive/negative → meaning or strength → forms, pattern, examples, trap. Mock tests 3 and 4 (deduction) remain on the Unit tests tab.

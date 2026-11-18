@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="theme.css?v=2026-11-10sd">
+<link rel="stylesheet" href="prep.css?v=2026-11-18b">
 <style>
 /* ======================= STUDENT CONSOLE ============================== */
 .wrap{max-width:900px;margin:0 auto;padding-inline:16px}
@@ -793,7 +794,8 @@ body{padding-top:var(--ribbon-h)}
       <button data-view="map">Stages</button>
       <button data-view="lab">Modal Lab</button>
       <button data-view="utests">Unit tests</button>
-      <button data-view="deduce">Deduction</button>
+      <button data-view="prep">Unit 5 test prep</button>
+      <button data-view="deduce">Decision tree</button>
       <button data-view="revise">Revision sheet</button>
       <button data-view="vids">Videos</button>
       <button data-view="pods">Podcasts</button>
@@ -812,6 +814,7 @@ body{padding-top:var(--ribbon-h)}
     <section id="view-review" class="hidden"></section>
     <section id="view-lab" class="hidden"></section>
     <section id="view-utests" class="hidden"></section>
+    <section id="view-prep" class="hidden"></section>
     <section id="view-deduce" class="hidden"></section>
     <section id="view-revise" class="hidden"></section>
     <section id="view-vids" class="hidden"></section>
@@ -856,6 +859,9 @@ body{padding-top:var(--ribbon-h)}
 <script src="api.js?v=2026-11-10sd"></script>
 <script src="lenses.js?v=2026-11-10sd"></script>
 <script src="lab-data.js?v=2026-11-10sd"></script>
-<script src="student.js?v=2026-11-10sd"></script>
+<script src="prep-data.js?v=2026-11-18b"></script>
+<script src="prep.js?v=2026-11-18b"></script>
+<script src="tree.js?v=2026-11-18b"></script>
+<script src="student.js?v=2026-11-18b"></script>
 </body>
 </html>
